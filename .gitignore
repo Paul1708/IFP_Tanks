@@ -74,3 +74,6 @@ crashlytics-build.properties
 # Apple Ordner Scheiß
 *.DS_Store
  
+ 
+# IDEA files scheiß
+.idea
