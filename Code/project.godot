@@ -1,0 +1,42 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Code"
+run/main_scene="res://Scenes/MainScebe.tscn"
+config/features=PackedStringArray("4.2", "C#", "Mobile")
+config/icon="res://Sprites/icon.svg"
+
+[dotnet]
+
+project/assembly_name="Code"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addons/gdUnit4/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://Scenes/": "yellow",
+"res://Scripts/": "red",
+"res://Sprites/": "blue",
+"res://Test/": "green"
+}
+
+[gdunit4]
+
+settings/test/test_lookup_folder="Test"
+ui/toolbar/run_overall=true
+
+[rendering]
+
+renderer/rendering_method="mobile"
