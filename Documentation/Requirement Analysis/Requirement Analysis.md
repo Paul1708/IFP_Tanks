@@ -8,7 +8,7 @@ This document defines the specifications and expectations of the development of 
 
 ## 1.2. Scope of the system
 
-The scope of the video game encompasses the design and development of an top-down game in which the player is controlling a tank needing to eliminate all enemy tanks.
+The scope of the video game encompasses the design and development of an top-down game in which the player is controlling a tank needing to eliminate all enemy tanks. After completing this objective it repeats in a new level with new enemys and new map design.
 The game is programmed using the game engine Godot with the language C#.
 
 Key elements of the game include:
@@ -50,6 +50,8 @@ The success is measured by following criteria:
 | SFX        | Sound effects                                            |
 | HUD        | Heads Up Display: UI overlay, which is displayed in-game |
 | FPS        | Frames per Second: Unit of Framerate                     |
+| GFX        | Graphical effects                                        |
+| Pixel Art        | A style of digital art using pixelated graphics, often associated with retro gaming aesthetics.                                      |
 
 ## 1.5. References
 
@@ -65,6 +67,7 @@ The project "IFP Tanks" is created for the advanced pratical "Agile development 
 # 2. Proposed system
 
 ## 2.1. Overview
+The game aims to deliver an immersive gaming experience where players control a tank, navigating through various levels to eliminate enemy tanks. The game emphasizes strategic combat and maneuvering skills as players progress through various levels, each presenting unique challenges with diverse enemy behaviors and map designs. With an intuitive control scheme and engaging pixel art visuals, the game offers an adrenaline-filled adventure that combines action, tactics, and progression.
 
 ## 2.2. Functional requirements
 
@@ -72,19 +75,19 @@ The project "IFP Tanks" is created for the advanced pratical "Agile development 
 
 The player controls a tank in a top-down view which can be [upgraded](#2213-upgrades) and equip different [guns](#2214-weapons), to shoot with.
 
+<div style="page-break-after: always;"></div>
+
 #### 2.2.1.1. Movement and controls
 
 The player has the ability to move his tank in all four directions using the `wasd`-Keys (`w`: move up, `s`: move down, `a`: move left, `d`: move right). He can aim the weapon of his tank using the `mouse`, which position is displayed by a recticle, and shoot the weapon with left-click at the aimed position. The camera is stationary and shows the entire playing field.
-
-<div style="page-break-after: always;"></div>
 
 #### 2.2.1.2. Stats
 
 The tank controlled by the player has different stats which affect gameplay:
 
-- **HP**: Hitpoints describe the current health of a player. Once they reach 0 the player dies and is reset back to the last [checkpoints](#22321-checkpoints).
+- **HP**: Hitpoints describe the current health of a player. He starts with 100HP. Once they reach 0 the player dies and is reset back to the last [checkpoints](#22321-checkpoints).
 - **MaxHP**: The players current HP can not exceed the maxium HP.
-- **Damage**: The damgage that the players weapon deals to enemies.
+- **Damage**: The damgage that the players weapon deals to enemies HP.
 - **Rate of Fire**: The rate at which the player can shoot his weapon. It is measured in shots per second (sps).
 - **Speed**: The players movement speed to navigate through the map.
 
@@ -103,8 +106,8 @@ There are a number of different weapons which are acquirable through the [shop](
 Following weapons are available:
 
 - **50cal**: This gun shoots a straight flying shell which gets destroyed by hitting a wall.
-- **Rocket launcher**: The rocket launcher shoots a rocket which homes to an nearby enemy tanks position by updating its target location several times. The rocket cannot dodge and is destroyed as soon as it hits a wall.
-- **Laser**: The laser fires instantaneously in a straight line damaging all enemies in it's path. The "projectile" of the laser has no travelling time.
+- **Rocket launcher**: The rocket launcher shoots a rocket which homes to an nearby enemy tanks position by updating its target location several times. The rocket itself cannot dodge and is destroyed as soon as it hits a wall.
+- **Laser**: The laser fires, after a short charging time, in a straight line damaging all enemies in it's path but it stops when hitting a wall. The "projectile" of the laser has no travelling time.
 - **Grenade launcher**: The grenade launcher fires in an arc allowing the grenades to travel over a wall and damage all enemies in a small damage radius.
 
 #### 2.2.1.5. Damage and death
@@ -117,14 +120,13 @@ Once the HP of the player reaches 0 he will die and the game is reset to the las
 
 There are different enemies, continuatively referred to as "tanks", each having different stats, abilities and behaviours. They differ by their color so they can be easily differentiated.
 
-<div style="page-break-after: always;"></div>
 
 ### 2.2.2.1. Types
 
-- **50cal (Blue)**: This tank shoots a straight flying shell at the player which gets destroyed by hitting a wall.
-- **Bouncing (Red)**: This tank shoots a straight flying shell which bounces away when hitting a wall and gets destroyed when hitting a wall the second time.
+- **50cal (Blue)**: This tank shoots a straight flying shell at the players position, when in sight. The shell gets destroyed by hitting a wall.
+- **Bouncing (Red)**: This tank shoots a straight flying shell at the players position, which bounces away when hitting a wall and gets destroyed when hitting a wall the second time.
 - **Laser (Yellow)**: This tank shoots a laser after a brief charging period which behaves the same like the players laser.
-- **Kamikaze (Black)**: This tank drives straight to the player exploding on impact or when it gets destroyed. It has not weapon equiped.
+- **Kamikaze (Black)**: This tank drives straight to the player exploding on impact or when it gets destroyed. It has no weapon equiped.
 - **Rocket (Green)**: This tank uses a rocket launcher, that behaves like the players rocket launcher.
 - **Invisible (White)**: This tank is invisible by default and only appears for a brief period after shooting a shell like the 50cal at the player.
 
@@ -191,7 +193,7 @@ The menu allows the player to navigate the game. Following screens are available
   - `SFV volume`: A slider to change the volume of the SFX
   - `Back`: A button to return to the most recent menu.
 
-  <div style="page-break-after: always;"></div>
+<div style="page-break-after: always;"></div>
 
 - **Shop**: The shop can be used by the player to buy different upgrades and new weapons (see section [Upgrades](#2213-upgrades) and [Weapons](#2214-weapons)) after a level is completed.
 
@@ -241,27 +243,49 @@ Each step in development should be documented. To achieve this, following points
 The game is accessible for all windows and linux enviroments and runs at smooth 60 FPS on low end (to be further defined) hardware.
 
 ### 2.3.4. Error handling and extreme conditions
+Error handling is important, the game must not crash on any circumstances. If an critical error occurs the player is notified and the system resets to an acceptable state. 
 
-Error handling is important, the game must not crash on any circumstances. If an critical error occurs the player is notified and the system resets to an acceptable state.
+#### 2.3.4.1 Error Handling
+- Implement boundary checks for tank movement to prevent it from going off the playable area. 
+- Use exception handling for input validation (e.g., preventing non-numeric inputs).
+
+
+#### 2.3.4.2 Extreme Conditions
+Limit for projectiles fired to prevent overwhelming the game environment by adding a timer for each bullet to get destroyed after the timer runs out. In addition the sps is capped.
 
 ### 2.3.5. Quality issues
 
 To ensure code quality, following criteria must be considered:
 
-- **Test Driven Development**: Each critical line of code must be tested by at least one unit test.
+- **Test Driven Development**: Each function with return parameter or input parameter must be tested by at least one unit test.
 - **Documented Code**: Code, which is not easily understandable is commented.
 - **Code Review**: In order to perform a pull request into the development branch, at least one other person must review the code and approve the changes.
 
 ### 2.3.6. System modifications
 
-Modding support is not officially supported.
+Modding support is not officially supported. But there are things you have to stick to
+- Use an level designs, allowing seamless addition of new maps without altering existing code extensively.
+- Incorporate a flexible tank customization system, enabling the addition of new tank types, weapons or upgrades in future updates.
+
+### 2.3.7 Physical environment
+
+Involves ensuring the game's adaptability across various devices, screen sizes, and performance capabilities:
+
+#### 2.3.7.1 Responsive Design
+
+- **Screen Size Adaptation**: Ensure that game elements, including UI components and gameplay visuals, scale appropriately across different screen sizes and aspect ratios.
+- **Aspect Ratio Handling**: Design the game to support multiple aspect ratios without distortion or loss of content, ensuring a consistent visual experience.
+
+#### 2.3.7.2 Accessibility Considerations
+
+- **Usability Testing**: Conduct usability tests to ensure that all features are effective and intuitive for users with different abilities.
+
+## 2.4 Pseudo Requirements
+Develop pixel art designs that evoke nostalgia and capture the essence of classic tank games.
+Also ensure that sound effects and background music complement the retro pixel art style, enhancing the overall gaming experience.
 
 ## 2.5. System models
 
 see Folder "documentation"
-
-## 2.5.5. User-interface -- navigational paths and screen mock-ups
-
-see folder "documentation"
 
 # 3. Glossary
