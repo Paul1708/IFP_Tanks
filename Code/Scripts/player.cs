@@ -1,9 +1,8 @@
 using Godot;
-using System;
 
-public partial class player : CharacterBody2D
+public partial class Player : CharacterBody2D
 {
-    [Export] public float speed = 300f;
+    [Export] public float speed { get; set; }
     public Vector2 ScreenSize; // Size of the game window.
 
 
@@ -20,10 +19,14 @@ public partial class player : CharacterBody2D
             y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
 
-        Vector2 move_input = Input.GetVector("left", "right", "up", "down"); //create a vector2 with the input
-
-        Velocity = move_input * speed; //set the velocity to the input times the speed
+        Velocity = calculateVelocity(Input.GetVector("left", "right", "up", "down"));
 
         MoveAndSlide(); //move and slide the player
+    }
+
+    public Vector2 calculateVelocity(Vector2 move_input)
+    {
+        Vector2 velocity = move_input * speed; //set the velocity to the input times the speed
+        return velocity;
     }
 }
