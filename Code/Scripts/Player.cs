@@ -26,7 +26,7 @@ public partial class Player : CharacterBody2D
 
     public Vector2 calculateVelocity(Vector2 move_input)
     {
-        Vector2 velocity = move_input * speed; //set the velocity to the input times the speed
+        Vector2 velocity = move_input * speed; //set the velocity to the input times the speed.
         return velocity;
     }
 }
