@@ -3,6 +3,10 @@ using Godot;
 public partial class Player : CharacterBody2D
 {
     [Export] public float speed { get; set; }
+    [Export] public float RotationSpeed { get; set; } = 1.5f;
+    private float _rotationDirection;
+
+
     public Vector2 ScreenSize; // Size of the game window.
 
 
@@ -19,9 +23,20 @@ public partial class Player : CharacterBody2D
             y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
 
-        Velocity = calculateVelocity(Input.GetVector("left", "right", "up", "down"));
+        GetInput();
+        Rotation += _rotationDirection * RotationSpeed * (float)delta;
+        MoveAndSlide();
 
-        MoveAndSlide(); //move and slide the player
+        //Velocity = calculateVelocity(Input.GetVector("left", "right", "up", "down"));
+
+        //MoveAndSlide(); //move and slide the player
+        
+    }
+
+    public void GetInput()
+    {
+        _rotationDirection = Input.GetAxis("left", "right");
+        Velocity = calculateVelocity(Transform.X * Input.GetAxis("down", "up"));
     }
 
     public Vector2 calculateVelocity(Vector2 move_input)
