@@ -1,5 +1,7 @@
 using Godot;
 
+namespace Weapons;
+
 public partial class Bullet : RigidBody2D
 {
     public override void _Ready()

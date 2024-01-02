@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+namespace Weapons;
+
 public partial class Gun : Node2D
 {
     [Export] PackedScene bulletScene;

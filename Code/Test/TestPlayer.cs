@@ -1,5 +1,6 @@
 using GdUnit4;
 using Godot;
+using Movement;
 
 [TestSuite]
 public class TestPlayer

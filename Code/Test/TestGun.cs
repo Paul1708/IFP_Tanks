@@ -1,5 +1,5 @@
 using GdUnit4;
-using Godot;
+using Weapons;
 
 [TestSuite]
 public class TestGun

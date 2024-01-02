@@ -1,5 +1,8 @@
 using Godot;
 
+/* This folder and namespace is temporary. I wanted to call it Player, 
+but that would conflict with the Player class name. */
+namespace Movement;
 public partial class Player : CharacterBody2D
 {
     [Export] public float speed { get; set; }
@@ -42,6 +45,7 @@ public partial class Player : CharacterBody2D
     public Vector2 calculateVelocity(Vector2 move_input)
     {
         Vector2 velocity = move_input * speed; //set the velocity to the input times the speed.
+        GD.Print(velocity, speed);
         return velocity;
     }
 }
