@@ -1,5 +1,4 @@
 using Godot;
-
 /* This folder and namespace is temporary. I wanted to call it Player, 
 but that would conflict with the Player class name. */
 namespace Movement;
@@ -8,10 +7,7 @@ public partial class Player : CharacterBody2D
     [Export] public float speed { get; set; }
     [Export] public float RotationSpeed { get; set; } = 1.5f;
     private float _rotationDirection;
-
-
     public Vector2 ScreenSize; // Size of the game window.
-
 
     public override void _Ready()
     {
@@ -26,14 +22,10 @@ public partial class Player : CharacterBody2D
             y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
         );
 
+        //Movement
         GetInput();
         Rotation += _rotationDirection * RotationSpeed * (float)delta;
         MoveAndSlide();
-
-        //Velocity = calculateVelocity(Input.GetVector("left", "right", "up", "down"));
-
-        //MoveAndSlide(); //move and slide the player
-        
     }
 
     public void GetInput()
