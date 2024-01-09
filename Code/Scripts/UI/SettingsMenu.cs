@@ -7,7 +7,7 @@ public partial class SettingsMenu : Control
 	{
 		var MusicController = GetNode<MusicController>("/root/MusicController");
 		MusicController.ClickButton();
-		GetTree().ChangeSceneToFile("res://Scenes/main_menu.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/UI/main_menu.tscn");
 	}
 
 }
