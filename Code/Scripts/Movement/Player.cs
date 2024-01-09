@@ -1,4 +1,5 @@
 using Godot;
+using Weapons;
 /* This folder and namespace is temporary. I wanted to call it Player, 
 but that would conflict with the Player class name. */
 namespace Movement;
@@ -6,26 +7,29 @@ public partial class Player : CharacterBody2D
 {
     [Export] public float speed { get; set; }
     [Export] public float RotationSpeed { get; set; } = 1.5f;
+    public GunController Gun { get; set; }
     private float _rotationDirection;
-    public Vector2 ScreenSize; // Size of the game window.
+
 
     public override void _Ready()
     {
-        ScreenSize = GetViewportRect().Size; //get the size of the screen
+        Gun = GetNode<GunController>("Gun");
     }
 
     public override void _PhysicsProcess(double delta)
     {
-        //limit the player to the screen
-        Position = new Vector2(
-            x: Mathf.Clamp(Position.X, 0, ScreenSize.X),
-            y: Mathf.Clamp(Position.Y, 0, ScreenSize.Y)
-        );
 
         //Movement
         GetInput();
         Rotation += _rotationDirection * RotationSpeed * (float)delta;
         MoveAndSlide();
+
+        //Gun controlling
+        Gun.RotateTowards(GetGlobalMousePosition());
+        if (Input.IsActionJustPressed("left_mouse"))
+        {
+            Gun.Shoot();
+        }
     }
 
     public void GetInput()
@@ -37,7 +41,6 @@ public partial class Player : CharacterBody2D
     public Vector2 calculateVelocity(Vector2 move_input)
     {
         Vector2 velocity = move_input * speed; //set the velocity to the input times the speed.
-        GD.Print(velocity, speed);
         return velocity;
     }
 }

@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://drimuv531bdua"]
+[gd_scene load_steps=3 format=3 uid="uid://coh581anpnrf1"]
 
-[ext_resource type="Script" path="res://Scripts/UI/main_menu.cs" id="1_mxadx"]
+[ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_mxadx"]
 [ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="2_hxh2k"]
 
 [node name="main_menu" type="Control"]

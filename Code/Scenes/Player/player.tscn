@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Movement/Player.cs" id="1_2a3xi"]
 [ext_resource type="Texture2D" uid="uid://dctejlyi66d0x" path="res://Sprites/tankbase.png" id="2_lngbk"]
-[ext_resource type="Script" path="res://Scripts/Weapons/Gun.cs" id="3_btko7"]
-[ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/bullet.tscn" id="4_rmq6c"]
+[ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_bfk4k"]
+[ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/bullet.tscn" id="4_nn1h0"]
 [ext_resource type="Texture2D" uid="uid://bu77gv46o1g7d" path="res://Sprites/tankweapon.png" id="5_7gjbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imdbc"]
@@ -13,6 +13,7 @@ size = Vector2(104, 62)
 motion_mode = 1
 script = ExtResource("1_2a3xi")
 speed = 300.0
+RotationSpeed = 3.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
@@ -24,9 +25,9 @@ scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_lngbk")
 
 [node name="Gun" type="Node2D" parent="."]
-script = ExtResource("3_btko7")
-bulletScene = ExtResource("4_rmq6c")
-bulletSpeed = 600.0
+script = ExtResource("3_bfk4k")
+bulletScene = ExtResource("4_nn1h0")
+bulletSpeed = 500.0
 bulletsPerSecond = 1.0
 bulletDamage = 10.0
 

@@ -11,13 +11,13 @@ config_version=5
 [application]
 
 config/name="Code"
-run/main_scene="res://Scenes/main_menu.tscn"
+run/main_scene="res://Scenes/UI/main_menu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
 config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
-MusicController="*res://Scenes/MusicController.tscn"
+MusicController="*res://Scenes/Misc/MusicController.tscn"
 
 [display]
 
