@@ -1,0 +1,112 @@
+[gd_scene load_steps=7 format=3 uid="uid://c0jjxgin5kbdn"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PauseMenu.cs" id="1_fxc2o"]
+[ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="2_2e6u4"]
+[ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="2_hh4pc"]
+
+[sub_resource type="Animation" id="Animation_ru71l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blur:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pra8r"]
+resource_name = "StartPause"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Blur:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.372549), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pil61"]
+_data = {
+"RESET": SubResource("Animation_ru71l"),
+"StartPause": SubResource("Animation_pra8r")
+}
+
+[node name="PauseMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+script = ExtResource("1_fxc2o")
+
+[node name="Blur" type="ColorRect" parent="."]
+process_mode = 2
+material = ExtResource("2_hh4pc")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1594.0
+offset_top = -1536.0
+offset_right = 1993.0
+offset_bottom = 2088.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Buttons" type="MarginContainer" parent="."]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -35.0
+offset_top = -20.0
+offset_right = 35.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
+layout_mode = 2
+
+[node name="Resume" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2e6u4")
+theme_override_font_sizes/font_size = 24
+text = "Resume"
+
+[node name="Settings" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2e6u4")
+theme_override_font_sizes/font_size = 24
+text = "Settings"
+
+[node name="Main Menu" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_2e6u4")
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"
+
+[node name="BlurAnimation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pil61")
+}
+
+[connection signal="pressed" from="Buttons/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]

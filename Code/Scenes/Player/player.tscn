@@ -15,14 +15,14 @@ script = ExtResource("1_2a3xi")
 speed = 300.0
 RotationSpeed = 3.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0)
-shape = SubResource("RectangleShape2D_imdbc")
-
 [node name="GFX" type="Sprite2D" parent="."]
 rotation = 4.71239
 scale = Vector2(0.07, 0.07)
 texture = ExtResource("2_lngbk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_imdbc")
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_bfk4k")

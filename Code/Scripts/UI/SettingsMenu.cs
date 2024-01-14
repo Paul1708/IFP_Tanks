@@ -5,9 +5,18 @@ public partial class SettingsMenu : Control
 {
 	private void _on_back_pressed()
 	{
-		var MusicController = GetNode<MusicController>("/root/MusicController");
-		MusicController.ClickButton();
-		GetTree().ChangeSceneToFile("res://Scenes/UI/main_menu.tscn");
+		var musicController = GetNode<MusicController>("/root/MusicController");
+		musicController.ClickButton();
+
+		if (GetTree().CurrentScene.IsInGroup("level"))
+		{
+			Hide();
+		}
+		else
+		{
+			GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
+		}
+
 	}
 
 }

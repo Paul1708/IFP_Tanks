@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://qsohy1s4v1by"]
+
+[ext_resource type="Script" path="res://Scripts/UI/SettingsMenu.cs" id="1_in3df"]
+[ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="2_xetbp"]
+[ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="3_lc8pp"]
+
+[node name="SettingsMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_in3df")
+
+[node name="Blur" type="ColorRect" parent="."]
+process_mode = 2
+material = ExtResource("2_xetbp")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1594.0
+offset_top = -1536.0
+offset_right = 1993.0
+offset_bottom = 2088.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -79.0
+offset_right = 128.0
+offset_bottom = 79.0
+grow_vertical = 2
+scale = Vector2(3, 3)
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lc8pp")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[node name="SliderContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.5
+offset_top = -96.0
+offset_right = 172.5
+offset_bottom = 96.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SliderContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="MasterSlider" type="HSlider" parent="SliderContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="MasterLabel" type="Label" parent="SliderContainer/VBoxContainer/MasterSlider"]
+layout_mode = 0
+offset_left = 3.33333
+offset_top = -44.6667
+offset_right = 210.333
+offset_bottom = -2.66667
+theme_override_fonts/font = ExtResource("3_lc8pp")
+theme_override_font_sizes/font_size = 24
+text = "Master Volume"
+
+[node name="MusicSlider" type="HSlider" parent="SliderContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="MusicLabel" type="Label" parent="SliderContainer/VBoxContainer/MusicSlider"]
+layout_mode = 0
+offset_left = 2.33333
+offset_top = -44.0
+offset_right = 185.333
+offset_bottom = -2.0
+theme_override_fonts/font = ExtResource("3_lc8pp")
+theme_override_font_sizes/font_size = 24
+text = "Music Volume"
+
+[node name="SFXSlider" type="HSlider" parent="SliderContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+
+[node name="SFXLabel" type="Label" parent="SliderContainer/VBoxContainer/SFXSlider"]
+layout_mode = 0
+offset_left = 2.66667
+offset_top = -44.3333
+offset_right = 161.667
+offset_bottom = -2.33334
+theme_override_fonts/font = ExtResource("3_lc8pp")
+theme_override_font_sizes/font_size = 24
+text = "SFX Volume"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
