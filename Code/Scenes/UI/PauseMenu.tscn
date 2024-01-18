@@ -107,6 +107,6 @@ libraries = {
 "": SubResource("AnimationLibrary_pil61")
 }
 
-[connection signal="pressed" from="Buttons/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Resume" to="." method="OnResumePressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Settings" to="." method="OnSettingsPressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Main Menu" to="." method="OnMainMenuPressed"]

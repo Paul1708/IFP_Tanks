@@ -64,6 +64,6 @@ theme_override_fonts/font = ExtResource("3_0upre")
 theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Settings" to="." method="OnSettingsPressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Quit" to="." method="OnQuitPressed"]

@@ -3,7 +3,7 @@ using Godot;
 namespace UI;
 public partial class SettingsMenu : Control
 {
-	private void _on_back_pressed()
+	private void OnBackPressed()
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.ClickButton();
