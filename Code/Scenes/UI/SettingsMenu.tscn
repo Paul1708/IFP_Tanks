@@ -56,10 +56,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -172.5
-offset_top = -96.0
-offset_right = 172.5
-offset_bottom = 96.0
+offset_left = -172.0
+offset_top = -358.0
+offset_right = 173.0
+offset_bottom = -166.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
@@ -73,6 +73,7 @@ theme_override_constants/separation = 60
 layout_mode = 2
 max_value = 1.0
 step = 0.001
+value = 1.0
 
 [node name="MasterLabel" type="Label" parent="SliderContainer/VBoxContainer/MasterSlider"]
 layout_mode = 0
@@ -88,6 +89,7 @@ text = "Master Volume"
 layout_mode = 2
 max_value = 1.0
 step = 0.001
+value = 1.0
 
 [node name="MusicLabel" type="Label" parent="SliderContainer/VBoxContainer/MusicSlider"]
 layout_mode = 0
@@ -103,6 +105,7 @@ text = "Music Volume"
 layout_mode = 2
 max_value = 1.0
 step = 0.001
+value = 1.0
 
 [node name="SFXLabel" type="Label" parent="SliderContainer/VBoxContainer/SFXSlider"]
 layout_mode = 0
@@ -114,4 +117,24 @@ theme_override_fonts/font = ExtResource("3_lc8pp")
 theme_override_font_sizes/font_size = 24
 text = "SFX Volume"
 
+
+[node name="Fullscreen" type="CheckButton" parent="SliderContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_lc8pp")
+text = "Fullscreen"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="OnBackPressed"]
+[connection signal="mouse_exited" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="release_focus"]
+[connection signal="tree_entered" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="SetMasterSliderState"]
+[connection signal="value_changed" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="OnMasterSliderValueChanged"]
+[connection signal="mouse_exited" from="SliderContainer/VBoxContainer/MusicSlider" to="." method="release_focus"]
+[connection signal="tree_entered" from="SliderContainer/VBoxContainer/MusicSlider" to="." method="SetMusicSliderState"]
+[connection signal="value_changed" from="SliderContainer/VBoxContainer/MusicSlider" to="." method="OnMusicSliderValueChanged"]
+[connection signal="mouse_exited" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="release_focus"]
+[connection signal="tree_entered" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="SetSFXSliderState"]
+[connection signal="value_changed" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="OnSFXSliderValueChanged"]
+[connection signal="toggled" from="SliderContainer/VBoxContainer/Fullscreen" to="." method="OnFullscreenToggled"]
+[connection signal="tree_entered" from="SliderContainer/VBoxContainer/Fullscreen" to="." method="SetToggleState"]
+
+
+
