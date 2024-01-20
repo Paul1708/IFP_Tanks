@@ -28,9 +28,9 @@ public partial class PauseMenu : Control
 	private void Pause()
 	{
 		GetTree().Paused = true;
-		
+
 		Show();
-		
+
 		var blurAnimation = GetNode<AnimationPlayer>("BlurAnimation");
 		blurAnimation.Play("StartPause");
 	}
@@ -55,7 +55,7 @@ public partial class PauseMenu : Control
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.ClickButton();
-		
+
 		Unpause();
 	}
 
@@ -63,20 +63,21 @@ public partial class PauseMenu : Control
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.ClickButton();
-		
+
 		DeleteBullets();
-		
+
 		//show Settingsmenu
 		var settingsMenu = GetNode<Control>("SettingsMenu");
 		settingsMenu.Show();
 	}
 
-	private void OnMainMenuPressed() {
+	private void OnMainMenuPressed()
+	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.ClickButton();
-		
+
 		DeleteBullets();
-		
+
 		GetTree().Paused = false; //make sure the game is unpaused
 
 		GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");

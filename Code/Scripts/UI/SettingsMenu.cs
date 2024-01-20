@@ -1,4 +1,4 @@
-	using System;
+using System;
 using System.Security.Authentication.ExtendedProtection;
 using System.Transactions;
 using Godot;
@@ -21,7 +21,7 @@ public partial class SettingsMenu : Control
 		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.ClickButton();
 
-		if (GetTree().CurrentScene.IsInGroup("level"))
+		if (GetTree().CurrentScene.IsInGroup("MainGame"))
 		{
 			Hide();
 		}

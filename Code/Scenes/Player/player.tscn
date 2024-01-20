@@ -9,7 +9,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imdbc"]
 size = Vector2(104, 62)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 motion_mode = 1
 script = ExtResource("1_2a3xi")
 speed = 300.0

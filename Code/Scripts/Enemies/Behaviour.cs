@@ -1,4 +1,6 @@
+using System.Linq;
 using Godot;
+using Movement;
 using Weapons;
 
 namespace Enemies;
@@ -13,8 +15,9 @@ public abstract partial class Behaviour : Node2D
     {
         // Get instances
         Gun = GetParent().GetNode<GunController>("Gun");
-        Player = GetParent().GetParent().GetNode<Node2D>("Player");
+        Player = GetTree().GetNodesInGroup("Player")[0] as Node2D;
         Navigation = GetParent().GetNode<NavigationController>("NavigationAgent2D");
+        GD.Print(Player);
         Setup();
     }
 

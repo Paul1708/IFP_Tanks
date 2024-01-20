@@ -7,7 +7,7 @@ public partial class MainMenu : Control
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.ClickButton();
-		GetTree().ChangeSceneToFile("res://Scenes/Misc/main_game.tscn");
+		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 	}
 
 	private void OnSettingsPressed()

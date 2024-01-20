@@ -7,7 +7,7 @@ public partial class HealthComponent : Node2D
 {
 
     [Export] public float maxHP { get; private set; }
-    [Export] public float currentHP { get; private set; }
+    public float currentHP { get; private set; }
 
     [Signal]
     public delegate void OnDeathEventHandler();
@@ -22,6 +22,9 @@ public partial class HealthComponent : Node2D
         maxHP = maxHealth;
         currentHP = maxHealth;
     }
+
+    // Parameterless Constructor for Godot
+    public HealthComponent() { }
 
     public void Heal(float value)
     {
