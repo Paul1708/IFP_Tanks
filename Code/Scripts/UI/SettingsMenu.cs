@@ -19,7 +19,7 @@ public partial class SettingsMenu : Control
 	private void OnBackPressed()
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
-		musicController.ClickButton();
+		musicController.Play(Sound.ButtonClick);
 
 		if (GetTree().CurrentScene.IsInGroup("MainGame"))
 		{
@@ -36,7 +36,7 @@ public partial class SettingsMenu : Control
 	private void OnFullscreenToggled(bool ToggledOn)
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
-		musicController.ClickButton();
+		musicController.Play(Sound.ButtonClick);
 
 		if (ToggledOn == true)
 		{

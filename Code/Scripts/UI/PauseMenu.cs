@@ -54,7 +54,7 @@ public partial class PauseMenu : Control
 	private void OnResumePressed()
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
-		musicController.ClickButton();
+		musicController.Play(Sound.ButtonClick);
 
 		Unpause();
 	}
@@ -62,8 +62,7 @@ public partial class PauseMenu : Control
 	private void OnSettingsPressed()
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
-		musicController.ClickButton();
-
+		musicController.Play(Sound.ButtonClick);
 		DeleteBullets();
 
 		//show Settingsmenu
@@ -74,7 +73,7 @@ public partial class PauseMenu : Control
 	private void OnMainMenuPressed()
 	{
 		var musicController = GetNode<MusicController>("/root/MusicController");
-		musicController.ClickButton();
+		musicController.Play(Sound.ButtonClick);
 
 		DeleteBullets();
 

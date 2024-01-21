@@ -3,7 +3,10 @@ using System;
 
 public partial class MusicController : Node
 {
-	public void ClickButton() {
-		GetNode<AudioStreamPlayer>("ButtonClick").Play();
+	public void Play(string soundName) {
+		GetNode<AudioStreamPlayer>(soundName).Play();
 	}
 }
+	struct Sound {
+		public const string ButtonClick = "ButtonClick";
+	}
