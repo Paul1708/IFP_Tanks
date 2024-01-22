@@ -117,7 +117,6 @@ theme_override_fonts/font = ExtResource("3_lc8pp")
 theme_override_font_sizes/font_size = 24
 text = "SFX Volume"
 
-
 [node name="Fullscreen" type="CheckButton" parent="SliderContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("3_lc8pp")
@@ -135,6 +134,3 @@ text = "Fullscreen"
 [connection signal="value_changed" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="OnSFXSliderValueChanged"]
 [connection signal="toggled" from="SliderContainer/VBoxContainer/Fullscreen" to="." method="OnFullscreenToggled"]
 [connection signal="tree_entered" from="SliderContainer/VBoxContainer/Fullscreen" to="." method="SetToggleState"]
-
-
-

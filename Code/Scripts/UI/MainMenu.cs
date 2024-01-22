@@ -2,10 +2,16 @@ using Godot;
 
 namespace UI;
 public partial class MainMenu : Control
-{
+{	
+	protected MusicController musicController;
+
+	public override void _Ready()
+	{
+		musicController = GetNode<MusicController>("/root/MusicController");
+	}
+
 	private void OnPlayPressed()
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
 		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 
@@ -13,14 +19,12 @@ public partial class MainMenu : Control
 
 	private void OnSettingsPressed()
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
 		GetTree().ChangeSceneToFile("res://Scenes/UI/SettingsMenu.tscn");
 	}
 
 	private void OnQuitPressed()
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
 		GetTree().Quit();
 	}

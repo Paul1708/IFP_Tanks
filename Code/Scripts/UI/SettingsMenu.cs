@@ -15,10 +15,15 @@ public partial class SettingsMenu : Control
 	int musicBusIndex = AudioServer.GetBusIndex("Music");
 	int sfxBusIndex = AudioServer.GetBusIndex("SFX");
 
+	protected MusicController musicController;
+
+	public override void _Ready()
+	{
+		musicController = GetNode<MusicController>("/root/MusicController");
+	}
 
 	private void OnBackPressed()
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
 
 		if (GetTree().CurrentScene.IsInGroup("MainGame"))
@@ -35,7 +40,6 @@ public partial class SettingsMenu : Control
 	//toggles fullscreen and windowed mode
 	private void OnFullscreenToggled(bool ToggledOn)
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
 
 		if (ToggledOn == true)

@@ -29,7 +29,7 @@ scale_max = 0.3
 color_ramp = SubResource("GradientTexture1D_lnrgq")
 anim_offset_max = 1.0
 
-[node name="BulletCrack" type="GPUParticles2D"]
+[node name="BulletCrack" type="GPUParticles2D" groups=["Instanced"]]
 z_index = 1
 material = SubResource("CanvasItemMaterial_aetdk")
 position = Vector2(-1, 0)

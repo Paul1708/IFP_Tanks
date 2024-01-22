@@ -1,12 +1,17 @@
 using Godot;
 using System;
+using UI;
 
 public partial class PauseMenu : Control
 {
+	protected MusicController musicController;
+	protected SettingsMenu settingsMenu;
 
 	public override void _Ready()
 	{
-		var settingsMenu = GetNode<Control>("SettingsMenu");
+		musicController = GetNode<MusicController>("/root/MusicController");
+		settingsMenu = GetNode<SettingsMenu>("SettingsMenu");
+		
 		settingsMenu.Hide(); // Hide the settings menu when the game starts
 		Hide(); // Hide the pause menu when the game starts
 	}
@@ -42,18 +47,17 @@ public partial class PauseMenu : Control
 		Hide();
 	}
 
-	private void DeleteBullets()
+	private void FreeInstancedObjects()
 	{
-		foreach (Node node in GetTree().GetNodesInGroup("bullets"))
+		foreach (Node node in GetTree().GetNodesInGroup("Instanced"))
 		{
-			node.QueueFree(); //delete all bullets
+			node.QueueFree(); //free all instanced objects
 		}
 	}
 
 	//button functions
 	private void OnResumePressed()
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
 
 		Unpause();
@@ -61,21 +65,17 @@ public partial class PauseMenu : Control
 
 	private void OnSettingsPressed()
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
-		DeleteBullets();
 
 		//show Settingsmenu
-		var settingsMenu = GetNode<Control>("SettingsMenu");
 		settingsMenu.Show();
 	}
 
 	private void OnMainMenuPressed()
 	{
-		var musicController = GetNode<MusicController>("/root/MusicController");
 		musicController.Play(Sound.ButtonClick);
 
-		DeleteBullets();
+		FreeInstancedObjects();
 
 		GetTree().Paused = false; //make sure the game is unpaused
 
