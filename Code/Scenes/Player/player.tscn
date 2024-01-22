@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Movement/Player.cs" id="1_2a3xi"]
 [ext_resource type="Texture2D" uid="uid://dctejlyi66d0x" path="res://Sprites/tankbase.png" id="2_lngbk"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_bfk4k"]
-[ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/bullet.tscn" id="4_nn1h0"]
+[ext_resource type="PackedScene" uid="uid://da1aaikifj8yu" path="res://Scenes/Weapons/BouncingBullet.tscn" id="4_rwf1a"]
 [ext_resource type="Texture2D" uid="uid://bu77gv46o1g7d" path="res://Sprites/tankweapon.png" id="5_7gjbm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imdbc"]
@@ -26,13 +26,11 @@ shape = SubResource("RectangleShape2D_imdbc")
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_bfk4k")
-bulletScene = ExtResource("4_nn1h0")
-bulletSpeed = 500.0
-bulletsPerSecond = 1.0
-bulletDamage = 10.0
+bulletScene = ExtResource("4_rwf1a")
+bulletsPerSecond = 20.0
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
-position = Vector2(76, 1)
+position = Vector2(80, 1)
 scale = Vector2(1689.03, 1.32508)
 
 [node name="GFX" type="Sprite2D" parent="Gun"]

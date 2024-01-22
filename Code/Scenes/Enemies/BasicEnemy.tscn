@@ -34,7 +34,7 @@ bulletSpeed = 1000.0
 bulletsPerSecond = 0.5
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
-position = Vector2(1000, 1)
+position = Vector2(1057.14, 3.55271e-15)
 scale = Vector2(1689.03, 1.32508)
 
 [node name="GFX" type="Sprite2D" parent="Gun"]
@@ -43,6 +43,7 @@ rotation = 4.71239
 texture = ExtResource("5_a7lih")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 19.52
 debug_enabled = true
 script = ExtResource("6_ot0ae")
 MovementSpeed = 100.0
