@@ -29,8 +29,8 @@ public partial class ParticleController : Node2D
 	{
 		//create a new instance of the given particle scene
 		var particles = scene.Instantiate<GpuParticles2D>();
-		GetTree().Root.AddChild(particles);
-        CheckForOneShot(particles);
+		CheckForOneShot(particles);
+        GetTree().GetFirstNodeInGroup("Level").AddChild(particles); //add the particle to the scene  
         //set the position of the particles to the position of the given node
         SetPostion(particles, position);
 		//Emitt particles

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_pxojk"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_oubk8"]
-[ext_resource type="PackedScene" uid="uid://sdnyxtguecgs" path="res://Scenes/Player/Player.tscn" id="3_3dp72"]
+[ext_resource type="PackedScene" uid="uid://sdnyxtguecgs" path="res://Scenes/Player/player.tscn" id="3_3dp72"]
 [ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_nwtn8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22tvh"]
@@ -471,7 +471,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(85, 1001, 669, 992, 657, 372, 1315, 385, 1323, 987, 1830, 1006, 1838, 73, 94, 80)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" groups=["Level"]]
 script = ExtResource("1_pxojk")
 IsCheckpoint = true
 

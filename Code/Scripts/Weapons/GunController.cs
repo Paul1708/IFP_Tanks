@@ -54,9 +54,7 @@ public partial class GunController : Node2D
             var muzzle = GetNode<Marker2D>("muzzle");
             bullet.GlobalPosition = muzzle.GlobalPosition;
 
-            GetTree().Root.AddChild(bullet); //add the bullet to the scene tree 
-            // TODO After Rebase: GetTree().GetFirstNodeInGroup("Level").AddChild(bullet); //add the bullet to the scene tree 
-
+            GetTree().GetFirstNodeInGroup("Level").AddChild(bullet); //add the bullet to the scene tree 
 
             timeUntilNextShot = timeBetweenShots; //reset the time until fire
             canShoot = false;

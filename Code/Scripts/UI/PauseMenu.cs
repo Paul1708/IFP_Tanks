@@ -47,14 +47,6 @@ public partial class PauseMenu : Control
 		Hide();
 	}
 
-	private void FreeInstancedObjects()
-	{
-		foreach (Node node in GetTree().GetNodesInGroup("Instanced"))
-		{
-			node.QueueFree(); //free all instanced objects
-		}
-	}
-
 	//button functions
 	private void OnResumePressed()
 	{
@@ -74,8 +66,6 @@ public partial class PauseMenu : Control
 	private void OnMainMenuPressed()
 	{
 		musicController.Play(Sound.ButtonClick);
-
-		FreeInstancedObjects();
 
 		GetTree().Paused = false; //make sure the game is unpaused
 

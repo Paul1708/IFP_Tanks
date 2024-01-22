@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_apihr"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_4th1p"]
-[ext_resource type="PackedScene" uid="uid://sdnyxtguecgs" path="res://Scenes/Player/Player.tscn" id="3_uq1q5"]
+[ext_resource type="PackedScene" uid="uid://sdnyxtguecgs" path="res://Scenes/Player/player.tscn" id="3_uq1q5"]
 [ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_m0jdo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22tvh"]
@@ -471,7 +471,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Arr
 outlines = Array[PackedVector2Array]([PackedVector2Array(93, 996, 753, 995, 758, 713, 1235, 713, 1247, 975, 1813, 970, 1819, 98, 1275, 103, 1261, 354, 1093, 353, 1099, 102, 874, 103, 876, 360, 721, 369, 734, 95, 99, 97)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[node name="Level" type="Node2D"]
+[node name="Level" type="Node2D" groups=["Level"]]
 script = ExtResource("1_apihr")
 
 [node name="TileMap" type="TileMap" parent="."]
