@@ -5,6 +5,7 @@ using System;
 struct Scene
 {
 	public static readonly PackedScene BulletCrack = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/BulletCrack.tscn");
+	public static readonly PackedScene Explosion = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/Explosion.tscn");
 }
 
 public partial class ParticleController : Node2D

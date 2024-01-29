@@ -16,6 +16,13 @@ public partial class BouncingBullet : Bullet
         BounceTimer = GetNode<Timer>("BounceTimer");
         BounceTimer.Timeout += () => canBounce = true;
     }
+
+    public override void Destroy()
+    {
+        particles.EmitParticles(this, Scene.BulletCrack);
+        QueueFree();
+    }
+
     protected override void Move()
     {
 

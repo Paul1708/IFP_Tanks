@@ -88,7 +88,7 @@ public partial class SettingsMenu : Control
 	//changes SFXBus volume when slider is moved
 	private void OnSFXSliderValueChanged(float value)
 	{
-		AudioServer.SetBusVolumeDb(musicBusIndex, Mathf.LinearToDb(value));
+		AudioServer.SetBusVolumeDb(sfxBusIndex, Mathf.LinearToDb(value));
 	}
 	//sets the slider state when the scene is loaded
 	private void SetSFXSliderState()

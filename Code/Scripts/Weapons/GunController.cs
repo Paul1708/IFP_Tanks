@@ -13,9 +13,13 @@ public partial class GunController : Node2D
 
     private float timeUntilNextShot = 0f; //how much time until the gun can fire again
     private bool canShoot = false;
+    protected MusicController musicController;
+
 
     public override void _Ready()
     {
+        musicController = GetNode<MusicController>("/root/MusicController");
+
         if (bulletsPerSecond <= 0)
         {
             throw new Exception("Bullets per second must be greater than 0");
@@ -43,6 +47,8 @@ public partial class GunController : Node2D
     {
         if (canShoot)
         {
+            musicController.Play(Sound.TankShooting);
+           
             //create a bullet
             Bullet bullet = bulletScene.Instantiate<Bullet>();
 

@@ -8,6 +8,12 @@ namespace Weapons
         {
             MoveAndCollide(LinearVelocity);
         }
+
+        public override void Destroy()
+        {
+            particles.EmitParticles(this, Scene.BulletCrack);
+            QueueFree();
+        }
         
         
     }

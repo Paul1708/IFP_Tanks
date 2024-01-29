@@ -13,6 +13,8 @@ namespace Weapons
         protected ParticleController particles;
 
         protected Vector2 NormalCollisionVector;
+        protected MusicController musicController;
+
 
         public override void _Ready()
         {
@@ -26,6 +28,8 @@ namespace Weapons
             // other references
             player = GetTree().GetFirstNodeInGroup("Player") as Node2D;
             particles = GetNode<ParticleController>("/root/ParticleController");
+            musicController = GetNode<MusicController>("/root/MusicController");
+
 
             Setup();
         }

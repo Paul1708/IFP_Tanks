@@ -9,4 +9,6 @@ public partial class MusicController : Node
 }
 	struct Sound {
 		public const string ButtonClick = "ButtonClick";
+		public const string RocketExplosion = "RocketExplosion";
+		public const string TankShooting = "TankShooting";
 	}

@@ -16,6 +16,12 @@ public partial class HomingBullet : Bullet
     private Vector2 _targetDirection;
     private int _ticksPassed = -1;
 
+    public override void Destroy()
+    {
+        musicController.Play(Sound.RocketExplosion);
+        particles.EmitParticles(this, Scene.Explosion);
+        QueueFree();
+    }
 
     protected override void Move()
     {
