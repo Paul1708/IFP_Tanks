@@ -1,4 +1,5 @@
-﻿using Godot;
+﻿using Components;
+using Godot;
 
 namespace Weapons;
 
@@ -60,12 +61,9 @@ public partial class BouncingBullet : Bullet
         //Do nothing, so the bullet does not get destroyed
     }
 
-    protected override void OnPlayerHit()
+    protected override void OnDamageableHit(Node node)
     {
-        Destroy();
-    }
-    protected override void OnEnemyHit()
-    {
+        node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
         Destroy();
     }
     protected override void OnOtherHit()

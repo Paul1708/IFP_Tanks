@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_apihr"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_4th1p"]
-[ext_resource type="PackedScene" uid="uid://sdnyxtguecgs" path="res://Scenes/Player/player.tscn" id="3_uq1q5"]
-[ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_m0jdo"]
+[ext_resource type="PackedScene" uid="uid://sdnyxtguecgs" path="res://Scenes/Player/Player.tscn" id="3_uq1q5"]
+[ext_resource type="PackedScene" uid="uid://dwpgl2ab1uftm" path="res://Scenes/Enemies/RocketEnemy.tscn" id="4_g1x51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22tvh"]
 texture = ExtResource("2_4th1p")
@@ -487,5 +487,5 @@ position = Vector2(196, 158)
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="BasicEnemy" parent="Enemies" instance=ExtResource("4_m0jdo")]
-position = Vector2(968, 189)
+[node name="RocketEnemy" parent="Enemies" instance=ExtResource("4_g1x51")]
+position = Vector2(984, 227)

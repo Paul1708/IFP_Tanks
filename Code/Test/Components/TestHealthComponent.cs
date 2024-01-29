@@ -9,7 +9,8 @@ public class TestHealthComponent
     [BeforeTest]
     public void Setup()
     {
-        hc = new HealthComponent(100);
+        hc = new HealthComponent { maxHP = 100 };
+        hc._Ready();
     }
 
     [TestCase]

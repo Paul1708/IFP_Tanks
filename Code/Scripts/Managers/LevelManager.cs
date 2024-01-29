@@ -63,6 +63,7 @@ public partial class LevelManager : Node2D
         // Set the level as the current level
         CurrentLevelID = levelID;
         CurrentLevel.OnLevelComplete += OnLevelComplete;
+        CurrentLevel.OnLevelFailed += OnLevelFailed;
 
         // Set Checkpoint
         if (CurrentLevel.IsCheckpoint)

@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://b3mnposqppd6g"]
+[gd_scene load_steps=10 format=3 uid="uid://b3mnposqppd6g"]
 
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_2xr4h"]
 [ext_resource type="Texture2D" uid="uid://dctejlyi66d0x" path="res://Sprites/tankbase.png" id="1_m0t1y"]
 [ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="2_6n3w1"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_qc42x"]
-[ext_resource type="PackedScene" uid="uid://cvuo0a4r5ldw4" path="res://Scenes/Weapons/HomingBullet.tscn" id="4_ocutq"]
+[ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="4_ri0aa"]
 [ext_resource type="Texture2D" uid="uid://bu77gv46o1g7d" path="res://Sprites/tankweapon.png" id="5_a7lih"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="6_ot0ae"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="7_w8odi"]
@@ -11,9 +12,10 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wbnf1"]
 size = Vector2(1457.14, 814.286)
 
-[node name="BasicEnemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="BasicEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
 scale = Vector2(0.07, 0.07)
 floor_max_angle = 0.0
+script = ExtResource("1_2xr4h")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(100, 1, 1, 1)
@@ -29,7 +31,7 @@ script = ExtResource("2_6n3w1")
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_qc42x")
-bulletScene = ExtResource("4_ocutq")
+bulletScene = ExtResource("4_ri0aa")
 bulletsPerSecond = 0.5
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
@@ -40,6 +42,8 @@ scale = Vector2(1689.03, 1.32508)
 modulate = Color(20, 1, 1, 1)
 rotation = 4.71239
 texture = ExtResource("5_a7lih")
+
+[node name="ShootTimer" type="Timer" parent="Gun"]
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52

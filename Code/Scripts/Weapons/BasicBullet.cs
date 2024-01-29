@@ -1,5 +1,3 @@
-
-using Godot;
 namespace Weapons
 {
     public partial class BasicBullet : Bullet
@@ -14,7 +12,6 @@ namespace Weapons
             particles.EmitParticles(this, Scene.BulletCrack);
             QueueFree();
         }
-        
         
     }
 

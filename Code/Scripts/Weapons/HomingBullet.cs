@@ -90,6 +90,6 @@ public partial class HomingBullet : Bullet
     {
         Rotation = _targetDirection.Angle();
 
-        MoveAndCollide(_targetDirection * BulletSpeed);
+        MoveAndCollide(_targetDirection * Speed);
     }
 }

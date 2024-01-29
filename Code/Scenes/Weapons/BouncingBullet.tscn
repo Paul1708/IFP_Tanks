@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Weapons/BouncingBullet.cs" id="1_miwo5"]
 [ext_resource type="Texture2D" uid="uid://bwvoqqykll7oy" path="res://Sprites/Bullets/50Cal/Bullet.png" id="2_fsm46"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jucht"]
-radius = 7.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gippp"]
+size = Vector2(14, 32)
 
 [node name="BouncingBullet" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -13,7 +13,7 @@ max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_miwo5")
 MaxBounces = 2
-BulletSpeed = 10.0
+Speed = 5.0
 
 [node name="GFX" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -22,7 +22,7 @@ texture = ExtResource("2_fsm46")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 1)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_jucht")
+shape = SubResource("RectangleShape2D_gippp")
 
 [node name="DestroyTimer" type="Timer" parent="."]
 wait_time = 5.0

@@ -63,7 +63,7 @@ contact_monitor = true
 script = ExtResource("1_l3sxi")
 HomingTicks = 10
 MaxRotationDeg = 10.0
-BulletSpeed = 5.0
+Speed = 5.0
 
 [node name="GFX" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

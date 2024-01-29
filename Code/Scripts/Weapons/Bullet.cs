@@ -1,4 +1,5 @@
 
+using Components;
 using Godot;
 using Movement;
 using Timer = Godot.Timer;
@@ -6,8 +7,8 @@ namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
     {
-        [Export] public float BulletDamage { get; set; }
-        [Export] public float BulletSpeed { get; set; } //speed of the bullet
+        public float damage { get; set; }
+        [Export] public float Speed { get; set; } //speed of the bullet
 
         protected Node2D player;
         protected ParticleController particles;
@@ -41,13 +42,9 @@ namespace Weapons
         private void OnCollision(Node node)
         {
             OnAnythingHit();
-            if (node.IsInGroup("Player"))
+            if (node.IsInGroup("Damageable"))
             {
-                OnPlayerHit();
-            }
-            else if (node.IsInGroup("Enemy"))
-            {
-                OnEnemyHit();
+                OnDamageableHit(node);
             }
             else if (node.IsInGroup("Wall"))
             {
@@ -64,11 +61,12 @@ namespace Weapons
             Destroy();
         }
 
-        protected virtual void OnPlayerHit() { }
+        protected virtual void OnDamageableHit(Node node)
+        {
+            node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
+        }
 
         protected virtual void OnWallHit() { }
-
-        protected virtual void OnEnemyHit() { }
 
         protected virtual void OnOtherHit() { }
 

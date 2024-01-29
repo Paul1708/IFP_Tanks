@@ -2,6 +2,7 @@ using Godot;
 using System.Linq;
 using Components;
 using System.Collections.Generic;
+using Movement;
 
 namespace Managers;
 
@@ -10,7 +11,7 @@ public partial class Level : Node2D
 
     [Export]
     public bool IsCheckpoint { get; private set; }
-    private List<Node2D> enemies { get; set; }
+    private List<Node> enemyList { get; set; }
 
     [Signal]
     public delegate void OnLevelCompleteEventHandler();
@@ -20,28 +21,32 @@ public partial class Level : Node2D
     public override void _Ready()
     {
         // Get all enemies in the level
-        enemies = new List<Node2D>();
-        foreach (Node2D enemy in GetTree().GetNodesInGroup("Enemy"))
-        {
-            GD.Print("Gegner" + enemy);
-            enemies.Append(enemy);
+        enemyList = GetTree().GetNodesInGroup("Enemy").ToList();
 
+        foreach (Node enemy in enemyList)
+        {
             // Connect Signals, so OnEnemyDeath is called when an enemy dies
-            enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += OnEnemyDeath;
+            enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += () => OnEnemyDeath(enemy);
         }
 
 
+        GetNode<Player>("Player").GetNode<HealthComponent>("HealthComponent").OnDeath += OnPlayerDeath;
     }
 
-    // TODO: Test this shit
-    public void OnEnemyDeath()
+
+    public void OnEnemyDeath(Node enemy)
     {
-        // Remove all dead enemies from the list
-        //enemies = enemies.Where((enemy) => enemy.IsQueuedForDeletion()).ToList();
-        if (enemies.Count == 0)
+        enemyList.Remove(enemy);
+
+        if (enemyList.Count == 0)
         {
             EmitSignal(SignalName.OnLevelComplete);
         }
+    }
+
+    public void OnPlayerDeath()
+    {
+        EmitSignal(SignalName.OnLevelFailed);
     }
 
 

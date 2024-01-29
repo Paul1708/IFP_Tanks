@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://4ex5rdvrveg3"]
+
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_hiahh"]
+[ext_resource type="Texture2D" uid="uid://dctejlyi66d0x" path="res://Sprites/tankbase.png" id="2_wc1nh"]
+[ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="3_328m8"]
+[ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="4_egmny"]
+[ext_resource type="PackedScene" uid="uid://cvuo0a4r5ldw4" path="res://Scenes/Weapons/HomingBullet.tscn" id="5_6u5xn"]
+[ext_resource type="Texture2D" uid="uid://bu77gv46o1g7d" path="res://Sprites/tankweapon.png" id="6_m400w"]
+[ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="7_igvkk"]
+[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="8_cqfsr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wbnf1"]
+size = Vector2(1457.14, 814.286)
+
+[node name="RocketEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
+scale = Vector2(0.07, 0.07)
+floor_max_angle = 0.0
+script = ExtResource("1_hiahh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(26.036, 2.367, 0.77, 1)
+rotation = 1.5708
+texture = ExtResource("2_wc1nh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-14.2857, 7.14287)
+shape = SubResource("RectangleShape2D_wbnf1")
+
+[node name="Behaviour" type="Node2D" parent="."]
+script = ExtResource("3_328m8")
+
+[node name="Gun" type="Node2D" parent="."]
+script = ExtResource("4_egmny")
+bulletScene = ExtResource("5_6u5xn")
+bulletsPerSecond = 0.5
+
+[node name="muzzle" type="Marker2D" parent="Gun"]
+position = Vector2(1057.14, 3.55271e-15)
+scale = Vector2(1689.03, 1.32508)
+
+[node name="GFX" type="Sprite2D" parent="Gun"]
+modulate = Color(17.752, 2.367, 0, 0.941)
+rotation = 4.71239
+texture = ExtResource("6_m400w")
+
+[node name="ShootTimer" type="Timer" parent="Gun"]
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+target_desired_distance = 19.52
+debug_enabled = true
+script = ExtResource("7_igvkk")
+MovementSpeed = 100.0
+
+[node name="HealthComponent" type="Node2D" parent="."]
+script = ExtResource("8_cqfsr")
+maxHP = 10.0

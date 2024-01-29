@@ -17,7 +17,6 @@ public abstract partial class Behaviour : Node2D
         Gun = GetParent().GetNode<GunController>("Gun");
         Player = GetTree().GetNodesInGroup("Player")[0] as Node2D;
         Navigation = GetParent().GetNode<NavigationController>("NavigationAgent2D");
-        GD.Print(Player);
         Setup();
     }
 

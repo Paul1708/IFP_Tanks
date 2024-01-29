@@ -3,9 +3,8 @@
 [ext_resource type="Script" path="res://Scripts/Weapons/BasicBullet.cs" id="1_0qx0a"]
 [ext_resource type="Texture2D" uid="uid://bwvoqqykll7oy" path="res://Sprites/Bullets/50Cal/Bullet.png" id="1_xstws"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jucht"]
-radius = 5.0
-height = 24.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a8w1f"]
+size = Vector2(11, 20)
 
 [node name="Bullet" type="RigidBody2D"]
 gravity_scale = 0.0
@@ -13,12 +12,12 @@ lock_rotation = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_0qx0a")
-BulletSpeed = 10.0
+Speed = 8.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
+position = Vector2(-2, 0.5)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_jucht")
+shape = SubResource("RectangleShape2D_a8w1f")
 
 [node name="GFX" type="Sprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

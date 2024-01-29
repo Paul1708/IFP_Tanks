@@ -6,25 +6,21 @@ namespace Components;
 public partial class HealthComponent : Node2D
 {
 
-    [Export] public float maxHP { get; private set; }
-    public float currentHP { get; private set; }
+    [Export] public float maxHP { get; set; }
+    public float currentHP { get; set; }
 
     [Signal]
     public delegate void OnDeathEventHandler();
 
-    public HealthComponent(float maxHealth)
+    public override void _Ready()
     {
-        if (maxHealth <= 0)
+        if (maxHP <= 0)
         {
             throw new ValidationException("Max health must be greater than 0");
         }
 
-        maxHP = maxHealth;
-        currentHP = maxHealth;
+        currentHP = maxHP;
     }
-
-    // Parameterless Constructor for Godot
-    public HealthComponent() { }
 
     public void Heal(float value)
     {
@@ -40,6 +36,7 @@ public partial class HealthComponent : Node2D
         if (value < 0) return;
 
         currentHP -= value;
+        GD.Print("Health: " + currentHP + "/" + maxHP);
 
         CheckIfDead();
     }
@@ -67,7 +64,6 @@ public partial class HealthComponent : Node2D
     {
         if (currentHP <= 0)
         {
-            GD.Print("Dead");
             EmitSignal(SignalName.OnDeath);
         }
     }
