@@ -9,59 +9,59 @@
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="7_5i82i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imdbc"]
-size = Vector2(61, 61)
+size = Vector2(78, 66)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_i4bhb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxv6r"]
 atlas = ExtResource("5_fm6eq")
 region = Rect2(48, 0, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tqxll"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gr85"]
 atlas = ExtResource("5_fm6eq")
 region = Rect2(96, 0, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rc2h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdy4j"]
 atlas = ExtResource("5_fm6eq")
 region = Rect2(0, 92, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_chp4g"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b3asp"]
 atlas = ExtResource("5_fm6eq")
 region = Rect2(48, 92, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r5it8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4pax"]
 atlas = ExtResource("5_fm6eq")
 region = Rect2(96, 92, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2q17d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpdxn"]
 atlas = ExtResource("5_fm6eq")
 region = Rect2(0, 184, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7vmpq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmd4q"]
 atlas = ExtResource("5_fm6eq")
 region = Rect2(0, 0, 48, 92)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_7au16"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_corl5"]
 animations = [{
 "frames": [{
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_i4bhb")
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_oxv6r")
 }, {
-"duration": 0.7,
-"texture": SubResource("AtlasTexture_tqxll")
+"duration": 0.6,
+"texture": SubResource("AtlasTexture_7gr85")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_4rc2h")
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_qdy4j")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_chp4g")
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_b3asp")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_r5it8")
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_j4pax")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_2q17d")
+"duration": 1.3,
+"texture": SubResource("AtlasTexture_rpdxn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vmpq")
+"texture": SubResource("AtlasTexture_dmd4q")
 }],
 "loop": false,
 "name": &"Shoot",
@@ -69,12 +69,12 @@ animations = [{
 }]
 
 [sub_resource type="Animation" id="Animation_e2tqd"]
-length = 0.6
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GFX:texture")
+tracks/0/path = NodePath("TankBaseSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
@@ -86,19 +86,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GFX:hframes")
+tracks/1/path = NodePath("TankBaseSprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GFX:vframes")
+tracks/2/path = NodePath("TankBaseSprite:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
@@ -110,7 +110,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GFX:visible")
+tracks/3/path = NodePath("TankBaseSprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/keys = {
@@ -122,23 +122,23 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GFX:frame")
+tracks/4/path = NodePath("TankBaseSprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 5, 4, 3, 2, 1]
+"values": [3, 4, 1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_8puoc"]
-length = 0.6
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GFX:texture")
+tracks/0/path = NodePath("TankBaseSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
@@ -150,19 +150,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GFX:hframes")
+tracks/1/path = NodePath("TankBaseSprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GFX:vframes")
+tracks/2/path = NodePath("TankBaseSprite:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
@@ -174,7 +174,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GFX:visible")
+tracks/3/path = NodePath("TankBaseSprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/keys = {
@@ -186,23 +186,23 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GFX:frame")
+tracks/4/path = NodePath("TankBaseSprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [0, 1, 2, 3, 4, 5]
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_6kafa"]
-length = 0.6
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GFX:texture")
+tracks/0/path = NodePath("TankBaseSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
@@ -214,19 +214,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GFX:hframes")
+tracks/1/path = NodePath("TankBaseSprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GFX:vframes")
+tracks/2/path = NodePath("TankBaseSprite:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
@@ -238,7 +238,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GFX:visible")
+tracks/3/path = NodePath("TankBaseSprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/keys = {
@@ -250,23 +250,23 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GFX:frame")
+tracks/4/path = NodePath("TankBaseSprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [8, 4, 7, 6, 1, 9]
+"values": [0, 6, 2, 5]
 }
 
 [sub_resource type="Animation" id="Animation_6f1v0"]
-length = 0.6
+length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("GFX:texture")
+tracks/0/path = NodePath("TankBaseSprite:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
@@ -278,19 +278,19 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("GFX:hframes")
+tracks/1/path = NodePath("TankBaseSprite:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = false
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [4]
+"values": [3]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("GFX:vframes")
+tracks/2/path = NodePath("TankBaseSprite:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = false
 tracks/2/keys = {
@@ -302,7 +302,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("GFX:visible")
+tracks/3/path = NodePath("TankBaseSprite:visible")
 tracks/3/interp = 1
 tracks/3/loop_wrap = false
 tracks/3/keys = {
@@ -314,14 +314,14 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("GFX:frame")
+tracks/4/path = NodePath("TankBaseSprite:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = false
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [1, 6, 7, 4, 8, 1]
+"values": [0, 5, 2, 6]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m82lt"]
@@ -338,12 +338,14 @@ script = ExtResource("1_noslj")
 speed = 300.0
 RotationSpeed = 3.0
 
-[node name="GFX" type="Sprite2D" parent="."]
+[node name="TankBaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
+position = Vector2(8.00011, 0.000175476)
 rotation = 1.5708
 texture = ExtResource("2_cn7mg")
-hframes = 4
+hframes = 3
 vframes = 3
+frame = 3
 metadata/_aseprite_wizard_config_ = {
 "keep_anim_length": false,
 "layer": "",
@@ -351,14 +353,13 @@ metadata/_aseprite_wizard_config_ = {
 "o_folder": "res://Sprites/Tanks",
 "o_name": "",
 "only_visible": false,
-"op_exp": true,
+"op_exp": false,
 "player": "AnimationPlayer",
 "source": "res://Sprites/Aesprite/Tank/TankGreen.aseprite"
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0.5, 0.5)
+position = Vector2(3.00011, 0.000175476)
 shape = SubResource("RectangleShape2D_imdbc")
 
 [node name="Gun" type="Node2D" parent="."]
@@ -375,17 +376,17 @@ scale = Vector2(1689.03, 1.32508)
 texture_filter = 1
 position = Vector2(26, 0)
 rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_7au16")
+sprite_frames = SubResource("SpriteFrames_corl5")
 animation = &"Shoot"
 frame = 6
-frame_progress = 1.0
+frame_progress = 0.654121
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
 "o_folder": "res://Sprites/Tanks",
 "o_name": "",
 "only_visible": false,
-"op_exp": true,
+"op_exp": false,
 "source": "res://Sprites/Aesprite/Tank/GunGreen.aseprite"
 }
 
@@ -399,5 +400,5 @@ maxHP = 25.0
 libraries = {
 "": SubResource("AnimationLibrary_m82lt")
 }
-speed_scale = 3.0
+speed_scale = 3.5
 script = ExtResource("7_5i82i")

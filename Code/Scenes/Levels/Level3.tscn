@@ -1,12 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cukhascfsrbri"]
+[gd_scene load_steps=7 format=3 uid="uid://dedf16ffcla55"]
 
-[ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_apihr"]
-[ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_4th1p"]
-[ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_uq1q5"]
-[ext_resource type="PackedScene" uid="uid://4ex5rdvrveg3" path="res://Scenes/Enemies/RocketEnemy.tscn" id="4_g1x51"]
+[ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_8ahnc"]
+[ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_pvyov"]
+[ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_4gipy"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22tvh"]
-texture = ExtResource("2_4th1p")
+texture = ExtResource("2_pvyov")
 texture_region_size = Vector2i(32, 32)
 1:1/0 = 0
 1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -472,7 +471,7 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(93, 996, 753, 995, 758,
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Level" type="Node2D" groups=["Level"]]
-script = ExtResource("1_apihr")
+script = ExtResource("1_8ahnc")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7gna0")
@@ -482,10 +481,7 @@ layer_0/tile_data = PackedInt32Array(0, 458753, 1, 65536, 458753, 2, 131072, 458
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_jgb37")
 
-[node name="Player" parent="." instance=ExtResource("3_uq1q5")]
+[node name="Player" parent="." instance=ExtResource("3_4gipy")]
 position = Vector2(196, 158)
 
 [node name="Enemies" type="Node2D" parent="."]
-
-[node name="RocketEnemy" parent="Enemies" instance=ExtResource("4_g1x51")]
-position = Vector2(984, 227)

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cyonm0aqv6wjr"
+path="res://.godot/imported/TankRed.aseprite-f638353b0efcc0ed76a39726ad8e0344.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/Tank/TankRed.aseprite"
+dest_files=["res://.godot/imported/TankRed.aseprite-f638353b0efcc0ed76a39726ad8e0344.res"]
+
+[params]
+

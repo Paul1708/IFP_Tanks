@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bwfpfmbumgmq"
+path="res://.godot/imported/GunRed.aseprite-0d6c8db2fd45efff4507876f17f4a7ac.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/Tank/GunRed.aseprite"
+dest_files=["res://.godot/imported/GunRed.aseprite-0d6c8db2fd45efff4507876f17f4a7ac.res"]
+
+[params]
+
