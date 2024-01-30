@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4u4a4mks5x33"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_7abr6"]
+[ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="2_3rnnf"]
+[ext_resource type="PackedScene" uid="uid://4ex5rdvrveg3" path="res://Scenes/Enemies/RocketEnemy.tscn" id="3_hcowm"]
+
+[node name="TestLevel2" type="Node2D" groups=["Level"]]
+script = ExtResource("1_7abr6")
+IsCheckpoint = true
+
+[node name="Player" parent="." instance=ExtResource("2_3rnnf")]
+show_behind_parent = true
+z_index = 1
+position = Vector2(286, 917)
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="RocketEnemy" parent="Enemies" instance=ExtResource("3_hcowm")]

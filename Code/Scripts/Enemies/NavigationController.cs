@@ -1,12 +1,12 @@
-
 using Godot;
-using System;
 
 public partial class NavigationController : NavigationAgent2D
 {
 	[Export]
 	public float MovementSpeed { get; set; }
-	private CharacterBody2D characterBody;
+	[Export]
+	public float RotationSpeed { get; set; } = 0.01f;
+	public CharacterBody2D characterBody;
 	public override void _Ready()
 	{
 		characterBody = GetParent<CharacterBody2D>();
@@ -14,12 +14,19 @@ public partial class NavigationController : NavigationAgent2D
 
 	public override void _Process(double delta)
 	{
-		// Move towards the target position
-		Vector2 direction = (GetNextPathPosition() - characterBody.GlobalPosition).Normalized();
-		characterBody.Velocity = direction * MovementSpeed;
-		characterBody.MoveAndSlide();
+		MoveTowardsVector(GetNextPathPosition());
+	}
 
-		characterBody.LookAt(GetNextPathPosition());
+	public void MoveTowardsVector(Vector2 target)
+	{
+		// Rotate towards the target position
+		var angle = (target - characterBody.GlobalPosition).Angle();
+		var lerpedAngle = Mathf.LerpAngle(characterBody.GlobalRotation, angle, RotationSpeed);
+		characterBody.GlobalRotation = lerpedAngle;
+
+		// Move forward
+		characterBody.Velocity = Vector2.Right.Rotated(lerpedAngle) * MovementSpeed;
+		characterBody.MoveAndSlide();
 	}
 
 

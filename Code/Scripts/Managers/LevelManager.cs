@@ -1,6 +1,6 @@
+using System.Threading.Tasks;
 using Godot;
 using Managers;
-
 
 public partial class LevelManager : Node2D
 {
@@ -12,28 +12,42 @@ public partial class LevelManager : Node2D
 
     public Level CurrentLevel { get; private set; }
 
-    public override void _Ready()
+    public override async void _Ready()
     {
         CurrentLevelID = 0;
         LastCheckpointID = 0;
-        LoadLevelByID(CurrentLevelID);
+        await LoadLevelByID(CurrentLevelID);
     }
 
-    public void OnLevelComplete()
+    public async Task OnLevelComplete()
     {
         // Remove the current level and wait until it's done bfore calling LoadNextLevel
         CurrentLevel.QueueFree();
-        CurrentLevel.TreeExited += LoadNextLevel;
+
+        if (CurrentLevel.IsInsideTree())
+        {
+            await ToSignal(CurrentLevel, "tree_exited");
+        }
+
+        await LoadNextLevel();
     }
 
+    public async Task OnLevelFailed()
+    {
+        // Remove the current level and wait until it's done before calling LoadNextLevel
+        CurrentLevel.QueueFree();
+        await ToSignal(CurrentLevel, "tree_exited");
 
-    private void LoadNextLevel()
+        await LoadLastCheckpoint();
+    }
+
+    private async Task LoadNextLevel()
     {
         int nextLevelID = CurrentLevelID + 1;
         if (nextLevelID < Levels.Length)
         {
             // Still level left
-            LoadLevelByID(nextLevelID);
+            await LoadLevelByID(nextLevelID);
         }
         else
         {
@@ -42,28 +56,26 @@ public partial class LevelManager : Node2D
         }
     }
 
-    public void OnLevelFailed()
+    private async Task LoadLastCheckpoint()
     {
-        // Remove the current level and wait until it's done before calling LoadNextLevel
-        CurrentLevel.QueueFree();
-        CurrentLevel.TreeExited += LoadLastCheckpoint;
+        await LoadLevelByID(LastCheckpointID);
     }
 
-    public void LoadLastCheckpoint()
-    {
-        LoadLevelByID(LastCheckpointID);
-    }
-
-    private void LoadLevelByID(int levelID)
+    private async Task LoadLevelByID(int levelID)
     {
         // Load the level
         CurrentLevel = Levels[levelID].Instantiate<Level>();
         AddChild(CurrentLevel);
 
+        if (CurrentLevel.IsNodeReady() == false)
+        {
+            await ToSignal(CurrentLevel, "ready");
+        }
+
         // Set the level as the current level
         CurrentLevelID = levelID;
-        CurrentLevel.OnLevelComplete += OnLevelComplete;
-        CurrentLevel.OnLevelFailed += OnLevelFailed;
+        CurrentLevel.OnLevelComplete += async () => await OnLevelComplete();
+        CurrentLevel.OnLevelFailed += async () => await OnLevelFailed(); ;
 
         // Set Checkpoint
         if (CurrentLevel.IsCheckpoint)
@@ -73,11 +85,11 @@ public partial class LevelManager : Node2D
     }
 
     // TODO: For debug purposes, remove later
-    public override void _Input(InputEvent @event)
+    public override async void _Input(InputEvent @event)
     {
         if (Input.IsActionJustPressed("Debug"))
         {
-            OnLevelComplete();
+            await OnLevelComplete();
         }
     }
 }
