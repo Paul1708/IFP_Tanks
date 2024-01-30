@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://5uyd7t7343bx"]
+
+[ext_resource type="Texture2D" uid="uid://buqhtrn1nrv0x" path="res://Sprites/Tanks/Particles/Mud.png" id="1_1sstg"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_qjtw2"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_e4vr7"]
+offsets = PackedFloat32Array(0.745902, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0.00784314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_54aqy"]
+gradient = SubResource("Gradient_e4vr7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_mh3uc"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(0, 0, 0)
+direction = Vector3(0, 0, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.8
+scale_max = 0.8
+color_ramp = SubResource("GradientTexture1D_54aqy")
+anim_offset_max = 1.0
+
+[node name="DrivingMud" type="GPUParticles2D"]
+material = SubResource("CanvasItemMaterial_qjtw2")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_mh3uc")
+texture = ExtResource("1_1sstg")
+lifetime = 4.0
+one_shot = true
+randomness = 1.0

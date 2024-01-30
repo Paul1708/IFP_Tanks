@@ -12,22 +12,28 @@ public partial class Player : CharacterBody2D
     public GunController Gun { get; set; }
     public AnimationHandler AnimationHandler { get; set; }
     private float _rotationDirection;
-
-
+    protected TrailComponent trailComponent;
+    
     public override void _Ready()
     {
         Gun = GetNode<GunController>("Gun");
         AnimationHandler = GetNode<AnimationHandler>("AnimationPlayer");
+        trailComponent = GetNode<TrailComponent>("Trail");
     }
 
     public override void _PhysicsProcess(double delta)
     {
-
         //Movement
         GetInput();
         Rotation += _rotationDirection * RotationSpeed * (float)delta;
         MoveAndSlide();
 
+        //Emit trail
+        if (IsMoving())
+        {
+            trailComponent.EmitTrail();
+        }
+       
         //Gun controlling
         Gun.RotateTowards(GetGlobalMousePosition());
         if (Input.IsActionPressed("left_mouse"))
@@ -50,5 +56,10 @@ public partial class Player : CharacterBody2D
     {
         Vector2 velocity = move_input * speed; //set the velocity to the input times the speed.
         return velocity;
+    }
+
+    public bool IsMoving()
+    {
+        return Velocity != Vector2.Zero;
     }
 }

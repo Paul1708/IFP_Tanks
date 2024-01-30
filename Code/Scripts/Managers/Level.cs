@@ -6,6 +6,11 @@ using Movement;
 
 namespace Managers;
 
+readonly struct Items
+{
+	public static readonly PackedScene Coin = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Coin.tscn");
+}
+
 public partial class Level : Node2D
 {
 
@@ -23,7 +28,7 @@ public partial class Level : Node2D
         // Get all enemies in the level
         enemies = GetTree().GetNodesInGroup("Enemy").ToList();
 
-        foreach (Node enemy in enemies)
+        foreach (Node2D enemy in enemies)
         {
             // Connect Signals, so OnEnemyDeath is called when an enemy dies
             enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += () => OnEnemyDeath(enemy);
@@ -31,8 +36,10 @@ public partial class Level : Node2D
         GetNode<Player>("Player").GetNode<HealthComponent>("HealthComponent").OnDeath += OnPlayerDeath;
     }
 
-    public void OnEnemyDeath(Node enemy)
+    public void OnEnemyDeath(Node2D enemy)
     {
+        DropItem(enemy, Items.Coin);
+       
         // Remove all dead enemies from the list
         enemies.Remove(enemy);
         if (enemies.Count == 0)
@@ -46,5 +53,16 @@ public partial class Level : Node2D
         EmitSignal(SignalName.OnLevelFailed);
     }
 
+    public void DropItem(Node2D position, PackedScene scene)
+	{
+		var item = scene.Instantiate<Node2D>();
 
+		SetPostion(item, position);
+		GetTree().GetFirstNodeInGroup("Level").CallDeferred("add_child", item);
+
+	}
+    private static void SetPostion(Node2D item, Node2D position)
+	{
+		item.GlobalPosition = position.GlobalPosition;
+	}
 }

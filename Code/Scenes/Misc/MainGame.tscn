@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
 [ext_resource type="Script" path="res://Scripts/Managers/LevelManager.cs" id="3_6hwsd"]
-[ext_resource type="PackedScene" uid="uid://cjd0rytcvfmnf" path="res://Scenes/Levels/Level1.tscn" id="4_c31nu"]
+[ext_resource type="PackedScene" uid="uid://bshxfh34wjfkn" path="res://Scenes/Levels/Level1.tscn" id="4_c31nu"]
 [ext_resource type="PackedScene" uid="uid://cukhascfsrbri" path="res://Scenes/Levels/Level2.tscn" id="5_tjwhs"]
 [ext_resource type="PackedScene" uid="uid://dedf16ffcla55" path="res://Scenes/Levels/Level3.tscn" id="6_y2afc"]
 

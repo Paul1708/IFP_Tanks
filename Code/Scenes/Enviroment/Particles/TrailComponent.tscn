@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://cft13mj3w5mwd"]
+
+[ext_resource type="Script" path="res://Scripts/Components/TrailComponent.cs" id="1_51w6r"]
+
+[node name="Trail" type="Node2D"]
+script = ExtResource("1_51w6r")
+
+[node name="LeftChain1" type="Marker2D" parent="."]
+position = Vector2(0, -23)
+
+[node name="LeftChain2" type="Marker2D" parent="."]
+position = Vector2(0, -27)
+
+[node name="RightChain2" type="Marker2D" parent="."]
+position = Vector2(0, 27)
+
+[node name="RightChain1" type="Marker2D" parent="."]
+position = Vector2(0, 23)
+
+[node name="TrailTimer" type="Timer" parent="."]
+wait_time = 0.1

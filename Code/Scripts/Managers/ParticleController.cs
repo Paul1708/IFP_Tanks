@@ -6,6 +6,8 @@ struct Scene
 {
 	public static readonly PackedScene BulletCrack = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/BulletCrack.tscn");
 	public static readonly PackedScene Explosion = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/Explosion.tscn");
+	public static readonly PackedScene DrivingMud = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/DrivingMud.tscn");
+
 }
 
 public partial class ParticleController : Node2D
@@ -23,6 +25,12 @@ public partial class ParticleController : Node2D
 			throw new Exception("The given particle scene is not set to OneShot: " + particles.Name);
 		}
 	}
+	private static void SetRotation(GpuParticles2D particles, Node2D rotationSource)
+	{
+		var material = particles.ProcessMaterial;
+		material.Set("angle_min", rotationSource.GlobalRotationDegrees);
+		material.Set("angle_max", rotationSource.GlobalRotationDegrees);
+	}
 
 	//Emitts the chosen particle scene at the given nodes locataion
 	//The particle scene needs to have OneShot enabled
@@ -31,9 +39,9 @@ public partial class ParticleController : Node2D
 		//create a new instance of the given particle scene
 		var particles = scene.Instantiate<GpuParticles2D>();
 		CheckForOneShot(particles);
-        GetTree().GetFirstNodeInGroup("Level").AddChild(particles); //add the particle to the scene  
-        //set the position of the particles to the position of the given node
-        SetPostion(particles, position);
+		//set the position of the particles to the position of the given node
+		SetPostion(particles, position);
+		GetTree().GetFirstNodeInGroup("Level").AddChild(particles); //add the particle to the scene  
 		//Emitt particles
 		particles.Emitting = true;
 		//wait until the particles are finished
