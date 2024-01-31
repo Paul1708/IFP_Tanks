@@ -1,6 +1,7 @@
-[gd_scene load_steps=23 format=3 uid="uid://4ex5rdvrveg3"]
+[gd_scene load_steps=24 format=3 uid="uid://4ex5rdvrveg3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_hiahh"]
+[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_5qh4k"]
 [ext_resource type="Texture2D" uid="uid://yyatfwo0expa" path="res://Sprites/Tanks/TankBlue.png" id="2_fajxa"]
 [ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="3_328m8"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="4_egmny"]
@@ -336,6 +337,7 @@ _data = {
 [node name="RocketEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
 floor_max_angle = 0.0
 script = ExtResource("1_hiahh")
+DropItemScene = ExtResource("2_5qh4k")
 
 [node name="TankBaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -368,9 +370,10 @@ script = ExtResource("3_328m8")
 script = ExtResource("4_egmny")
 bulletScene = ExtResource("5_6u5xn")
 bulletsPerSecond = 0.5
+bulletDamage = 10.0
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
-position = Vector2(64, 0)
+position = Vector2(69, 0)
 scale = Vector2(1689.03, 1.32508)
 
 [node name="ShootTimer" type="Timer" parent="Gun"]

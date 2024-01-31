@@ -51,13 +51,17 @@ public partial class LevelManager : Node2D
         }
         else
         {
-            GD.Print("You win!");
+            GD.Print("You win! \nCoins reseted!");
+        
+            GameManager.Instance.ResetCoins();
+
             GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
         }
     }
 
     private async Task LoadLastCheckpoint()
     {
+        GameManager.Instance.SetCoins(GameManager.Instance.checkpointCoins);
         await LoadLevelByID(LastCheckpointID);
     }
 
@@ -80,6 +84,7 @@ public partial class LevelManager : Node2D
         // Set Checkpoint
         if (CurrentLevel.IsCheckpoint)
         {
+            GameManager.Instance.OnCheckpointSaveCoins();
             LastCheckpointID = levelID;
         }
     }

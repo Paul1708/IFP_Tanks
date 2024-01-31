@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bshxfh34wjfkn"]
+[gd_scene load_steps=9 format=3 uid="uid://bshxfh34wjfkn"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_pxojk"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_oubk8"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/player.tscn" id="3_3dp72"]
 [ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_nwtn8"]
+[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="5_kvw64"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22tvh"]
 texture = ExtResource("2_oubk8")
@@ -494,3 +495,12 @@ position = Vector2(1593, 631)
 
 [node name="BasicEnemy2" parent="Enemies" instance=ExtResource("4_nwtn8")]
 position = Vector2(1066, 227)
+
+[node name="BasicEnemy3" parent="Enemies" instance=ExtResource("4_nwtn8")]
+position = Vector2(1434, 887)
+
+[node name="Coin" parent="." instance=ExtResource("5_kvw64")]
+position = Vector2(312, 302)
+
+[node name="Coin2" parent="." instance=ExtResource("5_kvw64")]
+position = Vector2(436, 490)

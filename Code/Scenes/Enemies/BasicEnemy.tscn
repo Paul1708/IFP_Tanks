@@ -1,7 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://b3mnposqppd6g"]
+[gd_scene load_steps=26 format=3 uid="uid://b3mnposqppd6g"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_2xr4h"]
 [ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="2_6n3w1"]
+[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_15ljn"]
 [ext_resource type="Texture2D" uid="uid://bi68c3sy846qs" path="res://Sprites/Tanks/TankRed.png" id="2_itl5e"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_qc42x"]
 [ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="4_ri0aa"]
@@ -339,6 +340,7 @@ _data = {
 z_index = 1
 floor_max_angle = 0.0
 script = ExtResource("1_2xr4h")
+DropItemScene = ExtResource("2_15ljn")
 
 [node name="TankBaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -399,7 +401,6 @@ target_desired_distance = 19.52
 debug_enabled = true
 script = ExtResource("6_ot0ae")
 MovementSpeed = 100.0
-RotationSpeed = 0.01
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("7_w8odi")

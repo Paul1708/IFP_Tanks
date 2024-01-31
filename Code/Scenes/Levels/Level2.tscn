@@ -471,7 +471,7 @@ polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32
 outlines = Array[PackedVector2Array]([PackedVector2Array(1276, 112, 1225, 383, 1130, 378, 1073, 97, 910, 109, 868, 412, 762, 402, 662, 105, 543, 104, 125, 107, 130, 242, 546, 243, 151, 304, 495, 366, 610, 177, 665, 288, 537, 478, 365, 397, 76, 437, 176, 897, 417, 951, 179, 523, 306, 439, 376, 620, 432, 767, 549, 920, 513, 653, 421, 502, 592, 553, 670, 355, 675, 594, 643, 870, 594, 964, 190, 963, 197, 1001, 711, 1001, 748, 709, 1248, 694, 1311, 948, 1722, 939, 1789, 115)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
-[node name="Level" type="Node2D" groups=["Level"]]
+[node name="Level2" type="Node2D" groups=["Level"]]
 script = ExtResource("1_apihr")
 IsCheckpoint = null
 

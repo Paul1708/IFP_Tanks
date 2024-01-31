@@ -17,6 +17,7 @@ config/icon="res://Sprites/icon.svg"
 
 [autoload]
 
+GameManager="*res://Scenes/Misc/GameManager.tscn"
 MusicController="*res://Scenes/Misc/MusicController.tscn"
 ParticleController="*res://Scenes/Misc/ParticleController.tscn"
 
