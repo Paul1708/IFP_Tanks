@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://bvkbrlpgn0f1c"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/GrenadeBullet.cs" id="1_mgtdc"]
+[ext_resource type="Texture2D" uid="uid://dc7o4j0ptqo1l" path="res://Sprites/Bullets/Rocket/rocket1.png" id="2_f3i8g"]
+[ext_resource type="Texture2D" uid="uid://chxcsbkpiujex" path="res://Sprites/Bullets/Rocket/rocket2.png" id="3_cfaff"]
+[ext_resource type="Texture2D" uid="uid://bsrlsmxecipil" path="res://Sprites/Bullets/Rocket/rocket3.png" id="4_jgtnf"]
+[ext_resource type="Texture2D" uid="uid://b48pgosbtnqah" path="res://Sprites/Bullets/Rocket/rocket4.png" id="5_xrxl7"]
+[ext_resource type="Texture2D" uid="uid://gryvrqnbetdj" path="res://Sprites/Bullets/Rocket/RocketTrail.png" id="6_q8ds2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w4ofr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_f3i8g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_cfaff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jgtnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xrxl7")
+}],
+"loop": true,
+"name": &"Rocket",
+"speed": 5.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_yaduh"]
+offsets = PackedFloat32Array(0, 0.348259, 0.656716, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.340339, 0.340339, 0.340339, 1, 1, 1, 1, 1, 1, 1, 1, 0.258824)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f6ypy"]
+gradient = SubResource("Gradient_yaduh")
+
+[sub_resource type="Curve" id="Curve_mqcma"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.692308), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_gglwa"]
+curve = SubResource("Curve_mqcma")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_igxlv"]
+lifetime_randomness = 0.4
+angle_max = 360.0
+spread = 40.0
+initial_velocity_min = 1.0
+initial_velocity_max = 40.0
+gravity = Vector3(-20, 0, 0)
+scale_max = 1.8
+scale_curve = SubResource("CurveTexture_gglwa")
+color_ramp = SubResource("GradientTexture1D_f6ypy")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amix1"]
+size = Vector2(13, 38)
+
+[node name="GrenadeBullet" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+lock_rotation = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_mgtdc")
+ArcAngleOffsetDeg = 30.0
+GravitationalForce = 10.0
+DamageRadius = 1000.0
+Speed = 5.0
+
+[node name="GFX" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_w4ofr")
+animation = &"Rocket"
+frame_progress = 0.126125
+
+[node name="Trail" type="GPUParticles2D" parent="."]
+z_index = 1
+position = Vector2(-14, -1)
+scale = Vector2(0.2, 0.2)
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_igxlv")
+texture = ExtResource("6_q8ds2")
+lifetime = 0.5
+preprocess = 0.1
+fixed_fps = 60
+draw_order = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(7, -0.499994)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_amix1")
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 3.5
+one_shot = true
+autostart = true
