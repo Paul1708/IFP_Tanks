@@ -38,7 +38,7 @@ namespace Weapons
 
 
         // Collision Methods
-        private void OnCollision(Node node)
+        public void OnCollision(Node node)
         {
             OnAnythingHit();
             if (node.IsInGroup("Damageable"))

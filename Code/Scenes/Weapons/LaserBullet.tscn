@@ -1,0 +1,122 @@
+[gd_scene load_steps=12 format=3 uid="uid://d3lelrwh4w08u"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/LaserGun.cs" id="1_mt0ss"]
+[ext_resource type="Script" path="res://Scripts/Weapons/Laser.cs" id="2_h5os0"]
+[ext_resource type="Texture2D" uid="uid://b1lcnax5drkg" path="res://Sprites/Bullets/Laser/LaserParticle.png" id="3_ls5nc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amix1"]
+size = Vector2(13, 27)
+
+[sub_resource type="Curve" id="Curve_c183i"]
+_data = [Vector2(0.484211, 0.736264), 0.0, 0.0, 0, 0, Vector2(0.747368, 0.747253), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_hjvct"]
+_data = [Vector2(0.00561798, 1), 0.0, 0.0, 0, 0, Vector2(0.292135, 0.67033), 0.0, 0.0, 0, 0, Vector2(0.837079, 0.021978), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_sd7ey"]
+offsets = PackedFloat32Array(0.606667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xcwyh"]
+
+[sub_resource type="Gradient" id="Gradient_krsli"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_f7mg2"]
+gradient = SubResource("Gradient_krsli")
+use_hdr = true
+fill_from = Vector2(0.964646, 0.469697)
+fill_to = Vector2(0.424242, 0.494949)
+
+[sub_resource type="Environment" id="Environment_5s36d"]
+background_mode = 3
+ambient_light_source = 1
+ambient_light_energy = 16.0
+glow_enabled = true
+glow_normalized = true
+glow_strength = 1.12
+glow_blend_mode = 1
+glow_hdr_threshold = 0.0
+glow_map_strength = 0.0
+glow_map = SubResource("GradientTexture2D_f7mg2")
+
+[node name="LaserBullet" type="RigidBody2D"]
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+lock_rotation = true
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_mt0ss")
+Speed = 1000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(12.5, -0.499974)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_amix1")
+
+[node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+autostart = true
+
+[node name="LaserRay" type="RayCast2D" parent="."]
+target_position = Vector2(10000, 0)
+script = ExtResource("2_h5os0")
+
+[node name="LaserLine" type="Line2D" parent="LaserRay"]
+points = PackedVector2Array(0, 0, 81, 0)
+width_curve = SubResource("Curve_c183i")
+default_color = Color(0.94902, 0, 0, 1)
+
+[node name="HitParticles" type="CPUParticles2D" parent="LaserRay/LaserLine"]
+emitting = false
+amount = 10
+lifetime = 0.3
+texture = ExtResource("3_ls5nc")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(500, 500)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 141.41
+scale_amount_curve = SubResource("Curve_hjvct")
+color_ramp = SubResource("Gradient_sd7ey")
+
+[node name="BeamParticles" type="CPUParticles2D" parent="LaserRay/LaserLine"]
+material = SubResource("CanvasItemMaterial_xcwyh")
+emitting = false
+amount = 10
+lifetime = 0.3
+local_coords = true
+emission_shape = 3
+emission_rect_extents = Vector2(10, 1)
+particle_flag_align_y = true
+direction = Vector2(500, 500)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 120.0
+tangential_accel_min = 100.0
+tangential_accel_max = 100.0
+scale_amount_curve = SubResource("Curve_hjvct")
+color = Color(1, 0.368627, 0, 1)
+color_ramp = SubResource("Gradient_sd7ey")
+
+[node name="ShootLaserParticles" type="CPUParticles2D" parent="LaserRay/LaserLine"]
+emitting = false
+amount = 10
+lifetime = 0.3
+texture = ExtResource("3_ls5nc")
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector2(500, 500)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 373.73
+scale_amount_curve = SubResource("Curve_hjvct")
+color_ramp = SubResource("Gradient_sd7ey")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="LaserRay/LaserLine"]
+process_mode = 3
+environment = SubResource("Environment_5s36d")

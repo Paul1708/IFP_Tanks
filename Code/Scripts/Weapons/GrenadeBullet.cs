@@ -23,6 +23,7 @@ public partial class GrenadeBullet : Bullet
     private float _shootXDirectionSign;
     private float _shootYDirectionSign;
     private Vector2 _originalGravity;
+    private Vector2 _referenceAxis;
 
     protected override void Setup()
     {
@@ -123,7 +124,12 @@ public partial class GrenadeBullet : Bullet
      */
     private Vector2 GetSimulatedGravityVector(Vector2 direction)
     {
-        return direction.Rotated(MathF.PI / 4);
+        //check if the angle is closer to the y or x axis. If closer to x, rotate by +pi/2 angle, if closer to y, rotete by -pi/2
+        float angle = direction.Angle();
+        float axisSign = InSymmetricInterval(Mathf.Pi / 4, angle) || angle > 3*Mathf.Pi / 4 || angle < -3*Mathf.Pi / 4 ? 1 : -1;
+        _referenceAxis = axisSign > 0 ? new Vector2(1, 0) : new Vector2(0, 1);
+        
+        return direction.Rotated(axisSign * MathF.PI / 2);
     }
 
     /**
