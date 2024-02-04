@@ -1,7 +1,6 @@
 
 using Components;
 using Godot;
-using Movement;
 using Timer = Godot.Timer;
 namespace Weapons
 {
