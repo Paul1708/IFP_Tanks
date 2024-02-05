@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=12 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://lb0afin3xbq8" path="res://Sprites/UI/CoinDisplay/CoinDisplay.png" id="8_afkt1"]
 [ext_resource type="Script" path="res://Scripts/UI/CoinDisplay.cs" id="9_dx5ay"]
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="10_cckqj"]
+[ext_resource type="PackedScene" uid="uid://b8rihwar0snyu" path="res://Scenes/UI/ShopMenu.tscn" id="11_d1767"]
 
 [node name="MainGame" type="Node2D" groups=["MainGame"]]
 process_mode = 1
@@ -73,3 +74,5 @@ theme_override_colors/font_color = Color(0.0392157, 0.0509804, 0.0784314, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ShopMenu" parent="." instance=ExtResource("11_d1767")]

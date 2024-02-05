@@ -1,0 +1,106 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8rihwar0snyu"]
+
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_yc5k6"]
+
+[sub_resource type="Animation" id="Animation_ehhqr"]
+resource_name = "TransIn"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1250), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8q0hh"]
+resource_name = "TransOut"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1250)]
+}
+
+[sub_resource type="Animation" id="Animation_usrtw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0noh0"]
+_data = {
+"RESET": SubResource("Animation_usrtw"),
+"TransIn": SubResource("Animation_ehhqr"),
+"TransOut": SubResource("Animation_8q0hh")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7qymd"]
+bg_color = Color(0.0509804, 0.0509804, 0.0509804, 0.729412)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="ShopMenu" type="CanvasLayer"]
+process_mode = 3
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_0noh0")
+}
+
+[node name="Backround" type="Panel" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -706.5
+offset_top = 57.0
+offset_right = 706.5
+offset_bottom = 831.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7qymd")
+
+[node name="Continue" type="Button" parent="."]
+offset_left = 1432.0
+offset_top = 896.0
+offset_right = 1666.0
+offset_bottom = 1007.0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Continue"
+
+[node name="MainMenu" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -704.0
+offset_top = 356.0
+offset_right = -470.0
+offset_bottom = 467.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Main Menu"

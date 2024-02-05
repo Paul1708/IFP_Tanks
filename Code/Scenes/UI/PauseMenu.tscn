@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0jjxgin5kbdn"]
+[gd_scene load_steps=8 format=3 uid="uid://c0jjxgin5kbdn"]
 
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_eyn0w"]
 [ext_resource type="Script" path="res://Scripts/UI/PauseMenu.cs" id="1_fxc2o"]
 [ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="2_2e6u4"]
 [ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="2_hh4pc"]
@@ -50,6 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_eyn0w")
 script = ExtResource("1_fxc2o")
 
 [node name="Blur" type="ColorRect" parent="."]
