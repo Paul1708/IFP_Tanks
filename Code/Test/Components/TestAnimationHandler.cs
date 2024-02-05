@@ -1,17 +1,13 @@
-using System.Collections.Generic;
-using System.Security.Cryptography;
 using Components;
 using GdUnit4;
 using Godot;
-using Managers;
-using Movement;
 
 [TestSuite]
 public class TestAnimationHandler
 {
     AnimationHandler ah;
 
-    [Before]
+    [BeforeTest]
     public void Setup()
     {
         ah = new AnimationHandler();
@@ -73,9 +69,9 @@ public class TestAnimationHandler
         Assertions.AssertString(ah.CurrentAnimation).Equals("Backward");
     }
 
-    [After]
+    [AfterTest]
     public void TearDown()
     {
-        ah.QueueFree();
+        ah.Free();
     }
 }

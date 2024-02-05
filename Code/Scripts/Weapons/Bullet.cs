@@ -11,6 +11,7 @@ namespace Weapons
         [Export] public float Speed { get; set; } //speed of the bullet
 
         protected Node2D player;
+        protected HealthComponent playerHealthComponent;
         protected ParticleController particles;
 
         protected Vector2 NormalCollisionVector;
@@ -28,9 +29,9 @@ namespace Weapons
 
             // other references
             player = GetTree().GetFirstNodeInGroup("Player") as Node2D;
+            playerHealthComponent = Manager.Instance.PlayerManager.PlayerHealthComponent;
             particles = GetNode<ParticleController>("/root/ParticleController");
             musicController = GetNode<MusicController>("/root/MusicController");
-
 
             Setup();
         }
@@ -63,6 +64,12 @@ namespace Weapons
 
         protected virtual void OnDamageableHit(Node node)
         {
+            if (node == player)
+            {
+                playerHealthComponent.TakeDamage(damage);
+                return;
+            }
+
             node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
         }
 

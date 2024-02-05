@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://b7sikculmqqnl"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/Manager.cs" id="1_f4bv2"]
+[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="2_gfgoi"]
+[ext_resource type="Script" path="res://Scripts/Managers/PlayerManager.cs" id="2_m1i85"]
+[ext_resource type="Script" path="res://Scripts/Managers/CoinManager.cs" id="4_0d2wr"]
+
+[node name="Manager" type="Node2D"]
+script = ExtResource("1_f4bv2")
+
+[node name="PlayerManager" type="Node2D" parent="."]
+script = ExtResource("2_m1i85")
+
+[node name="PlayerHealthComponent" type="Node2D" parent="PlayerManager"]
+script = ExtResource("2_gfgoi")
+maxHP = 25.0
+
+[node name="CoinManager" type="Node2D" parent="."]
+script = ExtResource("4_0d2wr")

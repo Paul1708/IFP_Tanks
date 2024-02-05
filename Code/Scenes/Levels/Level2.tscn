@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_apihr"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_4th1p"]
-[ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/player.tscn" id="3_uq1q5"]
+[ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_uq1q5"]
 [ext_resource type="PackedScene" uid="uid://4ex5rdvrveg3" path="res://Scenes/Enemies/RocketEnemy.tscn" id="4_g1x51"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22tvh"]
@@ -473,7 +473,6 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Level2" type="Node2D" groups=["Level"]]
 script = ExtResource("1_apihr")
-IsCheckpoint = null
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7gna0")

@@ -12,80 +12,66 @@ public partial class LevelManager : Node2D
 
     public Level CurrentLevel { get; private set; }
 
-    public override async void _Ready()
+    public override void _Ready()
     {
         CurrentLevelID = 0;
         LastCheckpointID = 0;
-        await LoadLevelByID(CurrentLevelID);
+        // Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
+
+        LoadLevelByID(CurrentLevelID);
     }
 
-    public async Task OnLevelComplete()
+    public void OnLevelComplete()
     {
-        // Remove the current level and wait until it's done bfore calling LoadNextLevel
-        CurrentLevel.QueueFree();
+        int nextLevelID = CurrentLevelID + 1;
 
-        if (CurrentLevel.IsInsideTree())
+        if (nextLevelID >= Levels.Length)
         {
+            GD.Print("You win! \nCoins reseted!");
+            Manager.Instance.CoinManager.ResetCoins();
+            GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
+            return;
+        }
+
+        LoadLevelByID(nextLevelID);
+    }
+
+    public void OnLevelFailed()
+    {
+        Manager.Instance.CoinManager.SetCoins(Manager.Instance.CoinManager.checkpointCoins);
+        LoadLevelByID(LastCheckpointID);
+    }
+
+
+
+    private async Task LoadLevelByID(int LevelID)
+    {
+        if (CurrentLevel != null)
+        {
+            // Disconnect signals
+            CurrentLevel.OnLevelComplete -= OnLevelComplete;
+            CurrentLevel.OnLevelFailed -= OnLevelFailed;
+
+            // Unload current level
+            CurrentLevel.QueueFree();
             await ToSignal(CurrentLevel, "tree_exited");
         }
 
-        await LoadNextLevel();
-    }
-
-    public async Task OnLevelFailed()
-    {
-        // Remove the current level and wait until it's done before calling LoadNextLevel
-        CurrentLevel.QueueFree();
-        await ToSignal(CurrentLevel, "tree_exited");
-
-        await LoadLastCheckpoint();
-    }
-
-    private async Task LoadNextLevel()
-    {
-        int nextLevelID = CurrentLevelID + 1;
-        if (nextLevelID < Levels.Length)
-        {
-            // Still level left
-            await LoadLevelByID(nextLevelID);
-        }
-        else
-        {
-            GD.Print("You win! \nCoins reseted!");
-        
-            GameManager.Instance.ResetCoins();
-
-            GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
-        }
-    }
-
-    private async Task LoadLastCheckpoint()
-    {
-        GameManager.Instance.SetCoins(GameManager.Instance.checkpointCoins);
-        await LoadLevelByID(LastCheckpointID);
-    }
-
-    private async Task LoadLevelByID(int levelID)
-    {
-        // Load the level
-        CurrentLevel = Levels[levelID].Instantiate<Level>();
+        // Load new level
+        CurrentLevel = Levels[LevelID].Instantiate<Level>();
         AddChild(CurrentLevel);
 
-        if (CurrentLevel.IsNodeReady() == false)
-        {
-            await ToSignal(CurrentLevel, "ready");
-        }
-
         // Set the level as the current level
-        CurrentLevelID = levelID;
-        CurrentLevel.OnLevelComplete += async () => await OnLevelComplete();
-        CurrentLevel.OnLevelFailed += async () => await OnLevelFailed(); ;
+        CurrentLevelID = LevelID;
+        CurrentLevel.OnLevelComplete += OnLevelComplete;
+        CurrentLevel.OnLevelFailed += OnLevelFailed;
 
         // Set Checkpoint
         if (CurrentLevel.IsCheckpoint)
         {
-            GameManager.Instance.OnCheckpointSaveCoins();
-            LastCheckpointID = levelID;
+            Manager.Instance.CoinManager.OnCheckpointSaveCoins();
+            Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
+            LastCheckpointID = LevelID;
         }
     }
 
@@ -94,7 +80,7 @@ public partial class LevelManager : Node2D
     {
         if (Input.IsActionJustPressed("Debug"))
         {
-            await OnLevelComplete();
+            OnLevelComplete();
         }
     }
 }

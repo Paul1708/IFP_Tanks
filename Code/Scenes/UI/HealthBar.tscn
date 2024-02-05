@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://d35h47uyj31sj"]
+
+[ext_resource type="Texture2D" uid="uid://ktsb8c0hyk8b" path="res://Sprites/UI/Healthbar/HealthBar.png" id="1_0r5wr"]
+[ext_resource type="Texture2D" uid="uid://b8nccnbrd7013" path="res://Sprites/UI/Healthbar/HeatlhBarFillerRed.png" id="2_bwtj2"]
+[ext_resource type="Texture2D" uid="uid://dsdtcjlypw7o7" path="res://Sprites/UI/Healthbar/HeatlhBarFiller.png" id="2_pck87"]
+[ext_resource type="Script" path="res://Scripts/UI/HealthBar.cs" id="3_ktbm3"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="5_veen8"]
+
+[node name="RedHealth" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+step = 0.01
+texture_under = ExtResource("1_0r5wr")
+texture_progress = ExtResource("2_bwtj2")
+texture_progress_offset = Vector2(41, 7)
+script = ExtResource("3_ktbm3")
+RedBarDelay = 2.0
+
+[node name="GreenHealth" type="TextureProgressBar" parent="."]
+z_index = 1
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+step = 0.01
+value = 48.0
+texture_progress = ExtResource("2_pck87")
+texture_progress_offset = Vector2(41, 7)
+
+[node name="RedHealthTimer" type="Timer" parent="."]
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 52.0
+offset_top = 8.0
+offset_right = 202.0
+offset_bottom = 52.0
+theme = ExtResource("5_veen8")
+theme_override_colors/font_color = Color(0.0392157, 0.0509804, 0.0784314, 1)
+text = "XX / XX"
+horizontal_alignment = 1
+vertical_alignment = 1

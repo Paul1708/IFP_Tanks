@@ -1,34 +1,35 @@
-using Components;
 using Godot;
-using System;
+using Movement;
 
 namespace Items;
 
 public partial class Coin : Area2D
 {
-	public int Coins;
 	public bool shouldMove = false;
 
 	[Export] public int CoinValue { get; set; } = 1;
 	[Export] public float Speed = 400.0f;
 	[Signal] public delegate void OnCoinCollectedEventHandler();
 
+	Player player;
 
-	// Called when the node enters the scene tree for the first time.
+	protected MusicController musicController;
+
 	public override void _Ready()
 	{
 		GetNode<AnimatedSprite2D>("CoinSprite").Play();
+		player = (Player)GetTree().GetFirstNodeInGroup("Player");
+		musicController = GetNode<MusicController>("/root/MusicController");
 
-		OnCoinCollected += GetCoin;
+		OnCoinCollected += CollectCoin;
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		if (shouldMove)
 		{
-			Node2D player = (Node2D)GetTree().GetFirstNodeInGroup("Player");
 			Vector2 direction = (player.GlobalPosition - GlobalPosition).Normalized();
-			Position += direction * Speed * (float)delta; 
+			Position += direction * Speed * (float)delta;
 		}
 	}
 
@@ -47,42 +48,10 @@ public partial class Coin : Area2D
 		CoinValue = value;
 	}
 
-	public void GetCoin()
+	public void CollectCoin()
 	{
 		//TODO: Play coin collection sound  
-		//TODO: remove print
-		Coins = GameManager.Instance.GetCoins();
-		Coins += CoinValue;
-		GameManager.Instance.SetCoins(Coins);
-		GD.Print("Coins in Manager: " + GameManager.Instance.GetCoins());
-	}
-	public int GetCoinCount()
-	{
-		return GameManager.Instance.GetCoins();
-	}
-
-	public void SetCoinCount(int value)
-	{
-		GameManager.Instance.SetCoins(value);
-	}
-
-	public void ResetCoinCount()
-	{
-		GameManager.Instance.ResetCoins();
-	}
-
-	public void AddCoins(int value)
-	{
-		Coins = GameManager.Instance.GetCoins();
-		Coins += value;
-		GameManager.Instance.SetCoins(Coins);
-	}
-
-	public void RemoveCoins(int value)
-	{
-
-		Coins = GameManager.Instance.GetCoins();
-		Coins -= value;
-		GameManager.Instance.SetCoins(Coins);
+		Manager.Instance.CoinManager.AddCoins(CoinValue);
+		musicController.Play(Sound.CoinPickup);
 	}
 }

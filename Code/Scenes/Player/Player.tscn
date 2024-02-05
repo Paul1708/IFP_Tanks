@@ -1,11 +1,10 @@
-[gd_scene load_steps=23 format=3 uid="uid://dr17omme2uqlx"]
+[gd_scene load_steps=22 format=3 uid="uid://dr17omme2uqlx"]
 
 [ext_resource type="Script" path="res://Scripts/Movement/Player.cs" id="1_noslj"]
 [ext_resource type="Texture2D" uid="uid://blkfra54wh0pf" path="res://Sprites/Tanks/TankGreen.png" id="2_cn7mg"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_kf7xg"]
 [ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="4_vqooa"]
 [ext_resource type="Texture2D" uid="uid://bm3kylaj0tjfn" path="res://Sprites/Tanks/GunGreen.png" id="5_fm6eq"]
-[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="6_i5ygx"]
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="7_5i82i"]
 [ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="8_sdglm"]
 
@@ -393,10 +392,6 @@ metadata/_aseprite_wizard_config_ = {
 }
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
-
-[node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("6_i5ygx")
-maxHP = 25.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

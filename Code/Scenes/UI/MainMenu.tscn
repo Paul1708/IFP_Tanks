@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://g3vuhr6e8a3m"]
+[gd_scene load_steps=5 format=3 uid="uid://g3vuhr6e8a3m"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_ahplq"]
 [ext_resource type="Texture2D" uid="uid://dohaikbmd7yu1" path="res://Sprites/UI/title.png" id="2_u7cxo"]
 [ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="3_0upre"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="3_ifl8e"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -48,7 +49,7 @@ layout_mode = 2
 
 [node name="Play" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_0upre")
+theme = ExtResource("3_ifl8e")
 theme_override_font_sizes/font_size = 24
 text = "Play"
 

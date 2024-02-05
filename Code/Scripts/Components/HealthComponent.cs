@@ -12,6 +12,11 @@ public partial class HealthComponent : Node2D
     [Signal]
     public delegate void OnDeathEventHandler();
 
+    [Signal]
+    public delegate void OnHealthChangedEventHandler(float currentHP);
+    [Signal]
+    public delegate void OnMaxHealthChangedEventHandler(float maxHP);
+
     public override void _Ready()
     {
         if (maxHP <= 0)
@@ -19,46 +24,45 @@ public partial class HealthComponent : Node2D
             throw new ValidationException("Max health must be greater than 0");
         }
 
-        currentHP = maxHP;
+        SetCurrentHP(maxHP);
     }
 
     public void Heal(float value)
     {
         if (value < 0) return;
-
-        //clamp the value to the max health
-        currentHP = Mathf.Min(currentHP + value, maxHP);
+        SetCurrentHP(currentHP + value);
     }
 
 
     public void TakeDamage(float value)
     {
         if (value < 0) return;
+        SetCurrentHP(currentHP - value);
+    }
 
-        currentHP -= value;
-        GD.Print("Health: " + currentHP + "/" + maxHP);
-
-        CheckIfDead();
+    public void HealToMax()
+    {
+        SetCurrentHP(maxHP);
     }
 
     public void IncreaseMaxHealth(float value)
     {
         if (value < 0) return;
 
+        SetCurrentHP(currentHP + value);
         maxHP += value;
+        EmitSignal(SignalName.OnMaxHealthChanged, maxHP);
     }
 
     public void SetCurrentHP(float value)
     {
-        if (value < 0) return;
-
         //clamp the value to the max health
         currentHP = Mathf.Min(value, maxHP);
 
+        EmitSignal(SignalName.OnHealthChanged, currentHP);
+
         CheckIfDead();
     }
-
-
 
     private void CheckIfDead()
     {
