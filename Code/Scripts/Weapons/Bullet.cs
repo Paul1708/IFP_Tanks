@@ -75,7 +75,6 @@ namespace Weapons
 
         public virtual void Destroy()
         {
-            particles.EmitParticles(this, Scene.BulletCrack);
             QueueFree();
         }
 
