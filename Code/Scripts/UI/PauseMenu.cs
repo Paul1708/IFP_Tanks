@@ -61,19 +61,19 @@ public partial class PauseMenu : Control
 	*/
 	private void CheckBeforeUnpause()
 	{
-		if (shopMenu.Visible && toShop)
+		switch (shopMenu.Visible)
 		{
-			Hide();
-			toShop = false;
-		}
-		else if (shopMenu.Visible && !toShop)
-		{
-			toShop = true;
-			Pause();
-		}
-		else
-		{
-			Unpause();
+			case true when toShop:
+				Hide();
+				toShop = false;
+				break;
+			case true:
+				toShop = true;
+				Pause();
+				break;
+			default:
+				Unpause();
+				break;
 		}
 	}
 
