@@ -99,7 +99,7 @@ public partial class Level : Node2D
         item.GlobalPosition = position.GlobalPosition;
     }
 
-    // Move all coins to the player
+    // Move all coins to the player by setting the shouldMove property to true
     public void MoveAllCoinsToPlayer()
     {
         var tree = GetTree();
