@@ -45,8 +45,7 @@ public partial class PauseMenu : Control
 
 		Show();
 
-		var blurAnimation = GetNode<AnimationPlayer>("BlurAnimation");
-		blurAnimation.Play("StartPause");
+		GetNode<AnimationPlayer>("BlurAnimation").Play("StartPause");
 	}
 
 	//unpause the game
