@@ -1,13 +1,13 @@
 
 using Components;
 using Godot;
-using Movement;
+using Managers;
 using Timer = Godot.Timer;
 namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
     {
-        public float damage { get; set; }
+        public int damage { get; set; }
         [Export] public float Speed { get; set; } //speed of the bullet
 
         protected Node2D player;

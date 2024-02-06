@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Components;
 using GdUnit4;
 using Godot;
+using Managers.Level;
 using Managers;
-using Movement;
 
 [TestSuite]
 public class TestLevel

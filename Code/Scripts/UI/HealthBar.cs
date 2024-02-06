@@ -1,5 +1,7 @@
 using Components;
 using Godot;
+using Managers;
+
 
 namespace UI;
 
@@ -13,8 +15,8 @@ public partial class HealthBar : TextureProgressBar
 
     HealthComponent playerHealthComponent;
 
-    public float currentHP;
-    public float maxHP;
+    public int currentHP;
+    public int maxHP;
     public override void _Ready()
     {
         // Get references
@@ -49,7 +51,7 @@ public partial class HealthBar : TextureProgressBar
         redHealthTimer.Timeout -= UpdateRedHealthBar;
     }
 
-    public void OnHealthChanged(float newHP)
+    public void OnHealthChanged(int newHP)
     {
         //set the health bar's value to the current health
         currentHP = newHP;
@@ -60,7 +62,7 @@ public partial class HealthBar : TextureProgressBar
         redHealthTimer.Start(RedBarDelay);
     }
 
-    public void OnMaxHealthChanged(float newMaxHP)
+    public void OnMaxHealthChanged(int newMaxHP)
     {
         UpdateLabelText();
         maxHP = newMaxHP;

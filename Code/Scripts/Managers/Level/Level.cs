@@ -5,14 +5,12 @@ using System.Collections.Generic;
 using Items;
 using System.Threading.Tasks;
 
-namespace Managers;
+namespace Managers.Level;
 
 public partial class Level : Node2D
 {
     private bool startedCoinMovement = false;
 
-    [Export]
-    public bool IsCheckpoint { get; private set; }
     public List<Node> enemies { get; set; }
 
     [Signal]
@@ -107,7 +105,7 @@ public partial class Level : Node2D
         {
             return;
         }
-        
+
         var coins = GetTree().GetNodesInGroup("Coins");
 
         foreach (Coin coin in coins)

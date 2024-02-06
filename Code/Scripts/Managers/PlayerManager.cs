@@ -1,6 +1,8 @@
 using Components;
 using Godot;
 
+namespace Managers;
+
 public partial class PlayerManager : Node2D
 {
     public HealthComponent PlayerHealthComponent { get; private set; }

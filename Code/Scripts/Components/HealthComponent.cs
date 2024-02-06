@@ -6,16 +6,16 @@ namespace Components;
 public partial class HealthComponent : Node2D
 {
 
-    [Export] public float maxHP { get; set; }
-    public float currentHP { get; set; }
+    [Export] public int maxHP { get; set; }
+    public int currentHP { get; set; }
 
     [Signal]
     public delegate void OnDeathEventHandler();
 
     [Signal]
-    public delegate void OnHealthChangedEventHandler(float currentHP);
+    public delegate void OnHealthChangedEventHandler(int currentHP);
     [Signal]
-    public delegate void OnMaxHealthChangedEventHandler(float maxHP);
+    public delegate void OnMaxHealthChangedEventHandler(int maxHP);
 
     public override void _Ready()
     {
@@ -27,14 +27,14 @@ public partial class HealthComponent : Node2D
         SetCurrentHP(maxHP);
     }
 
-    public void Heal(float value)
+    public void Heal(int value)
     {
         if (value < 0) return;
         SetCurrentHP(currentHP + value);
     }
 
 
-    public void TakeDamage(float value)
+    public void TakeDamage(int value)
     {
         if (value < 0) return;
         SetCurrentHP(currentHP - value);
@@ -45,7 +45,7 @@ public partial class HealthComponent : Node2D
         SetCurrentHP(maxHP);
     }
 
-    public void IncreaseMaxHealth(float value)
+    public void IncreaseMaxHealth(int value)
     {
         if (value < 0) return;
 
@@ -54,7 +54,7 @@ public partial class HealthComponent : Node2D
         EmitSignal(SignalName.OnMaxHealthChanged, maxHP);
     }
 
-    public void SetCurrentHP(float value)
+    public void SetCurrentHP(int value)
     {
         //clamp the value to the max health
         currentHP = Mathf.Min(value, maxHP);

@@ -1,4 +1,5 @@
 using Godot;
+namespace Managers;
 
 public partial class CoinManager : Node2D
 {
@@ -11,10 +12,10 @@ public partial class CoinManager : Node2D
     //Signal that will be emitted when the Coins value changes
     [Signal]
     public delegate void OnCoinChangedEventHandler(int coins);
-   
+
     //variable to store the Coin ammount at the last checkpoint
     public int checkpointCoins;
-    
+
     //Method to add coins to the player. If the value is less than 0, the method will return without doing anything.
     public void AddCoins(int value)
     {

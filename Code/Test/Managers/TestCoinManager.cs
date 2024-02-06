@@ -1,4 +1,5 @@
 using GdUnit4;
+using Managers;
 
 [TestSuite]
 public class CoinManagerTests

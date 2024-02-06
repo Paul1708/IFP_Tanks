@@ -1,12 +1,14 @@
 using Godot;
-using System;
+using Managers.Save;
 
+namespace Managers;
 public partial class Manager : Node2D
 {
     // Singleton instance
     public static Manager Instance { get; private set; }
     public CoinManager CoinManager { get; private set; }
     public PlayerManager PlayerManager { get; private set; }
+    public SaveManager SaveManager { get; private set; }
 
     public override void _Ready()
     {
@@ -21,6 +23,7 @@ public partial class Manager : Node2D
 
         Instance.CoinManager = GetNode<CoinManager>("CoinManager");
         Instance.PlayerManager = GetNode<PlayerManager>("PlayerManager");
+        Instance.SaveManager = GetNode<SaveManager>("SaveManager");
     }
 }
 

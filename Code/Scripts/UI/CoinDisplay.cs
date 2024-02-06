@@ -1,4 +1,6 @@
 using Godot;
+using Managers;
+
 public partial class CoinDisplay : TextureRect
 {
 	Label coinLabel;
