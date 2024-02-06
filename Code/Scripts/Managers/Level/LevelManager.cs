@@ -24,13 +24,13 @@ public partial class LevelManager : Node2D
 
     public override void _Ready()
     {
-        Manager.Instance.SaveManager.OnSaveDataLoaded += OnSaveDataLoaded;
+        // Manager.Instance.SaveManager.OnSaveDataLoaded += OnSaveDataLoaded;
 
         LoadLevelByID(0, 0);
     }
     public override void _ExitTree()
     {
-        Manager.Instance.SaveManager.OnSaveDataLoaded -= OnSaveDataLoaded;
+        // Manager.Instance.SaveManager.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
     public void OnLevelComplete()
@@ -41,7 +41,7 @@ public partial class LevelManager : Node2D
             Manager.Instance.CoinManager.OnCheckpointSaveCoins();
             Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
             playedLevelsSinceCheckpoint.Clear();
-            Manager.Instance.SaveManager.SaveGame();
+            SaveData();
         }
 
         // If there are levels left in the current world, load the next level
@@ -73,6 +73,7 @@ public partial class LevelManager : Node2D
         }
 
         Manager.Instance.CoinManager.SetCoins(Manager.Instance.CoinManager.checkpointCoins);
+        Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
         LoadLevelByID(lastCheckpointWorldID, lastCheckpointLevelID);
     }
 
@@ -83,7 +84,7 @@ public partial class LevelManager : Node2D
         Manager.Instance.SaveManager.SaveData.LastCheckpointLevelID = lastCheckpointLevelID;
         Manager.Instance.SaveManager.SaveData.LastCheckpointWorldID = lastCheckpointWorldID;
 
-        Manager.Instance.SaveManager.SaveGame();
+        // Manager.Instance.SaveManager.SaveGame();
     }
 
     private void OnSaveDataLoaded(SaveData saveData)
@@ -111,8 +112,10 @@ public partial class LevelManager : Node2D
         }
 
         // Load new level
-        var newLevel = Worlds[WorldID].Levels[LevelID];
-        CurrentLevelInstance = newLevel.LevelScene.Instantiate<Level>();
+        CurrentLevelData = Worlds[WorldID].Levels[LevelID];
+        CurrentLevelInstance = CurrentLevelData.LevelScene.Instantiate<Level>();
+        AddChild(CurrentLevelInstance);
+        GD.Print(CurrentLevelInstance);
 
         // Set the level IDs as the current level
         currentLevelID = LevelID;
@@ -123,7 +126,7 @@ public partial class LevelManager : Node2D
         CurrentLevelInstance.OnLevelFailed += OnLevelFailed;
 
         // Set the level state and add it to the list of played levels since the last checkpoint
-        newLevel.LevelState = LevelSate.CURRENT;
+        CurrentLevelData.LevelState = LevelSate.CURRENT;
         playedLevelsSinceCheckpoint.Add(new Vector2(currentWorldID, currentLevelID));
     }
 

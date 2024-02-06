@@ -4,6 +4,7 @@ namespace Managers.Level;
 
 public partial class WorldData : Resource
 {
+    [Export]
     public LevelData[] Levels { get; set; }
 
     public int LevelCount
@@ -14,4 +15,8 @@ public partial class WorldData : Resource
         }
     }
 
+    public WorldData()
+    {
+        Levels = new LevelData[0];
+    }
 }

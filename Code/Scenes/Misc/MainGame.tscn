@@ -1,13 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=9 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
-[ext_resource type="Script" path="res://Scripts/Managers/LevelManager.cs" id="3_6hwsd"]
-[ext_resource type="PackedScene" uid="uid://bshxfh34wjfkn" path="res://Scenes/Levels/Level1.tscn" id="4_c31nu"]
-[ext_resource type="PackedScene" uid="uid://cukhascfsrbri" path="res://Scenes/Levels/Level2.tscn" id="5_tjwhs"]
-[ext_resource type="PackedScene" uid="uid://dedf16ffcla55" path="res://Scenes/Levels/Level3.tscn" id="6_y2afc"]
+[ext_resource type="Script" path="res://Scripts/Managers/Level/LevelManager.cs" id="3_6hwsd"]
 [ext_resource type="PackedScene" uid="uid://d35h47uyj31sj" path="res://Scenes/UI/HealthBar.tscn" id="7_3rvrl"]
 [ext_resource type="Texture2D" uid="uid://lb0afin3xbq8" path="res://Sprites/UI/CoinDisplay/CoinDisplay.png" id="8_afkt1"]
+[ext_resource type="Resource" uid="uid://dp6htk3af7ahe" path="res://Scenes/Levels/World1/World1.tres" id="8_bno8v"]
 [ext_resource type="Script" path="res://Scripts/UI/CoinDisplay.cs" id="9_dx5ay"]
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="10_cckqj"]
 
@@ -33,10 +31,6 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = -3.0
 offset_bottom = -3.0
-
-[node name="LevelManager" type="Node2D" parent="."]
-script = ExtResource("3_6hwsd")
-Levels = Array[PackedScene]([ExtResource("4_c31nu"), ExtResource("5_tjwhs"), ExtResource("6_y2afc")])
 
 [node name="HUD" type="Control" parent="."]
 z_index = 3
@@ -73,3 +67,7 @@ theme_override_colors/font_color = Color(0.0392157, 0.0509804, 0.0784314, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="LevelManager" type="Node2D" parent="."]
+script = ExtResource("3_6hwsd")
+Worlds = Array[Resource]([ExtResource("8_bno8v")])

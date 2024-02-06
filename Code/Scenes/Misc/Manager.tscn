@@ -14,10 +14,11 @@ script = ExtResource("2_m1i85")
 
 [node name="PlayerHealthComponent" type="Node2D" parent="PlayerManager"]
 script = ExtResource("2_gfgoi")
-maxHP = 25.0
+maxHP = 100
 
 [node name="CoinManager" type="Node2D" parent="."]
 script = ExtResource("4_0d2wr")
+Coins = null
 
 [node name="SaveManager" type="Node2D" parent="."]
 script = ExtResource("5_agwak")

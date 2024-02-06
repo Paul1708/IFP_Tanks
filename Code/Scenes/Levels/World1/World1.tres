@@ -1,0 +1,10 @@
+[gd_resource type="Resource" load_steps=5 format=3 uid="uid://dp6htk3af7ahe"]
+
+[ext_resource type="Script" path="res://Scripts/Managers/Level/WorldData.cs" id="1_c213a"]
+[ext_resource type="Resource" uid="uid://bn6be57277sbj" path="res://Scenes/Levels/World1/Level1.tres" id="1_qlgjl"]
+[ext_resource type="Resource" uid="uid://chk02hihxr6pw" path="res://Scenes/Levels/World1/Level2.tres" id="2_0icbe"]
+[ext_resource type="Resource" uid="uid://dv4mwm8eujhk0" path="res://Scenes/Levels/World1/Level3.tres" id="3_d1yn4"]
+
+[resource]
+script = ExtResource("1_c213a")
+Levels = Array[Object]([ExtResource("1_qlgjl"), ExtResource("2_0icbe"), ExtResource("3_d1yn4")])
