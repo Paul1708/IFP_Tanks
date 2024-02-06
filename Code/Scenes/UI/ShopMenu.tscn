@@ -89,6 +89,24 @@ offset_bottom = 831.0
 grow_horizontal = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_q4ejt")
 
+[node name="ShopLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -158.0
+offset_top = -183.0
+offset_right = 158.0
+offset_bottom = -77.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/normal_font_size = 60
+bbcode_enabled = true
+text = "[center]SHOP"
+
 [node name="Continue" type="Button" parent="."]
 layout_mode = 0
 offset_left = 1432.0
