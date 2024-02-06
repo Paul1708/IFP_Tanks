@@ -52,14 +52,11 @@ public partial class Level : Node2D
     public override void _Process(double delta)
     {
         // Check if all coins are collected
-        if (GetTree().GetNodesInGroup("Coins").Count == 0)
+        if (GetTree().GetNodesInGroup("Coins").Count == 0 && startedCoinMovement)
         {
             //If all coins in tree are collected because of MoveAllCoinsToPlayer function then emit the signal
-            if (startedCoinMovement)
-            {
                 EmitSignal(SignalName.OnCoinsMoved);
                 startedCoinMovement = false;
-            }
         }
     }
 
