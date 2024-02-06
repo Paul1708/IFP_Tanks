@@ -9,6 +9,9 @@
 [node name="Manager" type="Node2D"]
 script = ExtResource("1_f4bv2")
 
+[node name="SaveManager" type="Node2D" parent="."]
+script = ExtResource("5_agwak")
+
 [node name="PlayerManager" type="Node2D" parent="."]
 script = ExtResource("2_m1i85")
 
@@ -19,6 +22,3 @@ maxHP = 100
 [node name="CoinManager" type="Node2D" parent="."]
 script = ExtResource("4_0d2wr")
 Coins = null
-
-[node name="SaveManager" type="Node2D" parent="."]
-script = ExtResource("5_agwak")

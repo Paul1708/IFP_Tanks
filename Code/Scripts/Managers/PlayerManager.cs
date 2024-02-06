@@ -1,5 +1,6 @@
 using Components;
 using Godot;
+using Managers.Save;
 
 namespace Managers;
 
@@ -11,6 +12,11 @@ public partial class PlayerManager : Node2D
         PlayerHealthComponent = GetNode<HealthComponent>("PlayerHealthComponent");
     }
 
+    public void OnSaveDataLoaded(SaveData saveData)
+    {
+        PlayerHealthComponent.SetCurrentHP(saveData.PlayerCurrentHP);
+        PlayerHealthComponent.SetMaxHP(saveData.PlayerMaxHP);
+    }
     // TODO: Remove this Debug method
     public override void _Input(InputEvent @event)
     {

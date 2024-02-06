@@ -47,11 +47,19 @@ size_flags_horizontal = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="Buttons/VBoxContainer"]
+[node name="New Game" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_ifl8e")
 theme_override_font_sizes/font_size = 24
-text = "Play"
+text = "New Game
+"
+
+[node name="Continue" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ifl8e")
+theme_override_font_sizes/font_size = 24
+disabled = true
+text = "Continue"
 
 [node name="Settings" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
@@ -65,6 +73,7 @@ theme_override_fonts/font = ExtResource("3_0upre")
 theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/New Game" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Continue" to="." method="OnPlayPressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Settings" to="." method="OnSettingsPressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Quit" to="." method="OnQuitPressed"]

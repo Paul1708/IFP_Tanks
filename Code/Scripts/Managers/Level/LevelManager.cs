@@ -24,13 +24,13 @@ public partial class LevelManager : Node2D
 
     public override void _Ready()
     {
-        // Manager.Instance.SaveManager.OnSaveDataLoaded += OnSaveDataLoaded;
+        Manager.Instance.SaveManager.OnSaveDataLoaded += OnSaveDataLoaded;
 
         LoadLevelByID(0, 0);
     }
     public override void _ExitTree()
     {
-        // Manager.Instance.SaveManager.OnSaveDataLoaded -= OnSaveDataLoaded;
+        Manager.Instance.SaveManager.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
     public void OnLevelComplete()
@@ -38,7 +38,7 @@ public partial class LevelManager : Node2D
         // Set Checkpoint
         if (CurrentLevelData.IsCheckpoint)
         {
-            Manager.Instance.CoinManager.OnCheckpointSaveCoins();
+            Manager.Instance.CoinManager.SetCheckpointCoins();
             Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
             playedLevelsSinceCheckpoint.Clear();
             SaveData();
@@ -84,7 +84,7 @@ public partial class LevelManager : Node2D
         Manager.Instance.SaveManager.SaveData.LastCheckpointLevelID = lastCheckpointLevelID;
         Manager.Instance.SaveManager.SaveData.LastCheckpointWorldID = lastCheckpointWorldID;
 
-        // Manager.Instance.SaveManager.SaveGame();
+        Manager.Instance.SaveManager.SaveGame();
     }
 
     private void OnSaveDataLoaded(SaveData saveData)

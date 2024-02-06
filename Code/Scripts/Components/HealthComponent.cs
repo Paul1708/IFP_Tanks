@@ -64,6 +64,14 @@ public partial class HealthComponent : Node2D
         CheckIfDead();
     }
 
+    public void SetMaxHP(int value)
+    {
+        //clamp the value to the max health
+        maxHP = Mathf.Max(value, 1);
+        SetCurrentHP(currentHP);
+        EmitSignal(SignalName.OnMaxHealthChanged, currentHP);
+    }
+
     private void CheckIfDead()
     {
         if (currentHP <= 0)

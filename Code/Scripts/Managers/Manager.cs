@@ -20,10 +20,9 @@ public partial class Manager : Node2D
         {
             QueueFree(); // Ensures there is only one instance of GameManager
         }
-
+        Instance.SaveManager = GetNode<SaveManager>("SaveManager");
         Instance.CoinManager = GetNode<CoinManager>("CoinManager");
         Instance.PlayerManager = GetNode<PlayerManager>("PlayerManager");
-        Instance.SaveManager = GetNode<SaveManager>("SaveManager");
     }
 }
 

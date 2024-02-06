@@ -30,7 +30,7 @@ public class CoinManagerTests
     public void TestOnCheckpointSaveCoins()
     {
         coinManager.SetCoins(10);
-        coinManager.OnCheckpointSaveCoins();
+        coinManager.SetCheckpointCoins();
         Assertions.AssertThat(coinManager.checkpointCoins).IsEqual(10);
     }
 
@@ -38,7 +38,7 @@ public class CoinManagerTests
     public void TestResetCoins()
     {
         coinManager.SetCoins(10);
-        coinManager.OnCheckpointSaveCoins();
+        coinManager.SetCheckpointCoins();
         coinManager.ResetCoins();
         Assertions.AssertThat(coinManager.Coins).IsEqual(0);
         Assertions.AssertThat(coinManager.GetCheckpointCoins()).IsEqual(0);
