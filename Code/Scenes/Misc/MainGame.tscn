@@ -10,32 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://lb0afin3xbq8" path="res://Sprites/UI/CoinDisplay/CoinDisplay.png" id="8_afkt1"]
 [ext_resource type="Script" path="res://Scripts/UI/CoinDisplay.cs" id="9_dx5ay"]
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="10_cckqj"]
-[ext_resource type="PackedScene" uid="uid://b8rihwar0snyu" path="res://Scenes/UI/ShopMenu.tscn" id="11_d1767"]
+[ext_resource type="PackedScene" uid="uid://br4b3w80rufu3" path="res://Scenes/UI/ShopMenu.tscn" id="11_d1767"]
 
 [node name="MainGame" type="Node2D" groups=["MainGame"]]
 process_mode = 1
 
-[node name="PauseMenu" parent="." instance=ExtResource("1_48aw5")]
-visible = false
-z_index = 10
-anchors_preset = 0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 1915.0
-offset_bottom = 1079.0
-grow_horizontal = 1
-grow_vertical = 1
-
-[node name="SettingsMenu" parent="PauseMenu" instance=ExtResource("2_vpa1c")]
-layout_mode = 1
-offset_left = -3.0
-offset_top = -3.0
-offset_right = -3.0
-offset_bottom = -3.0
-
-[node name="LevelManager" type="Node2D" parent="."]
+[node name="LevelManager" type="Node2D" parent="." groups=["LevelManager"]]
 script = ExtResource("3_6hwsd")
 Levels = Array[PackedScene]([ExtResource("4_c31nu"), ExtResource("5_tjwhs"), ExtResource("6_y2afc")])
 
@@ -46,7 +26,18 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ShopMenu" parent="HUD" instance=ExtResource("11_d1767")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
+grow_vertical = 1
+
 [node name="HealthBar" parent="HUD" instance=ExtResource("7_3rvrl")]
+process_mode = 3
 layout_mode = 0
 offset_left = 25.0
 offset_top = 25.0
@@ -54,6 +45,7 @@ offset_right = 249.0
 offset_bottom = 77.0
 
 [node name="CoinDisplay" type="TextureRect" parent="HUD"]
+process_mode = 3
 layout_mode = 0
 offset_left = 25.0
 offset_top = 85.0
@@ -75,4 +67,20 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ShopMenu" parent="." instance=ExtResource("11_d1767")]
+[node name="PauseMenu" parent="." instance=ExtResource("1_48aw5")]
+visible = false
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 3.0
+offset_right = 1920.0
+offset_bottom = 1083.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="SettingsMenu" parent="PauseMenu" instance=ExtResource("2_vpa1c")]
+layout_mode = 1
+offset_left = -3.0
+offset_top = -3.0
+offset_right = -3.0
+offset_bottom = -3.0

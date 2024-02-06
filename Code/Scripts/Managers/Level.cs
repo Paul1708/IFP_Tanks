@@ -3,13 +3,14 @@ using System.Linq;
 using Components;
 using System.Collections.Generic;
 using Items;
-using System.Threading.Tasks;
 
 namespace Managers;
 
 public partial class Level : Node2D
 {
     private bool startedCoinMovement = false;
+    public ShopMenu shopMenu;
+    Timer coinTimer = new Timer();
 
     [Export]
     public bool IsCheckpoint { get; private set; }
@@ -25,6 +26,9 @@ public partial class Level : Node2D
 
     public override void _Ready()
     {
+        this.AddChild(coinTimer);
+		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+
         // Get all enemies in the level
         enemies = GetTree().GetNodesInGroup("Enemy").ToList();
 
@@ -34,6 +38,9 @@ public partial class Level : Node2D
             enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += () => OnEnemyDeath(enemy);
         }
         Manager.Instance.PlayerManager.PlayerHealthComponent.OnDeath += OnPlayerDeath;
+        //connect the coin timer signal to the move all coins to player function
+        coinTimer.Timeout += MoveAllCoinsToPlayer;
+
     }
 
     public override void _ExitTree()
@@ -47,6 +54,7 @@ public partial class Level : Node2D
         // Check if all coins are collected
         if (GetTree().GetNodesInGroup("Coins").Count == 0)
         {
+            //If all coins in tree are collected because of MoveAllCoinsToPlayer function then emit the signal
             if (startedCoinMovement)
             {
                 EmitSignal(SignalName.OnCoinsMoved);
@@ -55,7 +63,7 @@ public partial class Level : Node2D
         }
     }
 
-    public async void OnEnemyDeath(Node2D enemy)
+    public void OnEnemyDeath(Node2D enemy)
     {
         PackedScene itemScene = ((Enemy)enemy).DropItemScene;
         DropItem<Node2D>(enemy, itemScene);
@@ -64,15 +72,16 @@ public partial class Level : Node2D
         enemies.Remove(enemy);
         if (enemies.Count == 0)
         {
-            await Task.Delay(500);
-            MoveAllCoinsToPlayer();
-            await ToSignal(this, "OnCoinsMoved");
-
-            EmitSignal(SignalName.OnLevelComplete);
+            //start the timer to move all coins to the player after time runs out
+            coinTimer.WaitTime = 0.5;
+            coinTimer.Start();
         }
     }
 
-
+    public void SendOnLevelComplete()
+    {
+        EmitSignal(SignalName.OnLevelComplete);
+    }
 
     public void OnPlayerDeath()
     {
@@ -102,6 +111,7 @@ public partial class Level : Node2D
     // Move all coins to the player
     public void MoveAllCoinsToPlayer()
     {
+        coinTimer.Stop();
         var tree = GetTree();
         if (tree == null)
         {

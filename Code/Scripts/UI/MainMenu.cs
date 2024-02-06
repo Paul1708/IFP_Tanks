@@ -13,6 +13,7 @@ public partial class MainMenu : Control
 	private void OnPlayPressed()
 	{
 		musicController.Play(Sound.ButtonClick);
+		Manager.Instance.LoadCheckpointStats();
 		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 
 	}

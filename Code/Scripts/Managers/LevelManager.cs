@@ -11,6 +11,8 @@ public partial class LevelManager : Node2D
     public int LastCheckpointID { get; private set; }
 
     public Level CurrentLevel { get; private set; }
+    [Signal]
+    public delegate void OnLevelChangedEventHandler();
 
     public override void _Ready()
     {
@@ -60,6 +62,7 @@ public partial class LevelManager : Node2D
         // Load new level
         CurrentLevel = Levels[LevelID].Instantiate<Level>();
         AddChild(CurrentLevel);
+        EmitSignal(SignalName.OnLevelChanged);
 
         // Set the level as the current level
         CurrentLevelID = LevelID;

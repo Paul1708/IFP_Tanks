@@ -22,5 +22,12 @@ public partial class Manager : Node2D
         Instance.CoinManager = GetNode<CoinManager>("CoinManager");
         Instance.PlayerManager = GetNode<PlayerManager>("PlayerManager");
     }
+
+    //gets all the stats from the last checkpoint and loads them
+    public void LoadCheckpointStats()
+    {
+        //TODO: Health and other stats
+        CoinManager.SetCoins(CoinManager.checkpointCoins);
+    }
 }
 
