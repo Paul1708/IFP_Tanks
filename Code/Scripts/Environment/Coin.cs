@@ -1,5 +1,6 @@
 using Godot;
 using Movement;
+using Managers;
 
 namespace Items;
 
@@ -50,7 +51,8 @@ public partial class Coin : Area2D
 
 	public void CollectCoin()
 	{
-		Manager.Instance.CoinManager.AddCoins(CoinValue);
+		//TODO: Play coin collection sound  
+		CoinManager.Instance.AddCoins(CoinValue);
 		musicController.Play(Sound.CoinPickup);
 	}
 }

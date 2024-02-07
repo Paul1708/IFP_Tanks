@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="4_vqooa"]
 [ext_resource type="Texture2D" uid="uid://bm3kylaj0tjfn" path="res://Sprites/Tanks/GunGreen.png" id="5_fm6eq"]
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="7_5i82i"]
-[ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="8_sdglm"]
+[ext_resource type="PackedScene" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="8_sdglm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_imdbc"]
 size = Vector2(78, 66)
@@ -367,7 +367,7 @@ shape = SubResource("RectangleShape2D_imdbc")
 script = ExtResource("3_kf7xg")
 bulletScene = ExtResource("4_vqooa")
 bulletsPerSecond = 3.0
-bulletDamage = 5.0
+bulletDamage = 5
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
 position = Vector2(80, 1)

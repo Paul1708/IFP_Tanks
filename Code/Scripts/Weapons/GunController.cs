@@ -7,7 +7,7 @@ public partial class GunController : Node2D
 {
     [Export] PackedScene bulletScene;
     [Export] public float bulletsPerSecond { get; set; } //how many bullets per second
-    [Export] public float bulletDamage { get; set; } //how much damage each bullet does
+    [Export] public int bulletDamage { get; set; } //how much damage each bullet does
 
 
     public float timeBetweenShots { get; private set; }
@@ -16,7 +16,7 @@ public partial class GunController : Node2D
 
     private AnimatedSprite2D sprite;
     private Timer shootTimer;
-    
+
     protected MusicController musicController;
 
     public override void _Ready()

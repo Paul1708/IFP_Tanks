@@ -25,6 +25,7 @@ public partial class SettingsMenu : Control
 		musicController = GetNode<MusicController>("/root/MusicController");
 	}
 
+	//gets called when the back button is pressed and hides the settings menu if the current scene is the main game, otherwise it changes the scene to the main menu
 	private void OnBackPressed()
 	{
 		musicController.Play(Sound.ButtonClick);
