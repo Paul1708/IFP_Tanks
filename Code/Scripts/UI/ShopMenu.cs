@@ -32,6 +32,7 @@ public partial class ShopMenu : Control
 	//Called when a new level is loaded to update the level reference
 	public void UpdateSetup()
 	{
+		GD.Print("UpdateSetup");
 		level = GetTree().GetFirstNodeInGroup("Level") as Level;
 		level.OnCoinsMoved += ShowShopMenu;
 	}
@@ -39,6 +40,7 @@ public partial class ShopMenu : Control
 	//Show the shop menu and pause the game
 	public void ShowShopMenu()
 	{	
+		GD.Print("ShowShopMenu");
 		GetTree().Paused = true;
 		Show();
 		animationPlayer.Play("StartPause");

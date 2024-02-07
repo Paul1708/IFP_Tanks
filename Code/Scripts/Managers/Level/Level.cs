@@ -53,6 +53,7 @@ public partial class Level : Node2D
         {
             //If all coins in tree are collected because of MoveAllCoinsToPlayer function then emit the signal
                 EmitSignal(SignalName.OnCoinsMoved);
+                GD.Print("Coins Moved");
                 startedCoinMovement = false;
         }
     }

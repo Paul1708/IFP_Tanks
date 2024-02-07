@@ -36,6 +36,8 @@ public partial class LevelManager : Node2D
 
     public void OnLevelComplete()
     {
+        EmitSignal(SignalName.OnLevelChanged);
+
         // Set Checkpoint
         if (CurrentLevelData.IsCheckpoint)
         {
@@ -55,7 +57,6 @@ public partial class LevelManager : Node2D
             LoadLevelByID(currentWorldID + 1, 0);
             return;
         }
-        EmitSignal(SignalName.OnLevelChanged);
 
         // If there are no levels left in the game, go back to the main menu
         GD.Print("You win!");
