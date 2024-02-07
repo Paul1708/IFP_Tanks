@@ -25,45 +25,28 @@ public partial class SettingsMenu : Control
 		musicController = GetNode<MusicController>("/root/MusicController");
 	}
 
-	private void OnBackPressed()
-	{
-		musicController.Play(Sound.ButtonClick);
-
-		if (GetTree().CurrentScene.IsInGroup("MainGame"))
-		{
-			Hide();
-		}
-		else
-		{
-			GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
-		}
-
-	}
+    private void OnBackPressed()
+    {
+        musicController.Play(Sound.ButtonClick);
+        if (GetTree().CurrentScene.IsInGroup("MainGame")) Hide();
+        else GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
+    }
 
 	//toggles fullscreen and windowed mode
-	private void OnFullscreenToggled(bool ToggledOn)
-	{
-		musicController.Play(Sound.ButtonClick);
-
-		if (ToggledOn == true)
-		{
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-		}
-		else
-		{
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		}
-	}
+    private void OnFullscreenToggled(bool ToggledOn)
+    {
+        musicController.Play(Sound.ButtonClick);
+        DisplayServer.WindowSetMode(ToggledOn ? DisplayServer.WindowMode.Fullscreen : DisplayServer.WindowMode.Windowed);
+    }
 
 	//gets called when the scene is loaded and sets the toggle state to true when in fullscreen
-	private void SetToggleState()
-	{
-		var fullscreenButton = GetNode<CheckButton>("SliderContainer/VBoxContainer/Fullscreen");
-		if (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen)
-		{
-			fullscreenButton.SetPressedNoSignal(true);
-		}
-	}
+    private void SetToggleState()
+    {
+        var fullscreenButton = GetNode<CheckButton>("SliderContainer/VBoxContainer/Fullscreen");
+        if (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen)
+            fullscreenButton.SetPressedNoSignal(true);
+    }
+
 	//changes MasterBus volume when slider is moved
 	private void OnMasterSliderValueChanged(float value)
 	{
@@ -98,4 +81,5 @@ public partial class SettingsMenu : Control
 		musicSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(musicBusIndex));
 		sfxSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(sfxBusIndex));
 	}
+
 }

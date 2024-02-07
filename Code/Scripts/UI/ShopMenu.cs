@@ -2,6 +2,7 @@ using Godot;
 using Managers;
 using Movement;
 using System;
+using Managers.Level;
 
 
 public partial class ShopMenu : Control

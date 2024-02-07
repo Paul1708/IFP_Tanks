@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dedf16ffcla55"]
+[gd_scene load_steps=9 format=3 uid="uid://dedf16ffcla55"]
 
-[ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_8ahnc"]
+[ext_resource type="Script" path="res://Scripts/Managers/Level/Level.cs" id="1_8ahnc"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_pvyov"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_4gipy"]
+[ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_6qra4"]
+[ext_resource type="PackedScene" uid="uid://4ex5rdvrveg3" path="res://Scenes/Enemies/RocketEnemy.tscn" id="5_fkmnq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_22tvh"]
 texture = ExtResource("2_pvyov")
@@ -485,3 +487,24 @@ navigation_polygon = SubResource("NavigationPolygon_jgb37")
 position = Vector2(196, 158)
 
 [node name="Enemies" type="Node2D" parent="."]
+
+[node name="BasicEnemy3" parent="Enemies" instance=ExtResource("4_6qra4")]
+position = Vector2(1507, 529)
+
+[node name="BasicEnemy" parent="Enemies" instance=ExtResource("4_6qra4")]
+position = Vector2(383, 905)
+
+[node name="BasicEnemy2" parent="Enemies" instance=ExtResource("4_6qra4")]
+position = Vector2(963, 212)
+
+[node name="RocketEnemy" parent="Enemies" instance=ExtResource("5_fkmnq")]
+position = Vector2(1531, 865)
+
+[node name="RocketEnemy2" parent="Enemies" instance=ExtResource("5_fkmnq")]
+position = Vector2(1512, 226)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level 3
+"

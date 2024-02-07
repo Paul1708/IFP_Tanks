@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://bshxfh34wjfkn"]
 
-[ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_pxojk"]
+[ext_resource type="Script" path="res://Scripts/Managers/Level/Level.cs" id="1_pxojk"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_oubk8"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_3dp72"]
 [ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_nwtn8"]
@@ -504,3 +504,8 @@ position = Vector2(312, 302)
 
 [node name="Coin2" parent="." instance=ExtResource("5_kvw64")]
 position = Vector2(436, 490)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level 1"
