@@ -34,27 +34,37 @@ public partial class LevelManager : Node2D
         SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
-    public void OnLevelComplete()
+    public async void OnLevelComplete()
     {
         EmitSignal(SignalName.OnLevelChanged);
 
-        // Set Checkpoint
-        if (CurrentLevelData.IsCheckpoint)
-        {
-            SaveGame();
-        }
+        // Was the level a checkpoint?
+        bool saveGameAfterLoading = CurrentLevelData.IsCheckpoint;
+
 
         // If there are levels left in the current world, load the next level
         if (currentLevelID + 1 < Worlds[currentWorldID].LevelCount)
         {
-            LoadLevelByID(currentWorldID, currentLevelID + 1);
+            await LoadLevelByID(currentWorldID, currentLevelID + 1);
+
+            // Save the game if the level was a checkpoint
+            if (saveGameAfterLoading)
+            {
+                SaveGame();
+            }
             return;
         }
 
         // If there are no levels left in the current world, load the next world
         if (currentWorldID + 1 < Worlds.Length)
         {
-            LoadLevelByID(currentWorldID + 1, 0);
+            await LoadLevelByID(currentWorldID + 1, 0);
+
+            // Save the game if the level was a checkpoint
+            if (saveGameAfterLoading)
+            {
+                SaveGame();
+            }
             return;
         }
 
@@ -66,24 +76,27 @@ public partial class LevelManager : Node2D
 
     public void OnLevelFailed()
     {
+        // Reload the last save
         SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
     }
 
     private void SaveGame()
     {
+        // Set the Level and World IDs as the last checkpoint and save the game
         SaveManager.Instance.SaveData.LastCheckpointLevelID = currentLevelID;
         SaveManager.Instance.SaveData.LastCheckpointWorldID = currentWorldID;
-
         SaveManager.Instance.SaveGame();
     }
 
     private void OnSaveDataLoaded(SaveData saveData)
     {
+        // Set the current level to saved data
         currentLevelID = saveData.LastCheckpointLevelID;
         currentWorldID = saveData.LastCheckpointWorldID;
 
-        RestoreLevelStatesAfterSave();
+        // Load the level and restore the level states
         LoadLevelByID(currentWorldID, currentLevelID);
+        RestoreLevelStatesAfterSave();
     }
 
     private void RestoreLevelStatesAfterSave()
@@ -106,6 +119,7 @@ public partial class LevelManager : Node2D
 
         // Set the current level to CURRENT
         Worlds[currentWorldID].Levels[currentLevelID].LevelState = LevelState.CURRENT;
+        levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
     }
 
 
