@@ -97,7 +97,6 @@ public partial class LevelManager : Node2D
         CurrentLevelData = Worlds[NewWorldID].Levels[NewLevelID];
         CurrentLevelInstance = CurrentLevelData.LevelScene.Instantiate<Level>();
         AddChild(CurrentLevelInstance);
-        GD.Print(CurrentLevelInstance);
 
         // Set the level IDs as the current level
         currentLevelID = NewLevelID;

@@ -34,7 +34,6 @@ public partial class CoinManager : Node2D
 
     public void OnSaveDataLoaded(SaveData saveData)
     {
-        GD.Print("CoinManager: OnSaveDataLoaded", saveData.CoinCount);
         SetCoins(saveData.CoinCount);
     }
 
