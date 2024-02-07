@@ -13,9 +13,6 @@ public partial class CoinManager : Node2D
     [Signal]
     public delegate void OnCoinChangedEventHandler(int coins);
 
-    //variable to store the Coin ammount at the last checkpoint
-    public int checkpointCoins;
-
     public override void _Ready()
     {
         if (Instance == null)
@@ -37,8 +34,8 @@ public partial class CoinManager : Node2D
 
     public void OnSaveDataLoaded(SaveData saveData)
     {
+        GD.Print("CoinManager: OnSaveDataLoaded", saveData.CoinCount);
         SetCoins(saveData.CoinCount);
-        SetCheckpointCoins();
     }
 
     //Method to add coins to the player. If the value is less than 0, the method will return without doing anything.
@@ -80,22 +77,12 @@ public partial class CoinManager : Node2D
     public void ResetCoins()
     {
         Coins = 0;
-        checkpointCoins = 0;
     }
-    // Method to save the Coin ammount at the last checkpoint
-    public void SetCheckpointCoins()
-    {
-        checkpointCoins = Coins;
-    }
+
     // Method to check if the player has more or equal coins to the value
     public bool CheckIfEnoughCoins(int value)
     {
         return Coins >= value;
-    }
-    // Method to get the Coin ammount at the last checkpoint
-    public int GetCheckpointCoins()
-    {
-        return checkpointCoins;
     }
 }
 

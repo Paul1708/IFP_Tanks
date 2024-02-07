@@ -40,9 +40,9 @@ Worlds = Array[Resource]([ExtResource("8_bno8v")])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
 offset_left = 10.0
-offset_top = 10.0
+offset_top = 40.0
 offset_right = 234.0
-offset_bottom = 124.0
+offset_bottom = 154.0
 theme_override_constants/separation = 10
 
 [node name="HealthBar" parent="HUD/VBoxContainer" instance=ExtResource("7_3rvrl")]

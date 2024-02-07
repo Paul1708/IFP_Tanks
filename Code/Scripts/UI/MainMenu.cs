@@ -12,11 +12,18 @@ public partial class MainMenu : Control
 		GetNode<Button>("Buttons/VBoxContainer/Continue").Disabled = !SaveManager.Instance.IsSaveFileAvailable();
 	}
 
-	private void OnPlayPressed()
+	private void OnNewGamePressed()
 	{
 		musicController.Play(Sound.ButtonClick);
+		SaveManager.Instance.LoadingType = LoadingType.NEW_GAME;
 		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
+	}
 
+	private void OnContinueGamePressed()
+	{
+		musicController.Play(Sound.ButtonClick);
+		SaveManager.Instance.LoadingType = LoadingType.LOAD_GAME;
+		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 	}
 
 	private void OnSettingsPressed()

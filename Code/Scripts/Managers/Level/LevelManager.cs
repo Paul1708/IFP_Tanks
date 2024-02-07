@@ -12,21 +12,15 @@ public partial class LevelManager : Node2D
 
     public int currentWorldID = 0;
     public int currentLevelID = 0;
-    public int lastCheckpointWorldID = 0;
-    public int lastCheckpointLevelID = 0;
-
 
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
-
-    private List<Vector2> playedLevelsSinceCheckpoint = new List<Vector2>();
-
 
     public override void _Ready()
     {
         SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
-        LoadLevelByID(0, 0);
+        SaveManager.Instance.LoadGame();
     }
     public override void _ExitTree()
     {
@@ -38,10 +32,7 @@ public partial class LevelManager : Node2D
         // Set Checkpoint
         if (CurrentLevelData.IsCheckpoint)
         {
-            CoinManager.Instance.SetCheckpointCoins();
-            PlayerManager.Instance.PlayerHealthComponent.HealToMax();
-            playedLevelsSinceCheckpoint.Clear();
-            SaveData();
+            SaveGame();
         }
 
         // If there are levels left in the current world, load the next level
@@ -66,43 +57,34 @@ public partial class LevelManager : Node2D
 
     public void OnLevelFailed()
     {
-        // Set LevelState of all played levels after checkpoint to LOCKED
-        foreach (var level in playedLevelsSinceCheckpoint)
-        {
-            Worlds[(int)level.X].Levels[(int)level.Y].LevelState = LevelSate.LOCKED;
-        }
-
-        CoinManager.Instance.SetCoins(CoinManager.Instance.checkpointCoins);
-        PlayerManager.Instance.PlayerHealthComponent.HealToMax();
-        LoadLevelByID(lastCheckpointWorldID, lastCheckpointLevelID);
+        SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
     }
 
-    private void SaveData()
+    private void SaveGame()
     {
-        lastCheckpointLevelID = currentLevelID;
-        lastCheckpointWorldID = currentWorldID;
-        SaveManager.Instance.SaveData.LastCheckpointLevelID = lastCheckpointLevelID;
-        SaveManager.Instance.SaveData.LastCheckpointWorldID = lastCheckpointWorldID;
+        SaveManager.Instance.SaveData.LastCheckpointLevelID = currentLevelID;
+        SaveManager.Instance.SaveData.LastCheckpointWorldID = currentWorldID;
+        SaveManager.Instance.SaveData.Worlds = Worlds;
 
         SaveManager.Instance.SaveGame();
     }
 
     private void OnSaveDataLoaded(SaveData saveData)
     {
-        lastCheckpointLevelID = saveData.LastCheckpointLevelID;
-        lastCheckpointWorldID = saveData.LastCheckpointWorldID;
+        currentLevelID = saveData.LastCheckpointLevelID;
+        currentWorldID = saveData.LastCheckpointWorldID;
 
-        LoadLevelByID(saveData.LastCheckpointWorldID, saveData.LastCheckpointLevelID);
+        LoadLevelByID(currentWorldID, currentLevelID);
     }
 
 
-    private async Task LoadLevelByID(int WorldID, int LevelID)
+    private async Task LoadLevelByID(int NewWorldID, int NewLevelID)
     {
         if (CurrentLevelInstance != null)
         {
             CurrentLevelData.LevelState = LevelSate.COMPLETED;
 
-            // Disconnect signals
+            // Disconnect signals of old Level
             CurrentLevelInstance.OnLevelComplete -= OnLevelComplete;
             CurrentLevelInstance.OnLevelFailed -= OnLevelFailed;
 
@@ -112,14 +94,14 @@ public partial class LevelManager : Node2D
         }
 
         // Load new level
-        CurrentLevelData = Worlds[WorldID].Levels[LevelID];
+        CurrentLevelData = Worlds[NewWorldID].Levels[NewLevelID];
         CurrentLevelInstance = CurrentLevelData.LevelScene.Instantiate<Level>();
         AddChild(CurrentLevelInstance);
         GD.Print(CurrentLevelInstance);
 
         // Set the level IDs as the current level
-        currentLevelID = LevelID;
-        currentWorldID = WorldID;
+        currentLevelID = NewLevelID;
+        currentWorldID = NewWorldID;
 
         // Connect signals
         CurrentLevelInstance.OnLevelComplete += OnLevelComplete;
@@ -127,97 +109,6 @@ public partial class LevelManager : Node2D
 
         // Set the level state and add it to the list of played levels since the last checkpoint
         CurrentLevelData.LevelState = LevelSate.CURRENT;
-        playedLevelsSinceCheckpoint.Add(new Vector2(currentWorldID, currentLevelID));
     }
 
-
-
-
-
-
-
-
-
-
-
-    /*
-    [Export]
-    public PackedScene[] Levels { get; private set; }
-    public int CurrentLevelID { get; private set; }
-    public int LastCheckpointID { get; private set; }
-
-    public Level CurrentLevel { get; private set; }
-
-    public override void _Ready()
-    {
-        CurrentLevelID = 0;
-        LastCheckpointID = 0;
-        // Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
-
-        LoadLevelByID(CurrentLevelID);
-    }
-
-    public void OnLevelComplete()
-    {
-        int nextLevelID = CurrentLevelID + 1;
-
-        if (nextLevelID >= Levels.Length)
-        {
-            GD.Print("You win! \nCoins reseted!");
-            Manager.Instance.CoinManager.ResetCoins();
-            GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
-            return;
-        }
-
-        LoadLevelByID(nextLevelID);
-    }
-
-    public void OnLevelFailed()
-    {
-        Manager.Instance.CoinManager.SetCoins(Manager.Instance.CoinManager.checkpointCoins);
-        LoadLevelByID(LastCheckpointID);
-    }
-
-
-
-    private async Task LoadLevelByID(int LevelID)
-    {
-        if (CurrentLevel != null)
-        {
-            // Disconnect signals
-            CurrentLevel.OnLevelComplete -= OnLevelComplete;
-            CurrentLevel.OnLevelFailed -= OnLevelFailed;
-
-            // Unload current level
-            CurrentLevel.QueueFree();
-            await ToSignal(CurrentLevel, "tree_exited");
-        }
-
-        // Load new level
-        CurrentLevel = Levels[LevelID].Instantiate<Level>();
-        AddChild(CurrentLevel);
-
-        // Set the level as the current level
-        CurrentLevelID = LevelID;
-        CurrentLevel.OnLevelComplete += OnLevelComplete;
-        CurrentLevel.OnLevelFailed += OnLevelFailed;
-
-        // Set Checkpoint
-        if (CurrentLevel.IsCheckpoint)
-        {
-            Manager.Instance.CoinManager.OnCheckpointSaveCoins();
-            Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
-            LastCheckpointID = LevelID;
-        }
-    }
-
-    // TODO: For debug purposes, remove later
-    public override async void _Input(InputEvent @event)
-    {
-        if (Input.IsActionJustPressed("Debug"))
-        {
-            OnLevelComplete();
-        }
-    }
-    */
 }

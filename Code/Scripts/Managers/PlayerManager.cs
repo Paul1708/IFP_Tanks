@@ -20,6 +20,12 @@ public partial class PlayerManager : Node2D
         }
 
         PlayerHealthComponent = GetNode<HealthComponent>("PlayerHealthComponent");
+        SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
+    }
+
+    public override void _ExitTree()
+    {
+        SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
     public void OnSaveDataLoaded(SaveData saveData)

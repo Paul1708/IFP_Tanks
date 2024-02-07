@@ -6,5 +6,5 @@
 [resource]
 script = ExtResource("1_k6v0b")
 LevelScene = ExtResource("1_0fc83")
-IsCheckpoint = true
+IsCheckpoint = false
 LevelState = 2

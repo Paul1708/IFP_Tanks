@@ -504,3 +504,8 @@ position = Vector2(312, 302)
 
 [node name="Coin2" parent="." instance=ExtResource("5_kvw64")]
 position = Vector2(436, 490)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level 1"

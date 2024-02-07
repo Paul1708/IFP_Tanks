@@ -26,25 +26,6 @@ public class CoinManagerTests
         Assertions.AssertThat(coinManager.Coins).IsEqual(0);
     }
 
-    [TestCase]
-    public void TestOnCheckpointSaveCoins()
-    {
-        coinManager.SetCoins(10);
-        coinManager.SetCheckpointCoins();
-        Assertions.AssertThat(coinManager.checkpointCoins).IsEqual(10);
-    }
-
-    [TestCase]
-    public void TestResetCoins()
-    {
-        coinManager.SetCoins(10);
-        coinManager.SetCheckpointCoins();
-        coinManager.ResetCoins();
-        Assertions.AssertThat(coinManager.Coins).IsEqual(0);
-        Assertions.AssertThat(coinManager.GetCheckpointCoins()).IsEqual(0);
-
-    }
-
     [AfterTest]
     public void TearDown()
     {

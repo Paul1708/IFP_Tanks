@@ -489,3 +489,9 @@ position = Vector2(196, 158)
 
 [node name="RocketEnemy" parent="Enemies" instance=ExtResource("4_g1x51")]
 position = Vector2(984, 227)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level 2 - Checkpoint
+"
