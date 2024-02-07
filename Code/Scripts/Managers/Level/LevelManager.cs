@@ -16,6 +16,7 @@ public partial class LevelManager : Node2D
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
 
+
     [Signal]
     public delegate void OnLevelChangedEventHandler();
 
