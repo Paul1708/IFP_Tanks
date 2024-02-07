@@ -89,14 +89,15 @@ public partial class LevelManager : Node2D
         SaveManager.Instance.SaveGame();
     }
 
-    private void OnSaveDataLoaded(SaveData saveData)
+    private async void OnSaveDataLoaded(SaveData saveData)
     {
         // Set the current level to saved data
         currentLevelID = saveData.LastCheckpointLevelID;
         currentWorldID = saveData.LastCheckpointWorldID;
 
         // Load the level and restore the level states
-        LoadLevelByID(currentWorldID, currentLevelID);
+        await LoadLevelByID(currentWorldID, currentLevelID);
+        EmitSignal(SignalName.OnLevelChanged);
         RestoreLevelStatesAfterSave();
     }
 

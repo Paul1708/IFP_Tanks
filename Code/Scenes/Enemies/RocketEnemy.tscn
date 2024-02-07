@@ -370,7 +370,6 @@ script = ExtResource("3_328m8")
 script = ExtResource("4_egmny")
 bulletScene = ExtResource("5_6u5xn")
 bulletsPerSecond = 0.5
-bulletDamage = 10.0
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
 position = Vector2(69, 0)
@@ -402,7 +401,6 @@ MovementSpeed = 100.0
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("8_cqfsr")
-maxHP = 10.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

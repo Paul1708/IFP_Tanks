@@ -500,13 +500,9 @@ position = Vector2(1434, 887)
 
 [node name="Coin" parent="." instance=ExtResource("5_kvw64")]
 position = Vector2(312, 302)
-CoinValue = null
-Speed = null
 
 [node name="Coin2" parent="." instance=ExtResource("5_kvw64")]
 position = Vector2(436, 490)
-CoinValue = null
-Speed = null
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
