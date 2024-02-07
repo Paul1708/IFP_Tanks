@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cukhascfsrbri"]
 
-[ext_resource type="Script" path="res://Scripts/Managers/Level.cs" id="1_apihr"]
+[ext_resource type="Script" path="res://Scripts/Managers/Level/Level.cs" id="1_apihr"]
 [ext_resource type="Texture2D" uid="uid://c38gw4iabgk8s" path="res://Sprites/Tilesets/Desert Tileset.png" id="2_4th1p"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_uq1q5"]
 [ext_resource type="PackedScene" uid="uid://4ex5rdvrveg3" path="res://Scenes/Enemies/RocketEnemy.tscn" id="4_g1x51"]
@@ -489,3 +489,9 @@ position = Vector2(196, 158)
 
 [node name="RocketEnemy" parent="Enemies" instance=ExtResource("4_g1x51")]
 position = Vector2(984, 227)
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Level 2 - Checkpoint
+"

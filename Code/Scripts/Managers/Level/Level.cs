@@ -5,14 +5,12 @@ using System.Collections.Generic;
 using Items;
 using System.Threading.Tasks;
 
-namespace Managers;
+namespace Managers.Level;
 
 public partial class Level : Node2D
 {
     private bool startedCoinMovement = false;
 
-    [Export]
-    public bool IsCheckpoint { get; private set; }
     public List<Node> enemies { get; set; }
 
     [Signal]
@@ -33,13 +31,13 @@ public partial class Level : Node2D
             // Connect Signals, so OnEnemyDeath is called when an enemy dies
             enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += () => OnEnemyDeath(enemy);
         }
-        Manager.Instance.PlayerManager.PlayerHealthComponent.OnDeath += OnPlayerDeath;
+        PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnPlayerDeath;
     }
 
     public override void _ExitTree()
     {
         //Disconnect Signals
-        Manager.Instance.PlayerManager.PlayerHealthComponent.OnDeath -= OnPlayerDeath;
+        PlayerManager.Instance.PlayerHealthComponent.OnDeath -= OnPlayerDeath;
     }
 
     public override void _Process(double delta)
@@ -107,7 +105,7 @@ public partial class Level : Node2D
         {
             return;
         }
-        
+
         var coins = GetTree().GetNodesInGroup("Coins");
 
         foreach (Coin coin in coins)

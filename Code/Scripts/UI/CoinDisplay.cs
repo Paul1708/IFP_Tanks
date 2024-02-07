@@ -1,16 +1,19 @@
 using Godot;
+using Managers;
+
 public partial class CoinDisplay : TextureRect
 {
 	Label coinLabel;
 	public override void _Ready()
 	{
 		coinLabel = GetNode<Label>("CoinLabel");
-		Manager.Instance.CoinManager.OnCoinChanged += ChangeLabel;
+		CoinManager.Instance.OnCoinChanged += ChangeLabel;
+		ChangeLabel(CoinManager.Instance.Coins);
 	}
 
 	public override void _ExitTree()
 	{
-		Manager.Instance.CoinManager.OnCoinChanged -= ChangeLabel;
+		CoinManager.Instance.OnCoinChanged -= ChangeLabel;
 	}
 
 	public void ChangeLabel(int coins)

@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 using GdUnit4;
 using Godot;
-using Managers;
+using Managers.Level;
 
 [TestSuite]
 public class TestLevelManager
