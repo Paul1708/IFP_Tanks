@@ -36,7 +36,6 @@ public partial class LevelManager : Node2D
 
     public async void OnLevelComplete()
     {
-        EmitSignal(SignalName.OnLevelChanged);
 
         // Was the level a checkpoint?
         bool saveGameAfterLoading = CurrentLevelData.IsCheckpoint;
@@ -52,6 +51,7 @@ public partial class LevelManager : Node2D
             {
                 SaveGame();
             }
+            EmitSignal(SignalName.OnLevelChanged);
             return;
         }
 
@@ -65,6 +65,7 @@ public partial class LevelManager : Node2D
             {
                 SaveGame();
             }
+            EmitSignal(SignalName.OnLevelChanged);
             return;
         }
 

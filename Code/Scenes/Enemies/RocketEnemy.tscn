@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://yyatfwo0expa" path="res://Sprites/Tanks/TankBlue.png" id="2_fajxa"]
 [ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="3_328m8"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="4_egmny"]
-[ext_resource type="PackedScene" uid="uid://cvuo0a4r5ldw4" path="res://Scenes/Weapons/HomingBullet.tscn" id="5_6u5xn"]
+[ext_resource type="PackedScene" uid="uid://bpyg8h74vn0r6" path="res://Scenes/Weapons/HomingBullet.tscn" id="5_6u5xn"]
 [ext_resource type="Texture2D" uid="uid://dylbxstfcgudy" path="res://Sprites/Tanks/GunBlue.png" id="6_nojed"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="7_igvkk"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="8_cqfsr"]
