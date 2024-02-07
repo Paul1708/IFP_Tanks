@@ -3,6 +3,7 @@ using Managers.Level;
 
 public partial class LevelDisplay : HBoxContainer
 {
+    // Textures for the different level states
     public Texture2D BasicCompleted = GD.Load<Texture2D>("res://Sprites/UI/LevelIndicators/BasicCompleted.png");
     public Texture2D BasicCurrent = GD.Load<Texture2D>("res://Sprites/UI/LevelIndicators/BasicCurrent.png");
     public Texture2D BasicLocked = GD.Load<Texture2D>("res://Sprites/UI/LevelIndicators/BasicLocked.png");
@@ -10,17 +11,15 @@ public partial class LevelDisplay : HBoxContainer
     public Texture2D CheckpointCurrent = GD.Load<Texture2D>("res://Sprites/UI/LevelIndicators/CheckpointCurrent.png");
     public Texture2D CheckpointLocked = GD.Load<Texture2D>("res://Sprites/UI/LevelIndicators/CheckpointLocked.png");
 
-
-
     public void RenderLevelDisplay(LevelData[] levels)
     {
-
-
+        // Clear the current level display
         foreach (Node child in GetChildren())
         {
             child.QueueFree();
         }
 
+        // Iterate over lvels and create a texture for each level based on its state
         foreach (var level in levels)
         {
             var texture = new TextureRect();
@@ -57,9 +56,6 @@ public partial class LevelDisplay : HBoxContainer
             texture.StretchMode = TextureRect.StretchModeEnum.KeepAspectCentered;
             AddChild(texture);
         }
-
-        GD.Print("Level Display Rendered");
-
     }
 }
 

@@ -474,7 +474,6 @@ source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="Level" type="Node2D" groups=["Level"]]
 script = ExtResource("1_pxojk")
-IsCheckpoint = true
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_7gna0")
