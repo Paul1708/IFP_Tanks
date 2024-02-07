@@ -29,7 +29,7 @@ namespace Weapons
 
             // other references
             player = GetTree().GetFirstNodeInGroup("Player") as Node2D;
-            playerHealthComponent = Manager.Instance.PlayerManager.PlayerHealthComponent;
+            playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
             particles = GetNode<ParticleController>("/root/ParticleController");
             musicController = GetNode<MusicController>("/root/MusicController");
 

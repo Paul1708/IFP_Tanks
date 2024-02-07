@@ -1,5 +1,5 @@
 using Godot;
-using Managers;
+using Managers.Save;
 
 namespace UI;
 public partial class MainMenu : Control
@@ -9,7 +9,7 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 		musicController = GetNode<MusicController>("/root/MusicController");
-		GetNode<Button>("Buttons/VBoxContainer/Continue").Disabled = !Manager.Instance.SaveManager.IsSaveFileAvailable();
+		GetNode<Button>("Buttons/VBoxContainer/Continue").Disabled = !SaveManager.Instance.IsSaveFileAvailable();
 	}
 
 	private void OnPlayPressed()

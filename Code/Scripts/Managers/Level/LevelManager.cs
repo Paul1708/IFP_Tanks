@@ -24,13 +24,13 @@ public partial class LevelManager : Node2D
 
     public override void _Ready()
     {
-        Manager.Instance.SaveManager.OnSaveDataLoaded += OnSaveDataLoaded;
+        SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
         LoadLevelByID(0, 0);
     }
     public override void _ExitTree()
     {
-        Manager.Instance.SaveManager.OnSaveDataLoaded -= OnSaveDataLoaded;
+        SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
     public void OnLevelComplete()
@@ -38,8 +38,8 @@ public partial class LevelManager : Node2D
         // Set Checkpoint
         if (CurrentLevelData.IsCheckpoint)
         {
-            Manager.Instance.CoinManager.SetCheckpointCoins();
-            Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
+            CoinManager.Instance.SetCheckpointCoins();
+            PlayerManager.Instance.PlayerHealthComponent.HealToMax();
             playedLevelsSinceCheckpoint.Clear();
             SaveData();
         }
@@ -60,7 +60,7 @@ public partial class LevelManager : Node2D
 
         // If there are no levels left in the game, go back to the main menu
         GD.Print("You win!");
-        Manager.Instance.CoinManager.ResetCoins();
+        CoinManager.Instance.ResetCoins();
         GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
     }
 
@@ -72,8 +72,8 @@ public partial class LevelManager : Node2D
             Worlds[(int)level.X].Levels[(int)level.Y].LevelState = LevelSate.LOCKED;
         }
 
-        Manager.Instance.CoinManager.SetCoins(Manager.Instance.CoinManager.checkpointCoins);
-        Manager.Instance.PlayerManager.PlayerHealthComponent.HealToMax();
+        CoinManager.Instance.SetCoins(CoinManager.Instance.checkpointCoins);
+        PlayerManager.Instance.PlayerHealthComponent.HealToMax();
         LoadLevelByID(lastCheckpointWorldID, lastCheckpointLevelID);
     }
 
@@ -81,10 +81,10 @@ public partial class LevelManager : Node2D
     {
         lastCheckpointLevelID = currentLevelID;
         lastCheckpointWorldID = currentWorldID;
-        Manager.Instance.SaveManager.SaveData.LastCheckpointLevelID = lastCheckpointLevelID;
-        Manager.Instance.SaveManager.SaveData.LastCheckpointWorldID = lastCheckpointWorldID;
+        SaveManager.Instance.SaveData.LastCheckpointLevelID = lastCheckpointLevelID;
+        SaveManager.Instance.SaveData.LastCheckpointWorldID = lastCheckpointWorldID;
 
-        Manager.Instance.SaveManager.SaveGame();
+        SaveManager.Instance.SaveGame();
     }
 
     private void OnSaveDataLoaded(SaveData saveData)

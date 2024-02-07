@@ -5,6 +5,7 @@ namespace Managers;
 
 public partial class CoinManager : Node2D
 {
+    public static CoinManager Instance { get; private set; }
     [Export]
     public int Coins { get; set; } = 0;
 
@@ -17,12 +18,21 @@ public partial class CoinManager : Node2D
 
     public override void _Ready()
     {
-        Manager.Instance.SaveManager.OnSaveDataLoaded += OnSaveDataLoaded;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            QueueFree(); // Ensures there is only one instance of CoinManager
+        }
+
+        SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
     }
 
     public override void _ExitTree()
     {
-        Manager.Instance.SaveManager.OnSaveDataLoaded -= OnSaveDataLoaded;
+        SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
     public void OnSaveDataLoaded(SaveData saveData)

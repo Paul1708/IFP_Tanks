@@ -23,7 +23,7 @@ public partial class HealthBar : TextureProgressBar
         greenBar = GetNode<TextureProgressBar>("GreenHealth");
         redHealthTimer = GetNode<Timer>("RedHealthTimer");
         label = GetNode<Label>("Label");
-        playerHealthComponent = Manager.Instance.PlayerManager.PlayerHealthComponent;
+        playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
 
         // Connect signals
         playerHealthComponent.OnHealthChanged += OnHealthChanged;

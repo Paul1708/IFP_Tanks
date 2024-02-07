@@ -7,12 +7,12 @@ public partial class CoinDisplay : TextureRect
 	public override void _Ready()
 	{
 		coinLabel = GetNode<Label>("CoinLabel");
-		Manager.Instance.CoinManager.OnCoinChanged += ChangeLabel;
+		CoinManager.Instance.OnCoinChanged += ChangeLabel;
 	}
 
 	public override void _ExitTree()
 	{
-		Manager.Instance.CoinManager.OnCoinChanged -= ChangeLabel;
+		CoinManager.Instance.OnCoinChanged -= ChangeLabel;
 	}
 
 	public void ChangeLabel(int coins)

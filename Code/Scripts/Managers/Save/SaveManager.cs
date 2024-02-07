@@ -4,6 +4,7 @@ namespace Managers.Save;
 
 public partial class SaveManager : Node
 {
+    public static SaveManager Instance { get; private set; }
     public SaveData SaveData { get; private set; }
 
     [Signal]
@@ -11,6 +12,16 @@ public partial class SaveManager : Node
 
     public override void _Ready()
     {
+
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            QueueFree(); // Ensures there is only one instance of SaveManager
+        }
+
         if (IsSaveFileAvailable())
         {
             LoadGame();
@@ -23,9 +34,9 @@ public partial class SaveManager : Node
 
     public void SaveGame()
     {
-        SaveData.PlayerCurrentHP = Manager.Instance.PlayerManager.PlayerHealthComponent.currentHP;
-        SaveData.PlayerMaxHP = Manager.Instance.PlayerManager.PlayerHealthComponent.maxHP;
-        SaveData.CoinCount = Manager.Instance.CoinManager.Coins;
+        SaveData.PlayerCurrentHP = PlayerManager.Instance.PlayerHealthComponent.currentHP;
+        SaveData.PlayerMaxHP = PlayerManager.Instance.PlayerHealthComponent.maxHP;
+        SaveData.CoinCount = CoinManager.Instance.Coins;
 
         ResourceSaver.Save(SaveData, "user://savegame.tres");
         GD.Print("Data Saved!");
