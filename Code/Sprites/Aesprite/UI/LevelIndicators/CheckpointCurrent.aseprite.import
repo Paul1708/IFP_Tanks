@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://ce2qckym53qdi"
+path="res://.godot/imported/CheckpointCurrent.aseprite-0b8bc993d8e16c2477729bfb855dd52d.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/UI/LevelIndicators/CheckpointCurrent.aseprite"
+dest_files=["res://.godot/imported/CheckpointCurrent.aseprite-0b8bc993d8e16c2477729bfb855dd52d.res"]
+
+[params]
+

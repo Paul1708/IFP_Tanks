@@ -10,17 +10,17 @@ public partial class LevelData : Resource
     [Export]
     public bool IsCheckpoint { get; set; }
     [Export]
-    public LevelSate LevelState { get; set; }
+    public LevelState LevelState { get; set; }
 
     public LevelData()
     {
         LevelScene = null;
         IsCheckpoint = false;
-        LevelState = LevelSate.LOCKED;
+        LevelState = LevelState.LOCKED;
     }
 }
 
-public enum LevelSate
+public enum LevelState
 {
     CURRENT,
     COMPLETED,

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cs71bqu7og0p1"
+path="res://.godot/imported/BasicLocked copy 2.aseprite-192a38313104c2c1b715b254e3395d8b.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/UI/LevelIndicators/BasicLocked copy 2.aseprite"
+dest_files=["res://.godot/imported/BasicLocked copy 2.aseprite-192a38313104c2c1b715b254e3395d8b.res"]
+
+[params]
+
