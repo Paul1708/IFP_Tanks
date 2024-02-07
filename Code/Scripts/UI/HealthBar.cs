@@ -71,7 +71,7 @@ public partial class HealthBar : TextureProgressBar
     private void UpdateRedHealthBar()
     {
         //set the red health bar's value to the current health
-        Tween tween = GetTree().CreateTween();
+        Tween tween = CreateTween();
         tween.TweenProperty(this, "value", currentHP, 1).SetTrans(Tween.TransitionType.Expo).SetEase(Tween.EaseType.Out);
     }
 
