@@ -1,9 +1,10 @@
 [gd_scene load_steps=13 format=3 uid="uid://d0p4pcjksxbgu"]
 
-[gd_scene load_steps=9 format=3 uid="uid://d0p4pcjksxbgu"]
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
 [ext_resource type="Script" path="res://Scripts/Managers/Level/LevelManager.cs" id="3_6hwsd"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.cs" id="5_i6q7i"]
+[ext_resource type="Texture2D" uid="uid://dys1imk65tp35" path="res://Sprites/UI/LevelIndicators/BasicCompleted.png" id="5_rtyne"]
 [ext_resource type="PackedScene" uid="uid://d35h47uyj31sj" path="res://Scenes/UI/HealthBar.tscn" id="7_3rvrl"]
 [ext_resource type="Texture2D" uid="uid://lb0afin3xbq8" path="res://Sprites/UI/CoinDisplay/CoinDisplay.png" id="8_afkt1"]
 [ext_resource type="Resource" uid="uid://dp6htk3af7ahe" path="res://Scenes/Levels/World1/World1.tres" id="8_bno8v"]
@@ -73,6 +74,7 @@ Worlds = Array[Resource]([ExtResource("8_bno8v")])
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
 custom_minimum_size = Vector2(0.155, 44.27)
+custom_minimum_size = Vector2(0.155, 44.27)
 offset_left = 10.0
 offset_top = 40.0
 offset_right = 234.0
@@ -100,6 +102,106 @@ theme_override_colors/font_color = Color(0.0392157, 0.0509804, 0.0784314, 1)
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -376.0
+offset_top = 20.0
+offset_right = -200.0
+offset_bottom = 44.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf0x2")
+
+[node name="Panel" type="Panel" parent="HUD/PanelContainer"]
+custom_minimum_size = Vector2(0, -38.495)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LevelDisplay" type="HBoxContainer" parent="HUD/PanelContainer/Panel" groups=["LevelDisplay"]]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 24.0
+alignment = 1
+script = ExtResource("5_i6q7i")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("11_op6e2")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+[node name="PanelContainer" type="PanelContainer" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -376.0
+offset_top = 20.0
+offset_right = -200.0
+offset_bottom = 44.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf0x2")
+
+[node name="Panel" type="Panel" parent="HUD/PanelContainer"]
+custom_minimum_size = Vector2(0, -38.495)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LevelDisplay" type="HBoxContainer" parent="HUD/PanelContainer/Panel" groups=["LevelDisplay"]]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 24.0
+alignment = 1
+script = ExtResource("5_i6q7i")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("11_op6e2")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
 
 [node name="PanelContainer" type="PanelContainer" parent="HUD"]
 anchors_preset = 1

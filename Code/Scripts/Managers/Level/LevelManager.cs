@@ -16,12 +16,15 @@ public partial class LevelManager : Node2D
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
 
-
     [Signal]
     public delegate void OnLevelChangedEventHandler();
 
+    private LevelDisplay levelDisplay;
+
+
     public override void _Ready()
     {
+        levelDisplay = GetTree().GetFirstNodeInGroup("LevelDisplay") as LevelDisplay;
         SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
         SaveManager.Instance.LoadGame();
@@ -69,7 +72,6 @@ public partial class LevelManager : Node2D
     {
         SaveManager.Instance.SaveData.LastCheckpointLevelID = currentLevelID;
         SaveManager.Instance.SaveData.LastCheckpointWorldID = currentWorldID;
-        SaveManager.Instance.SaveData.Worlds = Worlds;
 
         SaveManager.Instance.SaveGame();
     }
@@ -79,7 +81,30 @@ public partial class LevelManager : Node2D
         currentLevelID = saveData.LastCheckpointLevelID;
         currentWorldID = saveData.LastCheckpointWorldID;
 
+        RestoreLevelStatesAfterSave();
         LoadLevelByID(currentWorldID, currentLevelID);
+    }
+
+    private void RestoreLevelStatesAfterSave()
+    {
+        // Set all levels before current level to COMPLETED and all levels after the current level to LOCKED
+        for (int i = 0; i < Worlds.Length; i++)
+        {
+            for (int j = 0; j < Worlds[i].Levels.Length; j++)
+            {
+                if (i < currentWorldID || (i == currentWorldID && j <= currentLevelID))
+                {
+                    Worlds[i].Levels[j].LevelState = LevelState.COMPLETED;
+                }
+                else
+                {
+                    Worlds[i].Levels[j].LevelState = LevelState.LOCKED;
+                }
+            }
+        }
+
+        // Set the current level to CURRENT
+        Worlds[currentWorldID].Levels[currentLevelID].LevelState = LevelState.CURRENT;
     }
 
 
@@ -87,7 +112,7 @@ public partial class LevelManager : Node2D
     {
         if (CurrentLevelInstance != null)
         {
-            CurrentLevelData.LevelState = LevelSate.COMPLETED;
+            CurrentLevelData.LevelState = LevelState.COMPLETED;
 
             // Disconnect signals of old Level
             CurrentLevelInstance.OnLevelComplete -= OnLevelComplete;
@@ -112,7 +137,9 @@ public partial class LevelManager : Node2D
         CurrentLevelInstance.OnLevelFailed += OnLevelFailed;
 
         // Set the level state and add it to the list of played levels since the last checkpoint
-        CurrentLevelData.LevelState = LevelSate.CURRENT;
+        CurrentLevelData.LevelState = LevelState.CURRENT;
+
+        levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
     }
 
 }
