@@ -1,5 +1,7 @@
 using Components;
 using Godot;
+using Managers;
+
 
 namespace UI;
 
@@ -8,20 +10,22 @@ public partial class HealthBar : TextureProgressBar
     [Export]
     public float RedBarDelay { get; set; } = 1f;
     public TextureProgressBar greenBar;
+    public TextureProgressBar redBar;
     public Timer redHealthTimer;
     public Label label;
 
     HealthComponent playerHealthComponent;
 
-    public float currentHP;
-    public float maxHP;
+    public int currentHP;
+    public int maxHP;
     public override void _Ready()
     {
         // Get references
         greenBar = GetNode<TextureProgressBar>("GreenHealth");
+        redBar = this;
         redHealthTimer = GetNode<Timer>("RedHealthTimer");
         label = GetNode<Label>("Label");
-        playerHealthComponent = Manager.Instance.PlayerManager.PlayerHealthComponent;
+        playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
 
         // Connect signals
         playerHealthComponent.OnHealthChanged += OnHealthChanged;
@@ -33,8 +37,8 @@ public partial class HealthBar : TextureProgressBar
         currentHP = playerHealthComponent.currentHP;
 
         // Set progress bar values
-        MaxValue = maxHP;
-        Value = currentHP;
+        redBar.MaxValue = maxHP;
+        redBar.Value = currentHP;
         greenBar.MaxValue = maxHP;
         greenBar.Value = currentHP;
 
@@ -49,29 +53,37 @@ public partial class HealthBar : TextureProgressBar
         redHealthTimer.Timeout -= UpdateRedHealthBar;
     }
 
-    public void OnHealthChanged(float newHP)
+    public void OnHealthChanged(int newHP)
     {
         //set the health bar's value to the current health
+        greenBar.Value = newHP;
+
+        if (newHP > currentHP)
+        {
+            redBar.Value = newHP;
+        }
         currentHP = newHP;
-        greenBar.Value = currentHP;
+
 
         UpdateLabelText();
+
+
         redHealthTimer.Stop();
         redHealthTimer.Start(RedBarDelay);
     }
 
-    public void OnMaxHealthChanged(float newMaxHP)
+    public void OnMaxHealthChanged(int newMaxHP)
     {
         UpdateLabelText();
         maxHP = newMaxHP;
-        MaxValue = maxHP;
+        redBar.MaxValue = maxHP;
         greenBar.MaxValue = maxHP;
     }
 
     private void UpdateRedHealthBar()
     {
         //set the red health bar's value to the current health
-        Tween tween = GetTree().CreateTween();
+        Tween tween = CreateTween();
         tween.TweenProperty(this, "value", currentHP, 1).SetTrans(Tween.TransitionType.Expo).SetEase(Tween.EaseType.Out);
     }
 
@@ -79,6 +91,4 @@ public partial class HealthBar : TextureProgressBar
     {
         label.Text = $"{currentHP} / {maxHP}";
     }
-
-
 }

@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Components;
 using GdUnit4;
 using Godot;
+using Managers.Level;
 using Managers;
-using Movement;
 
 [TestSuite]
 public class TestLevel
@@ -65,7 +65,7 @@ public class TestLevel
         level.OnLevelFailed += () => { isFailed = true; };
 
         // Kill the player
-        Manager.Instance.PlayerManager.PlayerHealthComponent.TakeDamage(100);
+        PlayerManager.Instance.PlayerHealthComponent.TakeDamage(100);
 
         Assertions.AssertBool(isFailed).IsTrue();
     }

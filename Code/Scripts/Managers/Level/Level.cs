@@ -4,7 +4,7 @@ using Components;
 using System.Collections.Generic;
 using Items;
 
-namespace Managers;
+namespace Managers.Level;
 
 public partial class Level : Node2D
 {
@@ -12,8 +12,6 @@ public partial class Level : Node2D
     public ShopMenu shopMenu;
     Timer coinTimer = new Timer();
 
-    [Export]
-    public bool IsCheckpoint { get; private set; }
     public List<Node> enemies { get; set; }
 
     [Signal]
@@ -37,16 +35,15 @@ public partial class Level : Node2D
             // Connect Signals, so OnEnemyDeath is called when an enemy dies
             enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += () => OnEnemyDeath(enemy);
         }
-        Manager.Instance.PlayerManager.PlayerHealthComponent.OnDeath += OnPlayerDeath;
+        PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnPlayerDeath;
         //connect the coin timer signal to the move all coins to player function
         coinTimer.Timeout += MoveAllCoinsToPlayer;
-
     }
 
     public override void _ExitTree()
     {
         //Disconnect Signals
-        Manager.Instance.PlayerManager.PlayerHealthComponent.OnDeath -= OnPlayerDeath;
+        PlayerManager.Instance.PlayerHealthComponent.OnDeath -= OnPlayerDeath;
     }
 
     public override void _Process(double delta)
@@ -105,7 +102,7 @@ public partial class Level : Node2D
         item.GlobalPosition = position.GlobalPosition;
     }
 
-    // Move all coins to the player
+    // Move all coins to the player by setting the shouldMove property to true
     public void MoveAllCoinsToPlayer()
     {
         coinTimer.Stop();
@@ -114,7 +111,7 @@ public partial class Level : Node2D
         {
             return;
         }
-        
+
         var coins = GetTree().GetNodesInGroup("Coins");
 
         foreach (Coin coin in coins)
