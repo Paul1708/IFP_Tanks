@@ -69,6 +69,8 @@ public partial class LevelManager : Node2D
 
     public void OnLevelFailed()
     {
+        // Shake the camera and wait for the shake to finish
+        CameraShaker.Instance.Shake(30, 0.3f);
         // Reload the last save
         SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
     }
@@ -150,4 +152,13 @@ public partial class LevelManager : Node2D
         levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
     }
 
+
+    // TODO: Remove this Debug method
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsActionJustPressed("Debug"))
+        {
+            OnLevelComplete();
+        }
+    }
 }

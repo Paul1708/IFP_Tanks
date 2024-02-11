@@ -502,9 +502,3 @@ position = Vector2(1531, 865)
 
 [node name="RocketEnemy2" parent="Enemies" instance=ExtResource("5_fkmnq")]
 position = Vector2(1512, 226)
-
-[node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Level 3
-"

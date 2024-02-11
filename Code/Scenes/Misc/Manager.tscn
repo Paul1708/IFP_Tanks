@@ -19,4 +19,3 @@ maxHP = 100
 
 [node name="CoinManager" type="Node2D" parent="."]
 script = ExtResource("4_0d2wr")
-Coins = null

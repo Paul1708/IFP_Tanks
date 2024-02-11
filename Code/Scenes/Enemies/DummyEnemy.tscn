@@ -1,90 +1,91 @@
-[gd_scene load_steps=30 format=3 uid="uid://4ex5rdvrveg3"]
+[gd_scene load_steps=31 format=3 uid="uid://ck4qfrctxcyal"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_hiahh"]
-[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_5qh4k"]
-[ext_resource type="Texture2D" uid="uid://yyatfwo0expa" path="res://Sprites/Tanks/TankBlue.png" id="2_fajxa"]
-[ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="3_328m8"]
-[ext_resource type="Shader" uid="uid://dcs3kmr4n27qk" path="res://Sprites/Shaders/Tank.tres" id="3_u3vcg"]
-[ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="4_egmny"]
-[ext_resource type="PackedScene" uid="uid://bpyg8h74vn0r6" path="res://Scenes/Weapons/HomingBullet.tscn" id="5_6u5xn"]
-[ext_resource type="Texture2D" uid="uid://dylbxstfcgudy" path="res://Sprites/Tanks/GunBlue.png" id="6_nojed"]
-[ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="7_igvkk"]
-[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="8_cqfsr"]
-[ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_jbxwx"]
-[ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="11_rvtfd"]
-[ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_k6nxf"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_pdmmf"]
+[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_chuvg"]
+[ext_resource type="Shader" uid="uid://dcs3kmr4n27qk" path="res://Sprites/Shaders/Tank.tres" id="3_n53ey"]
+[ext_resource type="Texture2D" uid="uid://dyvtnwvkj8ds8" path="res://Sprites/Tanks/TankYellow.png" id="4_g1t0g"]
+[ext_resource type="Script" path="res://Scripts/Enemies/DummyBehaviour.cs" id="5_k678x"]
+[ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="6_4ges3"]
+[ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="7_imfqm"]
+[ext_resource type="Texture2D" uid="uid://bfd4pyhmq4i2" path="res://Sprites/Tanks/GunYellow.png" id="8_fm1vq"]
+[ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="9_wxrj1"]
+[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="10_wnk1f"]
+[ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_4xtg1"]
+[ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="12_35or0"]
+[ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="12_bkemy"]
+[ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_jtlle"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j03un"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_un74c"]
 resource_local_to_scene = true
-shader = ExtResource("3_u3vcg")
-shader_parameter/Weight = null
+shader = ExtResource("3_n53ey")
+shader_parameter/Weight = 0.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mntrx"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48yjh"]
 size = Vector2(86, 68)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2017h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_isks5"]
 resource_local_to_scene = true
-shader = ExtResource("3_u3vcg")
-shader_parameter/Weight = null
+shader = ExtResource("3_n53ey")
+shader_parameter/Weight = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p6qt7"]
-atlas = ExtResource("6_nojed")
+[sub_resource type="AtlasTexture" id="AtlasTexture_t2bgx"]
+atlas = ExtResource("8_fm1vq")
 region = Rect2(48, 0, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bi2or"]
-atlas = ExtResource("6_nojed")
+[sub_resource type="AtlasTexture" id="AtlasTexture_lia2c"]
+atlas = ExtResource("8_fm1vq")
 region = Rect2(96, 0, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3mgy0"]
-atlas = ExtResource("6_nojed")
+[sub_resource type="AtlasTexture" id="AtlasTexture_w84mf"]
+atlas = ExtResource("8_fm1vq")
 region = Rect2(0, 92, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejllr"]
-atlas = ExtResource("6_nojed")
+[sub_resource type="AtlasTexture" id="AtlasTexture_l78ht"]
+atlas = ExtResource("8_fm1vq")
 region = Rect2(48, 92, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vt2ns"]
-atlas = ExtResource("6_nojed")
+[sub_resource type="AtlasTexture" id="AtlasTexture_iablx"]
+atlas = ExtResource("8_fm1vq")
 region = Rect2(96, 92, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_petf8"]
-atlas = ExtResource("6_nojed")
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0jtv"]
+atlas = ExtResource("8_fm1vq")
 region = Rect2(0, 184, 48, 92)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_70krq"]
-atlas = ExtResource("6_nojed")
+[sub_resource type="AtlasTexture" id="AtlasTexture_48ykt"]
+atlas = ExtResource("8_fm1vq")
 region = Rect2(0, 0, 48, 92)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_sh67s"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3m5xi"]
 animations = [{
 "frames": [{
 "duration": 0.6,
-"texture": SubResource("AtlasTexture_p6qt7")
+"texture": SubResource("AtlasTexture_t2bgx")
 }, {
 "duration": 0.6,
-"texture": SubResource("AtlasTexture_bi2or")
+"texture": SubResource("AtlasTexture_lia2c")
 }, {
 "duration": 1.3,
-"texture": SubResource("AtlasTexture_3mgy0")
+"texture": SubResource("AtlasTexture_w84mf")
 }, {
 "duration": 1.3,
-"texture": SubResource("AtlasTexture_ejllr")
+"texture": SubResource("AtlasTexture_l78ht")
 }, {
 "duration": 1.3,
-"texture": SubResource("AtlasTexture_vt2ns")
+"texture": SubResource("AtlasTexture_iablx")
 }, {
 "duration": 1.3,
-"texture": SubResource("AtlasTexture_petf8")
+"texture": SubResource("AtlasTexture_h0jtv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_70krq")
+"texture": SubResource("AtlasTexture_48ykt")
 }],
 "loop": false,
 "name": &"Shoot",
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_ka0rx"]
+[sub_resource type="Animation" id="Animation_e2tqd"]
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -97,7 +98,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_fajxa")]
+"values": [ExtResource("4_g1t0g")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -148,7 +149,7 @@ tracks/4/keys = {
 "values": [3, 4, 1, 0]
 }
 
-[sub_resource type="Animation" id="Animation_e2rfm"]
+[sub_resource type="Animation" id="Animation_8puoc"]
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -161,7 +162,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_fajxa")]
+"values": [ExtResource("4_g1t0g")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -212,7 +213,7 @@ tracks/4/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_p08qp"]
+[sub_resource type="Animation" id="Animation_6kafa"]
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -225,7 +226,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_fajxa")]
+"values": [ExtResource("4_g1t0g")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -276,7 +277,7 @@ tracks/4/keys = {
 "values": [0, 6, 2, 5]
 }
 
-[sub_resource type="Animation" id="Animation_d4m13"]
+[sub_resource type="Animation" id="Animation_6f1v0"]
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -289,7 +290,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("2_fajxa")]
+"values": [ExtResource("4_g1t0g")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -340,25 +341,26 @@ tracks/4/keys = {
 "values": [0, 5, 2, 6]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1uwfi"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m82lt"]
 _data = {
-"Backward": SubResource("Animation_ka0rx"),
-"Forward": SubResource("Animation_e2rfm"),
-"Left": SubResource("Animation_p08qp"),
-"Right": SubResource("Animation_d4m13")
+"Backward": SubResource("Animation_e2tqd"),
+"Forward": SubResource("Animation_8puoc"),
+"Left": SubResource("Animation_6kafa"),
+"Right": SubResource("Animation_6f1v0")
 }
 
-[node name="RocketEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
+[node name="BasicEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
+z_index = 1
 floor_max_angle = 0.0
-script = ExtResource("1_hiahh")
-DropItemScene = ExtResource("2_5qh4k")
+script = ExtResource("1_pdmmf")
+DropItemScene = ExtResource("2_chuvg")
 
 [node name="TankBaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_j03un")
+material = SubResource("ShaderMaterial_un74c")
 position = Vector2(8.00011, 0.000175476)
 rotation = 1.5708
-texture = ExtResource("2_fajxa")
+texture = ExtResource("4_g1t0g")
 hframes = 3
 vframes = 3
 frame = 3
@@ -371,34 +373,30 @@ metadata/_aseprite_wizard_config_ = {
 "only_visible": false,
 "op_exp": false,
 "player": "AnimationPlayer",
-"source": "res://Sprites/Aesprite/Tank/TankBlue.aseprite"
+"source": "res://Sprites/Aesprite/Tank/TankYellow.aseprite"
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2(3, 0)
-shape = SubResource("RectangleShape2D_mntrx")
+shape = SubResource("RectangleShape2D_48yjh")
 
 [node name="Behaviour" type="Node2D" parent="."]
-script = ExtResource("3_328m8")
+script = ExtResource("5_k678x")
 
 [node name="Gun" type="Node2D" parent="."]
-script = ExtResource("4_egmny")
-bulletScene = ExtResource("5_6u5xn")
-bulletsPerSecond = 0.5
-bulletDamage = 20
-
-[node name="muzzle" type="Marker2D" parent="Gun"]
-position = Vector2(69, 0)
-scale = Vector2(1689.03, 1.32508)
+script = ExtResource("6_4ges3")
+bulletScene = ExtResource("7_imfqm")
+bulletsPerSecond = 1.0
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
 
 [node name="GunSprite" type="AnimatedSprite2D" parent="Gun"]
 texture_filter = 1
-material = SubResource("ShaderMaterial_2017h")
+material = SubResource("ShaderMaterial_isks5")
 position = Vector2(26, 0)
 rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_sh67s")
+sprite_frames = SubResource("SpriteFrames_3m5xi")
 animation = &"Shoot"
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
@@ -407,29 +405,32 @@ metadata/_aseprite_wizard_config_ = {
 "o_name": "",
 "only_visible": false,
 "op_exp": false,
-"source": "res://Sprites/Aesprite/Tank/GunBlue.aseprite"
+"source": "res://Sprites/Aesprite/Tank/GunYellow.aseprite"
 }
+
+[node name="muzzle" type="Marker2D" parent="Gun"]
+position = Vector2(70, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52
 debug_enabled = true
-script = ExtResource("7_igvkk")
-MovementSpeed = 100.0
+script = ExtResource("9_wxrj1")
 
 [node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("8_cqfsr")
-maxHP = 50
+script = ExtResource("10_wnk1f")
+maxHP = 100
 
-[node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_jbxwx")]
-visible = false
+[node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_4xtg1")]
 
 [node name="DamageNumberController" type="Node2D" parent="HealthComponent"]
-script = ExtResource("12_k6nxf")
+script = ExtResource("12_jtlle")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_1uwfi")
+"": SubResource("AnimationLibrary_m82lt")
 }
+speed_scale = 3.5
+script = ExtResource("12_bkemy")
 
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
-script = ExtResource("11_rvtfd")
+script = ExtResource("12_35or0")

@@ -2,7 +2,7 @@
 using Components;
 using Godot;
 using Managers;
-using Timer = Godot.Timer;
+
 namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
@@ -42,6 +42,7 @@ namespace Weapons
         // Collision Methods
         private void OnCollision(Node node)
         {
+            CameraShaker.Instance.Shake(0.25f, 0.05f);
             OnAnythingHit();
             if (node.IsInGroup("Damageable"))
             {
@@ -66,10 +67,10 @@ namespace Weapons
         {
             if (node == player)
             {
+                CameraShaker.Instance.Shake(5, 0.15f);
                 playerHealthComponent.TakeDamage(damage);
                 return;
             }
-
             node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
         }
 
