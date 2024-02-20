@@ -352,6 +352,8 @@ _data = {
 
 [node name="BasicEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
 z_index = 1
+collision_layer = 3
+collision_mask = 3
 floor_max_angle = 0.0
 script = ExtResource("1_2xr4h")
 DropItemScene = ExtResource("2_15ljn")
@@ -415,6 +417,7 @@ position = Vector2(70, 0)
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52
+path_postprocessing = 1
 debug_enabled = true
 script = ExtResource("6_ot0ae")
 MovementSpeed = 100.0

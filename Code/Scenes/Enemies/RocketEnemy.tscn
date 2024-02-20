@@ -349,6 +349,8 @@ _data = {
 }
 
 [node name="RocketEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
+collision_layer = 3
+collision_mask = 3
 floor_max_angle = 0.0
 script = ExtResource("1_hiahh")
 DropItemScene = ExtResource("2_5qh4k")
@@ -412,6 +414,7 @@ metadata/_aseprite_wizard_config_ = {
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52
+path_postprocessing = 1
 debug_enabled = true
 script = ExtResource("7_igvkk")
 MovementSpeed = 100.0

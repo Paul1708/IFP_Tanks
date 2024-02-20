@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=15 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
 [ext_resource type="Script" path="res://Scripts/Managers/Level/LevelManager.cs" id="3_6hwsd"]
+[ext_resource type="Resource" uid="uid://cuorkuhnolits" path="res://Scenes/Levels/World 2/World2.tres" id="5_epr3e"]
 [ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.cs" id="5_i6q7i"]
 [ext_resource type="Texture2D" uid="uid://dys1imk65tp35" path="res://Sprites/UI/LevelIndicators/BasicCompleted.png" id="5_rtyne"]
 [ext_resource type="PackedScene" uid="uid://d35h47uyj31sj" path="res://Scenes/UI/HealthBar.tscn" id="7_3rvrl"]
@@ -48,7 +49,7 @@ offset_bottom = -3.0
 
 [node name="LevelManager" type="Node2D" parent="." groups=["LevelManager"]]
 script = ExtResource("3_6hwsd")
-Worlds = Array[Resource]([ExtResource("8_bno8v")])
+Worlds = Array[Resource]([ExtResource("8_bno8v"), ExtResource("5_epr3e")])
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

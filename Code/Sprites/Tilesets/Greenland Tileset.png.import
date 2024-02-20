@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2ubsi2dbt2er"
-path="res://.godot/imported/Desert Tileset.png-7953beaad8bf16076cac5fb69081fe49.ctex"
+uid="uid://ceqqdb7s1sj6s"
+path="res://.godot/imported/Greenland Tileset.png-fee67039586ae79cded5a8456b93f0c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tilesets/Desert Tileset.png"
-dest_files=["res://.godot/imported/Desert Tileset.png-7953beaad8bf16076cac5fb69081fe49.ctex"]
+source_file="res://Sprites/Tilesets/Greenland Tileset.png"
+dest_files=["res://.godot/imported/Greenland Tileset.png-fee67039586ae79cded5a8456b93f0c5.ctex"]
 
 [params]
 
