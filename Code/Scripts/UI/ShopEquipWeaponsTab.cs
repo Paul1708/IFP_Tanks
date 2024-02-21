@@ -3,6 +3,7 @@ using System;
 using Managers.Level;
 using Managers;
 using Items;
+using System.Linq;
 
 public partial class ShopEquipWeaponsTab : ShopBaseTab
 {
@@ -18,7 +19,10 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
-		
+
+		tabItems = GetTree().GetNodesInGroup("StatsTab").ToList();
+		itemCount = tabItems.Count;
+
 		levelManager.OnLevelChanged += ResetScrollBar;
 
 		GetPriceTags();
@@ -44,22 +48,22 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 
 	private void OnBuy1Pressed()
 	{
-		shopMenu.Buy(price1, priceTag1, itemQuantity1, "2Item1");
+		shopMenu.Buy(prices[0], priceTag1, itemQuantities[0], "tab2Item1");
 	}
 
 	private void OnBuy2Pressed()
 	{
-		shopMenu.Buy(price2, priceTag2, itemQuantity2, "2Item2");
+		shopMenu.Buy(prices[1], priceTag2, itemQuantities[1], "tab2Item2");
 	}
 
 	private void OnBuy3Pressed()
 	{
-		shopMenu.Buy(price3, priceTag3, itemQuantity3, "2Item3");
+		shopMenu.Buy(prices[2], priceTag3, itemQuantities[2], "tab2Item3");
 	}
 
 	private void OnBuy4Pressed()
 	{
-		shopMenu.Buy(price4, priceTag4, itemQuantity4, "2Item4");
+		shopMenu.Buy(prices[3], priceTag4, itemQuantities[3], "tab2Item4");
 	}
 
 	private void GetPriceTags()

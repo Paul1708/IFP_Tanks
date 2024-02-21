@@ -180,7 +180,7 @@ offset_bottom = -31.0
 
 [node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel"]
 
-[node name="Panel1" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+[node name="Panel1" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control" groups=["StatsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -261,7 +261,7 @@ text = "Price: "
 script = ExtResource("6_607bg")
 price = 2
 
-[node name="Panel2" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+[node name="Panel2" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control" groups=["StatsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -342,7 +342,7 @@ text = "Price: "
 script = ExtResource("6_607bg")
 price = 4
 
-[node name="Panel3" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+[node name="Panel3" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control" groups=["StatsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -422,7 +422,7 @@ grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
 
-[node name="Panel4" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+[node name="Panel4" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control" groups=["StatsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -530,7 +530,7 @@ grow_vertical = 2
 [node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel"]
 position = Vector2(0, -31)
 
-[node name="Panel1" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+[node name="Panel1" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -610,7 +610,7 @@ grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
 
-[node name="Panel2" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+[node name="Panel2" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -691,7 +691,7 @@ grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
 
-[node name="Panel3" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+[node name="Panel3" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
@@ -771,7 +771,7 @@ grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
 
-[node name="Panel4" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+[node name="Panel4" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5

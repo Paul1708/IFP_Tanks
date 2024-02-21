@@ -2,6 +2,7 @@ using Godot;
 using Managers.Level;
 using System;
 using Managers;
+using System.Linq;
 
 public partial class ShopUpgradeStatsTab : ShopBaseTab
 {
@@ -17,6 +18,9 @@ public partial class ShopUpgradeStatsTab : ShopBaseTab
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");	
 		control = GetNode<Node2D>("RichTextLabel/Control");
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+
+		tabItems = GetTree().GetNodesInGroup("StatsTab").ToList();
+		itemCount = tabItems.Count;
 		
 		levelManager.OnLevelChanged += ResetScrollBar;
 
@@ -43,22 +47,22 @@ public partial class ShopUpgradeStatsTab : ShopBaseTab
 
 	private void OnBuy1Pressed()
 	{
-		shopMenu.Buy(price1, priceTag1, itemQuantity1, "Item1");
+		shopMenu.Buy(prices[0], priceTag1, itemQuantities[0], "Item1");
 	}
 
 	private void OnBuy2Pressed()
 	{
-		shopMenu.Buy(price2, priceTag2, itemQuantity2, "Item2");
+		shopMenu.Buy(prices[1], priceTag2, itemQuantities[1], "Item2");
 	}
 
 	private void OnBuy3Pressed()
 	{
-		shopMenu.Buy(price3, priceTag3, itemQuantity3, "Item3");
+		shopMenu.Buy(prices[2], priceTag3, itemQuantities[2], "Item3");
 	}
 
 	private void OnBuy4Pressed()
 	{
-		shopMenu.Buy(price4, priceTag4, itemQuantity4, "Item4");
+		shopMenu.Buy(prices[3], priceTag4, itemQuantities[3], "Item4");
 	}
 
 	private void GetPriceTags()

@@ -1,13 +1,17 @@
 using Godot;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 
 public partial class ShopBaseTab : TabBar
 {
 	protected const string PriceTagPathFormat = "RichTextLabel/Control/Panel{0}/PriceTag";
-	public int price1, price2, price3, price4;
+	public int[] prices = new int[4];
+	public int[] itemQuantities = new int[4];
 	public Label priceTag1, priceTag2, priceTag3, priceTag4;
-	public int itemQuantity1, itemQuantity2, itemQuantity3, itemQuantity4; 
+	public List<Node> tabItems { get; set; }
+	public int itemCount;
 
     protected Label GetPriceTag(int panelNumber)
     {

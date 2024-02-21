@@ -39,12 +39,12 @@ public partial class ShopMenu : Control
 
 		level.OnCoinsMoved += ShowShopMenu;
 		levelManager.OnLevelChanged += UpdateSetup;
-		OnItemBoughtUpdatePrices += GetPrices;
-		
+		OnItemBoughtUpdatePrices += UpdatePrices;
+
 		//TODO: Save file values
 		CreateItemQuantityDictionary();
-		SetItemQuantity(1, 1, 1, 1, 1, 1, 1, 1);
-		GetPrices();
+		SetItemQuantity(new int[] { 1, 1, 1, 1 }, new int[] { 1, 1, 1, 1 });
+		UpdatePrices();
 	}
 
 	//Called when a new level is loaded to update the level reference
@@ -104,7 +104,7 @@ public partial class ShopMenu : Control
 			ShopPrices shopPrices = priceTag as ShopPrices;
 			CoinManager.Instance.RemoveCoins(price);
 			IncreaseItemQuantity(itemQuantity, itemName);
-			shopPrices.UpdatePrice(priceTag, price, itemQuantity+1);
+			shopPrices.UpdatePrice(priceTag, price, itemQuantity + 1);
 			EmitSignal(SignalName.OnItemBoughtUpdatePrices);
 		}
 		else
@@ -115,45 +115,55 @@ public partial class ShopMenu : Control
 		}
 	}
 
-	public void GetPrices()
+	private int ParsePrice(string tabName, int index)
 	{
 		string stringToBeReplaced = "Price: ";
-		statsTab.price1 = int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel1/PriceTag").Text.Replace(stringToBeReplaced, ""));
-		statsTab.price2 = int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel2/PriceTag").Text.Replace(stringToBeReplaced, ""));
-		statsTab.price3 = int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel3/PriceTag").Text.Replace(stringToBeReplaced, ""));
-		statsTab.price4 = int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel4/PriceTag").Text.Replace(stringToBeReplaced, ""));
+		string nodePath = $"TabContainer/{tabName}/RichTextLabel/Control/Panel{index + 1}/PriceTag";
+		string priceText = GetNode<Label>(nodePath).Text.Replace(stringToBeReplaced, "");
+		return int.Parse(priceText);
+	}
 
-		weaponsTab.price1 = int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel1/PriceTag").Text.Replace(stringToBeReplaced, ""));
-		weaponsTab.price2 = int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel2/PriceTag").Text.Replace(stringToBeReplaced, ""));
-		weaponsTab.price3 = int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel3/PriceTag").Text.Replace(stringToBeReplaced, ""));
-		weaponsTab.price4 = int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel4/PriceTag").Text.Replace(stringToBeReplaced, ""));
+	public void UpdatePrices()
+	{
+		int[] statsPrices = new int[statsTab.itemCount];
+		int[] weaponsPrices = new int[weaponsTab.itemCount];
+
+		for (int i = 0; i < statsTab.itemCount; i++)
+		{
+			statsPrices[i] = ParsePrice("Stats", i);
+			statsTab.prices[i] = statsPrices[i];
+		}
+		for (int i = 0; i < weaponsTab.itemCount; i++)
+		{
+			weaponsPrices[i] = ParsePrice("Weapons", i);
+			weaponsTab.prices[i] = weaponsPrices[i];
+		}
 	}
 
 	private void CreateItemQuantityDictionary()
 	{
 		itemActions = new Dictionary<string, Action<int>>
 		{
-			{ "Item1", quantity => statsTab.itemQuantity1++ },
-			{ "Item2", quantity => statsTab.itemQuantity2++ },
-			{ "Item3", quantity => statsTab.itemQuantity3++ },
-			{ "Item4", quantity => statsTab.itemQuantity4++ },
-			{ "2Item1", quantity => weaponsTab.itemQuantity1++ },
-			{ "2Item2", quantity => weaponsTab.itemQuantity2++ },
-			{ "2Item3", quantity => weaponsTab.itemQuantity3++ },
-			{ "2Item4", quantity => weaponsTab.itemQuantity4++ },
+			{ "Item1", quantity => statsTab.itemQuantities[0]++ },
+			{ "Item2", quantity => statsTab.itemQuantities[1]++ },
+			{ "Item3", quantity => statsTab.itemQuantities[2]++ },
+			{ "Item4", quantity => statsTab.itemQuantities[3]++ },
+			{ "tab2Item1", quantity => weaponsTab.itemQuantities[0]++ },
+			{ "tab2Item2", quantity => weaponsTab.itemQuantities[1]++ },
+			{ "tab2Item3", quantity => weaponsTab.itemQuantities[2]++ },
+			{ "tab2Item4", quantity => weaponsTab.itemQuantities[3]++ },
 		};
 	}
 
-	public void SetItemQuantity(int itemQuantity1, int itemQuantity2, int itemQuantity3, int itemQuantity4, int tab2ItemQuantity1, int tab2ItemQuantity2, int tab2ItemQuantity3, int tab2ItemQuantity4)
+	public void SetItemQuantity(int[] statsTabQuantities, int[] weaponsTabQuantities)
 	{
-		statsTab.itemQuantity1 = itemQuantity1;
-		statsTab.itemQuantity2 = itemQuantity2;
-		statsTab.itemQuantity3 = itemQuantity3;
-		statsTab.itemQuantity4 = itemQuantity4;
-
-		weaponsTab.itemQuantity1 = tab2ItemQuantity1;
-		weaponsTab.itemQuantity2 = tab2ItemQuantity2;
-		weaponsTab.itemQuantity3 = tab2ItemQuantity3;
-		weaponsTab.itemQuantity4 = tab2ItemQuantity4;
+		for (int i = 0; i < statsTab.itemCount; i++)
+		{
+			statsTab.itemQuantities[i] = statsTabQuantities[i];
+		}
+		for (int i = 0; i < weaponsTab.itemCount; i++)
+		{
+			weaponsTab.itemQuantities[i] = weaponsTabQuantities[i];
+		}
 	}
 }
