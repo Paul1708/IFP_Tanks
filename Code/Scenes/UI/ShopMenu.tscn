@@ -259,7 +259,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = 10
+price = 2
 
 [node name="Panel2" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4
@@ -340,7 +340,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = null
+price = 4
 
 [node name="Panel3" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4
@@ -421,7 +421,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = null
 
 [node name="Panel4" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4
@@ -502,7 +501,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = null
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Stats"]
 layout_mode = 1
@@ -611,7 +609,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = null
 
 [node name="Panel2" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
 anchors_preset = 4
@@ -693,7 +690,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = null
 
 [node name="Panel3" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
 anchors_preset = 4
@@ -774,7 +770,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = null
 
 [node name="Panel4" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
 anchors_preset = 4
@@ -854,7 +849,6 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-price = null
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Weapons"]
 layout_mode = 1
