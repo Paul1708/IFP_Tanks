@@ -11,6 +11,10 @@ public partial class ShopMenu : Control
 	Level level;
 	LevelManager levelManager;
 	MusicController musicController;
+	Label errorLabel;
+	Panel errorPanel;
+	ShopUpgradeStatsTab statsTab;
+	ShopEquipWeaponsTab weaponsTab;
 
 	[Signal]
 	public delegate void OnShopMenuClosedEventHandler();
@@ -19,6 +23,12 @@ public partial class ShopMenu : Control
 	public override void _Ready()
 	{
 		Hide();
+		
+		statsTab = GetNode<ShopUpgradeStatsTab>("TabContainer/Stats");
+		weaponsTab = GetNode<ShopEquipWeaponsTab>("TabContainer/Weapons");
+
+		errorLabel = GetNode<Label>("ErrorScreen/Label");
+		errorPanel = GetNode<Panel>("ErrorScreen");
 
 		musicController = GetNode<MusicController>("/root/MusicController");
 		animationPlayer = GetNode<AnimationPlayer>("BlurAnimation");
@@ -27,6 +37,8 @@ public partial class ShopMenu : Control
 
 		level.OnCoinsMoved += ShowShopMenu;
 		levelManager.OnLevelChanged += UpdateSetup;
+
+		GetPrices();
 	}
 
 	//Called when a new level is loaded to update the level reference
@@ -60,5 +72,37 @@ public partial class ShopMenu : Control
 
 		GetTree().Paused = false; //make sure the game is unpaused
 		GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
+	}
+
+	private void OnErrorAcknowledgedPressed() 
+	{
+		errorPanel.Hide();
+	}
+
+	public void Buy(int price) 
+	{
+		if (CoinManager.Instance.CheckIfEnoughCoins(price)) 
+		{
+			CoinManager.Instance.RemoveCoins(price);
+		}
+		else 
+		{
+			var neededCoins = price - CoinManager.Instance.Coins;
+			errorLabel.Text = "You need " + neededCoins + " more coins to buy this item!";
+			errorPanel.Show();
+		}
+	}
+
+	public void GetPrices() 
+	{
+		statsTab.price1 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel1/PriceTag").Text.Replace("Price: ", ""));
+		statsTab.price2 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel2/PriceTag").Text.Replace("Price: ", ""));
+		statsTab.price3 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel3/PriceTag").Text.Replace("Price: ", ""));
+		statsTab.price4 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel4/PriceTag").Text.Replace("Price: ", ""));
+
+		weaponsTab.price1 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel1/PriceTag").Text.Replace("Price: ", ""));
+		weaponsTab.price2 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel2/PriceTag").Text.Replace("Price: ", ""));
+		weaponsTab.price3 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel3/PriceTag").Text.Replace("Price: ", ""));
+		weaponsTab.price4 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel4/PriceTag").Text.Replace("Price: ", ""));
 	}
 }

@@ -1,15 +1,21 @@
 using Godot;
 using Managers.Level;
 using System;
+using Managers;
 
-public partial class ShopTabs : TabBar
+public partial class ShopUpgradeStatsTab : TabBar
 {
+	ShopMenu shopMenu;
 	HScrollBar hScrollBar;
 	Node2D control;
 	LevelManager levelManager;
+	public int price1, price2, price3, price4;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{
+	{	
+		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");	
 		control = GetNode<Node2D>("RichTextLabel/Control");
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
@@ -32,6 +38,26 @@ public partial class ShopTabs : TabBar
 		Vector2 position = control.Position;
 		position.X = (float)-hScrollBar.Value;
 		control.Position = position;
+	}
+
+	private void OnBuy1Pressed()
+	{
+		shopMenu.Buy(price1);
+	}
+
+	private void OnBuy2Pressed()
+	{
+		shopMenu.Buy(price2);
+	}
+
+	private void OnBuy3Pressed()
+	{
+		shopMenu.Buy(price3);
+	}
+
+	private void OnBuy4Pressed()
+	{
+		shopMenu.Buy(price4);
 	}
 
 }
