@@ -5,7 +5,6 @@ using System;
 using Managers.Level;
 using System.Collections.Generic;
 
-
 public partial class ShopMenu : Control
 {
 	AnimationPlayer animationPlayer;
@@ -16,10 +15,10 @@ public partial class ShopMenu : Control
 	Panel errorPanel;
 	ShopUpgradeStatsTab statsTab;
 	ShopEquipWeaponsTab weaponsTab;
+
 	private Dictionary<string, Action<int>> itemActions;
 
 	[Signal] public delegate void OnShopMenuClosedEventHandler();
-	[Signal] public delegate void OnItemBoughtEventHandler(Label priceTag, int price, int itemQuantity);
 	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
 
 	// Called when the node enters the scene tree for the first time.
@@ -43,8 +42,8 @@ public partial class ShopMenu : Control
 		OnItemBoughtUpdatePrices += GetPrices;
 		
 		//TODO: Save file values
+		CreateItemQuantityDictionary();
 		SetItemQuantity(1, 1, 1, 1, 1, 1, 1, 1);
-		CreateItemDictionary();
 		GetPrices();
 	}
 
@@ -86,13 +85,26 @@ public partial class ShopMenu : Control
 		errorPanel.Hide();
 	}
 
+	private void IncreaseItemQuantity(int itemQuantity, string itemName)
+	{
+		if (itemActions.ContainsKey(itemName))
+		{
+			itemActions[itemName](itemQuantity);
+		}
+		else
+		{
+			GD.Print("Unknown item name: " + itemName);
+		}
+	}
+
 	public void Buy(int price, Label priceTag, int itemQuantity, string itemName)
 	{
 		if (CoinManager.Instance.CheckIfEnoughCoins(price))
 		{
+			ShopPrices shopPrices = priceTag as ShopPrices;
 			CoinManager.Instance.RemoveCoins(price);
-			IncreaseQuantity(itemQuantity, itemName);
-			EmitSignal(SignalName.OnItemBought, priceTag, price, itemQuantity+1);
+			IncreaseItemQuantity(itemQuantity, itemName);
+			shopPrices.UpdatePrice(priceTag, price, itemQuantity+1);
 			EmitSignal(SignalName.OnItemBoughtUpdatePrices);
 		}
 		else
@@ -117,7 +129,7 @@ public partial class ShopMenu : Control
 		weaponsTab.price4 = int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel4/PriceTag").Text.Replace(stringToBeReplaced, ""));
 	}
 
-	private void CreateItemDictionary()
+	private void CreateItemQuantityDictionary()
 	{
 		itemActions = new Dictionary<string, Action<int>>
 		{
@@ -130,18 +142,6 @@ public partial class ShopMenu : Control
 			{ "2Item3", quantity => weaponsTab.itemQuantity3++ },
 			{ "2Item4", quantity => weaponsTab.itemQuantity4++ },
 		};
-	}
-
-	private void IncreaseQuantity(int itemQuantity, string itemName)
-	{
-		if (itemActions.ContainsKey(itemName))
-		{
-			itemActions[itemName](itemQuantity);
-		}
-		else
-		{
-			GD.Print("Unknown item name: " + itemName);
-		}
 	}
 
 	public void SetItemQuantity(int itemQuantity1, int itemQuantity2, int itemQuantity3, int itemQuantity4, int tab2ItemQuantity1, int tab2ItemQuantity2, int tab2ItemQuantity3, int tab2ItemQuantity4)

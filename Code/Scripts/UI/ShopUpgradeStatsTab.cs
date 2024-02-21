@@ -3,15 +3,12 @@ using Managers.Level;
 using System;
 using Managers;
 
-public partial class ShopUpgradeStatsTab : TabBar
+public partial class ShopUpgradeStatsTab : ShopBaseTab
 {
 	ShopMenu shopMenu;
 	HScrollBar hScrollBar;
 	Node2D control;
 	LevelManager levelManager;
-	public int price1, price2, price3, price4;
-	public Label priceTag1, priceTag2, priceTag3, priceTag4;
-	public int itemQuantity1, itemQuantity2, itemQuantity3, itemQuantity4; 
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -67,9 +64,9 @@ public partial class ShopUpgradeStatsTab : TabBar
 	private void GetPriceTags()
 	{
 		//Stats tab
-		priceTag1 = GetNode<Label>("RichTextLabel/Control/Panel1/PriceTag");
-		priceTag2 = GetNode<Label>("RichTextLabel/Control/Panel2/PriceTag");
-		priceTag3 = GetNode<Label>("RichTextLabel/Control/Panel3/PriceTag");
-		priceTag4 = GetNode<Label>("RichTextLabel/Control/Panel4/PriceTag");
+		priceTag1 = GetPriceTag(1);
+		priceTag2 = GetPriceTag(2);
+		priceTag3 = GetPriceTag(3);
+		priceTag4 = GetPriceTag(4);
 	}
 }
