@@ -1,8 +1,18 @@
-[gd_scene load_steps=8 format=3 uid="uid://br4b3w80rufu3"]
+[gd_scene load_steps=18 format=3 uid="uid://br4b3w80rufu3"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ShopMenu.cs" id="1_xixhw"]
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_yc5k6"]
 [ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="3_0nfq2"]
+[ext_resource type="Texture2D" uid="uid://0csb4sndd0xa" path="res://Sprites/UI/Shop/Heart.png" id="4_d7wkt"]
+[ext_resource type="Script" path="res://Scripts/UI/UpgradeStats.cs" id="4_lw32e"]
+[ext_resource type="Texture2D" uid="uid://bck7j4s7j25mp" path="res://Sprites/UI/Shop/HPup.png" id="5_m5a45"]
+[ext_resource type="Texture2D" uid="uid://cq616bek36dv" path="res://Sprites/UI/Shop/DMGup.png" id="6_fcc4b"]
+[ext_resource type="Texture2D" uid="uid://ew5i7ji1wmr0" path="res://Sprites/UI/Shop/MSup.png" id="8_6ci8a"]
+[ext_resource type="Script" path="res://Scripts/UI/EquipWeapons.cs" id="8_81oyl"]
+[ext_resource type="Script" path="res://Scripts/UI/ShowStats.cs" id="9_k5a8m"]
+[ext_resource type="Texture2D" uid="uid://bwvoqqykll7oy" path="res://Sprites/Bullets/50Cal/Bullet.png" id="9_xk8n5"]
+[ext_resource type="Texture2D" uid="uid://btnrsdcytt1w" path="res://Sprites/UI/Shop/granadeV2.png" id="10_5v468"]
+[ext_resource type="Texture2D" uid="uid://dyyrcjk01qn8i" path="res://Sprites/UI/Shop/LaserBeam20.png" id="11_vk7wq"]
 
 [sub_resource type="Animation" id="Animation_ru71l"]
 length = 0.001
@@ -134,6 +144,697 @@ layout_mode = 2
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 48
 text = "Continue"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -667.5
+offset_top = 91.0
+offset_right = 667.5
+offset_bottom = 797.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+tab_alignment = 1
+
+[node name="Stats" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+script = ExtResource("4_lw32e")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Stats"]
+layout_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -31.0
+
+[node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel"]
+
+[node name="Panel1" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = 58.5
+offset_right = 417.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Stats/RichTextLabel/Control/Panel1"]
+position = Vector2(184.5, 158.5)
+scale = Vector2(1.32813, 1.26953)
+texture = ExtResource("4_d7wkt")
+
+[node name="Buy" type="Button" parent="TabContainer/Stats/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Heal"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will heal you once
+to maxHP."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel2" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 483.0
+offset_top = 58.5
+offset_right = 852.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Stats/RichTextLabel/Control/Panel2"]
+position = Vector2(184.5, 158.5)
+scale = Vector2(1.32813, 1.26953)
+texture = ExtResource("5_m5a45")
+
+[node name="Buy" type="Button" parent="TabContainer/Stats/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Upgrade maxHP"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will increase
+your maxHP by 10."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel3" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 911.0
+offset_top = 58.5
+offset_right = 1280.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Stats/RichTextLabel/Control/Panel3"]
+position = Vector2(184.5, 158.5)
+scale = Vector2(1.32813, 1.26953)
+texture = ExtResource("6_fcc4b")
+
+[node name="Buy" type="Button" parent="TabContainer/Stats/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Upgrade DMG"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will increase
+your DMG by 10."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel4" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1334.0
+offset_top = 58.5
+offset_right = 1703.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Stats/RichTextLabel/Control/Panel4"]
+position = Vector2(184.5, 158.5)
+scale = Vector2(1.32813, 1.26953)
+texture = ExtResource("8_6ci8a")
+
+[node name="Buy" type="Button" parent="TabContainer/Stats/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Upgrade Speed"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will increase
+your movement speed by 10."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Stats"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_right = 1335.0
+grow_vertical = 0
+max_value = 1350.0
+page = 30.0
+
+[node name="Weapons" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("8_81oyl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Weapons"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 31.0
+
+[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel"]
+position = Vector2(0, -31)
+
+[node name="Panel1" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 48.0
+offset_top = 58.5
+offset_right = 417.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+position = Vector2(184.5, 158.5)
+scale = Vector2(1.32813, 1.26953)
+texture = ExtResource("9_xk8n5")
+
+[node name="Buy" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Default"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will equip the default
+weapon."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel2" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 483.0
+offset_top = 58.5
+offset_right = 852.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+position = Vector2(184.5, 158.5)
+scale = Vector2(1.32813, 1.26953)
+texture = ExtResource("9_xk8n5")
+
+[node name="Buy" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Bouncing"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will equip the bouncing
+bullet.
+"
+
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel3" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 911.0
+offset_top = 58.5
+offset_right = 1280.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+position = Vector2(184.5, 119.5)
+scale = Vector2(1.32813, 1.26953)
+texture = ExtResource("10_5v468")
+
+[node name="Buy" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Grenade launcher"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will equip the Grenade
+launcher."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel4" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1334.0
+offset_top = 58.5
+offset_right = 1703.0
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
+position = Vector2(182.5, 142.5)
+scale = Vector2(0.549031, 0.777383)
+texture = ExtResource("11_vk7wq")
+
+[node name="Buy" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Laser"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will equip the Laser."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Weapons"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -28.0
+offset_right = 1335.0
+grow_vertical = 0
+max_value = 1350.0
+page = 30.0
+
+[node name="ShowStats" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("9_k5a8m")
 
 [connection signal="pressed" from="HBoxContainer/MainMenu" to="." method="OnMainMenuPressed"]
 [connection signal="pressed" from="HBoxContainer/Continue" to="." method="OnContinueButtonPressed"]
