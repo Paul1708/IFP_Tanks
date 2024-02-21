@@ -512,8 +512,8 @@ anchor_bottom = 1.0
 offset_top = -28.0
 offset_right = 1335.0
 grow_vertical = 0
-max_value = 1350.0
-page = 30.0
+max_value = 1400.0
+page = 500.0
 
 [node name="Weapons" type="TabBar" parent="TabContainer"]
 visible = false
@@ -864,8 +864,8 @@ anchor_bottom = 1.0
 offset_top = -28.0
 offset_right = 1335.0
 grow_vertical = 0
-max_value = 1350.0
-page = 30.0
+max_value = 1400.0
+page = 500.0
 
 [node name="ShowStats" type="TabBar" parent="TabContainer"]
 visible = false

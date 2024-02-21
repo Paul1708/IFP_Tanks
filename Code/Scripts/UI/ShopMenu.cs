@@ -95,14 +95,15 @@ public partial class ShopMenu : Control
 
 	public void GetPrices() 
 	{
-		statsTab.price1 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel1/PriceTag").Text.Replace("Price: ", ""));
-		statsTab.price2 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel2/PriceTag").Text.Replace("Price: ", ""));
-		statsTab.price3 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel3/PriceTag").Text.Replace("Price: ", ""));
-		statsTab.price4 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel4/PriceTag").Text.Replace("Price: ", ""));
+		string stringToBeReplaced = "Price: ";
+		statsTab.price1 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel1/PriceTag").Text.Replace(stringToBeReplaced, ""));
+		statsTab.price2 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel2/PriceTag").Text.Replace(stringToBeReplaced, ""));
+		statsTab.price3 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel3/PriceTag").Text.Replace(stringToBeReplaced, ""));
+		statsTab.price4 =  int.Parse(GetNode<Label>("TabContainer/Stats/RichTextLabel/Control/Panel4/PriceTag").Text.Replace(stringToBeReplaced, ""));
 
-		weaponsTab.price1 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel1/PriceTag").Text.Replace("Price: ", ""));
-		weaponsTab.price2 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel2/PriceTag").Text.Replace("Price: ", ""));
-		weaponsTab.price3 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel3/PriceTag").Text.Replace("Price: ", ""));
-		weaponsTab.price4 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel4/PriceTag").Text.Replace("Price: ", ""));
+		weaponsTab.price1 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel1/PriceTag").Text.Replace(stringToBeReplaced, ""));
+		weaponsTab.price2 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel2/PriceTag").Text.Replace(stringToBeReplaced, ""));
+		weaponsTab.price3 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel3/PriceTag").Text.Replace(stringToBeReplaced, ""));
+		weaponsTab.price4 =  int.Parse(GetNode<Label>("TabContainer/Weapons/RichTextLabel/Control/Panel4/PriceTag").Text.Replace(stringToBeReplaced, ""));
 	}
 }
