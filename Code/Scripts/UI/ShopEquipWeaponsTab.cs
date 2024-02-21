@@ -63,18 +63,3 @@ public partial class ShopEquipWeaponsTab : TabBar
 	}
 
 }
-
-/*
-var price = GetNode<Label>("RichTextLabel/Control/Panel4/PriceTag").Text;
-var priceInt = int.Parse(price);
-if (priceInt <= 0)
-{
-	return;
-}
-var coins = GetTree().GetFirstNodeInGroup("Level") as Level;
-if (coins.Coins >= priceInt)
-{
-	coins.Coins -= priceInt;
-	GetNode<Label>("RichTextLabel/Control/Panel4/PriceTag").Text = "0";
-}
-*/
