@@ -1,14 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://br4b3w80rufu3"]
+[gd_scene load_steps=17 format=3 uid="uid://br4b3w80rufu3"]
 
 [ext_resource type="Script" path="res://Scripts/UI/ShopMenu.cs" id="1_xixhw"]
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_yc5k6"]
 [ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="3_0nfq2"]
 [ext_resource type="Texture2D" uid="uid://0csb4sndd0xa" path="res://Sprites/UI/Shop/Heart.png" id="4_d7wkt"]
-[ext_resource type="Script" path="res://Scripts/UI/UpgradeStats.cs" id="4_lw32e"]
+[ext_resource type="Script" path="res://Scripts/UI/ShopTabs.cs" id="4_lw32e"]
 [ext_resource type="Texture2D" uid="uid://bck7j4s7j25mp" path="res://Sprites/UI/Shop/HPup.png" id="5_m5a45"]
 [ext_resource type="Texture2D" uid="uid://cq616bek36dv" path="res://Sprites/UI/Shop/DMGup.png" id="6_fcc4b"]
 [ext_resource type="Texture2D" uid="uid://ew5i7ji1wmr0" path="res://Sprites/UI/Shop/MSup.png" id="8_6ci8a"]
-[ext_resource type="Script" path="res://Scripts/UI/EquipWeapons.cs" id="8_81oyl"]
 [ext_resource type="Script" path="res://Scripts/UI/ShowStats.cs" id="9_k5a8m"]
 [ext_resource type="Texture2D" uid="uid://bwvoqqykll7oy" path="res://Sprites/Bullets/50Cal/Bullet.png" id="9_xk8n5"]
 [ext_resource type="Texture2D" uid="uid://btnrsdcytt1w" path="res://Sprites/UI/Shop/granadeV2.png" id="10_5v468"]
@@ -496,7 +495,7 @@ page = 30.0
 [node name="Weapons" type="TabBar" parent="TabContainer"]
 visible = false
 layout_mode = 2
-script = ExtResource("8_81oyl")
+script = ExtResource("4_lw32e")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="TabContainer/Weapons"]
 layout_mode = 1
@@ -504,6 +503,8 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 31.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel"]
 position = Vector2(0, -31)

@@ -1,8 +1,8 @@
 using Godot;
-using System;
 using Managers.Level;
+using System;
 
-public partial class EquipWeapons : TabBar
+public partial class ShopTabs : TabBar
 {
 	HScrollBar hScrollBar;
 	Node2D control;
@@ -33,5 +33,5 @@ public partial class EquipWeapons : TabBar
 		position.X = (float)-hScrollBar.Value;
 		control.Position = position;
 	}
-}
 
+}
