@@ -1,21 +1,67 @@
 using Godot;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 
+
+public struct Stat
+{
+	public string name;
+	public int price;
+	public Label priceTag;
+	public int quantity = 1;
+	public Stat(string name)
+	{
+		this.name = name;
+	}
+	public Stat(string name, int price, Label priceTag, int quantity)
+	{
+		this.name = name;
+		this.price = price;
+		this.priceTag = priceTag;
+		this.quantity = quantity;
+	}
+}
+
+public struct Weapon
+{
+	public string name;
+	public int price;
+	public Label priceTag;
+	public bool unlocked = false;
+	public bool equiped = false;
+	public Weapon(string name)
+	{
+		this.name = name;
+	}
+	public Weapon(string name, int price, Label priceTag, bool unlocked, bool equiped )
+	{
+		this.name = name;
+		this.price = price;
+		this.priceTag = priceTag;
+		this.unlocked = unlocked;
+		this.equiped = equiped;
+	}
+}
 
 public partial class ShopBaseTab : TabBar
 {
 	protected const string PriceTagPathFormat = "RichTextLabel/Control/Panel{0}/PriceTag";
-	public int[] prices = new int[4];
-	public int[] itemQuantities = new int[4];
-	public Label priceTag1, priceTag2, priceTag3, priceTag4;
-	public List<Node> tabItems { get; set; }
-	public int itemCount;
+	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
 
-    protected Label GetPriceTag(int panelNumber)
-    {
-        return GetNode<Label>(string.Format(PriceTagPathFormat, panelNumber));
-    }
+
+	//get all price tags from the scene by their path that only differs in the Panel number 
+	protected Label GetPriceTagByPanel(int panelNumber)
+	{
+		return GetNode<Label>(string.Format(PriceTagPathFormat, panelNumber)); 
+	}
+
+	///<summary>
+	///Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab
+	///</summary>
+	protected int ParsePrice(int panelNumber)
+	{
+		string stringToBeReplaced = "Price: ";
+		string priceText = GetNode<Label>(string.Format(PriceTagPathFormat, panelNumber)).Text.Replace(stringToBeReplaced, "");
+		int price = int.TryParse(priceText, out price) ? price : 0;
+		return price;
+	}
 }
-

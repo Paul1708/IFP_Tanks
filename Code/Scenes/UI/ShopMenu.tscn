@@ -178,7 +178,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -31.0
 
-[node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel"]
+[node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel" groups=["statsControl"]]
 
 [node name="Panel1" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control" groups=["StatsTab"]]
 anchors_preset = 4
@@ -502,7 +502,7 @@ grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Stats"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Stats" groups=["statsScroll"]]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -527,7 +527,7 @@ offset_top = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel"]
+[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel" groups=["weaponsControl"]]
 position = Vector2(0, -31)
 
 [node name="Panel1" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
@@ -609,6 +609,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+price = 5
 
 [node name="Panel2" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
 anchors_preset = 4
@@ -690,6 +691,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+price = 5
 
 [node name="Panel3" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
 anchors_preset = 4
@@ -770,6 +772,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+price = 5
 
 [node name="Panel4" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control" groups=["WeaponsTab"]]
 anchors_preset = 4
@@ -849,8 +852,9 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+price = 5
 
-[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Weapons"]
+[node name="HScrollBar" type="HScrollBar" parent="TabContainer/Weapons" groups=["weaponsScroll"]]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0

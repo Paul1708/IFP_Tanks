@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-
+//manages the text of the price tags in the shop and calculates the price of the items
 public partial class ShopPrices : Label
 {
 
@@ -20,11 +20,16 @@ public partial class ShopPrices : Label
 		this.Text = "Price: " + price.ToString();
 	}
 
-	public void UpdatePrice (Label label, int value, int itemQuantity) 
+	//calculate the price of the item based on the quantity of the item
+	public void IncreasePrice (Label label, int itemQuantity) 
 	{
-		GD.Print("Price: " + price + " PriceMultiplier: " + priceMultiplier + " ItemQuantity: " + itemQuantity);
-		value = (int)(price * Mathf.Pow(priceMultiplier, itemQuantity));
+		int value = (int)(price * Mathf.Pow(priceMultiplier, itemQuantity));
 		label.Text = "Price: " + value.ToString();
+	}
+
+	public void WeaponUnlocked (Label label)
+	{
+		label.Text = "Unlocked";
 	}
 }
 
