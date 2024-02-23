@@ -14,9 +14,6 @@ public partial class ShopMenu : Control
 	Panel errorPanel;
 	ShopUpgradeStatsTab statsTab;
 	ShopEquipWeaponsTab weaponsTab;
-
-	private Dictionary<string, Action<int>> itemActions;
-
 	[Signal] public delegate void OnShopMenuClosedEventHandler();
 
 	// Called when the node enters the scene tree for the first time.

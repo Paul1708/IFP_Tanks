@@ -50,6 +50,14 @@ public partial class ShopUpgradeStatsTab : ShopBaseTab
 		}
 	}
 
+	private void SyncStatsToList ()
+	{
+		healStat = statsList[0];
+		maxHPStat = statsList[1];
+		DMGStat = statsList[2];
+		speedStat = statsList[3];
+	}
+
 	private void ResetScrollBar()
 	{
 		hScrollBar.Value = 0;
@@ -86,10 +94,12 @@ public partial class ShopUpgradeStatsTab : ShopBaseTab
 	///<summary>
 	///Increase the quantity of the stat in the list at the listIndex by 1
 	///</summary>
-	private void IncreaseStatQuantity(Stat stat, int listIndex)
+	private void IncreaseStatQuantity(Stat stat, int indexOfStatInList)
 	{
-		stat.quantity++;
-		statsList[listIndex] = stat;
+		Stat temp = statsList[statsList.IndexOf(stat)];
+		temp.quantity++;
+		statsList[indexOfStatInList] = temp;
+		SyncStatsToList();
 	}
 
 	///<summary>
@@ -106,6 +116,7 @@ public partial class ShopUpgradeStatsTab : ShopBaseTab
 			stat.priceTag = statsPriceTags[i];
 			statsList[i] = stat;
 		}
+		SyncStatsToList();
 	}
 
 	///<summary>
@@ -117,42 +128,43 @@ public partial class ShopUpgradeStatsTab : ShopBaseTab
 
 		for (int i = 0; i < statsList.Count; i++)
 		{
-			statsPrices[i] = ParsePrice(i+1);
+			statsPrices[i] = ParsePrice(i + 1);
 			Stat stat = statsList[i];
 			stat.price = statsPrices[i];
 			statsList[i] = stat;
 		}
+		SyncStatsToList();
 	}
 
-		private void OnBuy1Pressed()
+	private void OnBuy1Pressed()
 	{
-		if (UpgradeStat(statsList[0]))
-		{
-			IncreaseStatQuantity(statsList[0], 0);
+		if (UpgradeStat(healStat))
+		{ 
+			IncreaseStatQuantity(healStat, 0);
 		}
 	}
 
 	private void OnBuy2Pressed()
 	{
-		if (UpgradeStat(statsList[1]))
+		if (UpgradeStat(maxHPStat))
 		{
-			IncreaseStatQuantity(statsList[1], 1);
+			IncreaseStatQuantity(maxHPStat, 1);
 		}
 	}
 
 	private void OnBuy3Pressed()
 	{
-		if (UpgradeStat(statsList[2]))
+		if (UpgradeStat(DMGStat))
 		{
-			IncreaseStatQuantity(statsList[2], 2);
+			IncreaseStatQuantity(DMGStat, 2);
 		}
 	}
 
 	private void OnBuy4Pressed()
 	{
-		if (UpgradeStat(statsList[3]))
+		if (UpgradeStat(speedStat))
 		{
-			IncreaseStatQuantity(statsList[3], 3);
+			IncreaseStatQuantity(speedStat, 3);
 		}
 	}
 }

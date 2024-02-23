@@ -50,6 +50,14 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 		}
 	}
 
+	private void SyncWeaponsToList ()
+	{
+		defaultWeapon = weaponsList[0];
+		bouncingWeapon = weaponsList[1];
+		grenadeWeapon = weaponsList[2];
+		laserWeapon = weaponsList[3];
+	}
+
 	private void ResetScrollBar()
 	{
 		hScrollBar.Value = 0;
@@ -66,6 +74,7 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 	{
 		weapon.unlocked = true;
 		weaponsList[listIndex] = weapon;
+		SyncWeaponsToList();
 	}
 
 	/// <summary>
@@ -82,7 +91,7 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 			shopPrices.WeaponUnlocked(shopPrices);
 			return true;
 		}
-		else if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) == false)
+		else if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) == false && weapon.unlocked == false)
 		{
 			shopMenu.ShowError(weapon.price);
 			return false;
@@ -104,6 +113,7 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 			weapon.priceTag = weaponPriceTags[i];
 			weaponsList[i] = weapon;
 		}
+		SyncWeaponsToList();
 	}
 
 	///<summary>
@@ -120,37 +130,38 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 			weapon.price = weaponPrices[i];
 			weaponsList[i] = weapon;
 		}
+		SyncWeaponsToList();
 	}
  
 	private void OnBuy1Pressed()
 	{
-		if (BuyWeapon(weaponsList[0]))
+		if (BuyWeapon(defaultWeapon))
 		{
-			UnlockWeapon(weaponsList[0], 0);
+			UnlockWeapon(defaultWeapon, 0);
 		}
 	}
 
 	private void OnBuy2Pressed()
 	{
-		if (BuyWeapon(weaponsList[1]))
+		if (BuyWeapon(bouncingWeapon))
 		{
-			UnlockWeapon(weaponsList[1], 1);
+			UnlockWeapon(bouncingWeapon, 1);
 		}
 	}
 
 	private void OnBuy3Pressed()
 	{
-		if (BuyWeapon(weaponsList[2]))
+		if (BuyWeapon(grenadeWeapon))
 		{
-			UnlockWeapon(weaponsList[2], 2);
+			UnlockWeapon(grenadeWeapon, 2);
 		}
 	}
 
 	private void OnBuy4Pressed()
 	{
-		if (BuyWeapon(weaponsList[3]))
+		if (BuyWeapon(laserWeapon))
 		{
-			UnlockWeapon(weaponsList[3], 3);
+			UnlockWeapon(laserWeapon, 3);
 		}
 	}
 }

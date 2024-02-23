@@ -7,7 +7,7 @@ public struct Stat
 	public string name;
 	public int price;
 	public Label priceTag;
-	public int quantity = 1;
+	public int quantity;
 	public Stat(string name)
 	{
 		this.name = name;
