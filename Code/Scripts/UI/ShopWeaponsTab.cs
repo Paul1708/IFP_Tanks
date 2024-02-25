@@ -9,13 +9,16 @@ using System.Collections.Generic;
 public struct Weapon
 {
 	public string name;
+	public int listIndex;
 	public int price;
 	public Label priceTag;
 	public bool unlocked = false;
 	public bool equipped = false;
-	public Weapon(string name)
+	public Weapon () { }
+	public Weapon(string name, int listIndex)
 	{
 		this.name = name;
+		this.listIndex = listIndex;
 	}
 }
 

@@ -13,15 +13,15 @@ public partial class ShopManager : Node2D
 	/*when using, be aware of convention: assignment is dependent on the order and number of the Panels in the scene e.g.
    	healStat is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
 	//Stats
-	private Stat healStat = new("Heal");
-	private Stat maxHPStat = new("MaxHP");
-	private Stat DMGStat = new("DMG");
-	private Stat speedStat = new("Speed");
+	private Stat healStat = new("Heal", 0);
+	private Stat maxHPStat = new("MaxHP", 1);
+	private Stat DMGStat = new("DMG", 2);
+	private Stat speedStat = new("Speed", 3);
 	//Weapons
-	private Weapon defaultWeapon = new("Default");
-	private Weapon bouncingWeapon = new("Bouncing");
-	private Weapon grenadeWeapon = new("Grenade");
-	private Weapon laserWeapon = new("Laser");
+	private Weapon defaultWeapon = new("Default", 0);
+	private Weapon bouncingWeapon = new("Bouncing", 1);
+	private Weapon grenadeWeapon = new("Grenade", 2);
+	private Weapon laserWeapon = new("Laser", 3);
 
 	public override void _Ready()
 	{
@@ -52,7 +52,12 @@ public partial class ShopManager : Node2D
 	{
 		foreach (var stat in stats)
 		{
-			statsList.Add(stat);
+			// Ensure the list is large enough
+			while (statsList.Count <= stat.listIndex)
+			{
+				statsList.Add(new Stat());
+			}
+			statsList[stat.listIndex] = stat;
 		}
 	}
 
@@ -60,7 +65,12 @@ public partial class ShopManager : Node2D
 	{
 		foreach (var weapon in weapons)
 		{
-			weaponsList.Add(weapon);
+			// Ensure the list is large enough
+			while (weaponsList.Count <= weapon.listIndex)
+			{
+				weaponsList.Add(new Weapon());
+			}
+			weaponsList[weapon.listIndex] = weapon;
 		}
 	}
 

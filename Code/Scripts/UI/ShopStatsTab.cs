@@ -9,12 +9,15 @@ using Managers.Save;
 public struct Stat
 {
 	public string name;
+	public int listIndex;
 	public int price;
 	public Label priceTag;
 	public int quantity;
-	public Stat(string name)
+	public Stat () { }
+	public Stat(string name, int listIndex)
 	{
 		this.name = name;
+		this.listIndex = listIndex;
 	}
 }
 
