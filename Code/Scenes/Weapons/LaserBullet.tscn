@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://d3lelrwh4w08u"]
+[gd_scene load_steps=10 format=3 uid="uid://d3lelrwh4w08u"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/LaserGun.cs" id="1_mt0ss"]
 [ext_resource type="Script" path="res://Scripts/Weapons/Laser.cs" id="2_h5os0"]
@@ -21,25 +21,13 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xcwyh"]
 
-[sub_resource type="Gradient" id="Gradient_krsli"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_f7mg2"]
-gradient = SubResource("Gradient_krsli")
-use_hdr = true
-fill_from = Vector2(0.964646, 0.469697)
-fill_to = Vector2(0.424242, 0.494949)
-
-[sub_resource type="Environment" id="Environment_5s36d"]
+[sub_resource type="Environment" id="Environment_dj3af"]
 background_mode = 3
-ambient_light_source = 1
-ambient_light_energy = 16.0
 glow_enabled = true
-glow_normalized = true
-glow_strength = 1.12
+glow_strength = 1.78
 glow_blend_mode = 0
-glow_hdr_threshold = 0.0
-glow_map_strength = 0.0
-glow_map = SubResource("GradientTexture2D_f7mg2")
+glow_hdr_threshold = 1.62
+glow_hdr_scale = 0.91
 
 [node name="LaserBullet" type="RigidBody2D"]
 collision_layer = 0
@@ -61,13 +49,15 @@ one_shot = true
 autostart = true
 
 [node name="LaserRay" type="RayCast2D" parent="."]
+modulate = Color(100, 1, 1, 1)
 target_position = Vector2(10000, 0)
 script = ExtResource("2_h5os0")
 
 [node name="LaserLine" type="Line2D" parent="LaserRay"]
+modulate = Color(100, 0, 0, 0.999)
 position = Vector2(-0.90099, 0)
 scale = Vector2(1.0099, 1)
-points = PackedVector2Array(0, 0, 81, 0)
+points = PackedVector2Array(0, 0, 47.679, 0, 81, 0)
 closed = true
 width_curve = SubResource("Curve_c183i")
 default_color = Color(0.94902, 0, 0, 1)
@@ -119,6 +109,6 @@ initial_velocity_max = 373.73
 scale_amount_curve = SubResource("Curve_hjvct")
 color_ramp = SubResource("Gradient_sd7ey")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="LaserRay/LaserLine"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="LaserRay"]
 process_mode = 3
-environment = SubResource("Environment_5s36d")
+environment = SubResource("Environment_dj3af")

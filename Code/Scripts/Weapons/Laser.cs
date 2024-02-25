@@ -56,9 +56,9 @@ public partial class Laser : RayCast2D
     /**
      * Rotate the drawn laser line along the given angle in radians.
      */
-    public void MoveLaserRay(float rotationAngle)
+    public void MoveLaserRay(float globalRotationAngle)
     {
-        GlobalRotation = rotationAngle;
+        GlobalRotation = globalRotationAngle;
         _updateLaserHit();
     }
 
