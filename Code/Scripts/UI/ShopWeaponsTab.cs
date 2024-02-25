@@ -6,20 +6,26 @@ using Items;
 using System.Linq;
 using System.Collections.Generic;
 
-public partial class ShopEquipWeaponsTab : ShopBaseTab
+public struct Weapon
+{
+	public string name;
+	public int price;
+	public Label priceTag;
+	public bool unlocked = false;
+	public bool equiped = false;
+	public Weapon(string name)
+	{
+		this.name = name;
+	}
+}
+
+public partial class ShopWeaponsTab : ShopBaseTab
 {
 	ShopMenu shopMenu;
 	HScrollBar hScrollBar;
 	Node2D control;
 	LevelManager levelManager;
-	/*when using, be aware that assignment is dependent on the order of the Panels in the scene:
-	 default is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
-	private Weapon defaultWeapon = new("Default");
-	private Weapon bouncingWeapon = new("Bouncing");
-	private Weapon grenadeWeapon = new("Grenade");
-	private Weapon laserWeapon = new("Laser");
-	public List<Weapon> weaponsList = new();
-	
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
@@ -30,8 +36,6 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 
 		levelManager.OnLevelChanged += ResetScrollBar;
 		
-		//example: defaultWeapon is managed in Panel1 and adressed by number 0 in the list
-		AddStatsToList(defaultWeapon, bouncingWeapon, grenadeWeapon, laserWeapon);
 		GetPriceTags();
 		GetWeaponPrices();
 	}
@@ -40,22 +44,6 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 	public override void _Process(double delta)
 	{
 		Scroll();
-	}
-
-	private void AddStatsToList(params Weapon[] weapons)
-	{
-		foreach (var weapon in weapons)
-		{
-			weaponsList.Add(weapon);
-		}
-	}
-
-	private void SyncWeaponsToList ()
-	{
-		defaultWeapon = weaponsList[0];
-		bouncingWeapon = weaponsList[1];
-		grenadeWeapon = weaponsList[2];
-		laserWeapon = weaponsList[3];
 	}
 
 	private void ResetScrollBar()
@@ -70,11 +58,11 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 		control.Position = position;
 	}
 
-	private void UnlockWeapon(Weapon weapon, int listIndex)
+	private void UnlockWeapon(int listIndex)
 	{
+		Weapon weapon = ShopManager.Instance.weaponsList[listIndex];
 		weapon.unlocked = true;
-		weaponsList[listIndex] = weapon;
-		SyncWeaponsToList();
+		ShopManager.Instance.weaponsList[listIndex] = weapon;
 	}
 
 	/// <summary>
@@ -104,64 +92,62 @@ public partial class ShopEquipWeaponsTab : ShopBaseTab
 	/// </summary>
 	private void GetPriceTags()
 	{
-		Label[] weaponPriceTags = new Label[weaponsList.Count];
+		Label[] weaponPriceTags = new Label[ShopManager.Instance.weaponsList.Count];
 
-		for (int i = 0; i < weaponsList.Count; i++)
+		for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
 		{
 			weaponPriceTags[i] = GetPriceTagByPanel(i + 1);
-			Weapon weapon = weaponsList[i];
+			Weapon weapon = ShopManager.Instance.weaponsList[i];
 			weapon.priceTag = weaponPriceTags[i];
-			weaponsList[i] = weapon;
+			ShopManager.Instance.weaponsList[i] = weapon;
 		}
-		SyncWeaponsToList();
 	}
 
 	///<summary>
-	///Update the prices of the items in the shop by parsing the price from the price tags and updating the price in the list
+	///Update the prices of the items in the shop by parsing the price from the price tags.
 	/// </summary>
 	private void GetWeaponPrices()
 	{
-		int[] weaponPrices = new int[weaponsList.Count];
+		int[] weaponPrices = new int[ShopManager.Instance.weaponsList.Count];
 
-		for (int i = 0; i < weaponsList.Count; i++)
+		for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
 		{
 			weaponPrices[i] = ParsePrice(i+1);
-			Weapon weapon = weaponsList[i];
+			Weapon weapon = ShopManager.Instance.weaponsList[i];
 			weapon.price = weaponPrices[i];
-			weaponsList[i] = weapon;
+			ShopManager.Instance.weaponsList[i] = weapon;
 		}
-		SyncWeaponsToList();
 	}
  
 	private void OnBuy1Pressed()
 	{
-		if (BuyWeapon(defaultWeapon))
+		if (BuyWeapon(ShopManager.Instance.weaponsList[0]))
 		{
-			UnlockWeapon(defaultWeapon, 0);
+			UnlockWeapon(0);
 		}
 	}
 
 	private void OnBuy2Pressed()
 	{
-		if (BuyWeapon(bouncingWeapon))
+		if (BuyWeapon(ShopManager.Instance.weaponsList[1]))
 		{
-			UnlockWeapon(bouncingWeapon, 1);
+			UnlockWeapon(1);
 		}
 	}
 
 	private void OnBuy3Pressed()
 	{
-		if (BuyWeapon(grenadeWeapon))
+		if (BuyWeapon(ShopManager.Instance.weaponsList[2]))
 		{
-			UnlockWeapon(grenadeWeapon, 2);
+			UnlockWeapon(2);
 		}
 	}
 
 	private void OnBuy4Pressed()
 	{
-		if (BuyWeapon(laserWeapon))
+		if (BuyWeapon(ShopManager.Instance.weaponsList[3]))
 		{
-			UnlockWeapon(laserWeapon, 3);
+			UnlockWeapon(3);
 		}
 	}
 }

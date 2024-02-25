@@ -33,6 +33,13 @@ public partial class SaveManager : Node
         SaveData.PlayerCurrentHP = PlayerManager.Instance.PlayerHealthComponent.currentHP;
         SaveData.PlayerMaxHP = PlayerManager.Instance.PlayerHealthComponent.maxHP;
         SaveData.CoinCount = CoinManager.Instance.Coins;
+        //saves shop state by iterating through the statsList and saving the price and quantity of each stat
+        for (int i = 0; i < ShopManager.Instance.statsList.Count; i++)
+        {
+            Stat stat = ShopManager.Instance.statsList[i];
+            SaveData.Stats[i][0] = stat.price;
+            SaveData.Stats[i][1] = stat.quantity;
+        }
 
         ResourceSaver.Save(SaveData, "user://savegame.tres");
         GD.Print("Game Saved");

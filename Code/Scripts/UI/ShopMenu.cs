@@ -12,8 +12,8 @@ public partial class ShopMenu : Control
 	MusicController musicController;
 	Label errorLabel;
 	Panel errorPanel;
-	ShopUpgradeStatsTab statsTab;
-	ShopEquipWeaponsTab weaponsTab;
+	ShopStatsTab statsTab;
+	ShopWeaponsTab weaponsTab;
 	[Signal] public delegate void OnShopMenuClosedEventHandler();
 
 	// Called when the node enters the scene tree for the first time.
@@ -21,8 +21,8 @@ public partial class ShopMenu : Control
 	{
 		Hide();
 
-		statsTab = GetNode<ShopUpgradeStatsTab>("TabContainer/Stats");
-		weaponsTab = GetNode<ShopEquipWeaponsTab>("TabContainer/Weapons");
+		statsTab = GetNode<ShopStatsTab>("TabContainer/Stats");
+		weaponsTab = GetNode<ShopWeaponsTab>("TabContainer/Weapons");
 
 		errorLabel = GetNode<Label>("ErrorScreen/Label");
 		errorPanel = GetNode<Panel>("ErrorScreen");
