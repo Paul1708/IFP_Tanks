@@ -45,13 +45,7 @@ public partial class ShopManager : Node2D
 
 	public void OnSaveDataLoaded(SaveData saveData) //TODO: savedata for weapons
 	{
-		for (int i = 0; i < saveData.Stats.Count; i++)
-		{
-			Stat stat = statsList[i];
-			stat.price = (int)saveData.Stats[i][0];
-			stat.quantity = (int)saveData.Stats[i][1];
-			statsList[i] = stat;
-		}
+		LoadShopStateBySaveData(saveData);
 	}
 
 	private void AddStatsToList(params Stat[] stats)
@@ -67,6 +61,24 @@ public partial class ShopManager : Node2D
 		foreach (var weapon in weapons)
 		{
 			weaponsList.Add(weapon);
+		}
+	}
+
+	private void LoadShopStateBySaveData(SaveData saveData)
+	{
+		for (int i = 0; i < saveData.Stats.Count; i++)
+		{
+			Stat stat = statsList[i];
+			stat.price = (int)saveData.Stats[i][0];
+			stat.quantity = (int)saveData.Stats[i][1];
+			statsList[i] = stat;
+		}
+		for (int i = 0; i < saveData.Weapons.Count; i++)
+		{
+			Weapon weapon = weaponsList[i];
+			weapon.unlocked = (bool)saveData.Weapons[i][0];
+			weapon.equipped = (bool)saveData.Weapons[i][1];
+			weaponsList[i] = weapon;
 		}
 	}
 }

@@ -24,6 +24,12 @@ public partial class SaveData : Resource
     /// </summary>
     [Export]
     public Godot.Collections.Array<Godot.Collections.Array> Stats { get; set; }
+    /// <summary>
+    ///The first index is the weapon index and the second index is the unlocked or equiped.
+    ///E.g. [0][0] to adress the unlocked and [0][1] to adress the equiped of the first weapon.
+    /// </summary>
+    [Export]
+    public Godot.Collections.Array<Godot.Collections.Array> Weapons { get; set; }
 
     public SaveData()
     {
@@ -32,6 +38,12 @@ public partial class SaveData : Resource
             new() {0, 0},
             new() {0, 0},
             new() {0, 0}
+        };
+        Weapons = new Godot.Collections.Array<Godot.Collections.Array>{
+            new() {true, true},
+            new() {false, false},
+            new() {false, false},
+            new() {false, false}
         };
         LastCheckpointLevelID = 0;
         LastCheckpointWorldID = 0;

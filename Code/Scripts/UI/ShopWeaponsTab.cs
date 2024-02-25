@@ -12,7 +12,7 @@ public struct Weapon
 	public int price;
 	public Label priceTag;
 	public bool unlocked = false;
-	public bool equiped = false;
+	public bool equipped = false;
 	public Weapon(string name)
 	{
 		this.name = name;
