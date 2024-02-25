@@ -1,5 +1,4 @@
-﻿using System;
-using Godot;
+﻿using Godot;
 
 namespace Weapons;
 
@@ -18,7 +17,7 @@ public partial class Laser : RayCast2D
     {
         _gun = gun;
         _laserLine = GetNode<Line2D>("LaserLine");
-        _laserLine.Points[1] = Vector2.Zero;
+        _laserLine.SetPointPosition(0, Vector2.Zero);
         _laserParticles = _laserLine.GetNode<CpuParticles2D>("ShootLaserParticles");
         _laserHitParticles = _laserLine.GetNode<CpuParticles2D>("HitParticles");
         _laserBeamParticles = _laserLine.GetNode<CpuParticles2D>("BeamParticles");
@@ -32,26 +31,18 @@ public partial class Laser : RayCast2D
         if (IsColliding())
         {
             //Node collided = GetColliderRid()
-            _targetPoint = ToLocal(GetCollisionPoint());
+            _updateLaserHit();
             _laserParticles.GlobalRotation = GetCollisionNormal().Angle();
-            _laserParticles.Position = _targetPoint;
-            _laserLine.Points[1] = _targetPoint;
+            _laserParticles.Position = _laserLine.Points[1];
 
-            _laserBeamParticles.EmissionRectExtents = _targetPoint * 0.5F;
-            _laserBeamParticles.Position = _targetPoint * 0.5F;
-            
-            QueueRedraw();
+            _laserBeamParticles.EmissionRectExtents = _laserLine.Points[1] * 0.5F;
+            _laserBeamParticles.Position = _laserLine.Points[1] * 0.5F;
             
         }
         
         _laserLine.Points[0] = _gun.GlobalPosition;
     }
-
-    //draw laser line
-    public override void _Draw()
-    {
-        DrawLine(_laserLine.Points[0], _targetPoint, _laserLine.DefaultColor, 10);
-    }
+    
 
     public void SetActive(bool active)
     {
@@ -59,7 +50,26 @@ public partial class Laser : RayCast2D
         _laserParticles.Emitting = _isActive;
         _laserBeamParticles.Emitting = _isActive;
         _laserHitParticles.Emitting = _isActive;
-        
         SetPhysicsProcess(_isActive);
+    }
+
+    /**
+     * Rotate the drawn laser line along the given angle in radians.
+     */
+    public void MoveLaserRay(float rotationAngle)
+    {
+        GlobalRotation = rotationAngle;
+        _updateLaserHit();
+    }
+
+    private void _updateLaserHit()
+    {
+        if (IsColliding())
+        {
+            _targetPoint = ToLocal(GetCollisionPoint());
+            _laserLine.SetPointPosition(1, _targetPoint);
+        }
+            
+        QueueRedraw();
     }
 }

@@ -8,7 +8,7 @@
 size = Vector2(13, 27)
 
 [sub_resource type="Curve" id="Curve_c183i"]
-_data = [Vector2(0.484211, 0.736264), 0.0, 0.0, 0, 0, Vector2(0.747368, 0.747253), 0.0, 0.0, 0, 0]
+_data = [Vector2(0.484211, 0.736264), 0.0, 0.0417584, 0, 1, Vector2(0.747368, 0.747253), 0.0417584, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_hjvct"]
@@ -36,7 +36,7 @@ ambient_light_energy = 16.0
 glow_enabled = true
 glow_normalized = true
 glow_strength = 1.12
-glow_blend_mode = 1
+glow_blend_mode = 0
 glow_hdr_threshold = 0.0
 glow_map_strength = 0.0
 glow_map = SubResource("GradientTexture2D_f7mg2")
@@ -57,7 +57,6 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_amix1")
 
 [node name="DestroyTimer" type="Timer" parent="."]
-wait_time = 0.5
 one_shot = true
 autostart = true
 
@@ -66,7 +65,10 @@ target_position = Vector2(10000, 0)
 script = ExtResource("2_h5os0")
 
 [node name="LaserLine" type="Line2D" parent="LaserRay"]
+position = Vector2(-0.90099, 0)
+scale = Vector2(1.0099, 1)
 points = PackedVector2Array(0, 0, 81, 0)
+closed = true
 width_curve = SubResource("Curve_c183i")
 default_color = Color(0.94902, 0, 0, 1)
 

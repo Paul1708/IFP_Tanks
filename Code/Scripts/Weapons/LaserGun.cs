@@ -25,7 +25,9 @@ public partial class LaserGun : Bullet
 	{
 		_laser.SetActive(true);
 		//move laser-source along with player
-		GlobalPosition = player.GetNode<GunController>("Gun").GetNode<Node2D>("muzzle").GlobalPosition;
+		var muzzle = player.GetNode<GunController>("Gun").GetNode<Node2D>("muzzle");
+		GlobalPosition = muzzle.GlobalPosition;
+		_laser.MoveLaserRay(muzzle.GlobalRotation);
 
 	}
 }
