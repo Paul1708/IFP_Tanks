@@ -74,8 +74,8 @@ public partial class HealthBar : TextureProgressBar
 
     public void OnMaxHealthChanged(int newMaxHP)
     {
-        UpdateLabelText();
         maxHP = newMaxHP;
+        UpdateLabelText();
         redBar.MaxValue = maxHP;
         greenBar.MaxValue = maxHP;
     }

@@ -1,10 +1,7 @@
 using Godot;
 using Managers.Level;
-using System;
 using Managers;
-using System.Linq;
-using System.Collections.Generic;
-using Managers.Save;
+using Movement;
 
 public struct Stat
 {
@@ -13,7 +10,7 @@ public struct Stat
 	public int price;
 	public Label priceTag;
 	public int quantity;
-	public Stat () { }
+	public Stat() { }
 	public Stat(string name, int listIndex)
 	{
 		this.name = name;
@@ -81,7 +78,7 @@ public partial class ShopStatsTab : ShopBaseTab
 		}
 		else
 		{
-			shopMenu.ShowError(stat.price + shopPrices.basePrice);
+			shopMenu.DisplayInsufficientCoinsError(stat.price + shopPrices.basePrice);
 			return false;
 		}
 	}
@@ -125,21 +122,28 @@ public partial class ShopStatsTab : ShopBaseTab
 			Stat stat = ShopManager.Instance.statsList[i];
 			ShopPrices shopPrices = stat.priceTag as ShopPrices;
 			int basePrice = shopPrices.basePrice;
-			stat.price = statsPrices[i]-basePrice;
+			stat.price = statsPrices[i] - basePrice;
 			ShopManager.Instance.statsList[i] = stat;
 		}
 	}
 
 	private void OnBuy1Pressed()
 	{
-		Stat healStat = ShopManager.Instance.statsList[0];
-		Buy(healStat);
+		if (PlayerManager.Instance.PlayerHealthComponent.currentHP == PlayerManager.Instance.PlayerHealthComponent.maxHP)
+		{
+			shopMenu.DisplayAlreadyMaxHealthError();
+		}
+		else
+		{
+			Stat healStat = ShopManager.Instance.statsList[0];
+			if (Buy(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealToMax();
+		}
 	}
 
 	private void OnBuy2Pressed()
 	{
 		Stat maxHPStat = ShopManager.Instance.statsList[1];
-		Buy(maxHPStat);
+		if (Buy(maxHPStat)) PlayerManager.Instance.PlayerHealthComponent.IncreaseMaxHealth(10);
 
 	}
 

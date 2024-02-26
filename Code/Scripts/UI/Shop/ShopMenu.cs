@@ -75,11 +75,18 @@ public partial class ShopMenu : Control
 		errorPanel.Hide();
 	}
 
-	public void ShowError(int price)
+	public void DisplayInsufficientCoinsError(int price)
 	{
 		//TODO: play error sound
 		var neededCoins = price - CoinManager.Instance.Coins;
 		errorLabel.Text = "You need " + neededCoins + " more coins to buy this item!";
+		errorPanel.Show();
+	}
+
+	public void DisplayAlreadyMaxHealthError()
+	{
+		//TODO: play error sound
+		errorLabel.Text = "You already have the maximum health!";
 		errorPanel.Show();
 	}
 }

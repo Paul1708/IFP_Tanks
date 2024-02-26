@@ -1,10 +1,6 @@
 using Godot;
-using System;
 using Managers.Level;
 using Managers;
-using Items;
-using System.Linq;
-using System.Collections.Generic;
 
 public struct Weapon
 {
@@ -84,7 +80,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		}
 		else if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) == false && weapon.unlocked == false)
 		{
-			shopMenu.ShowError(weapon.price);
+			shopMenu.DisplayInsufficientCoinsError(weapon.price);
 			return false;
 		}
 		return false;
