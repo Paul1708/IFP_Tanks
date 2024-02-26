@@ -67,4 +67,21 @@ public class BulletMath
         return +1 * Mathf.DegToRad(arcAngleOffsetDeg);
     }
     
+
+    /**
+     * Ensure that the angle does not exceed the interval [-maxAngleRadians, maxAngleRadians]. If it is not inside
+     * this interval, the closed interval border will be returned.
+     */
+    public static float RestrictHomingAngle(float angle, float maxAngleRadians)
+    {
+        if (Mathf.Sign(angle) < 0)
+        {
+            return Mathf.Max(angle, -maxAngleRadians);
+        }
+        else
+        {
+            return Mathf.Min(angle, maxAngleRadians);
+        }
+    }
+    
 }

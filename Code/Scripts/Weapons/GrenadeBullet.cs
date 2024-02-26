@@ -41,7 +41,6 @@ public partial class GrenadeBullet : Bullet
         
         
         _grenadeGroundHitTime = (2 * Speed * Mathf.Sin(_offsetAngle)) / GravitationalForce;
-
         _hitLocation = _grenadeGroundHitTime * new Vector2(_shootDirection[0], _shootDirection[1])
                                        + new Vector2(_shootPosition[0], _shootPosition[1]);
         _targetSprite.GlobalPosition = _hitLocation;

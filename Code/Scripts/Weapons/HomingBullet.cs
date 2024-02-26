@@ -47,8 +47,8 @@ public partial class HomingBullet : Bullet
             float rawAngle = directLine.Angle() - oldDirection.Angle(); //angle of new direction to old direction
             float maxAngleRad = MaxRotationDeg * MathF.PI / 180F; //max rotation in radians for later calculation
 
-            float angle = NormalizeAngle(rawAngle);
-            float homingAngle = RestrictHomingAngle(angle, maxAngleRad);
+            float angle = BulletMath.NormalizeAngle(rawAngle);
+            float homingAngle = BulletMath.RestrictHomingAngle(angle, maxAngleRad);
             _targetDirection = new Vector2(1, 0).Rotated(oldDirection.Angle() + homingAngle).Normalized();
 
             _ticksPassed = 0;
@@ -58,41 +58,6 @@ public partial class HomingBullet : Bullet
         MoveProjectile();
 
         _ticksPassed++;
-    }
-
-    /**
-     * Check if a phase shift occurred in the angle, i.e. the angle exceeds PI in positive or negative direction.
-     * If it occured, then the angle value will be changed to the according angle ignoring the phase shift.
-     */
-    private float NormalizeAngle(float angle)
-    {
-        if (angle > Mathf.Pi)
-        {
-            return angle - 2 * Mathf.Pi;
-        }
-
-        if (angle < -Mathf.Pi)
-        {
-            return 2 * Mathf.Pi - angle;
-        }
-
-        return angle;
-    }
-
-    /**
-     * Ensure that the angle does not exceed the interval [-maxAngleRadians, maxAngleRadians]. If it is not inside
-     * this interval, the closed interval border will be returned.
-     */
-    private float RestrictHomingAngle(float angle, float maxAngleRadians)
-    {
-        if (Math.Sign(angle) < 0)
-        {
-            return Math.Max(angle, -maxAngleRadians);
-        }
-        else
-        {
-            return Math.Min(angle, maxAngleRadians);
-        }
     }
 
     private void MoveProjectile()
