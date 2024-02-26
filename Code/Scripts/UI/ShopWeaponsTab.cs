@@ -40,7 +40,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		levelManager.OnLevelChanged += ResetScrollBar;
 		
 		GetPriceTags();
-		GetWeaponPrices();
+		UpdatePrices();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -61,18 +61,17 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		control.Position = position;
 	}
 
-	private void UnlockWeapon(int listIndex)
-	{
-		Weapon weapon = ShopManager.Instance.weaponsList[listIndex];
+	private void UnlockWeapon(Weapon weapon)
+	{	
 		weapon.unlocked = true;
-		ShopManager.Instance.weaponsList[listIndex] = weapon;
+		ShopManager.Instance.weaponsList[weapon.listIndex] = weapon;
 	}
 
 	/// <summary>
 	/// Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label to Unlocked, return true.  
 	/// If the player has not enough coins, show an error message and return false.
 	/// </summary>
-	private bool BuyWeapon(Weapon weapon)
+	private bool Buy(Weapon weapon)
 	{
 		if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) && weapon.unlocked == false)
 		{
@@ -93,7 +92,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	///<summary>
 	///get all price tags from the scene by their path that only differs in the Panel number and connect them to the weapons
 	/// </summary>
-	private void GetPriceTags()
+	protected override void GetPriceTags()
 	{
 		Label[] weaponPriceTags = new Label[ShopManager.Instance.weaponsList.Count];
 
@@ -109,7 +108,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	///<summary>
 	///Update the prices of the items in the shop by parsing the price from the price tags.
 	/// </summary>
-	private void GetWeaponPrices()
+	protected override void UpdatePrices()
 	{
 		int[] weaponPrices = new int[ShopManager.Instance.weaponsList.Count];
 
@@ -124,33 +123,37 @@ public partial class ShopWeaponsTab : ShopBaseTab
  
 	private void OnBuy1Pressed()
 	{
-		if (BuyWeapon(ShopManager.Instance.weaponsList[0]))
+		Weapon defaultWeapon = ShopManager.Instance.weaponsList[0];
+		if (Buy(defaultWeapon))
 		{
-			UnlockWeapon(0);
+			UnlockWeapon(defaultWeapon);
 		}
 	}
 
 	private void OnBuy2Pressed()
 	{
-		if (BuyWeapon(ShopManager.Instance.weaponsList[1]))
+		Weapon bouncingWeapon = ShopManager.Instance.weaponsList[1];
+		if (Buy(bouncingWeapon))
 		{
-			UnlockWeapon(1);
+			UnlockWeapon(bouncingWeapon);
 		}
 	}
 
 	private void OnBuy3Pressed()
 	{
-		if (BuyWeapon(ShopManager.Instance.weaponsList[2]))
+		Weapon grenadeWeapon = ShopManager.Instance.weaponsList[2];
+		if (Buy(grenadeWeapon))
 		{
-			UnlockWeapon(2);
+			UnlockWeapon(grenadeWeapon);
 		}
 	}
 
 	private void OnBuy4Pressed()
 	{
-		if (BuyWeapon(ShopManager.Instance.weaponsList[3]))
+		Weapon laserWeapon = ShopManager.Instance.weaponsList[3];
+		if (Buy(laserWeapon))
 		{
-			UnlockWeapon(3);
+			UnlockWeapon(laserWeapon);
 		}
 	}
 }

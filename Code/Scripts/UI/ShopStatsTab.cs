@@ -32,7 +32,7 @@ public partial class ShopStatsTab : ShopBaseTab
 	public override void _Ready()
 	{
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-		OnItemBoughtUpdatePrices += UpdateStatPrices;
+		OnItemBoughtUpdatePrices += UpdatePrices;
 
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
@@ -41,7 +41,7 @@ public partial class ShopStatsTab : ShopBaseTab
 		levelManager.OnLevelChanged += ResetScrollBar;
 
 		GetPriceTags();
-		UpdateStatPrices();
+		UpdatePrices();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,7 +66,7 @@ public partial class ShopStatsTab : ShopBaseTab
 	///Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. 
 	///It increases the price of the stat and removes the coins if the stat was bought.
 	///</summary>
-	public bool UpgradeStat(Stat stat)
+	public bool Buy(Stat stat)
 	{
 		ShopPrices shopPrices = stat.priceTag as ShopPrices;
 
@@ -88,17 +88,16 @@ public partial class ShopStatsTab : ShopBaseTab
 	///<summary>
 	///Increase the quantity of the stat in the list at the listIndex by 1.
 	///</summary>
-	private void IncreaseStatQuantity(int indexOfStatInList)
+	protected void IncreaseQuantity(Stat stat)
 	{
-		Stat temp = ShopManager.Instance.statsList[indexOfStatInList];
-		temp.quantity++;
-		ShopManager.Instance.statsList[indexOfStatInList] = temp;
+		stat.quantity++;
+		ShopManager.Instance.statsList[stat.listIndex] = stat;
 	}
 
 	///<summary>
 	///Get all price tags from the scene by their path that only differs in the Panel number and connect them to the stats.
 	/// </summary>
-	private void GetPriceTags()
+	protected override void GetPriceTags()
 	{
 		Label[] statsPriceTags = new Label[ShopManager.Instance.statsList.Count];
 
@@ -115,7 +114,7 @@ public partial class ShopStatsTab : ShopBaseTab
 	///Update the prices of the items in the shop by parsing the price from the price tags and updating the price in the list.
 	///The price stored in the list is the difference between the parsed price and the base price of the item.
 	/// </summary>
-	private void UpdateStatPrices()
+	protected override void UpdatePrices()
 	{
 		int[] statsPrices = new int[ShopManager.Instance.statsList.Count];
 
@@ -132,33 +131,37 @@ public partial class ShopStatsTab : ShopBaseTab
 
 	private void OnBuy1Pressed()
 	{
-		if (UpgradeStat(ShopManager.Instance.statsList[0]))
+		Stat healStat = ShopManager.Instance.statsList[0];
+		if (Buy(healStat))
 		{ 
-			IncreaseStatQuantity(0);
+			IncreaseQuantity(healStat);
 		}
 	}
 
 	private void OnBuy2Pressed()
 	{
-		if (UpgradeStat(ShopManager.Instance.statsList[1]))
+		Stat maxHPStat = ShopManager.Instance.statsList[1];
+		if (Buy(maxHPStat))
 		{
-			IncreaseStatQuantity(1);
+			IncreaseQuantity(maxHPStat);
 		}
 	}
 
 	private void OnBuy3Pressed()
 	{
-		if (UpgradeStat(ShopManager.Instance.statsList[2]))
+		Stat DMGStat = ShopManager.Instance.statsList[2];
+		if (Buy(DMGStat))
 		{
-			IncreaseStatQuantity(2);
+			IncreaseQuantity(DMGStat);
 		}
 	}
 
 	private void OnBuy4Pressed()
 	{
-		if (UpgradeStat(ShopManager.Instance.statsList[3]))
+		Stat speedStat = ShopManager.Instance.statsList[3];
+		if (Buy(speedStat))
 		{
-			IncreaseStatQuantity(3);
+			IncreaseQuantity(speedStat);
 		}
 	}
 }
