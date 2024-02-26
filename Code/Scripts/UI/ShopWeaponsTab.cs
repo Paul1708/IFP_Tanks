@@ -68,7 +68,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	}
 
 	/// <summary>
-	/// Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label to Unlocked, return true.  
+	/// Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.unlocked to true, return true.  
 	/// If the player has not enough coins, show an error message and return false.
 	/// </summary>
 	private bool Buy(Weapon weapon)
@@ -79,6 +79,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 			CoinManager.Instance.RemoveCoins(weapon.price);
 			
 			shopPrices.WeaponUnlocked(shopPrices);
+			UnlockWeapon(weapon);
 			return true;
 		}
 		else if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) == false && weapon.unlocked == false)
@@ -124,36 +125,27 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	private void OnBuy1Pressed()
 	{
 		Weapon defaultWeapon = ShopManager.Instance.weaponsList[0];
-		if (Buy(defaultWeapon))
-		{
-			UnlockWeapon(defaultWeapon);
-		}
+		Buy(defaultWeapon);
+
 	}
 
 	private void OnBuy2Pressed()
 	{
 		Weapon bouncingWeapon = ShopManager.Instance.weaponsList[1];
-		if (Buy(bouncingWeapon))
-		{
-			UnlockWeapon(bouncingWeapon);
-		}
+		Buy(bouncingWeapon);
+
 	}
 
 	private void OnBuy3Pressed()
 	{
 		Weapon grenadeWeapon = ShopManager.Instance.weaponsList[2];
-		if (Buy(grenadeWeapon))
-		{
-			UnlockWeapon(grenadeWeapon);
-		}
+		Buy(grenadeWeapon);
+
 	}
 
 	private void OnBuy4Pressed()
 	{
 		Weapon laserWeapon = ShopManager.Instance.weaponsList[3];
-		if (Buy(laserWeapon))
-		{
-			UnlockWeapon(laserWeapon);
-		}
+		Buy(laserWeapon);
 	}
 }

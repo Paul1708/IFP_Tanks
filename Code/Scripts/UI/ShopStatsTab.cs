@@ -64,7 +64,7 @@ public partial class ShopStatsTab : ShopBaseTab
 
 	///<summary>
 	///Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. 
-	///It increases the price of the stat and removes the coins if the stat was bought.
+	///It increases the price and quantity of the stat and removes the coins if the stat was bought.
 	///</summary>
 	public bool Buy(Stat stat)
 	{
@@ -75,6 +75,7 @@ public partial class ShopStatsTab : ShopBaseTab
 			CoinManager.Instance.RemoveCoins(stat.price + shopPrices.basePrice);
 
 			shopPrices.IncreasePrice(stat);
+			IncreaseQuantity(stat);
 			EmitSignal(SignalName.OnItemBoughtUpdatePrices);
 			return true;
 		}
@@ -132,36 +133,25 @@ public partial class ShopStatsTab : ShopBaseTab
 	private void OnBuy1Pressed()
 	{
 		Stat healStat = ShopManager.Instance.statsList[0];
-		if (Buy(healStat))
-		{ 
-			IncreaseQuantity(healStat);
-		}
+		Buy(healStat);
 	}
 
 	private void OnBuy2Pressed()
 	{
 		Stat maxHPStat = ShopManager.Instance.statsList[1];
-		if (Buy(maxHPStat))
-		{
-			IncreaseQuantity(maxHPStat);
-		}
+		Buy(maxHPStat);
+
 	}
 
 	private void OnBuy3Pressed()
 	{
 		Stat DMGStat = ShopManager.Instance.statsList[2];
-		if (Buy(DMGStat))
-		{
-			IncreaseQuantity(DMGStat);
-		}
+		Buy(DMGStat);
 	}
 
 	private void OnBuy4Pressed()
 	{
 		Stat speedStat = ShopManager.Instance.statsList[3];
-		if (Buy(speedStat))
-		{
-			IncreaseQuantity(speedStat);
-		}
+		Buy(speedStat);
 	}
 }
