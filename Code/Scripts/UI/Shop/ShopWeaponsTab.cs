@@ -10,12 +10,20 @@ public struct Weapon
 	public Label priceTag;
 	public bool unlocked = false;
 	public bool equipped = false;
-	public Weapon () { }
-	public Weapon(string name, int listIndex)
+	public PackedScene bulletScene;
+	public Weapon() { }
+	public Weapon(string name, int listIndex, PackedScene bulletScene)
 	{
 		this.name = name;
 		this.listIndex = listIndex;
+		this.bulletScene = bulletScene;
 	}
+}
+
+readonly struct Bullet
+{
+	public static readonly PackedScene DefaultBulllet = GD.Load<PackedScene>("res://Scenes/Weapons/50cal.tscn");
+	public static readonly PackedScene BouncingBullet = GD.Load<PackedScene>("res://Scenes/Weapons/BouncingBullet.tscn");
 }
 
 public partial class ShopWeaponsTab : ShopBaseTab
@@ -27,14 +35,14 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{	
+	{
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 
 		levelManager.OnLevelChanged += ResetScrollBar;
-		
+
 		GetPriceTags();
 		UpdatePrices();
 	}
@@ -58,7 +66,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	}
 
 	private void UnlockWeapon(Weapon weapon)
-	{	
+	{
 		weapon.unlocked = true;
 		ShopManager.Instance.weaponsList[weapon.listIndex] = weapon;
 	}
@@ -73,7 +81,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		{
 			ShopPrices shopPrices = weapon.priceTag as ShopPrices;
 			CoinManager.Instance.RemoveCoins(weapon.price);
-			
+
 			shopPrices.WeaponUnlocked(shopPrices);
 			UnlockWeapon(weapon);
 			return true;
@@ -111,37 +119,41 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 		for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
 		{
-			weaponPrices[i] = ParsePrice(i+1);
+			weaponPrices[i] = ParsePrice(i + 1);
 			Weapon weapon = ShopManager.Instance.weaponsList[i];
 			weapon.price = weaponPrices[i];
 			ShopManager.Instance.weaponsList[i] = weapon;
 		}
 	}
- 
+
 	private void OnBuy1Pressed()
 	{
 		Weapon defaultWeapon = ShopManager.Instance.weaponsList[0];
-		Buy(defaultWeapon);
+		if (defaultWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(defaultWeapon);
+		else Buy(defaultWeapon);
 
 	}
 
 	private void OnBuy2Pressed()
 	{
 		Weapon bouncingWeapon = ShopManager.Instance.weaponsList[1];
-		Buy(bouncingWeapon);
+		if (bouncingWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(bouncingWeapon);
+		else Buy(bouncingWeapon);
 
 	}
 
 	private void OnBuy3Pressed()
 	{
 		Weapon grenadeWeapon = ShopManager.Instance.weaponsList[2];
-		Buy(grenadeWeapon);
+		if (grenadeWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(grenadeWeapon);
+		else Buy(grenadeWeapon);
 
 	}
 
 	private void OnBuy4Pressed()
 	{
 		Weapon laserWeapon = ShopManager.Instance.weaponsList[3];
-		Buy(laserWeapon);
+		if (laserWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(laserWeapon);
+		else Buy(laserWeapon);
 	}
 }

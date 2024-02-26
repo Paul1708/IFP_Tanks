@@ -3,7 +3,6 @@ using Managers.Save;
 using System;
 using System.Collections.Generic;
 
-
 public partial class ShopManager : Node2D
 {
 	public static ShopManager Instance { get; private set; }
@@ -18,10 +17,10 @@ public partial class ShopManager : Node2D
 	private Stat DMGStat = new("DMG", 2);
 	private Stat speedStat = new("Speed", 3);
 	//Weapons
-	private Weapon defaultWeapon = new("Default", 0);
-	private Weapon bouncingWeapon = new("Bouncing", 1);
-	private Weapon grenadeWeapon = new("Grenade", 2);
-	private Weapon laserWeapon = new("Laser", 3);
+	private Weapon defaultWeapon = new("Default", 0, Bullet.DefaultBulllet);
+	private Weapon bouncingWeapon = new("Bouncing", 1, Bullet.BouncingBullet);
+	private Weapon grenadeWeapon = new("Grenade", 2, Bullet.DefaultBulllet); //TODO: change to grenade bullet
+	private Weapon laserWeapon = new("Laser", 3, Bullet.DefaultBulllet); //TODO: change to laser bullet
 
 	public override void _Ready()
 	{
@@ -46,6 +45,38 @@ public partial class ShopManager : Node2D
 	public void OnSaveDataLoaded(SaveData saveData) //TODO: savedata for weapons
 	{
 		LoadShopStateBySaveData(saveData);
+	}
+
+	private void UnequipAllWeapon()
+	{
+		bool[] equipped = new bool[weaponsList.Count];
+		for (int i = 0; i < weaponsList.Count; i++)
+		{
+			equipped[i] = weaponsList[i].equipped;
+			equipped[i] = false;
+			Weapon weapon = weaponsList[i];
+			weapon.equipped = equipped[i];
+			weaponsList[i] = weapon;
+		}
+	}
+
+	public void EquipWeapon(Weapon weapon)
+	{
+		UnequipAllWeapon(); //make sure only one weapon is equipped
+		weapon.equipped = true;
+		weaponsList[weapon.listIndex] = weapon;
+	}
+
+	public Weapon GetEquippedWeapon()
+	{
+		foreach (var weapon in weaponsList)
+		{
+			if (weapon.equipped)
+			{
+				return weapon;
+			}
+		}
+		return weaponsList[0]; //default weapon
 	}
 
 	private void AddStatsToList(params Stat[] stats)
