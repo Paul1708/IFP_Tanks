@@ -9,7 +9,7 @@ namespace Weapons
 
         public override void Destroy()
         {
-            particles.EmitParticles(this, Scene.BulletCrack);
+            Particles.EmitParticles(this, Scene.BulletCrack);
             QueueFree();
         }
         

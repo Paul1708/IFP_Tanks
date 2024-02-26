@@ -65,7 +65,7 @@ public partial class GunController : Node2D
     {
         //create a bullet
         Bullet bullet = bulletScene.Instantiate<Bullet>();
-        bullet.damage = bulletDamage;
+        bullet.Damage = bulletDamage;
 
         // set rotation and velocity of bullet
         bullet.Rotation = GlobalRotation;

@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvkbrlpgn0f1c"]
+[gd_scene load_steps=7 format=3 uid="uid://bvkbrlpgn0f1c"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/GrenadeBullet.cs" id="1_mgtdc"]
 [ext_resource type="Texture2D" uid="uid://qqbw7odnu7wm" path="res://Sprites/Bullets/Grenade/granadeV2.png" id="2_obmwa"]
+[ext_resource type="Texture2D" uid="uid://1xxljxq2lefv" path="res://Sprites/Bullets/Grenade/grenadeShadow.png" id="3_c4u3q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amix1"]
 size = Vector2(25, 21)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ww5it"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ai27u"]
 
 [node name="GrenadeBullet" type="RigidBody2D"]
 collision_layer = 0
@@ -32,3 +37,14 @@ shape = SubResource("RectangleShape2D_amix1")
 wait_time = 3.5
 one_shot = true
 autostart = true
+
+[node name="Shadow" type="RigidBody2D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_ww5it")
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shadow"]
+shape = SubResource("CircleShape2D_ai27u")
+disabled = true
+
+[node name="GFX" type="Sprite2D" parent="Shadow"]
+texture = ExtResource("3_c4u3q")

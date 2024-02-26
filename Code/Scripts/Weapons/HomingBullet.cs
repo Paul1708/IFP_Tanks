@@ -9,7 +9,7 @@ public partial class HomingBullet : Bullet
     [Export] public int HomingTicks { get; set; } //delay in ticks before the bullet targets the player location
     [Export] public float MaxRotationDeg { get; set; } //in degrees
 
-    private Vector2 target { get; set; }
+    private Vector2 Target { get; set; }
 
 
 
@@ -18,22 +18,22 @@ public partial class HomingBullet : Bullet
 
     public override void Destroy()
     {
-        musicController.Play(Sound.RocketExplosion);
-        particles.EmitParticles(this, Scene.Explosion);
+        MusicController.Play(Sound.RocketExplosion);
+        Particles.EmitParticles(this, Scene.Explosion);
         QueueFree();
     }
 
     protected override void Move()
     {
-        target = player.GlobalPosition;
+        Target = Player.GlobalPosition;
         if (_ticksPassed == -1)
         {
-            _targetDirection = (target - GlobalPosition).Normalized(); //init bullet with direct direction
+            _targetDirection = (Target - GlobalPosition).Normalized(); //init bullet with direct direction
 
         }
         else if (_ticksPassed >= HomingTicks)
         {
-            Vector2 directLine = (target - GlobalPosition).Normalized();
+            Vector2 directLine = (Target - GlobalPosition).Normalized();
             Vector2 oldDirection = _targetDirection;
             float rawAngle = directLine.Angle() - oldDirection.Angle(); //angle of new direction to old direction
             float maxAngleRad = MaxRotationDeg * MathF.PI / 180F; //max rotation in radians for later calculation

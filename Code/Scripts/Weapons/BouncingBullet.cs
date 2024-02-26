@@ -8,19 +8,19 @@ public partial class BouncingBullet : Bullet
     [Export]
     public int MaxBounces { get; set; }
     private int _currentBounces;
-    private Timer BounceTimer;
-    private bool canBounce = true;
+    private Timer _bounceTimer;
+    private bool _canBounce = true;
 
     protected override void Setup()
     {
         // Bullet only can bounce every 0.1 seconds
-        BounceTimer = GetNode<Timer>("BounceTimer");
-        BounceTimer.Timeout += () => canBounce = true;
+        _bounceTimer = GetNode<Timer>("BounceTimer");
+        _bounceTimer.Timeout += () => _canBounce = true;
     }
 
     public override void Destroy()
     {
-        particles.EmitParticles(this, Scene.BulletCrack);
+        Particles.EmitParticles(this, Scene.BulletCrack);
         QueueFree();
     }
 
@@ -32,10 +32,8 @@ public partial class BouncingBullet : Bullet
         {
             NormalCollisionVector = result.GetNormal().Normalized();
 
-            if (result.GetCollider() is TileMap)
-            {
-                if (canBounce) BounceOfWall();
-            }
+            if (result.GetCollider() is TileMap && _canBounce)
+                BounceOfWall();
         }
     }
 
@@ -45,8 +43,8 @@ public partial class BouncingBullet : Bullet
         Rotation = LinearVelocity.Angle();
 
         _currentBounces++;
-        BounceTimer.Start();
-        canBounce = false;
+        _bounceTimer.Start();
+        _canBounce = false;
 
         if (_currentBounces > MaxBounces)
         {
@@ -63,7 +61,7 @@ public partial class BouncingBullet : Bullet
 
     protected override void OnDamageableHit(Node node)
     {
-        node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
+        node.GetNode<HealthComponent>("HealthComponent").TakeDamage(Damage);
         Destroy();
     }
     protected override void OnOtherHit()

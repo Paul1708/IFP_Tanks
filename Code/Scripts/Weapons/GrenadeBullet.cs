@@ -25,8 +25,13 @@ public partial class GrenadeBullet : Bullet
     private Vector2 _originalGravity;
     private Vector2 _referenceAxis;
 
+    private RigidBody2D _shadow;
+    
+
     protected override void Setup()
     {
+        _shadow = GetNode<RigidBody2D>("Shadow");
+        
         _shootDirection = new Vector2(1, 0).Rotated(GlobalRotation).Normalized();
         float angleToXAxis = _shootDirection.Angle();
         _shootXDirectionSign = _shootDirection.X < 0 ? -1 : 1;
@@ -54,9 +59,10 @@ public partial class GrenadeBullet : Bullet
         _time += _timeDiff;
         
         MoveAndCollide(LinearVelocity);
+        _shadow.MoveAndCollide(_shootDirection);
         
         //collision detection is triggered iff the current bullet position is collinear to the original shoot direction
-        Vector2 pos = (GlobalPosition - player.GlobalPosition);
+        Vector2 pos = (GlobalPosition - Player.GlobalPosition);
         //if the distance is too small, then the collision was triggered right after the bullet was shot, so ignore it
         
         if (pos.Length() <= 100) //player size 78x66
@@ -84,14 +90,14 @@ public partial class GrenadeBullet : Bullet
                 if (distance <= DamageRadius)
                 {
                     //body in hit range, so damage it according to dmg = bulletDamage / radius
-                    float finalDamage = damage / distance;
+                    float finalDamage = Damage / distance;
                     node.GetNode<HealthComponent>("HealthComponent").TakeDamage(finalDamage);
                 }
             }
         }
         
-        particles.EmitParticles(this, Scene.Explosion);
-        musicController.Play(Sound.RocketExplosion);
+        Particles.EmitParticles(this, Scene.Explosion);
+        MusicController.Play(Sound.RocketExplosion);
         Destroy();
     }
 
