@@ -1,7 +1,7 @@
 using Godot;
 using System.Collections.Generic;
 
-public  abstract partial class ShopBaseTab : TabBar
+public abstract partial class ShopBaseTab : TabBar
 {
 	protected const string PriceTagPathFormat = "RichTextLabel/Control/Panel{0}/PriceTag";
 	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
