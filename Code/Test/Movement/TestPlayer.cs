@@ -30,7 +30,7 @@ public class TestPlayer
         Vector2 expected = new Vector2(300 * x, 300 * y);
 
         // Act
-        Vector2 actual = player.calculateVelocity(input);
+        Vector2 actual = player.CalculateVelocity(input);
 
         // Assert
         Assertions.AssertThat(actual).IsEqual(expected);

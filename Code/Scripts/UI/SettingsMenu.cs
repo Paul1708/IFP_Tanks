@@ -1,12 +1,11 @@
 using System;
-using System.Security.Authentication.ExtendedProtection;
-using System.Transactions;
 using Godot;
+using Managers.Save;
+
 
 namespace UI;
 public partial class SettingsMenu : Control
 {
-
 	string masterBusName = "Master";
 	string musicBusName = "Music";
 	string sfxBusName = "SFX";
@@ -19,7 +18,7 @@ public partial class SettingsMenu : Control
 	Slider masterSlider;
 	Slider musicSlider;
 	Slider sfxSlider;
-
+	
 	public override void _Ready()
 	{
 		musicController = GetNode<MusicController>("/root/MusicController");
@@ -82,4 +81,4 @@ public partial class SettingsMenu : Control
 		sfxSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(sfxBusIndex));
 	}
 
-}
+}	
