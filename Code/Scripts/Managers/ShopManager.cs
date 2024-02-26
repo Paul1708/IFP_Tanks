@@ -50,8 +50,15 @@ public partial class ShopManager : Node2D
 
 	private void AddStatsToList(params Stat[] stats)
 	{
+		HashSet<int> indices = new HashSet<int>();
+
 		foreach (var stat in stats)
 		{
+			// If the index is already in the HashSet, throw an exception
+			if (!indices.Add(stat.listIndex))
+			{
+				throw new ArgumentException($"Duplicate index: {stat.listIndex}");
+			}
 			// Ensure the list is large enough
 			while (statsList.Count <= stat.listIndex)
 			{
@@ -63,8 +70,15 @@ public partial class ShopManager : Node2D
 
 	private void AddWeaponsToList(params Weapon[] weapons)
 	{
+		HashSet<int> indices = new HashSet<int>();
+
 		foreach (var weapon in weapons)
 		{
+			// If the index is already in the HashSet, throw an exception
+			if (!indices.Add(weapon.listIndex))
+			{
+				throw new ArgumentException($"Duplicate index: {weapon.listIndex}");
+			}
 			// Ensure the list is large enough
 			while (weaponsList.Count <= weapon.listIndex)
 			{
