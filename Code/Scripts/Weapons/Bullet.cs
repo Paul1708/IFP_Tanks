@@ -9,7 +9,7 @@ namespace Weapons
         public float Damage { get; set; }
         [Export] public float Speed { get; set; } //speed of the bullet
 
-        protected Node2D Player;
+        public Node2D Player;
         protected ParticleController Particles;
 
         protected Vector2 NormalCollisionVector;
@@ -63,7 +63,7 @@ namespace Weapons
             Destroy();
         }
 
-        protected virtual void OnDamageableHit(Node node)
+        public virtual void OnDamageableHit(Node node)
         {
             node.GetNode<HealthComponent>("HealthComponent").TakeDamage(Damage);
         }

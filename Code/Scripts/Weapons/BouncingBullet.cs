@@ -59,7 +59,7 @@ public partial class BouncingBullet : Bullet
         //Do nothing, so the bullet does not get destroyed
     }
 
-    protected override void OnDamageableHit(Node node)
+    public override void OnDamageableHit(Node node)
     {
         node.GetNode<HealthComponent>("HealthComponent").TakeDamage(Damage);
         Destroy();

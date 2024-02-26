@@ -9,7 +9,8 @@ public partial class HomingBullet : Bullet
     [Export] public int HomingTicks { get; set; } //delay in ticks before the bullet targets the player location
     [Export] public float MaxRotationDeg { get; set; } //in degrees
 
-    private Vector2 Target { get; set; }
+    private Vector2 _target;
+    public Node2D TargetNode { get; set; }
 
 
 
@@ -25,15 +26,23 @@ public partial class HomingBullet : Bullet
 
     protected override void Move()
     {
-        Target = Player.GlobalPosition;
+        //If the target is null, then abort launching bullet
+        if (TargetNode == null || TargetNode.IsQueuedForDeletion())
+        {
+            GD.Print("WARNING: Homing Bullet target is not set, destroy bullet.");
+            QueueFree();
+            return;
+        }
+        
+        _target = TargetNode.GlobalPosition;
         if (_ticksPassed == -1)
         {
-            _targetDirection = (Target - GlobalPosition).Normalized(); //init bullet with direct direction
+            _targetDirection = (_target - GlobalPosition).Normalized(); //init bullet with direct direction
 
         }
         else if (_ticksPassed >= HomingTicks)
         {
-            Vector2 directLine = (Target - GlobalPosition).Normalized();
+            Vector2 directLine = (_target - GlobalPosition).Normalized();
             Vector2 oldDirection = _targetDirection;
             float rawAngle = directLine.Angle() - oldDirection.Angle(); //angle of new direction to old direction
             float maxAngleRad = MaxRotationDeg * MathF.PI / 180F; //max rotation in radians for later calculation

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bvkbrlpgn0f1c"]
+[gd_scene load_steps=8 format=3 uid="uid://bvkbrlpgn0f1c"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/GrenadeBullet.cs" id="1_mgtdc"]
 [ext_resource type="Texture2D" uid="uid://qqbw7odnu7wm" path="res://Sprites/Bullets/Grenade/granadeV2.png" id="2_obmwa"]
 [ext_resource type="Texture2D" uid="uid://1xxljxq2lefv" path="res://Sprites/Bullets/Grenade/grenadeShadow.png" id="3_c4u3q"]
+[ext_resource type="Texture2D" uid="uid://clfn2anc1uh8k" path="res://Sprites/Bullets/Grenade/target.png" id="4_v3pfj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amix1"]
 size = Vector2(25, 21)
@@ -20,9 +21,9 @@ max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_mgtdc")
 ArcAngleOffsetDeg = 30.0
-GravitationalForce = 10.0
+GravitationalForce = 4.0
 DamageRadius = 100.0
-Speed = 5.0
+Speed = 50.0
 
 [node name="GFX" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -34,7 +35,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_amix1")
 
 [node name="DestroyTimer" type="Timer" parent="."]
-wait_time = 3.5
+wait_time = 30.0
 one_shot = true
 autostart = true
 
@@ -48,3 +49,8 @@ disabled = true
 
 [node name="GFX" type="Sprite2D" parent="Shadow"]
 texture = ExtResource("3_c4u3q")
+
+[node name="TargetPoint" type="CPUParticles2D" parent="."]
+amount = 1
+texture = ExtResource("4_v3pfj")
+gravity = Vector2(0, 0)

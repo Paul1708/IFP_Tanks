@@ -37,6 +37,13 @@ public partial class Laser : RayCast2D
 
             _laserBeamParticles.EmissionRectExtents = _laserLine.Points[1] * 0.5F;
             _laserBeamParticles.Position = _laserLine.Points[1] * 0.5F;
+
+            Node2D collidedWith = GetCollider() as Node2D;
+            if(collidedWith != null && collidedWith.IsInGroup("Damageable"))
+                _gun.OnDamageableHit(collidedWith);
+            
+            else if (collidedWith is Bullet b)
+                b.OnCollision(this);
             
         }
         

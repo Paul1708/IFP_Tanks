@@ -1,5 +1,4 @@
-﻿using System;
-using Components;
+﻿using Components;
 using Godot;
 
 namespace Weapons;
@@ -7,75 +6,59 @@ namespace Weapons;
 public partial class GrenadeBullet : Bullet
 {
 
-    [Export] public float ArcAngleOffsetDeg { get; set; }
-    [Export] public float GravitationalForce { get; set; }
+    [Export] public float ArcAngleOffsetDeg { get; set; } //beta
+    [Export] public float GravitationalForce { get; set; } //g
     [Export] public float DamageRadius { get; set; }
     
-
-    //when checking if a grenade hit the ground, we want to compare two normalized vectors to check if they are collinear with tolerance
-    private readonly double _absoluteCollinearTollerance = 1e-2;
-    private Vector2 _gravity;
-    private Vector2 _shootDirection;
-    private Vector2 _trajectoryDirection;
-    
-    private double _time = 10e-6; //time after the grenade was shot
-    private readonly float _timeDiff = 0.01F; //time passed between to frames for the grenade
-    private float _shootXDirectionSign;
-    private float _shootYDirectionSign;
-    private Vector2 _originalGravity;
-    private Vector2 _referenceAxis;
-
     private RigidBody2D _shadow;
+    private CpuParticles2D _targetSprite;
+    
+    //Values for simulated parabola
+    private float _time; //time after the grenade was shot
+    private readonly float _timeDiff = 0.1F; //time passed between to frames for the grenade
+    private Vector2 _shootDirection;
+    private Vector2 _shootDirectionNormal;
+    private float _offsetAngle;
+    private Vector2 _shootPosition; //position where the grenades was shot from
+    private float _grenadeGroundHitTime;
+    private Vector2 _hitLocation;
     
 
     protected override void Setup()
     {
+        _offsetAngle = Mathf.DegToRad(ArcAngleOffsetDeg);
+        
+        //TODO: Disable this line if you dont want to set the grenade target to where the player clicked
+        Speed = 0.93F * Mathf.Sqrt((GravitationalForce * (GetGlobalMousePosition() - GlobalPosition).Length()) / Mathf.Sin(2.0F*_offsetAngle));
+        
         _shadow = GetNode<RigidBody2D>("Shadow");
+        _targetSprite = GetNode<CpuParticles2D>("TargetPoint");
         
-        _shootDirection = new Vector2(1, 0).Rotated(GlobalRotation).Normalized();
-        float angleToXAxis = _shootDirection.Angle();
-        _shootXDirectionSign = _shootDirection.X < 0 ? -1 : 1;
-        _shootYDirectionSign = _shootDirection.Y < 0 ? -1 : 1;
+        _shootDirection = new Vector2(1, 0).Rotated(GlobalRotation).Normalized() * Speed;
+
+        _shootDirectionNormal = _shootDirection.Rotated(Mathf.Pi/2).Normalized();
+        _shootPosition = GlobalPosition;
         
-        //add arch-offset to simulate a 3d-trajectory in a 2d plane
-        float offsetAngle = GetArcAngleOffset(angleToXAxis);
-        float normalizedAngle = NormalizeAngle(angleToXAxis + offsetAngle);
-        _trajectoryDirection = new Vector2(1,0).Rotated(normalizedAngle).Normalized() * Speed;
         
-        //get a vector perpendicular to the shoot-direction to act as a gravitational vector for the grenade trajectory
-        //that is pointing to the x-Axis
-        _gravity = GetSimulatedGravityVector(_shootDirection);
-        _originalGravity = _gravity;
+        _grenadeGroundHitTime = (2 * Speed * Mathf.Sin(_offsetAngle)) / GravitationalForce;
+
+        _hitLocation = _grenadeGroundHitTime * new Vector2(_shootDirection[0], _shootDirection[1])
+                                       + new Vector2(_shootPosition[0], _shootPosition[1]);
+        _targetSprite.GlobalPosition = _hitLocation;
     }
 
     protected override void Move()
     {
-        Rotation = LinearVelocity.Angle();
-        LinearVelocity = (_trajectoryDirection + _gravity).Normalized() * Speed;
-        
-        //update gravity vector according to "Schiefer Wurf"
-        _gravity.X = _originalGravity.X + 0.5F * GravitationalForce * Mathf.Pow((float)_time, 2) * _shootXDirectionSign;
-        _gravity.Y = _originalGravity.Y + 0.5F * GravitationalForce * Mathf.Pow((float)_time, 2) * -_shootYDirectionSign;
-        _time += _timeDiff;
-        
-        MoveAndCollide(LinearVelocity);
-        _shadow.MoveAndCollide(_shootDirection);
-        
-        //collision detection is triggered iff the current bullet position is collinear to the original shoot direction
-        Vector2 pos = (GlobalPosition - Player.GlobalPosition);
-        //if the distance is too small, then the collision was triggered right after the bullet was shot, so ignore it
-        
-        if (pos.Length() <= 100) //player size 78x66
+        _shadow.GlobalPosition = _shadowTrajectory(_shootDirection, _time);
+        GlobalPosition = _trajectory(_shootDirection, _time);
+        _targetSprite.GlobalPosition = _hitLocation;
+
+        if (_time >= _grenadeGroundHitTime)
         {
-            return; //ignore collision for close bullets
-        }
-        
-        if (InSymmetricInterval((float) _absoluteCollinearTollerance, pos.Normalized().X - _shootDirection.X) &&
-            InSymmetricInterval((float) _absoluteCollinearTollerance, pos.Normalized().Y - _shootDirection.Y))
-        {
-            //since the bullet is relatively close to its ground hit-point, trigger the collision
             OnExplode();
         }
+
+        _time += _timeDiff;
     }
 
     public void OnExplode()
@@ -102,63 +85,34 @@ public partial class GrenadeBullet : Bullet
     }
 
     /**
-     * Check if the given toCheck float is inside the interval [-interval;interval].
+     * Return the position of the grenade trajectory at time t with respect to the x-Axis (base case)
      */
-    private bool InSymmetricInterval(float interval, float toCheck)
+    private Vector2 _normalizedTrajectory(float t)
     {
-        return toCheck >= -1.0 * interval && toCheck <= interval;
-    }
-    
-    private float NormalizeAngle(float angle)
-    {
-        if (angle > Mathf.Pi)
-        {
-            return angle - 2 * Mathf.Pi;
-        }
+        //x(t) = ||s|| * t * cos(b) from "Schiefer Wurf"
+        float x = Speed * t * Mathf.Cos(_offsetAngle);
+        //y(t) = -g/2 * t^2 + ||s||*t*sin(b) from "Schiefer Wurf"
+        float y = -GravitationalForce / 2.0F * Mathf.Pow(t, 2.0F) + Speed * t * Mathf.Sin(_offsetAngle);
 
-        if (angle < -Mathf.Pi)
-        {
-            return 2 * Mathf.Pi - angle;
-        }
-
-        return angle;
+        return new Vector2(x, y);
     }
 
     /**
-     * Get a vector perpendicular to the shoot-direction to act as a gravitational vector for the grenade trajectory
-     * that is oriented to the x-Axis. Note that this vector is normalized.
+     * Call by value since the original shoot direction has to be preserved.
+     * Return the position of the 3d trajectory projected on the 2d grid of the grenade at the given time t.
      */
-    private Vector2 GetSimulatedGravityVector(Vector2 direction)
+    private Vector2 _trajectory(Vector2 shootDirection, float t)
     {
-        //check if the angle is closer to the y or x axis. If closer to x, rotate by +pi/2 angle, if closer to y, rotete by -pi/2
-        float angle = direction.Angle();
-        float axisSign = InSymmetricInterval(Mathf.Pi / 4, angle) || angle > 3*Mathf.Pi / 4 || angle < -3*Mathf.Pi / 4 ? 1 : -1;
-        _referenceAxis = axisSign > 0 ? new Vector2(1, 0) : new Vector2(0, 1);
-        
-        return direction.Rotated(axisSign * MathF.PI / 2);
+        Vector2 normalizedTrajectoryPoint = _normalizedTrajectory(t);
+        return (t * shootDirection + _shootDirectionNormal * normalizedTrajectoryPoint[1]) + _shootPosition;
     }
 
     /**
-     * Returns the offset angle of the grenade trajectory to simulate a parabola in 3d on a 2d grid.
+     * Call by value since the original shoot direction has to be preserved.
+     * Return the position of the grenade shadow after the given time t.
      */
-    private float GetArcAngleOffset(float angle)
+    private Vector2 _shadowTrajectory(Vector2 shootDirection, float t)
     {
-        if (Mathf.Sign(angle) > 0) //below x-Axis
-        {
-            if (angle < Mathf.Pi / 2.0)
-            {
-                //if angle larger than 90° then remove offset angle to simulate a grenade flying "upwards"
-                return 1 * Mathf.DegToRad(ArcAngleOffsetDeg);
-            }
-            return -1 * Mathf.DegToRad(ArcAngleOffsetDeg);
-        }
-       
-        //same for negative angles but signs flipped
-        if (angle > -Mathf.Pi / 2.0)
-        {
-            return -1 * Mathf.DegToRad(ArcAngleOffsetDeg);
-        }
-        
-        return +1 * Mathf.DegToRad(ArcAngleOffsetDeg);
+        return (t * shootDirection) + _shootPosition;
     }
 }

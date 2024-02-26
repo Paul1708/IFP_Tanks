@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using Movement;
 
 namespace Weapons;
 
@@ -66,6 +67,10 @@ public partial class GunController : Node2D
         //create a bullet
         Bullet bullet = bulletScene.Instantiate<Bullet>();
         bullet.Damage = bulletDamage;
+        
+        //if it is a homing bullet shot by the player then set the target to a random enemy.
+        if (bullet is HomingBullet hb)
+            _setHomingBulletTarget(hb);
 
         // set rotation and velocity of bullet
         bullet.Rotation = GlobalRotation;
@@ -78,5 +83,23 @@ public partial class GunController : Node2D
         //add the bullet to the scene tree 
         GetTree().GetFirstNodeInGroup("Level").AddChild(bullet);
     }
+
+    private void _setHomingBulletTarget(HomingBullet bullet)
+    {
+        Node parent = GetParent();
+        if (parent is Player)
+        {
+            bullet.TargetNode = GetTree().GetNodesInGroup("Enemy").PickRandom() as Node2D;
+        }
+        else if (parent is Enemy)
+        {
+            bullet.TargetNode = GetTree().GetFirstNodeInGroup("Player") as Node2D;
+        }
+        else
+        {
+            throw new ArgumentException("Invalid bullet owner");
+        }
+    }
+    
 }
 
