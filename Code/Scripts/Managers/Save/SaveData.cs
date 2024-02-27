@@ -47,7 +47,7 @@ public partial class SaveData : Resource
         };
         LastCheckpointLevelID = 0;
         LastCheckpointWorldID = 0;
-        CoinCount = 50;
+        CoinCount = 0;
         PlayerMaxHP = 100;
         PlayerCurrentHP = 100;
     }

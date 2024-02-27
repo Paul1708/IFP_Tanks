@@ -16,24 +16,29 @@ public partial class ShopPrices : Label
 	{
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 
-		if (this.IsInGroup("Stats"))
+		if (TryGetPanelIndex(out int index))
 		{
-			if (ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
+			if (this.IsInGroup("Stats"))
 			{
-				this.Text = "Price: " + (basePrice + ShopManager.Instance.statsList[index].price).ToString();
+				this.Text = $"Price: {basePrice + ShopManager.Instance.statsList[index].price}";
+			}
+			else if (this.IsInGroup("Weapons"))
+			{
+				if (ShopManager.Instance.weaponsList[index].unlocked)
+				{
+					WeaponUnlocked(this);
+				}
+				else
+				{
+					this.Text = $"Price: {basePrice}";
+				}
 			}
 		}
-		else if (this.IsInGroup("Weapons"))
-		{
-			if (ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index) && ShopManager.Instance.weaponsList[index].unlocked)
-			{
-                WeaponUnlocked(this);
-			}
-			else
-			{
-				this.Text = "Price: " + basePrice.ToString();
-			}
-		}
+	}
+
+	private bool TryGetPanelIndex(out int index)
+	{
+		return ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out index);
 	}
 
 	//calculate the price of the item based on the quantity of the item
