@@ -20,20 +20,16 @@ public partial class ShopPrices : Label
 			{
 				this.Text = $"Price: {basePrice + ShopManager.Instance.statsList[index].price}";
 			}
-			else if (greatGreatGrandParent.IsInGroup("Weapons"))
+			else if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.weaponsList[index].unlocked)
 			{
-				if (ShopManager.Instance.weaponsList[index].unlocked)
-				{
-					WeaponUnlocked(this);
-				}
-				else
-				{
-					this.Text = $"Price: {basePrice}";
-				}
+				WeaponUnlocked(this);
+			}
+			else
+			{
+				this.Text = $"Price: {basePrice}";
 			}
 		}
 	}
-
 	private bool TryGetPanelIndex(out int index)
 	{
 		return ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out index);
