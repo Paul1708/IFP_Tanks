@@ -28,7 +28,6 @@ readonly struct Bullet
 
 public partial class ShopWeaponsTab : ShopBaseTab
 {
-	ShopMenu shopMenu;
 	HScrollBar hScrollBar;
 	Node2D control;
 	LevelManager levelManager;
@@ -36,7 +35,6 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
@@ -53,45 +51,16 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		Scroll();
 	}
 
-	private void ResetScrollBar()
+	protected override void ResetScrollBar()
 	{
 		hScrollBar.Value = 0;
 	}
 
-	private void Scroll()
+	protected override void Scroll()
 	{
 		Vector2 position = control.Position;
 		position.X = (float)-hScrollBar.Value;
 		control.Position = position;
-	}
-
-	private void UnlockWeapon(Weapon weapon)
-	{
-		weapon.unlocked = true;
-		ShopManager.Instance.weaponsList[weapon.listIndex] = weapon;
-	}
-
-	/// <summary>
-	/// Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.unlocked to true, return true.  
-	/// If the player has not enough coins, show an error message and return false.
-	/// </summary>
-	private bool Buy(Weapon weapon)
-	{
-		if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) && weapon.unlocked == false)
-		{
-			ShopPrices shopPrices = weapon.priceTag as ShopPrices;
-			CoinManager.Instance.RemoveCoins(weapon.price);
-
-			shopPrices.WeaponUnlocked(shopPrices);
-			UnlockWeapon(weapon);
-			return true;
-		}
-		else if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) == false && weapon.unlocked == false)
-		{
-			shopMenu.DisplayInsufficientCoinsError(weapon.price);
-			return false;
-		}
-		return false;
 	}
 
 	///<summary>
@@ -130,7 +99,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	{
 		Weapon defaultWeapon = ShopManager.Instance.weaponsList[0];
 		if (defaultWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(defaultWeapon);
-		else Buy(defaultWeapon);
+		else ShopManager.Instance.BuyWeapon(defaultWeapon);
 
 	}
 
@@ -138,7 +107,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	{
 		Weapon bouncingWeapon = ShopManager.Instance.weaponsList[1];
 		if (bouncingWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(bouncingWeapon);
-		else Buy(bouncingWeapon);
+		else ShopManager.Instance.BuyWeapon(bouncingWeapon);
 
 	}
 
@@ -146,7 +115,7 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	{
 		Weapon grenadeWeapon = ShopManager.Instance.weaponsList[2];
 		if (grenadeWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(grenadeWeapon);
-		else Buy(grenadeWeapon);
+		else ShopManager.Instance.BuyWeapon(grenadeWeapon);
 
 	}
 
@@ -154,6 +123,6 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	{
 		Weapon laserWeapon = ShopManager.Instance.weaponsList[3];
 		if (laserWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(laserWeapon);
-		else Buy(laserWeapon);
+		else ShopManager.Instance.BuyWeapon(laserWeapon);
 	}
 }

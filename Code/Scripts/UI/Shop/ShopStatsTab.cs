@@ -20,16 +20,17 @@ public struct Stat
 
 public partial class ShopStatsTab : ShopBaseTab
 {
-	ShopMenu shopMenu;
 	HScrollBar hScrollBar;
 	Node2D control;
 	LevelManager levelManager;
+	ShopMenu shopMenu;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-		OnItemBoughtUpdatePrices += UpdatePrices;
+
+		ShopManager.Instance.OnItemBoughtUpdatePrices += UpdatePrices;
 
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
@@ -47,49 +48,21 @@ public partial class ShopStatsTab : ShopBaseTab
 		Scroll();
 	}
 
-	private void ResetScrollBar()
+	public override void _ExitTree()
+	{
+		ShopManager.Instance.OnItemBoughtUpdatePrices -= UpdatePrices;
+	}
+
+	protected override void ResetScrollBar()
 	{
 		hScrollBar.Value = 0;
 	}
 
-	private void Scroll()
+	protected override void Scroll()
 	{
 		Vector2 position = control.Position;
 		position.X = (float)-hScrollBar.Value;
 		control.Position = position;
-	}
-
-	///<summary>
-	///Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. 
-	///It increases the price and quantity of the stat and removes the coins if the stat was bought.
-	///</summary>
-	public bool Buy(Stat stat)
-	{
-		ShopPrices shopPrices = stat.priceTag as ShopPrices;
-
-		if (CoinManager.Instance.CheckIfEnoughCoins(stat.price + shopPrices.basePrice))
-		{
-			CoinManager.Instance.RemoveCoins(stat.price + shopPrices.basePrice);
-
-			shopPrices.IncreasePrice(stat);
-			IncreaseQuantity(stat);
-			EmitSignal(SignalName.OnItemBoughtUpdatePrices);
-			return true;
-		}
-		else
-		{
-			shopMenu.DisplayInsufficientCoinsError(stat.price + shopPrices.basePrice);
-			return false;
-		}
-	}
-
-	///<summary>
-	///Increase the quantity of the stat in the list at the listIndex by 1.
-	///</summary>
-	protected void IncreaseQuantity(Stat stat)
-	{
-		stat.quantity++;
-		ShopManager.Instance.statsList[stat.listIndex] = stat;
 	}
 
 	///<summary>
@@ -136,26 +109,26 @@ public partial class ShopStatsTab : ShopBaseTab
 		else
 		{
 			Stat healStat = ShopManager.Instance.statsList[0];
-			if (Buy(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealToMax();
+			if (ShopManager.Instance.BuyStat(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealToMax();
 		}
 	}
 
 	private void OnBuy2Pressed()
 	{
 		Stat maxHPStat = ShopManager.Instance.statsList[1];
-		if (Buy(maxHPStat)) PlayerManager.Instance.PlayerHealthComponent.IncreaseMaxHealth(10);
+		if (ShopManager.Instance.BuyStat(maxHPStat)) PlayerManager.Instance.PlayerHealthComponent.IncreaseMaxHealth(10);
 
 	}
 
 	private void OnBuy3Pressed()
 	{
 		Stat DMGStat = ShopManager.Instance.statsList[2];
-		Buy(DMGStat);
+		ShopManager.Instance.BuyStat(DMGStat);
 	}
 
 	private void OnBuy4Pressed()
 	{
 		Stat speedStat = ShopManager.Instance.statsList[3];
-		Buy(speedStat);
+		ShopManager.Instance.BuyStat(speedStat);
 	}
 }

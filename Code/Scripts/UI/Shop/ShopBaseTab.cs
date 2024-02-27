@@ -6,7 +6,6 @@ public abstract partial class ShopBaseTab : TabBar
 	protected const string PriceTagPathFormat = "RichTextLabel/Control/Panel{0}/PriceTag";
 	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
 
-
 	//get all price tags from the scene by their path that only differs in the Panel number 
 	protected Label GetPriceTagByPanel(int panelNumber)
 	{
@@ -26,5 +25,7 @@ public abstract partial class ShopBaseTab : TabBar
 
 	protected virtual void GetPriceTags() { }
 	protected virtual void UpdatePrices() { }
+	protected virtual void ResetScrollBar() { }
+	protected virtual void Scroll() { }
 
 }

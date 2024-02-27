@@ -9,33 +9,25 @@ public partial class ShopPrices : Label
 
 	//price is the default price of the item 
 	[Export] public int basePrice;
-	public float priceMultiplier = 1.1f;
+	[Export] public float priceMultiplier = 1.1f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 
-		Dictionary<string, int> panelIndexMap = new()
-        {
-			{ "Panel1", 0 },
-			{ "Panel2", 1 },
-			{ "Panel3", 2 },
-			{ "Panel4", 3 }
-		};
-
 		if (this.IsInGroup("Stats"))
 		{
-			if (panelIndexMap.TryGetValue(GetParent().Name, out int index))
+			if (ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
 			{
 				this.Text = "Price: " + (basePrice + ShopManager.Instance.statsList[index].price).ToString();
 			}
 		}
 		else if (this.IsInGroup("Weapons"))
 		{
-			if (panelIndexMap.TryGetValue(GetParent().Name, out int index) && ShopManager.Instance.weaponsList[index].unlocked)
+			if (ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index) && ShopManager.Instance.weaponsList[index].unlocked)
 			{
-				WeaponUnlocked(this);
+                WeaponUnlocked(this);
 			}
 			else
 			{
@@ -51,7 +43,7 @@ public partial class ShopPrices : Label
 		stat.priceTag.Text = "Price: " + value.ToString();
 	}
 
-	public void WeaponUnlocked(Label label)
+	public static void WeaponUnlocked(Label label)
 	{
 		label.Text = "Unlocked";
 	}

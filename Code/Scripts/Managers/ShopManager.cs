@@ -2,13 +2,24 @@ using Godot;
 using Managers.Save;
 using System;
 using System.Collections.Generic;
+using Managers;
 
 public partial class ShopManager : Node2D
 {
 	public static ShopManager Instance { get; private set; }
+	private ShopMenu shopMenu;
+	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
+	[Signal] public delegate void OnWeaponUnlockedEventHandler();
+	[Signal] public delegate void OnWeaponEquippedEventHandler();
 	public List<Stat> statsList = new();
 	public List<Weapon> weaponsList = new();
-
+	public Dictionary<string, int> panelIndexMap = new()
+	{
+		{ "Panel1", 0 },
+		{ "Panel2", 1 },
+		{ "Panel3", 2 },
+		{ "Panel4", 3 }
+	};
 	/*when using, be aware of convention: assignment is dependent on the order and number of the Panels in the scene e.g.
    	healStat is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
 	//Stats
@@ -32,8 +43,10 @@ public partial class ShopManager : Node2D
 		{
 			QueueFree(); // Ensures there is only one instance of CoinManager
 		}
+
 		AddStatsToList(healStat, maxHPStat, DMGStat, speedStat);
 		AddWeaponsToList(defaultWeapon, bouncingWeapon, grenadeWeapon, laserWeapon);
+
 		SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 	}
 
@@ -45,6 +58,91 @@ public partial class ShopManager : Node2D
 	public void OnSaveDataLoaded(SaveData saveData) //TODO: savedata for weapons
 	{
 		LoadShopStateBySaveData(saveData);
+	}
+	
+	///<summary>
+	///Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. 
+	///It increases the price and quantity of the stat and removes the coins if the stat was bought.
+	///</summary>
+	public bool BuyStat(Stat stat)
+	{
+		ShopPrices shopPrices = stat.priceTag as ShopPrices;
+
+		if (CoinManager.Instance.CheckIfEnoughCoins(stat.price + shopPrices.basePrice))
+		{
+			CoinManager.Instance.RemoveCoins(stat.price + shopPrices.basePrice);
+
+			shopPrices.IncreasePrice(stat);
+			IncreaseStatQuantity(stat);
+			EmitSignal(SignalName.OnItemBoughtUpdatePrices);
+			return true;
+		}
+		else
+		{
+			shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+			shopMenu.DisplayInsufficientCoinsError(stat.price + shopPrices.basePrice);
+			return false;
+		}
+	}
+
+	///<summary>
+	///Increase the quantity of the stat in the list at the listIndex by 1.
+	///</summary>
+	public void IncreaseStatQuantity(Stat stat)
+	{
+		stat.quantity++;
+		statsList[stat.listIndex] = stat;
+	}
+
+	/// <summary>
+	/// Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.unlocked to true, return true.  
+	/// If the player has not enough coins, show an error message and return false.
+	/// </summary>
+	public bool BuyWeapon(Weapon weapon)
+	{
+		if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) && weapon.unlocked == false)
+		{
+			ShopPrices shopPrices = weapon.priceTag as ShopPrices;
+			CoinManager.Instance.RemoveCoins(weapon.price);
+
+			ShopPrices.WeaponUnlocked(shopPrices);
+			UnlockWeapon(weapon);
+			return true;
+		}
+		else if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) == false && weapon.unlocked == false)
+		{
+			shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+			shopMenu.DisplayInsufficientCoinsError(weapon.price);
+			return false;
+		}
+		return false;
+	}
+
+	public void UnlockWeapon(Weapon weapon)
+	{
+		weapon.unlocked = true;
+		weaponsList[weapon.listIndex] = weapon;
+		EmitSignal(SignalName.OnWeaponUnlocked);
+	}
+
+	public void EquipWeapon(Weapon weapon)
+	{
+		UnequipAllWeapon(); //make sure only one weapon is equipped
+		weapon.equipped = true;
+		weaponsList[weapon.listIndex] = weapon;
+		EmitSignal(SignalName.OnWeaponEquipped);
+	}
+
+	public Weapon GetEquippedWeapon()
+	{
+		foreach (var weapon in weaponsList)
+		{
+			if (weapon.equipped)
+			{
+				return weapon;
+			}
+		}
+		return weaponsList[0]; //default weapon
 	}
 
 	private void UnequipAllWeapon()
@@ -58,25 +156,6 @@ public partial class ShopManager : Node2D
 			weapon.equipped = equipped[i];
 			weaponsList[i] = weapon;
 		}
-	}
-
-	public void EquipWeapon(Weapon weapon)
-	{
-		UnequipAllWeapon(); //make sure only one weapon is equipped
-		weapon.equipped = true;
-		weaponsList[weapon.listIndex] = weapon;
-	}
-
-	public Weapon GetEquippedWeapon()
-	{
-		foreach (var weapon in weaponsList)
-		{
-			if (weapon.equipped)
-			{
-				return weapon;
-			}
-		}
-		return weaponsList[0]; //default weapon
 	}
 
 	private void AddStatsToList(params Stat[] stats)

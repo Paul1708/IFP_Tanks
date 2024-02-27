@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://br4b3w80rufu3"]
+[gd_scene load_steps=21 format=3 uid="uid://br4b3w80rufu3"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Shop/ShopMenu.cs" id="1_xixhw"]
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_yc5k6"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://0csb4sndd0xa" path="res://Sprites/UI/Shop/Heart.png" id="4_d7wkt"]
 [ext_resource type="Script" path="res://Scripts/UI/Shop/ShopStatsTab.cs" id="4_lw32e"]
 [ext_resource type="Texture2D" uid="uid://bck7j4s7j25mp" path="res://Sprites/UI/Shop/HPup.png" id="5_m5a45"]
+[ext_resource type="Script" path="res://Scripts/UI/Shop/ShopButtons.cs" id="6_11wsb"]
 [ext_resource type="Script" path="res://Scripts/UI/Shop/ShopPrices.cs" id="6_607bg"]
 [ext_resource type="Texture2D" uid="uid://cq616bek36dv" path="res://Sprites/UI/Shop/DMGup.png" id="6_fcc4b"]
 [ext_resource type="Texture2D" uid="uid://ew5i7ji1wmr0" path="res://Sprites/UI/Shop/MSup.png" id="8_6ci8a"]
@@ -86,10 +87,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1594.0
-offset_top = -1536.0
-offset_right = 1993.0
-offset_bottom = 2088.0
+offset_left = -1578.0
+offset_top = -1516.0
+offset_right = 2009.0
+offset_bottom = 2108.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -178,7 +179,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -31.0
 
-[node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel"]
+[node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel" groups=["Stats"]]
 
 [node name="Panel1" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4
@@ -212,6 +213,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel1"]
 layout_mode = 1
@@ -293,6 +295,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel2"]
 layout_mode = 1
@@ -374,6 +377,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel3"]
 layout_mode = 1
@@ -454,6 +458,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel4"]
 layout_mode = 1
@@ -527,7 +532,7 @@ offset_top = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel"]
+[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel" groups=["Weapons"]]
 position = Vector2(0, -31)
 
 [node name="Panel1" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
@@ -562,6 +567,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
 layout_mode = 1
@@ -643,6 +649,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
 layout_mode = 1
@@ -724,6 +731,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
 layout_mode = 1
@@ -804,6 +812,7 @@ grow_vertical = 0
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
 text = "Buy"
+script = ExtResource("6_11wsb")
 
 [node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
 layout_mode = 1
@@ -861,10 +870,6 @@ offset_right = 1335.0
 grow_vertical = 0
 max_value = 1400.0
 page = 500.0
-
-[node name="ShowStats" type="TabBar" parent="TabContainer"]
-visible = false
-layout_mode = 2
 
 [node name="ErrorScreen" type="Panel" parent="."]
 visible = false
