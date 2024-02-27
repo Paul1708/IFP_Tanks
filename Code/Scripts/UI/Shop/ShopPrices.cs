@@ -5,26 +5,22 @@ using System.Collections.Generic;
 //manages the text of the price tags in the shop and calculates the price of the items
 public partial class ShopPrices : Label
 {
-	ShopMenu shopMenu;
-
 	//price is the default price of the item 
 	[Export] public int basePrice;
 	[Export] public float priceMultiplier = 1.1f;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{
-		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-		
-		var greatGrandParent = this.GetParent().GetParent().GetParent();
+	{		
+		var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
 
 		if (TryGetPanelIndex(out int index))
 		{
-			if (greatGrandParent.IsInGroup("Stats"))
+			if (greatGreatGrandParent.IsInGroup("Stats"))
 			{
 				this.Text = $"Price: {basePrice + ShopManager.Instance.statsList[index].price}";
 			}
-			else if (greatGrandParent.IsInGroup("Weapons"))
+			else if (greatGreatGrandParent.IsInGroup("Weapons"))
 			{
 				if (ShopManager.Instance.weaponsList[index].unlocked)
 				{

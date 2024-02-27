@@ -169,7 +169,7 @@ grow_horizontal = 2
 theme = ExtResource("1_yc5k6")
 tab_alignment = 1
 
-[node name="Stats" type="TabBar" parent="TabContainer"]
+[node name="Stats" type="TabBar" parent="TabContainer" groups=["Stats"]]
 layout_mode = 2
 script = ExtResource("4_lw32e")
 
@@ -179,7 +179,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_bottom = -31.0
 
-[node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel" groups=["Stats"]]
+[node name="Control" type="Node2D" parent="TabContainer/Stats/RichTextLabel"]
 
 [node name="Panel1" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4
@@ -246,7 +246,7 @@ grow_vertical = 2
 text = "Buying this, will heal you once
 to maxHP."
 
-[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel1" groups=["Stats"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel1"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -328,7 +328,7 @@ grow_vertical = 2
 text = "Buying this, will increase
 your maxHP by 10."
 
-[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel2" groups=["Stats"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel2"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -410,7 +410,7 @@ grow_vertical = 2
 text = "Buying this, will increase
 your DMG by 10."
 
-[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel3" groups=["Stats"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel3"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -491,7 +491,7 @@ grow_vertical = 2
 text = "Buying this, will increase
 your movement speed by 10."
 
-[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel4" groups=["Stats"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Stats/RichTextLabel/Control/Panel4"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -518,7 +518,7 @@ grow_vertical = 0
 max_value = 1400.0
 page = 500.0
 
-[node name="Weapons" type="TabBar" parent="TabContainer"]
+[node name="Weapons" type="TabBar" parent="TabContainer" groups=["Weapons"]]
 visible = false
 layout_mode = 2
 script = ExtResource("10_01aqj")
@@ -532,7 +532,7 @@ offset_top = 31.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel" groups=["Weapons"]]
+[node name="Control" type="Node2D" parent="TabContainer/Weapons/RichTextLabel"]
 position = Vector2(0, -31)
 
 [node name="Panel1" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
@@ -600,7 +600,7 @@ grow_vertical = 2
 text = "Buying this, will equip the default
 weapon."
 
-[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1" groups=["Weapons"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -683,7 +683,7 @@ text = "Buying this, will equip the bouncing
 bullet.
 "
 
-[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2" groups=["Weapons"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -764,7 +764,7 @@ grow_vertical = 2
 text = "Buying this, will equip the Grenade
 launcher."
 
-[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3" groups=["Weapons"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -844,7 +844,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Buying this, will equip the Laser."
 
-[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4" groups=["Weapons"]]
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

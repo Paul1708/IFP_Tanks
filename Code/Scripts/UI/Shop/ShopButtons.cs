@@ -20,9 +20,9 @@ public partial class ShopButtons : Button
 
 	public void SetStatButtonStates() 
 	{
-		var greatGrandParent = this.GetParent().GetParent().GetParent();
+		var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
 
-		if (greatGrandParent.IsInGroup("Stats"))
+		if (greatGreatGrandParent.IsInGroup("Stats"))
 		{
 			this.Text = "Buy";
 		}
@@ -30,9 +30,9 @@ public partial class ShopButtons : Button
 
 	public void SetWeaponButtonStates()
 	{
-		var greatGrandParent = this.GetParent().GetParent().GetParent();
+		var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
 
-		if (greatGrandParent.IsInGroup("Weapons"))
+		if (greatGreatGrandParent.IsInGroup("Weapons"))
 		{
 			if (ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
 			{
