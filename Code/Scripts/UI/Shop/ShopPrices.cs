@@ -15,14 +15,16 @@ public partial class ShopPrices : Label
 	public override void _Ready()
 	{
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+		
+		var greatGrandParent = this.GetParent().GetParent().GetParent();
 
 		if (TryGetPanelIndex(out int index))
 		{
-			if (this.IsInGroup("Stats"))
+			if (greatGrandParent.IsInGroup("Stats"))
 			{
 				this.Text = $"Price: {basePrice + ShopManager.Instance.statsList[index].price}";
 			}
-			else if (this.IsInGroup("Weapons"))
+			else if (greatGrandParent.IsInGroup("Weapons"))
 			{
 				if (ShopManager.Instance.weaponsList[index].unlocked)
 				{

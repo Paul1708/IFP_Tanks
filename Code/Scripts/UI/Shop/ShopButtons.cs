@@ -6,26 +6,33 @@ public partial class ShopButtons : Button
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		ShopManager.Instance.OnWeaponUnlocked += SetButtonStates;
-		ShopManager.Instance.OnWeaponEquipped += SetButtonStates;
-		SetButtonStates();
+		ShopManager.Instance.OnWeaponUnlocked += SetWeaponButtonStates;
+		ShopManager.Instance.OnWeaponEquipped += SetWeaponButtonStates;
+		SetStatButtonStates();
+		SetWeaponButtonStates();
 	}
 
 	public override void _ExitTree()
 	{
-		ShopManager.Instance.OnWeaponUnlocked -= SetButtonStates;
-		ShopManager.Instance.OnWeaponEquipped -= SetButtonStates;
+		ShopManager.Instance.OnWeaponUnlocked -= SetWeaponButtonStates;
+		ShopManager.Instance.OnWeaponEquipped -= SetWeaponButtonStates;
 	}
 
-	public void SetButtonStates()
+	public void SetStatButtonStates() 
 	{
-		var grandParent = this.GetParent().GetParent();
+		var greatGrandParent = this.GetParent().GetParent().GetParent();
 
-		if (grandParent.IsInGroup("Stats"))
+		if (greatGrandParent.IsInGroup("Stats"))
 		{
 			this.Text = "Buy";
 		}
-		else if (grandParent.IsInGroup("Weapons"))
+	}
+
+	public void SetWeaponButtonStates()
+	{
+		var greatGrandParent = this.GetParent().GetParent().GetParent();
+
+		if (greatGrandParent.IsInGroup("Weapons"))
 		{
 			if (ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
 			{
