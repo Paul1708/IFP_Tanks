@@ -10,6 +10,7 @@ public partial class HealthBar : TextureProgressBar
     [Export]
     public float RedBarDelay { get; set; } = 1f;
     public TextureProgressBar greenBar;
+    public TextureProgressBar redBar;
     public Timer redHealthTimer;
     public Label label;
 
