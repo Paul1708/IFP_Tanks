@@ -1,4 +1,4 @@
-﻿using Components;
+using Components;
 using Godot;
 
 namespace Weapons;
@@ -62,23 +62,20 @@ public partial class GrenadeBullet : Bullet
 
     public void OnExplode()
     {
-        Vector2 hitPosition = GlobalPosition;
+        Vector2 hitPosition = GlobalPosition;   //position bullet
         //check for all damageable objects inside the explosion radius and damage them according to their distance to the explosion source
         foreach (Node node in GetTree().GetNodesInGroup("Damageable"))
         {
-            if (node is CharacterBody2D body)
+            float distance = _calcDistance(node, hitPosition);
+            if ((node is CharacterBody2D) && (distance <= DamageRadius))
             {
-                float distance = (body.GlobalPosition - hitPosition).Length();
-                if (distance <= DamageRadius)
-                {
-                    //body in hit range, so damage it according to dmg = bulletDamage / radius
-                    float finalDamage = Damage / distance;
-                    node.GetNode<HealthComponent>("HealthComponent").TakeDamage(finalDamage);
-                }
+                //body in hit range, so damage it according to dmg = bulletDamage / radius
+                float finalDamage = damage / distance;
+                node.GetNode<HealthComponent>("HealthComponent").TakeDamage((int) finalDamage);
             }
         }
         
-        Particles.EmitParticles(this, Scene.Explosion);
+        particles.EmitParticles(this, Scene.Explosion);
         MusicController.Play(Sound.RocketExplosion);
         Destroy();
     }
@@ -113,5 +110,10 @@ public partial class GrenadeBullet : Bullet
     private Vector2 _shadowTrajectory(Vector2 shootDirection, float t)
     {
         return (t * shootDirection) + _shootPosition;
+    }
+
+    private float _calcDistance(Node node, Vector2 pos)
+    {
+        return (((Node2D)node).Position - pos).Length();
     }
 }

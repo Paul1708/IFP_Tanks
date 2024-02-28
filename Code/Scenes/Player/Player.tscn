@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Movement/Player.cs" id="1_noslj"]
 [ext_resource type="Texture2D" uid="uid://blkfra54wh0pf" path="res://Sprites/Tanks/TankGreen.png" id="2_cn7mg"]
-[ext_resource type="Shader" uid="uid://dcs3kmr4n27qk" path="res://Sprites/Shaders/Tank.tres" id="2_ncg51"]
+[ext_resource type="Shader" path="res://Sprites/Shaders/Tank.tres" id="2_ncg51"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_kf7xg"]
 [ext_resource type="PackedScene" uid="uid://cvuo0a4r5ldw4" path="res://Scenes/Weapons/HomingBullet.tscn" id="4_hsbkk"]
 [ext_resource type="Texture2D" uid="uid://bm3kylaj0tjfn" path="res://Sprites/Tanks/GunGreen.png" id="5_fm6eq"]

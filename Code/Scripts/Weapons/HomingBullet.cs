@@ -27,10 +27,11 @@ public partial class HomingBullet : Bullet
     public override void Destroy()
     {
         MusicController.Play(Sound.RocketExplosion);
-        Particles.EmitParticles(this, Scene.Explosion);
+        particles.EmitParticles(this, Scene.Explosion);
         QueueFree();
     }
 
+    //TODO: Hierfür einen Test. Überprüfen mit Invariante: Zielpunkt neu ist näher am TargetEnemy als der Alte
     protected override void Move()
     {
         //If the target is null, then abort launching bullet
@@ -77,7 +78,7 @@ public partial class HomingBullet : Bullet
         if (_targetEnemy)
         {
             //player fired it, so init targetDirection with the muzzle rotation
-            float rot = Player.GetNode<GunController>("Gun").GlobalRotation;
+            float rot = player.GetNode<GunController>("Gun").GlobalRotation;
             _targetDirection = new Vector2(1, 0).Rotated(rot).Normalized();
         }
         else
