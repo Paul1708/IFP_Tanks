@@ -31,6 +31,7 @@ public partial class HomingBullet : Bullet
         QueueFree();
     }
 
+    //TODO: Hierfür einen Test. Überprüfen mit Invariante: Zielpunkt neu ist näher am TargetEnemy als der Alte
     protected override void Move()
     {
         //If the target is null, then abort launching bullet
