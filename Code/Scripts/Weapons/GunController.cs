@@ -1,6 +1,8 @@
 using Godot;
 using System;
 using Movement;
+using Managers;
+using Shop;
 
 namespace Weapons;
 
@@ -34,6 +36,14 @@ public partial class GunController : Node2D
         shootTimer = GetNode<Timer>("ShootTimer");
 
         shootTimer.Timeout += () => canShoot = true;
+        
+        if (GetParent().IsInGroup("Player")) SetWeapon();
+    }
+
+    public void SetWeapon () 
+    {
+        Weapon weapon = ShopManager.Instance.GetEquippedWeapon();
+        bulletScene = weapon.bulletScene;
     }
 
     public void RotateTowards(Vector2 target)
@@ -55,7 +65,7 @@ public partial class GunController : Node2D
             canShoot = false;
             shootTimer.Start(timeBetweenShots);
 
-            //Play animation
+            //Play animation()
             sprite.Play("Shoot");
             sprite.Frame = 0;
         }

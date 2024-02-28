@@ -383,7 +383,6 @@ shape = SubResource("RectangleShape2D_imdbc")
 script = ExtResource("3_kf7xg")
 bulletScene = ExtResource("4_hsbkk")
 bulletsPerSecond = 3.0
-
 bulletDamage = 5
 
 [node name="muzzle" type="Marker2D" parent="Gun"]

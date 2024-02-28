@@ -70,6 +70,7 @@ layout_mode = 2
 theme_override_constants/separation = 60
 
 [node name="MasterSlider" type="HSlider" parent="SliderContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.001
@@ -86,6 +87,7 @@ theme_override_font_sizes/font_size = 24
 text = "Master Volume"
 
 [node name="MusicSlider" type="HSlider" parent="SliderContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.001
@@ -102,6 +104,7 @@ theme_override_font_sizes/font_size = 24
 text = "Music Volume"
 
 [node name="SFXSlider" type="HSlider" parent="SliderContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 max_value = 1.0
 step = 0.001
@@ -125,12 +128,15 @@ text = "Fullscreen"
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="OnBackPressed"]
 [connection signal="mouse_exited" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="release_focus"]
 [connection signal="tree_entered" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="SetMasterSliderState"]
+[connection signal="tree_entered" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="LoadAudioSettings"]
 [connection signal="value_changed" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="OnMasterSliderValueChanged"]
 [connection signal="mouse_exited" from="SliderContainer/VBoxContainer/MusicSlider" to="." method="release_focus"]
 [connection signal="tree_entered" from="SliderContainer/VBoxContainer/MusicSlider" to="." method="SetMusicSliderState"]
+[connection signal="tree_entered" from="SliderContainer/VBoxContainer/MusicSlider" to="." method="LoadAudioSettings"]
 [connection signal="value_changed" from="SliderContainer/VBoxContainer/MusicSlider" to="." method="OnMusicSliderValueChanged"]
 [connection signal="mouse_exited" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="release_focus"]
 [connection signal="tree_entered" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="SetSFXSliderState"]
+[connection signal="tree_entered" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="LoadAudioSettings"]
 [connection signal="value_changed" from="SliderContainer/VBoxContainer/SFXSlider" to="." method="OnSFXSliderValueChanged"]
 [connection signal="toggled" from="SliderContainer/VBoxContainer/Fullscreen" to="." method="OnFullscreenToggled"]
 [connection signal="tree_entered" from="SliderContainer/VBoxContainer/Fullscreen" to="." method="SetToggleState"]

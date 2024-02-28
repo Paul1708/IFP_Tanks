@@ -1,17 +1,20 @@
 using Godot;
-using System;
 using UI;
+using Shop;
 
 public partial class PauseMenu : Control
 {
 	protected MusicController musicController;
 	protected SettingsMenu settingsMenu;
+	protected ShopMenu shopMenu;
+	private bool toShop = false;
 
 	public override void _Ready()
 	{
 		musicController = GetNode<MusicController>("/root/MusicController");
 		settingsMenu = GetNode<SettingsMenu>("SettingsMenu");
-		
+		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+
 		settingsMenu.Hide(); // Hide the settings menu when the game starts
 		Hide(); // Hide the pause menu when the game starts
 	}
@@ -21,8 +24,9 @@ public partial class PauseMenu : Control
 	{
 		if (Input.IsActionJustPressed("pause") && GetTree().Paused)
 		{
-			Unpause();
+			CheckBeforeUnpause();
 		}
+
 		else if (Input.IsActionJustPressed("pause") && !GetTree().Paused)
 		{
 			Pause();
@@ -34,10 +38,14 @@ public partial class PauseMenu : Control
 	{
 		GetTree().Paused = true;
 
+		if (settingsMenu.Visible)
+		{
+			settingsMenu.Hide();
+		}
+
 		Show();
 
-		var blurAnimation = GetNode<AnimationPlayer>("BlurAnimation");
-		blurAnimation.Play("StartPause");
+		GetNode<AnimationPlayer>("BlurAnimation").Play("StartPause");
 	}
 
 	//unpause the game
@@ -46,13 +54,34 @@ public partial class PauseMenu : Control
 		GetTree().Paused = false;
 		Hide();
 	}
+	/*
+	Check if the shop menu is open and if the next step should be to show the shop and hide the pauseMenu (toShop true), 
+	or to just pause the game (toShop false) and show the pauseMenu. Else just unpause the game.
+	*/
+	private void CheckBeforeUnpause()
+	{
+		switch (shopMenu.Visible)
+		{
+			case true when toShop:
+				Hide();
+				toShop = false;
+				break;
+			case true:
+				toShop = true;
+				Pause();
+				break;
+			default:
+				Unpause();
+				break;
+		}
+	}
 
 	//button functions for the pause menu
 	private void OnResumePressed()
 	{
 		musicController.Play(Sound.ButtonClick);
 
-		Unpause();
+		CheckBeforeUnpause();
 	}
 
 	private void OnSettingsPressed()
@@ -63,12 +92,12 @@ public partial class PauseMenu : Control
 		settingsMenu.Show();
 	}
 
+	//Return to the main menu
 	private void OnMainMenuPressed()
 	{
 		musicController.Play(Sound.ButtonClick);
 
 		GetTree().Paused = false; //make sure the game is unpaused
-
 		GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
 	}
 }

@@ -1,12 +1,11 @@
 using System;
-using System.Security.Authentication.ExtendedProtection;
-using System.Transactions;
 using Godot;
+using Managers.Save;
+
 
 namespace UI;
 public partial class SettingsMenu : Control
 {
-
 	string masterBusName = "Master";
 	string musicBusName = "Music";
 	string sfxBusName = "SFX";
@@ -16,85 +15,70 @@ public partial class SettingsMenu : Control
 	int sfxBusIndex = AudioServer.GetBusIndex("SFX");
 
 	protected MusicController musicController;
-
+	Slider masterSlider;
+	Slider musicSlider;
+	Slider sfxSlider;
+	
 	public override void _Ready()
 	{
 		musicController = GetNode<MusicController>("/root/MusicController");
 	}
 
-	//gets called when the back button is pressed and hides the settings menu if the current scene is the main game, otherwise it changes the scene to the main menu
-	private void OnBackPressed()
-	{
-		musicController.Play(Sound.ButtonClick);
-
-		if (GetTree().CurrentScene.IsInGroup("MainGame"))
-		{
-			Hide();
-		}
-		else
-		{
-			GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
-		}
-
-	}
+    private void OnBackPressed()
+    {
+        musicController.Play(Sound.ButtonClick);
+        if (GetTree().CurrentScene.IsInGroup("MainGame")) Hide();
+        else GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
+    }
 
 	//toggles fullscreen and windowed mode
-	private void OnFullscreenToggled(bool ToggledOn)
-	{
-		musicController.Play(Sound.ButtonClick);
-
-		if (ToggledOn == true)
-		{
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Fullscreen);
-		}
-		else
-		{
-			DisplayServer.WindowSetMode(DisplayServer.WindowMode.Windowed);
-		}
-	}
+    private void OnFullscreenToggled(bool ToggledOn)
+    {
+        musicController.Play(Sound.ButtonClick);
+        DisplayServer.WindowSetMode(ToggledOn ? DisplayServer.WindowMode.Fullscreen : DisplayServer.WindowMode.Windowed);
+    }
 
 	//gets called when the scene is loaded and sets the toggle state to true when in fullscreen
-	private void SetToggleState()
-	{
-		var fullscreenButton = GetNode<CheckButton>("SliderContainer/VBoxContainer/Fullscreen");
-		if (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen)
-		{
-			fullscreenButton.SetPressedNoSignal(true);
-		}
-	}
+    private void SetToggleState()
+    {
+        var fullscreenButton = GetNode<CheckButton>("SliderContainer/VBoxContainer/Fullscreen");
+        if (DisplayServer.WindowGetMode() == DisplayServer.WindowMode.Fullscreen)
+            fullscreenButton.SetPressedNoSignal(true);
+    }
+
 	//changes MasterBus volume when slider is moved
 	private void OnMasterSliderValueChanged(float value)
 	{
-		AudioServer.SetBusVolumeDb(masterBusIndex, Mathf.LinearToDb(value));
-	}
-	//sets the slider state when the scene is loaded
-	private void SetMasterSliderState()
-	{
-		var masterSlider = GetNode<Slider>("SliderContainer/VBoxContainer/MasterSlider");
-		masterSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(masterBusIndex));
+		SetVolume(masterBusIndex, value);
 	}
 
 	//changes MusicBus volume when slider is moved
 	private void OnMusicSliderValueChanged(float value)
 	{
-		AudioServer.SetBusVolumeDb(musicBusIndex, Mathf.LinearToDb(value));
-	}
-	//sets the slider state when the scene is loaded
-	private void SetMusicSliderState()
-	{
-		var musicSlider = GetNode<Slider>("SliderContainer/VBoxContainer/MusicSlider");
-		musicSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(musicBusIndex));
+		SetVolume(musicBusIndex, value);
 	}
 
 	//changes SFXBus volume when slider is moved
 	private void OnSFXSliderValueChanged(float value)
 	{
-		AudioServer.SetBusVolumeDb(sfxBusIndex, Mathf.LinearToDb(value));
+		SetVolume(sfxBusIndex, value);
 	}
-	//sets the slider state when the scene is loaded
-	private void SetSFXSliderState()
+
+	public void SetVolume(int busIndex, float value)
 	{
-		var sfxSlider = GetNode<Slider>("SliderContainer/VBoxContainer/SFXSlider");
+		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(value));
+	}
+
+	//TODO: Save audio settings in save file and load them, instead of using AudioServer.GetBusVolumeDb
+	public void LoadAudioSettings()
+	{
+		masterSlider = GetNode<Slider>("SliderContainer/VBoxContainer/MasterSlider");
+		musicSlider = GetNode<Slider>("SliderContainer/VBoxContainer/MusicSlider");
+		sfxSlider = GetNode<Slider>("SliderContainer/VBoxContainer/SFXSlider");
+
+		masterSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(masterBusIndex));
+		musicSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(musicBusIndex));
 		sfxSlider.Value = Mathf.DbToLinear(AudioServer.GetBusVolumeDb(sfxBusIndex));
 	}
-}
+
+}	

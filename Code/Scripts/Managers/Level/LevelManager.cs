@@ -16,7 +16,11 @@ public partial class LevelManager : Node2D
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
 
+    [Signal]
+    public delegate void OnLevelChangedEventHandler();
+
     private LevelDisplay levelDisplay;
+
 
     public override void _Ready()
     {
@@ -32,8 +36,10 @@ public partial class LevelManager : Node2D
 
     public async void OnLevelComplete()
     {
+
         // Was the level a checkpoint?
         bool saveGameAfterLoading = CurrentLevelData.IsCheckpoint;
+
 
         // If there are levels left in the current world, load the next level
         if (currentLevelID + 1 < Worlds[currentWorldID].LevelCount)
@@ -45,6 +51,7 @@ public partial class LevelManager : Node2D
             {
                 SaveGame();
             }
+            EmitSignal(SignalName.OnLevelChanged);
             return;
         }
 
@@ -58,6 +65,7 @@ public partial class LevelManager : Node2D
             {
                 SaveGame();
             }
+            EmitSignal(SignalName.OnLevelChanged);
             return;
         }
 
@@ -69,8 +77,6 @@ public partial class LevelManager : Node2D
 
     public void OnLevelFailed()
     {
-        // Shake the camera and wait for the shake to finish
-        CameraShaker.Instance.Shake(30, 0.3f);
         // Reload the last save
         SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
     }
@@ -83,14 +89,15 @@ public partial class LevelManager : Node2D
         SaveManager.Instance.SaveGame();
     }
 
-    private void OnSaveDataLoaded(SaveData saveData)
+    private async void OnSaveDataLoaded(SaveData saveData)
     {
         // Set the current level to saved data
         currentLevelID = saveData.LastCheckpointLevelID;
         currentWorldID = saveData.LastCheckpointWorldID;
 
         // Load the level and restore the level states
-        LoadLevelByID(currentWorldID, currentLevelID);
+        await LoadLevelByID(currentWorldID, currentLevelID);
+        EmitSignal(SignalName.OnLevelChanged);
         RestoreLevelStatesAfterSave();
     }
 
@@ -152,13 +159,4 @@ public partial class LevelManager : Node2D
         levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
     }
 
-
-    // TODO: Remove this Debug method
-    public override void _Input(InputEvent @event)
-    {
-        if (Input.IsActionJustPressed("Debug"))
-        {
-            OnLevelComplete();
-        }
-    }
 }
