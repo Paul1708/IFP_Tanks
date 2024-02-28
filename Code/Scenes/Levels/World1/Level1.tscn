@@ -1,9 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bshxfh34wjfkn"]
+[gd_scene load_steps=6 format=3 uid="uid://bshxfh34wjfkn"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level/Level.cs" id="1_pxojk"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_3dp72"]
 [ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_nwtn8"]
-[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="5_kvw64"]
 [ext_resource type="TileSet" uid="uid://cf0xavcu1aamw" path="res://Sprites/Tilesets/Desert Tileset.tres" id="6_ptjn6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uwwk7"]
@@ -32,12 +31,6 @@ position = Vector2(1066, 227)
 
 [node name="BasicEnemy3" parent="Enemies" instance=ExtResource("4_nwtn8")]
 position = Vector2(1224, 928)
-
-[node name="Coin" parent="." instance=ExtResource("5_kvw64")]
-position = Vector2(312, 302)
-
-[node name="Coin2" parent="." instance=ExtResource("5_kvw64")]
-position = Vector2(436, 490)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("6_ptjn6")

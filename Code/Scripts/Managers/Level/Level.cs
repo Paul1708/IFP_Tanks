@@ -12,9 +12,7 @@ public partial class Level : Node2D
     private bool startedCoinMovement = false;
     public ShopMenu shopMenu;
     Timer coinTimer = new Timer();
-
     public List<Node> enemies { get; set; }
-
     [Signal]
     public delegate void OnLevelCompleteEventHandler();
     [Signal]

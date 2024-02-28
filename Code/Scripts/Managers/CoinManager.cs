@@ -8,7 +8,6 @@ public partial class CoinManager : Node2D
     public static CoinManager Instance { get; private set; }
     [Export]
     public int Coins { get; set; } = 0;
-
     //Signal that will be emitted when the Coins value changes
     [Signal]
     public delegate void OnCoinChangedEventHandler(int coins);

@@ -8,13 +8,6 @@ namespace Managers;
 
 public partial class ShopManager : Node2D
 {
-	public static ShopManager Instance { get; private set; }
-	private ShopMenu shopMenu;
-	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
-	[Signal] public delegate void OnWeaponUnlockedEventHandler();
-	[Signal] public delegate void OnWeaponEquippedEventHandler();
-	public List<Stat> statsList = new();
-	public List<Weapon> weaponsList = new();
 	public Dictionary<string, int> panelIndexMap = new()
 	{
 		{ "Panel1", 0 },
@@ -23,19 +16,26 @@ public partial class ShopManager : Node2D
 		{ "Panel4", 3 },
 		{ "Panel5", 4 }
 	};
+	public static ShopManager Instance { get; private set; }
+	private ShopMenu shopMenu;
+	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
+	[Signal] public delegate void OnWeaponUnlockedEventHandler();
+	[Signal] public delegate void OnWeaponEquippedEventHandler();
+	public List<Stat> statsList = new();
+	public List<Weapon> weaponsList = new();
 	/*when using, be aware of convention: assignment is dependent on the order and number of the Panels in the scene e.g.
    	healStat is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
-	//Stats
+	//Add new shop Stats here
 	private Stat healStat = new("Heal", 0);
 	private Stat maxHPStat = new("MaxHP", 1);
 	private Stat DMGStat = new("DMG", 2);
 	private Stat speedStat = new("Speed", 3);
-	//Weapons
+	//Add new shop Weapons here
 	private Weapon defaultWeapon = new("Default", 0, Bullet.DefaultBulllet);
 	private Weapon bouncingWeapon = new("Bouncing", 1, Bullet.BouncingBullet);
-	private Weapon grenadeWeapon = new("Grenade", 2, Bullet.DefaultBulllet); //TODO: change to grenade bullet
+	private Weapon grenadeWeapon = new("Grenade", 2, Bullet.GrenadeBullet); //TODO: change to grenade bullet
 	private Weapon rocketWeapon = new("Rocket", 3, Bullet.RocketBullet); 
-	private Weapon laserWeapon = new("Laser", 4, Bullet.DefaultBulllet); //TODO: change to laser bullet
+	private Weapon laserWeapon = new("Laser", 4, Bullet.LaserBullet); //TODO: change to laser bullet
 
 	public override void _Ready()
 	{

@@ -6,9 +6,7 @@ public partial class DamageNumber : RigidBody2D
     public Timer Timer { get; set; }
     public string Text { get; set; }
     public Label label { get; set; }
-
     private float lifeTime = 1f;        // The lifetime of the damage number
-
     private float rotationSpeed;        // How much the damage number rotates
     private float horizontalSpeed;      // How fast the damage number moves horizontally
     private float verticalSpeed = -300; // The initial vertical speed of the damage number

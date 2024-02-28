@@ -2,7 +2,6 @@ namespace Enemies;
 
 public partial class BasicBehaviour : Behaviour
 {
-
     public override void Setup()
     {
         Navigation.NavigateTowards(Player.GlobalPosition);

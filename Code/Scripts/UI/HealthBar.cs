@@ -63,11 +63,7 @@ public partial class HealthBar : TextureProgressBar
             redBar.Value = newHP;
         }
         currentHP = newHP;
-
-
         UpdateLabelText();
-
-
         redHealthTimer.Stop();
         redHealthTimer.Start(RedBarDelay);
     }

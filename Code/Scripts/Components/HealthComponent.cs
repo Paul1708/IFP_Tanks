@@ -8,10 +8,8 @@ public partial class HealthComponent : Node2D
 
     [Export] public int maxHP { get; set; }
     public int currentHP { get; set; }
-
     [Signal]
     public delegate void OnDeathEventHandler();
-
     [Signal]
     public delegate void OnHealthChangedEventHandler(int currentHP);
     [Signal]
@@ -33,7 +31,6 @@ public partial class HealthComponent : Node2D
         if (value < 0) return;
         SetCurrentHP(currentHP + value);
     }
-
 
     public void TakeDamage(int value)
     {

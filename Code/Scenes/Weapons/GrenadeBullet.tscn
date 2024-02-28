@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Weapons/GrenadeBullet.cs" id="1_mgtdc"]
 [ext_resource type="Texture2D" uid="uid://qqbw7odnu7wm" path="res://Sprites/Bullets/Grenade/granadeV2.png" id="2_obmwa"]
-[ext_resource type="Texture2D" uid="uid://1xxljxq2lefv" path="res://Sprites/Bullets/Grenade/grenadeShadow.png" id="3_c4u3q"]
-[ext_resource type="Texture2D" uid="uid://clfn2anc1uh8k" path="res://Sprites/Bullets/Grenade/target.png" id="4_v3pfj"]
+[ext_resource type="Texture2D" uid="uid://cff01u2p83i42" path="res://Sprites/Bullets/Grenade/grenadeShadow.png" id="3_32rjd"]
+[ext_resource type="Texture2D" uid="uid://54bv4utrvb8o" path="res://Sprites/Bullets/Grenade/target.png" id="4_0gf8j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_amix1"]
 size = Vector2(25, 21)
@@ -48,9 +48,9 @@ shape = SubResource("CircleShape2D_ai27u")
 disabled = true
 
 [node name="GFX" type="Sprite2D" parent="Shadow"]
-texture = ExtResource("3_c4u3q")
+texture = ExtResource("3_32rjd")
 
 [node name="TargetPoint" type="CPUParticles2D" parent="."]
 amount = 1
-texture = ExtResource("4_v3pfj")
+texture = ExtResource("4_0gf8j")
 gravity = Vector2(0, 0)

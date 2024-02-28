@@ -9,16 +9,12 @@ public partial class LevelManager : Node2D
 {
     [Export]
     public WorldData[] Worlds { get; private set; }
-
     public int currentWorldID = 0;
     public int currentLevelID = 0;
-
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
-
     [Signal]
     public delegate void OnLevelChangedEventHandler();
-
     private LevelDisplay levelDisplay;
 
 

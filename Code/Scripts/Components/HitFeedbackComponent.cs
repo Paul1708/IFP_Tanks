@@ -17,9 +17,6 @@ public partial class HitFeedbackComponent : Node2D
 
     [Export]
     public float feedbackDuration = 0.8f;
-
-
-
     ShaderMaterial tankMaterial;
     ShaderMaterial gunMaterial;
     HealthComponent healthComponent;

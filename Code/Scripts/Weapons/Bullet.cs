@@ -92,7 +92,6 @@ namespace Weapons
             QueueFree();
         }
 
-
         public override void _PhysicsProcess(double delta)
         {
             Move();

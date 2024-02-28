@@ -27,6 +27,8 @@ readonly struct Bullet
 	public static readonly PackedScene DefaultBulllet = GD.Load<PackedScene>("res://Scenes/Weapons/50cal.tscn");
 	public static readonly PackedScene BouncingBullet = GD.Load<PackedScene>("res://Scenes/Weapons/BouncingBullet.tscn");
 	public static readonly PackedScene RocketBullet = GD.Load<PackedScene>("res://Scenes/Weapons/HomingBullet.tscn");
+	public static readonly PackedScene GrenadeBullet = GD.Load<PackedScene>("res://Scenes/Weapons/GrenadeBullet.tscn");
+	public static readonly PackedScene LaserBullet = GD.Load<PackedScene>("res://Scenes/Weapons/LaserBullet.tscn");
 }
 
 public partial class ShopWeaponsTab : ShopBaseTab

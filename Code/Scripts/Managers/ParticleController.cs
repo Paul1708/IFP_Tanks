@@ -7,7 +7,6 @@ struct Scene
 	public static readonly PackedScene BulletCrack = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/BulletCrack.tscn");
 	public static readonly PackedScene Explosion = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/Explosion.tscn");
 	public static readonly PackedScene DrivingMud = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/DrivingMud.tscn");
-
 }
 
 public partial class ParticleController : Node2D

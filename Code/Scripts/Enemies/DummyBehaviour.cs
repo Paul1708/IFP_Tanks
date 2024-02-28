@@ -2,7 +2,6 @@ namespace Enemies;
 
 public partial class DummyBehaviour : Behaviour
 {
-
     public override void Setup()
     {
     }
