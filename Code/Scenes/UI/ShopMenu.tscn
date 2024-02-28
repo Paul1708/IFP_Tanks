@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://br4b3w80rufu3"]
+[gd_scene load_steps=23 format=3 uid="uid://br4b3w80rufu3"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Shop/ShopMenu.cs" id="1_xixhw"]
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_yc5k6"]
@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://k28pmk8d586q" path="res://Sprites/UI/Shop/Stats/SpeedUPIcon.png" id="10_6iurv"]
 [ext_resource type="Texture2D" uid="uid://dyyrcjk01qn8i" path="res://Sprites/UI/Shop/Weapons/LaserBeam20.png" id="11_vk7wq"]
 [ext_resource type="Texture2D" uid="uid://bcv1a8ooc50rq" path="res://Sprites/UI/Shop/Weapons/BouncingBullet.png" id="13_t11em"]
+[ext_resource type="Texture2D" uid="uid://dc7o4j0ptqo1l" path="res://Sprites/Bullets/Rocket/rocket1.png" id="15_wsj7w"]
 
 [sub_resource type="Animation" id="Animation_ru71l"]
 length = 0.001
@@ -793,9 +794,9 @@ grow_vertical = 2
 theme = ExtResource("1_yc5k6")
 
 [node name="Icon" type="Sprite2D" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
-position = Vector2(182.5, 142.5)
-scale = Vector2(0.549031, 0.777383)
-texture = ExtResource("11_vk7wq")
+position = Vector2(175.5, 151)
+scale = Vector2(0.800732, 0.898099)
+texture = ExtResource("15_wsj7w")
 
 [node name="Buy" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
 layout_mode = 1
@@ -827,7 +828,7 @@ offset_bottom = 71.0
 grow_horizontal = 2
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 24
-text = "Laser"
+text = "Homing Rocket"
 horizontal_alignment = 1
 
 [node name="Description" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
@@ -843,9 +844,90 @@ offset_right = 169.5
 offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Buying this, will equip the Laser."
+text = "Buying this, will equip the Homing
+Rocket."
 
 [node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -127.0
+offset_right = 20.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Price: "
+script = ExtResource("6_607bg")
+
+[node name="Panel5" type="Panel" parent="TabContainer/Weapons/RichTextLabel/Control"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 1747.5
+offset_top = 58.5
+offset_right = 2116.5
+offset_bottom = 580.5
+grow_vertical = 2
+theme = ExtResource("1_yc5k6")
+
+[node name="Icon" type="Sprite2D" parent="TabContainer/Weapons/RichTextLabel/Control/Panel5"]
+position = Vector2(182.5, 142.5)
+scale = Vector2(0.549031, 0.777383)
+texture = ExtResource("11_vk7wq")
+
+[node name="Buy" type="Button" parent="TabContainer/Weapons/RichTextLabel/Control/Panel5"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -144.5
+offset_top = -92.0
+offset_right = 144.5
+offset_bottom = -35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Buy"
+script = ExtResource("6_11wsb")
+
+[node name="Label" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel5"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -55.5
+offset_top = 31.0
+offset_right = 55.5
+offset_bottom = 71.0
+grow_horizontal = 2
+theme = ExtResource("1_yc5k6")
+theme_override_font_sizes/font_size = 24
+text = "Laser"
+horizontal_alignment = 1
+
+[node name="Description" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -165.5
+offset_top = -14.0
+offset_right = 169.5
+offset_bottom = 77.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Buying this, will equip the Laser."
+
+[node name="PriceTag" type="Label" parent="TabContainer/Weapons/RichTextLabel/Control/Panel5"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -947,4 +1029,5 @@ text = "Ok"
 [connection signal="pressed" from="TabContainer/Weapons/RichTextLabel/Control/Panel2/Buy" to="TabContainer/Weapons" method="OnBuy2Pressed"]
 [connection signal="pressed" from="TabContainer/Weapons/RichTextLabel/Control/Panel3/Buy" to="TabContainer/Weapons" method="OnBuy3Pressed"]
 [connection signal="pressed" from="TabContainer/Weapons/RichTextLabel/Control/Panel4/Buy" to="TabContainer/Weapons" method="OnBuy4Pressed"]
+[connection signal="pressed" from="TabContainer/Weapons/RichTextLabel/Control/Panel5/Buy" to="TabContainer/Weapons" method="OnBuy5Pressed"]
 [connection signal="pressed" from="ErrorScreen/Button" to="." method="OnErrorAcknowledgedPressed"]

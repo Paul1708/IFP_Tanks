@@ -24,6 +24,7 @@ readonly struct Bullet
 {
 	public static readonly PackedScene DefaultBulllet = GD.Load<PackedScene>("res://Scenes/Weapons/50cal.tscn");
 	public static readonly PackedScene BouncingBullet = GD.Load<PackedScene>("res://Scenes/Weapons/BouncingBullet.tscn");
+	public static readonly PackedScene RocketBullet = GD.Load<PackedScene>("res://Scenes/Weapons/HomingBullet.tscn");
 }
 
 public partial class ShopWeaponsTab : ShopBaseTab
@@ -121,7 +122,14 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 	private void OnBuy4Pressed()
 	{
-		Weapon laserWeapon = ShopManager.Instance.weaponsList[3];
+		Weapon rocketWeapon = ShopManager.Instance.weaponsList[3];
+		if (rocketWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(rocketWeapon);
+		else ShopManager.Instance.BuyWeapon(rocketWeapon);
+	}
+
+	private void OnBuy5Pressed()
+	{
+		Weapon laserWeapon = ShopManager.Instance.weaponsList[4];
 		if (laserWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(laserWeapon);
 		else ShopManager.Instance.BuyWeapon(laserWeapon);
 	}

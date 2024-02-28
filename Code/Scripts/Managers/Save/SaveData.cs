@@ -43,7 +43,8 @@ public partial class SaveData : Resource
             new() {true, true},
             new() {false, false},
             new() {false, false},
-            new() {false, false}
+            new() {false, false},
+            new() {false, false},
         };
         LastCheckpointLevelID = 0;
         LastCheckpointWorldID = 0;

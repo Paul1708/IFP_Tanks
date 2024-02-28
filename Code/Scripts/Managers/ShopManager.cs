@@ -18,7 +18,8 @@ public partial class ShopManager : Node2D
 		{ "Panel1", 0 },
 		{ "Panel2", 1 },
 		{ "Panel3", 2 },
-		{ "Panel4", 3 }
+		{ "Panel4", 3 },
+		{ "Panel5", 4 }
 	};
 	/*when using, be aware of convention: assignment is dependent on the order and number of the Panels in the scene e.g.
    	healStat is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
@@ -31,7 +32,8 @@ public partial class ShopManager : Node2D
 	private Weapon defaultWeapon = new("Default", 0, Bullet.DefaultBulllet);
 	private Weapon bouncingWeapon = new("Bouncing", 1, Bullet.BouncingBullet);
 	private Weapon grenadeWeapon = new("Grenade", 2, Bullet.DefaultBulllet); //TODO: change to grenade bullet
-	private Weapon laserWeapon = new("Laser", 3, Bullet.DefaultBulllet); //TODO: change to laser bullet
+	private Weapon rocketWeapon = new("Rocket", 3, Bullet.RocketBullet); //TODO: change to rocket bullet
+	private Weapon laserWeapon = new("Laser", 4, Bullet.DefaultBulllet); //TODO: change to laser bullet
 
 	public override void _Ready()
 	{
@@ -45,7 +47,7 @@ public partial class ShopManager : Node2D
 		}
 
 		AddStatsToList(healStat, maxHPStat, DMGStat, speedStat);
-		AddWeaponsToList(defaultWeapon, bouncingWeapon, grenadeWeapon, laserWeapon);
+		AddWeaponsToList(defaultWeapon, bouncingWeapon, grenadeWeapon, rocketWeapon, laserWeapon);
 
 		SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 	}
