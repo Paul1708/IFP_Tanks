@@ -16,7 +16,8 @@ public partial class HealthComponent : Node2D
     public delegate void OnHealthChangedEventHandler(int currentHP);
     [Signal]
     public delegate void OnMaxHealthChangedEventHandler(int maxHP);
-
+    [Signal]
+    public delegate void OnTakeDamageEventHandler(int damage);
     public override void _Ready()
     {
         if (maxHP <= 0)
@@ -37,6 +38,7 @@ public partial class HealthComponent : Node2D
     public void TakeDamage(int value)
     {
         if (value < 0) return;
+        EmitSignal(SignalName.OnTakeDamage, value);
         SetCurrentHP(currentHP - value);
     }
 
@@ -60,16 +62,17 @@ public partial class HealthComponent : Node2D
         currentHP = Mathf.Min(value, maxHP);
 
         EmitSignal(SignalName.OnHealthChanged, currentHP);
-
         CheckIfDead();
     }
 
     public void SetMaxHP(int value)
     {
+        if (value <= 0) return;
+
         //clamp the value to the max health
-        maxHP = Mathf.Max(value, 1);
-        SetCurrentHP(currentHP);
-        EmitSignal(SignalName.OnMaxHealthChanged, currentHP);
+        maxHP = value;
+        currentHP = Mathf.Min(currentHP, maxHP);
+        EmitSignal(SignalName.OnMaxHealthChanged, maxHP);
     }
 
     private void CheckIfDead()

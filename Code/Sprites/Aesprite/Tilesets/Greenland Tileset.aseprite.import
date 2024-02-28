@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://btsg3crxg24ws"
+path="res://.godot/imported/Greenland Tileset.aseprite-1a6ac29dd5c794c32423c1ae15c98e31.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/Tilesets/Greenland Tileset.aseprite"
+dest_files=["res://.godot/imported/Greenland Tileset.aseprite-1a6ac29dd5c794c32423c1ae15c98e31.res"]
+
+[params]
+

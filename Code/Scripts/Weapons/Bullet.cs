@@ -2,7 +2,7 @@
 using Components;
 using Godot;
 using Managers;
-using Timer = Godot.Timer;
+
 namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
@@ -15,7 +15,7 @@ namespace Weapons
         protected ParticleController particles;
 
         protected Vector2 NormalCollisionVector;
-        protected MusicController musicController;
+        protected MusicController MusicController;
 
 
         public override void _Ready()
@@ -31,17 +31,21 @@ namespace Weapons
             player = GetTree().GetFirstNodeInGroup("Player") as Node2D;
             playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
             particles = GetNode<ParticleController>("/root/ParticleController");
-            musicController = GetNode<MusicController>("/root/MusicController");
+            MusicController = GetNode<MusicController>("/root/MusicController");
 
             Setup();
         }
 
+        /**
+         * Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters.
+         */
         protected virtual void Setup() { }
 
 
         // Collision Methods
-        private void OnCollision(Node node)
+        public void OnCollision(Node node)
         {
+            CameraShaker.Instance.Shake(0.25f, 0.05f);
             OnAnythingHit();
             if (node.IsInGroup("Damageable"))
             {
@@ -62,14 +66,14 @@ namespace Weapons
             Destroy();
         }
 
-        protected virtual void OnDamageableHit(Node node)
+        public virtual void OnDamageableHit(Node node)
         {
             if (node == player)
             {
+                CameraShaker.Instance.Shake(5, 0.15f);
                 playerHealthComponent.TakeDamage(damage);
                 return;
             }
-
             node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
         }
 
@@ -77,13 +81,14 @@ namespace Weapons
 
         protected virtual void OnOtherHit() { }
 
+        /**
+         * Describe the move behavior of all bullet types. This method is called on every physic process tick.
+         */
         protected virtual void Move() { }
-
-
+        
 
         public virtual void Destroy()
         {
-            particles.EmitParticles(this, Scene.BulletCrack);
             QueueFree();
         }
 

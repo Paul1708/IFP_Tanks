@@ -12,7 +12,11 @@ namespace Weapons
             particles.EmitParticles(this, Scene.BulletCrack);
             QueueFree();
         }
-        
+
+        protected override void OnOtherHit()
+        {
+            Destroy();
+        }
     }
 
 }
