@@ -30,24 +30,14 @@ public partial class ShopButtons : Button
 		}
 	}
 
-	public void SetWeaponButtonStates()
-	{
-		var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
+public void SetWeaponButtonStates()
+{
+    var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
 
-		if (greatGreatGrandParent.IsInGroup("Weapons"))
-		{
-			if (ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
-			{
-				var weapon = ShopManager.Instance.weaponsList[index];
-				if (weapon.unlocked)
-				{
-					this.Text = weapon.equipped ? "Equipped" : "Equip";
-				}
-				else
-				{
-					this.Text = "Buy";
-				}
-			}
-		}
-	}
+    if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
+    {
+        var weapon = ShopManager.Instance.weaponsList[index];
+        this.Text = weapon.unlocked ? (weapon.equipped ? "Equipped" : "Equip") : "Buy";
+    }
+}
 }
