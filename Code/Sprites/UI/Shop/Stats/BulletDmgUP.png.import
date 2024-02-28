@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq616bek36dv"
-path="res://.godot/imported/DMGup.png-f5bae3079808f29caabdeaefa0bfc88f.ctex"
+uid="uid://dqaamc0fy5uys"
+path="res://.godot/imported/BulletDmgUP.png-3fed681027d133f710d5a30a4c6817e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Shop/DMGup.png"
-dest_files=["res://.godot/imported/DMGup.png-f5bae3079808f29caabdeaefa0bfc88f.ctex"]
+source_file="res://Sprites/UI/Shop/Stats/BulletDmgUP.png"
+dest_files=["res://.godot/imported/BulletDmgUP.png-3fed681027d133f710d5a30a4c6817e0.ctex"]
 
 [params]
 

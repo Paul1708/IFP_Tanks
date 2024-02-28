@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0csb4sndd0xa"
-path="res://.godot/imported/Heart.png-a0e156db523de6d5a383c2b44d912f72.ctex"
+uid="uid://k28pmk8d586q"
+path="res://.godot/imported/SpeedUPIcon.png-bf707c368867e462bc1834578004fdb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Shop/Heart.png"
-dest_files=["res://.godot/imported/Heart.png-a0e156db523de6d5a383c2b44d912f72.ctex"]
+source_file="res://Sprites/UI/Shop/Stats/SpeedUPIcon.png"
+dest_files=["res://.godot/imported/SpeedUPIcon.png-bf707c368867e462bc1834578004fdb7.ctex"]
 
 [params]
 

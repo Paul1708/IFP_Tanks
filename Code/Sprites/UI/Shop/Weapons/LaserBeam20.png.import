@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btnrsdcytt1w"
-path="res://.godot/imported/granadeV2.png-8a688bc926f460858bccd3b5cc26052d.ctex"
+uid="uid://dyyrcjk01qn8i"
+path="res://.godot/imported/LaserBeam20.png-627f699c500921863d52768171eda27a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Shop/granadeV2.png"
-dest_files=["res://.godot/imported/granadeV2.png-8a688bc926f460858bccd3b5cc26052d.ctex"]
+source_file="res://Sprites/UI/Shop/Weapons/LaserBeam20.png"
+dest_files=["res://.godot/imported/LaserBeam20.png-627f699c500921863d52768171eda27a.ctex"]
 
 [params]
 

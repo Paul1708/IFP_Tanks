@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ew5i7ji1wmr0"
-path="res://.godot/imported/MSup.png-b8d93e72f59fc7e1fbba6601c20e2a4a.ctex"
+uid="uid://btnrsdcytt1w"
+path="res://.godot/imported/granadeV2.png-e159fbded19b6e610a9a9cffbbbfef2b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Shop/MSup.png"
-dest_files=["res://.godot/imported/MSup.png-b8d93e72f59fc7e1fbba6601c20e2a4a.ctex"]
+source_file="res://Sprites/UI/Shop/Weapons/granadeV2.png"
+dest_files=["res://.godot/imported/granadeV2.png-e159fbded19b6e610a9a9cffbbbfef2b.ctex"]
 
 [params]
 

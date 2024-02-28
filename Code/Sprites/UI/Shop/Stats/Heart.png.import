@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyyrcjk01qn8i"
-path="res://.godot/imported/LaserBeam20.png-3aa4fcdd8e6289d2d97ea1ac67da6625.ctex"
+uid="uid://0csb4sndd0xa"
+path="res://.godot/imported/Heart.png-ce181a57339da65cd4c94e3db8a25b9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/UI/Shop/LaserBeam20.png"
-dest_files=["res://.godot/imported/LaserBeam20.png-3aa4fcdd8e6289d2d97ea1ac67da6625.ctex"]
+source_file="res://Sprites/UI/Shop/Stats/Heart.png"
+dest_files=["res://.godot/imported/Heart.png-ce181a57339da65cd4c94e3db8a25b9d.ctex"]
 
 [params]
 
