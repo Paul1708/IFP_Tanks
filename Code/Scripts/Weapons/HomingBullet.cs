@@ -12,10 +12,17 @@ public partial class HomingBullet : Bullet
     private Vector2 _target;
     public Node2D TargetNode { get; set; }
 
+    private const int Uninitialised = -1;
 
 
     private Vector2 _targetDirection;
-    private int _ticksPassed = -1;
+    private int _ticksPassed = Uninitialised;
+    private bool _targetEnemy;
+
+    protected override void Setup()
+    {
+        _targetEnemy = TargetNode is Enemy;
+    }
 
     public override void Destroy()
     {
@@ -35,20 +42,18 @@ public partial class HomingBullet : Bullet
         }
         
         _target = TargetNode.GlobalPosition;
-        if (_ticksPassed == -1)
+        if (_ticksPassed == Uninitialised)
         {
-            _targetDirection = (_target - GlobalPosition).Normalized(); //init bullet with direct direction
-
+            _initTargetDirection();
         }
         else if (_ticksPassed >= HomingTicks)
         {
             Vector2 directLine = (_target - GlobalPosition).Normalized();
             Vector2 oldDirection = _targetDirection;
             float rawAngle = directLine.Angle() - oldDirection.Angle(); //angle of new direction to old direction
-            float maxAngleRad = MaxRotationDeg * MathF.PI / 180F; //max rotation in radians for later calculation
 
             float angle = BulletMath.NormalizeAngle(rawAngle);
-            float homingAngle = BulletMath.RestrictHomingAngle(angle, maxAngleRad);
+            float homingAngle = BulletMath.RestrictHomingAngle(angle, Mathf.DegToRad(MaxRotationDeg));
             _targetDirection = new Vector2(1, 0).Rotated(oldDirection.Angle() + homingAngle).Normalized();
 
             _ticksPassed = 0;
@@ -65,5 +70,19 @@ public partial class HomingBullet : Bullet
         Rotation = _targetDirection.Angle();
 
         MoveAndCollide(_targetDirection * Speed);
+    }
+
+    private void _initTargetDirection()
+    {
+        if (_targetEnemy)
+        {
+            //player fired it, so init targetDirection with the muzzle rotation
+            float rot = Player.GetNode<GunController>("Gun").GlobalRotation;
+            _targetDirection = new Vector2(1, 0).Rotated(rot).Normalized();
+        }
+        else
+        {
+            _targetDirection = (_target - GlobalPosition).Normalized(); //init bullet with direct direction
+        }
     }
 }
