@@ -70,12 +70,12 @@ public partial class GrenadeBullet : Bullet
             if ((node is CharacterBody2D) && (distance <= DamageRadius))
             {
                 //body in hit range, so damage it according to dmg = bulletDamage / radius
-                float finalDamage = Damage / distance;
-                node.GetNode<HealthComponent>("HealthComponent").TakeDamage(finalDamage);
+                float finalDamage = damage / distance;
+                node.GetNode<HealthComponent>("HealthComponent").TakeDamage((int) finalDamage);
             }
         }
         
-        Particles.EmitParticles(this, Scene.Explosion);
+        particles.EmitParticles(this, Scene.Explosion);
         MusicController.Play(Sound.RocketExplosion);
         Destroy();
     }

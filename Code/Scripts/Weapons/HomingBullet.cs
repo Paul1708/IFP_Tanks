@@ -27,7 +27,7 @@ public partial class HomingBullet : Bullet
     public override void Destroy()
     {
         MusicController.Play(Sound.RocketExplosion);
-        Particles.EmitParticles(this, Scene.Explosion);
+        particles.EmitParticles(this, Scene.Explosion);
         QueueFree();
     }
 
@@ -78,7 +78,7 @@ public partial class HomingBullet : Bullet
         if (_targetEnemy)
         {
             //player fired it, so init targetDirection with the muzzle rotation
-            float rot = Player.GetNode<GunController>("Gun").GlobalRotation;
+            float rot = player.GetNode<GunController>("Gun").GlobalRotation;
             _targetDirection = new Vector2(1, 0).Rotated(rot).Normalized();
         }
         else
