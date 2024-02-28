@@ -99,7 +99,8 @@ public partial class GunController : Node2D
         Node parent = GetParent();
         if (parent is Player)
         {
-            bullet.TargetNode = GetTree().GetNodesInGroup("Enemy").PickRandom() as Node2D;
+            if(GetTree().GetNodesInGroup("Enemy").Count > 0)
+                bullet.TargetNode = GetTree().GetNodesInGroup("Enemy").PickRandom() as Node2D;
         }
         else if (parent is Enemy)
         {
