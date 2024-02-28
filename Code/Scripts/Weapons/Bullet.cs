@@ -15,7 +15,7 @@ namespace Weapons
         protected ParticleController particles;
 
         protected Vector2 NormalCollisionVector;
-        protected MusicController musicController;
+        protected MusicController MusicController;
 
 
         public override void _Ready()
@@ -36,11 +36,14 @@ namespace Weapons
             Setup();
         }
 
+        /**
+         * Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters.
+         */
         protected virtual void Setup() { }
 
 
         // Collision Methods
-        private void OnCollision(Node node)
+        public void OnCollision(Node node)
         {
             CameraShaker.Instance.Shake(0.25f, 0.05f);
             OnAnythingHit();
@@ -63,7 +66,7 @@ namespace Weapons
             Destroy();
         }
 
-        protected virtual void OnDamageableHit(Node node)
+        public virtual void OnDamageableHit(Node node)
         {
             if (node == player)
             {
@@ -78,13 +81,14 @@ namespace Weapons
 
         protected virtual void OnOtherHit() { }
 
+        /**
+         * Describe the move behavior of all bullet types. This method is called on every physic process tick.
+         */
         protected virtual void Move() { }
-
-
+        
 
         public virtual void Destroy()
         {
-            particles.EmitParticles(this, Scene.BulletCrack);
             QueueFree();
         }
 
