@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvuo0a4r5ldw4"]
+[gd_scene load_steps=14 format=3 uid="uid://bpyg8h74vn0r6"]
 
 [ext_resource type="Script" path="res://Scripts/Weapons/HomingBullet.cs" id="1_l3sxi"]
 [ext_resource type="Texture2D" uid="uid://dc7o4j0ptqo1l" path="res://Sprites/Bullets/Rocket/rocket1.png" id="2_0t4sl"]

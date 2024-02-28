@@ -1,17 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=15 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
-[ext_resource type="Script" path="res://Scripts/Managers/LevelManager.cs" id="3_6hwsd"]
-[ext_resource type="PackedScene" uid="uid://bshxfh34wjfkn" path="res://Scenes/Levels/Level1.tscn" id="4_c31nu"]
-[ext_resource type="PackedScene" uid="uid://cukhascfsrbri" path="res://Scenes/Levels/Level2.tscn" id="5_tjwhs"]
-[ext_resource type="PackedScene" uid="uid://dedf16ffcla55" path="res://Scenes/Levels/Level3.tscn" id="6_y2afc"]
+[ext_resource type="Script" path="res://Scripts/Managers/Level/LevelManager.cs" id="3_6hwsd"]
+[ext_resource type="Resource" uid="uid://cuorkuhnolits" path="res://Scenes/Levels/World 2/World2.tres" id="5_epr3e"]
+[ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.cs" id="5_i6q7i"]
+[ext_resource type="Texture2D" uid="uid://dys1imk65tp35" path="res://Sprites/UI/LevelIndicators/BasicCompleted.png" id="5_rtyne"]
+[ext_resource type="PackedScene" uid="uid://d35h47uyj31sj" path="res://Scenes/UI/HealthBar.tscn" id="7_3rvrl"]
+[ext_resource type="Texture2D" uid="uid://lb0afin3xbq8" path="res://Sprites/UI/CoinDisplay/CoinDisplay.png" id="8_afkt1"]
+[ext_resource type="Resource" uid="uid://dp6htk3af7ahe" path="res://Scenes/Levels/World1/World1.tres" id="8_bno8v"]
+[ext_resource type="Script" path="res://Scripts/UI/CoinDisplay.cs" id="9_dx5ay"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="10_cckqj"]
+[ext_resource type="Texture2D" uid="uid://485tuggj4voy" path="res://Sprites/UI/LevelIndicators/CheckpointCurrent.png" id="11_op6e2"]
+[ext_resource type="Script" path="res://Test/Components/CameraShaker.cs" id="12_dndw0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf0x2"]
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.0941176)
+shadow_size = 2
+shadow_offset = Vector2(1, 1)
+anti_aliasing = false
 
 [node name="MainGame" type="Node2D" groups=["MainGame"]]
 process_mode = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_48aw5")]
-z_index = 2
+visible = false
+z_index = 10
 anchors_preset = 0
 anchor_right = 0.0
 anchor_bottom = 0.0
@@ -29,6 +47,95 @@ offset_top = -3.0
 offset_right = -3.0
 offset_bottom = -3.0
 
-[node name="LevelManager" type="Node2D" parent="."]
+[node name="LevelManager" type="Node2D" parent="." groups=["LevelManager"]]
 script = ExtResource("3_6hwsd")
-Levels = Array[PackedScene]([ExtResource("4_c31nu"), ExtResource("5_tjwhs"), ExtResource("6_y2afc")])
+Worlds = Array[Resource]([ExtResource("8_bno8v"), ExtResource("5_epr3e")])
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD"]
+custom_minimum_size = Vector2(0.155, 44.27)
+offset_left = 10.0
+offset_top = 40.0
+offset_right = 234.0
+offset_bottom = 154.0
+theme_override_constants/separation = 10
+
+[node name="HealthBar" parent="HUD/VBoxContainer" instance=ExtResource("7_3rvrl")]
+layout_mode = 2
+
+[node name="CoinDisplay" type="TextureRect" parent="HUD/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_afkt1")
+stretch_mode = 4
+script = ExtResource("9_dx5ay")
+
+[node name="CoinLabel" type="Label" parent="HUD/VBoxContainer/CoinDisplay"]
+z_index = 1
+layout_mode = 0
+offset_left = 52.0
+offset_top = 8.0
+offset_right = 150.0
+offset_bottom = 52.0
+theme = ExtResource("10_cckqj")
+theme_override_colors/font_color = Color(0.0392157, 0.0509804, 0.0784314, 1)
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -376.0
+offset_top = 20.0
+offset_right = -200.0
+offset_bottom = 44.0
+grow_horizontal = 0
+scale = Vector2(2, 2)
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf0x2")
+
+[node name="Panel" type="Panel" parent="HUD/PanelContainer"]
+custom_minimum_size = Vector2(0, -38.495)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="LevelDisplay" type="HBoxContainer" parent="HUD/PanelContainer/Panel" groups=["LevelDisplay"]]
+layout_mode = 0
+offset_right = 176.0
+offset_bottom = 24.0
+alignment = 1
+script = ExtResource("5_i6q7i")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 3
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("11_op6e2")
+stretch_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(959, 539)
+script = ExtResource("12_dndw0")
+
+[node name="ShakeTimer" type="Timer" parent="Camera2D"]
+one_shot = true

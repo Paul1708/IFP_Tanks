@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://d4m48h3lli7dt"]
+
+[ext_resource type="Script" path="res://Scripts/Environment/DamageNumber.cs" id="1_4u3rw"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="2_rcai7"]
+
+[node name="DamageNumber" type="RigidBody2D"]
+z_index = 10
+script = ExtResource("1_4u3rw")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 20.0
+offset_bottom = 46.0
+theme = ExtResource("2_rcai7")
+theme_override_colors/font_color = Color(1, 0.835294, 0.254902, 1)
+theme_override_colors/font_shadow_color = Color(0.705882, 0.12549, 0.164706, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 26
+text = "3"

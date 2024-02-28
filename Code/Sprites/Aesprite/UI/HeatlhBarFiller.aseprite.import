@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://58v3cho531ff"
+path="res://.godot/imported/HeatlhBarFiller.aseprite-43ab43ed3f80136830beb1f43330949a.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/UI/HeatlhBarFiller.aseprite"
+dest_files=["res://.godot/imported/HeatlhBarFiller.aseprite-43ab43ed3f80136830beb1f43330949a.res"]
+
+[params]
+

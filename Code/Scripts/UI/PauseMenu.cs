@@ -16,7 +16,7 @@ public partial class PauseMenu : Control
 		Hide(); // Hide the pause menu when the game starts
 	}
 
-	//check if the pause button is pressed
+	//check if the pause button is pressed and pause or unpause the game
 	public override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("pause") && GetTree().Paused)
@@ -47,7 +47,7 @@ public partial class PauseMenu : Control
 		Hide();
 	}
 
-	//button functions
+	//button functions for the pause menu
 	private void OnResumePressed()
 	{
 		musicController.Play(Sound.ButtonClick);
