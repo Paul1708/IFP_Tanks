@@ -1,5 +1,6 @@
 using Godot;
-using System.Collections.Generic;
+
+namespace Shop;
 
 public abstract partial class ShopBaseTab : TabBar
 {

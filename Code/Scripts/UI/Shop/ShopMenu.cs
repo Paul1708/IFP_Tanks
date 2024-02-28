@@ -1,8 +1,8 @@
 using Godot;
 using Managers;
-using System;
 using Managers.Level;
-using System.Collections.Generic;
+
+namespace Shop;
 
 public partial class ShopMenu : Control
 {

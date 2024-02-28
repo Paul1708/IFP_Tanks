@@ -1,5 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 using Godot;
+using Shop;
 
 namespace Managers.Save;
 

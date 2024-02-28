@@ -1,6 +1,7 @@
 using Godot;
-using System;
-using System.Collections.Generic;
+using Managers;
+
+namespace Shop;
 
 //manages the text of the price tags in the shop and calculates the price of the items
 public partial class ShopPrices : Label

@@ -1,6 +1,6 @@
 using Godot;
-using System;
 using UI;
+using Shop;
 
 public partial class PauseMenu : Control
 {

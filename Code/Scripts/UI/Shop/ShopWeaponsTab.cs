@@ -2,6 +2,8 @@ using Godot;
 using Managers.Level;
 using Managers;
 
+namespace Shop;
+
 public struct Weapon
 {
 	public string name;

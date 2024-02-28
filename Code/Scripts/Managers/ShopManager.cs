@@ -2,7 +2,9 @@ using Godot;
 using Managers.Save;
 using System;
 using System.Collections.Generic;
-using Managers;
+using Shop;
+
+namespace Managers;
 
 public partial class ShopManager : Node2D
 {
@@ -32,7 +34,7 @@ public partial class ShopManager : Node2D
 	private Weapon defaultWeapon = new("Default", 0, Bullet.DefaultBulllet);
 	private Weapon bouncingWeapon = new("Bouncing", 1, Bullet.BouncingBullet);
 	private Weapon grenadeWeapon = new("Grenade", 2, Bullet.DefaultBulllet); //TODO: change to grenade bullet
-	private Weapon rocketWeapon = new("Rocket", 3, Bullet.RocketBullet); //TODO: change to rocket bullet
+	private Weapon rocketWeapon = new("Rocket", 3, Bullet.RocketBullet); 
 	private Weapon laserWeapon = new("Laser", 4, Bullet.DefaultBulllet); //TODO: change to laser bullet
 
 	public override void _Ready()

@@ -1,7 +1,8 @@
 using Godot;
 using Managers.Level;
 using Managers;
-using Movement;
+
+namespace Shop;
 
 public struct Stat
 {

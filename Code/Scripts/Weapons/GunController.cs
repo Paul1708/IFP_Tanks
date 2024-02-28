@@ -1,5 +1,7 @@
 using Godot;
 using System;
+using Managers;
+using Shop;
 
 namespace Weapons;
 

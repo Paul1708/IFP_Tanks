@@ -1,5 +1,7 @@
 using Godot;
-using System;
+using Managers;
+
+namespace Shop;
 
 public partial class ShopButtons : Button
 {

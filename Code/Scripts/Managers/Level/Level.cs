@@ -3,6 +3,7 @@ using System.Linq;
 using Components;
 using System.Collections.Generic;
 using Items;
+using Shop;
 
 namespace Managers.Level;
 
