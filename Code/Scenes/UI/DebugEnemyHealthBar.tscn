@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dayfthis7wse7"]
+
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_ivwu8"]
+[ext_resource type="Script" path="res://Scripts/UI/EnemyHealthBar.cs" id="2_fasfp"]
+
+[node name="HealthDisplay" type="Panel"]
+offset_left = -54.0
+offset_top = 36.0
+offset_right = 60.0
+offset_bottom = 59.0
+theme = ExtResource("1_ivwu8")
+script = ExtResource("2_fasfp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 113.0
+offset_bottom = 28.0
+text = "-- / --"
+horizontal_alignment = 1
+vertical_alignment = 1

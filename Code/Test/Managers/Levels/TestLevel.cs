@@ -2,8 +2,8 @@ using System.Collections.Generic;
 using Components;
 using GdUnit4;
 using Godot;
+using Managers.Level;
 using Managers;
-using Movement;
 
 [TestSuite]
 public class TestLevel
@@ -51,7 +51,6 @@ public class TestLevel
         List<Node> enemies = new List<Node>(level.enemies);
         foreach (Node enemy in enemies)
         {
-            GD.Print(enemy);
             enemy.GetNode<HealthComponent>("HealthComponent").TakeDamage(100);
         }
 
@@ -66,7 +65,7 @@ public class TestLevel
         level.OnLevelFailed += () => { isFailed = true; };
 
         // Kill the player
-        level.GetNode<Player>("Player").GetNode<HealthComponent>("HealthComponent").TakeDamage(100);
+        PlayerManager.Instance.PlayerHealthComponent.TakeDamage(100);
 
         Assertions.AssertBool(isFailed).IsTrue();
     }

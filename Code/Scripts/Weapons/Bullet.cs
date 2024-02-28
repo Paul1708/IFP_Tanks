@@ -1,16 +1,18 @@
 
 using Components;
 using Godot;
-using Timer = Godot.Timer;
+using Managers;
+
 namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
     {
-        public float Damage { get; set; }
+        public int damage { get; set; }
         [Export] public float Speed { get; set; } //speed of the bullet
 
-        public Node2D Player;
-        protected ParticleController Particles;
+        protected Node2D player;
+        protected HealthComponent playerHealthComponent;
+        protected ParticleController particles;
 
         protected Vector2 NormalCollisionVector;
         protected MusicController MusicController;
@@ -26,10 +28,10 @@ namespace Weapons
             BodyEntered += OnCollision;
 
             // other references
-            Player = GetTree().GetFirstNodeInGroup("Player") as Node2D;
-            Particles = GetNode<ParticleController>("/root/ParticleController");
-            MusicController = GetNode<MusicController>("/root/MusicController");
-
+            player = GetTree().GetFirstNodeInGroup("Player") as Node2D;
+            playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
+            particles = GetNode<ParticleController>("/root/ParticleController");
+            musicController = GetNode<MusicController>("/root/MusicController");
 
             Setup();
         }
@@ -43,6 +45,7 @@ namespace Weapons
         // Collision Methods
         public void OnCollision(Node node)
         {
+            CameraShaker.Instance.Shake(0.25f, 0.05f);
             OnAnythingHit();
             if (node.IsInGroup("Damageable"))
             {
@@ -65,7 +68,13 @@ namespace Weapons
 
         public virtual void OnDamageableHit(Node node)
         {
-            node.GetNode<HealthComponent>("HealthComponent").TakeDamage(Damage);
+            if (node == player)
+            {
+                CameraShaker.Instance.Shake(5, 0.15f);
+                playerHealthComponent.TakeDamage(damage);
+                return;
+            }
+            node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
         }
 
         protected virtual void OnWallHit() { }

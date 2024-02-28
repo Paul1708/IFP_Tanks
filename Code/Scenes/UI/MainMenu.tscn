@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_ahplq"]
 [ext_resource type="Texture2D" uid="uid://dohaikbmd7yu1" path="res://Sprites/UI/title.png" id="2_u7cxo"]
-[ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="3_0upre"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="3_ifl8e"]
 
 [node name="MainMenu" type="Control"]
 process_mode = 3
@@ -12,6 +12,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_ifl8e")
 script = ExtResource("1_ahplq")
 
 [node name="Titlel" type="TextureRect" parent="."]
@@ -46,24 +47,27 @@ size_flags_horizontal = 0
 [node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
 layout_mode = 2
 
-[node name="Play" type="Button" parent="Buttons/VBoxContainer"]
+[node name="Continue" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_0upre")
-theme_override_font_sizes/font_size = 24
-text = "Play"
+theme = ExtResource("3_ifl8e")
+disabled = true
+text = "Continue"
+
+[node name="New Game" type="Button" parent="Buttons/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_ifl8e")
+text = "New Game
+"
 
 [node name="Settings" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_0upre")
-theme_override_font_sizes/font_size = 24
 text = "Settings"
 
 [node name="Quit" type="Button" parent="Buttons/VBoxContainer"]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_0upre")
-theme_override_font_sizes/font_size = 24
 text = "Quit"
 
-[connection signal="pressed" from="Buttons/VBoxContainer/Play" to="." method="OnPlayPressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/Continue" to="." method="OnContinueGamePressed"]
+[connection signal="pressed" from="Buttons/VBoxContainer/New Game" to="." method="OnNewGamePressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Settings" to="." method="OnSettingsPressed"]
 [connection signal="pressed" from="Buttons/VBoxContainer/Quit" to="." method="OnQuitPressed"]
