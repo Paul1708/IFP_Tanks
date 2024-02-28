@@ -1,4 +1,4 @@
-﻿using Components;
+using Components;
 using Godot;
 
 namespace Weapons;

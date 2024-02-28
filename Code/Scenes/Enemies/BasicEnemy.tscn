@@ -390,8 +390,10 @@ script = ExtResource("2_6n3w1")
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_qc42x")
 bulletScene = ExtResource("4_ri0aa")
+
 bulletsPerSecond = 0.7
 bulletDamage = 10
+
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
 

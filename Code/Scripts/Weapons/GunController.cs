@@ -67,7 +67,7 @@ public partial class GunController : Node2D
         //create a bullet
         Bullet bullet = bulletScene.Instantiate<Bullet>();
         bullet.damage = bulletDamage;
-        
+
         //if it is a homing bullet shot by the player then set the target to a random enemy.
         if (bullet is HomingBullet hb)
             _setHomingBulletTarget(hb);
