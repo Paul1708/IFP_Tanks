@@ -20,7 +20,7 @@ public partial class BouncingBullet : Bullet
 
     public override void Destroy()
     {
-        Particles.EmitParticles(this, Scene.BulletCrack);
+        particles.EmitParticles(this, Scene.BulletCrack);
         QueueFree();
     }
 
@@ -61,7 +61,7 @@ public partial class BouncingBullet : Bullet
 
     public override void OnDamageableHit(Node node)
     {
-        node.GetNode<HealthComponent>("HealthComponent").TakeDamage(Damage);
+        node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
         Destroy();
     }
     protected override void OnOtherHit()
