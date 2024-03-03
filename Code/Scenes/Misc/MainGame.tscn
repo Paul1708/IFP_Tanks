@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=17 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
 [ext_resource type="Script" path="res://Scripts/Managers/Level/LevelManager.cs" id="3_6hwsd"]
+[ext_resource type="PackedScene" uid="uid://df3s6paxthbng" path="res://Scenes/UI/LevelCountdown.tscn" id="4_6aja2"]
 [ext_resource type="PackedScene" uid="uid://br4b3w80rufu3" path="res://Scenes/UI/ShopMenu.tscn" id="4_bpttc"]
 [ext_resource type="Resource" uid="uid://cuorkuhnolits" path="res://Scenes/Levels/World 2/World2.tres" id="5_epr3e"]
 [ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.cs" id="5_i6q7i"]
@@ -32,6 +33,11 @@ process_mode = 1
 script = ExtResource("3_6hwsd")
 Worlds = Array[Resource]([ExtResource("8_bno8v"), ExtResource("5_epr3e")])
 
+[node name="LevelCountdown" parent="." instance=ExtResource("4_6aja2")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+
 [node name="ShopMenu" parent="." instance=ExtResource("4_bpttc")]
 anchors_preset = 5
 anchor_left = 0.5
@@ -60,6 +66,13 @@ offset_left = -3.0
 offset_top = -3.0
 offset_right = -3.0
 offset_bottom = -3.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(959, 539)
+script = ExtResource("12_dndw0")
+
+[node name="ShakeTimer" type="Timer" parent="Camera2D"]
+one_shot = true
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -142,10 +155,3 @@ stretch_mode = 5
 layout_mode = 2
 texture = ExtResource("5_rtyne")
 stretch_mode = 5
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(959, 539)
-script = ExtResource("12_dndw0")
-
-[node name="ShakeTimer" type="Timer" parent="Camera2D"]
-one_shot = true

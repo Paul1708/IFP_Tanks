@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Godot;
 using Managers.Save;
+using Shop;
 
 namespace Managers.Level;
 
@@ -13,14 +14,25 @@ public partial class LevelManager : Node2D
     public int currentLevelID = 0;
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
+    private LevelDisplay levelDisplay;
+    private ShopMenu shopMenu;
+    private LevelCountdown levelCountdown;
     [Signal]
     public delegate void OnLevelChangedEventHandler();
-    private LevelDisplay levelDisplay;
+    [Signal]
+    public delegate void OnLevelChangedShowShopEventHandler();
+    [Signal]
+    public delegate void OnFirstLevelLoadedEventHandler();
+    [Signal]
+    public delegate void OnLevelResetEventHandler();
 
 
     public override void _Ready()
     {
         levelDisplay = GetTree().GetFirstNodeInGroup("LevelDisplay") as LevelDisplay;
+        shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+        levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
+
         SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
         SaveManager.Instance.LoadGame();
@@ -48,6 +60,8 @@ public partial class LevelManager : Node2D
                 SaveGame();
             }
             EmitSignal(SignalName.OnLevelChanged);
+            EmitSignal(SignalName.OnLevelChangedShowShop);
+
             return;
         }
 
@@ -62,6 +76,8 @@ public partial class LevelManager : Node2D
                 SaveGame();
             }
             EmitSignal(SignalName.OnLevelChanged);
+            EmitSignal(SignalName.OnLevelChangedShowShop);
+
             return;
         }
 
@@ -75,6 +91,8 @@ public partial class LevelManager : Node2D
     {
         // Reload the last save
         SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
+        EmitSignal(SignalName.OnLevelReset);
+        EmitSignal(SignalName.OnLevelChangedShowShop);
     }
 
     private void SaveGame()
@@ -93,6 +111,18 @@ public partial class LevelManager : Node2D
 
         // Load the level and restore the level states
         await LoadLevelByID(currentWorldID, currentLevelID);
+
+        if (currentLevelID > 0 || currentWorldID > 0) // If the game is not at the start, show the shop
+        {
+            await ToSignal(shopMenu, "ready");
+            EmitSignal(SignalName.OnLevelChangedShowShop);
+        }
+        else if (currentLevelID == 0 && currentWorldID == 0) // If the game is at the start, start the countdown without showing the shop
+        {
+            await ToSignal(levelCountdown, "ready");
+            EmitSignal(SignalName.OnFirstLevelLoaded);
+        }
+
         EmitSignal(SignalName.OnLevelChanged);
         RestoreLevelStatesAfterSave();
     }
@@ -154,5 +184,4 @@ public partial class LevelManager : Node2D
 
         levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
     }
-
 }

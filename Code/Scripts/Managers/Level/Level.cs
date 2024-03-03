@@ -37,6 +37,7 @@ public partial class Level : Node2D
         PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnPlayerDeath;
         //connect the coin timer signal to the move all coins to player function
         coinTimer.Timeout += MoveAllCoinsToPlayer;
+        OnCoinsMoved += SendOnLevelComplete;
     }
 
     public override void _ExitTree()
@@ -52,7 +53,6 @@ public partial class Level : Node2D
         {
             //If all coins in tree are collected because of MoveAllCoinsToPlayer function then emit the signal
                 EmitSignal(SignalName.OnCoinsMoved);
-                GD.Print("Coins Moved");
                 startedCoinMovement = false;
         }
     }
@@ -119,5 +119,13 @@ public partial class Level : Node2D
             coin.shouldMove = true;
         }
         startedCoinMovement = true;
+    }
+
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsActionJustPressed("Debug"))
+        {
+            EmitSignal(SignalName.OnCoinsMoved);
+        }
     }
 }

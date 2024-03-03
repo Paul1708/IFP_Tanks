@@ -1,15 +1,23 @@
 using Godot;
 using Managers;
+using Managers.Level;
 
 namespace Shop;
 
 public partial class ShopButtons : Button
 {
+	LevelManager levelManager;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+
 		ShopManager.Instance.OnWeaponUnlocked += SetWeaponButtonStates;
 		ShopManager.Instance.OnWeaponEquipped += SetWeaponButtonStates;
+		levelManager.OnLevelReset += SetStatButtonStates;
+		levelManager.OnLevelReset += SetWeaponButtonStates;
+
 		SetStatButtonStates();
 		SetWeaponButtonStates();
 	}
@@ -18,6 +26,8 @@ public partial class ShopButtons : Button
 	{
 		ShopManager.Instance.OnWeaponUnlocked -= SetWeaponButtonStates;
 		ShopManager.Instance.OnWeaponEquipped -= SetWeaponButtonStates;
+		levelManager.OnLevelReset -= SetStatButtonStates;
+		levelManager.OnLevelReset -= SetWeaponButtonStates;
 	}
 
 	public void SetStatButtonStates() 

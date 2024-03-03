@@ -7,7 +7,6 @@ namespace Shop;
 public partial class ShopMenu : Control
 {
 	AnimationPlayer animationPlayer;
-	Level level;
 	LevelManager levelManager;
 	MusicController musicController;
 	Label errorLabel;
@@ -24,18 +23,14 @@ public partial class ShopMenu : Control
 
 		musicController = GetNode<MusicController>("/root/MusicController");
 		animationPlayer = GetNode<AnimationPlayer>("BlurAnimation");
-		level = GetTree().GetFirstNodeInGroup("Level") as Level;
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 
-		level.OnCoinsMoved += ShowShopMenu;
-		levelManager.OnLevelChanged += UpdateSetup;
+		levelManager.OnLevelChangedShowShop += ShowShopMenu;
 	}
 
-	//Called when a new level is loaded to update the level reference
-	public void UpdateSetup()
+	public override void _ExitTree()
 	{
-		level = GetTree().GetFirstNodeInGroup("Level") as Level;
-		level.OnCoinsMoved += ShowShopMenu;
+		levelManager.OnLevelChangedShowShop -= ShowShopMenu;
 	}
 
 	//Show the shop menu and pause the game
@@ -52,7 +47,7 @@ public partial class ShopMenu : Control
 		musicController.Play(Sound.ButtonClick);
 		GetTree().Paused = false;
 		Hide();
-		level.SendOnLevelComplete();
+		EmitSignal(SignalName.OnShopMenuClosed);
 	}
 
 	//Return to the main menu

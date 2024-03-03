@@ -14,12 +14,9 @@ public partial class GunController : Node2D
 
 
     public float timeBetweenShots { get; private set; }
-
     private bool canShoot = true;
-
     private AnimatedSprite2D sprite;
     private Timer shootTimer;
-
     protected MusicController musicController;
 
     public override void _Ready()
@@ -36,14 +33,24 @@ public partial class GunController : Node2D
         shootTimer = GetNode<Timer>("ShootTimer");
 
         shootTimer.Timeout += () => canShoot = true;
-        
-        if (GetParent().IsInGroup("Player")) SetWeapon();
+
+        if (this.GetParent().IsInGroup("Player")) SetWeapon();
+           
+        ShopManager.Instance.OnWeaponEquipped += SetWeapon;
     }
 
-    public void SetWeapon () 
+    public override void _ExitTree()
     {
+        ShopManager.Instance.OnWeaponEquipped -= SetWeapon;
+    }
+
+    public void SetWeapon()
+    {
+        if (this.GetParent().IsInGroup("Player")) 
+        {
         Weapon weapon = ShopManager.Instance.GetEquippedWeapon();
         bulletScene = weapon.bulletScene;
+        }
     }
 
     public void RotateTowards(Vector2 target)
@@ -55,7 +62,6 @@ public partial class GunController : Node2D
     {
         if (canShoot)
         {
-
             SpawnBullet();
 
             //Play Sound
@@ -99,7 +105,7 @@ public partial class GunController : Node2D
         Node parent = GetParent();
         if (parent is Player)
         {
-            if(GetTree().GetNodesInGroup("Enemy").Count > 0)
+            if (GetTree().GetNodesInGroup("Enemy").Count > 0)
                 bullet.TargetNode = GetTree().GetNodesInGroup("Enemy").PickRandom() as Node2D;
         }
         else if (parent is Enemy)
@@ -111,6 +117,6 @@ public partial class GunController : Node2D
             throw new ArgumentException("Invalid bullet owner");
         }
     }
-    
+
 }
 

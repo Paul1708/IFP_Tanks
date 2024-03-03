@@ -12,7 +12,7 @@ public partial class SaveManager : Node
 
     [Signal]
     public delegate void OnSaveDataLoadedEventHandler(SaveData saveData);
-
+    
     public override void _Ready()
     {
 
@@ -64,7 +64,6 @@ public partial class SaveManager : Node
         {
             throw new ValidationException("LoadingType is not set. Please set the LoadingType before calling LoadGame()");
         }
-
         EmitSignal(SignalName.OnSaveDataLoaded, SaveData);
         LoadingType = LoadingType.NONE;
     }

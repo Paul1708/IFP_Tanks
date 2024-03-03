@@ -1,5 +1,6 @@
 using Godot;
 using Managers;
+using Managers.Level;
 
 namespace Shop;
 
@@ -9,10 +10,23 @@ public partial class ShopPrices : Label
 	//price is the default price of the item 
 	[Export] public int basePrice;
 	[Export] public float priceMultiplier = 1.1f;
+	LevelManager levelManager;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
-	{		
+	{
+		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+		levelManager.OnLevelReset += SetShopPriceState;	
+		SetShopPriceState();
+	}
+
+	public override void _ExitTree()
+	{
+		levelManager.OnLevelReset -= SetShopPriceState;
+	}
+
+	private void SetShopPriceState()
+	{
 		var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
 
 		if (TryGetPanelIndex(out int index))
@@ -31,6 +45,7 @@ public partial class ShopPrices : Label
 			}
 		}
 	}
+
 	private bool TryGetPanelIndex(out int index)
 	{
 		return ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out index);

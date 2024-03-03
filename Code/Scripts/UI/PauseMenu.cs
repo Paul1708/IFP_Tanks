@@ -7,13 +7,15 @@ public partial class PauseMenu : Control
 	protected MusicController musicController;
 	protected SettingsMenu settingsMenu;
 	protected ShopMenu shopMenu;
-	private bool toShop = false;
+	protected LevelCountdown levelCountdown;
+	private bool leavePauseMenu = false;
 
 	public override void _Ready()
 	{
 		musicController = GetNode<MusicController>("/root/MusicController");
 		settingsMenu = GetNode<SettingsMenu>("SettingsMenu");
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+		levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
 
 		settingsMenu.Hide(); // Hide the settings menu when the game starts
 		Hide(); // Hide the pause menu when the game starts
@@ -60,14 +62,18 @@ public partial class PauseMenu : Control
 	*/
 	private void CheckBeforeUnpause()
 	{
-		switch (shopMenu.Visible)
+		switch (shopMenu.Visible || levelCountdown.Visible) //another menu open?
 		{
-			case true when toShop:
-				Hide();
-				toShop = false;
+			case true when leavePauseMenu:
+				Hide(); //just hide the pause Menu without unpausing the game because another menu is open and paused the game
+				levelCountdown.countdownTimer.Paused = false;
+				levelCountdown.blurAnimation.Play();
+				leavePauseMenu = false;
 				break;
 			case true:
-				toShop = true;
+				levelCountdown.countdownTimer.Paused = true;
+				levelCountdown.blurAnimation.Pause();
+				leavePauseMenu = true;
 				Pause();
 				break;
 			default:
