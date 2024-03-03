@@ -12,23 +12,14 @@ public struct Weapon
 	public Label priceTag;
 	public bool unlocked = false;
 	public bool equipped = false;
-	public PackedScene bulletScene;
+	public WeaponStats weaponStats;
 	public Weapon() { }
-	public Weapon(string name, int listIndex, PackedScene bulletScene)
+	public Weapon(string name, int listIndex, WeaponStats weaponStats)
 	{
 		this.name = name;
 		this.listIndex = listIndex;
-		this.bulletScene = bulletScene;
+		this.weaponStats = weaponStats;
 	}
-}
-
-readonly struct Bullet
-{
-	public static readonly PackedScene DefaultBulllet = GD.Load<PackedScene>("res://Scenes/Weapons/50cal.tscn");
-	public static readonly PackedScene BouncingBullet = GD.Load<PackedScene>("res://Scenes/Weapons/BouncingBullet.tscn");
-	public static readonly PackedScene RocketBullet = GD.Load<PackedScene>("res://Scenes/Weapons/HomingBullet.tscn");
-	public static readonly PackedScene GrenadeBullet = GD.Load<PackedScene>("res://Scenes/Weapons/GrenadeBullet.tscn");
-	public static readonly PackedScene LaserBullet = GD.Load<PackedScene>("res://Scenes/Weapons/LaserBullet.tscn");
 }
 
 public partial class ShopWeaponsTab : ShopBaseTab
@@ -136,5 +127,11 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		Weapon laserWeapon = ShopManager.Instance.weaponsList[4];
 		if (laserWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(laserWeapon);
 		else ShopManager.Instance.BuyWeapon(laserWeapon);
+	}
+	private void OnBuy6Pressed()
+	{
+		Weapon machineGunWeapon = ShopManager.Instance.weaponsList[5];
+		if (machineGunWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(machineGunWeapon);
+		else ShopManager.Instance.BuyWeapon(machineGunWeapon);
 	}
 }

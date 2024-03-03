@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_pdmmf"]
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_chuvg"]
-[ext_resource type="Shader" uid="uid://dcs3kmr4n27qk" path="res://Sprites/Shaders/Tank.tres" id="3_n53ey"]
+[ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="3_n53ey"]
 [ext_resource type="Texture2D" uid="uid://dyvtnwvkj8ds8" path="res://Sprites/Tanks/TankYellow.png" id="4_g1t0g"]
 [ext_resource type="Script" path="res://Scripts/Enemies/DummyBehaviour.cs" id="5_k678x"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="6_4ges3"]
-[ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="7_imfqm"]
+[ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="7_7ffdt"]
 [ext_resource type="Texture2D" uid="uid://bfd4pyhmq4i2" path="res://Sprites/Tanks/GunYellow.png" id="8_fm1vq"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="9_wxrj1"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="10_wnk1f"]
@@ -388,8 +388,7 @@ script = ExtResource("5_k678x")
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("6_4ges3")
-bulletScene = ExtResource("7_imfqm")
-bulletsPerSecond = 1.0
+weaponStats = ExtResource("7_7ffdt")
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
 

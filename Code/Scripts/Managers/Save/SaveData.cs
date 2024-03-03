@@ -17,7 +17,7 @@ public partial class SaveData : Resource
     public int PlayerMaxHP { get; set; }
     [Export]
     public int PlayerCurrentHP { get; set; }
-    
+
     /// <summary>
     ///The first index is the stat index and the second index is the price or quantity.
     ///E.g. [0][0] to adress the price and [0][1] to adress the quantity of the first stat.
@@ -41,6 +41,7 @@ public partial class SaveData : Resource
         };
         Weapons = new Godot.Collections.Array<Godot.Collections.Array>{
             new() {true, true},
+            new() {false, false},
             new() {false, false},
             new() {false, false},
             new() {false, false},

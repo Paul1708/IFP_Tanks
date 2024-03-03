@@ -8,10 +8,7 @@ namespace Weapons;
 
 public partial class GunController : Node2D
 {
-    [Export] PackedScene bulletScene;
-    [Export] public float bulletsPerSecond { get; set; } //how many bullets per second
-    [Export] public int bulletDamage { get; set; } //how much damage each bullet does
-
+    [Export] public WeaponStats weaponStats { get; set; }
 
     public float timeBetweenShots { get; private set; }
     private bool canShoot = true;
@@ -22,20 +19,15 @@ public partial class GunController : Node2D
     public override void _Ready()
     {
         musicController = GetNode<MusicController>("/root/MusicController");
-
-        if (bulletsPerSecond <= 0)
-        {
-            throw new Exception("Bullets per second must be greater than 0");
-        }
-        timeBetweenShots = 1 / bulletsPerSecond; //calculate the fire rate
-
         sprite = GetNode<AnimatedSprite2D>("GunSprite");
         shootTimer = GetNode<Timer>("ShootTimer");
-
         shootTimer.Timeout += () => canShoot = true;
 
-        if (this.GetParent().IsInGroup("Player")) SetWeapon();
-           
+        timeBetweenShots = 1 / weaponStats.bulletsPerSecond;
+
+
+        if (GetParent().IsInGroup("Player")) SetWeapon();
+
         ShopManager.Instance.OnWeaponEquipped += SetWeapon;
     }
 
@@ -46,10 +38,11 @@ public partial class GunController : Node2D
 
     public void SetWeapon()
     {
-        if (this.GetParent().IsInGroup("Player")) 
+        if (GetParent().IsInGroup("Player"))
         {
-        Weapon weapon = ShopManager.Instance.GetEquippedWeapon();
-        bulletScene = weapon.bulletScene;
+            Weapon weapon = ShopManager.Instance.GetEquippedWeapon();
+            weaponStats = weapon.weaponStats;
+            timeBetweenShots = 1 / weapon.weaponStats.bulletsPerSecond;
         }
     }
 
@@ -81,8 +74,9 @@ public partial class GunController : Node2D
     private void SpawnBullet()
     {
         //create a bullet
-        Bullet bullet = bulletScene.Instantiate<Bullet>();
-        bullet.damage = bulletDamage;
+        Bullet bullet = weaponStats.bulletScene.Instantiate<Bullet>();
+        bullet.damage = weaponStats.damage;
+        bullet.speed = weaponStats.bulletSpeed;
 
         //if it is a homing bullet shot by the player then set the target to a random enemy.
         if (bullet is HomingBullet hb)
@@ -90,7 +84,7 @@ public partial class GunController : Node2D
 
         // set rotation and velocity of bullet
         bullet.Rotation = GlobalRotation;
-        bullet.LinearVelocity = bullet.Transform.X.Normalized() * bullet.Speed;
+        bullet.LinearVelocity = bullet.Transform.X.Normalized() * weaponStats.bulletSpeed;
 
         // set position of bullet to muzzle
         var muzzle = GetNode<Marker2D>("muzzle");

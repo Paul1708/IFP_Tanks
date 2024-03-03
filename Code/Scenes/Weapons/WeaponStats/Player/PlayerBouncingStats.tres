@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://cqtnj1op0d6uw"]
+
+[ext_resource type="PackedScene" uid="uid://da1aaikifj8yu" path="res://Scenes/Weapons/BouncingBullet.tscn" id="1_6qinc"]
+[ext_resource type="Script" path="res://Scripts/Weapons/WeaponStats.cs" id="2_snrvp"]
+
+[resource]
+script = ExtResource("2_snrvp")
+bulletScene = ExtResource("1_6qinc")
+damage = 5
+bulletsPerSecond = 1.5
+bulletSpeed = 100.0

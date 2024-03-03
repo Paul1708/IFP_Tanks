@@ -23,7 +23,6 @@ script = ExtResource("1_mgtdc")
 ArcAngleOffsetDeg = 30.0
 GravitationalForce = 4.0
 DamageRadius = 100.0
-Speed = 50.0
 
 [node name="GFX" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)

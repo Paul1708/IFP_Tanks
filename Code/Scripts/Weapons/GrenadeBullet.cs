@@ -9,10 +9,10 @@ public partial class GrenadeBullet : Bullet
     [Export] public float ArcAngleOffsetDeg { get; set; } //beta
     [Export] public float GravitationalForce { get; set; } //g
     [Export] public float DamageRadius { get; set; }
-    
+
     private RigidBody2D _shadow;
     private CpuParticles2D _targetSprite;
-    
+
     //Values for simulated parabola
     private float _time; //time after the grenade was shot
     private readonly float _timeDiff = 0.1F; //time passed between to frames for the grenade
@@ -22,25 +22,25 @@ public partial class GrenadeBullet : Bullet
     private Vector2 _shootPosition; //position where the grenades was shot from
     private float _grenadeGroundHitTime;
     private Vector2 _hitLocation;
-    
+
 
     protected override void Setup()
     {
         _offsetAngle = Mathf.DegToRad(ArcAngleOffsetDeg);
-        
+
         //TODO: Disable this line if you dont want to set the grenade target to where the player clicked
-        Speed = 0.93F * Mathf.Sqrt((GravitationalForce * (GetGlobalMousePosition() - GlobalPosition).Length()) / Mathf.Sin(2.0F*_offsetAngle));
-        
+        speed = 0.93F * Mathf.Sqrt((GravitationalForce * (GetGlobalMousePosition() - GlobalPosition).Length()) / Mathf.Sin(2.0F * _offsetAngle));
+
         _shadow = GetNode<RigidBody2D>("Shadow");
         _targetSprite = GetNode<CpuParticles2D>("TargetPoint");
-        
-        _shootDirection = new Vector2(1, 0).Rotated(GlobalRotation).Normalized() * Speed;
 
-        _shootDirectionNormal = _shootDirection.Rotated(Mathf.Pi/2).Normalized();
+        _shootDirection = new Vector2(1, 0).Rotated(GlobalRotation).Normalized() * speed;
+
+        _shootDirectionNormal = _shootDirection.Rotated(Mathf.Pi / 2).Normalized();
         _shootPosition = GlobalPosition;
-        
-        
-        _grenadeGroundHitTime = (2 * Speed * Mathf.Sin(_offsetAngle)) / GravitationalForce;
+
+
+        _grenadeGroundHitTime = (2 * speed * Mathf.Sin(_offsetAngle)) / GravitationalForce;
         _hitLocation = _grenadeGroundHitTime * new Vector2(_shootDirection[0], _shootDirection[1])
                                        + new Vector2(_shootPosition[0], _shootPosition[1]);
         _targetSprite.GlobalPosition = _hitLocation;
@@ -71,10 +71,10 @@ public partial class GrenadeBullet : Bullet
             {
                 //body in hit range, so damage it according to dmg = bulletDamage / radius
                 float finalDamage = damage / distance;
-                node.GetNode<HealthComponent>("HealthComponent").TakeDamage((int) finalDamage);
+                node.GetNode<HealthComponent>("HealthComponent").TakeDamage((int)finalDamage);
             }
         }
-        
+
         particles.EmitParticles(this, Scene.Explosion);
         MusicController.Play(Sound.RocketExplosion);
         Destroy();
@@ -86,9 +86,9 @@ public partial class GrenadeBullet : Bullet
     private Vector2 _normalizedTrajectory(float t)
     {
         //x(t) = ||s|| * t * cos(b) from "Schiefer Wurf"
-        float x = Speed * t * Mathf.Cos(_offsetAngle);
+        float x = speed * t * Mathf.Cos(_offsetAngle);
         //y(t) = -g/2 * t^2 + ||s||*t*sin(b) from "Schiefer Wurf"
-        float y = -GravitationalForce / 2.0F * Mathf.Pow(t, 2.0F) + Speed * t * Mathf.Sin(_offsetAngle);
+        float y = -GravitationalForce / 2.0F * Mathf.Pow(t, 2.0F) + speed * t * Mathf.Sin(_offsetAngle);
 
         return new Vector2(x, y);
     }

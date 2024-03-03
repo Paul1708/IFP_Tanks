@@ -30,24 +30,24 @@ public partial class ShopButtons : Button
 		levelManager.OnLevelReset -= SetWeaponButtonStates;
 	}
 
-	public void SetStatButtonStates() 
+	public void SetStatButtonStates()
 	{
-		var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
+		var greatGreatGrandParent = GetParent().GetParent().GetParent().GetParent();
 
 		if (greatGreatGrandParent.IsInGroup("Stats"))
 		{
-			this.Text = "Buy";
+			Text = "Buy";
 		}
 	}
 
-public void SetWeaponButtonStates()
-{
-    var greatGreatGrandParent = this.GetParent().GetParent().GetParent().GetParent();
+	public void SetWeaponButtonStates()
+	{
+		var greatGreatGrandParent = GetParent().GetParent().GetParent().GetParent();
 
-    if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
-    {
-        var weapon = ShopManager.Instance.weaponsList[index];
-        this.Text = weapon.unlocked ? (weapon.equipped ? "Equipped" : "Equip") : "Buy";
-    }
-}
+		if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
+		{
+			var weapon = ShopManager.Instance.weaponsList[index];
+			Text = weapon.unlocked ? (weapon.equipped ? "Equipped" : "Equip") : "Buy";
+		}
+	}
 }

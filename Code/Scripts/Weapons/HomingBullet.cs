@@ -37,11 +37,11 @@ public partial class HomingBullet : Bullet
         //If the target is null, then abort launching bullet
         if (TargetNode == null || TargetNode.IsQueuedForDeletion())
         {
-            GD.Print("WARNING: Homing Bullet target is not set, destroy bullet.");
+            GD.PushWarning("WARNING: Homing Bullet target is not set, destroy bullet.");
             QueueFree();
             return;
         }
-        
+
         _target = TargetNode.GlobalPosition;
         if (_ticksPassed == Uninitialised)
         {
@@ -70,7 +70,7 @@ public partial class HomingBullet : Bullet
     {
         Rotation = _targetDirection.Angle();
 
-        MoveAndCollide(_targetDirection * Speed);
+        MoveAndCollide(_targetDirection * speed);
     }
 
     private void _initTargetDirection()

@@ -8,13 +8,23 @@ namespace Managers;
 
 public partial class ShopManager : Node2D
 {
+	[ExportGroup("Weapons")]
+	[Export] public WeaponStats defaultWeaponStats { get; set; }
+	[Export] public WeaponStats bouncingWeaponStats { get; set; }
+	[Export] public WeaponStats grenadeWeaponStats { get; set; }
+	[Export] public WeaponStats rocketWeaponStats { get; set; }
+	[Export] public WeaponStats laserWeaponStats { get; set; }
+	[Export] public WeaponStats machineGunWeaponStats { get; set; }
+
+
 	public Dictionary<string, int> panelIndexMap = new()
 	{
 		{ "Panel1", 0 },
 		{ "Panel2", 1 },
 		{ "Panel3", 2 },
 		{ "Panel4", 3 },
-		{ "Panel5", 4 }
+		{ "Panel5", 4 },
+		{ "Panel6", 5 }
 	};
 	public static ShopManager Instance { get; private set; }
 	private ShopMenu shopMenu;
@@ -31,11 +41,12 @@ public partial class ShopManager : Node2D
 	private Stat DMGStat = new("DMG", 2);
 	private Stat speedStat = new("Speed", 3);
 	//Add new shop Weapons here
-	private Weapon defaultWeapon = new("Default", 0, Bullet.DefaultBulllet);
-	private Weapon bouncingWeapon = new("Bouncing", 1, Bullet.BouncingBullet);
-	private Weapon grenadeWeapon = new("Grenade", 2, Bullet.GrenadeBullet); //TODO: change to grenade bullet
-	private Weapon rocketWeapon = new("Rocket", 3, Bullet.RocketBullet); 
-	private Weapon laserWeapon = new("Laser", 4, Bullet.LaserBullet); //TODO: change to laser bullet
+	private Weapon defaultWeapon;
+	private Weapon bouncingWeapon;
+	private Weapon grenadeWeapon;
+	private Weapon rocketWeapon;
+	private Weapon laserWeapon;
+	private Weapon machineGunWeapon;
 
 	public override void _Ready()
 	{
@@ -49,9 +60,17 @@ public partial class ShopManager : Node2D
 		}
 
 		AddStatsToList(healStat, maxHPStat, DMGStat, speedStat);
-		AddWeaponsToList(defaultWeapon, bouncingWeapon, grenadeWeapon, rocketWeapon, laserWeapon);
 
 		SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
+
+		defaultWeapon = new("Default", 0, defaultWeaponStats);
+		bouncingWeapon = new("Bouncing", 1, bouncingWeaponStats);
+		grenadeWeapon = new("Grenade", 2, grenadeWeaponStats);
+		rocketWeapon = new("Rocket", 3, rocketWeaponStats);
+		laserWeapon = new("Laser", 4, laserWeaponStats);
+		machineGunWeapon = new("MachineGun", 5, machineGunWeaponStats);
+		AddWeaponsToList(defaultWeapon, bouncingWeapon, grenadeWeapon, rocketWeapon, laserWeapon, machineGunWeapon);
+
 	}
 
 	public override void _ExitTree()
@@ -63,7 +82,7 @@ public partial class ShopManager : Node2D
 	{
 		LoadShopStateBySaveData(saveData);
 	}
-	
+
 	///<summary>
 	///Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. 
 	///It increases the price and quantity of the stat and removes the coins if the stat was bought.

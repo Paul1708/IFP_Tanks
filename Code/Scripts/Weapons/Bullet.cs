@@ -7,8 +7,8 @@ namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
     {
-        public int damage { get; set; }
-        [Export] public float Speed { get; set; } //speed of the bullet
+        public int damage;
+        public float speed; //speed of the bullet
 
         protected Node2D player;
         protected HealthComponent playerHealthComponent;
@@ -85,7 +85,7 @@ namespace Weapons
          * Describe the move behavior of all bullet types. This method is called on every physic process tick.
          */
         protected virtual void Move() { }
-        
+
 
         public virtual void Destroy()
         {
