@@ -44,10 +44,11 @@ public partial class ShopButtons : Button
 	{
 		var greatGreatGrandParent = GetParent().GetParent().GetParent().GetParent();
 
-		if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.panelIndexMap.TryGetValue(GetParent().Name, out int index))
+		if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.TryGetPanelIndex(this, out int index))
 		{
 			var weapon = ShopManager.Instance.weaponsList[index];
 			Text = weapon.unlocked ? (weapon.equipped ? "Equipped" : "Equip") : "Buy";
 		}
 	}
+
 }

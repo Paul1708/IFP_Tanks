@@ -64,10 +64,14 @@ public partial class PauseMenu : Control
 	{
 		switch (shopMenu.Visible || levelCountdown.Visible) //another menu open?
 		{
-			case true when leavePauseMenu:
+			case true when leavePauseMenu && levelCountdown.Visible:
 				Hide(); //just hide the pause Menu without unpausing the game because another menu is open and paused the game
 				levelCountdown.countdownTimer.Paused = false;
 				levelCountdown.blurAnimation.Play();
+				leavePauseMenu = false;
+				break;
+			case true when leavePauseMenu && !levelCountdown.Visible:
+				Hide(); 
 				leavePauseMenu = false;
 				break;
 			case true:

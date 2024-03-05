@@ -16,19 +16,8 @@ public partial class ShopManager : Node2D
 	[Export] public WeaponStats laserWeaponStats { get; set; }
 	[Export] public WeaponStats machineGunWeaponStats { get; set; }
 
-
-	public Dictionary<string, int> panelIndexMap = new()
-	{
-		{ "Panel1", 0 },
-		{ "Panel2", 1 },
-		{ "Panel3", 2 },
-		{ "Panel4", 3 },
-		{ "Panel5", 4 },
-		{ "Panel6", 5 }
-	};
 	public static ShopManager Instance { get; private set; }
 	private ShopMenu shopMenu;
-	[Signal] public delegate void OnItemBoughtUpdatePricesEventHandler();
 	[Signal] public delegate void OnWeaponUnlockedEventHandler();
 	[Signal] public delegate void OnWeaponEquippedEventHandler();
 	public List<Stat> statsList = new();
@@ -90,20 +79,20 @@ public partial class ShopManager : Node2D
 	public bool BuyStat(Stat stat)
 	{
 		ShopPrices shopPrices = stat.priceTag as ShopPrices;
+		int price = stat.price + shopPrices.basePrice;
 
-		if (CoinManager.Instance.CheckIfEnoughCoins(stat.price + shopPrices.basePrice))
+		if (CoinManager.Instance.CheckIfEnoughCoins(price))
 		{
-			CoinManager.Instance.RemoveCoins(stat.price + shopPrices.basePrice);
+			CoinManager.Instance.RemoveCoins(price);
 
-			shopPrices.IncreasePrice(stat);
-			IncreaseStatQuantity(stat);
-			EmitSignal(SignalName.OnItemBoughtUpdatePrices);
+			shopPrices.IncreasePrice(statsList[stat.listIndex]);
+			IncreaseStatQuantity(statsList[stat.listIndex]);
 			return true;
 		}
 		else
 		{
 			shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-			shopMenu.DisplayInsufficientCoinsError(stat.price + shopPrices.basePrice);
+			shopMenu.DisplayInsufficientCoinsError(price);
 			return false;
 		}
 	}
@@ -123,24 +112,29 @@ public partial class ShopManager : Node2D
 	/// </summary>
 	public bool BuyWeapon(Weapon weapon)
 	{
-		if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) && weapon.unlocked == false)
+		ShopPrices shopPrices = weapon.priceTag as ShopPrices;
+		int price = shopPrices.basePrice;
+		
+		if (CoinManager.Instance.CheckIfEnoughCoins(price) && weapon.unlocked == false)
 		{
-			ShopPrices shopPrices = weapon.priceTag as ShopPrices;
-			CoinManager.Instance.RemoveCoins(weapon.price);
+			CoinManager.Instance.RemoveCoins(price);
 
 			ShopPrices.WeaponUnlocked(shopPrices);
 			UnlockWeapon(weapon);
 			return true;
 		}
-		else if (CoinManager.Instance.CheckIfEnoughCoins(weapon.price) == false && weapon.unlocked == false)
+		else if (CoinManager.Instance.CheckIfEnoughCoins(price) == false && weapon.unlocked == false)
 		{
 			shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-			shopMenu.DisplayInsufficientCoinsError(weapon.price);
+			shopMenu.DisplayInsufficientCoinsError(price);
 			return false;
 		}
 		return false;
 	}
 
+	/// <summary>
+	/// Unlock the weapon by setting the unlocked state to true. Emit the OnWeaponUnlocked signal.
+	/// </summary>
 	public void UnlockWeapon(Weapon weapon)
 	{
 		weapon.unlocked = true;
@@ -148,6 +142,9 @@ public partial class ShopManager : Node2D
 		EmitSignal(SignalName.OnWeaponUnlocked);
 	}
 
+	/// <summary>
+	/// Equip the weapon by setting the equipped state to true and unequip all other weapons. Emit the OnWeaponEquipped signal.
+	/// </summary>
 	public void EquipWeapon(Weapon weapon)
 	{
 		UnequipAllWeapon(); //make sure only one weapon is equipped
@@ -156,6 +153,9 @@ public partial class ShopManager : Node2D
 		EmitSignal(SignalName.OnWeaponEquipped);
 	}
 
+	/// <summary>
+	/// Returns the equipped weapon. If no weapon is equipped, the default weapon is returned.
+	/// </summary>
 	public Weapon GetEquippedWeapon()
 	{
 		foreach (var weapon in weaponsList)
@@ -168,6 +168,9 @@ public partial class ShopManager : Node2D
 		return weaponsList[0]; //default weapon
 	}
 
+	/// <summary>
+	/// Unequips all weapons by setting the equipped state to false.
+	/// </summary>
 	private void UnequipAllWeapon()
 	{
 		bool[] equipped = new bool[weaponsList.Count];
@@ -181,6 +184,26 @@ public partial class ShopManager : Node2D
 		}
 	}
 
+	/// <summary>
+	/// Tries to get the index of the panel from the node and returns true if successful, false if not.
+	/// </summary>
+	public bool TryGetPanelIndex(Node node, out int index)
+	{
+		string parentName = node.GetParent().Name;
+		parentName = parentName.Replace("Panel", "");
+		bool parseSuccess = int.TryParse(parentName, out index);
+
+		if (parseSuccess)
+		{
+			index -= 1; // Subtract 1 from the index
+		}
+
+		return parseSuccess;
+	}
+
+	/// <summary>
+	/// Adds the stats to the list and checks for duplicate indices. When adding a new stat, add it to the list here.
+	/// </summary>
 	private void AddStatsToList(params Stat[] stats)
 	{
 		HashSet<int> indices = new HashSet<int>();
@@ -201,6 +224,9 @@ public partial class ShopManager : Node2D
 		}
 	}
 
+	/// <summary>
+	/// Adds the weapons to the list and checks for duplicate indices. When adding a new weapon, add it to the list here.
+	/// </summary>
 	private void AddWeaponsToList(params Weapon[] weapons)
 	{
 		HashSet<int> indices = new HashSet<int>();
@@ -221,6 +247,9 @@ public partial class ShopManager : Node2D
 		}
 	}
 
+	/// <summary>
+	/// Load the shop state by the save data. This includes the prices and quantities of the stats and the unlocked and equipped state of the weapons.
+	/// </summary>
 	private void LoadShopStateBySaveData(SaveData saveData)
 	{
 		for (int i = 0; i < saveData.Stats.Count; i++)

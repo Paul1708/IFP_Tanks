@@ -8,7 +8,6 @@ public struct Weapon
 {
 	public string name;
 	public int listIndex;
-	public int price;
 	public Label priceTag;
 	public bool unlocked = false;
 	public bool equipped = false;
@@ -33,12 +32,9 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	{
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
+		
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
-
 		levelManager.OnLevelChanged += ResetScrollBar;
-
-		GetPriceTags();
-		UpdatePrices();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -57,38 +53,6 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		Vector2 position = control.Position;
 		position.X = (float)-hScrollBar.Value;
 		control.Position = position;
-	}
-
-	///<summary>
-	///get all price tags from the scene by their path that only differs in the Panel number and connect them to the weapons
-	/// </summary>
-	protected override void GetPriceTags()
-	{
-		Label[] weaponPriceTags = new Label[ShopManager.Instance.weaponsList.Count];
-
-		for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
-		{
-			weaponPriceTags[i] = GetPriceTagByPanel(i + 1);
-			Weapon weapon = ShopManager.Instance.weaponsList[i];
-			weapon.priceTag = weaponPriceTags[i];
-			ShopManager.Instance.weaponsList[i] = weapon;
-		}
-	}
-
-	///<summary>
-	///Update the prices of the items in the shop by parsing the price from the price tags.
-	/// </summary>
-	protected override void UpdatePrices()
-	{
-		int[] weaponPrices = new int[ShopManager.Instance.weaponsList.Count];
-
-		for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
-		{
-			weaponPrices[i] = ParsePrice(i + 1);
-			Weapon weapon = ShopManager.Instance.weaponsList[i];
-			weapon.price = weaponPrices[i];
-			ShopManager.Instance.weaponsList[i] = weapon;
-		}
 	}
 
 	private void OnBuy1Pressed()
