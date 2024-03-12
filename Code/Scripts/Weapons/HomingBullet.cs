@@ -15,7 +15,7 @@ public partial class HomingBullet : Bullet
     private const int Uninitialised = -1;
 
 
-    private Vector2 _targetDirection;
+    public Vector2 TargetDirection { get; private set; } = Vector2.Zero;
     private int _ticksPassed = Uninitialised;
     private bool _targetEnemy;
 
@@ -50,12 +50,12 @@ public partial class HomingBullet : Bullet
         else if (_ticksPassed >= HomingTicks)
         {
             Vector2 directLine = (_target - GlobalPosition).Normalized();
-            Vector2 oldDirection = _targetDirection;
+            Vector2 oldDirection = TargetDirection;
             float rawAngle = directLine.Angle() - oldDirection.Angle(); //angle of new direction to old direction
 
             float angle = BulletMath.NormalizeAngle(rawAngle);
             float homingAngle = BulletMath.RestrictHomingAngle(angle, Mathf.DegToRad(MaxRotationDeg));
-            _targetDirection = new Vector2(1, 0).Rotated(oldDirection.Angle() + homingAngle).Normalized();
+            TargetDirection = new Vector2(1, 0).Rotated(oldDirection.Angle() + homingAngle).Normalized();
 
             _ticksPassed = 0;
 
@@ -68,9 +68,9 @@ public partial class HomingBullet : Bullet
 
     private void MoveProjectile()
     {
-        Rotation = _targetDirection.Angle();
+        Rotation = TargetDirection.Angle();
 
-        MoveAndCollide(_targetDirection * Speed);
+        MoveAndCollide(TargetDirection * Speed);
     }
 
     private void _initTargetDirection()
@@ -79,11 +79,16 @@ public partial class HomingBullet : Bullet
         {
             //player fired it, so init targetDirection with the muzzle rotation
             float rot = player.GetNode<GunController>("Gun").GlobalRotation;
-            _targetDirection = new Vector2(1, 0).Rotated(rot).Normalized();
+            TargetDirection = new Vector2(1, 0).Rotated(rot).Normalized();
         }
         else
         {
-            _targetDirection = (_target - GlobalPosition).Normalized(); //init bullet with direct direction
+            TargetDirection = (_target - GlobalPosition).Normalized(); //init bullet with direct direction
         }
+    }
+
+    public void MoveTest()
+    {
+        Move();
     }
 }

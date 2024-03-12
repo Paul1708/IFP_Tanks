@@ -48,15 +48,15 @@ public partial class Player : CharacterBody2D
 
 		AnimationHandler.PlayAnimationOfInput(input);
 
-        _rotationDirection = input.X;
-        Velocity = CalculateVelocity(Transform.X * input.Y);
-    }
+		_rotationDirection = input.X;
+		Velocity = CalculateVelocity(Transform.X * input.Y);
+	}
 
-    public Vector2 CalculateVelocity(Vector2 move_input)
-    {
-        Vector2 velocity = move_input * speed; //set the velocity to the input times the speed.
-        return velocity;
-    }
+	public Vector2 CalculateVelocity(Vector2 move_input)
+	{
+		Vector2 velocity = move_input * speed; //set the velocity to the input times the speed.
+		return velocity;
+	}
 
 	public bool IsMoving()
 	{
