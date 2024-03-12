@@ -51,7 +51,8 @@ namespace Weapons
             {
                 OnDamageableHit(node);
             }
-            else if (node.IsInGroup("Wall"))
+            //TODO: Hotfix: NodeGroup Wall is always empty, therefor a bouncing bullet is always destroyed on anything hit
+            else if (node.IsInGroup("Wall") || node is TileMap)
             {
                 OnWallHit();
             }

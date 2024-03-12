@@ -12,6 +12,7 @@ lock_rotation = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_miwo5")
+MaxBounces = 1
 Speed = 5.0
 
 [node name="GFX" type="Sprite2D" parent="."]

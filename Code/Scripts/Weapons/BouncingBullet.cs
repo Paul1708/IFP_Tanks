@@ -48,8 +48,8 @@ public partial class BouncingBullet : Bullet
 
 		if (_currentBounces > MaxBounces)
 		{
-			ParticleController particles = GetNode<ParticleController>("/root/ParticleController");
-			particles.EmitParticles(this, Scene.BulletCrack);
+			ParticleController particlesCon = GetNode<ParticleController>("/root/ParticleController");
+			particlesCon.EmitParticles(this, Scene.BulletCrack);
 			Destroy();
 		}
 	}
