@@ -71,7 +71,8 @@ public partial class PauseMenu : Control
 				leavePauseMenu = false;
 				break;
 			case true when leavePauseMenu && !levelCountdown.Visible:
-				Hide(); 
+				Hide();
+				levelCountdown.countdownTimer.Paused = false;
 				leavePauseMenu = false;
 				break;
 			case true:
