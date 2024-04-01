@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=10 format=3 uid="uid://buq1p1ngfffd7"]
+
+[ext_resource type="Texture2D" uid="uid://cf22tvqemmrnh" path="res://Sprites/UI/Menu/Button/ShopPanelButtonHover.png" id="1_uknll"]
+[ext_resource type="Texture2D" uid="uid://dwjl7rd4wh5oi" path="res://Sprites/UI/Menu/Button/ShopPanelButton.png" id="2_0f28j"]
+[ext_resource type="Texture2D" uid="uid://dwcj5077yi323" path="res://Sprites/UI/Menu/Button/ShopPanelButtonPressed.png" id="3_ymxw3"]
+[ext_resource type="Texture2D" uid="uid://ddrjqx6y78dkr" path="res://Sprites/UI/Menu/Panel/Panel2.png" id="4_h4ydr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ii5s0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5cncm"]
+texture = ExtResource("1_uknll")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ftk7"]
+texture = ExtResource("2_0f28j")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_va7ej"]
+texture = ExtResource("3_ymxw3")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dym3k"]
+texture = ExtResource("4_h4ydr")
+
+[resource]
+Button/styles/focus = SubResource("StyleBoxEmpty_ii5s0")
+Button/styles/hover = SubResource("StyleBoxTexture_5cncm")
+Button/styles/normal = SubResource("StyleBoxTexture_0ftk7")
+Button/styles/pressed = SubResource("StyleBoxTexture_va7ej")
+Panel/styles/panel = SubResource("StyleBoxTexture_dym3k")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ck4qfrctxcyal"]
+[gd_scene load_steps=32 format=3 uid="uid://ck4qfrctxcyal"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_pdmmf"]
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_chuvg"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="12_35or0"]
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="12_bkemy"]
 [ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_jtlle"]
+[ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="15_ervly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_un74c"]
 resource_local_to_scene = true
@@ -436,3 +437,5 @@ script = ExtResource("12_bkemy")
 
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
 script = ExtResource("12_35or0")
+
+[node name="TrailComponent" parent="." instance=ExtResource("15_ervly")]

@@ -3,13 +3,24 @@ using Godot;
 
 public partial class Enemy : CharacterBody2D
 {
+	private TrailComponent trailComponent;
 	private HealthComponent _healthComponent { get; set; }
 	[Export] public PackedScene DropItemScene { get; set; }
 
 	public override void _Ready()
 	{
+		trailComponent = GetNode<TrailComponent>("TrailComponent");
 		_healthComponent = GetNode<HealthComponent>("HealthComponent");
 		_healthComponent.OnDeath += OnDeath;
+	}
+
+	public override void _PhysicsProcess(double delta)
+	{
+		//Emit trail
+		if (IsMoving())
+		{
+			trailComponent.EmitTrail();
+		}
 	}
 
 	public override void _ExitTree()
@@ -28,5 +39,10 @@ public partial class Enemy : CharacterBody2D
 			.SetTrans(Tween.TransitionType.Back);
 
 		tween.Finished += QueueFree;
+	}
+
+	private bool IsMoving()
+	{
+		return Velocity != Vector2.Zero;
 	}
 }

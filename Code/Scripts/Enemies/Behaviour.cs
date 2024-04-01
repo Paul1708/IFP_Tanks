@@ -1,6 +1,4 @@
-using System.Linq;
 using Godot;
-using Movement;
 using Weapons;
 
 namespace Enemies;

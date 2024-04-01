@@ -1,6 +1,7 @@
 using Components;
 using Godot;
 using Managers.Save;
+using Player;
 
 namespace Managers;
 
@@ -8,6 +9,10 @@ public partial class PlayerManager : Node2D
 {
     public static PlayerManager Instance { get; private set; }
     public HealthComponent PlayerHealthComponent { get; private set; }
+    public PlayerStats PlayerStats { get; set; }
+
+    [Signal]
+    public delegate void OnPlayerStatsChangedEventHandler(PlayerStats stats);
     public override void _Ready()
     {
         if (Instance == null)
@@ -28,10 +33,33 @@ public partial class PlayerManager : Node2D
         SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
+    public void AddDamageModifier(float amount)
+    {
+        PlayerStats.CurrentDamageModifier += amount;
+        EmitSignal(SignalName.OnPlayerStatsChanged, PlayerStats);
+    }
+
+    public void AddMovementSpeed(float amount)
+    {
+        PlayerStats.CurrentMovementSpeed += amount;
+        EmitSignal(SignalName.OnPlayerStatsChanged, PlayerStats);
+    }
+
+    public void AddMaxHealth(int amount)
+    {
+        PlayerStats.CurrentMaxHealth += amount;
+        PlayerHealthComponent.IncreaseMaxHealth(amount);
+    }
+    public void ResetMaxHealth()
+    {
+        PlayerHealthComponent.SetMaxHP(PlayerStats.BaseMaxHealth);
+    }
+
     public void OnSaveDataLoaded(SaveData saveData)
     {
+        PlayerStats = saveData.PlayerStats;
         PlayerHealthComponent.SetCurrentHP(saveData.PlayerCurrentHP);
-        PlayerHealthComponent.SetMaxHP(saveData.PlayerMaxHP);
+        PlayerHealthComponent.SetMaxHP(PlayerStats.CurrentMaxHealth);
     }
     // TODO: Remove this Debug method
     public override void _Input(InputEvent @event)

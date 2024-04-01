@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://4ex5rdvrveg3"]
+[gd_scene load_steps=31 format=3 uid="uid://4ex5rdvrveg3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_hiahh"]
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_5qh4k"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_jbxwx"]
 [ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="11_rvtfd"]
 [ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_k6nxf"]
+[ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="14_c05oh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j03un"]
 resource_local_to_scene = true
@@ -349,6 +350,7 @@ _data = {
 }
 
 [node name="RocketEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
+z_index = 1
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 0.0
@@ -434,3 +436,6 @@ libraries = {
 
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
 script = ExtResource("11_rvtfd")
+
+[node name="TrailComponent" parent="." instance=ExtResource("14_c05oh")]
+timeBetweenTrails = 0.25

@@ -1,18 +1,21 @@
 using System.ComponentModel.DataAnnotations;
 using Godot;
+using Player;
 using Shop;
 
 namespace Managers.Save;
 
 public partial class SaveManager : Node
 {
+    [Export]
+    public PlayerStats InitialPlayerStats { get; set; }
     public static SaveManager Instance { get; private set; }
     public SaveData SaveData { get; private set; }
     public LoadingType LoadingType { get; set; } = LoadingType.NONE;
 
     [Signal]
     public delegate void OnSaveDataLoadedEventHandler(SaveData saveData);
-    
+
     public override void _Ready()
     {
 
@@ -32,8 +35,8 @@ public partial class SaveManager : Node
     public void SaveGame()
     {
         SaveData.PlayerCurrentHP = PlayerManager.Instance.PlayerHealthComponent.currentHP;
-        SaveData.PlayerMaxHP = PlayerManager.Instance.PlayerHealthComponent.maxHP;
         SaveData.CoinCount = CoinManager.Instance.Coins;
+        SaveData.PlayerStats = PlayerManager.Instance.PlayerStats;
         SaveShopState();
 
         ResourceSaver.Save(SaveData, "user://savegame.tres");

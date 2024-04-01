@@ -72,19 +72,28 @@ public partial class ShopStatsTab : ShopBaseTab
 	private void OnBuy2Pressed()
 	{
 		Stat maxHPStat = ShopManager.Instance.statsList[1];
-		if (ShopManager.Instance.BuyStat(maxHPStat)) PlayerManager.Instance.PlayerHealthComponent.IncreaseMaxHealth(10);
+		if (ShopManager.Instance.BuyStat(maxHPStat))
+		{
+			PlayerManager.Instance.AddMaxHealth(10);
+		}
 
 	}
 
 	private void OnBuy3Pressed()
 	{
 		Stat DMGStat = ShopManager.Instance.statsList[2];
-		ShopManager.Instance.BuyStat(DMGStat);
+		if (ShopManager.Instance.BuyStat(DMGStat))
+		{
+			PlayerManager.Instance.AddDamageModifier(0.1f);
+		}
 	}
 
 	private void OnBuy4Pressed()
 	{
 		Stat speedStat = ShopManager.Instance.statsList[3];
 		ShopManager.Instance.BuyStat(speedStat);
+		{
+			PlayerManager.Instance.AddMovementSpeed(10f);
+		}
 	}
 }

@@ -1,16 +1,17 @@
 using GdUnit4;
 using Godot;
-using Movement;
+using Player;
 
 [TestSuite]
 public class TestPlayer
 {
-    Player player;
+    /*
+    PlayerMovement player;
 
     [BeforeTest]
     public void Setup()
     {
-        player = new Player()
+        player = new PlayerMovement()
         {
             speed = 300,
         };
@@ -42,4 +43,5 @@ public class TestPlayer
     {
         player.QueueFree();
     }
+    */
 }

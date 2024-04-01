@@ -22,10 +22,15 @@ public partial class UserPreferences : Resource
     
     public static UserPreferences LoadOrCreate()
     {
-        var userPreferences = ResourceLoader.Load<UserPreferences>("user://UserPreferences.tres") as UserPreferences;
-        if (userPreferences == null)
+        var userPreferences = new UserPreferences();
+        if (userPreferences == null || ResourceLoader.Exists("user://UserPreferences.tres") == false)
         {
             userPreferences = new UserPreferences();
+            userPreferences.Save();
+        }
+        else
+        {
+            userPreferences = ResourceLoader.Load<UserPreferences>("user://UserPreferences.tres");
         }
         return userPreferences;
     }

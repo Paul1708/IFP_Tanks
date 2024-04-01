@@ -4,17 +4,19 @@ using Managers.Save;
 namespace UI;
 public partial class MainMenu : Control
 {
+	[Export]
+	public Vector2 mainMenuCameraPosition = new Vector2(960, 540);
+	[Export]
+	public Vector2 settingsMenuCameraPosition = new Vector2(2880, 540);
 	protected MusicController musicController;
-	UserPreferences userPreferences;
-
+	public Camera2D camera;
+	
+	
 	public override void _Ready()
 	{
-		// Load user preferences and set the window mode accordingly
-		userPreferences = UserPreferences.LoadOrCreate();
-		DisplayServer.WindowSetMode(userPreferences.IsFullscreen ? DisplayServer.WindowMode.Fullscreen : DisplayServer.WindowMode.Windowed);
-
 		musicController = GetNode<MusicController>("/root/MusicController");
-		GetNode<Button>("Buttons/VBoxContainer/Continue").Disabled = !SaveManager.Instance.IsSaveFileAvailable();
+		camera = GetNode<Camera2D>("Camera2D");
+		GetNode<Button>("UI/Buttons/VBoxContainer/Continue").Disabled = !SaveManager.Instance.IsSaveFileAvailable();
 	}
 
 	private void OnNewGamePressed()
@@ -34,7 +36,7 @@ public partial class MainMenu : Control
 	private void OnSettingsPressed()
 	{
 		musicController.Play(Sound.ButtonClick);
-		GetTree().ChangeSceneToFile("res://Scenes/UI/SettingsMenu.tscn");
+		camera.Position = settingsMenuCameraPosition;
 	}
 
 	private void OnQuitPressed()

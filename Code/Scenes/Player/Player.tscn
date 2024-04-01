@@ -1,6 +1,6 @@
 [gd_scene load_steps=26 format=3 uid="uid://dr17omme2uqlx"]
 
-[ext_resource type="Script" path="res://Scripts/Movement/Player.cs" id="1_noslj"]
+[ext_resource type="Script" path="res://Scripts/Movement/PlayerMovement.cs" id="1_noslj"]
 [ext_resource type="Texture2D" uid="uid://blkfra54wh0pf" path="res://Sprites/Tanks/TankGreen.png" id="2_cn7mg"]
 [ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="2_ncg51"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_kf7xg"]
@@ -350,8 +350,6 @@ collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_noslj")
-speed = 300.0
-RotationSpeed = 3.0
 
 [node name="TankBaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -415,7 +413,7 @@ libraries = {
 speed_scale = 3.5
 script = ExtResource("7_5i82i")
 
-[node name="Trail" parent="." instance=ExtResource("8_sdglm")]
+[node name="TrailComponent" parent="." instance=ExtResource("8_sdglm")]
 
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
 script = ExtResource("9_rbyi5")

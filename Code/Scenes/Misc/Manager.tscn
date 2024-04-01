@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://b7sikculmqqnl"]
+[gd_scene load_steps=13 format=3 uid="uid://b7sikculmqqnl"]
 
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="2_gfgoi"]
 [ext_resource type="Script" path="res://Scripts/Managers/PlayerManager.cs" id="2_m1i85"]
+[ext_resource type="Resource" uid="uid://ccdwguwmcpjjp" path="res://Scenes/Player/PlayerStats.tres" id="3_1eadw"]
 [ext_resource type="Script" path="res://Scripts/Managers/CoinManager.cs" id="4_0d2wr"]
 [ext_resource type="Script" path="res://Scripts/Managers/Save/SaveManager.cs" id="5_agwak"]
 [ext_resource type="Script" path="res://Scripts/Managers/ShopManager.cs" id="5_la8dw"]
@@ -16,6 +17,7 @@
 
 [node name="SaveManager" type="Node2D" parent="."]
 script = ExtResource("5_agwak")
+InitialPlayerStats = ExtResource("3_1eadw")
 
 [node name="PlayerManager" type="Node2D" parent="."]
 script = ExtResource("2_m1i85")

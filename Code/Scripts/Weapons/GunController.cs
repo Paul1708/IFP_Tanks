@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using Movement;
+using Player;
 using Managers;
 using Shop;
 
@@ -16,6 +16,9 @@ public partial class GunController : Node2D
     private Timer shootTimer;
     protected MusicController musicController;
 
+    // Das ist sowas von dreckig, aber ist mir egal :O
+    private bool isPlayerGunController = false;
+
     public override void _Ready()
     {
         musicController = GetNode<MusicController>("/root/MusicController");
@@ -26,7 +29,11 @@ public partial class GunController : Node2D
         timeBetweenShots = 1 / weaponStats.bulletsPerSecond;
 
 
-        if (GetParent().IsInGroup("Player")) SetWeapon();
+        if (GetParent().IsInGroup("Player"))
+        {
+            SetWeapon();
+            isPlayerGunController = true;
+        }
 
         ShopManager.Instance.OnWeaponEquipped += SetWeapon;
     }
@@ -73,10 +80,13 @@ public partial class GunController : Node2D
 
     private void SpawnBullet()
     {
-        //create a bullet
+        //create a bullet and set its damage and speed
         Bullet bullet = weaponStats.bulletScene.Instantiate<Bullet>();
         bullet.damage = weaponStats.damage;
-        bullet.speed = weaponStats.bulletSpeed;
+        if (isPlayerGunController)
+        {
+            bullet.damage = (int)(bullet.damage * PlayerManager.Instance.PlayerStats.CurrentDamageModifier);
+        }
 
         //if it is a homing bullet shot by the player then set the target to a random enemy.
         if (bullet is HomingBullet hb)
@@ -97,7 +107,7 @@ public partial class GunController : Node2D
     private void _setHomingBulletTarget(HomingBullet bullet)
     {
         Node parent = GetParent();
-        if (parent is Player)
+        if (parent is PlayerMovement)
         {
             if (GetTree().GetNodesInGroup("Enemy").Count > 0)
                 bullet.TargetNode = GetTree().GetNodesInGroup("Enemy").PickRandom() as Node2D;

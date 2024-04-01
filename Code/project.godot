@@ -13,10 +13,14 @@ config_version=5
 config/name="Code"
 run/main_scene="res://Scenes/UI/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "C#", "Mobile")
-config/icon="res://Sprites/icon.svg"
+
+[audio]
+
+buses/default_bus_layout="res://Audio/default_bus_layout.tres"
 
 [autoload]
 
+LoadUserPreferences="*res://Scripts/Managers/LoadUserPreferences.cs"
 MusicController="*res://Scenes/Misc/MusicController.tscn"
 ParticleController="*res://Scenes/Misc/ParticleController.tscn"
 Manager="*res://Scenes/Misc/Manager.tscn"

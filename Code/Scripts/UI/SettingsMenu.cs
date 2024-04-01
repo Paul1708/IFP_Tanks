@@ -20,6 +20,7 @@ public partial class SettingsMenu : Control
 	Slider sfxSlider;
 	CheckButton fullscreenButton;
 	UserPreferences userPreferences;
+	ColorRect blur;
 
 	public override void _Ready()
 	{
@@ -30,15 +31,33 @@ public partial class SettingsMenu : Control
 		sfxSlider = GetNode<Slider>("%SFXSlider");
 		fullscreenButton = GetNode<CheckButton>("%Fullscreen");
 
+		blur = GetNode<ColorRect>("Blur");
+		if (GetParent().Name == "PauseMenu")
+		{
+			EnableBlur();
+		}
+
 		userPreferences = UserPreferences.LoadOrCreate();
 		LoadUserSettings();
+	}
+
+	private void EnableBlur()
+	{
+		blur.Visible = true;
 	}
 
 	private void OnBackPressed()
 	{
 		musicController.Play(Sound.ButtonClick);
-		if (GetTree().CurrentScene.IsInGroup("MainGame")) Hide();
-		else GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
+		if (GetTree().CurrentScene.IsInGroup("MainGame")) 
+		{
+			Hide();
+		}
+		else 
+		{
+			MainMenu mainMenu = GetTree().GetFirstNodeInGroup("MainMenu") as MainMenu;
+			mainMenu.camera.Position = mainMenu.mainMenuCameraPosition;
+		}
 	}
 
 	//toggles fullscreen and windowed mode

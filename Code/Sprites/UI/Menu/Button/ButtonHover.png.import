@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu77gv46o1g7d"
-path="res://.godot/imported/tankweapon.png-dfdc21349e335645903a6c7ac5bdc0d1.ctex"
+uid="uid://ch7qsxyqun4hx"
+path="res://.godot/imported/ButtonHover.png-0ba498b01dbf5cb14d9ffb88f3235c5a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tankweapon.png"
-dest_files=["res://.godot/imported/tankweapon.png-dfdc21349e335645903a6c7ac5bdc0d1.ctex"]
+source_file="res://Sprites/UI/Menu/Button/ButtonHover.png"
+dest_files=["res://.godot/imported/ButtonHover.png-0ba498b01dbf5cb14d9ffb88f3235c5a.ctex"]
 
 [params]
 

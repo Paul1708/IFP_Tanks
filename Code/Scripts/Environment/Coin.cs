@@ -1,5 +1,5 @@
 using Godot;
-using Movement;
+using Player;
 using Managers;
 
 namespace Items;
@@ -11,14 +11,14 @@ public partial class Coin : Area2D
 	[Export] public float Speed = 400.0f;
 	[Signal] public delegate void OnCoinCollectedEventHandler();
 
-	Player player;
+	PlayerMovement player;
 
 	protected MusicController musicController;
 
 	public override void _Ready()
 	{
 		GetNode<AnimatedSprite2D>("CoinSprite").Play();
-		player = (Player)GetTree().GetFirstNodeInGroup("Player");
+		player = (PlayerMovement)GetTree().GetFirstNodeInGroup("Player");
 		musicController = GetNode<MusicController>("/root/MusicController");
 
 		OnCoinCollected += CollectCoin;

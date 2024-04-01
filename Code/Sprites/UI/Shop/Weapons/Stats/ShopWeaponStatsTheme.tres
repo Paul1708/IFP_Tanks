@@ -1,8 +1,8 @@
 [gd_resource type="Theme" format=3 uid="uid://dmckm7xvjxe81"]
 
 [resource]
-HBoxContainer/constants/separation = 25
-Label/colors/font_color = Color(0.427451, 0.509804, 0.784314, 1)
+HBoxContainer/constants/separation = 20
+Label/colors/font_color = Color(0.427451, 0.458824, 0.552941, 1)
 Label/colors/font_outline_color = Color(0, 0, 0, 1)
 Label/constants/outline_size = 5
-Label/font_sizes/font_size = 40
+Label/font_sizes/font_size = 60

@@ -48,8 +48,8 @@ public partial class HealthComponent : Node2D
     {
         if (value < 0) return;
 
-        SetCurrentHP(currentHP + value);
         maxHP += value;
+        SetCurrentHP(currentHP + value);
         EmitSignal(SignalName.OnMaxHealthChanged, maxHP);
     }
 

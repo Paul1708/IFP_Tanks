@@ -72,9 +72,15 @@ public partial class HealthBar : TextureProgressBar
     {
         maxHP = newMaxHP;
         UpdateLabelText();
-        maxHP = newMaxHP;
+
+        // set max health
         redBar.MaxValue = maxHP;
         greenBar.MaxValue = maxHP;
+
+        // set current health    
+        currentHP = PlayerManager.Instance.PlayerHealthComponent.currentHP;
+        redBar.Value = currentHP;
+        greenBar.Value = currentHP;
     }
 
     private void UpdateRedHealthBar()
