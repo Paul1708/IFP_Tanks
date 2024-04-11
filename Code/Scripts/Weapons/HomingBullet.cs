@@ -30,8 +30,7 @@ public partial class HomingBullet : Bullet
         particles.EmitParticles(this, Scene.Explosion);
         QueueFree();
     }
-
-    //TODO: Hierfür einen Test. Überprüfen mit Invariante: Zielpunkt neu ist näher am TargetEnemy als der Alte
+    
     protected override void Move()
     {
         //If the target is null, then abort launching bullet
@@ -83,7 +82,10 @@ public partial class HomingBullet : Bullet
         }
         else
         {
-            TargetDirection = (_target - GlobalPosition).Normalized(); //init bullet with direct direction
+            //in it bullet with gun rotation
+            float rot = Shooter.GetNode<GunController>("Gun").GlobalRotation;
+            TargetDirection = new Vector2(1, 0).Rotated(rot).Normalized();
+            //TargetDirection = (_target - GlobalPosition).Normalized(); //init bullet with direct direction
         }
     }
 

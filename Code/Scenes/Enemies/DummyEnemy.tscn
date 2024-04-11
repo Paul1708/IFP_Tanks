@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_chuvg"]
 [ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="3_n53ey"]
 [ext_resource type="Texture2D" uid="uid://dyvtnwvkj8ds8" path="res://Sprites/Tanks/TankYellow.png" id="4_g1t0g"]
-[ext_resource type="Script" path="res://Scripts/Enemies/DummyBehaviour.cs" id="5_k678x"]
+[ext_resource type="Script" path="res://Scripts/Enemies/KamikazeBehaviour.cs" id="5_3ubfi"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="6_4ges3"]
 [ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="7_imfqm"]
 [ext_resource type="Texture2D" uid="uid://bfd4pyhmq4i2" path="res://Sprites/Tanks/GunYellow.png" id="8_fm1vq"]
@@ -384,7 +384,10 @@ position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_48yjh")
 
 [node name="Behaviour" type="Node2D" parent="."]
-script = ExtResource("5_k678x")
+script = ExtResource("5_3ubfi")
+ExplosionDamage = 5000.0
+ExplosionDamageRadius = 200.0
+TargetReachedDistance = 100.0
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("6_4ges3")
@@ -418,6 +421,7 @@ target_desired_distance = 19.52
 path_postprocessing = 1
 debug_enabled = true
 script = ExtResource("9_wxrj1")
+MovementSpeed = 100.0
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("10_wnk1f")

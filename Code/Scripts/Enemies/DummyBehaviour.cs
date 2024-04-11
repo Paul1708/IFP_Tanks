@@ -8,5 +8,6 @@ public partial class DummyBehaviour : Behaviour
     public override void ExecuteBehaivour()
     {
         Gun.RotateTowards(Player.GlobalPosition);
+        
     }
 }

@@ -28,7 +28,7 @@ public partial class GrenadeBullet : Bullet
 	{
 		_offsetAngle = Mathf.DegToRad(ArcAngleOffsetDeg);
 		
-		//TODO: Disable this line if you dont want to set the grenade target to where the player clicked
+		// Disable this line if you dont want to set the grenade target to where the player clicked
 		Speed = 0.93F * Mathf.Sqrt((GravitationalForce * (GetGlobalMousePosition() - GlobalPosition).Length()) / Mathf.Sin(2.0F*_offsetAngle));
 		
 		_shadow = GetNode<RigidBody2D>("Shadow");

@@ -8,6 +8,8 @@ namespace Weapons
     public abstract partial class Bullet : RigidBody2D
     {
         public int damage { get; set; }
+        public Node2D Shooter { get; set; }
+        
         [Export] public float Speed { get; set; } //speed of the bullet
 
         protected Node2D player;
