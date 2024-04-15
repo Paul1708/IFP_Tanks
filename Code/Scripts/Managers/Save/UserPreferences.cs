@@ -12,6 +12,8 @@ public partial class UserPreferences : Resource
     public float MusicVolume { get; set; } = 1.0f;
     [Export(PropertyHint.Range, "0, 1, 0.05")]
     public float SFXVolume { get; set; } = 1.0f;
+    [Export]
+    public bool IsFullscreen { get; set; } = false;
 
     public void Save()
     {
@@ -20,11 +22,15 @@ public partial class UserPreferences : Resource
     
     public static UserPreferences LoadOrCreate()
     {
-        var userPreferences = ResourceLoader.Load<UserPreferences>("user://UserPreferences.tres") as UserPreferences;
-        if (userPreferences == null)
+        var userPreferences = new UserPreferences();
+        if (userPreferences == null || ResourceLoader.Exists("user://UserPreferences.tres") == false)
         {
             userPreferences = new UserPreferences();
-            //userPreferences.Save();
+            userPreferences.Save();
+        }
+        else
+        {
+            userPreferences = ResourceLoader.Load<UserPreferences>("user://UserPreferences.tres");
         }
         return userPreferences;
     }

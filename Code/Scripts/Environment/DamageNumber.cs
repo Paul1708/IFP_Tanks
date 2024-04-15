@@ -3,10 +3,9 @@ using Godot;
 namespace Components;
 public partial class DamageNumber : RigidBody2D
 {
-    public Timer Timer { get; set; }
     public string Text { get; set; }
     public Label label { get; set; }
-    private float lifeTime = 1f;        // The lifetime of the damage number
+    private float lifeTime = 0.65f;        // The lifetime of the damage number
     private float rotationSpeed;        // How much the damage number rotates
     private float horizontalSpeed;      // How fast the damage number moves horizontally
     private float verticalSpeed = -300; // The initial vertical speed of the damage number
@@ -30,7 +29,7 @@ public partial class DamageNumber : RigidBody2D
 
         // Create a tween that will scale the damage number from 1 to 0.2 in its lifetime
         Tween tween = GetTree().CreateTween();
-        tween.TweenProperty(label, "scale", Vector2.One * 0.2f, lifeTime)
+        tween.TweenProperty(label, "scale", Vector2.One * 0.2f, 1f)
             .SetTrans(Tween.TransitionType.Back);
     }
 

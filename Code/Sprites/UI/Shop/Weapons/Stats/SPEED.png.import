@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bu77gv46o1g7d"
-path="res://.godot/imported/tankweapon.png-dfdc21349e335645903a6c7ac5bdc0d1.ctex"
+uid="uid://cww0vfocgxss1"
+path="res://.godot/imported/SPEED.png-14e1489ec283b8994e3f098937bb3b6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tankweapon.png"
-dest_files=["res://.godot/imported/tankweapon.png-dfdc21349e335645903a6c7ac5bdc0d1.ctex"]
+source_file="res://Sprites/UI/Shop/Weapons/Stats/SPEED.png"
+dest_files=["res://.godot/imported/SPEED.png-14e1489ec283b8994e3f098937bb3b6a.ctex"]
 
 [params]
 

@@ -8,27 +8,17 @@ public struct Weapon
 {
 	public string name;
 	public int listIndex;
-	public int price;
 	public Label priceTag;
 	public bool unlocked = false;
 	public bool equipped = false;
-	public PackedScene bulletScene;
+	public WeaponStats weaponStats;
 	public Weapon() { }
-	public Weapon(string name, int listIndex, PackedScene bulletScene)
+	public Weapon(string name, int listIndex, WeaponStats weaponStats)
 	{
 		this.name = name;
 		this.listIndex = listIndex;
-		this.bulletScene = bulletScene;
+		this.weaponStats = weaponStats;
 	}
-}
-
-readonly struct Bullet
-{
-	public static readonly PackedScene DefaultBulllet = GD.Load<PackedScene>("res://Scenes/Weapons/50cal.tscn");
-	public static readonly PackedScene BouncingBullet = GD.Load<PackedScene>("res://Scenes/Weapons/BouncingBullet.tscn");
-	public static readonly PackedScene RocketBullet = GD.Load<PackedScene>("res://Scenes/Weapons/HomingBullet.tscn");
-	public static readonly PackedScene GrenadeBullet = GD.Load<PackedScene>("res://Scenes/Weapons/GrenadeBullet.tscn");
-	public static readonly PackedScene LaserBullet = GD.Load<PackedScene>("res://Scenes/Weapons/LaserBullet.tscn");
 }
 
 public partial class ShopWeaponsTab : ShopBaseTab
@@ -42,12 +32,9 @@ public partial class ShopWeaponsTab : ShopBaseTab
 	{
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
+		
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
-
 		levelManager.OnLevelChanged += ResetScrollBar;
-
-		GetPriceTags();
-		UpdatePrices();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -66,38 +53,6 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		Vector2 position = control.Position;
 		position.X = (float)-hScrollBar.Value;
 		control.Position = position;
-	}
-
-	///<summary>
-	///get all price tags from the scene by their path that only differs in the Panel number and connect them to the weapons
-	/// </summary>
-	protected override void GetPriceTags()
-	{
-		Label[] weaponPriceTags = new Label[ShopManager.Instance.weaponsList.Count];
-
-		for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
-		{
-			weaponPriceTags[i] = GetPriceTagByPanel(i + 1);
-			Weapon weapon = ShopManager.Instance.weaponsList[i];
-			weapon.priceTag = weaponPriceTags[i];
-			ShopManager.Instance.weaponsList[i] = weapon;
-		}
-	}
-
-	///<summary>
-	///Update the prices of the items in the shop by parsing the price from the price tags.
-	/// </summary>
-	protected override void UpdatePrices()
-	{
-		int[] weaponPrices = new int[ShopManager.Instance.weaponsList.Count];
-
-		for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
-		{
-			weaponPrices[i] = ParsePrice(i + 1);
-			Weapon weapon = ShopManager.Instance.weaponsList[i];
-			weapon.price = weaponPrices[i];
-			ShopManager.Instance.weaponsList[i] = weapon;
-		}
 	}
 
 	private void OnBuy1Pressed()
@@ -136,5 +91,11 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		Weapon laserWeapon = ShopManager.Instance.weaponsList[4];
 		if (laserWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(laserWeapon);
 		else ShopManager.Instance.BuyWeapon(laserWeapon);
+	}
+	private void OnBuy6Pressed()
+	{
+		Weapon machineGunWeapon = ShopManager.Instance.weaponsList[5];
+		if (machineGunWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(machineGunWeapon);
+		else ShopManager.Instance.BuyWeapon(machineGunWeapon);
 	}
 }

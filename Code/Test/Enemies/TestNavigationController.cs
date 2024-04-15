@@ -4,7 +4,7 @@ using Components;
 using GdUnit4;
 using Godot;
 using Managers;
-using Movement;
+using Player;
 
 [TestSuite]
 public class TestNavigationController

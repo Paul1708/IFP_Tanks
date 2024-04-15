@@ -37,7 +37,6 @@ lock_rotation = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_mt0ss")
-Speed = 1000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12.5, -0.499974)
@@ -45,6 +44,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_amix1")
 
 [node name="DestroyTimer" type="Timer" parent="."]
+wait_time = 0.2
 one_shot = true
 autostart = true
 

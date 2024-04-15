@@ -31,27 +31,17 @@ public partial class ShopStatsTab : ShopBaseTab
 	{
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 
-		ShopManager.Instance.OnItemBoughtUpdatePrices += UpdatePrices;
-
 		hScrollBar = GetNode<HScrollBar>("HScrollBar");
 		control = GetNode<Node2D>("RichTextLabel/Control");
 
 		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 		levelManager.OnLevelChanged += ResetScrollBar;
-
-		GetPriceTags();
-		UpdatePrices();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		Scroll();
-	}
-
-	public override void _ExitTree()
-	{
-		ShopManager.Instance.OnItemBoughtUpdatePrices -= UpdatePrices;
 	}
 
 	protected override void ResetScrollBar()
@@ -64,41 +54,6 @@ public partial class ShopStatsTab : ShopBaseTab
 		Vector2 position = control.Position;
 		position.X = (float)-hScrollBar.Value;
 		control.Position = position;
-	}
-
-	///<summary>
-	///Get all price tags from the scene by their path that only differs in the Panel number and connect them to the stats.
-	/// </summary>
-	protected override void GetPriceTags()
-	{
-		Label[] statsPriceTags = new Label[ShopManager.Instance.statsList.Count];
-
-		for (int i = 0; i < ShopManager.Instance.statsList.Count; i++)
-		{
-			statsPriceTags[i] = GetPriceTagByPanel(i + 1);
-			Stat stat = ShopManager.Instance.statsList[i];
-			stat.priceTag = statsPriceTags[i];
-			ShopManager.Instance.statsList[i] = stat;
-		}
-	}
-
-	///<summary>
-	///Update the prices of the items in the shop by parsing the price from the price tags and updating the price in the list.
-	///The price stored in the list is the difference between the parsed price and the base price of the item.
-	/// </summary>
-	protected override void UpdatePrices()
-	{
-		int[] statsPrices = new int[ShopManager.Instance.statsList.Count];
-
-		for (int i = 0; i < ShopManager.Instance.statsList.Count; i++)
-		{
-			statsPrices[i] = ParsePrice(i + 1);
-			Stat stat = ShopManager.Instance.statsList[i];
-			ShopPrices shopPrices = stat.priceTag as ShopPrices;
-			int basePrice = shopPrices.basePrice;
-			stat.price = statsPrices[i] - basePrice;
-			ShopManager.Instance.statsList[i] = stat;
-		}
 	}
 
 	private void OnBuy1Pressed()
@@ -117,19 +72,28 @@ public partial class ShopStatsTab : ShopBaseTab
 	private void OnBuy2Pressed()
 	{
 		Stat maxHPStat = ShopManager.Instance.statsList[1];
-		if (ShopManager.Instance.BuyStat(maxHPStat)) PlayerManager.Instance.PlayerHealthComponent.IncreaseMaxHealth(10);
+		if (ShopManager.Instance.BuyStat(maxHPStat))
+		{
+			PlayerManager.Instance.AddMaxHealth(10);
+		}
 
 	}
 
 	private void OnBuy3Pressed()
 	{
 		Stat DMGStat = ShopManager.Instance.statsList[2];
-		ShopManager.Instance.BuyStat(DMGStat);
+		if (ShopManager.Instance.BuyStat(DMGStat))
+		{
+			PlayerManager.Instance.AddDamageModifier(0.1f);
+		}
 	}
 
 	private void OnBuy4Pressed()
 	{
 		Stat speedStat = ShopManager.Instance.statsList[3];
 		ShopManager.Instance.BuyStat(speedStat);
+		{
+			PlayerManager.Instance.AddMovementSpeed(10f);
+		}
 	}
 }

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Godot;
 using Managers.Level;
+using Player;
 
 namespace Managers.Save;
 
@@ -14,11 +15,12 @@ public partial class SaveData : Resource
     [Export]
     public int CoinCount { get; set; }
     [Export]
-    public int PlayerMaxHP { get; set; }
-    [Export]
     public int PlayerCurrentHP { get; set; }
-    
-    /// <summary>
+    [Export]
+    public PlayerStats PlayerStats { get; set; }
+
+    /// <summary/* It seems like there is no mention of variable `r` in the provided C# code snippet. If
+
     ///The first index is the stat index and the second index is the price or quantity.
     ///E.g. [0][0] to adress the price and [0][1] to adress the quantity of the first stat.
     /// </summary>
@@ -45,11 +47,22 @@ public partial class SaveData : Resource
             new() {false, false},
             new() {false, false},
             new() {false, false},
+            new() {false, false},
         };
         LastCheckpointLevelID = 0;
         LastCheckpointWorldID = 0;
-        CoinCount = 0;
-        PlayerMaxHP = 100;
+        CoinCount = 999999;
         PlayerCurrentHP = 100;
+        PlayerStats = new PlayerStats()
+        {
+            BaseMovementSpeed = SaveManager.Instance.InitialPlayerStats.BaseMovementSpeed,
+            CurrentMovementSpeed = SaveManager.Instance.InitialPlayerStats.BaseMovementSpeed,
+            BaseRotationSpeed = SaveManager.Instance.InitialPlayerStats.BaseRotationSpeed,
+            CurrentRotationSpeed = SaveManager.Instance.InitialPlayerStats.BaseRotationSpeed,
+            BaseDamageModifier = SaveManager.Instance.InitialPlayerStats.BaseDamageModifier,
+            CurrentDamageModifier = SaveManager.Instance.InitialPlayerStats.BaseDamageModifier,
+            BaseMaxHealth = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth,
+            CurrentMaxHealth = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth
+        };
     }
 }

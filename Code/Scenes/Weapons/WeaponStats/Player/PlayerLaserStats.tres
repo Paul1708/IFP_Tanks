@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://bcjpvxuj71gmk"]
+
+[ext_resource type="PackedScene" uid="uid://d3lelrwh4w08u" path="res://Scenes/Weapons/LaserBullet.tscn" id="1_nlcof"]
+[ext_resource type="Script" path="res://Scripts/Weapons/WeaponStats.cs" id="2_tap8g"]
+
+[resource]
+script = ExtResource("2_tap8g")
+bulletScene = ExtResource("1_nlcof")
+damage = 3
+bulletsPerSecond = 0.4
+bulletSpeed = 100.0

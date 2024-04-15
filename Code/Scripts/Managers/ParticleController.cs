@@ -7,6 +7,7 @@ struct Scene
 	public static readonly PackedScene BulletCrack = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/BulletCrack.tscn");
 	public static readonly PackedScene Explosion = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/Explosion.tscn");
 	public static readonly PackedScene DrivingMud = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/DrivingMud.tscn");
+	public static readonly PackedScene DrivingGrass = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/DrivingGrass.tscn"); //TODO: change to DrivingGrass
 }
 
 public partial class ParticleController : Node2D
@@ -40,13 +41,15 @@ public partial class ParticleController : Node2D
 		CheckForOneShot(particles);
 		//set the position of the particles to the position of the given node
 		SetPostion(particles, position);
-		GetTree().GetFirstNodeInGroup("Level").AddChild(particles); //add the particle to the scene  
+
+		Node targetNode = GetTree().CurrentScene.Name == "MainGame" ? GetTree().GetFirstNodeInGroup("Level") : GetTree().GetFirstNodeInGroup("MainMenu");
+		targetNode.AddChild(particles); //add the particle to the scene  
+		
 		//Emitt particles
 		particles.Emitting = true;
 		//wait until the particles are finished
 		await ToSignal(particles, "finished");
 		//queue free the particles
 		particles.QueueFree();
-
 	}
 }

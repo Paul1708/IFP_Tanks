@@ -1,6 +1,6 @@
 using Godot;
 using System;
-using Movement;
+using Player;
 using Managers;
 using Shop;
 
@@ -8,42 +8,49 @@ namespace Weapons;
 
 public partial class GunController : Node2D
 {
-    [Export] PackedScene bulletScene;
-    [Export] public float bulletsPerSecond { get; set; } //how many bullets per second
-    [Export] public int bulletDamage { get; set; } //how much damage each bullet does
-
+    [Export] public WeaponStats weaponStats { get; set; }
 
     public float timeBetweenShots { get; private set; }
-
     private bool canShoot = true;
-
     private AnimatedSprite2D sprite;
     private Timer shootTimer;
-
     protected MusicController musicController;
+
+    // Das ist sowas von dreckig, aber ist mir egal :O
+    private bool isPlayerGunController = false;
 
     public override void _Ready()
     {
         musicController = GetNode<MusicController>("/root/MusicController");
-
-        if (bulletsPerSecond <= 0)
-        {
-            throw new Exception("Bullets per second must be greater than 0");
-        }
-        timeBetweenShots = 1 / bulletsPerSecond; //calculate the fire rate
-
         sprite = GetNode<AnimatedSprite2D>("GunSprite");
         shootTimer = GetNode<Timer>("ShootTimer");
-
         shootTimer.Timeout += () => canShoot = true;
-        
-        if (GetParent().IsInGroup("Player")) SetWeapon();
+
+        timeBetweenShots = 1 / weaponStats.bulletsPerSecond;
+
+
+        if (GetParent().IsInGroup("Player"))
+        {
+            SetWeapon();
+            isPlayerGunController = true;
+        }
+
+        ShopManager.Instance.OnWeaponEquipped += SetWeapon;
     }
 
-    public void SetWeapon () 
+    public override void _ExitTree()
     {
-        Weapon weapon = ShopManager.Instance.GetEquippedWeapon();
-        bulletScene = weapon.bulletScene;
+        ShopManager.Instance.OnWeaponEquipped -= SetWeapon;
+    }
+
+    public void SetWeapon()
+    {
+        if (GetParent().IsInGroup("Player"))
+        {
+            Weapon weapon = ShopManager.Instance.GetEquippedWeapon();
+            weaponStats = weapon.weaponStats;
+            timeBetweenShots = 1 / weapon.weaponStats.bulletsPerSecond;
+        }
     }
 
     public void RotateTowards(Vector2 target)
@@ -55,7 +62,6 @@ public partial class GunController : Node2D
     {
         if (canShoot)
         {
-
             SpawnBullet();
 
             //Play Sound
@@ -74,9 +80,13 @@ public partial class GunController : Node2D
 
     private void SpawnBullet()
     {
-        //create a bullet
-        Bullet bullet = bulletScene.Instantiate<Bullet>();
-        bullet.damage = bulletDamage;
+        //create a bullet and set its damage and speed
+        Bullet bullet = weaponStats.bulletScene.Instantiate<Bullet>();
+        bullet.damage = weaponStats.damage;
+        if (isPlayerGunController)
+        {
+            bullet.damage = (int)(bullet.damage * PlayerManager.Instance.PlayerStats.CurrentDamageModifier);
+        }
 
         //if it is a homing bullet shot by the player then set the target to a random enemy.
         if (bullet is HomingBullet hb)
@@ -84,7 +94,7 @@ public partial class GunController : Node2D
 
         // set rotation and velocity of bullet
         bullet.Rotation = GlobalRotation;
-        bullet.LinearVelocity = bullet.Transform.X.Normalized() * bullet.Speed;
+        bullet.LinearVelocity = bullet.Transform.X.Normalized() * weaponStats.bulletSpeed;
 
         // set position of bullet to muzzle
         var muzzle = GetNode<Marker2D>("muzzle");
@@ -99,9 +109,9 @@ public partial class GunController : Node2D
     private void _setHomingBulletTarget(HomingBullet bullet)
     {
         Node parent = GetParent();
-        if (parent is Player)
+        if (parent is PlayerMovement)
         {
-            if(GetTree().GetNodesInGroup("Enemy").Count > 0)
+            if (GetTree().GetNodesInGroup("Enemy").Count > 0)
                 bullet.TargetNode = GetTree().GetNodesInGroup("Enemy").PickRandom() as Node2D;
         }
         else if (parent is Enemy)
@@ -113,6 +123,6 @@ public partial class GunController : Node2D
             throw new ArgumentException("Invalid bullet owner");
         }
     }
-    
+
 }
 

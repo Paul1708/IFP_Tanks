@@ -11,7 +11,7 @@ namespace Weapons
         public Node2D Shooter { get; set; }
         
         [Export] public float Speed { get; set; } //speed of the bullet
-
+        
         protected Node2D player;
         protected HealthComponent playerHealthComponent;
         protected ParticleController particles;
@@ -88,7 +88,7 @@ namespace Weapons
          * Describe the move behavior of all bullet types. This method is called on every physic process tick.
          */
         protected virtual void Move() { }
-        
+
 
         public virtual void Destroy()
         {

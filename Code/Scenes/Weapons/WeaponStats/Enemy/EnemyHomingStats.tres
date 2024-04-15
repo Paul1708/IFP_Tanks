@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://drnmldknrkx1k"]
+
+[ext_resource type="Script" path="res://Scripts/Weapons/WeaponStats.cs" id="1_ppjx8"]
+[ext_resource type="PackedScene" uid="uid://bpyg8h74vn0r6" path="res://Scenes/Weapons/HomingBullet.tscn" id="2_atgkm"]
+
+[resource]
+script = ExtResource("1_ppjx8")
+bulletScene = ExtResource("2_atgkm")
+damage = 20
+bulletsPerSecond = 0.33
+bulletSpeed = 5.0

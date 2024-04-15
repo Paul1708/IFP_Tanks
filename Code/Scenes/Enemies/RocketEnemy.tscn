@@ -1,18 +1,19 @@
-[gd_scene load_steps=30 format=3 uid="uid://4ex5rdvrveg3"]
+[gd_scene load_steps=31 format=3 uid="uid://4ex5rdvrveg3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_hiahh"]
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_5qh4k"]
 [ext_resource type="Texture2D" uid="uid://yyatfwo0expa" path="res://Sprites/Tanks/TankBlue.png" id="2_fajxa"]
+[ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="3_328m8"]
 [ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="3_u3vcg"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="4_egmny"]
-[ext_resource type="PackedScene" uid="uid://bpyg8h74vn0r6" path="res://Scenes/Weapons/HomingBullet.tscn" id="5_6u5xn"]
-[ext_resource type="Script" path="res://Scripts/Enemies/RocketBehaviour.cs" id="5_o6wx5"]
 [ext_resource type="Texture2D" uid="uid://dylbxstfcgudy" path="res://Sprites/Tanks/GunBlue.png" id="6_nojed"]
+[ext_resource type="Resource" uid="uid://drnmldknrkx1k" path="res://Scenes/Weapons/WeaponStats/Enemy/EnemyHomingStats.tres" id="7_a4qly"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="7_igvkk"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="8_cqfsr"]
 [ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_jbxwx"]
 [ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="11_rvtfd"]
 [ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_k6nxf"]
+[ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="14_c05oh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j03un"]
 resource_local_to_scene = true
@@ -349,6 +350,7 @@ _data = {
 }
 
 [node name="RocketEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
+z_index = 1
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 0.0
@@ -381,17 +383,11 @@ position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_mntrx")
 
 [node name="Behaviour" type="Node2D" parent="."]
-script = ExtResource("5_o6wx5")
-MinPathLength = 200
-MaxPathLength = 500
-PathGoalHitRadius = 100.0
-MaxRandomTargetSearchTries = 3
+script = ExtResource("3_328m8")
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("4_egmny")
-bulletScene = ExtResource("5_6u5xn")
-bulletsPerSecond = 0.5
-bulletDamage = 20
+weaponStats = ExtResource("7_a4qly")
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
 position = Vector2(69, 0)
@@ -440,3 +436,6 @@ libraries = {
 
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
 script = ExtResource("11_rvtfd")
+
+[node name="TrailComponent" parent="." instance=ExtResource("14_c05oh")]
+timeBetweenTrails = 0.25

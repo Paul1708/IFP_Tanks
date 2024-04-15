@@ -1,11 +1,11 @@
 [gd_scene load_steps=26 format=3 uid="uid://dr17omme2uqlx"]
 
-[ext_resource type="Script" path="res://Scripts/Movement/Player.cs" id="1_noslj"]
+[ext_resource type="Script" path="res://Scripts/Movement/PlayerMovement.cs" id="1_noslj"]
 [ext_resource type="Texture2D" uid="uid://blkfra54wh0pf" path="res://Sprites/Tanks/TankGreen.png" id="2_cn7mg"]
 [ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="2_ncg51"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="3_kf7xg"]
-[ext_resource type="PackedScene" uid="uid://bpyg8h74vn0r6" path="res://Scenes/Weapons/HomingBullet.tscn" id="4_hsbkk"]
 [ext_resource type="Texture2D" uid="uid://bm3kylaj0tjfn" path="res://Sprites/Tanks/GunGreen.png" id="5_fm6eq"]
+[ext_resource type="Resource" uid="uid://drmqm0hjoaj4j" path="res://Scenes/Weapons/WeaponStats/Player/Player50calStats.tres" id="5_rjkho"]
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="7_5i82i"]
 [ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="8_sdglm"]
 [ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="9_rbyi5"]
@@ -350,8 +350,6 @@ collision_layer = 3
 collision_mask = 3
 motion_mode = 1
 script = ExtResource("1_noslj")
-speed = 300.0
-RotationSpeed = 3.0
 
 [node name="TankBaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
@@ -381,9 +379,7 @@ shape = SubResource("RectangleShape2D_imdbc")
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_kf7xg")
-bulletScene = ExtResource("4_hsbkk")
-bulletsPerSecond = 3.0
-bulletDamage = 5
+weaponStats = ExtResource("5_rjkho")
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
 position = Vector2(80, 1)
@@ -417,7 +413,7 @@ libraries = {
 speed_scale = 3.5
 script = ExtResource("7_5i82i")
 
-[node name="Trail" parent="." instance=ExtResource("8_sdglm")]
+[node name="TrailComponent" parent="." instance=ExtResource("8_sdglm")]
 
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
 script = ExtResource("9_rbyi5")

@@ -1,11 +1,14 @@
 using System.ComponentModel.DataAnnotations;
 using Godot;
+using Player;
 using Shop;
 
 namespace Managers.Save;
 
 public partial class SaveManager : Node
 {
+    [Export]
+    public PlayerStats InitialPlayerStats { get; set; }
     public static SaveManager Instance { get; private set; }
     public SaveData SaveData { get; private set; }
     public LoadingType LoadingType { get; set; } = LoadingType.NONE;
@@ -32,8 +35,8 @@ public partial class SaveManager : Node
     public void SaveGame()
     {
         SaveData.PlayerCurrentHP = PlayerManager.Instance.PlayerHealthComponent.currentHP;
-        SaveData.PlayerMaxHP = PlayerManager.Instance.PlayerHealthComponent.maxHP;
         SaveData.CoinCount = CoinManager.Instance.Coins;
+        SaveData.PlayerStats = PlayerManager.Instance.PlayerStats;
         SaveShopState();
 
         ResourceSaver.Save(SaveData, "user://savegame.tres");
@@ -64,7 +67,6 @@ public partial class SaveManager : Node
         {
             throw new ValidationException("LoadingType is not set. Please set the LoadingType before calling LoadGame()");
         }
-
         EmitSignal(SignalName.OnSaveDataLoaded, SaveData);
         LoadingType = LoadingType.NONE;
     }
