@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_hiahh"]
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_5qh4k"]
 [ext_resource type="Texture2D" uid="uid://yyatfwo0expa" path="res://Sprites/Tanks/TankBlue.png" id="2_fajxa"]
-[ext_resource type="Script" path="res://Scripts/Enemies/BasicBehaviour.cs" id="3_328m8"]
 [ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="3_u3vcg"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="4_egmny"]
+[ext_resource type="Script" path="res://Scripts/Enemies/RocketBehaviour.cs" id="5_yegiv"]
 [ext_resource type="Texture2D" uid="uid://dylbxstfcgudy" path="res://Sprites/Tanks/GunBlue.png" id="6_nojed"]
 [ext_resource type="Resource" uid="uid://drnmldknrkx1k" path="res://Scenes/Weapons/WeaponStats/Enemy/EnemyHomingStats.tres" id="7_a4qly"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="7_igvkk"]
@@ -383,7 +383,11 @@ position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_mntrx")
 
 [node name="Behaviour" type="Node2D" parent="."]
-script = ExtResource("3_328m8")
+script = ExtResource("5_yegiv")
+MinPathLength = 200
+MaxPathLength = 500
+PathGoalHitRadius = 150.0
+MaxRandomTargetSearchTries = 5
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("4_egmny")

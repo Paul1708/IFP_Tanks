@@ -8,4 +8,4 @@ script = ExtResource("2_snrvp")
 bulletScene = ExtResource("1_6qinc")
 damage = 5
 bulletsPerSecond = 1.5
-bulletSpeed = 100.0
+bulletSpeed = 10.0

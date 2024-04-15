@@ -28,19 +28,19 @@ public partial class GrenadeBullet : Bullet
     {
         _offsetAngle = Mathf.DegToRad(ArcAngleOffsetDeg);
 
-        //TODO: Disable this line if you dont want to set the grenade target to where the player clicked
-        speed = 0.93F * Mathf.Sqrt((GravitationalForce * (GetGlobalMousePosition() - GlobalPosition).Length()) / Mathf.Sin(2.0F * _offsetAngle));
+        //Disable this line if you dont want to set the grenade target to where the player clicked
+        Speed = 0.93F * Mathf.Sqrt((GravitationalForce * (GetGlobalMousePosition() - GlobalPosition).Length()) / Mathf.Sin(2.0F * _offsetAngle));
 
         _shadow = GetNode<RigidBody2D>("Shadow");
         _targetSprite = GetNode<CpuParticles2D>("TargetPoint");
 
-        _shootDirection = new Vector2(1, 0).Rotated(GlobalRotation).Normalized() * speed;
+        _shootDirection = new Vector2(1, 0).Rotated(GlobalRotation).Normalized() * Speed;
 
         _shootDirectionNormal = _shootDirection.Rotated(Mathf.Pi / 2).Normalized();
         _shootPosition = GlobalPosition;
 
 
-        _grenadeGroundHitTime = (2 * speed * Mathf.Sin(_offsetAngle)) / GravitationalForce;
+        _grenadeGroundHitTime = (2 * Speed * Mathf.Sin(_offsetAngle)) / GravitationalForce;
         _hitLocation = _grenadeGroundHitTime * new Vector2(_shootDirection[0], _shootDirection[1])
                                        + new Vector2(_shootPosition[0], _shootPosition[1]);
         _targetSprite.GlobalPosition = _hitLocation;
@@ -86,9 +86,9 @@ public partial class GrenadeBullet : Bullet
     private Vector2 _normalizedTrajectory(float t)
     {
         //x(t) = ||s|| * t * cos(b) from "Schiefer Wurf"
-        float x = speed * t * Mathf.Cos(_offsetAngle);
+        float x = Speed * t * Mathf.Cos(_offsetAngle);
         //y(t) = -g/2 * t^2 + ||s||*t*sin(b) from "Schiefer Wurf"
-        float y = -GravitationalForce / 2.0F * Mathf.Pow(t, 2.0F) + speed * t * Mathf.Sin(_offsetAngle);
+        float y = -GravitationalForce / 2.0F * Mathf.Pow(t, 2.0F) + Speed * t * Mathf.Sin(_offsetAngle);
 
         return new Vector2(x, y);
     }

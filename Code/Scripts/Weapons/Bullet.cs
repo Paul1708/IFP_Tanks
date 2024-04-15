@@ -7,9 +7,11 @@ namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
     {
-        public int damage;
-        public float speed; //speed of the bullet
-
+        public int damage { get; set; }
+        public Node2D Shooter { get; set; }
+        
+        public float Speed { get; set; } //speed of the bullet
+        
         protected Node2D player;
         protected HealthComponent playerHealthComponent;
         protected ParticleController particles;
@@ -51,7 +53,8 @@ namespace Weapons
             {
                 OnDamageableHit(node);
             }
-            else if (node.IsInGroup("Wall"))
+
+            else if (node.IsInGroup("Wall") || node is TileMap)
             {
                 OnWallHit();
             }
