@@ -61,8 +61,9 @@ lock_rotation = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_l3sxi")
-HomingTicks = 1
-MaxRotationDeg = 0.9
+HomingTicks = 5
+MaxRotationDeg = 30.0
+Speed = 5.0
 
 [node name="GFX" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.2, 0.2)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Components;
 using Godot;
 using Managers;
@@ -17,8 +17,6 @@ public partial class KamikazeBehaviour : Behaviour
     
     
     //TODO: Bullets from enemies cannot hit other enemies
-    //TODO: Laser only damages in Bullet-Hit rate not every frame
-    //TODO: Merge Develop with current branch for updated Bullet stats
     //TODO: When two bullets of same group i.e. shot by enemy collide, destroy the weaker one, if they are the same type delete a random one
     
     public override void Setup()
@@ -43,7 +41,6 @@ public partial class KamikazeBehaviour : Behaviour
 
     private void _explode()
     {
-        //TODO: Play Explosion Animation
         HealthComponent hc = Enemy.GetNode<HealthComponent>("HealthComponent");
         hc.TakeDamage(hc.maxHP);
         

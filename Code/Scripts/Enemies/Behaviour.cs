@@ -57,7 +57,7 @@ public abstract partial class Behaviour : Node2D
         return vector;
     }
 
-    private Vector2 _createRandomVector()
+    private Vector2 _createRandomVector() //weighted towards players direction
     {
         Random rdm = new Random();
         float pathLength = rdm.Next(MinPathLength, MaxPathLength);

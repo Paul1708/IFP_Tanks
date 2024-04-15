@@ -386,7 +386,7 @@ shape = SubResource("RectangleShape2D_48yjh")
 
 [node name="Behaviour" type="Node2D" parent="."]
 script = ExtResource("5_3ubfi")
-ExplosionDamage = 5000.0
+ExplosionDamage = 10000.0
 ExplosionDamageRadius = 200.0
 TargetReachedDistance = 100.0
 

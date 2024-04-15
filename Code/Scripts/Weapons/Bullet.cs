@@ -10,7 +10,7 @@ namespace Weapons
         public int damage { get; set; }
         public Node2D Shooter { get; set; }
         
-        [Export] public float Speed { get; set; } //speed of the bullet
+        public float Speed { get; set; } //speed of the bullet
         
         protected Node2D player;
         protected HealthComponent playerHealthComponent;
@@ -53,7 +53,7 @@ namespace Weapons
             {
                 OnDamageableHit(node);
             }
-            //TODO: Hotfix: NodeGroup Wall is always empty, therefor a bouncing bullet is always destroyed on anything hit
+
             else if (node.IsInGroup("Wall") || node is TileMap)
             {
                 OnWallHit();

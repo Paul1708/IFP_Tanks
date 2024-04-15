@@ -100,6 +100,7 @@ public partial class GunController : Node2D
         var muzzle = GetNode<Marker2D>("muzzle");
         bullet.GlobalPosition = muzzle.GlobalPosition;
         bullet.Shooter = GetParent() as Node2D;
+        bullet.Speed = weaponStats.bulletSpeed;
         bullet.AddToGroup("Bullets");
         
         //add the bullet to the scene tree 
