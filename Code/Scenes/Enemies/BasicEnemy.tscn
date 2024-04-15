@@ -387,6 +387,10 @@ shape = SubResource("RectangleShape2D_48yjh")
 
 [node name="Behaviour" type="Node2D" parent="."]
 script = ExtResource("2_6n3w1")
+MinPathLength = 200
+MaxPathLength = 500
+PathGoalHitRadius = 150.0
+MaxRandomTargetSearchTries = 4
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_qc42x")
