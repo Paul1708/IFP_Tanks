@@ -5,11 +5,13 @@ public partial class Enemy : CharacterBody2D
 {
 	private TrailComponent trailComponent;
 	private HealthComponent _healthComponent { get; set; }
+	public AnimationHandler AnimationHandler { get; set; }
 	[Export] public PackedScene DropItemScene { get; set; }
 
 	public override void _Ready()
 	{
 		trailComponent = GetNode<TrailComponent>("TrailComponent");
+		AnimationHandler = GetNode<AnimationHandler>("AnimationPlayer");
 		_healthComponent = GetNode<HealthComponent>("HealthComponent");
 		_healthComponent.OnDeath += OnDeath;
 	}
@@ -21,6 +23,9 @@ public partial class Enemy : CharacterBody2D
 		{
 			trailComponent.EmitTrail();
 		}
+		Vector2 movement = this.Velocity;
+		AnimationHandler.PlayAnimationOfInput(movement);
+
 	}
 
 	public override void _ExitTree()

@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="6_ot0ae"]
 [ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="7_acc1d"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="7_w8odi"]
-[ext_resource type="Texture2D" uid="uid://blkfra54wh0pf" path="res://Sprites/Tanks/TankGreen.png" id="9_pcxib"]
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="10_ge3kf"]
 [ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_8usnr"]
 [ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_14xm2"]
@@ -87,7 +86,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_e2tqd"]
+[sub_resource type="Animation" id="Animation_6468f"]
+resource_name = "Forward"
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -100,71 +100,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_pcxib")]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TankBaseSprite:hframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = false
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TankBaseSprite:vframes")
-tracks/2/interp = 1
-tracks/2/loop_wrap = false
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [3]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("TankBaseSprite:visible")
-tracks/3/interp = 1
-tracks/3/loop_wrap = false
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("TankBaseSprite:frame")
-tracks/4/interp = 1
-tracks/4/loop_wrap = false
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [3, 4, 1, 0]
-}
-
-[sub_resource type="Animation" id="Animation_8puoc"]
-length = 0.4
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TankBaseSprite:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = false
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("9_pcxib")]
+"values": [ExtResource("2_itl5e")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -215,7 +151,23 @@ tracks/4/keys = {
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="Animation" id="Animation_6kafa"]
+[sub_resource type="Animation" id="Animation_0l03p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TankBaseSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_itl5e")]
+}
+
+[sub_resource type="Animation" id="Animation_w2ytg"]
+resource_name = "Backward"
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -228,7 +180,72 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_pcxib")]
+"values": [ExtResource("2_itl5e")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TankBaseSprite:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TankBaseSprite:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TankBaseSprite:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TankBaseSprite:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = false
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [3, 2, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_fyjw4"]
+resource_name = "Left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TankBaseSprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_itl5e")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -279,7 +296,8 @@ tracks/4/keys = {
 "values": [0, 6, 2, 5]
 }
 
-[sub_resource type="Animation" id="Animation_6f1v0"]
+[sub_resource type="Animation" id="Animation_ew0pe"]
+resource_name = "Right"
 length = 0.4
 loop_mode = 1
 tracks/0/type = "value"
@@ -292,7 +310,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("9_pcxib")]
+"values": [ExtResource("2_itl5e")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -343,12 +361,13 @@ tracks/4/keys = {
 "values": [0, 5, 2, 6]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_m82lt"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_444e4"]
 _data = {
-"Backward": SubResource("Animation_e2tqd"),
-"Forward": SubResource("Animation_8puoc"),
-"Left": SubResource("Animation_6kafa"),
-"Right": SubResource("Animation_6f1v0")
+"Backward": SubResource("Animation_w2ytg"),
+"Forward": SubResource("Animation_6468f"),
+"Left": SubResource("Animation_fyjw4"),
+"RESET": SubResource("Animation_0l03p"),
+"Right": SubResource("Animation_ew0pe")
 }
 
 [node name="BasicEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
@@ -367,7 +386,7 @@ rotation = 1.5708
 texture = ExtResource("2_itl5e")
 hframes = 3
 vframes = 3
-frame = 3
+frame = 6
 metadata/_aseprite_wizard_config_ = {
 "keep_anim_length": false,
 "layer": "",
@@ -437,7 +456,7 @@ script = ExtResource("12_14xm2")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_m82lt")
+"": SubResource("AnimationLibrary_444e4")
 }
 speed_scale = 3.5
 script = ExtResource("10_ge3kf")

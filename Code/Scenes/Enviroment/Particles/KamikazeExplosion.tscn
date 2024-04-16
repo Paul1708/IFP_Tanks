@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://curh5r3qlm08p"]
+
+[ext_resource type="Texture2D" uid="uid://1uu4va6u0udk" path="res://Sprites/Bullets/Rocket/explosion-Sheet.png" id="1_pd8nf"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5s6ct"]
+particles_animation = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_mdgbi"]
+offsets = PackedFloat32Array(0.836066, 0.991803, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0.057377, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_d7tnb"]
+gradient = SubResource("Gradient_mdgbi")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_k2c10"]
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 3.0
+color_ramp = SubResource("GradientTexture1D_d7tnb")
+anim_speed_min = 0.8
+anim_speed_max = 0.8
+turbulence_noise_strength = 16.45
+turbulence_noise_scale = 7.895
+
+[node name="KamikazeExplosion" type="GPUParticles2D" groups=["Instanced"]]
+z_index = 1
+material = SubResource("CanvasItemMaterial_5s6ct")
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_k2c10")
+texture = ExtResource("1_pd8nf")
+lifetime = 0.8
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+
+[connection signal="finished" from="." to="." method="OnFinish"]

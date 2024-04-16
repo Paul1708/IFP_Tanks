@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Managers/Level/Level.cs" id="1_xyfkm"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_aspnu"]
 [ext_resource type="TileSet" uid="uid://cf0xavcu1aamw" path="res://Sprites/Tilesets/Desert Tileset.tres" id="4_7ye2a"]
-[ext_resource type="PackedScene" uid="uid://ck4qfrctxcyal" path="res://Scenes/Enemies/DummyEnemy.tscn" id="4_lubfa"]
+[ext_resource type="PackedScene" uid="uid://ck4qfrctxcyal" path="res://Scenes/Enemies/KamikazeEnemy.tscn" id="4_lubfa"]
 
 [node name="Level" type="Node2D" groups=["Level"]]
 script = ExtResource("1_xyfkm")

@@ -1,24 +1,24 @@
 [gd_scene load_steps=32 format=3 uid="uid://ck4qfrctxcyal"]
 
-[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_pdmmf"]
-[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_chuvg"]
-[ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="3_n53ey"]
-[ext_resource type="Texture2D" uid="uid://dyvtnwvkj8ds8" path="res://Sprites/Tanks/TankYellow.png" id="4_g1t0g"]
-[ext_resource type="Script" path="res://Scripts/Enemies/KamikazeBehaviour.cs" id="5_3ubfi"]
-[ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="6_4ges3"]
-[ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="7_7ffdt"]
-[ext_resource type="Texture2D" uid="uid://bfd4pyhmq4i2" path="res://Sprites/Tanks/GunYellow.png" id="8_fm1vq"]
-[ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="9_wxrj1"]
-[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="10_wnk1f"]
-[ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_4xtg1"]
-[ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="12_35or0"]
-[ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="12_bkemy"]
-[ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_jtlle"]
-[ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="15_ervly"]
+[ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_m5ifg"]
+[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_cr5fy"]
+[ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="3_w3b6u"]
+[ext_resource type="Texture2D" uid="uid://dyvtnwvkj8ds8" path="res://Sprites/Tanks/TankYellow.png" id="4_g6kjl"]
+[ext_resource type="Script" path="res://Scripts/Enemies/KamikazeBehaviour.cs" id="5_18fpa"]
+[ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="6_sqyqw"]
+[ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="7_5g3ol"]
+[ext_resource type="Texture2D" uid="uid://bfd4pyhmq4i2" path="res://Sprites/Tanks/GunYellow.png" id="8_cb5ya"]
+[ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="9_ia71e"]
+[ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="10_i2uvn"]
+[ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_ddw7m"]
+[ext_resource type="Script" path="res://Scripts/Components/DamageNumberController.cs" id="12_hvblw"]
+[ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="13_yrxel"]
+[ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="14_y3wj6"]
+[ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="15_sqgcd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_un74c"]
 resource_local_to_scene = true
-shader = ExtResource("3_n53ey")
+shader = ExtResource("3_w3b6u")
 shader_parameter/Weight = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48yjh"]
@@ -26,35 +26,35 @@ size = Vector2(86, 68)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_isks5"]
 resource_local_to_scene = true
-shader = ExtResource("3_n53ey")
+shader = ExtResource("3_w3b6u")
 shader_parameter/Weight = 0.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2bgx"]
-atlas = ExtResource("8_fm1vq")
+atlas = ExtResource("8_cb5ya")
 region = Rect2(48, 0, 48, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lia2c"]
-atlas = ExtResource("8_fm1vq")
+atlas = ExtResource("8_cb5ya")
 region = Rect2(96, 0, 48, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w84mf"]
-atlas = ExtResource("8_fm1vq")
+atlas = ExtResource("8_cb5ya")
 region = Rect2(0, 92, 48, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l78ht"]
-atlas = ExtResource("8_fm1vq")
+atlas = ExtResource("8_cb5ya")
 region = Rect2(48, 92, 48, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_iablx"]
-atlas = ExtResource("8_fm1vq")
+atlas = ExtResource("8_cb5ya")
 region = Rect2(96, 92, 48, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h0jtv"]
-atlas = ExtResource("8_fm1vq")
+atlas = ExtResource("8_cb5ya")
 region = Rect2(0, 184, 48, 92)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_48ykt"]
-atlas = ExtResource("8_fm1vq")
+atlas = ExtResource("8_cb5ya")
 region = Rect2(0, 0, 48, 92)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3m5xi"]
@@ -99,7 +99,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_g1t0g")]
+"values": [ExtResource("4_g6kjl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -163,7 +163,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_g1t0g")]
+"values": [ExtResource("4_g6kjl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -227,7 +227,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_g1t0g")]
+"values": [ExtResource("4_g6kjl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -291,7 +291,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [ExtResource("4_g1t0g")]
+"values": [ExtResource("4_g6kjl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -350,23 +350,23 @@ _data = {
 "Right": SubResource("Animation_6f1v0")
 }
 
-[node name="DummyEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
+[node name="KamikazeEnemy" type="CharacterBody2D" groups=["Damageable", "Enemy"]]
 z_index = 1
 collision_layer = 3
 collision_mask = 3
 floor_max_angle = 0.0
-script = ExtResource("1_pdmmf")
-DropItemScene = ExtResource("2_chuvg")
+script = ExtResource("1_m5ifg")
+DropItemScene = ExtResource("2_cr5fy")
 
 [node name="TankBaseSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 material = SubResource("ShaderMaterial_un74c")
 position = Vector2(8.00011, 0.000175476)
 rotation = 1.5708
-texture = ExtResource("4_g1t0g")
+texture = ExtResource("4_g6kjl")
 hframes = 3
 vframes = 3
-frame = 3
+frame = 5
 metadata/_aseprite_wizard_config_ = {
 "keep_anim_length": false,
 "layer": "",
@@ -385,14 +385,14 @@ position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_48yjh")
 
 [node name="Behaviour" type="Node2D" parent="."]
-script = ExtResource("5_3ubfi")
+script = ExtResource("5_18fpa")
 ExplosionDamage = 10000.0
 ExplosionDamageRadius = 200.0
 TargetReachedDistance = 100.0
 
 [node name="Gun" type="Node2D" parent="."]
-script = ExtResource("6_4ges3")
-weaponStats = ExtResource("7_7ffdt")
+script = ExtResource("6_sqyqw")
+weaponStats = ExtResource("7_5g3ol")
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
 
@@ -420,26 +420,28 @@ position = Vector2(70, 0)
 target_desired_distance = 19.52
 path_postprocessing = 1
 debug_enabled = true
-script = ExtResource("9_wxrj1")
+script = ExtResource("9_ia71e")
 MovementSpeed = 100.0
 
 [node name="HealthComponent" type="Node2D" parent="."]
-script = ExtResource("10_wnk1f")
+script = ExtResource("10_i2uvn")
 maxHP = 100
 
-[node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_4xtg1")]
+[node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_ddw7m")]
+visible = false
 
 [node name="DamageNumberController" type="Node2D" parent="HealthComponent"]
-script = ExtResource("12_jtlle")
+script = ExtResource("12_hvblw")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_m82lt")
 }
 speed_scale = 3.5
-script = ExtResource("12_bkemy")
+script = ExtResource("13_yrxel")
 
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
-script = ExtResource("12_35or0")
+script = ExtResource("14_y3wj6")
 
-[node name="TrailComponent" parent="." instance=ExtResource("15_ervly")]
+[node name="TrailComponent" parent="." instance=ExtResource("15_sqgcd")]
+timeBetweenTrails = 0.25

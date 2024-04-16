@@ -24,6 +24,8 @@ public abstract partial class Behaviour : Node2D
     protected Vector2 TargetLocation { get; set; }
 
     protected bool _inRandomMove;
+    protected ParticleController particles;
+    protected MusicController MusicController;
 
     public override void _Ready()
     {
@@ -33,6 +35,8 @@ public abstract partial class Behaviour : Node2D
         Navigation = GetParent().GetNode<NavigationController>("NavigationAgent2D");
         Enemy = GetParent() as Enemy;
         LevelManager = Enemy.GetParent().GetParent().GetParent() as LevelManager;
+        particles = GetNode<ParticleController>("/root/ParticleController");
+        MusicController = GetNode<MusicController>("/root/MusicController");
         Setup();
     }
 

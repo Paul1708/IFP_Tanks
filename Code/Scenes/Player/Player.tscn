@@ -359,7 +359,6 @@ rotation = 1.5708
 texture = ExtResource("2_cn7mg")
 hframes = 3
 vframes = 3
-frame = 3
 metadata/_aseprite_wizard_config_ = {
 "keep_anim_length": false,
 "layer": "",

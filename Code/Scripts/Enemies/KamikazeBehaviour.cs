@@ -57,6 +57,8 @@ public partial class KamikazeBehaviour : Behaviour
                 _takeDamage(node, (int) finalDamage);
             }
         }
+        particles.EmitParticles(this, Scene.KamikazeExplosion);
+        MusicController.Play(Sound.RocketExplosion);
     }
 
     private void _takeDamage(Node node, int damage)
