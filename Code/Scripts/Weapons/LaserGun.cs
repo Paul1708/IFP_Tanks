@@ -21,7 +21,7 @@ public partial class LaserGun : Bullet
 		QueueFree();
 	}
 
-	protected override void Move()
+	protected override Node Move()
 	{
 		_laser.SetActive(true);
 		//move laser-source along with player
@@ -29,5 +29,6 @@ public partial class LaserGun : Bullet
 		GlobalPosition = muzzle.GlobalPosition;
 		_laser.MoveLaserRay(muzzle.GlobalRotation);
 
+		return null;
 	}
 }

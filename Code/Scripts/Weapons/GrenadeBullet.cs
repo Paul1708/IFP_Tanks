@@ -46,7 +46,7 @@ public partial class GrenadeBullet : Bullet
         _targetSprite.GlobalPosition = _hitLocation;
     }
 
-    protected override void Move()
+    protected override Node Move()
     {
         _shadow.GlobalPosition = _shadowTrajectory(_shootDirection, _time);
         GlobalPosition = _trajectory(_shootDirection, _time);
@@ -58,6 +58,8 @@ public partial class GrenadeBullet : Bullet
         }
 
         _time += _timeDiff;
+
+        return null;
     }
 
     public void OnExplode()
