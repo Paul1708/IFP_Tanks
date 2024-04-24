@@ -57,6 +57,9 @@ namespace Weapons
             else if (node.IsInGroup("Wall") || node is TileMap)
             {
                 OnWallHit();
+            }else if (node is Bullet otherBullet)
+            {
+                otherBullet.Destroy();
             }
             else
             {
