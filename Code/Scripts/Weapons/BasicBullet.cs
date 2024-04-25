@@ -1,10 +1,22 @@
+using Godot;
+
 namespace Weapons
 {
     public partial class BasicBullet : Bullet
     {
-        protected override void Move()
+        protected override Node Move()
         {
-            MoveAndCollide(LinearVelocity);
+            KinematicCollision2D collided = MoveAndCollide(LinearVelocity);
+            if (collided != null)
+            {
+                var collider = collided.GetCollider();
+                if (collider is Node)
+                {
+                    return collider as Node;
+                }
+            }
+
+            return null;
         }
 
         public override void Destroy()

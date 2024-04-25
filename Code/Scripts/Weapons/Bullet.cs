@@ -57,6 +57,9 @@ namespace Weapons
             else if (node.IsInGroup("Wall") || node is TileMap)
             {
                 OnWallHit();
+            }else if (node is Bullet otherBullet)
+            {
+                otherBullet.Destroy();
             }
             else
             {
@@ -87,7 +90,11 @@ namespace Weapons
         /**
          * Describe the move behavior of all bullet types. This method is called on every physic process tick.
          */
-        protected virtual void Move() { }
+        protected virtual Node Move()
+        {
+            return null;
+            
+        }
 
 
         public virtual void Destroy()
@@ -97,7 +104,9 @@ namespace Weapons
 
         public override void _PhysicsProcess(double delta)
         {
-            Move();
+            Node collided = Move();
+            if(collided != null)
+                OnCollision(collided);
         }
     }
 

@@ -1,5 +1,6 @@
 using Components;
 using Godot;
+using Player;
 
 namespace Weapons;
 
@@ -24,17 +25,23 @@ public partial class BouncingBullet : Bullet
 		QueueFree();
 	}
 
-	protected override void Move()
+	protected override Node Move()
 	{
-
 		var result = MoveAndCollide(LinearVelocity);
 		if (result != null)
 		{
 			NormalCollisionVector = result.GetNormal().Normalized();
-
-			if (result.GetCollider() is TileMap && _canBounce)
-				BounceOfWall();
+			var collider = result.GetCollider();
+			if (collider is Node)
+			{
+				if (collider is TileMap && _canBounce)
+					BounceOfWall();
+				
+				return collider as Node;
+			}
 		}
+
+		return null;
 	}
 
 	private void BounceOfWall()
@@ -61,6 +68,12 @@ public partial class BouncingBullet : Bullet
 
 	public override void OnDamageableHit(Node node)
 	{
+		if (node is PlayerMovement)//ignore if the player hit himself
+		{
+			Destroy();
+			return;
+		} 
+		
 		node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
 		Destroy();
 	}

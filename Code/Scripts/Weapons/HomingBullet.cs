@@ -31,14 +31,14 @@ public partial class HomingBullet : Bullet
         QueueFree();
     }
     
-    protected override void Move()
+    protected override Node Move()
     {
         //If the target is null, then abort launching bullet
         if (TargetNode == null || TargetNode.IsQueuedForDeletion())
         {
             GD.Print("WARNING: Homing Bullet target is not set, destroy bullet.");
             QueueFree();
-            return;
+            return null;
         }
         
         _target = TargetNode.GlobalPosition;
@@ -63,13 +63,24 @@ public partial class HomingBullet : Bullet
         MoveProjectile();
 
         _ticksPassed++;
+
+        return null;
     }
 
     private void MoveProjectile()
     {
         Rotation = TargetDirection.Angle();
 
-        MoveAndCollide(TargetDirection * Speed);
+        var result = MoveAndCollide(TargetDirection * Speed);
+        if (result != null)
+        {
+            var collider = result.GetCollider();
+            if (collider is Node)
+            {
+                //hit something
+                OnCollision(collider as Node);
+            }
+        }
     }
 
     private void _initTargetDirection()
