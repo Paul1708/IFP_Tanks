@@ -9,9 +9,9 @@ namespace Managers.Level;
 
 public partial class Level : Node2D
 {
-    private bool startedCoinMovement = false;
+    private bool _startedCoinMovement = false;
+    private Timer _coinTimer = new Timer();
     public ShopMenu shopMenu;
-    Timer coinTimer = new Timer();
     public List<Node> enemies { get; set; }
     [Signal]
     public delegate void OnLevelCompleteEventHandler();
@@ -23,7 +23,7 @@ public partial class Level : Node2D
 
     public override void _Ready()
     {
-        this.AddChild(coinTimer);
+        this.AddChild(_coinTimer);
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 
         // Get all enemies in the level
@@ -36,7 +36,7 @@ public partial class Level : Node2D
         }
         PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnPlayerDeath;
         //connect the coin timer signal to the move all coins to player function
-        coinTimer.Timeout += MoveAllCoinsToPlayer;
+        _coinTimer.Timeout += MoveAllCoinsToPlayer;
         OnCoinsMoved += SendOnLevelComplete;
     }
 
@@ -49,11 +49,11 @@ public partial class Level : Node2D
     public override void _Process(double delta)
     {
         // Check if all coins are collected
-        if (GetTree().GetNodesInGroup("Coins").Count == 0 && startedCoinMovement)
+        if (GetTree().GetNodesInGroup("Coins").Count == 0 && _startedCoinMovement)
         {
             //If all coins in tree are collected because of MoveAllCoinsToPlayer function then emit the signal
                 EmitSignal(SignalName.OnCoinsMoved);
-                startedCoinMovement = false;
+                _startedCoinMovement = false;
         }
     }
 
@@ -67,8 +67,8 @@ public partial class Level : Node2D
         if (enemies.Count == 0)
         {
             //start the timer to move all coins to the player after time runs out
-            coinTimer.WaitTime = 0.5;
-            coinTimer.Start();
+            _coinTimer.WaitTime = 0.5;
+            _coinTimer.Start();
         }
     }
 
@@ -105,7 +105,7 @@ public partial class Level : Node2D
     // Move all coins to the player by setting the shouldMove property to true
     public void MoveAllCoinsToPlayer()
     {
-        coinTimer.Stop();
+        _coinTimer.Stop();
         var tree = GetTree();
         if (tree == null)
         {
@@ -118,7 +118,7 @@ public partial class Level : Node2D
         {
             coin.shouldMove = true;
         }
-        startedCoinMovement = true;
+        _startedCoinMovement = true;
     }
 
     public override void _Input(InputEvent @event)

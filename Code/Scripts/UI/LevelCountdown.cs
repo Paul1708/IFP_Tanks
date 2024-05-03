@@ -5,44 +5,44 @@ using System;
 
 public partial class LevelCountdown : Control
 {
-	Label cooldownLabel;
-	ShopMenu shopMenu;
-	ColorRect blur;
-	LevelManager levelManager;
 	public Timer countdownTimer;
 	public AnimationPlayer blurAnimation;
+	private Label _cooldownLabel;
+	private ShopMenu _shopMenu;
+	private ColorRect _blur;
+	private LevelManager _levelManager;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		countdownTimer = GetNode<Timer>("Countdown");
 		blurAnimation = GetNode<AnimationPlayer>("BlurAnimation");
-		cooldownLabel = GetNode<Label>("CountdownContainer/Countdown");
-		blur = GetNode<ColorRect>("Blur");
+		_cooldownLabel = GetNode<Label>("CountdownContainer/Countdown");
+		_blur = GetNode<ColorRect>("Blur");
 
-		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+		_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+		_levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 		
-		shopMenu.OnShopMenuClosed += StartLevelCooldown;
-		levelManager.OnFirstLevelLoaded += StartLevelCooldown;
+		_shopMenu.OnShopMenuClosed += StartLevelCooldown;
+		_levelManager.OnFirstLevelLoaded += StartLevelCooldown;
 	}
 
 	public override void _ExitTree()
 	{
-		shopMenu.OnShopMenuClosed -= StartLevelCooldown;
-		levelManager.OnFirstLevelLoaded -= StartLevelCooldown;
+		_shopMenu.OnShopMenuClosed -= StartLevelCooldown;
+		_levelManager.OnFirstLevelLoaded -= StartLevelCooldown;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 		int timeLeft = (int)countdownTimer.TimeLeft;
-		cooldownLabel.Text = timeLeft.ToString();
+		_cooldownLabel.Text = timeLeft.ToString();
 	}
 
 	public void StartLevelCooldown()
 	{
-		blur.Color = new Color(1, 1, 1);
+		_blur.Color = new Color(1, 1, 1);
 		Show();
 		blurAnimation.Play("LevelCooldown");
 		countdownTimer.Start();

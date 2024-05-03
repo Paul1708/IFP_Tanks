@@ -11,10 +11,10 @@ public partial class GunController : Node2D
     [Export] public WeaponStats weaponStats { get; set; }
 
     public float timeBetweenShots { get; private set; }
-    private bool canShoot = true;
-    private AnimatedSprite2D sprite;
-    private Timer shootTimer;
     protected MusicController musicController;
+    private bool _canShoot = true;
+    private AnimatedSprite2D _sprite;
+    private Timer _shootTimer;
 
     // Das ist sowas von dreckig, aber ist mir egal :O
     private bool isPlayerGunController = false;
@@ -22,9 +22,9 @@ public partial class GunController : Node2D
     public override void _Ready()
     {
         musicController = GetNode<MusicController>("/root/MusicController");
-        sprite = GetNode<AnimatedSprite2D>("GunSprite");
-        shootTimer = GetNode<Timer>("ShootTimer");
-        shootTimer.Timeout += () => canShoot = true;
+        _sprite = GetNode<AnimatedSprite2D>("GunSprite");
+        _shootTimer = GetNode<Timer>("ShootTimer");
+        _shootTimer.Timeout += () => _canShoot = true;
 
         timeBetweenShots = 1 / weaponStats.bulletsPerSecond;
 
@@ -60,7 +60,7 @@ public partial class GunController : Node2D
 
     public void Shoot()
     {
-        if (canShoot)
+        if (_canShoot)
         {
             SpawnBullet();
 
@@ -68,12 +68,12 @@ public partial class GunController : Node2D
             musicController.Play(Sound.TankShooting);
 
             //reset the time until fire
-            canShoot = false;
-            shootTimer.Start(timeBetweenShots);
+            _canShoot = false;
+            _shootTimer.Start(timeBetweenShots);
 
             //Play animation()
-            sprite.Play("Shoot");
-            sprite.Frame = 0;
+            _sprite.Play("Shoot");
+            _sprite.Frame = 0;
         }
 
     }

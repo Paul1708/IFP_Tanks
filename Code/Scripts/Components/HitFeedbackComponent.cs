@@ -17,31 +17,31 @@ public partial class HitFeedbackComponent : Node2D
 
     [Export]
     public float feedbackDuration = 0.8f;
-    ShaderMaterial tankMaterial;
-    ShaderMaterial gunMaterial;
-    HealthComponent healthComponent;
-    CharacterBody2D characterBody;
+    private ShaderMaterial _tankMaterial;
+    private ShaderMaterial _gunMaterial;
+    private HealthComponent _healthComponent;
+    private CharacterBody2D _characterBody;
 
     public override void _Ready()
     {
-        healthComponent = GetNodeOrNull<HealthComponent>("../HealthComponent");
+        _healthComponent = GetNodeOrNull<HealthComponent>("../HealthComponent");
 
         // Dirty hack: If the health component is not found,
         // we assume it's the player's health component and get it from the player manager
-        if (healthComponent == null) healthComponent = PlayerManager.Instance.PlayerHealthComponent;
+        if (_healthComponent == null) _healthComponent = PlayerManager.Instance.PlayerHealthComponent;
 
 
-        tankMaterial = GetNode<Sprite2D>("../TankBaseSprite").Material as ShaderMaterial;
-        gunMaterial = GetNode<AnimatedSprite2D>("../Gun/GunSprite").Material as ShaderMaterial;
-        characterBody = GetParent<CharacterBody2D>();
+        _tankMaterial = GetNode<Sprite2D>("../TankBaseSprite").Material as ShaderMaterial;
+        _gunMaterial = GetNode<AnimatedSprite2D>("../Gun/GunSprite").Material as ShaderMaterial;
+        _characterBody = GetParent<CharacterBody2D>();
 
 
-        healthComponent.OnTakeDamage += StartTween;
+        _healthComponent.OnTakeDamage += StartTween;
     }
 
     public override void _ExitTree()
     {
-        healthComponent.OnTakeDamage -= StartTween;
+        _healthComponent.OnTakeDamage -= StartTween;
     }
 
     private void StartTween(int damage)
@@ -65,12 +65,12 @@ public partial class HitFeedbackComponent : Node2D
     }
     private void SetShaderParams(float value)
     {
-        gunMaterial.SetShaderParameter("Weight", value);
-        tankMaterial.SetShaderParameter("Weight", value);
+        _gunMaterial.SetShaderParameter("Weight", value);
+        _tankMaterial.SetShaderParameter("Weight", value);
     }
 
     private void SetScaleParams(float value)
     {
-        characterBody.Scale = new Vector2(value, value);
+        _characterBody.Scale = new Vector2(value, value);
     }
 }

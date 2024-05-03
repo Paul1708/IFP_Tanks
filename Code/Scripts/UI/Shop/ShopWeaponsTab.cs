@@ -23,18 +23,18 @@ public struct Weapon
 
 public partial class ShopWeaponsTab : ShopBaseTab
 {
-	HScrollBar hScrollBar;
-	Node2D control;
-	LevelManager levelManager;
+	private HScrollBar _hScrollBar;
+	private Node2D _control;
+	private LevelManager _levelManager;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		hScrollBar = GetNode<HScrollBar>("HScrollBar");
-		control = GetNode<Node2D>("RichTextLabel/Control");
+		_hScrollBar = GetNode<HScrollBar>("HScrollBar");
+		_control = GetNode<Node2D>("RichTextLabel/Control");
 		
-		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
-		levelManager.OnLevelChanged += ResetScrollBar;
+		_levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+		_levelManager.OnLevelChanged += ResetScrollBar;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -45,14 +45,14 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 	protected override void ResetScrollBar()
 	{
-		hScrollBar.Value = 0;
+		_hScrollBar.Value = 0;
 	}
 
 	protected override void Scroll()
 	{
-		Vector2 position = control.Position;
-		position.X = (float)-hScrollBar.Value;
-		control.Position = position;
+		Vector2 position = _control.Position;
+		position.X = (float)-_hScrollBar.Value;
+		_control.Position = position;
 	}
 
 	private void OnBuy1Pressed()

@@ -8,8 +8,8 @@ public partial class MainMenu : Control
 	public Vector2 mainMenuCameraPosition = new Vector2(960, 540);
 	[Export]
 	public Vector2 settingsMenuCameraPosition = new Vector2(2880, 540);
-	protected MusicController musicController;
 	public Camera2D camera;
+	protected MusicController musicController;
 	
 	
 	public override void _Ready()

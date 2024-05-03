@@ -14,9 +14,9 @@ public partial class LevelManager : Node2D
     public int currentLevelID = 0;
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
-    private LevelDisplay levelDisplay;
-    private ShopMenu shopMenu;
-    private LevelCountdown levelCountdown;
+    private LevelDisplay _levelDisplay;
+    private ShopMenu _shopMenu;
+    private LevelCountdown _levelCountdown;
     [Signal]
     public delegate void OnLevelChangedEventHandler();
     [Signal]
@@ -29,9 +29,9 @@ public partial class LevelManager : Node2D
 
     public override void _Ready()
     {
-        levelDisplay = GetTree().GetFirstNodeInGroup("LevelDisplay") as LevelDisplay;
-        shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-        levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
+        _levelDisplay = GetTree().GetFirstNodeInGroup("LevelDisplay") as LevelDisplay;
+        _shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+        _levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
 
         SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
@@ -114,12 +114,12 @@ public partial class LevelManager : Node2D
 
         if (currentLevelID > 0 || currentWorldID > 0) // If the game is not at the start, show the shop
         {
-            await ToSignal(shopMenu, "ready");
+            await ToSignal(_shopMenu, "ready");
             EmitSignal(SignalName.OnLevelChangedShowShop);
         }
         else if (currentLevelID == 0 && currentWorldID == 0) // If the game is at the start, start the countdown without showing the shop
         {
-            await ToSignal(levelCountdown, "ready");
+            await ToSignal(_levelCountdown, "ready");
             EmitSignal(SignalName.OnFirstLevelLoaded);
         }
 
@@ -147,7 +147,7 @@ public partial class LevelManager : Node2D
 
         // Set the current level to CURRENT
         Worlds[currentWorldID].Levels[currentLevelID].LevelState = LevelState.CURRENT;
-        levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
+        _levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
     }
 
 
@@ -182,6 +182,6 @@ public partial class LevelManager : Node2D
         // Set the level state and add it to the list of played levels since the last checkpoint
         CurrentLevelData.LevelState = LevelState.CURRENT;
 
-        levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
+        _levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
     }
 }

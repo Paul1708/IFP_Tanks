@@ -6,11 +6,11 @@ namespace Shop;
 
 public partial class ShopMenu : Control
 {
-	AnimationPlayer animationPlayer;
-	LevelManager levelManager;
-	MusicController musicController;
-	Label errorLabel;
-	Panel errorPanel;
+	private AnimationPlayer _animationPlayer;
+	private LevelManager _levelManager;
+	private MusicController _musicController;
+	private Label _errorLabel;
+	private Panel _errorPanel;
 	[Signal] public delegate void OnShopMenuClosedEventHandler();
 
 	// Called when the node enters the scene tree for the first time.
@@ -18,19 +18,19 @@ public partial class ShopMenu : Control
 	{
 		Hide();
 
-		errorLabel = GetNode<Label>("ErrorScreen/Label");
-		errorPanel = GetNode<Panel>("ErrorScreen");
+		_errorLabel = GetNode<Label>("ErrorScreen/Label");
+		_errorPanel = GetNode<Panel>("ErrorScreen");
 
-		musicController = GetNode<MusicController>("/root/MusicController");
-		animationPlayer = GetNode<AnimationPlayer>("BlurAnimation");
-		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+		_musicController = GetNode<MusicController>("/root/MusicController");
+		_animationPlayer = GetNode<AnimationPlayer>("BlurAnimation");
+		_levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 
-		levelManager.OnLevelChangedShowShop += ShowShopMenu;
+		_levelManager.OnLevelChangedShowShop += ShowShopMenu;
 	}
 
 	public override void _ExitTree()
 	{
-		levelManager.OnLevelChangedShowShop -= ShowShopMenu;
+		_levelManager.OnLevelChangedShowShop -= ShowShopMenu;
 	}
 
 	//Show the shop menu and pause the game
@@ -38,13 +38,13 @@ public partial class ShopMenu : Control
 	{
 		GetTree().Paused = true;
 		Show();
-		animationPlayer.Play("StartPause");
+		_animationPlayer.Play("StartPause");
 	}
 
 	//Hide the shop menu, unpause the game and tell the level to continue by emitting the OnLevelComplete signal
 	public void OnContinueButtonPressed()
 	{
-		musicController.Play(Sound.ButtonClick);
+		_musicController.Play(Sound.ButtonClick);
 		GetTree().Paused = false;
 		Hide();
 		EmitSignal(SignalName.OnShopMenuClosed);
@@ -53,7 +53,7 @@ public partial class ShopMenu : Control
 	//Return to the main menu
 	private void OnMainMenuPressed()
 	{
-		musicController.Play(Sound.ButtonClick);
+		_musicController.Play(Sound.ButtonClick);
 
 		GetTree().Paused = false; //make sure the game is unpaused
 		GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
@@ -61,22 +61,22 @@ public partial class ShopMenu : Control
 
 	private void OnErrorAcknowledgedPressed()
 	{
-		musicController.Play(Sound.ButtonClick);
-		errorPanel.Hide();
+		_musicController.Play(Sound.ButtonClick);
+		_errorPanel.Hide();
 	}
 
 	public void DisplayInsufficientCoinsError(int price)
 	{
 		//TODO: play error sound
 		var neededCoins = price - CoinManager.Instance.Coins;
-		errorLabel.Text = "You need " + neededCoins + " more coins to buy this item!";
-		errorPanel.Show();
+		_errorLabel.Text = "You need " + neededCoins + " more coins to buy this item!";
+		_errorPanel.Show();
 	}
 
 	public void DisplayAlreadyMaxHealthError()
 	{
 		//TODO: play error sound
-		errorLabel.Text = "You already have the maximum health!";
-		errorPanel.Show();
+		_errorLabel.Text = "You already have the maximum health!";
+		_errorPanel.Show();
 	}
 }

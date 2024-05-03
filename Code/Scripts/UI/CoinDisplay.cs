@@ -3,10 +3,11 @@ using Managers;
 
 public partial class CoinDisplay : TextureRect
 {
-	Label coinLabel;
+	private Label _coinLabel;
+	
 	public override void _Ready()
 	{
-		coinLabel = GetNode<Label>("CoinLabel");
+		_coinLabel = GetNode<Label>("CoinLabel");
 		CoinManager.Instance.OnCoinChanged += ChangeLabel;
 		ChangeLabel(CoinManager.Instance.Coins);
 	}
@@ -18,6 +19,6 @@ public partial class CoinDisplay : TextureRect
 
 	public void ChangeLabel(int coins)
 	{
-		coinLabel.Text = coins.ToString();
+		_coinLabel.Text = coins.ToString();
 	}
 }

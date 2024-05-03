@@ -15,27 +15,26 @@ public partial class ShopManager : Node2D
 	[Export] public WeaponStats rocketWeaponStats { get; set; }
 	[Export] public WeaponStats laserWeaponStats { get; set; }
 	[Export] public WeaponStats machineGunWeaponStats { get; set; }
-
-	public static ShopManager Instance { get; private set; }
-	private ShopMenu shopMenu;
 	[Signal] public delegate void OnWeaponUnlockedEventHandler();
 	[Signal] public delegate void OnWeaponEquippedEventHandler();
 	public List<Stat> statsList = new();
 	public List<Weapon> weaponsList = new();
+	public static ShopManager Instance { get; private set; }
+	private ShopMenu _shopMenu;
 	/*when using, be aware of convention: assignment is dependent on the order and number of the Panels in the scene e.g.
-   	healStat is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
+   	_healStat is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
 	//Add new shop Stats here
-	private Stat healStat = new("Heal", 0);
-	private Stat maxHPStat = new("MaxHP", 1);
-	private Stat DMGStat = new("DMG", 2);
-	private Stat speedStat = new("Speed", 3);
+	private Stat _healStat = new("Heal", 0);
+	private Stat _maxHPStat = new("MaxHP", 1);
+	private Stat _dmgStat = new("DMG", 2);
+	private Stat _speedStat = new("Speed", 3);
 	//Add new shop Weapons here
-	private Weapon defaultWeapon;
-	private Weapon bouncingWeapon;
-	private Weapon grenadeWeapon;
-	private Weapon rocketWeapon;
-	private Weapon laserWeapon;
-	private Weapon machineGunWeapon;
+	private Weapon _defaultWeapon;
+	private Weapon _bouncingWeapon;
+	private Weapon _grenadeWeapon;
+	private Weapon _rocketWeapon;
+	private Weapon _laserWeapon;
+	private Weapon _machineGunWeapon;
 
 	public override void _Ready()
 	{
@@ -48,17 +47,17 @@ public partial class ShopManager : Node2D
 			QueueFree(); // Ensures there is only one instance of CoinManager
 		}
 
-		AddStatsToList(healStat, maxHPStat, DMGStat, speedStat);
+		AddStatsToList(_healStat, _maxHPStat, _dmgStat, _speedStat);
 
 		SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
-		defaultWeapon = new("Default", 0, defaultWeaponStats);
-		bouncingWeapon = new("Bouncing", 1, bouncingWeaponStats);
-		grenadeWeapon = new("Grenade", 2, grenadeWeaponStats);
-		rocketWeapon = new("Rocket", 3, rocketWeaponStats);
-		laserWeapon = new("Laser", 4, laserWeaponStats);
-		machineGunWeapon = new("MachineGun", 5, machineGunWeaponStats);
-		AddWeaponsToList(defaultWeapon, bouncingWeapon, grenadeWeapon, rocketWeapon, laserWeapon, machineGunWeapon);
+		_defaultWeapon = new("Default", 0, defaultWeaponStats);
+		_bouncingWeapon = new("Bouncing", 1, bouncingWeaponStats);
+		_grenadeWeapon = new("Grenade", 2, grenadeWeaponStats);
+		_rocketWeapon = new("Rocket", 3, rocketWeaponStats);
+		_laserWeapon = new("Laser", 4, laserWeaponStats);
+		_machineGunWeapon = new("MachineGun", 5, machineGunWeaponStats);
+		AddWeaponsToList(_defaultWeapon, _bouncingWeapon, _grenadeWeapon, _rocketWeapon, _laserWeapon, _machineGunWeapon);
 
 	}
 
@@ -91,8 +90,8 @@ public partial class ShopManager : Node2D
 		}
 		else
 		{
-			shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-			shopMenu.DisplayInsufficientCoinsError(price);
+			_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+			_shopMenu.DisplayInsufficientCoinsError(price);
 			return false;
 		}
 	}
@@ -125,8 +124,8 @@ public partial class ShopManager : Node2D
 		}
 		else if (CoinManager.Instance.CheckIfEnoughCoins(price) == false && weapon.unlocked == false)
 		{
-			shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-			shopMenu.DisplayInsufficientCoinsError(price);
+			_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+			_shopMenu.DisplayInsufficientCoinsError(price);
 			return false;
 		}
 		return false;

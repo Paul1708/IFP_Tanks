@@ -13,11 +13,10 @@ public partial class HealthBar : TextureProgressBar
     public TextureProgressBar redBar;
     public Timer redHealthTimer;
     public Label label;
-
-    HealthComponent playerHealthComponent;
-
     public int currentHP;
     public int maxHP;
+    private HealthComponent _playerHealthComponent;
+
     public override void _Ready()
     {
         // Get references
@@ -25,16 +24,16 @@ public partial class HealthBar : TextureProgressBar
         redBar = this;
         redHealthTimer = GetNode<Timer>("RedHealthTimer");
         label = GetNode<Label>("Label");
-        playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
+        _playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
 
         // Connect signals
-        playerHealthComponent.OnHealthChanged += OnHealthChanged;
-        playerHealthComponent.OnMaxHealthChanged += OnMaxHealthChanged;
+        _playerHealthComponent.OnHealthChanged += OnHealthChanged;
+        _playerHealthComponent.OnMaxHealthChanged += OnMaxHealthChanged;
         redHealthTimer.Timeout += UpdateRedHealthBar;
 
         // Get hp values of player
-        maxHP = playerHealthComponent.maxHP;
-        currentHP = playerHealthComponent.currentHP;
+        maxHP = _playerHealthComponent.maxHP;
+        currentHP = _playerHealthComponent.currentHP;
 
         // Set progress bar values
         redBar.MaxValue = maxHP;
@@ -48,8 +47,8 @@ public partial class HealthBar : TextureProgressBar
     public override void _ExitTree()
     {
         // Disconnect signals
-        playerHealthComponent.OnHealthChanged -= OnHealthChanged;
-        playerHealthComponent.OnMaxHealthChanged -= OnMaxHealthChanged;
+        _playerHealthComponent.OnHealthChanged -= OnHealthChanged;
+        _playerHealthComponent.OnMaxHealthChanged -= OnMaxHealthChanged;
         redHealthTimer.Timeout -= UpdateRedHealthBar;
     }
 

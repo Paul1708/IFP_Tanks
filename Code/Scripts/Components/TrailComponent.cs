@@ -5,18 +5,18 @@ namespace Components;
 public partial class TrailComponent : Node2D
 {
     [Export]
-    float timeBetweenTrails = 0.1f;
-    protected ParticleController particles;
-    protected Marker2D leftChain1;
-    protected Marker2D leftChain2;
-    protected Marker2D rightChain1;
-    protected Marker2D rightChain2;
-    protected Timer trailTimer;
-    protected bool canEmittTrail = true;
-    protected LevelManager levelManager;
+    public float timeBetweenTrails = 0.1f;
+    private ParticleController _particles;
+    private Marker2D _leftChain1;
+    private Marker2D _leftChain2;
+    private Marker2D _rightChain1;
+    private Marker2D _rightChain2;
+    private Timer _trailTimer;
+    private bool _canEmittTrail = true;
+    private LevelManager _levelManager;
 
 
-    protected Godot.Collections.Dictionary<int, PackedScene> WorldIdToTrailScene = new Godot.Collections.Dictionary<int, PackedScene>
+    private Godot.Collections.Dictionary<int, PackedScene> WorldIdToTrailScene = new Godot.Collections.Dictionary<int, PackedScene>
     {
         {0, Scene.DrivingMud},
         {1, Scene.DrivingGrass},
@@ -25,43 +25,43 @@ public partial class TrailComponent : Node2D
     // Called when the node enters the scene tree for the first time.
     public override void _Ready()
     {
-        particles = GetNode<ParticleController>("/root/ParticleController");
-        leftChain1 = GetNode<Marker2D>("LeftChain1");
-        rightChain1 = GetNode<Marker2D>("RightChain1");
-        leftChain2 = GetNode<Marker2D>("LeftChain2");
-        rightChain2 = GetNode<Marker2D>("RightChain2");
-        trailTimer = GetNode<Timer>("TrailTimer");
-        trailTimer.WaitTime = timeBetweenTrails;
-        trailTimer.Timeout += () => canEmittTrail = true;
+        _particles = GetNode<ParticleController>("/root/ParticleController");
+        _leftChain1 = GetNode<Marker2D>("LeftChain1");
+        _rightChain1 = GetNode<Marker2D>("RightChain1");
+        _leftChain2 = GetNode<Marker2D>("LeftChain2");
+        _rightChain2 = GetNode<Marker2D>("RightChain2");
+        _trailTimer = GetNode<Timer>("TrailTimer");
+        _trailTimer.WaitTime = timeBetweenTrails;
+        _trailTimer.Timeout += () => _canEmittTrail = true;
 
-        levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+        _levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 
     }
 
     private PackedScene GetSceneForWorld()
     {
-        int worldId = levelManager.currentWorldID;
+        int worldId = _levelManager.currentWorldID;
         return WorldIdToTrailScene[worldId];
     }
 
     public void EmitTrail()
     {
-        if (canEmittTrail)
+        if (_canEmittTrail)
         {
             // If the parent is the DummyTank, we use mud as the trail else we use the trail for the current world
             PackedScene scene = GetParent().Name == "DummyTank" ? Scene.DrivingMud : GetSceneForWorld(); 
             EmitParticlesForAllChains(scene);
-            canEmittTrail = false;
-            trailTimer.WaitTime = timeBetweenTrails;
-            trailTimer.Start();
+            _canEmittTrail = false;
+            _trailTimer.WaitTime = timeBetweenTrails;
+            _trailTimer.Start();
         }
     }
 
     private void EmitParticlesForAllChains(PackedScene scene)
     {
-        particles.EmitParticles(leftChain1, scene);
-        particles.EmitParticles(rightChain1, scene);
-        particles.EmitParticles(leftChain2, scene);
-        particles.EmitParticles(rightChain2, scene);
+        _particles.EmitParticles(_leftChain1, scene);
+        _particles.EmitParticles(_rightChain1, scene);
+        _particles.EmitParticles(_leftChain2, scene);
+        _particles.EmitParticles(_rightChain2, scene);
     }
 }

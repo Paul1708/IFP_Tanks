@@ -10,14 +10,14 @@ public partial class ShopPrices : Label
 	//price is the default price of the item 
 	[Export] public int basePrice;
 	[Export] public float priceMultiplier = 1.1f;
-	LevelManager levelManager;
+	private LevelManager _levelManager;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+		_levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 		
-		levelManager.OnLevelReset += SetShopPriceState;
+		_levelManager.OnLevelReset += SetShopPriceState;
 		
 		LinkPriceTagToItem();
 		SetShopPriceState();
@@ -25,7 +25,7 @@ public partial class ShopPrices : Label
 
 	public override void _ExitTree()
 	{
-		levelManager.OnLevelReset -= SetShopPriceState;
+		_levelManager.OnLevelReset -= SetShopPriceState;
 	}
 
 	/// <summary>

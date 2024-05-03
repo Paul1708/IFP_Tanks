@@ -4,13 +4,13 @@ using System;
 
 public partial class DummyTank : CharacterBody2D
 {
-	TrailComponent trailComponent;
+	private TrailComponent _trailComponent;
 	public AnimationHandler AnimationHandler { get; set; }
 
 
 	public override void _Ready()
 	{
-		trailComponent = GetNode<TrailComponent>("TrailComponent");
+		_trailComponent = GetNode<TrailComponent>("TrailComponent");
 		AnimationHandler = GetNode<AnimationHandler>("AnimationPlayer");
 
 	}
@@ -20,7 +20,7 @@ public partial class DummyTank : CharacterBody2D
 		//Emit trail
 		if (IsMoving())
 		{
-			trailComponent.EmitTrail();
+			_trailComponent.EmitTrail();
 		}
 		Vector2 movement = this.Velocity;
 		AnimationHandler.PlayAnimationOfInput(movement);

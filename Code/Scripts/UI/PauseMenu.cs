@@ -8,7 +8,7 @@ public partial class PauseMenu : Control
 	protected SettingsMenu settingsMenu;
 	protected ShopMenu shopMenu;
 	protected LevelCountdown levelCountdown;
-	private bool leavePauseMenu = false;
+	private bool _leavePauseMenu = false;
 
 	public override void _Ready()
 	{
@@ -64,21 +64,21 @@ public partial class PauseMenu : Control
 	{
 		switch (shopMenu.Visible || levelCountdown.Visible) //another menu open?
 		{
-			case true when leavePauseMenu && levelCountdown.Visible:
+			case true when _leavePauseMenu && levelCountdown.Visible:
 				Hide(); //just hide the pause Menu without unpausing the game because another menu is open and paused the game
 				levelCountdown.countdownTimer.Paused = false;
 				levelCountdown.blurAnimation.Play();
-				leavePauseMenu = false;
+				_leavePauseMenu = false;
 				break;
-			case true when leavePauseMenu && !levelCountdown.Visible:
+			case true when _leavePauseMenu && !levelCountdown.Visible:
 				Hide();
 				levelCountdown.countdownTimer.Paused = false;
-				leavePauseMenu = false;
+				_leavePauseMenu = false;
 				break;
 			case true:
 				levelCountdown.countdownTimer.Paused = true;
 				levelCountdown.blurAnimation.Pause();
-				leavePauseMenu = true;
+				_leavePauseMenu = true;
 				Pause();
 				break;
 			default:

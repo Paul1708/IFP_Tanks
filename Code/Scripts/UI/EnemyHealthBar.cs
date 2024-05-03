@@ -3,24 +3,25 @@ using Godot;
 
 public partial class EnemyHealthBar : Control
 {
-    HealthComponent hc;
+    private HealthComponent _hc;
+    
     public override void _Ready()
     {
-        hc = GetParent<HealthComponent>();
-        hc.OnHealthChanged += SetHealth;
-        hc.OnMaxHealthChanged += SetMaxHealth;
+        _hc = GetParent<HealthComponent>();
+        _hc.OnHealthChanged += SetHealth;
+        _hc.OnMaxHealthChanged += SetMaxHealth;
 
-        SetHealth(hc.currentHP);
+        SetHealth(_hc.currentHP);
     }
 
 
     public void SetHealth(int health)
     {
-        GetNode<Label>("Label").Text = $"{health}/{hc.maxHP}";
+        GetNode<Label>("Label").Text = $"{health}/{_hc.maxHP}";
     }
 
     public void SetMaxHealth(int maxHealth)
     {
-        GetNode<Label>("Label").Text = $"{hc.currentHP}/{maxHealth}";
+        GetNode<Label>("Label").Text = $"{_hc.currentHP}/{maxHealth}";
     }
 }
