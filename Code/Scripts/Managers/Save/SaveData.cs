@@ -52,7 +52,7 @@ public partial class SaveData : Resource
         LastCheckpointLevelID = 0;
         LastCheckpointWorldID = 0;
         CoinCount = 999999;
-        PlayerCurrentHP = 100;
+        PlayerCurrentHP = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth;
         PlayerStats = new PlayerStats()
         {
             BaseMovementSpeed = SaveManager.Instance.InitialPlayerStats.BaseMovementSpeed,
@@ -64,5 +64,6 @@ public partial class SaveData : Resource
             BaseMaxHealth = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth,
             CurrentMaxHealth = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth
         };
+
     }
 }

@@ -74,7 +74,7 @@ libraries = {
 }
 
 [node name="Countdown" type="Timer" parent="."]
-wait_time = 3.0
+wait_time = 0.01
 one_shot = true
 
 [node name="CountdownContainer" type="VBoxContainer" parent="."]

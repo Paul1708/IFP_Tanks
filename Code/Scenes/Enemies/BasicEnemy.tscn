@@ -386,7 +386,7 @@ rotation = 1.5708
 texture = ExtResource("2_itl5e")
 hframes = 3
 vframes = 3
-frame = 6
+frame = 3
 metadata/_aseprite_wizard_config_ = {
 "keep_anim_length": false,
 "layer": "",
@@ -443,6 +443,7 @@ path_postprocessing = 1
 debug_enabled = true
 script = ExtResource("6_ot0ae")
 MovementSpeed = 100.0
+RotationSpeed = 0.02
 
 [node name="HealthComponent" type="Node2D" parent="."]
 visible = false

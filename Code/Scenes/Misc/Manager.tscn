@@ -16,6 +16,7 @@
 [node name="Managers" type="Node2D"]
 
 [node name="SaveManager" type="Node2D" parent="."]
+position = Vector2(13, -4)
 script = ExtResource("5_agwak")
 InitialPlayerStats = ExtResource("3_1eadw")
 

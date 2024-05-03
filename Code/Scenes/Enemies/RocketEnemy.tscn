@@ -385,9 +385,9 @@ shape = SubResource("RectangleShape2D_mntrx")
 
 [node name="Behaviour" type="Node2D" parent="."]
 script = ExtResource("5_yegiv")
-MinPathLength = 200
-MaxPathLength = 500
-PathGoalHitRadius = 150.0
+MinPathLength = 400
+MaxPathLength = 550
+PathGoalHitRadius = 100.0
 MaxRandomTargetSearchTries = 5
 
 [node name="Gun" type="Node2D" parent="."]
@@ -423,6 +423,7 @@ path_postprocessing = 1
 debug_enabled = true
 script = ExtResource("7_igvkk")
 MovementSpeed = 100.0
+RotationSpeed = 0.02
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("8_cqfsr")
@@ -446,3 +447,8 @@ script = ExtResource("11_rvtfd")
 
 [node name="TrailComponent" parent="." instance=ExtResource("14_c05oh")]
 timeBetweenTrails = 0.25
+
+[node name="NavAgent2Player" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+debug_use_custom = true
+debug_path_custom_color = Color(0, 1, 0.117647, 1)

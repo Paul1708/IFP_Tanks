@@ -6,9 +6,9 @@
 script = ExtResource("1_1mn2a")
 BaseMovementSpeed = 300.0
 CurrentMovementSpeed = 300.0
-BaseRotationSpeed = 1.5
-CurrentRotationSpeed = 1.5
+BaseRotationSpeed = 2.5
+CurrentRotationSpeed = 2.5
 BaseDamageModifier = 1.0
 CurrentDamageModifier = 2.0
-BaseMaxHealth = 100.0
-CurrentMaxHealth = 100.0
+BaseMaxHealth = 100
+CurrentMaxHealth = 100

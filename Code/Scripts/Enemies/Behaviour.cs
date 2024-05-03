@@ -12,7 +12,7 @@ public abstract partial class Behaviour : Node2D
     [Export] public int MaxPathLength;
     [Export] public float PathGoalHitRadius;
     [Export] public uint MaxRandomTargetSearchTries;
-    
+
     protected GunController Gun { get; set; }
     protected Node2D Player { get; set; }
     protected NavigationController Navigation { get; set; }
@@ -20,7 +20,7 @@ public abstract partial class Behaviour : Node2D
     protected Enemy Enemy { get; private set; }
 
     protected LevelManager LevelManager { get; private set; }
-    
+
     protected Vector2 TargetLocation { get; set; }
 
     protected bool _inRandomMove;
@@ -57,7 +57,7 @@ public abstract partial class Behaviour : Node2D
             vector = _createRandomVector();
             count++;
         }
-        
+
         return vector;
     }
 
@@ -73,12 +73,13 @@ public abstract partial class Behaviour : Node2D
     private bool _isValidTarget(Vector2 candidate)
     {
         Vector2 backup = Navigation.TargetPosition;
+        if (candidate.X < 100 || candidate.Y < 100 || candidate.X > 1825 || candidate.Y > 1000)
+            return false;
         Navigation.TargetPosition = candidate;
         bool valid = Navigation.IsTargetReachable();
         Navigation.TargetPosition = backup;
-
         return valid;
 
     }
-    
+
 }

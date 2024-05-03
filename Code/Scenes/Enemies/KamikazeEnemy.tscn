@@ -385,8 +385,9 @@ position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_48yjh")
 
 [node name="Behaviour" type="Node2D" parent="."]
+position = Vector2(-1, 0)
 script = ExtResource("5_18fpa")
-ExplosionDamage = 10000.0
+ExplosionDamage = 5000.0
 ExplosionDamageRadius = 200.0
 TargetReachedDistance = 100.0
 
@@ -421,11 +422,13 @@ target_desired_distance = 19.52
 path_postprocessing = 1
 debug_enabled = true
 script = ExtResource("9_ia71e")
-MovementSpeed = 100.0
+MovementSpeed = 300.0
+RotationSpeed = 0.03
 
 [node name="HealthComponent" type="Node2D" parent="."]
+position = Vector2(5, -2)
 script = ExtResource("10_i2uvn")
-maxHP = 100
+maxHP = 20
 
 [node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_ddw7m")]
 visible = false
