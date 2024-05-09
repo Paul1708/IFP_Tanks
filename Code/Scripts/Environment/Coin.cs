@@ -7,7 +7,7 @@ namespace Items;
 public partial class Coin : Area2D
 {
 	[Export] public int CoinValue { get; set; } = 1;
-	[Export] public float Speed = 400.0f;
+	[Export] public float Speed = 1500f;
 	[Signal] public delegate void OnCoinCollectedEventHandler();
 	public bool shouldMove = false;
 	private PlayerMovement _player;
