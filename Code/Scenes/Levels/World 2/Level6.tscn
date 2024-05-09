@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://c5poh8afopf2f"]
+[gd_scene load_steps=5 format=3 uid="uid://c5poh8afopf2f"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level/Level.cs" id="1_64mew"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="2_0mp7n"]
 [ext_resource type="PackedScene" uid="uid://b87a81u80j4gp" path="res://Scenes/Enemies/InvisEnemy.tscn" id="3_d1pnf"]
-[ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="4_5jmuj"]
 [ext_resource type="TileSet" uid="uid://d0skvgx0dlrck" path="res://Sprites/Tilesets/Greenland Tileset.tres" id="5_1secv"]
 
 [node name="Level" type="Node2D" groups=["Level"]]
@@ -20,12 +19,6 @@ rotation = -1.5708
 [node name="InvisEnemy" parent="Enemies" instance=ExtResource("3_d1pnf")]
 position = Vector2(1010, 590)
 rotation = -1.5708
-
-[node name="Coin" parent="." instance=ExtResource("4_5jmuj")]
-position = Vector2(312, 302)
-
-[node name="Coin2" parent="." instance=ExtResource("4_5jmuj")]
-position = Vector2(436, 490)
 
 [node name="TileMap" type="TileMap" parent="." groups=["TileMap"]]
 tile_set = ExtResource("5_1secv")
