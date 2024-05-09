@@ -6,7 +6,6 @@
 [ext_resource type="TileSet" uid="uid://d0skvgx0dlrck" path="res://Sprites/Tilesets/Greenland Tileset.tres" id="5_1secv"]
 
 [node name="Level" type="Node2D" groups=["Level"]]
-position = Vector2(180, -50)
 script = ExtResource("1_64mew")
 
 [node name="Player" parent="." instance=ExtResource("2_0mp7n")]
