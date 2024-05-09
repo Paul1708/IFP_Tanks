@@ -26,7 +26,8 @@ public partial class InvisBehaviour : Behaviour
 		/*
 		Behviour:
 		- Move towards the player
-		- Once in sight of the player, shoot for 3 seconds
+		- Once in sight of the player, reveal the tank 
+		- Then, after 1.5 seconds, stop moving and start shooting for 2 seconds
 		- After shooting, fallback to a random location. 
 			- This lasts for 5 seconds or until the enemy reaches the target location
 		- Repeat
