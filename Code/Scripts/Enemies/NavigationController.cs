@@ -7,6 +7,7 @@ public partial class NavigationController : NavigationAgent2D
 	[Export]
 	public float RotationSpeed { get; set; } = 0.01f;
 	public CharacterBody2D characterBody;
+	public bool IsMooving { get; set; } = true;
 	public override void _Ready()
 	{
 		characterBody = GetParent<CharacterBody2D>();
@@ -14,7 +15,12 @@ public partial class NavigationController : NavigationAgent2D
 
 	public override void _Process(double delta)
 	{
-		MoveTowardsVector(GetNextPathPosition());
+		if (IsMooving)
+		{
+			MoveTowardsVector(GetNextPathPosition());
+			return;
+		}
+		characterBody.Velocity = Vector2.Zero;
 	}
 
 	public void MoveTowardsVector(Vector2 target)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level/Level.cs" id="1_pxojk"]
 [ext_resource type="PackedScene" uid="uid://dr17omme2uqlx" path="res://Scenes/Player/Player.tscn" id="3_3dp72"]
-[ext_resource type="PackedScene" uid="uid://b3mnposqppd6g" path="res://Scenes/Enemies/BasicEnemy.tscn" id="4_nwtn8"]
+[ext_resource type="PackedScene" uid="uid://b87a81u80j4gp" path="res://Scenes/Enemies/InvisEnemy.tscn" id="4_lqs8a"]
 [ext_resource type="TileSet" uid="uid://cf0xavcu1aamw" path="res://Sprites/Tilesets/Desert Tileset.tres" id="6_ptjn6"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_uwwk7"]
@@ -23,14 +23,8 @@ navigation_polygon = SubResource("NavigationPolygon_uwwk7")
 
 [node name="Enemies" type="Node2D" parent="."]
 
-[node name="BasicEnemy" parent="Enemies" instance=ExtResource("4_nwtn8")]
-position = Vector2(1241, 645)
-
-[node name="BasicEnemy2" parent="Enemies" instance=ExtResource("4_nwtn8")]
-position = Vector2(1066, 227)
-
-[node name="BasicEnemy3" parent="Enemies" instance=ExtResource("4_nwtn8")]
-position = Vector2(1224, 928)
+[node name="InvisEnemy" parent="Enemies" instance=ExtResource("4_lqs8a")]
+position = Vector2(798, 266)
 
 [node name="TileMap" type="TileMap" parent="." groups=["TileMap"]]
 tile_set = ExtResource("6_ptjn6")
