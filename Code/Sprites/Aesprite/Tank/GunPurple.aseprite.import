@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dm4op3agpv6xw"
+path="res://.godot/imported/GunPurple.aseprite-f297b73d05ea150591ed8a83bf7bbe73.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/Tank/GunPurple.aseprite"
+dest_files=["res://.godot/imported/GunPurple.aseprite-f297b73d05ea150591ed8a83bf7bbe73.res"]
+
+[params]
+

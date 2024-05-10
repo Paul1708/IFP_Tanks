@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="WeaponStats" load_steps=3 format=3 uid="uid://cmwcdi6s8wq58"]
+
+[ext_resource type="PackedScene" uid="uid://dg8bmlb538upt" path="res://Scenes/Weapons/50cal.tscn" id="1_hvu8o"]
+[ext_resource type="Script" path="res://Scripts/Weapons/WeaponStats.cs" id="2_anj6n"]
+
+[resource]
+script = ExtResource("2_anj6n")
+bulletScene = ExtResource("1_hvu8o")
+damage = 2
+bulletsPerSecond = 7.5
+bulletSpeed = 20.0

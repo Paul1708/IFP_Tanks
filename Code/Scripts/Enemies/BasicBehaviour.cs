@@ -5,12 +5,12 @@ namespace Enemies;
 
 public partial class BasicBehaviour : Behaviour
 {
-	
+
 	public override void Setup()
 	{
 		TargetLocation = GetRandomTarget();
 	}
-	
+
 	public override void ExecuteBehaivour()
 	{
 		Gun.RotateTowards(Player.GlobalPosition);
@@ -28,8 +28,8 @@ public partial class BasicBehaviour : Behaviour
 			TargetLocation = Player.GlobalPosition;
 			_inRandomMove = false;
 		}
-		
-		
+
+
 		//check if target reached, if so, find a new random target
 		Navigation.NavigateTowards(TargetLocation);
 		if ((Enemy.GlobalPosition - TargetLocation).Length() <= PathGoalHitRadius)
@@ -42,12 +42,12 @@ public partial class BasicBehaviour : Behaviour
 	protected bool _checkIfPlayerInSight()
 	{
 		var spaceState = GetWorld2D().DirectSpaceState;
-		Dictionary sightCheck = spaceState.IntersectRay(PhysicsRayQueryParameters2D.Create(Enemy.Position, 
-			Player.Position, Enemy.CollisionMask, _getExcludedObjects()));
+		Dictionary sightCheck = spaceState.IntersectRay(PhysicsRayQueryParameters2D.Create(Enemy.Position,
+			Player.Position, 1, _getExcludedObjects()));
 		var colliderIdObj = sightCheck["collider_id"].Obj;
-		long colliderId = colliderIdObj != null ? (long) colliderIdObj : -1;
+		long colliderId = colliderIdObj != null ? (long)colliderIdObj : -1;
 
-		var collider = InstanceFromId((ulong) colliderId);
+		var collider = InstanceFromId((ulong)colliderId);
 		//if the collided object is a wall, then the player is not in the line of sight
 		if (collider is not TileMap)
 		{
@@ -78,5 +78,5 @@ public partial class BasicBehaviour : Behaviour
 			array.Add((list[i] as CollisionObject2D).GetRid());
 		}
 	}
-	
+
 }

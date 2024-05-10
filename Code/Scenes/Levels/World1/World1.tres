@@ -1,4 +1,4 @@
-[gd_resource type="Resource" load_steps=7 format=3 uid="uid://dp6htk3af7ahe"]
+[gd_resource type="Resource" load_steps=12 format=3 uid="uid://dp6htk3af7ahe"]
 
 [ext_resource type="Script" path="res://Scripts/Managers/Level/WorldData.cs" id="1_c213a"]
 [ext_resource type="Resource" uid="uid://bn6be57277sbj" path="res://Scenes/Levels/World1/Level1.tres" id="1_qlgjl"]
@@ -6,7 +6,12 @@
 [ext_resource type="Resource" uid="uid://dv4mwm8eujhk0" path="res://Scenes/Levels/World1/Level3.tres" id="3_d1yn4"]
 [ext_resource type="Resource" uid="uid://byyx5u07gxlj5" path="res://Scenes/Levels/World1/Level4.tres" id="4_galbv"]
 [ext_resource type="Resource" uid="uid://dia65m2befrsx" path="res://Scenes/Levels/World1/Level5.tres" id="5_tv1qb"]
+[ext_resource type="Resource" uid="uid://bam13lwbudjnv" path="res://Scenes/Levels/World1/Level6.tres" id="6_yc85y"]
+[ext_resource type="Resource" uid="uid://bq4lp7cvrrnwq" path="res://Scenes/Levels/World1/Level7.tres" id="7_25crt"]
+[ext_resource type="Resource" uid="uid://5v1b7de3e8y0" path="res://Scenes/Levels/World1/Level8.tres" id="8_7opxe"]
+[ext_resource type="Resource" uid="uid://clfmdisehv535" path="res://Scenes/Levels/World1/Level9.tres" id="9_nvo7n"]
+[ext_resource type="Resource" uid="uid://d0a2gjcqnjier" path="res://Scenes/Levels/World1/Level10.tres" id="10_5bfyp"]
 
 [resource]
 script = ExtResource("1_c213a")
-Levels = Array[Object]([ExtResource("1_qlgjl"), ExtResource("2_0icbe"), ExtResource("3_d1yn4"), ExtResource("4_galbv"), ExtResource("5_tv1qb")])
+Levels = Array[Object]([ExtResource("1_qlgjl"), ExtResource("2_0icbe"), ExtResource("3_d1yn4"), ExtResource("4_galbv"), ExtResource("5_tv1qb"), ExtResource("6_yc85y"), ExtResource("7_25crt"), ExtResource("8_7opxe"), ExtResource("9_nvo7n"), ExtResource("10_5bfyp")])

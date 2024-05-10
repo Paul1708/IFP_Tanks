@@ -24,5 +24,10 @@ public partial class AnimationHandler : AnimationPlayer
         }
 
     }
+
+    public void PlayReset()
+    {
+        Play("RESET");
+    }
 }
 

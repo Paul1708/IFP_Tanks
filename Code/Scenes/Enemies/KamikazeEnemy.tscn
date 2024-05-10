@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://ck4qfrctxcyal"]
+[gd_scene load_steps=26 format=3 uid="uid://ck4qfrctxcyal"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_m5ifg"]
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_cr5fy"]
@@ -29,60 +29,18 @@ resource_local_to_scene = true
 shader = ExtResource("3_w3b6u")
 shader_parameter/Weight = 0.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t2bgx"]
-atlas = ExtResource("8_cb5ya")
-region = Rect2(48, 0, 48, 92)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lia2c"]
-atlas = ExtResource("8_cb5ya")
-region = Rect2(96, 0, 48, 92)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w84mf"]
-atlas = ExtResource("8_cb5ya")
-region = Rect2(0, 92, 48, 92)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l78ht"]
-atlas = ExtResource("8_cb5ya")
-region = Rect2(48, 92, 48, 92)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_iablx"]
-atlas = ExtResource("8_cb5ya")
-region = Rect2(96, 92, 48, 92)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h0jtv"]
-atlas = ExtResource("8_cb5ya")
-region = Rect2(0, 184, 48, 92)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_48ykt"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyn3e"]
 atlas = ExtResource("8_cb5ya")
 region = Rect2(0, 0, 48, 92)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3m5xi"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dk42o"]
 animations = [{
 "frames": [{
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_t2bgx")
-}, {
-"duration": 0.6,
-"texture": SubResource("AtlasTexture_lia2c")
-}, {
-"duration": 1.3,
-"texture": SubResource("AtlasTexture_w84mf")
-}, {
-"duration": 1.3,
-"texture": SubResource("AtlasTexture_l78ht")
-}, {
-"duration": 1.3,
-"texture": SubResource("AtlasTexture_iablx")
-}, {
-"duration": 1.3,
-"texture": SubResource("AtlasTexture_h0jtv")
-}, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_48ykt")
+"texture": SubResource("AtlasTexture_iyn3e")
 }],
-"loop": false,
-"name": &"Shoot",
+"loop": true,
+"name": &"default",
 "speed": 10.0
 }]
 
@@ -402,8 +360,7 @@ texture_filter = 1
 material = SubResource("ShaderMaterial_isks5")
 position = Vector2(26, 0)
 rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_3m5xi")
-animation = &"Shoot"
+sprite_frames = SubResource("SpriteFrames_dk42o")
 metadata/_aseprite_wizard_config_ = {
 "layer": "",
 "o_ex_p": "",
@@ -420,7 +377,6 @@ position = Vector2(70, 0)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52
 path_postprocessing = 1
-debug_enabled = true
 script = ExtResource("9_ia71e")
 MovementSpeed = 300.0
 RotationSpeed = 0.03

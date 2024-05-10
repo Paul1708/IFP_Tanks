@@ -7,18 +7,18 @@ namespace Enemies;
 
 public partial class KamikazeBehaviour : Behaviour
 {
-    
+
     [Export] public float ExplosionDamage;
     [Export] public float ExplosionDamageRadius;
 
     [Export] public float TargetReachedDistance;
 
     private bool _exploded;
-    
-    
+
+
     //TODO: Bullets from enemies cannot hit other enemies
     //TODO: When two bullets of same group i.e. shot by enemy collide, destroy the weaker one, if they are the same type delete a random one
-    
+
     public override void Setup()
     {
         Navigation.NavigateTowards(Player.GlobalPosition);
@@ -35,7 +35,7 @@ public partial class KamikazeBehaviour : Behaviour
             }
             return;
         }
-        
+
         Navigation.NavigateTowards(Player.GlobalPosition);
     }
 
@@ -43,7 +43,7 @@ public partial class KamikazeBehaviour : Behaviour
     {
         HealthComponent hc = Enemy.GetNode<HealthComponent>("HealthComponent");
         hc.TakeDamage(hc.maxHP);
-        
+
 
         //Damage all close enemies
         foreach (Node node in GetTree().GetNodesInGroup("Damageable"))
@@ -54,7 +54,7 @@ public partial class KamikazeBehaviour : Behaviour
             if (node is CharacterBody2D && distance <= ExplosionDamageRadius)
             {
                 float finalDamage = ExplosionDamage / distance;
-                _takeDamage(node, (int) finalDamage);
+                _takeDamage(node, (int)finalDamage);
             }
         }
         particles.EmitParticles(this, Scene.KamikazeExplosion);
@@ -69,8 +69,8 @@ public partial class KamikazeBehaviour : Behaviour
         else
         {
             HealthComponent hc = node.GetNode<HealthComponent>("HealthComponent");
-            if(hc != null) hc.TakeDamage(damage);
+            if (hc != null) hc.TakeDamage(damage);
         }
-            
+
     }
 }

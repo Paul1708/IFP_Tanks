@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=18 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
@@ -15,16 +15,10 @@
 [ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="10_cckqj"]
 [ext_resource type="Texture2D" uid="uid://485tuggj4voy" path="res://Sprites/UI/LevelIndicators/CheckpointCurrent.png" id="11_op6e2"]
 [ext_resource type="Script" path="res://Test/Components/CameraShaker.cs" id="12_dndw0"]
+[ext_resource type="Texture2D" uid="uid://bhslsvpersbre" path="res://Sprites/UI/Menu/Button/Button.png" id="13_uec06"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf0x2"]
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-shadow_color = Color(0, 0, 0, 0.0941176)
-shadow_size = 2
-shadow_offset = Vector2(1, 1)
-anti_aliasing = false
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_e20pc"]
+texture = ExtResource("13_uec06")
 
 [node name="MainGame" type="Node2D" groups=["MainGame"]]
 process_mode = 1
@@ -110,13 +104,13 @@ vertical_alignment = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -376.0
-offset_top = 20.0
-offset_right = -200.0
-offset_bottom = 44.0
+offset_left = -445.0
+offset_top = 15.0
+offset_right = -248.0
+offset_bottom = 39.0
 grow_horizontal = 0
 scale = Vector2(2, 2)
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf0x2")
+theme_override_styles/panel = SubResource("StyleBoxTexture_e20pc")
 
 [node name="Panel" type="Panel" parent="HUD/PanelContainer"]
 custom_minimum_size = Vector2(0, -38.495)
@@ -126,7 +120,7 @@ size_flags_vertical = 0
 
 [node name="LevelDisplay" type="HBoxContainer" parent="HUD/PanelContainer/Panel" groups=["LevelDisplay"]]
 layout_mode = 0
-offset_right = 176.0
+offset_right = 196.0
 offset_bottom = 24.0
 alignment = 1
 script = ExtResource("5_i6q7i")
@@ -141,17 +135,42 @@ layout_mode = 2
 texture = ExtResource("5_rtyne")
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
-layout_mode = 2
-texture = ExtResource("11_op6e2")
-stretch_mode = 5
-
 [node name="TextureRect4" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
 layout_mode = 2
 texture = ExtResource("5_rtyne")
 stretch_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("11_op6e2")
+stretch_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect9" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
+layout_mode = 2
+texture = ExtResource("5_rtyne")
+stretch_mode = 5
+
+[node name="TextureRect10" type="TextureRect" parent="HUD/PanelContainer/Panel/LevelDisplay"]
 layout_mode = 2
 texture = ExtResource("5_rtyne")
 stretch_mode = 5

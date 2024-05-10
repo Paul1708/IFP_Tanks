@@ -1,8 +1,9 @@
-[gd_resource type="Resource" load_steps=3 format=3 uid="uid://cuorkuhnolits"]
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://cuorkuhnolits"]
 
 [ext_resource type="Resource" uid="uid://b3wk1w4bftkkq" path="res://Scenes/Levels/World 2/Level1.tres" id="1_xxai3"]
+[ext_resource type="Resource" uid="uid://bw2kfkhnkxnkx" path="res://Scenes/Levels/World 2/Level6.tres" id="2_r0y6w"]
 [ext_resource type="Script" path="res://Scripts/Managers/Level/WorldData.cs" id="6_5wgsy"]
 
 [resource]
 script = ExtResource("6_5wgsy")
-Levels = Array[Object]([ExtResource("1_xxai3")])
+Levels = Array[Object]([ExtResource("1_xxai3"), ExtResource("2_r0y6w")])

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://jrddcpbcpjt8"
+path="res://.godot/imported/TankPurple.aseprite-6715e53b163e28ad8394cee276a4690a.res"
+
+[deps]
+
+source_file="res://Sprites/Aesprite/Tank/TankPurple.aseprite"
+dest_files=["res://.godot/imported/TankPurple.aseprite-6715e53b163e28ad8394cee276a4690a.res"]
+
+[params]
+

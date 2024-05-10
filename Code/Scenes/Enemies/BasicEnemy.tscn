@@ -409,7 +409,7 @@ script = ExtResource("2_6n3w1")
 MinPathLength = 200
 MaxPathLength = 500
 PathGoalHitRadius = 150.0
-MaxRandomTargetSearchTries = 4
+MaxRandomTargetSearchTries = 100
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_qc42x")
@@ -440,7 +440,6 @@ position = Vector2(70, 0)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52
 path_postprocessing = 1
-debug_enabled = true
 script = ExtResource("6_ot0ae")
 MovementSpeed = 100.0
 RotationSpeed = 0.02
