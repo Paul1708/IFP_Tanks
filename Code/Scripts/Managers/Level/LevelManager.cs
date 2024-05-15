@@ -95,6 +95,7 @@ public partial class LevelManager : Node2D
     {
         EmitSignal(SignalName.OnLevelFailedShowDeathScreen);
         await ToSignal(_levelFailed, "OnRetryPressed");
+
         // Reload the last save
         SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
         EmitSignal(SignalName.OnLevelReset);

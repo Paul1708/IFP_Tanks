@@ -44,7 +44,6 @@ offset_bottom = 1080.0
 grow_vertical = 1
 
 [node name="LevelFailed" parent="." instance=ExtResource("6_ecelx")]
-process_mode = 1
 visible = false
 offset_right = 1920.0
 offset_bottom = 1080.0

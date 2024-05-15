@@ -9,9 +9,6 @@ public partial class LevelFailed : Control
 	private ColorRect _blur;
 	private MusicController _musicController;
 
-	[Export]
-	double slowDownTime; // The time over which to slow down the game
-
 	[Signal]
 	public delegate void OnRetryPressedEventHandler();
 
@@ -42,18 +39,13 @@ public partial class LevelFailed : Control
 	public void ShowDeathScreen()
 	{
 		_blurAnimation.Play("LevelCooldown");
+		GetTree().Paused = true;
 		Show();
 
-		// Start the slow down process
-		Tween tween = GetTree().CreateTween();
-		tween.TweenMethod(Callable.From<float>(SetEngingeTimeScale), 1.0f, 0.1f, 0.4);
 	}
 
 	private void OnRetryButtonPressed()
-	{
-		Tween tween = GetTree().CreateTween();
-		tween.TweenMethod(Callable.From<float>(SetEngingeTimeScale), 0.1f, 1f, 0.01);
-		
+	{	
 		_musicController.Play(Sound.ButtonClick);
 		EmitSignal(SignalName.OnRetryPressed);
 		Hide();
