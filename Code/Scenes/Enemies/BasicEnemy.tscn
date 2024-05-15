@@ -22,7 +22,7 @@ shader = ExtResource("3_rtpej")
 shader_parameter/Weight = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48yjh"]
-size = Vector2(86, 68)
+size = Vector2(82, 64)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_isks5"]
 resource_local_to_scene = true
@@ -400,7 +400,6 @@ metadata/_aseprite_wizard_config_ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_48yjh")
 
