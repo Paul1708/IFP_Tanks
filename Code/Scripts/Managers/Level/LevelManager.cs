@@ -17,6 +17,7 @@ public partial class LevelManager : Node2D
     private LevelDisplay _levelDisplay;
     private ShopMenu _shopMenu;
     private LevelCountdown _levelCountdown;
+    private LevelFailed _levelFailed;
     [Signal]
     public delegate void OnLevelChangedEventHandler();
     [Signal]
@@ -25,6 +26,8 @@ public partial class LevelManager : Node2D
     public delegate void OnFirstLevelLoadedEventHandler();
     [Signal]
     public delegate void OnLevelResetEventHandler();
+    [Signal]
+    public delegate void OnLevelFailedShowDeathScreenEventHandler();
 
 
     public override void _Ready()
@@ -32,6 +35,7 @@ public partial class LevelManager : Node2D
         _levelDisplay = GetTree().GetFirstNodeInGroup("LevelDisplay") as LevelDisplay;
         _shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
         _levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
+        _levelFailed = GetTree().GetFirstNodeInGroup("LevelFailed") as LevelFailed;
 
         SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
@@ -87,8 +91,10 @@ public partial class LevelManager : Node2D
         GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
     }
 
-    public void OnLevelFailed()
+    public async void OnLevelFailed()
     {
+        EmitSignal(SignalName.OnLevelFailedShowDeathScreen);
+        await ToSignal(_levelFailed, "OnRetryPressed");
         // Reload the last save
         SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
         EmitSignal(SignalName.OnLevelReset);
