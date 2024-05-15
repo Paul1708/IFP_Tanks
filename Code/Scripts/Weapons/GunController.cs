@@ -102,7 +102,7 @@ public partial class GunController : Node2D
         bullet.Shooter = GetParent() as Node2D;
         bullet.Speed = weaponStats.bulletSpeed;
         bullet.AddToGroup("Bullets");
-        
+
         //add the bullet to the scene tree 
         GetTree().GetFirstNodeInGroup("Level").AddChild(bullet);
     }
@@ -112,8 +112,24 @@ public partial class GunController : Node2D
         Node parent = GetParent();
         if (parent is PlayerMovement)
         {
-            if (GetTree().GetNodesInGroup("Enemy").Count > 0)
-                bullet.TargetNode = GetTree().GetNodesInGroup("Enemy").PickRandom() as Node2D;
+            var enemies = GetTree().GetNodesInGroup("Enemy");
+            if (enemies.Count > 0)
+            {
+                // select enemy which is closest to mouse position
+                Node2D closestEnemy = null;
+                float minDistance = float.MaxValue;
+                foreach (Node2D enemy in enemies)
+                {
+                    float distance = enemy.GlobalPosition.DistanceTo(GetGlobalMousePosition());
+                    if (distance < minDistance)
+                    {
+                        minDistance = distance;
+                        closestEnemy = enemy;
+                    }
+                }
+
+                bullet.TargetNode = closestEnemy;
+            }
         }
         else if (parent is Enemy)
         {
