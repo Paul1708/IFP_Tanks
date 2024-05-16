@@ -26,11 +26,6 @@ public partial class LevelFailed : Control
 		Hide();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
 	public override void _ExitTree()
 	{
 		_levelManager.OnLevelFailedShowDeathScreen -= ShowDeathScreen;
@@ -50,10 +45,4 @@ public partial class LevelFailed : Control
 		EmitSignal(SignalName.OnRetryPressed);
 		Hide();
 	}
-
-	private void SetEngingeTimeScale(float timeScale)
-	{
-		Engine.TimeScale = timeScale;
-	}
-
 }
