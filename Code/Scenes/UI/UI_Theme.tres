@@ -1,4 +1,5 @@
 [gd_resource type="Theme" load_steps=32 format=3 uid="uid://biu1v8mgr423w"]
+[gd_resource type="Theme" load_steps=32 format=3 uid="uid://biu1v8mgr423w"]
 
 [ext_resource type="Texture2D" uid="uid://ch7qsxyqun4hx" path="res://Sprites/UI/Menu/Button/ButtonHover.png" id="1_aqo2n"]
 [ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="1_lqc53"]

@@ -407,7 +407,7 @@ text = "Continue"
 [node name="New Game" type="Button" parent="UI/Buttons/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("3_ifl8e")
-text = "New Game
+text = " New Game
 "
 
 [node name="Settings" type="Button" parent="UI/Buttons/VBoxContainer"]

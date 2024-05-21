@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://w2lmqydie338"
-path="res://.godot/imported/RocketExplosion sound.wav-90addcf1348a0b7e8353f88fe20f91c7.sample"
+path="res://.godot/imported/RocketExplosion.wav-23baee55ce403ca60b7236d0a5324f72.sample"
 
 [deps]
 
-source_file="res://Audio/SFX/Bullets/Rocket/RocketExplosion sound.wav"
-dest_files=["res://.godot/imported/RocketExplosion sound.wav-90addcf1348a0b7e8353f88fe20f91c7.sample"]
+source_file="res://Audio/SFX/RocketExplosion.wav"
+dest_files=["res://.godot/imported/RocketExplosion.wav-23baee55ce403ca60b7236d0a5324f72.sample"]
 
 [params]
 
