@@ -11,6 +11,9 @@ public partial class VictoryScreen : Control
 	private MusicController _musicController;
 	private ParticleController _particleController;
 
+	[Export]
+	public float FireworkCooldown = 0.2f;
+
 	[Signal]
 	public delegate void OnBacktoMainMenuPressedEventHandler();
 
@@ -43,7 +46,7 @@ public partial class VictoryScreen : Control
 		while (IsVisibleInTree())
 		{
 			GenerateFireworks();
-			await ToSignal(GetTree().CreateTimer(0.2f), "timeout");
+			await ToSignal(GetTree().CreateTimer(FireworkCooldown), "timeout");
 		}
 	}
 
