@@ -22,7 +22,7 @@ shader = ExtResource("3_u3vcg")
 shader_parameter/Weight = null
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mntrx"]
-size = Vector2(86, 68)
+size = Vector2(82, 63)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2017h"]
 resource_local_to_scene = true
@@ -380,7 +380,7 @@ metadata/_aseprite_wizard_config_ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0)
+position = Vector2(3, -0.5)
 shape = SubResource("RectangleShape2D_mntrx")
 
 [node name="Behaviour" type="Node2D" parent="."]

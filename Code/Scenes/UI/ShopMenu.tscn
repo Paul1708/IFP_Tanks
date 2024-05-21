@@ -142,7 +142,7 @@ theme_override_constants/separation = 400
 layout_mode = 2
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 48
-text = "  Main Menu "
+text = "  Main Menu  "
 
 [node name="ShopLabel" type="RichTextLabel" parent="HBoxContainer"]
 clip_contents = false
@@ -158,7 +158,7 @@ scroll_active = false
 layout_mode = 2
 theme = ExtResource("1_yc5k6")
 theme_override_font_sizes/font_size = 48
-text = "  Continue "
+text = "  Continue  "
 
 [node name="PlayerStats" type="HSplitContainer" parent="."]
 layout_mode = 2

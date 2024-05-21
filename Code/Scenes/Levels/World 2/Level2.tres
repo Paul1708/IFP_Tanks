@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="LevelData" load_steps=3 format=3 uid="uid://dvvsm4mtqximw"]
+
+[ext_resource type="PackedScene" uid="uid://lcjydfmeuafo" path="res://Scenes/Levels/World 2/Level2.tscn" id="1_2c47p"]
+[ext_resource type="Script" path="res://Scripts/Managers/Level/LevelData.cs" id="2_uoaxt"]
+
+[resource]
+script = ExtResource("2_uoaxt")
+LevelScene = ExtResource("1_2c47p")
+IsCheckpoint = false
+LevelState = 0

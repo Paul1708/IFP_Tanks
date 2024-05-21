@@ -22,7 +22,7 @@ shader = ExtResource("3_w3b6u")
 shader_parameter/Weight = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_48yjh"]
-size = Vector2(86, 68)
+size = Vector2(82, 62)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_isks5"]
 resource_local_to_scene = true
@@ -338,7 +338,6 @@ metadata/_aseprite_wizard_config_ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2(3, 0)
 shape = SubResource("RectangleShape2D_48yjh")
 
@@ -377,9 +376,10 @@ position = Vector2(70, 0)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52
 path_postprocessing = 1
+debug_enabled = true
 script = ExtResource("9_ia71e")
 MovementSpeed = 300.0
-RotationSpeed = 0.03
+RotationSpeed = 0.04
 
 [node name="HealthComponent" type="Node2D" parent="."]
 position = Vector2(5, -2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=18 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]

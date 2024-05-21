@@ -17,7 +17,9 @@ public partial class NavigationController : NavigationAgent2D
 	{
 		if (IsMooving)
 		{
-			MoveTowardsVector(GetNextPathPosition());
+			var targetVector = GetCurrentNavigationPath().Length > 4 ?
+				GetCurrentNavigationPath()[4] : GetNextPathPosition();
+			MoveTowardsVector(targetVector);
 			return;
 		}
 		characterBody.Velocity = Vector2.Zero;
