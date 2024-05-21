@@ -10,6 +10,7 @@ public partial class PlayerMovement : CharacterBody2D
 	public GunController Gun { get; set; }
 	public AnimationHandler AnimationHandler { get; set; }
 	private float _rotationDirection;
+	private GpuParticles2D _deathParticles;
 	protected TrailComponent trailComponent;
 
 	public override void _Ready()
@@ -17,6 +18,8 @@ public partial class PlayerMovement : CharacterBody2D
 		Gun = GetNode<GunController>("Gun");
 		AnimationHandler = GetNode<AnimationHandler>("AnimationPlayer");
 		trailComponent = GetNode<TrailComponent>("TrailComponent");
+		_deathParticles = GetNode<GpuParticles2D>("DeathParticles");
+		PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnDeath;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -40,6 +43,11 @@ public partial class PlayerMovement : CharacterBody2D
 		}
 	}
 
+	public override void _ExitTree()
+	{
+		PlayerManager.Instance.PlayerHealthComponent.OnDeath -= OnDeath;
+	}
+
 	public void GetInput()
 	{
 		Vector2 input = Input.GetVector("left", "right", "down", "up");
@@ -59,5 +67,12 @@ public partial class PlayerMovement : CharacterBody2D
 	public bool IsMoving()
 	{
 		return Velocity != Vector2.Zero;
+	}
+
+	private async void OnDeath()
+	{
+		_deathParticles.Emitting = true;
+		await ToSignal(_deathParticles, "finished");
+		QueueFree();
 	}
 }

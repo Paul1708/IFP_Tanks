@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d0p4pcjksxbgu"]
+[gd_scene load_steps=20 format=3 uid="uid://d0p4pcjksxbgu"]
 
 [ext_resource type="PackedScene" uid="uid://c0jjxgin5kbdn" path="res://Scenes/UI/PauseMenu.tscn" id="1_48aw5"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="2_vpa1c"]
@@ -8,7 +8,9 @@
 [ext_resource type="Resource" uid="uid://cuorkuhnolits" path="res://Scenes/Levels/World 2/World2.tres" id="5_epr3e"]
 [ext_resource type="Script" path="res://Scripts/UI/LevelDisplay.cs" id="5_i6q7i"]
 [ext_resource type="Texture2D" uid="uid://dys1imk65tp35" path="res://Sprites/UI/LevelIndicators/BasicCompleted.png" id="5_rtyne"]
+[ext_resource type="PackedScene" uid="uid://bk2v84mks2gsk" path="res://Scenes/UI/LevelFailed.tscn" id="6_ecelx"]
 [ext_resource type="PackedScene" uid="uid://d35h47uyj31sj" path="res://Scenes/UI/HealthBar.tscn" id="7_3rvrl"]
+[ext_resource type="PackedScene" uid="uid://by6r0jaoxgerg" path="res://Scenes/UI/VictoryScreen.tscn" id="7_prlcn"]
 [ext_resource type="Texture2D" uid="uid://lb0afin3xbq8" path="res://Sprites/UI/CoinDisplay/CoinDisplay.png" id="8_afkt1"]
 [ext_resource type="Resource" uid="uid://dp6htk3af7ahe" path="res://Scenes/Levels/World1/World1.tres" id="8_bno8v"]
 [ext_resource type="Script" path="res://Scripts/UI/CoinDisplay.cs" id="9_dx5ay"]
@@ -33,12 +35,29 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 
 [node name="ShopMenu" parent="." instance=ExtResource("4_bpttc")]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.0
 offset_right = 1920.0
 offset_bottom = 1080.0
+grow_vertical = 1
+
+[node name="LevelFailed" parent="." instance=ExtResource("6_ecelx")]
+visible = false
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VictoryScreen" parent="." instance=ExtResource("7_prlcn")]
+visible = false
+custom_minimum_size = Vector2(1920, 1080)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 1
 grow_vertical = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource("1_48aw5")]

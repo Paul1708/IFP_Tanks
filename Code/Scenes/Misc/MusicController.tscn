@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://dbewiwa8v5aaj"]
 
 [ext_resource type="Script" path="res://Scripts/Audio/MusicController.cs" id="1_imnjd"]
-[ext_resource type="AudioStream" uid="uid://dytql8ryhk1jl" path="res://Audio/Menu/button-pressed-38129.mp3" id="2_kg54a"]
-[ext_resource type="AudioStream" uid="uid://w2lmqydie338" path="res://Audio/SFX/Bullets/Rocket/RocketExplosion sound.wav" id="3_bfx2b"]
+[ext_resource type="AudioStream" uid="uid://dytql8ryhk1jl" path="res://Audio/SFX/ButtonClick.mp3" id="2_kg54a"]
+[ext_resource type="AudioStream" uid="uid://w2lmqydie338" path="res://Audio/SFX/RocketExplosion.wav" id="3_bfx2b"]
 [ext_resource type="AudioStream" uid="uid://cvfqfp1muik3f" path="res://Audio/SFX/TankShooting.mp3" id="4_8h5il"]
 [ext_resource type="AudioStream" uid="uid://bjwsgputhema1" path="res://Audio/SFX/CoinPickup.mp3" id="5_dsu5q"]
 

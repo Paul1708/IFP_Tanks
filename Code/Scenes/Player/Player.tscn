@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dr17omme2uqlx"]
+[gd_scene load_steps=29 format=3 uid="uid://dr17omme2uqlx"]
 
 [ext_resource type="Script" path="res://Scripts/Movement/PlayerMovement.cs" id="1_noslj"]
 [ext_resource type="Texture2D" uid="uid://blkfra54wh0pf" path="res://Sprites/Tanks/TankGreen.png" id="2_cn7mg"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="7_5i82i"]
 [ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="8_sdglm"]
 [ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="9_rbyi5"]
+[ext_resource type="PackedScene" uid="uid://curh5r3qlm08p" path="res://Scenes/Enviroment/Particles/KamikazeExplosion.tscn" id="11_egqpy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6syb5"]
 resource_local_to_scene = true
@@ -500,3 +501,7 @@ script = ExtResource("7_5i82i")
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
 script = ExtResource("9_rbyi5")
 maxScale = 1.15
+
+[node name="DeathParticles" parent="." instance=ExtResource("11_egqpy")]
+process_mode = 2
+z_index = 0
