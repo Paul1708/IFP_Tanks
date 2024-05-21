@@ -376,6 +376,7 @@ position = Vector2(70, 0)
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 target_desired_distance = 19.52
 path_postprocessing = 1
+debug_enabled = true
 script = ExtResource("9_ia71e")
 MovementSpeed = 300.0
 RotationSpeed = 0.04
