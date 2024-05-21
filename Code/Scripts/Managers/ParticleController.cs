@@ -9,6 +9,7 @@ struct Scene
 	public static readonly PackedScene DrivingMud = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/DrivingMud.tscn");
 	public static readonly PackedScene DrivingGrass = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/DrivingGrass.tscn");
 	public static readonly PackedScene KamikazeExplosion = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/KamikazeExplosion.tscn");
+	public static readonly PackedScene Fireworks = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/Fireworks.tscn");
 }
 
 public partial class ParticleController : Node2D
@@ -42,6 +43,25 @@ public partial class ParticleController : Node2D
 		CheckForOneShot(particles);
 		//set the position of the particles to the position of the given node
 		SetPostion(particles, position);
+
+		Node targetNode = GetTree().CurrentScene.Name == "MainGame" ? GetTree().GetFirstNodeInGroup("Level") : GetTree().GetFirstNodeInGroup("MainMenu");
+		targetNode.AddChild(particles); //add the particle to the scene  
+		
+		//Emitt particles
+		particles.Emitting = true;
+		//wait until the particles are finished
+		await ToSignal(particles, "finished");
+		//queue free the particles
+		particles.QueueFree();
+	}
+
+	public async void EmitParticles(Vector2 position, PackedScene scene)
+	{
+		//create a new instance of the given particle scene
+		var particles = scene.Instantiate<GpuParticles2D>();
+		CheckForOneShot(particles);
+		//set the position of the particles to the position of the given node
+		particles.GlobalPosition = position;
 
 		Node targetNode = GetTree().CurrentScene.Name == "MainGame" ? GetTree().GetFirstNodeInGroup("Level") : GetTree().GetFirstNodeInGroup("MainMenu");
 		targetNode.AddChild(particles); //add the particle to the scene  

@@ -10,6 +10,7 @@ public partial class PauseMenu : Control
 	protected LevelCountdown levelCountdown;
 	private bool _leavePauseMenu = false;
 	private LevelFailed _levelFailed;
+	private VictoryScreen _victoryScreen;
 
 	public override void _Ready()
 	{
@@ -18,6 +19,7 @@ public partial class PauseMenu : Control
 		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 		levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
 		_levelFailed = GetTree().GetFirstNodeInGroup("LevelFailed") as LevelFailed;
+		_victoryScreen = GetTree().GetFirstNodeInGroup("VictoryScreen") as VictoryScreen;
 
 		settingsMenu.Hide(); // Hide the settings menu when the game starts
 		Hide(); // Hide the pause menu when the game starts
@@ -64,7 +66,7 @@ public partial class PauseMenu : Control
 	*/
 	private void CheckBeforeUnpause()
 	{
-		switch (shopMenu.Visible || levelCountdown.Visible || _levelFailed.Visible) //another menu open?
+		switch (shopMenu.Visible || levelCountdown.Visible || _levelFailed.Visible || _victoryScreen.Visible) //another menu open?
 		{
 			case true when _leavePauseMenu && levelCountdown.Visible:
 				Hide(); //just hide the pause Menu without unpausing the game because another menu is open and paused the game
