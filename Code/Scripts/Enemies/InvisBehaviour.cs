@@ -9,8 +9,7 @@ public partial class InvisBehaviour : Behaviour
 	private Sprite2D tankSprite;
 	private AnimatedSprite2D gunSprite;
 
-	private bool isShooting = false;
-	private bool isInFallback = false;
+	private InvisEnemyState state = InvisEnemyState.FALLBACK;
 
 	public override void Setup()
 	{
@@ -35,18 +34,18 @@ public partial class InvisBehaviour : Behaviour
 
 		// State machine would be better here, but this will do it for now
 
-		if (isShooting)
+		if (state.Equals(InvisEnemyState.SHOOTING))
 		{
 			Gun.Shoot();
 			return;
 		}
 
-		if (isInFallback)
+		if (state.Equals(InvisEnemyState.FALLBACK))
 		{
 
 			if ((Enemy.GlobalPosition - TargetLocation).Length() <= PathGoalHitRadius)
 			{
-				StopFallback();
+				TargetLocation = GetRandomTarget();
 			}
 			return;
 		}
@@ -67,7 +66,7 @@ public partial class InvisBehaviour : Behaviour
 	{
 		var spaceState = GetWorld2D().DirectSpaceState;
 		Dictionary sightCheck = spaceState.IntersectRay(PhysicsRayQueryParameters2D.Create(Enemy.Position,
-			Player.Position, Enemy.CollisionMask, _getExcludedObjects()));
+			Player.Position, 1, _getExcludedObjects()));
 		var colliderIdObj = sightCheck["collider_id"].Obj;
 		long colliderId = colliderIdObj != null ? (long)colliderIdObj : -1;
 
@@ -103,27 +102,24 @@ public partial class InvisBehaviour : Behaviour
 
 	private void StartShooting()
 	{
-
-		isShooting = true;
+		state = InvisEnemyState.SHOOTING;
 		Navigation.IsMooving = false;
 		GetTree().CreateTimer(2).Timeout += StartFallback;
 	}
 	private void StartFallback()
 	{
-		isShooting = false;
-		isInFallback = true;
+		state = InvisEnemyState.FALLBACK;
 		HideSprites();
 		TargetLocation = GetRandomTarget();
 
 		Navigation.IsMooving = true;
 		GetTree().CreateTimer(5).Timeout += StopFallback;
-
 	}
 
 	private void StopFallback()
 	{
 		TargetLocation = Player.GlobalPosition;
-		isInFallback = false;
+		state = InvisEnemyState.SEARCHINGFORPLAYER;
 	}
 
 
@@ -140,4 +136,11 @@ public partial class InvisBehaviour : Behaviour
 		gunSprite.Visible = true;
 		//Enemy.AnimationHandler.Active = true;
 	}
+}
+
+enum InvisEnemyState
+{
+	SEARCHINGFORPLAYER,
+	SHOOTING,
+	FALLBACK
 }
