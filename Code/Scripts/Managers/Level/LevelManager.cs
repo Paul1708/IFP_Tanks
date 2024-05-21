@@ -18,6 +18,7 @@ public partial class LevelManager : Node2D
     private ShopMenu _shopMenu;
     private LevelCountdown _levelCountdown;
     private LevelFailed _levelFailed;
+    private VictoryScreen _victoryScreen;
     [Signal]
     public delegate void OnLevelChangedEventHandler();
     [Signal]
@@ -28,6 +29,8 @@ public partial class LevelManager : Node2D
     public delegate void OnLevelResetEventHandler();
     [Signal]
     public delegate void OnLevelFailedShowDeathScreenEventHandler();
+    [Signal]
+    public delegate void OnGameWonShowVictoryScreenEventHandler();
 
 
     public override void _Ready()
@@ -36,6 +39,7 @@ public partial class LevelManager : Node2D
         _shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
         _levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
         _levelFailed = GetTree().GetFirstNodeInGroup("LevelFailed") as LevelFailed;
+        _victoryScreen = GetTree().GetFirstNodeInGroup("VictoryScreen") as VictoryScreen;
 
         SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
@@ -86,7 +90,9 @@ public partial class LevelManager : Node2D
         }
 
         // If there are no levels left in the game, go back to the main menu
-        GD.Print("You win!");
+        EmitSignal(SignalName.OnGameWonShowVictoryScreen);
+        await ToSignal(_victoryScreen, "OnBacktoMainMenuPressed");
+        
         CoinManager.Instance.ResetCoins();
         GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
     }
