@@ -328,7 +328,8 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-basePrice = 2
+basePrice = 3
+priceMultiplier = 1.0
 
 [node name="Panel2" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4
@@ -408,7 +409,8 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-basePrice = 10
+basePrice = 5
+priceMultiplier = 1.2
 
 [node name="Panel3" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4
@@ -488,7 +490,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-basePrice = 10
+basePrice = 5
 priceMultiplier = 1.5
 
 [node name="Panel4" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
@@ -569,7 +571,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-basePrice = 10
+basePrice = 5
 
 [node name="HScrollBar" type="HScrollBar" parent="TabContainer/Stats"]
 layout_mode = 1
@@ -681,7 +683,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-basePrice = 5
+basePrice = 15
 
 [node name="WeaponStatsDisplay" type="HBoxContainer" parent="TabContainer/Weapons/RichTextLabel/Control/Panel1"]
 layout_mode = 1
@@ -817,6 +819,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+basePrice = 15
 
 [node name="WeaponStatsDisplay" type="HBoxContainer" parent="TabContainer/Weapons/RichTextLabel/Control/Panel2"]
 layout_mode = 1
@@ -951,6 +954,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+basePrice = 20
 
 [node name="WeaponStatsDisplay" type="HBoxContainer" parent="TabContainer/Weapons/RichTextLabel/Control/Panel3"]
 layout_mode = 1
@@ -1085,6 +1089,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+basePrice = 20
 
 [node name="WeaponStatsDisplay" type="HBoxContainer" parent="TabContainer/Weapons/RichTextLabel/Control/Panel4"]
 layout_mode = 1
@@ -1219,6 +1224,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+basePrice = 25
 
 [node name="WeaponStatsDisplay" type="HBoxContainer" parent="TabContainer/Weapons/RichTextLabel/Control/Panel5"]
 layout_mode = 1
@@ -1354,6 +1360,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
+basePrice = 30
 
 [node name="WeaponStatsDisplay" type="HBoxContainer" parent="TabContainer/Weapons/RichTextLabel/Control/Panel6"]
 layout_mode = 1

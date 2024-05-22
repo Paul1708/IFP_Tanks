@@ -48,7 +48,6 @@ public partial class Coin : Area2D
 
 	public void CollectCoin()
 	{
-		//TODO: Play coin collection sound  
 		CoinManager.Instance.AddCoins(CoinValue);
 		musicController.Play(Sound.CoinPickup);
 	}

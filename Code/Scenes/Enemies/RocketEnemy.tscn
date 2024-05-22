@@ -421,12 +421,12 @@ metadata/_aseprite_wizard_config_ = {
 target_desired_distance = 19.52
 path_postprocessing = 1
 script = ExtResource("7_igvkk")
-MovementSpeed = 100.0
+MovementSpeed = 50.0
 RotationSpeed = 0.02
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("8_cqfsr")
-maxHP = 50
+maxHP = 125.0
 
 [node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_jbxwx")]
 visible = false
@@ -445,7 +445,7 @@ script = ExtResource("13_vpmmk")
 script = ExtResource("11_rvtfd")
 
 [node name="TrailComponent" parent="." instance=ExtResource("14_c05oh")]
-timeBetweenTrails = 0.25
+timeBetweenTrails = 0.5
 
 [node name="NavAgent2Player" type="NavigationAgent2D" parent="."]
 debug_use_custom = true

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://bou6t5rqksiqv"
-path="res://.godot/imported/Death.mp3-484acbd7cd162474491b5465f12e04b8.mp3str"
+path="res://.godot/imported/death.mp3-b2cb7a7a872ab49f2c58d10cc407af65.mp3str"
 
 [deps]
 
-source_file="res://Audio/SFX/Death.mp3"
-dest_files=["res://.godot/imported/Death.mp3-484acbd7cd162474491b5465f12e04b8.mp3str"]
+source_file="res://Audio/SFX/death.mp3"
+dest_files=["res://.godot/imported/death.mp3-b2cb7a7a872ab49f2c58d10cc407af65.mp3str"]
 
 [params]
 

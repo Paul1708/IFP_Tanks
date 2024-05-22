@@ -16,9 +16,9 @@ public class TestHealthComponent
     [TestCase]
     public void HealthGetsCorrectlyInitialized()
     {
-        int expected = 100;
+        float expected = 100;
 
-        int actual = hc.currentHP;
+        float actual = hc.currentHP;
         Assertions.AssertThat(actual).IsEqual(expected);
 
         actual = hc.maxHP;
@@ -30,8 +30,8 @@ public class TestHealthComponent
     {
         hc.TakeDamage(10);
 
-        int expected = 90;
-        int actual = hc.currentHP;
+        float expected = 90;
+        float actual = hc.currentHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -42,8 +42,8 @@ public class TestHealthComponent
         hc.SetCurrentHP(90);
         hc.Heal(10);
 
-        int expected = 100;
-        int actual = hc.currentHP;
+        float expected = 100;
+        float actual = hc.currentHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -53,8 +53,8 @@ public class TestHealthComponent
     {
         hc.Heal(10);
 
-        int expected = 100;
-        int actual = hc.currentHP;
+        float expected = 100;
+        float actual = hc.currentHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -65,8 +65,8 @@ public class TestHealthComponent
         hc.SetCurrentHP(90);
         hc.Heal(-10);
 
-        int expected = 90;
-        int actual = hc.currentHP;
+        float expected = 90;
+        float actual = hc.currentHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -76,8 +76,8 @@ public class TestHealthComponent
     {
         hc.TakeDamage(10);
 
-        int expected = 90;
-        int actual = hc.currentHP;
+        float expected = 90;
+        float actual = hc.currentHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -88,8 +88,8 @@ public class TestHealthComponent
         hc.SetCurrentHP(90);
         hc.TakeDamage(-10);
 
-        int expected = 90;
-        int actual = hc.currentHP;
+        float expected = 90;
+        float actual = hc.currentHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -99,8 +99,8 @@ public class TestHealthComponent
     {
         hc.IncreaseMaxHealth(10);
 
-        int expected = 110;
-        int actual = hc.maxHP;
+        float expected = 110;
+        float actual = hc.maxHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -110,8 +110,8 @@ public class TestHealthComponent
     {
         hc.IncreaseMaxHealth(-10);
 
-        int expected = 100;
-        int actual = hc.maxHP;
+        float expected = 100;
+        float actual = hc.maxHP;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }

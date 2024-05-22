@@ -1,10 +1,11 @@
+using System;
 using Components;
 using Godot;
 
 public partial class EnemyHealthBar : Control
 {
     private HealthComponent _hc;
-    
+
     public override void _Ready()
     {
         _hc = GetParent<HealthComponent>();
@@ -15,13 +16,13 @@ public partial class EnemyHealthBar : Control
     }
 
 
-    public void SetHealth(int health)
+    public void SetHealth(float health)
     {
-        GetNode<Label>("Label").Text = $"{health}/{_hc.maxHP}";
+        GetNode<Label>("Label").Text = $"{Math.Round(health, 1)}/{_hc.maxHP}";
     }
 
-    public void SetMaxHealth(int maxHealth)
+    public void SetMaxHealth(float maxHealth)
     {
-        GetNode<Label>("Label").Text = $"{_hc.currentHP}/{maxHealth}";
+        GetNode<Label>("Label").Text = $"{Math.Round(_hc.currentHP, 1)}/{maxHealth}";
     }
 }

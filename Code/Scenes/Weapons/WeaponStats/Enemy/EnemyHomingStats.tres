@@ -6,6 +6,6 @@
 [resource]
 script = ExtResource("1_ppjx8")
 bulletScene = ExtResource("2_atgkm")
-damage = 20
-bulletsPerSecond = 0.33
+damage = 35.0
+bulletsPerSecond = 0.25
 bulletSpeed = 5.0

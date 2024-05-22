@@ -65,7 +65,7 @@ public partial class ShopStatsTab : ShopBaseTab
 		else
 		{
 			Stat healStat = ShopManager.Instance.statsList[0];
-			if (ShopManager.Instance.BuyStat(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealToMax();
+			if (ShopManager.Instance.BuyStat(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealPercentage(0.25f);
 		}
 	}
 
@@ -96,4 +96,14 @@ public partial class ShopStatsTab : ShopBaseTab
 			PlayerManager.Instance.AddMovementSpeed(10f);
 		}
 	}
+
+	private void OnBuy5Pressed()
+	{
+		Stat speedStat = ShopManager.Instance.statsList[3];
+		ShopManager.Instance.BuyStat(speedStat);
+		{
+			PlayerManager.Instance.AddRotationSpeed(0.25f);
+		}
+	}
 }
+

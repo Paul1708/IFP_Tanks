@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://dr17omme2uqlx"]
+[gd_scene load_steps=29 format=3 uid="uid://dr17omme2uqlx"]
 
 [ext_resource type="Script" path="res://Scripts/Movement/PlayerMovement.cs" id="1_noslj"]
 [ext_resource type="Texture2D" uid="uid://blkfra54wh0pf" path="res://Sprites/Tanks/TankGreen.png" id="2_cn7mg"]

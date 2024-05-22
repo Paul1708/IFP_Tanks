@@ -45,7 +45,13 @@ public partial class PlayerManager : Node2D
         EmitSignal(SignalName.OnPlayerStatsChanged, PlayerStats);
     }
 
-    public void AddMaxHealth(int amount)
+    public void AddRotationSpeed(float amount)
+    {
+        PlayerStats.CurrentRotationSpeed += amount;
+        EmitSignal(SignalName.OnPlayerStatsChanged, PlayerStats);
+    }
+
+    public void AddMaxHealth(float amount)
     {
         PlayerStats.CurrentMaxHealth += amount;
         PlayerHealthComponent.IncreaseMaxHealth(amount);
@@ -60,14 +66,6 @@ public partial class PlayerManager : Node2D
         PlayerStats = saveData.PlayerStats;
         PlayerHealthComponent.SetCurrentHP(saveData.PlayerCurrentHP);
         PlayerHealthComponent.SetMaxHP(PlayerStats.CurrentMaxHealth);
-    }
-    // TODO: Remove this Debug method
-    public override void _Input(InputEvent @event)
-    {
-        if (Input.IsActionJustPressed("Debug2"))
-        {
-            PlayerHealthComponent.TakeDamage(10);
-        }
     }
 }
 

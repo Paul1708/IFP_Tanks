@@ -11,6 +11,6 @@ public partial class PlayerStats : Resource
     [Export] public float CurrentRotationSpeed;
     [Export] public float BaseDamageModifier;
     [Export] public float CurrentDamageModifier;
-    [Export] public int BaseMaxHealth;
-    [Export] public int CurrentMaxHealth;
+    [Export] public float BaseMaxHealth;
+    [Export] public float CurrentMaxHealth;
 }

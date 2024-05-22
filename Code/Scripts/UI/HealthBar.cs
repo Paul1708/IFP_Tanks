@@ -1,3 +1,4 @@
+using System;
 using Components;
 using Godot;
 using Managers;
@@ -13,8 +14,8 @@ public partial class HealthBar : TextureProgressBar
     public TextureProgressBar redBar;
     public Timer redHealthTimer;
     public Label label;
-    public int currentHP;
-    public int maxHP;
+    public float currentHP;
+    public float maxHP;
     private HealthComponent _playerHealthComponent;
 
     public override void _Ready()
@@ -52,7 +53,7 @@ public partial class HealthBar : TextureProgressBar
         redHealthTimer.Timeout -= UpdateRedHealthBar;
     }
 
-    public void OnHealthChanged(int newHP)
+    public void OnHealthChanged(float newHP)
     {
         //set the health bar's value to the current health
         greenBar.Value = newHP;
@@ -67,7 +68,7 @@ public partial class HealthBar : TextureProgressBar
         redHealthTimer.Start(RedBarDelay);
     }
 
-    public void OnMaxHealthChanged(int newMaxHP)
+    public void OnMaxHealthChanged(float newMaxHP)
     {
         maxHP = newMaxHP;
         UpdateLabelText();
@@ -91,6 +92,6 @@ public partial class HealthBar : TextureProgressBar
 
     private void UpdateLabelText()
     {
-        label.Text = $"{currentHP} / {maxHP}";
+        label.Text = $"{Math.Round(currentHP)} / {Math.Round(maxHP)}";
     }
 }
