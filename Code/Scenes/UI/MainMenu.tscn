@@ -1,8 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://g3vuhr6e8a3m"]
+[gd_scene load_steps=31 format=3 uid="uid://g3vuhr6e8a3m"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_ahplq"]
 [ext_resource type="Texture2D" uid="uid://dohaikbmd7yu1" path="res://Sprites/UI/title.png" id="2_u7cxo"]
-[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="3_ifl8e"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI_Theme.tres" id="3_ifl8e"]
 [ext_resource type="TileSet" uid="uid://cf0xavcu1aamw" path="res://Sprites/Tilesets/Desert Tileset.tres" id="4_nrqqd"]
 [ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="5_ke5rw"]
 [ext_resource type="Script" path="res://Scripts/Enemies/DummyTank.cs" id="5_lk3pg"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="9_xbotd"]
 [ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="10_bjkwk"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="10_w8blg"]
+[ext_resource type="AudioStream" uid="uid://c2ph8b8chq6ag" path="res://Audio/Music/MainMenu.ogg" id="14_3pdck"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6804y"]
 resource_local_to_scene = true
@@ -509,6 +510,10 @@ position_smoothing_enabled = true
 layout_mode = 1
 offset_left = 1920.0
 offset_right = 1920.0
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_3pdck")
+bus = &"Music"
 
 [connection signal="pressed" from="UI/Buttons/VBoxContainer/Continue" to="." method="OnContinueGamePressed"]
 [connection signal="pressed" from="UI/Buttons/VBoxContainer/New Game" to="." method="OnNewGamePressed"]

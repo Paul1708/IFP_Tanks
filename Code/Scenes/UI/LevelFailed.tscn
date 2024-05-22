@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/UI/LevelFailed.cs" id="1_jah21"]
 [ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="2_y458n"]
-[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="3_bkfj4"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI_Theme.tres" id="3_bkfj4"]
 
 [sub_resource type="Animation" id="Animation_rhvda"]
 resource_name = "LevelCooldown"

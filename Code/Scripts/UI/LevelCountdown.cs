@@ -11,6 +11,7 @@ public partial class LevelCountdown : Control
 	private ShopMenu _shopMenu;
 	private ColorRect _blur;
 	private LevelManager _levelManager;
+	private MusicController _musicController;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -22,6 +23,7 @@ public partial class LevelCountdown : Control
 
 		_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 		_levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
+		_musicController = GetNode<MusicController>("/root/MusicController");
 		
 		_shopMenu.OnShopMenuClosed += StartLevelCooldown;
 		_levelManager.OnFirstLevelLoaded += StartLevelCooldown;
@@ -46,6 +48,7 @@ public partial class LevelCountdown : Control
 		Show();
 		blurAnimation.Play("LevelCooldown");
 		countdownTimer.Start();
+		_musicController.PlayMusic(Sound.CountDown);
 		GetTree().Paused = true;
 	}
 

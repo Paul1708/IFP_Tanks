@@ -1,5 +1,4 @@
 using System;
-using System.Threading.Tasks;
 using Godot;
 using Managers.Level;
 
@@ -40,7 +39,9 @@ public partial class VictoryScreen : Control
 	public async void ShowVictoryScreen()
 	{
 		_blurAnimation.Play("LevelCooldown");
+		_musicController.Play(Sound.Victory);
 		GetTree().Paused = true;
+	
 		Show();
 
 		while (IsVisibleInTree())

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://df3s6paxthbng"]
 
-[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_8xmjr"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI_Theme.tres" id="1_8xmjr"]
 [ext_resource type="Script" path="res://Scripts/UI/LevelCountdown.cs" id="1_pv3fh"]
 [ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="2_joy2x"]
 
@@ -74,7 +74,7 @@ libraries = {
 }
 
 [node name="Countdown" type="Timer" parent="."]
-wait_time = 0.01
+wait_time = 3.0
 one_shot = true
 
 [node name="CountdownContainer" type="VBoxContainer" parent="."]
