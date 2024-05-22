@@ -24,7 +24,7 @@ public partial class LevelCountdown : Control
 		_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 		_levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 		_musicController = GetNode<MusicController>("/root/MusicController");
-		
+
 		_shopMenu.OnShopMenuClosed += StartLevelCooldown;
 		_levelManager.OnFirstLevelLoaded += StartLevelCooldown;
 	}
@@ -38,7 +38,7 @@ public partial class LevelCountdown : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		int timeLeft = (int)countdownTimer.TimeLeft;
+		int timeLeft = (int)countdownTimer.TimeLeft + 1;
 		_cooldownLabel.Text = timeLeft.ToString();
 	}
 
@@ -52,7 +52,7 @@ public partial class LevelCountdown : Control
 		GetTree().Paused = true;
 	}
 
-	public void OnCooldownTimeout ()
+	public void OnCooldownTimeout()
 	{
 		GetTree().Paused = false;
 		Hide();

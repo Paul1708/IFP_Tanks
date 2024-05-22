@@ -16,7 +16,6 @@ public partial class GunController : Node2D
     private AnimatedSprite2D _sprite;
     private Timer _shootTimer;
 
-    // Das ist sowas von dreckig, aber ist mir egal :O
     private bool isPlayerGunController = false;
 
     public override void _Ready()
