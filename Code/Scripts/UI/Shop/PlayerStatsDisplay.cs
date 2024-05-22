@@ -58,7 +58,7 @@ public partial class PlayerStatsDisplay : Control
     /// <param name="maxHealth">Is ignored, only needed beacuse of Event.</param>
     public void UpdateHealthLabel(float maxHealth)
     {
-        _HPLabel.Text = $"{PlayerManager.Instance.PlayerHealthComponent.currentHP}/{PlayerManager.Instance.PlayerHealthComponent.maxHP}";
+        _HPLabel.Text = $"{Math.Round(PlayerManager.Instance.PlayerHealthComponent.currentHP)}/{Math.Round(PlayerManager.Instance.PlayerHealthComponent.maxHP)}";
     }
 
     /// <summary>

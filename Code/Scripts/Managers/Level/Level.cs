@@ -24,7 +24,7 @@ public partial class Level : Node2D
     public override void _Ready()
     {
         this.AddChild(_coinTimer);
-		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+        shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 
         // Get all enemies in the level
         enemies = GetTree().GetNodesInGroup("Enemy").ToList();
@@ -52,8 +52,8 @@ public partial class Level : Node2D
         if (GetTree().GetNodesInGroup("Coins").Count == 0 && _startedCoinMovement)
         {
             //If all coins in tree are collected because of MoveAllCoinsToPlayer function then emit the signal
-                EmitSignal(SignalName.OnCoinsMoved);
-                _startedCoinMovement = false;
+            EmitSignal(SignalName.OnCoinsMoved);
+            _startedCoinMovement = false;
         }
     }
 
@@ -126,6 +126,7 @@ public partial class Level : Node2D
         if (Input.IsActionJustPressed("Debug"))
         {
             EmitSignal(SignalName.OnCoinsMoved);
+            CoinManager.Instance.AddCoins(10);
         }
     }
 }

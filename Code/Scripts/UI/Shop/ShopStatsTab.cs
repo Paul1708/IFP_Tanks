@@ -65,7 +65,7 @@ public partial class ShopStatsTab : ShopBaseTab
 		else
 		{
 			Stat healStat = ShopManager.Instance.statsList[0];
-			if (ShopManager.Instance.BuyStat(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealPercentage(0.2f);
+			if (ShopManager.Instance.BuyStat(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealPercentage(0.25f);
 		}
 	}
 

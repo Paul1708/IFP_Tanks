@@ -12,7 +12,7 @@ lock_rotation = true
 max_contacts_reported = 1
 contact_monitor = true
 script = ExtResource("1_miwo5")
-MaxBounces = 1
+MaxBounces = 5
 
 [node name="GFX" type="Sprite2D" parent="."]
 scale = Vector2(0.3, 0.3)
@@ -24,7 +24,7 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_gippp")
 
 [node name="DestroyTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 one_shot = true
 autostart = true
 

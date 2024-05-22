@@ -328,8 +328,8 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Price: "
 script = ExtResource("6_607bg")
-basePrice = 2
-priceMultiplier = 1.2
+basePrice = 3
+priceMultiplier = 1.0
 
 [node name="Panel2" type="Panel" parent="TabContainer/Stats/RichTextLabel/Control"]
 anchors_preset = 4

@@ -7,5 +7,5 @@
 script = ExtResource("1_wdhvc")
 bulletScene = ExtResource("1_cus1h")
 damage = 2.0
-bulletsPerSecond = 7.5
-bulletSpeed = 20.0
+bulletsPerSecond = 8.0
+bulletSpeed = 25.0

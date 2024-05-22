@@ -92,6 +92,6 @@ public partial class HealthBar : TextureProgressBar
 
     private void UpdateLabelText()
     {
-        label.Text = $"{Math.Round(currentHP, 1)} / {Math.Round(maxHP, 1)}";
+        label.Text = $"{Math.Round(currentHP)} / {Math.Round(maxHP)}";
     }
 }
