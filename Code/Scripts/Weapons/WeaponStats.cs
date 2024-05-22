@@ -4,7 +4,7 @@ using Godot;
 public partial class WeaponStats : Resource
 {
     [Export] public PackedScene bulletScene;
-    [Export] public int damage;
+    [Export] public float damage;
     [Export] public float bulletsPerSecond;
     [Export] public float bulletSpeed;
 }

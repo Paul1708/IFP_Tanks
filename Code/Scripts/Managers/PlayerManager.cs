@@ -45,7 +45,7 @@ public partial class PlayerManager : Node2D
         EmitSignal(SignalName.OnPlayerStatsChanged, PlayerStats);
     }
 
-    public void AddMaxHealth(int amount)
+    public void AddMaxHealth(float amount)
     {
         PlayerStats.CurrentMaxHealth += amount;
         PlayerHealthComponent.IncreaseMaxHealth(amount);

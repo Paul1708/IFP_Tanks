@@ -6,16 +6,16 @@ namespace Components;
 public partial class HealthComponent : Node2D
 {
 
-    [Export] public int maxHP { get; set; }
-    public int currentHP { get; set; }
+    [Export] public float maxHP { get; set; }
+    public float currentHP { get; set; }
     [Signal]
     public delegate void OnDeathEventHandler();
     [Signal]
-    public delegate void OnHealthChangedEventHandler(int currentHP);
+    public delegate void OnHealthChangedEventHandler(float currentHP);
     [Signal]
-    public delegate void OnMaxHealthChangedEventHandler(int maxHP);
+    public delegate void OnMaxHealthChangedEventHandler(float maxHP);
     [Signal]
-    public delegate void OnTakeDamageEventHandler(int damage);
+    public delegate void OnTakeDamageEventHandler(float damage);
     public override void _Ready()
     {
         if (maxHP <= 0)
@@ -26,13 +26,13 @@ public partial class HealthComponent : Node2D
         SetCurrentHP(maxHP);
     }
 
-    public void Heal(int value)
+    public void Heal(float value)
     {
         if (value < 0) return;
         SetCurrentHP(currentHP + value);
     }
 
-    public void TakeDamage(int value)
+    public void TakeDamage(float value)
     {
         if (value < 0) return;
         EmitSignal(SignalName.OnTakeDamage, value);
@@ -44,7 +44,12 @@ public partial class HealthComponent : Node2D
         SetCurrentHP(maxHP);
     }
 
-    public void IncreaseMaxHealth(int value)
+    public void HealPercentage(float percentage)
+    {
+        Heal(maxHP * percentage);
+    }
+
+    public void IncreaseMaxHealth(float value)
     {
         if (value < 0) return;
 
@@ -53,7 +58,7 @@ public partial class HealthComponent : Node2D
         EmitSignal(SignalName.OnMaxHealthChanged, maxHP);
     }
 
-    public void SetCurrentHP(int value)
+    public void SetCurrentHP(float value)
     {
         //clamp the value to the max health
         currentHP = Mathf.Min(value, maxHP);
@@ -62,7 +67,7 @@ public partial class HealthComponent : Node2D
         CheckIfDead();
     }
 
-    public void SetMaxHP(int value)
+    public void SetMaxHP(float value)
     {
         if (value <= 0) return;
 

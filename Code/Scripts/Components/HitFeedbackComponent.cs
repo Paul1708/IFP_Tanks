@@ -44,7 +44,7 @@ public partial class HitFeedbackComponent : Node2D
         _healthComponent.OnTakeDamage -= StartTween;
     }
 
-    private void StartTween(int damage)
+    private void StartTween(float damage)
     {
         if (doFlashSprite)
         {

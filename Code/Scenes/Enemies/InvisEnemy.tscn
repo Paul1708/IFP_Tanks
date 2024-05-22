@@ -396,13 +396,13 @@ position = Vector2(70, 0)
 target_desired_distance = 19.52
 path_postprocessing = 1
 script = ExtResource("9_7ekwt")
-MovementSpeed = 100.0
-RotationSpeed = 0.02
+MovementSpeed = 125.0
+RotationSpeed = 0.025
 
 [node name="HealthComponent" type="Node2D" parent="."]
 visible = false
 script = ExtResource("10_0sbit")
-maxHP = 30
+maxHP = 75.0
 
 [node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_rorcq")]
 

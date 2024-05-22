@@ -7,11 +7,11 @@ namespace Weapons
 {
     public abstract partial class Bullet : RigidBody2D
     {
-        public int damage { get; set; }
+        public float damage { get; set; }
         public Node2D Shooter { get; set; }
-        
+
         public float Speed { get; set; } //speed of the bullet
-        
+
         protected Node2D player;
         protected HealthComponent playerHealthComponent;
         protected ParticleController particles;
@@ -57,7 +57,8 @@ namespace Weapons
             else if (node.IsInGroup("Wall") || node is TileMap)
             {
                 OnWallHit();
-            }else if (node is Bullet otherBullet)
+            }
+            else if (node is Bullet otherBullet)
             {
                 otherBullet.Destroy();
             }
@@ -93,7 +94,7 @@ namespace Weapons
         protected virtual Node Move()
         {
             return null;
-            
+
         }
 
 
@@ -105,7 +106,7 @@ namespace Weapons
         public override void _PhysicsProcess(double delta)
         {
             Node collided = Move();
-            if(collided != null)
+            if (collided != null)
                 OnCollision(collided);
         }
     }

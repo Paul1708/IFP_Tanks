@@ -1,8 +1,8 @@
 using Godot;
-using System;
 using Player;
 using Managers;
 using Shop;
+using System;
 
 namespace Weapons;
 
@@ -85,7 +85,7 @@ public partial class GunController : Node2D
         bullet.damage = weaponStats.damage;
         if (isPlayerGunController)
         {
-            bullet.damage = (int)(bullet.damage * PlayerManager.Instance.PlayerStats.CurrentDamageModifier);
+            bullet.damage = bullet.damage * PlayerManager.Instance.PlayerStats.CurrentDamageModifier;
         }
 
         //if it is a homing bullet shot by the player then set the target to a random enemy.

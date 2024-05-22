@@ -15,7 +15,7 @@ public partial class SaveData : Resource
     [Export]
     public int CoinCount { get; set; }
     [Export]
-    public int PlayerCurrentHP { get; set; }
+    public float PlayerCurrentHP { get; set; }
     [Export]
     public PlayerStats PlayerStats { get; set; }
 
@@ -51,7 +51,7 @@ public partial class SaveData : Resource
         };
         LastCheckpointLevelID = 0;
         LastCheckpointWorldID = 0;
-        CoinCount = 999999;
+        CoinCount = 0;
         PlayerCurrentHP = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth;
         PlayerStats = new PlayerStats()
         {
