@@ -10,5 +10,5 @@ BaseRotationSpeed = 3.0
 CurrentRotationSpeed = 3.0
 BaseDamageModifier = 1.0
 CurrentDamageModifier = 2.0
-BaseMaxHealth = 0.0
-CurrentMaxHealth = 0.0
+BaseMaxHealth = 100.0
+CurrentMaxHealth = 100.0
