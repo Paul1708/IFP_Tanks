@@ -71,6 +71,7 @@ public partial class PauseMenu : Control
 			case true when _leavePauseMenu && levelCountdown.Visible:
 				Hide(); //just hide the pause Menu without unpausing the game because another menu is open and paused the game
 				levelCountdown.countdownTimer.Paused = false;
+				musicController.GetNode<AudioStreamPlayer>("CountDown").StreamPaused = false;
 				levelCountdown.blurAnimation.Play();
 				_leavePauseMenu = false;
 				break;
@@ -81,6 +82,7 @@ public partial class PauseMenu : Control
 				break;
 			case true:
 				levelCountdown.countdownTimer.Paused = true;
+				musicController.GetNode<AudioStreamPlayer>("CountDown").StreamPaused = true;
 				levelCountdown.blurAnimation.Pause();
 				_leavePauseMenu = true;
 				Pause();
@@ -95,7 +97,6 @@ public partial class PauseMenu : Control
 	private void OnResumePressed()
 	{
 		musicController.Play(Sound.ButtonClick);
-
 		CheckBeforeUnpause();
 	}
 
@@ -111,7 +112,6 @@ public partial class PauseMenu : Control
 	private void OnMainMenuPressed()
 	{
 		musicController.Play(Sound.ButtonClick);
-
 		GetTree().Paused = false; //make sure the game is unpaused
 		GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
 	}

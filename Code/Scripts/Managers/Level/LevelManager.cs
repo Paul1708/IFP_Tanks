@@ -19,6 +19,7 @@ public partial class LevelManager : Node2D
     private LevelCountdown _levelCountdown;
     private LevelFailed _levelFailed;
     private VictoryScreen _victoryScreen;
+    private MusicController _musicController;
     [Signal]
     public delegate void OnLevelChangedEventHandler();
     [Signal]
@@ -40,10 +41,13 @@ public partial class LevelManager : Node2D
         _levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
         _levelFailed = GetTree().GetFirstNodeInGroup("LevelFailed") as LevelFailed;
         _victoryScreen = GetTree().GetFirstNodeInGroup("VictoryScreen") as VictoryScreen;
+        _musicController = GetNode<MusicController>("/root/MusicController");
 
         SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
         SaveManager.Instance.LoadGame();
+
+        _musicController.PlayWorldMusic(currentWorldID);
     }
     public override void _ExitTree()
     {
@@ -77,6 +81,9 @@ public partial class LevelManager : Node2D
         if (currentWorldID + 1 < Worlds.Length)
         {
             await LoadLevelByID(currentWorldID + 1, 0);
+           
+            _musicController.StopCurrentMusic();
+            _musicController.PlayWorldMusic(currentWorldID);
 
             // Save the game if the level was a checkpoint
             if (saveGameAfterLoading)

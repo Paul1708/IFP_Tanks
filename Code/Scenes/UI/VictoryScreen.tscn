@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://by6r0jaoxgerg"]
 
-[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_c86bf"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI_Theme.tres" id="1_c86bf"]
 [ext_resource type="Script" path="res://Scripts/UI/VictoryScreen.cs" id="2_vt3u8"]
 [ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="3_vti6p"]
 

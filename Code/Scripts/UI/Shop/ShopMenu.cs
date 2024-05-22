@@ -39,6 +39,7 @@ public partial class ShopMenu : Control
 		GetTree().Paused = true;
 		Show();
 		_animationPlayer.Play("StartPause");
+		_musicController.Play(Sound.OpenShop);
 	}
 
 	//Hide the shop menu, unpause the game and tell the level to continue by emitting the OnLevelComplete signal

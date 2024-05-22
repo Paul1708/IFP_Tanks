@@ -34,6 +34,7 @@ public partial class LevelFailed : Control
 	public void ShowDeathScreen()
 	{
 		_blurAnimation.Play("LevelCooldown");
+		_musicController.Play(Sound.Death);
 		GetTree().Paused = true;
 		Show();
 
