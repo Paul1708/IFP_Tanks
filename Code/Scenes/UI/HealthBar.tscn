@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b8nccnbrd7013" path="res://Sprites/UI/Healthbar/HeatlhBarFillerRed.png" id="2_bwtj2"]
 [ext_resource type="Texture2D" uid="uid://dsdtcjlypw7o7" path="res://Sprites/UI/Healthbar/HeatlhBarFiller.png" id="2_pck87"]
 [ext_resource type="Script" path="res://Scripts/UI/HealthBar.cs" id="3_ktbm3"]
-[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="5_veen8"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI_Theme.tres" id="5_veen8"]
 
 [node name="RedHealth" type="TextureProgressBar"]
 offset_right = 40.0

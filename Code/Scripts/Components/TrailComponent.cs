@@ -1,11 +1,13 @@
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers.Level;
+using Godot.Collections;
 
-namespace Components;
+namespace Code.Scripts.Components;
 public partial class TrailComponent : Node2D
 {
     [Export]
-    public float timeBetweenTrails = 0.1f;
+    public float TimeBetweenTrails = 0.1f;
     private ParticleController _particles;
     private Marker2D _leftChain1;
     private Marker2D _leftChain2;
@@ -16,7 +18,7 @@ public partial class TrailComponent : Node2D
     private LevelManager _levelManager;
 
 
-    private Godot.Collections.Dictionary<int, PackedScene> WorldIdToTrailScene = new Godot.Collections.Dictionary<int, PackedScene>
+    private Dictionary<int, PackedScene> _worldIdToTrailScene = new Dictionary<int, PackedScene>()
     {
         {0, Scene.DrivingMud},
         {1, Scene.DrivingGrass},
@@ -31,7 +33,7 @@ public partial class TrailComponent : Node2D
         _leftChain2 = GetNode<Marker2D>("LeftChain2");
         _rightChain2 = GetNode<Marker2D>("RightChain2");
         _trailTimer = GetNode<Timer>("TrailTimer");
-        _trailTimer.WaitTime = timeBetweenTrails;
+        _trailTimer.WaitTime = TimeBetweenTrails;
         _trailTimer.Timeout += () => _canEmittTrail = true;
 
         _levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
@@ -40,8 +42,8 @@ public partial class TrailComponent : Node2D
 
     private PackedScene GetSceneForWorld()
     {
-        int worldId = _levelManager.currentWorldID;
-        return WorldIdToTrailScene[worldId];
+        int worldId = _levelManager.CurrentWorldId;
+        return _worldIdToTrailScene[worldId];
     }
 
     public void EmitTrail()
@@ -52,7 +54,7 @@ public partial class TrailComponent : Node2D
             PackedScene scene = GetParent().Name == "DummyTank" ? Scene.DrivingMud : GetSceneForWorld(); 
             EmitParticlesForAllChains(scene);
             _canEmittTrail = false;
-            _trailTimer.WaitTime = timeBetweenTrails;
+            _trailTimer.WaitTime = TimeBetweenTrails;
             _trailTimer.Start();
         }
     }

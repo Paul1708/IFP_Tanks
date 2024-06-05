@@ -350,7 +350,7 @@ TargetReachedDistance = 100.0
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("6_sqyqw")
-weaponStats = ExtResource("7_5g3ol")
+WeaponStats = ExtResource("7_5g3ol")
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
 
@@ -383,7 +383,6 @@ RotationSpeed = 0.05
 [node name="HealthComponent" type="Node2D" parent="."]
 position = Vector2(5, -2)
 script = ExtResource("10_i2uvn")
-maxHP = 25.0
 
 [node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_ddw7m")]
 visible = false
@@ -402,4 +401,3 @@ script = ExtResource("13_yrxel")
 script = ExtResource("14_y3wj6")
 
 [node name="TrailComponent" parent="." instance=ExtResource("15_sqgcd")]
-timeBetweenTrails = 0.25

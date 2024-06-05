@@ -1,8 +1,8 @@
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers;
-using Managers.Level;
 
-namespace Shop;
+namespace Code.Scripts.UI.Shop;
 
 public partial class ShopButtons : Button
 {
@@ -46,8 +46,16 @@ public partial class ShopButtons : Button
 
 		if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.TryGetPanelIndex(this, out int index))
 		{
-			var weapon = ShopManager.Instance.weaponsList[index];
-			Text = weapon.unlocked ? (weapon.equipped ? "Equipped" : "Equip") : "Buy";
+			var weapon = ShopManager.Instance.WeaponsList[index];
+			if (weapon.Unlocked)
+			{
+				Text = weapon.Equipped ? "Equipped" : "Equip";
+			}
+			else
+			{
+				Text = "Buy";
+			}
+			
 		}
 	}
 

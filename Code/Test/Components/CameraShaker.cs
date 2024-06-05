@@ -1,17 +1,19 @@
 using Godot;
 
+namespace Code.Test.Components;
+
 public partial class CameraShaker : Camera2D
 {
     public static CameraShaker Instance { get; private set; }
-    float shakeAmmount = 0;
-    Vector2 defaultOffset;
-    RandomNumberGenerator random = new RandomNumberGenerator();
-    Timer timer;
+    float _shakeAmount;
+    Vector2 _defaultOffset;
+    RandomNumberGenerator _random = new ();
+    Timer _timer;
 
     public override void _Ready()
     {
-        timer = GetNode<Timer>("ShakeTimer");
-        timer.Timeout += StopShake;
+        _timer = GetNode<Timer>("ShakeTimer");
+        _timer.Timeout += StopShake;
 
         if (Instance == null)
         {
@@ -31,17 +33,17 @@ public partial class CameraShaker : Camera2D
         {
             Instance = null;
         }
-        timer.Timeout -= StopShake;
+        _timer.Timeout -= StopShake;
     }
     public override void _Process(double delta)
     {
-        Offset = new Vector2(random.RandfRange(-1, 1) * shakeAmmount, random.RandfRange(-1, 1) * shakeAmmount);
+        Offset = new Vector2(_random.RandfRange(-1, 1) * _shakeAmount, _random.RandfRange(-1, 1) * _shakeAmount);
     }
 
     public void Shake(float ammount, float duration)
     {
-        timer.Start(duration);
-        shakeAmmount = ammount;
+        _timer.Start(duration);
+        _shakeAmount = ammount;
         SetProcess(true);
     }
 
@@ -51,7 +53,7 @@ public partial class CameraShaker : Camera2D
         Tween tween = GetTree().CreateTween();
         tween.TweenProperty(this, "offset", Vector2.Zero, 0.1)
          .SetTrans(Tween.TransitionType.Expo)
-         .SetEase(Tween.EaseType.Out); ;
+         .SetEase(Tween.EaseType.Out);
         SetProcess(false);
     }
 

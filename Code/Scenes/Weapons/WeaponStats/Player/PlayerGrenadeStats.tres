@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("2_droa0")
-bulletScene = ExtResource("1_anmnx")
-damage = 2000
-bulletsPerSecond = 0.5
-bulletSpeed = 0.0
+BulletScene = ExtResource("1_anmnx")
+Damage = 2000.0
+BulletsPerSecond = 0.5
+BulletSpeed = 0.0

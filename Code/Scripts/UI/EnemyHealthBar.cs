@@ -1,6 +1,8 @@
 using System;
-using Components;
+using Code.Scripts.Components;
 using Godot;
+
+namespace Code.Scripts.UI;
 
 public partial class EnemyHealthBar : Control
 {
@@ -12,17 +14,17 @@ public partial class EnemyHealthBar : Control
         _hc.OnHealthChanged += SetHealth;
         _hc.OnMaxHealthChanged += SetMaxHealth;
 
-        SetHealth(_hc.currentHP);
+        SetHealth(_hc.CurrentHp);
     }
 
 
     public void SetHealth(float health)
     {
-        GetNode<Label>("Label").Text = $"{Math.Round(health, 1)}/{_hc.maxHP}";
+        GetNode<Label>("Label").Text = $"{Math.Round(health, 1)}/{_hc.MaxHp}";
     }
 
     public void SetMaxHealth(float maxHealth)
     {
-        GetNode<Label>("Label").Text = $"{Math.Round(_hc.currentHP, 1)}/{maxHealth}";
+        GetNode<Label>("Label").Text = $"{Math.Round(_hc.CurrentHp, 1)}/{maxHealth}";
     }
 }

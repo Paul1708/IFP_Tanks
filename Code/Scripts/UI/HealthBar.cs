@@ -1,46 +1,46 @@
 using System;
-using Components;
+using Code.Scripts.Components;
+using Code.Scripts.Managers;
 using Godot;
-using Managers;
 
 
-namespace UI;
+namespace Code.Scripts.UI;
 
 public partial class HealthBar : TextureProgressBar
 {
     [Export]
     public float RedBarDelay { get; set; } = 1f;
-    public TextureProgressBar greenBar;
-    public TextureProgressBar redBar;
-    public Timer redHealthTimer;
-    public Label label;
-    public float currentHP;
-    public float maxHP;
+    public TextureProgressBar GreenBar;
+    public TextureProgressBar RedBar;
+    public Timer RedHealthTimer;
+    public Label Label;
+    public float CurrentHp;
+    public float MaxHp;
     private HealthComponent _playerHealthComponent;
 
     public override void _Ready()
     {
         // Get references
-        greenBar = GetNode<TextureProgressBar>("GreenHealth");
-        redBar = this;
-        redHealthTimer = GetNode<Timer>("RedHealthTimer");
-        label = GetNode<Label>("Label");
+        GreenBar = GetNode<TextureProgressBar>("GreenHealth");
+        RedBar = this;
+        RedHealthTimer = GetNode<Timer>("RedHealthTimer");
+        Label = GetNode<Label>("Label");
         _playerHealthComponent = PlayerManager.Instance.PlayerHealthComponent;
 
         // Connect signals
         _playerHealthComponent.OnHealthChanged += OnHealthChanged;
         _playerHealthComponent.OnMaxHealthChanged += OnMaxHealthChanged;
-        redHealthTimer.Timeout += UpdateRedHealthBar;
+        RedHealthTimer.Timeout += UpdateRedHealthBar;
 
         // Get hp values of player
-        maxHP = _playerHealthComponent.maxHP;
-        currentHP = _playerHealthComponent.currentHP;
+        MaxHp = _playerHealthComponent.MaxHp;
+        CurrentHp = _playerHealthComponent.CurrentHp;
 
         // Set progress bar values
-        redBar.MaxValue = maxHP;
-        redBar.Value = currentHP;
-        greenBar.MaxValue = maxHP;
-        greenBar.Value = currentHP;
+        RedBar.MaxValue = MaxHp;
+        RedBar.Value = CurrentHp;
+        GreenBar.MaxValue = MaxHp;
+        GreenBar.Value = CurrentHp;
 
         UpdateLabelText();
     }
@@ -50,48 +50,48 @@ public partial class HealthBar : TextureProgressBar
         // Disconnect signals
         _playerHealthComponent.OnHealthChanged -= OnHealthChanged;
         _playerHealthComponent.OnMaxHealthChanged -= OnMaxHealthChanged;
-        redHealthTimer.Timeout -= UpdateRedHealthBar;
+        RedHealthTimer.Timeout -= UpdateRedHealthBar;
     }
 
-    public void OnHealthChanged(float newHP)
+    public void OnHealthChanged(float newHp)
     {
         //set the health bar's value to the current health
-        greenBar.Value = newHP;
+        GreenBar.Value = newHp;
 
-        if (newHP > currentHP)
+        if (newHp > CurrentHp)
         {
-            redBar.Value = newHP;
+            RedBar.Value = newHp;
         }
-        currentHP = newHP;
+        CurrentHp = newHp;
         UpdateLabelText();
-        redHealthTimer.Stop();
-        redHealthTimer.Start(RedBarDelay);
+        RedHealthTimer.Stop();
+        RedHealthTimer.Start(RedBarDelay);
     }
 
-    public void OnMaxHealthChanged(float newMaxHP)
+    public void OnMaxHealthChanged(float newMaxHp)
     {
-        maxHP = newMaxHP;
+        MaxHp = newMaxHp;
         UpdateLabelText();
 
         // set max health
-        redBar.MaxValue = maxHP;
-        greenBar.MaxValue = maxHP;
+        RedBar.MaxValue = MaxHp;
+        GreenBar.MaxValue = MaxHp;
 
         // set current health    
-        currentHP = PlayerManager.Instance.PlayerHealthComponent.currentHP;
-        redBar.Value = currentHP;
-        greenBar.Value = currentHP;
+        CurrentHp = PlayerManager.Instance.PlayerHealthComponent.CurrentHp;
+        RedBar.Value = CurrentHp;
+        GreenBar.Value = CurrentHp;
     }
 
     private void UpdateRedHealthBar()
     {
         //set the red health bar's value to the current health
         Tween tween = CreateTween();
-        tween.TweenProperty(this, "value", currentHP, 1).SetTrans(Tween.TransitionType.Expo).SetEase(Tween.EaseType.Out);
+        tween.TweenProperty(this, "value", CurrentHp, 1).SetTrans(Tween.TransitionType.Expo).SetEase(Tween.EaseType.Out);
     }
 
     private void UpdateLabelText()
     {
-        label.Text = $"{Math.Round(currentHP)} / {Math.Round(maxHP)}";
+        Label.Text = $"{Math.Round(CurrentHp)} / {Math.Round(MaxHp)}";
     }
 }

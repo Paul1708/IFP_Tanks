@@ -1,9 +1,9 @@
-using Components;
+using Code.Scripts.Movement;
+using Code.Scripts.Components;
 using Godot;
-using Managers.Save;
-using Player;
+using Code.Scripts.Managers.Save;
 
-namespace Managers;
+namespace Code.Scripts.Managers;
 
 public partial class PlayerManager : Node2D
 {
@@ -58,14 +58,14 @@ public partial class PlayerManager : Node2D
     }
     public void ResetMaxHealth()
     {
-        PlayerHealthComponent.SetMaxHP(PlayerStats.BaseMaxHealth);
+        PlayerHealthComponent.SetMaxHp(PlayerStats.BaseMaxHealth);
     }
 
     public void OnSaveDataLoaded(SaveData saveData)
     {
         PlayerStats = saveData.PlayerStats;
-        PlayerHealthComponent.SetCurrentHP(saveData.PlayerCurrentHP);
-        PlayerHealthComponent.SetMaxHP(PlayerStats.CurrentMaxHealth);
+        PlayerHealthComponent.SetCurrentHp(saveData.PlayerCurrentHp);
+        PlayerHealthComponent.SetMaxHp(PlayerStats.CurrentMaxHealth);
     }
 }
 

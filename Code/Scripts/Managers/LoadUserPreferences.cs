@@ -1,9 +1,7 @@
 using Godot;
-using System;
-using Managers.Save;
+using Code.Scripts.Managers.Save;
 
-
-
+namespace Code.Scripts.Managers;
 public partial class LoadUserPreferences : Node
 {
 
@@ -25,7 +23,7 @@ public partial class LoadUserPreferences : Node
         // Set the volume of the master, music and sfx buses
         SetVolume(_masterBusIndex, _userPreferences.MasterVolume);
         SetVolume(_musicBusIndex, _userPreferences.MusicVolume);
-        SetVolume(_sfxBusIndex, _userPreferences.SFXVolume);
+        SetVolume(_sfxBusIndex, _userPreferences.SfxVolume);
     }
 
     public void SetVolume(int busIndex, float value)

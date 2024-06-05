@@ -1,4 +1,7 @@
 using Godot;
+using Code.Scripts.Enemies;
+
+namespace Code.Scripts.Environment;
 
 public partial class MainMenuDummyTank : Node2D
 {

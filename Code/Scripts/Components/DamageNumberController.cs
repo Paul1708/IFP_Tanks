@@ -1,7 +1,8 @@
 using System;
+using Code.Scripts.Environment;
 using Godot;
 
-namespace Components;
+namespace Code.Scripts.Components;
 public partial class DamageNumberController : Node2D
 {
     public PackedScene DamageNumberScene { get; set; }

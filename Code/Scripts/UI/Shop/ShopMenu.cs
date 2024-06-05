@@ -1,8 +1,9 @@
+using Code.Scripts.Audio;
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers;
-using Managers.Level;
 
-namespace Shop;
+namespace Code.Scripts.UI.Shop;
 
 public partial class ShopMenu : Control
 {
@@ -68,7 +69,6 @@ public partial class ShopMenu : Control
 
 	public void DisplayInsufficientCoinsError(int price)
 	{
-		//TODO: play error sound
 		var neededCoins = price - CoinManager.Instance.Coins;
 		_errorLabel.Text = "You need " + neededCoins + " more coins to buy this item!";
 		_errorPanel.Show();
@@ -76,7 +76,6 @@ public partial class ShopMenu : Control
 
 	public void DisplayAlreadyMaxHealthError()
 	{
-		//TODO: play error sound
 		_errorLabel.Text = "You already have the maximum health!";
 		_errorPanel.Show();
 	}

@@ -1,29 +1,24 @@
-using System.Collections.Generic;
-using Godot;
-using Managers.Level;
-using Player;
 
-namespace Managers.Save;
+using Godot;
+using Code.Scripts.Movement;
+
+namespace Code.Scripts.Managers.Save;
 
 [GlobalClass]
 public partial class SaveData : Resource
 {
     [Export]
-    public int LastCheckpointLevelID { get; set; }
+    public int LastCheckpointLevelId { get; set; }
     [Export]
-    public int LastCheckpointWorldID { get; set; }
+    public int LastCheckpointWorldId { get; set; }
     [Export]
     public int CoinCount { get; set; }
     [Export]
-    public float PlayerCurrentHP { get; set; }
+    public float PlayerCurrentHp { get; set; }
     [Export]
     public PlayerStats PlayerStats { get; set; }
 
-    /// <summary/* It seems like there is no mention of variable `r` in the provided C# code snippet. If
 
-    ///The first index is the stat index and the second index is the price or quantity.
-    ///E.g. [0][0] to adress the price and [0][1] to adress the quantity of the first stat.
-    /// </summary>
     [Export]
     public Godot.Collections.Array<Godot.Collections.Array> Stats { get; set; }
     /// <summary>
@@ -49,10 +44,10 @@ public partial class SaveData : Resource
             new() {false, false},
             new() {false, false},
         };
-        LastCheckpointLevelID = 0;
-        LastCheckpointWorldID = 0;
+        LastCheckpointLevelId = 0;
+        LastCheckpointWorldId = 0;
         CoinCount = 0;
-        PlayerCurrentHP = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth;
+        PlayerCurrentHp = SaveManager.Instance.InitialPlayerStats.BaseMaxHealth;
         PlayerStats = new PlayerStats()
         {
             BaseMovementSpeed = SaveManager.Instance.InitialPlayerStats.BaseMovementSpeed,

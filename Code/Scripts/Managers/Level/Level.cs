@@ -1,18 +1,20 @@
 using Godot;
 using System.Linq;
-using Components;
+using Code.Scripts.Components;
 using System.Collections.Generic;
-using Items;
-using Shop;
+using Code.Scripts.Enemies;
+using Code.Scripts.Environment;
+using Code.Scripts.UI.Shop;
 
-namespace Managers.Level;
+
+namespace Code.Scripts.Managers.Level;
 
 public partial class Level : Node2D
 {
-    private bool _startedCoinMovement = false;
-    private Timer _coinTimer = new Timer();
-    public ShopMenu shopMenu;
-    public List<Node> enemies { get; set; }
+    private bool _startedCoinMovement;
+    private Timer _coinTimer = new ();
+    public ShopMenu ShopMenu;
+    public List<Node> Enemies { get; set; }
     [Signal]
     public delegate void OnLevelCompleteEventHandler();
     [Signal]
@@ -24,15 +26,15 @@ public partial class Level : Node2D
     public override void _Ready()
     {
         this.AddChild(_coinTimer);
-        shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+        ShopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
 
         // Get all enemies in the level
-        enemies = GetTree().GetNodesInGroup("Enemy").ToList();
+        Enemies = GetTree().GetNodesInGroup("Enemy").ToList();
 
-        foreach (Node2D enemy in enemies)
+        foreach (Node enemy in Enemies)
         {
             // Connect Signals, so OnEnemyDeath is called when an enemy dies
-            enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += () => OnEnemyDeath(enemy);
+            enemy.GetNode<HealthComponent>("HealthComponent").OnDeath += () => OnEnemyDeath(enemy as Node2D);
         }
         PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnPlayerDeath;
         //connect the coin timer signal to the move all coins to player function
@@ -63,8 +65,8 @@ public partial class Level : Node2D
         DropItem<Node2D>(enemy, itemScene);
 
         // Remove all dead enemies from the list
-        enemies.Remove(enemy);
-        if (enemies.Count == 0)
+        Enemies.Remove(enemy);
+        if (Enemies.Count == 0)
         {
             //start the timer to move all coins to the player after time runs out
             _coinTimer.WaitTime = 0.5;
@@ -114,9 +116,10 @@ public partial class Level : Node2D
 
         var coins = GetTree().GetNodesInGroup("Coins");
 
-        foreach (Coin coin in coins)
+        foreach (Node coin in coins)
         {
-            coin.shouldMove = true;
+            if(coin is Coin c)
+                c.ShouldMove = true;
         }
         _startedCoinMovement = true;
     }

@@ -1,14 +1,14 @@
 using System;
+using Code.Scripts.Managers;
+using Code.Scripts.Movement;
 using Godot;
-using Managers;
-using Player;
 
-namespace Shop;
+namespace Code.Scripts.UI.Shop;
 
 public partial class PlayerStatsDisplay : Control
 {
     private Label _coinsLabel;
-    private Label _HPLabel;
+    private Label _hpLabel;
     private Label _damageLabel;
     private Label _movementSpeedLabel;
 
@@ -16,7 +16,7 @@ public partial class PlayerStatsDisplay : Control
     {
         // Get the labels from the scene
         _coinsLabel = GetNode<Label>("LeftSide/CoinsLabel");
-        _HPLabel = GetNode<Label>("LeftSide/HPLabel");
+        _hpLabel = GetNode<Label>("LeftSide/HPLabel");
         _damageLabel = GetNode<Label>("RightSide/DamageLabel");
         _movementSpeedLabel = GetNode<Label>("RightSide/SpeedLabel");
 
@@ -24,7 +24,7 @@ public partial class PlayerStatsDisplay : Control
         _damageLabel.Text = $"x {PlayerManager.Instance.PlayerStats.CurrentDamageModifier}";
         _movementSpeedLabel.Text = PlayerManager.Instance.PlayerStats.CurrentMovementSpeed.ToString();
         _coinsLabel.Text = CoinManager.Instance.Coins.ToString();
-        _HPLabel.Text = $"{PlayerManager.Instance.PlayerHealthComponent.currentHP}/{PlayerManager.Instance.PlayerHealthComponent.maxHP}";
+        _hpLabel.Text = $"{PlayerManager.Instance.PlayerHealthComponent.CurrentHp}/{PlayerManager.Instance.PlayerHealthComponent.MaxHp}";
 
         // Connect signals
         CoinManager.Instance.OnCoinChanged += UpdateCoinLabel;
@@ -58,13 +58,13 @@ public partial class PlayerStatsDisplay : Control
     /// <param name="maxHealth">Is ignored, only needed beacuse of Event.</param>
     public void UpdateHealthLabel(float maxHealth)
     {
-        _HPLabel.Text = $"{Math.Round(PlayerManager.Instance.PlayerHealthComponent.currentHP)}/{Math.Round(PlayerManager.Instance.PlayerHealthComponent.maxHP)}";
+        _hpLabel.Text = $"{Math.Round(PlayerManager.Instance.PlayerHealthComponent.CurrentHp)}/{Math.Round(PlayerManager.Instance.PlayerHealthComponent.MaxHp)}";
     }
 
     /// <summary>
     /// Updates the coin label.
     /// </summary>
-    /// <param name="maxHealth">New coin value.</param>
+    /// <param name="coinCount">New coin value.</param>
     public void UpdateCoinLabel(int coinCount)
     {
         _coinsLabel.Text = coinCount.ToString();

@@ -1,6 +1,7 @@
-using Components;
+using Code.Scripts.Components;
 using Godot;
-using System;
+
+namespace Code.Scripts.Enemies;
 
 public partial class DummyTank : CharacterBody2D
 {
@@ -22,7 +23,7 @@ public partial class DummyTank : CharacterBody2D
 		{
 			_trailComponent.EmitTrail();
 		}
-		Vector2 movement = this.Velocity;
+		Vector2 movement = Velocity;
 		AnimationHandler.PlayAnimationOfInput(movement);
 	}
 

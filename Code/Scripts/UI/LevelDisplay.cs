@@ -1,5 +1,7 @@
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers.Level;
+
+namespace Code.Scripts.UI;
 
 public partial class LevelDisplay : HBoxContainer
 {
@@ -27,13 +29,13 @@ public partial class LevelDisplay : HBoxContainer
             {
                 switch (level.LevelState)
                 {
-                    case LevelState.COMPLETED:
+                    case LevelState.Completed:
                         texture.Texture = CheckpointCompleted;
                         break;
-                    case LevelState.CURRENT:
+                    case LevelState.Current:
                         texture.Texture = CheckpointCurrent;
                         break;
-                    case LevelState.LOCKED:
+                    case LevelState.Locked:
                         texture.Texture = CheckpointLocked;
                         break;
                 }
@@ -42,13 +44,13 @@ public partial class LevelDisplay : HBoxContainer
             {
                 switch (level.LevelState)
                 {
-                    case LevelState.COMPLETED:
+                    case LevelState.Completed:
                         texture.Texture = BasicCompleted;
                         break;
-                    case LevelState.CURRENT:
+                    case LevelState.Current:
                         texture.Texture = BasicCurrent;
                         break;
-                    case LevelState.LOCKED:
+                    case LevelState.Locked:
                         texture.Texture = BasicLocked;
                         break;
                 }

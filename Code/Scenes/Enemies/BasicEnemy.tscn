@@ -8,7 +8,7 @@
 [ext_resource type="Shader" uid="uid://7dxamwu7lkj5" path="res://Sprites/Shaders/Tank.tres" id="3_rtpej"]
 [ext_resource type="Texture2D" uid="uid://cix5mxlhgjt63" path="res://Sprites/Tanks/GunRed.png" id="6_0c6jn"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="6_ot0ae"]
-[ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="7_acc1d"]
+[ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="7_jb6f3"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="7_w8odi"]
 [ext_resource type="Script" path="res://Scripts/Components/AnimationHandler.cs" id="10_ge3kf"]
 [ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_8usnr"]
@@ -412,7 +412,7 @@ MaxRandomTargetSearchTries = 100
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("3_qc42x")
-weaponStats = ExtResource("7_acc1d")
+WeaponStats = ExtResource("7_jb6f3")
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
 
@@ -446,7 +446,6 @@ RotationSpeed = 0.02
 [node name="HealthComponent" type="Node2D" parent="."]
 visible = false
 script = ExtResource("7_w8odi")
-maxHP = 50.0
 
 [node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_8usnr")]
 
@@ -463,7 +462,5 @@ script = ExtResource("10_ge3kf")
 [node name="HitFeedbackComponent" type="Node2D" parent="."]
 position = Vector2(4, -1)
 script = ExtResource("13_mrrxq")
-maxScale = 1.15
 
 [node name="TrailComponent" parent="." instance=ExtResource("16_v1keo")]
-timeBetweenTrails = 0.25

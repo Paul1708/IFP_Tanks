@@ -1,5 +1,7 @@
-﻿namespace Weapons;
+﻿
 using Godot;
+
+namespace Code.Scripts.Weapons;
 
 public class BulletMath
 {

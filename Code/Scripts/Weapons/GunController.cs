@@ -1,38 +1,41 @@
 using Godot;
-using Player;
-using Managers;
-using Shop;
 using System;
+using Code.Scripts.Audio;
+using Code.Scripts.Enemies;
+using Code.Scripts.Managers;
+using Code.Scripts.Movement;
+using Code.Scripts.UI.Shop;
+using Godot.Collections;
 
-namespace Weapons;
+namespace Code.Scripts.Weapons;
 
 public partial class GunController : Node2D
 {
-    [Export] public WeaponStats weaponStats { get; set; }
+    [Export] public WeaponStats WeaponStats { get; set; }
 
-    public float timeBetweenShots { get; private set; }
-    protected MusicController musicController;
+    public float TimeBetweenShots { get; private set; }
+    protected MusicController MusicController;
     private bool _canShoot = true;
     private AnimatedSprite2D _sprite;
     private Timer _shootTimer;
 
     // Das ist sowas von dreckig, aber ist mir egal :O
-    private bool isPlayerGunController = false;
+    private bool _isPlayerGunController;
 
     public override void _Ready()
     {
-        musicController = GetNode<MusicController>("/root/MusicController");
+        MusicController = GetNode<MusicController>("/root/MusicController");
         _sprite = GetNode<AnimatedSprite2D>("GunSprite");
         _shootTimer = GetNode<Timer>("ShootTimer");
         _shootTimer.Timeout += () => _canShoot = true;
 
-        timeBetweenShots = 1 / weaponStats.bulletsPerSecond;
+        TimeBetweenShots = 1 / WeaponStats.BulletsPerSecond;
 
 
         if (GetParent().IsInGroup("Player"))
         {
             SetWeapon();
-            isPlayerGunController = true;
+            _isPlayerGunController = true;
         }
 
         ShopManager.Instance.OnWeaponEquipped += SetWeapon;
@@ -48,8 +51,8 @@ public partial class GunController : Node2D
         if (GetParent().IsInGroup("Player"))
         {
             Weapon weapon = ShopManager.Instance.GetEquippedWeapon();
-            weaponStats = weapon.weaponStats;
-            timeBetweenShots = 1 / weapon.weaponStats.bulletsPerSecond;
+            WeaponStats = weapon.WeaponStats;
+            TimeBetweenShots = 1 / weapon.WeaponStats.BulletsPerSecond;
         }
     }
 
@@ -65,11 +68,11 @@ public partial class GunController : Node2D
             SpawnBullet();
 
             //Play Sound
-            musicController.Play(Sound.TankShooting);
+            MusicController.Play(Sound.TankShooting);
 
             //reset the time until fire
             _canShoot = false;
-            _shootTimer.Start(timeBetweenShots);
+            _shootTimer.Start(TimeBetweenShots);
 
             //Play animation()
             _sprite.Play("Shoot");
@@ -81,11 +84,11 @@ public partial class GunController : Node2D
     private void SpawnBullet()
     {
         //create a bullet and set its damage and speed
-        Bullet bullet = weaponStats.bulletScene.Instantiate<Bullet>();
-        bullet.damage = weaponStats.damage;
-        if (isPlayerGunController)
+        Bullet bullet = WeaponStats.BulletScene.Instantiate<Bullet>();
+        bullet.Damage = WeaponStats.Damage;
+        if (_isPlayerGunController)
         {
-            bullet.damage = bullet.damage * PlayerManager.Instance.PlayerStats.CurrentDamageModifier;
+            bullet.Damage = bullet.Damage * PlayerManager.Instance.PlayerStats.CurrentDamageModifier;
         }
 
         //if it is a homing bullet shot by the player then set the target to a random enemy.
@@ -94,13 +97,13 @@ public partial class GunController : Node2D
 
         // set rotation and velocity of bullet
         bullet.Rotation = GlobalRotation;
-        bullet.LinearVelocity = bullet.Transform.X.Normalized() * weaponStats.bulletSpeed;
+        bullet.LinearVelocity = bullet.Transform.X.Normalized() * WeaponStats.BulletSpeed;
 
         // set position of bullet to muzzle
         var muzzle = GetNode<Marker2D>("muzzle");
         bullet.GlobalPosition = muzzle.GlobalPosition;
         bullet.Shooter = GetParent() as Node2D;
-        bullet.Speed = weaponStats.bulletSpeed;
+        bullet.Speed = WeaponStats.BulletSpeed;
         bullet.AddToGroup("Bullets");
 
         //add the bullet to the scene tree 
@@ -116,19 +119,7 @@ public partial class GunController : Node2D
             if (enemies.Count > 0)
             {
                 // select enemy which is closest to mouse position
-                Node2D closestEnemy = null;
-                float minDistance = float.MaxValue;
-                foreach (Node2D enemy in enemies)
-                {
-                    float distance = enemy.GlobalPosition.DistanceTo(GetGlobalMousePosition());
-                    if (distance < minDistance)
-                    {
-                        minDistance = distance;
-                        closestEnemy = enemy;
-                    }
-                }
-
-                bullet.TargetNode = closestEnemy;
+                bullet.TargetNode = _getClosestEnemy(enemies);
             }
         }
         else if (parent is Enemy)
@@ -141,5 +132,25 @@ public partial class GunController : Node2D
         }
     }
 
+    private Node2D _getClosestEnemy(Array<Node> enemies)
+    {
+        // select enemy which is closest to mouse position
+        Node2D closestEnemy = null;
+        float minDistance = float.MaxValue;
+        foreach (Node enemy in enemies)
+        {
+            if (enemy is Node2D enemy2d)
+            {
+                float distance = enemy2d.GlobalPosition.DistanceTo(GetGlobalMousePosition());
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestEnemy = enemy2d;
+                }
+            }
+        }
+
+        return closestEnemy;
+    }
 }
 

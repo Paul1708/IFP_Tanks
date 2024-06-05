@@ -1,16 +1,18 @@
+using Code.Scripts.Components;
 using GdUnit4;
-using Components;
+
+namespace Code.Test.Components;
 
 [TestSuite]
 public class TestHealthComponent
 {
-    HealthComponent hc;
+    HealthComponent _hc;
 
     [BeforeTest]
     public void Setup()
     {
-        hc = new HealthComponent { maxHP = 100 };
-        hc._Ready();
+        _hc = new HealthComponent { MaxHp = 100 };
+        _hc._Ready();
     }
 
     [TestCase]
@@ -18,20 +20,20 @@ public class TestHealthComponent
     {
         float expected = 100;
 
-        float actual = hc.currentHP;
+        float actual = _hc.CurrentHp;
         Assertions.AssertThat(actual).IsEqual(expected);
 
-        actual = hc.maxHP;
+        actual = _hc.MaxHp;
         Assertions.AssertThat(actual).IsEqual(expected);
     }
 
     [TestCase]
     public void TakeDamageWorks()
     {
-        hc.TakeDamage(10);
+        _hc.TakeDamage(10);
 
         float expected = 90;
-        float actual = hc.currentHP;
+        float actual = _hc.CurrentHp;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -39,11 +41,11 @@ public class TestHealthComponent
     [TestCase]
     public void HealWorks()
     {
-        hc.SetCurrentHP(90);
-        hc.Heal(10);
+        _hc.SetCurrentHp(90);
+        _hc.Heal(10);
 
         float expected = 100;
-        float actual = hc.currentHP;
+        float actual = _hc.CurrentHp;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -51,10 +53,10 @@ public class TestHealthComponent
     [TestCase]
     public void DoesNotHealPastMaxHP()
     {
-        hc.Heal(10);
+        _hc.Heal(10);
 
         float expected = 100;
-        float actual = hc.currentHP;
+        float actual = _hc.CurrentHp;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -62,34 +64,24 @@ public class TestHealthComponent
     [TestCase]
     public void NegativeHealDoesNotDamage()
     {
-        hc.SetCurrentHP(90);
-        hc.Heal(-10);
+        _hc.SetCurrentHp(90);
+        _hc.Heal(-10);
 
         float expected = 90;
-        float actual = hc.currentHP;
+        float actual = _hc.CurrentHp;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
-
-    [TestCase]
-    public void DamageWorks()
-    {
-        hc.TakeDamage(10);
-
-        float expected = 90;
-        float actual = hc.currentHP;
-
-        Assertions.AssertThat(actual).IsEqual(expected);
-    }
+    
 
     [TestCase]
     public void NegativeDamageDoesNotHeal()
     {
-        hc.SetCurrentHP(90);
-        hc.TakeDamage(-10);
+        _hc.SetCurrentHp(90);
+        _hc.TakeDamage(-10);
 
         float expected = 90;
-        float actual = hc.currentHP;
+        float actual = _hc.CurrentHp;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -97,10 +89,10 @@ public class TestHealthComponent
     [TestCase]
     public void IncreaseMaxHealthWorks()
     {
-        hc.IncreaseMaxHealth(10);
+        _hc.IncreaseMaxHealth(10);
 
         float expected = 110;
-        float actual = hc.maxHP;
+        float actual = _hc.MaxHp;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -108,10 +100,10 @@ public class TestHealthComponent
     [TestCase]
     public void NegativeIncreaseMaxHealthDoesNotDecrease()
     {
-        hc.IncreaseMaxHealth(-10);
+        _hc.IncreaseMaxHealth(-10);
 
         float expected = 100;
-        float actual = hc.maxHP;
+        float actual = _hc.MaxHp;
 
         Assertions.AssertThat(actual).IsEqual(expected);
     }
@@ -120,9 +112,9 @@ public class TestHealthComponent
     public void DyingCallsOnDeath()
     {
         bool called = false;
-        hc.OnDeath += () => called = true;
+        _hc.OnDeath += () => called = true;
 
-        hc.TakeDamage(100);
+        _hc.TakeDamage(100);
 
         Assertions.AssertThat(called).IsTrue();
     }
@@ -131,6 +123,6 @@ public class TestHealthComponent
     [AfterTest]
     public void Clear()
     {
-        hc.QueueFree();
+        _hc.QueueFree();
     }
 }

@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Shop;
+namespace Code.Scripts.UI.Shop;
 
 public abstract partial class ShopBaseTab : TabBar
 {

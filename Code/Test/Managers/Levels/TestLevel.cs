@@ -1,29 +1,31 @@
 using System.Collections.Generic;
-using Components;
+using Code.Scripts.Components;
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
 using GdUnit4;
 using Godot;
-using Managers.Level;
-using Managers;
+
+namespace Code.Test.Managers.Levels;
 
 [TestSuite]
 public class TestLevel
 {
-    Level level;
-    ISceneRunner runner;
+    Level _level;
+    ISceneRunner _runner;
 
     [BeforeTest]
     public void Setup()
     {
-        runner = ISceneRunner.Load("res://Test/Managers/Levels/TestLevel1.tscn");
+        _runner = ISceneRunner.Load("res://Test/Managers/Levels/TestLevel1.tscn");
 
-        level = runner.Scene().GetTree().GetNodesInGroup("Level")[0] as Level;
+        _level = _runner.Scene().GetTree().GetNodesInGroup("Level")[0] as Level;
     }
 
 
     [TestCase]
     public void CorrectlyInitializeEnemyList()
     {
-        Assertions.AssertThat(level.enemies.Count).IsEqual(2);
+        Assertions.AssertThat(_level.Enemies.Count).IsEqual(2);
     }
 
 
@@ -31,24 +33,24 @@ public class TestLevel
     public void EnemyGetsRemovedFromListWhenItDies()
     {
         // Kill the first enemy
-        Node enemy = level.enemies[0];
+        Node enemy = _level.Enemies[0];
         enemy.GetNode<HealthComponent>("HealthComponent").TakeDamage(100);
 
-        Assertions.AssertThat(level.enemies.Count).IsEqual(1);
+        Assertions.AssertThat(_level.Enemies.Count).IsEqual(1);
     }
 
     [TestCase]
     public void LevelIsCompletedWhenAllEnemiesAreDead()
     {
-        level = runner.Scene().GetTree().GetNodesInGroup("Level")[0] as Level;
+        _level = _runner.Scene().GetTree().GetNodesInGroup("Level")[0] as Level;
 
 
         // Hook into the OnLevelComplete event
         bool isCompleted = false;
-        level.OnLevelComplete += () => { isCompleted = true; };
+        _level.OnLevelComplete += () => { isCompleted = true; };
 
         // Kill all enemies, deep copy the list to avoid concurrent modification
-        List<Node> enemies = new List<Node>(level.enemies);
+        List<Node> enemies = new List<Node>(_level.Enemies);
         foreach (Node enemy in enemies)
         {
             enemy.GetNode<HealthComponent>("HealthComponent").TakeDamage(100);
@@ -62,7 +64,7 @@ public class TestLevel
     {
         // Hook into the OnLevelFailed event
         bool isFailed = false;
-        level.OnLevelFailed += () => { isFailed = true; };
+        _level.OnLevelFailed += () => { isFailed = true; };
 
         // Kill the player
         PlayerManager.Instance.PlayerHealthComponent.TakeDamage(100);
