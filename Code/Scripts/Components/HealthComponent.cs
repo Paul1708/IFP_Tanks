@@ -1,85 +1,85 @@
 using System.ComponentModel.DataAnnotations;
 using Godot;
 
-namespace Components;
+namespace Code.Scripts.Components;
 
 public partial class HealthComponent : Node2D
 {
 
-    [Export] public float maxHP { get; set; }
-    public float currentHP { get; set; }
+    [Export] public float MaxHp { get; set; } = 100;
+    public float CurrentHp { get; set; }
     [Signal]
     public delegate void OnDeathEventHandler();
     [Signal]
-    public delegate void OnHealthChangedEventHandler(float currentHP);
+    public delegate void OnHealthChangedEventHandler(float currentHp);
     [Signal]
-    public delegate void OnMaxHealthChangedEventHandler(float maxHP);
+    public delegate void OnMaxHealthChangedEventHandler(float maxHp);
     [Signal]
     public delegate void OnTakeDamageEventHandler(float damage);
     public override void _Ready()
     {
-        if (maxHP <= 0)
+        if (MaxHp <= 0)
         {
             throw new ValidationException("Max health must be greater than 0");
         }
 
-        SetCurrentHP(maxHP);
+        SetCurrentHp(MaxHp);
     }
 
     public void Heal(float value)
     {
         if (value < 0) return;
-        SetCurrentHP(currentHP + value);
+        SetCurrentHp(CurrentHp + value);
     }
 
     public void TakeDamage(float value)
     {
         if (value < 0) return;
         EmitSignal(SignalName.OnTakeDamage, value);
-        SetCurrentHP(currentHP - value);
+        SetCurrentHp(CurrentHp - value);
     }
 
     public void HealToMax()
     {
-        SetCurrentHP(maxHP);
+        SetCurrentHp(MaxHp);
     }
 
     public void HealPercentage(float percentage)
     {
-        Heal(maxHP * percentage);
+        Heal(MaxHp * percentage);
     }
 
     public void IncreaseMaxHealth(float value)
     {
         if (value < 0) return;
 
-        maxHP += value;
-        SetCurrentHP(currentHP + value);
-        EmitSignal(SignalName.OnMaxHealthChanged, maxHP);
+        MaxHp += value;
+        SetCurrentHp(CurrentHp + value);
+        EmitSignal(SignalName.OnMaxHealthChanged, MaxHp);
     }
 
-    public void SetCurrentHP(float value)
+    public void SetCurrentHp(float value)
     {
         //clamp the value to the max health
-        currentHP = Mathf.Min(value, maxHP);
+        CurrentHp = Mathf.Min(value, MaxHp);
 
-        EmitSignal(SignalName.OnHealthChanged, currentHP);
+        EmitSignal(SignalName.OnHealthChanged, CurrentHp);
         CheckIfDead();
     }
 
-    public void SetMaxHP(float value)
+    public void SetMaxHp(float value)
     {
         if (value <= 0) return;
 
         //clamp the value to the max health
-        maxHP = value;
-        currentHP = Mathf.Min(currentHP, maxHP);
-        EmitSignal(SignalName.OnMaxHealthChanged, maxHP);
+        MaxHp = value;
+        CurrentHp = Mathf.Min(CurrentHp, MaxHp);
+        EmitSignal(SignalName.OnMaxHealthChanged, MaxHp);
     }
 
     private void CheckIfDead()
     {
-        if (currentHP <= 0)
+        if (CurrentHp <= 0)
         {
             EmitSignal(SignalName.OnDeath);
         }

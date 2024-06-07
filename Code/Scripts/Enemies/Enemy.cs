@@ -1,10 +1,12 @@
-using Components;
+using Code.Scripts.Components;
 using Godot;
+
+namespace Code.Scripts.Enemies;
 
 public partial class Enemy : CharacterBody2D
 {
 	private TrailComponent _trailComponent;
-	private HealthComponent _healthComponent { get; set; }
+	private HealthComponent HealthComponent { get; set; }
 	public AnimationHandler AnimationHandler { get; set; }
 	[Export] public PackedScene DropItemScene { get; set; }
 
@@ -12,8 +14,8 @@ public partial class Enemy : CharacterBody2D
 	{
 		_trailComponent = GetNode<TrailComponent>("TrailComponent");
 		AnimationHandler = GetNode<AnimationHandler>("AnimationPlayer");
-		_healthComponent = GetNode<HealthComponent>("HealthComponent");
-		_healthComponent.OnDeath += OnDeath;
+		HealthComponent = GetNode<HealthComponent>("HealthComponent");
+		HealthComponent.OnDeath += OnDeath;
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -30,7 +32,7 @@ public partial class Enemy : CharacterBody2D
 
 	public override void _ExitTree()
 	{
-		_healthComponent.OnDeath -= QueueFree;
+		HealthComponent.OnDeath -= QueueFree;
 	}
 
 	public void OnDeath()

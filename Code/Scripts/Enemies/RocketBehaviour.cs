@@ -1,6 +1,6 @@
 ﻿using Godot;
 
-namespace Enemies;
+namespace Code.Scripts.Enemies;
 
 public partial class RocketBehaviour : BasicBehaviour
 {
@@ -17,7 +17,7 @@ public partial class RocketBehaviour : BasicBehaviour
 
         // when I remove this useless declaration, the navcomponent will not find a path
         // i really have no clue why so i will leave it in
-        bool test = NavAgent2Player.IsTargetReachable();
+        NavAgent2Player.IsTargetReachable();
         // only recalculate path every 20 ticks. Removing this will also break the pathfinding,
         // godot is so weird...
         if (_ticks >= 20)

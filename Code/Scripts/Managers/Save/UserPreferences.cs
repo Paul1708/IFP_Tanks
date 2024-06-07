@@ -1,7 +1,6 @@
 using Godot;
-using System;
 
-namespace Managers.Save;
+namespace Code.Scripts.Managers.Save;
 
 [GlobalClass]
 public partial class UserPreferences : Resource
@@ -11,9 +10,9 @@ public partial class UserPreferences : Resource
     [Export(PropertyHint.Range, "0, 1, 0.05")]
     public float MusicVolume { get; set; } = 1.0f;
     [Export(PropertyHint.Range, "0, 1, 0.05")]
-    public float SFXVolume { get; set; } = 1.0f;
+    public float SfxVolume { get; set; } = 1.0f;
     [Export]
-    public bool IsFullscreen { get; set; } = false;
+    public bool IsFullscreen { get; set; }
 
     public void Save()
     {
@@ -22,8 +21,8 @@ public partial class UserPreferences : Resource
     
     public static UserPreferences LoadOrCreate()
     {
-        var userPreferences = new UserPreferences();
-        if (userPreferences == null || ResourceLoader.Exists("user://UserPreferences.tres") == false)
+        UserPreferences userPreferences;
+        if (!ResourceLoader.Exists("user://UserPreferences.tres"))
         {
             userPreferences = new UserPreferences();
             userPreferences.Save();

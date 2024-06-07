@@ -1,6 +1,8 @@
 using Godot;
 using System;
 
+namespace Code.Scripts.Managers;
+
 //Particle scenes
 struct Scene
 {
@@ -22,7 +24,7 @@ public partial class ParticleController : Node2D
 	//Checks if the given particle scene is set to OneShot
 	private static void CheckForOneShot(GpuParticles2D particles)
 	{
-		if (particles.OneShot == false)
+		if (!particles.OneShot)
 		{
 			throw new Exception("The given particle scene is not set to OneShot: " + particles.Name);
 		}

@@ -1,23 +1,24 @@
-using Components;
+using Code.Scripts.Components;
 using Godot;
-using Managers;
-using Weapons;
+using Code.Scripts.Managers;
+using Code.Scripts.Weapons;
+
 /* This folder and namespace is temporary. I wanted to call it Player, 
 but that would conflict with the Player class name. */
-namespace Player;
+namespace Code.Scripts.Movement;
 public partial class PlayerMovement : CharacterBody2D
 {
 	public GunController Gun { get; set; }
 	public AnimationHandler AnimationHandler { get; set; }
 	private float _rotationDirection;
 	private GpuParticles2D _deathParticles;
-	protected TrailComponent trailComponent;
+	protected TrailComponent TrailComponent;
 
 	public override void _Ready()
 	{
 		Gun = GetNode<GunController>("Gun");
 		AnimationHandler = GetNode<AnimationHandler>("AnimationPlayer");
-		trailComponent = GetNode<TrailComponent>("TrailComponent");
+		TrailComponent = GetNode<TrailComponent>("TrailComponent");
 		_deathParticles = GetNode<GpuParticles2D>("DeathParticles");
 		PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnDeath;
 	}
@@ -32,7 +33,7 @@ public partial class PlayerMovement : CharacterBody2D
 		//Emit trail
 		if (IsMoving())
 		{
-			trailComponent.EmitTrail();
+			TrailComponent.EmitTrail();
 		}
 
 		//Gun controlling
@@ -58,9 +59,9 @@ public partial class PlayerMovement : CharacterBody2D
 		Velocity = CalculateVelocity(Transform.X * input.Y);
 	}
 
-	public Vector2 CalculateVelocity(Vector2 move_input)
+	public Vector2 CalculateVelocity(Vector2 moveInput)
 	{
-		Vector2 velocity = move_input * PlayerManager.Instance.PlayerStats.CurrentMovementSpeed; //set the velocity to the input times the speed.
+		Vector2 velocity = moveInput * PlayerManager.Instance.PlayerStats.CurrentMovementSpeed; //set the velocity to the input times the speed.
 		return velocity;
 	}
 

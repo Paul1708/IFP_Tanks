@@ -1,12 +1,14 @@
 using Godot;
-using Managers.Level;
-using Shop;
-using System;
+using Code.Scripts.Audio;
+using Code.Scripts.Managers.Level;
+using Code.Scripts.UI.Shop;
+
+namespace Code.Scripts.UI;
 
 public partial class LevelCountdown : Control
 {
-	public Timer countdownTimer;
-	public AnimationPlayer blurAnimation;
+	public Timer CountdownTimer;
+	public AnimationPlayer BlurAnimation;
 	private Label _cooldownLabel;
 	private ShopMenu _shopMenu;
 	private ColorRect _blur;
@@ -16,8 +18,8 @@ public partial class LevelCountdown : Control
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		countdownTimer = GetNode<Timer>("Countdown");
-		blurAnimation = GetNode<AnimationPlayer>("BlurAnimation");
+		CountdownTimer = GetNode<Timer>("Countdown");
+		BlurAnimation = GetNode<AnimationPlayer>("BlurAnimation");
 		_cooldownLabel = GetNode<Label>("CountdownContainer/Countdown");
 		_blur = GetNode<ColorRect>("Blur");
 
@@ -38,7 +40,7 @@ public partial class LevelCountdown : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		int timeLeft = (int)countdownTimer.TimeLeft;
+		int timeLeft = (int)CountdownTimer.TimeLeft;
 		_cooldownLabel.Text = timeLeft.ToString();
 	}
 
@@ -46,8 +48,8 @@ public partial class LevelCountdown : Control
 	{
 		_blur.Color = new Color(1, 1, 1);
 		Show();
-		blurAnimation.Play("LevelCooldown");
-		countdownTimer.Start();
+		BlurAnimation.Play("LevelCooldown");
+		CountdownTimer.Start();
 		_musicController.PlayMusic(Sound.CountDown);
 		GetTree().Paused = true;
 	}

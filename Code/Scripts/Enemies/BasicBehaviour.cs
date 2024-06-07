@@ -1,7 +1,7 @@
 using Godot;
 using Godot.Collections;
 
-namespace Enemies;
+namespace Code.Scripts.Enemies;
 
 public partial class BasicBehaviour : Behaviour
 {
@@ -17,16 +17,16 @@ public partial class BasicBehaviour : Behaviour
 		bool inSight = _checkIfPlayerInSight();
 		if (inSight)
 		{
-			if (!_inRandomMove)
+			if (!InRandomMove)
 			{
 				TargetLocation = GetRandomTarget();
-				_inRandomMove = true;
+				InRandomMove = true;
 			}
 		}
 		else
 		{
 			TargetLocation = Player.GlobalPosition;
-			_inRandomMove = false;
+			InRandomMove = false;
 		}
 
 
@@ -62,7 +62,7 @@ public partial class BasicBehaviour : Behaviour
 	//Ignore bullets, coins and the casting enemy itself
 	private Array<Rid> _getExcludedObjects()
 	{
-		Array<Rid> a = new Array<Rid>(new Rid[] { Enemy.GetRid() });
+		Array<Rid> a = new Array<Rid>(new []{ Enemy.GetRid() });
 		_addFromList(a, GetTree().GetNodesInGroup("Enemy"));
 		_addFromList(a, GetTree().GetNodesInGroup("Coins"));
 		_addFromList(a, GetTree().GetNodesInGroup("Bullets"));
@@ -74,7 +74,9 @@ public partial class BasicBehaviour : Behaviour
 	{
 		for (int i = 0; i < list.Count; i++)
 		{
-			if (list[i] == null) continue;
+			if (list[i] == null) 
+				continue;
+			
 			array.Add((list[i] as CollisionObject2D).GetRid());
 		}
 	}

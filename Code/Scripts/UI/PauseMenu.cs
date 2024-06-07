@@ -1,27 +1,29 @@
+using Code.Scripts.Audio;
+using Code.Scripts.UI.Shop;
 using Godot;
-using UI;
-using Shop;
+
+namespace Code.Scripts.UI;
 
 public partial class PauseMenu : Control
 {
-	protected MusicController musicController;
-	protected SettingsMenu settingsMenu;
-	protected ShopMenu shopMenu;
-	protected LevelCountdown levelCountdown;
-	private bool _leavePauseMenu = false;
+	protected MusicController MusicController;
+	protected SettingsMenu SettingsMenu;
+	protected ShopMenu ShopMenu;
+	protected LevelCountdown LevelCountdown;
+	private bool _leavePauseMenu;
 	private LevelFailed _levelFailed;
 	private VictoryScreen _victoryScreen;
 
 	public override void _Ready()
 	{
-		musicController = GetNode<MusicController>("/root/MusicController");
-		settingsMenu = GetNode<SettingsMenu>("SettingsMenu");
-		shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-		levelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
+		MusicController = GetNode<MusicController>("/root/MusicController");
+		SettingsMenu = GetNode<SettingsMenu>("SettingsMenu");
+		ShopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+		LevelCountdown = GetTree().GetFirstNodeInGroup("LevelCountdown") as LevelCountdown;
 		_levelFailed = GetTree().GetFirstNodeInGroup("LevelFailed") as LevelFailed;
 		_victoryScreen = GetTree().GetFirstNodeInGroup("VictoryScreen") as VictoryScreen;
 
-		settingsMenu.Hide(); // Hide the settings menu when the game starts
+		SettingsMenu.Hide(); // Hide the settings menu when the game starts
 		Hide(); // Hide the pause menu when the game starts
 	}
 
@@ -44,9 +46,9 @@ public partial class PauseMenu : Control
 	{
 		GetTree().Paused = true;
 
-		if (settingsMenu.Visible)
+		if (SettingsMenu.Visible)
 		{
-			settingsMenu.Hide();
+			SettingsMenu.Hide();
 		}
 
 		Show();
@@ -66,24 +68,24 @@ public partial class PauseMenu : Control
 	*/
 	private void CheckBeforeUnpause()
 	{
-		switch (shopMenu.Visible || levelCountdown.Visible || _levelFailed.Visible || _victoryScreen.Visible) //another menu open?
+		switch (ShopMenu.Visible || LevelCountdown.Visible || _levelFailed.Visible || _victoryScreen.Visible) //another menu open?
 		{
-			case true when _leavePauseMenu && levelCountdown.Visible:
+			case true when _leavePauseMenu && LevelCountdown.Visible:
 				Hide(); //just hide the pause Menu without unpausing the game because another menu is open and paused the game
-				levelCountdown.countdownTimer.Paused = false;
-				musicController.GetNode<AudioStreamPlayer>("CountDown").StreamPaused = false;
-				levelCountdown.blurAnimation.Play();
+				LevelCountdown.CountdownTimer.Paused = false;
+				MusicController.GetNode<AudioStreamPlayer>("CountDown").StreamPaused = false;
+				LevelCountdown.BlurAnimation.Play();
 				_leavePauseMenu = false;
 				break;
-			case true when _leavePauseMenu && !levelCountdown.Visible:
+			case true when _leavePauseMenu && !LevelCountdown.Visible:
 				Hide();
-				levelCountdown.countdownTimer.Paused = false;
+				LevelCountdown.CountdownTimer.Paused = false;
 				_leavePauseMenu = false;
 				break;
 			case true:
-				levelCountdown.countdownTimer.Paused = true;
-				musicController.GetNode<AudioStreamPlayer>("CountDown").StreamPaused = true;
-				levelCountdown.blurAnimation.Pause();
+				LevelCountdown.CountdownTimer.Paused = true;
+				MusicController.GetNode<AudioStreamPlayer>("CountDown").StreamPaused = true;
+				LevelCountdown.BlurAnimation.Pause();
 				_leavePauseMenu = true;
 				Pause();
 				break;
@@ -96,22 +98,22 @@ public partial class PauseMenu : Control
 	//button functions for the pause menu
 	private void OnResumePressed()
 	{
-		musicController.Play(Sound.ButtonClick);
+		MusicController.Play(Sound.ButtonClick);
 		CheckBeforeUnpause();
 	}
 
 	private void OnSettingsPressed()
 	{
-		musicController.Play(Sound.ButtonClick);
+		MusicController.Play(Sound.ButtonClick);
 
 		//show Settingsmenu
-		settingsMenu.Show();
+		SettingsMenu.Show();
 	}
 
 	//Return to the main menu
 	private void OnMainMenuPressed()
 	{
-		musicController.Play(Sound.ButtonClick);
+		MusicController.Play(Sound.ButtonClick);
 		GetTree().Paused = false; //make sure the game is unpaused
 		GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
 	}

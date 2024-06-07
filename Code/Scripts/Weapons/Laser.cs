@@ -1,6 +1,6 @@
 ﻿using Godot;
 
-namespace Weapons;
+namespace Code.Scripts.Weapons;
 
 public partial class Laser : RayCast2D
 {

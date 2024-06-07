@@ -1,5 +1,7 @@
+using Code.Scripts.Managers;
 using Godot;
-using Managers;
+
+namespace Code.Scripts.UI;
 
 public partial class CoinDisplay : TextureRect
 {

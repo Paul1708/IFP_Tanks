@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Player;
+namespace Code.Scripts.Movement;
 
 [GlobalClass]
 public partial class PlayerStats : Resource

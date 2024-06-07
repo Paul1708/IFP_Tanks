@@ -1,31 +1,32 @@
 using Godot;
-using Managers.Save;
+using Code.Scripts.Managers.Save;
 using System;
 using System.Collections.Generic;
-using Shop;
+using Code.Scripts.UI.Shop;
+using Code.Scripts.Weapons;
 
-namespace Managers;
+namespace Code.Scripts.Managers;
 
 public partial class ShopManager : Node2D
 {
 	[ExportGroup("Weapons")]
-	[Export] public WeaponStats defaultWeaponStats { get; set; }
-	[Export] public WeaponStats bouncingWeaponStats { get; set; }
-	[Export] public WeaponStats grenadeWeaponStats { get; set; }
-	[Export] public WeaponStats rocketWeaponStats { get; set; }
-	[Export] public WeaponStats laserWeaponStats { get; set; }
-	[Export] public WeaponStats machineGunWeaponStats { get; set; }
+	[Export] public WeaponStats DefaultWeaponStats { get; set; }
+	[Export] public WeaponStats BouncingWeaponStats { get; set; }
+	[Export] public WeaponStats GrenadeWeaponStats { get; set; }
+	[Export] public WeaponStats RocketWeaponStats { get; set; }
+	[Export] public WeaponStats LaserWeaponStats { get; set; }
+	[Export] public WeaponStats MachineGunWeaponStats { get; set; }
 	[Signal] public delegate void OnWeaponUnlockedEventHandler();
 	[Signal] public delegate void OnWeaponEquippedEventHandler();
-	public List<Stat> statsList = new();
-	public List<Weapon> weaponsList = new();
+	public List<Stat> StatsList = new();
+	public List<Weapon> WeaponsList = new();
 	public static ShopManager Instance { get; private set; }
 	private ShopMenu _shopMenu;
 	/*when using, be aware of convention: assignment is dependent on the order and number of the Panels in the scene e.g.
    	_healStat is managed in Panel1, so its addressed by the number 1 (or in an array or list by 0)*/
 	//Add new shop Stats here
 	private Stat _healStat = new("Heal", 0);
-	private Stat _maxHPStat = new("MaxHP", 1);
+	private Stat _maxHpStat = new("MaxHP", 1);
 	private Stat _dmgStat = new("DMG", 2);
 	private Stat _speedStat = new("Speed", 3);
 	//Add new shop Weapons here
@@ -47,16 +48,16 @@ public partial class ShopManager : Node2D
 			QueueFree(); // Ensures there is only one instance of CoinManager
 		}
 
-		AddStatsToList(_healStat, _maxHPStat, _dmgStat, _speedStat);
+		AddStatsToList(_healStat, _maxHpStat, _dmgStat, _speedStat);
 
 		SaveManager.Instance.OnSaveDataLoaded += OnSaveDataLoaded;
 
-		_defaultWeapon = new("Default", 0, defaultWeaponStats);
-		_bouncingWeapon = new("Bouncing", 1, bouncingWeaponStats);
-		_grenadeWeapon = new("Grenade", 2, grenadeWeaponStats);
-		_rocketWeapon = new("Rocket", 3, rocketWeaponStats);
-		_laserWeapon = new("Laser", 4, laserWeaponStats);
-		_machineGunWeapon = new("MachineGun", 5, machineGunWeaponStats);
+		_defaultWeapon = new("Default", 0, DefaultWeaponStats);
+		_bouncingWeapon = new("Bouncing", 1, BouncingWeaponStats);
+		_grenadeWeapon = new("Grenade", 2, GrenadeWeaponStats);
+		_rocketWeapon = new("Rocket", 3, RocketWeaponStats);
+		_laserWeapon = new("Laser", 4, LaserWeaponStats);
+		_machineGunWeapon = new("MachineGun", 5, MachineGunWeaponStats);
 		AddWeaponsToList(_defaultWeapon, _bouncingWeapon, _grenadeWeapon, _rocketWeapon, _laserWeapon, _machineGunWeapon);
 
 	}
@@ -66,7 +67,7 @@ public partial class ShopManager : Node2D
 		SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
 	}
 
-	public void OnSaveDataLoaded(SaveData saveData) //TODO: savedata for weapons
+	public void OnSaveDataLoaded(SaveData saveData)
 	{
 		LoadShopStateBySaveData(saveData);
 	}
@@ -77,23 +78,27 @@ public partial class ShopManager : Node2D
 	///</summary>
 	public bool BuyStat(Stat stat)
 	{
-		ShopPrices shopPrices = stat.priceTag as ShopPrices;
-		int price = stat.price + shopPrices.basePrice;
+		ShopPrices shopPrices = stat.PriceTag as ShopPrices;
+		if (shopPrices == null)
+			return false;
+		
+		int price = stat.Price + shopPrices.BasePrice;
 
 		if (CoinManager.Instance.CheckIfEnoughCoins(price))
 		{
 			CoinManager.Instance.RemoveCoins(price);
 
-			shopPrices.IncreasePrice(statsList[stat.listIndex]);
-			IncreaseStatQuantity(statsList[stat.listIndex]);
+			shopPrices.IncreasePrice(StatsList[stat.ListIndex]);
+			IncreaseStatQuantity(StatsList[stat.ListIndex]);
 			return true;
 		}
-		else
-		{
-			_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
-			_shopMenu.DisplayInsufficientCoinsError(price);
+		
+		_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+		if (_shopMenu == null)
 			return false;
-		}
+			
+		_shopMenu.DisplayInsufficientCoinsError(price);
+		return false;
 	}
 
 	///<summary>
@@ -101,8 +106,8 @@ public partial class ShopManager : Node2D
 	///</summary>
 	public void IncreaseStatQuantity(Stat stat)
 	{
-		stat.quantity++;
-		statsList[stat.listIndex] = stat;
+		stat.Quantity++;
+		StatsList[stat.ListIndex] = stat;
 	}
 
 	/// <summary>
@@ -111,10 +116,13 @@ public partial class ShopManager : Node2D
 	/// </summary>
 	public bool BuyWeapon(Weapon weapon)
 	{
-		ShopPrices shopPrices = weapon.priceTag as ShopPrices;
-		int price = shopPrices.basePrice;
+		ShopPrices shopPrices = weapon.PriceTag as ShopPrices;
+		if (shopPrices == null)
+			return false;
 		
-		if (CoinManager.Instance.CheckIfEnoughCoins(price) && weapon.unlocked == false)
+		int price = shopPrices.BasePrice;
+		
+		if (CoinManager.Instance.CheckIfEnoughCoins(price) && !weapon.Unlocked)
 		{
 			CoinManager.Instance.RemoveCoins(price);
 
@@ -122,9 +130,12 @@ public partial class ShopManager : Node2D
 			UnlockWeapon(weapon);
 			return true;
 		}
-		else if (CoinManager.Instance.CheckIfEnoughCoins(price) == false && weapon.unlocked == false)
+		
+		if (!CoinManager.Instance.CheckIfEnoughCoins(price) && !weapon.Unlocked)
 		{
 			_shopMenu = GetTree().GetFirstNodeInGroup("Shop") as ShopMenu;
+			if (_shopMenu == null)
+				return false;
 			_shopMenu.DisplayInsufficientCoinsError(price);
 			return false;
 		}
@@ -136,8 +147,8 @@ public partial class ShopManager : Node2D
 	/// </summary>
 	public void UnlockWeapon(Weapon weapon)
 	{
-		weapon.unlocked = true;
-		weaponsList[weapon.listIndex] = weapon;
+		weapon.Unlocked = true;
+		WeaponsList[weapon.ListIndex] = weapon;
 		EmitSignal(SignalName.OnWeaponUnlocked);
 	}
 
@@ -147,8 +158,8 @@ public partial class ShopManager : Node2D
 	public void EquipWeapon(Weapon weapon)
 	{
 		UnequipAllWeapon(); //make sure only one weapon is equipped
-		weapon.equipped = true;
-		weaponsList[weapon.listIndex] = weapon;
+		weapon.Equipped = true;
+		WeaponsList[weapon.ListIndex] = weapon;
 		EmitSignal(SignalName.OnWeaponEquipped);
 	}
 
@@ -157,14 +168,14 @@ public partial class ShopManager : Node2D
 	/// </summary>
 	public Weapon GetEquippedWeapon()
 	{
-		foreach (var weapon in weaponsList)
+		foreach (var weapon in WeaponsList)
 		{
-			if (weapon.equipped)
+			if (weapon.Equipped)
 			{
 				return weapon;
 			}
 		}
-		return weaponsList[0]; //default weapon
+		return WeaponsList[0]; //default weapon
 	}
 
 	/// <summary>
@@ -172,14 +183,13 @@ public partial class ShopManager : Node2D
 	/// </summary>
 	private void UnequipAllWeapon()
 	{
-		bool[] equipped = new bool[weaponsList.Count];
-		for (int i = 0; i < weaponsList.Count; i++)
+		bool[] equipped = new bool[WeaponsList.Count];
+		for (int i = 0; i < WeaponsList.Count; i++)
 		{
-			equipped[i] = weaponsList[i].equipped;
 			equipped[i] = false;
-			Weapon weapon = weaponsList[i];
-			weapon.equipped = equipped[i];
-			weaponsList[i] = weapon;
+			Weapon weapon = WeaponsList[i];
+			weapon.Equipped = equipped[i];
+			WeaponsList[i] = weapon;
 		}
 	}
 
@@ -210,16 +220,16 @@ public partial class ShopManager : Node2D
 		foreach (var stat in stats)
 		{
 			// If the index is already in the HashSet, throw an exception
-			if (!indices.Add(stat.listIndex))
+			if (!indices.Add(stat.ListIndex))
 			{
-				throw new ArgumentException($"Duplicate index: {stat.listIndex}");
+				throw new ArgumentException($"Duplicate index: {stat.ListIndex}");
 			}
 			// Ensure the list is large enough
-			while (statsList.Count <= stat.listIndex)
+			while (StatsList.Count <= stat.ListIndex)
 			{
-				statsList.Add(new Stat());
+				StatsList.Add(new Stat());
 			}
-			statsList[stat.listIndex] = stat;
+			StatsList[stat.ListIndex] = stat;
 		}
 	}
 
@@ -233,16 +243,16 @@ public partial class ShopManager : Node2D
 		foreach (var weapon in weapons)
 		{
 			// If the index is already in the HashSet, throw an exception
-			if (!indices.Add(weapon.listIndex))
+			if (!indices.Add(weapon.ListIndex))
 			{
-				throw new ArgumentException($"Duplicate index: {weapon.listIndex}");
+				throw new ArgumentException($"Duplicate index: {weapon.ListIndex}");
 			}
 			// Ensure the list is large enough
-			while (weaponsList.Count <= weapon.listIndex)
+			while (WeaponsList.Count <= weapon.ListIndex)
 			{
-				weaponsList.Add(new Weapon());
+				WeaponsList.Add(new Weapon());
 			}
-			weaponsList[weapon.listIndex] = weapon;
+			WeaponsList[weapon.ListIndex] = weapon;
 		}
 	}
 
@@ -253,17 +263,17 @@ public partial class ShopManager : Node2D
 	{
 		for (int i = 0; i < saveData.Stats.Count; i++)
 		{
-			Stat stat = statsList[i];
-			stat.price = (int)saveData.Stats[i][0];
-			stat.quantity = (int)saveData.Stats[i][1];
-			statsList[i] = stat;
+			Stat stat = StatsList[i];
+			stat.Price = (int)saveData.Stats[i][0];
+			stat.Quantity = (int)saveData.Stats[i][1];
+			StatsList[i] = stat;
 		}
 		for (int i = 0; i < saveData.Weapons.Count; i++)
 		{
-			Weapon weapon = weaponsList[i];
-			weapon.unlocked = (bool)saveData.Weapons[i][0];
-			weapon.equipped = (bool)saveData.Weapons[i][1];
-			weaponsList[i] = weapon;
+			Weapon weapon = WeaponsList[i];
+			weapon.Unlocked = (bool)saveData.Weapons[i][0];
+			weapon.Equipped = (bool)saveData.Weapons[i][1];
+			WeaponsList[i] = weapon;
 		}
 	}
 }

@@ -1,22 +1,21 @@
-using Components;
+using Code.Scripts.Managers;
 using Godot;
-using Managers;
 
-namespace Enemies;
+namespace Code.Scripts.Components;
 
 public partial class HitFeedbackComponent : Node2D
 {
     [Export]
-    public bool doFlashSprite = true;
+    public bool DoFlashSprite = true;
     [Export]
-    public float maxFlashStrength = 1f;
+    public float MaxFlashStrength = 1f;
     [Export]
-    public bool doScaleSprite = true;
+    public bool DoScaleSprite = true;
     [Export]
-    public float maxScale = 1.2f;
+    public float MaxScale = 1.2f;
 
     [Export]
-    public float feedbackDuration = 0.8f;
+    public float FeedbackDuration = 0.8f;
     private ShaderMaterial _tankMaterial;
     private ShaderMaterial _gunMaterial;
     private HealthComponent _healthComponent;
@@ -46,19 +45,19 @@ public partial class HitFeedbackComponent : Node2D
 
     private void StartTween(float damage)
     {
-        if (doFlashSprite)
+        if (DoFlashSprite)
         {
             Tween tween = GetTree().CreateTween();
-            tween.TweenMethod(Callable.From<float>(SetShaderParams), maxFlashStrength, 0.0f, feedbackDuration)
+            tween.TweenMethod(Callable.From<float>(SetShaderParams), MaxFlashStrength, 0.0f, FeedbackDuration)
              .SetTrans(Tween.TransitionType.Quart)
              .SetEase(Tween.EaseType.Out);
         }
 
 
-        if (doScaleSprite)
+        if (DoScaleSprite)
         {
             Tween tween = GetTree().CreateTween();
-            tween.TweenMethod(Callable.From<float>(SetScaleParams), maxScale, 1f, feedbackDuration)
+            tween.TweenMethod(Callable.From<float>(SetScaleParams), MaxScale, 1f, FeedbackDuration)
              .SetTrans(Tween.TransitionType.Quart)
              .SetEase(Tween.EaseType.Out);
         }

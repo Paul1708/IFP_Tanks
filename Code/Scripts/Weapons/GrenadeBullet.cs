@@ -1,7 +1,10 @@
-using Components;
+
+using Code.Scripts.Audio;
+using Code.Scripts.Components;
+using Code.Scripts.Managers;
 using Godot;
 
-namespace Weapons;
+namespace Code.Scripts.Weapons;
 
 public partial class GrenadeBullet : Bullet
 {
@@ -72,12 +75,12 @@ public partial class GrenadeBullet : Bullet
             if ((node is CharacterBody2D) && (distance <= DamageRadius))
             {
                 //body in hit range, so damage it according to dmg = bulletDamage / radius
-                float finalDamage = damage / distance;
+                float finalDamage = Damage / distance;
                 node.GetNode<HealthComponent>("HealthComponent").TakeDamage((int)finalDamage);
             }
         }
 
-        particles.EmitParticles(this, Scene.Explosion);
+        Particles.EmitParticles(this, Scene.Explosion);
         MusicController.Play(Sound.RocketExplosion);
         Destroy();
     }

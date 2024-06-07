@@ -1,37 +1,39 @@
-using UI;
+
+using Code.Scripts.UI;
 using GdUnit4;
 
+namespace Code.Test.UI;
 
 [TestSuite]
 public class TestHealthBar
 {
-    ISceneRunner runner;
-    HealthBar hb;
+    ISceneRunner _runner;
+    HealthBar _hb;
 
     [BeforeTest]
     public void Setup()
     {
-        runner = ISceneRunner.Load("res://Test/UI/TestHealthBar.tscn");
-        hb = runner.Scene().GetTree().GetNodesInGroup("HealthBar")[0] as HealthBar;
+        _runner = ISceneRunner.Load("res://Test/UI/TestHealthBar.tscn");
+        _hb = _runner.Scene().GetTree().GetNodesInGroup("HealthBar")[0] as HealthBar;
     }
 
 
     [TestCase]
     public void CorrectlyInitializeHealthValues()
     {
-        float maxHealth = hb.maxHP;
-        float currentHealth = hb.currentHP;
+        float maxHealth = _hb.MaxHp;
+        float currentHealth = _hb.CurrentHp;
 
-        Assertions.AssertFloat(maxHealth).Equals(hb.maxHP);
-        Assertions.AssertFloat(maxHealth).Equals(hb.MaxValue);
-        Assertions.AssertFloat(maxHealth).Equals(hb.greenBar.MaxValue);
+        Assertions.AssertFloat(maxHealth).Equals(_hb.MaxHp);
+        Assertions.AssertFloat(maxHealth).Equals(_hb.MaxValue);
+        Assertions.AssertFloat(maxHealth).Equals(_hb.GreenBar.MaxValue);
 
-        Assertions.AssertFloat(currentHealth).Equals(hb.currentHP);
-        Assertions.AssertFloat(currentHealth).Equals(hb.Value);
-        Assertions.AssertFloat(currentHealth).Equals(hb.greenBar.Value);
+        Assertions.AssertFloat(currentHealth).Equals(_hb.CurrentHp);
+        Assertions.AssertFloat(currentHealth).Equals(_hb.Value);
+        Assertions.AssertFloat(currentHealth).Equals(_hb.GreenBar.Value);
 
         string expectedLabelText = $"{currentHealth} / {maxHealth}";
-        Assertions.AssertString(expectedLabelText).Equals(hb.label.Text);
+        Assertions.AssertString(expectedLabelText).Equals(_hb.Label.Text);
     }
 
     [TestCase]
@@ -39,36 +41,36 @@ public class TestHealthBar
     public void OnHealthChangedUpdatesHealthValues()
     {
         float newHealth = 10;
-        hb.OnHealthChanged(newHealth);
+        _hb.OnHealthChanged(newHealth);
 
-        Assertions.AssertFloat(newHealth).Equals(hb.currentHP);
-        Assertions.AssertFloat(newHealth).Equals(hb.Value);
-        Assertions.AssertFloat(newHealth).Equals(hb.greenBar.Value);
+        Assertions.AssertFloat(newHealth).Equals(_hb.CurrentHp);
+        Assertions.AssertFloat(newHealth).Equals(_hb.Value);
+        Assertions.AssertFloat(newHealth).Equals(_hb.GreenBar.Value);
 
-        string expectedLabelText = $"{hb.currentHP} / {hb.maxHP}";
-        Assertions.AssertString(expectedLabelText).Equals(hb.label.Text);
+        string expectedLabelText = $"{_hb.CurrentHp} / {_hb.MaxHp}";
+        Assertions.AssertString(expectedLabelText).Equals(_hb.Label.Text);
     }
 
     [TestCase]
     public void OnHealthChangedStartsRedHealthTimer()
     {
         float newHealth = 10;
-        hb.OnHealthChanged(newHealth);
+        _hb.OnHealthChanged(newHealth);
 
-        Assertions.AssertBool(hb.redHealthTimer.IsStopped()).IsFalse();
+        Assertions.AssertBool(_hb.RedHealthTimer.IsStopped()).IsFalse();
     }
 
 
     public void OnMaxHealthChangedUpdatesMaxHealthValues()
     {
         float newMaxHealth = 100;
-        hb.OnMaxHealthChanged(newMaxHealth);
+        _hb.OnMaxHealthChanged(newMaxHealth);
 
-        Assertions.AssertFloat(newMaxHealth).Equals(hb.maxHP);
-        Assertions.AssertFloat(newMaxHealth).Equals(hb.MaxValue);
-        Assertions.AssertFloat(newMaxHealth).Equals(hb.greenBar.MaxValue);
+        Assertions.AssertFloat(newMaxHealth).Equals(_hb.MaxHp);
+        Assertions.AssertFloat(newMaxHealth).Equals(_hb.MaxValue);
+        Assertions.AssertFloat(newMaxHealth).Equals(_hb.GreenBar.MaxValue);
 
-        string expectedLabelText = $"{hb.currentHP} / {hb.maxHP}";
-        Assertions.AssertString(expectedLabelText).Equals(hb.label.Text);
+        string expectedLabelText = $"{_hb.CurrentHp} / {_hb.MaxHp}";
+        Assertions.AssertString(expectedLabelText).Equals(_hb.Label.Text);
     }
 }

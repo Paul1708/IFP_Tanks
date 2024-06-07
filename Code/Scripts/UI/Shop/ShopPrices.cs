@@ -1,15 +1,15 @@
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers;
-using Managers.Level;
 
-namespace Shop;
+namespace Code.Scripts.UI.Shop;
 
 //manages the text of the price tags in the shop and calculates the price of the items
 public partial class ShopPrices : Label
 {
 	//price is the default price of the item 
-	[Export] public int basePrice;
-	[Export] public float priceMultiplier = 1.1f;
+	[Export] public int BasePrice;
+	[Export] public float PriceMultiplier = 1.1f;
 	private LevelManager _levelManager;
 
 	// Called when the node enters the scene tree for the first time.
@@ -38,15 +38,15 @@ public partial class ShopPrices : Label
 		{
 			if (greatGreatGrandParent.IsInGroup("Stats"))
 			{
-				var stat = ShopManager.Instance.statsList[index];
-				stat.priceTag = this;
-				ShopManager.Instance.statsList[index] = stat;
+				var stat = ShopManager.Instance.StatsList[index];
+				stat.PriceTag = this;
+				ShopManager.Instance.StatsList[index] = stat;
 			}
 			else if (greatGreatGrandParent.IsInGroup("Weapons"))
 			{
-				var weapon = ShopManager.Instance.weaponsList[index];
-				weapon.priceTag = this;
-				ShopManager.Instance.weaponsList[index] = weapon;
+				var weapon = ShopManager.Instance.WeaponsList[index];
+				weapon.PriceTag = this;
+				ShopManager.Instance.WeaponsList[index] = weapon;
 			}
 		}
 	}
@@ -63,15 +63,15 @@ public partial class ShopPrices : Label
 		{
 			if (greatGreatGrandParent.IsInGroup("Stats"))
 			{
-				Text = $"Price: {basePrice + ShopManager.Instance.statsList[index].price}";
+				Text = $"Price: {BasePrice + ShopManager.Instance.StatsList[index].Price}";
 			}
-			else if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.weaponsList[index].unlocked)
+			else if (greatGreatGrandParent.IsInGroup("Weapons") && ShopManager.Instance.WeaponsList[index].Unlocked)
 			{
 				WeaponUnlocked(this);
 			}
 			else
 			{
-				Text = $"Price: {basePrice}";
+				Text = $"Price: {BasePrice}";
 			}
 		}
 	}
@@ -82,10 +82,10 @@ public partial class ShopPrices : Label
 	/// </summary>
 	public void IncreasePrice(Stat stat)
 	{
-		int value = (int)(basePrice * Mathf.Pow(priceMultiplier, stat.quantity));
-		stat.price = value - basePrice;
-		ShopManager.Instance.statsList[stat.listIndex] = stat;
-		stat.priceTag.Text = "Price: " + value.ToString();
+		int value = (int)(BasePrice * Mathf.Pow(PriceMultiplier, stat.Quantity));
+		stat.Price = value - BasePrice;
+		ShopManager.Instance.StatsList[stat.ListIndex] = stat;
+		stat.PriceTag.Text = "Price: " + value.ToString();
 	}
 
 	public static void WeaponUnlocked(Label label)

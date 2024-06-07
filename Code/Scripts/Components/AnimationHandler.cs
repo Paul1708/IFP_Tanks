@@ -1,7 +1,7 @@
 using System;
 using Godot;
 
-namespace Components;
+namespace Code.Scripts.Components;
 
 public partial class AnimationHandler : AnimationPlayer
 {

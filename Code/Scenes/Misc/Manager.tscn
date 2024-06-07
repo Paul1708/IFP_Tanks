@@ -6,12 +6,12 @@
 [ext_resource type="Script" path="res://Scripts/Managers/CoinManager.cs" id="4_0d2wr"]
 [ext_resource type="Script" path="res://Scripts/Managers/Save/SaveManager.cs" id="5_agwak"]
 [ext_resource type="Script" path="res://Scripts/Managers/ShopManager.cs" id="5_la8dw"]
-[ext_resource type="Resource" uid="uid://drmqm0hjoaj4j" path="res://Scenes/Weapons/WeaponStats/Player/Player50calStats.tres" id="6_qjkqs"]
-[ext_resource type="Resource" uid="uid://cqtnj1op0d6uw" path="res://Scenes/Weapons/WeaponStats/Player/PlayerBouncingStats.tres" id="7_bvhxu"]
-[ext_resource type="Resource" uid="uid://5jmfmy5pp8aa" path="res://Scenes/Weapons/WeaponStats/Player/PlayerGrenadeStats.tres" id="8_m5tvu"]
-[ext_resource type="Resource" uid="uid://n81pwemq4rai" path="res://Scenes/Weapons/WeaponStats/Player/PlayerHomingStats.tres" id="9_jf3x1"]
-[ext_resource type="Resource" uid="uid://bcjpvxuj71gmk" path="res://Scenes/Weapons/WeaponStats/Player/PlayerLaserStats.tres" id="10_rf4qs"]
-[ext_resource type="Resource" uid="uid://dld2u8t51um4e" path="res://Scenes/Weapons/WeaponStats/Player/PlayerMachineGunStats.tres" id="11_5fw1c"]
+[ext_resource type="Resource" uid="uid://drmqm0hjoaj4j" path="res://Scenes/Weapons/WeaponStats/Player/Player50calStats.tres" id="7_gxgc5"]
+[ext_resource type="Resource" uid="uid://cqtnj1op0d6uw" path="res://Scenes/Weapons/WeaponStats/Player/PlayerBouncingStats.tres" id="8_cq2j7"]
+[ext_resource type="Resource" uid="uid://5jmfmy5pp8aa" path="res://Scenes/Weapons/WeaponStats/Player/PlayerGrenadeStats.tres" id="9_2tvuv"]
+[ext_resource type="Resource" uid="uid://n81pwemq4rai" path="res://Scenes/Weapons/WeaponStats/Player/PlayerHomingStats.tres" id="10_dlyfa"]
+[ext_resource type="Resource" uid="uid://bcjpvxuj71gmk" path="res://Scenes/Weapons/WeaponStats/Player/PlayerLaserStats.tres" id="11_r6fbh"]
+[ext_resource type="Resource" uid="uid://dld2u8t51um4e" path="res://Scenes/Weapons/WeaponStats/Player/PlayerMachineGunStats.tres" id="12_ey0dj"]
 
 [node name="Managers" type="Node2D"]
 
@@ -25,16 +25,15 @@ script = ExtResource("2_m1i85")
 
 [node name="PlayerHealthComponent" type="Node2D" parent="PlayerManager"]
 script = ExtResource("2_gfgoi")
-maxHP = 100
 
 [node name="CoinManager" type="Node2D" parent="."]
 script = ExtResource("4_0d2wr")
 
 [node name="ShopManager" type="Node2D" parent="."]
 script = ExtResource("5_la8dw")
-defaultWeaponStats = ExtResource("6_qjkqs")
-bouncingWeaponStats = ExtResource("7_bvhxu")
-grenadeWeaponStats = ExtResource("8_m5tvu")
-rocketWeaponStats = ExtResource("9_jf3x1")
-laserWeaponStats = ExtResource("10_rf4qs")
-machineGunWeaponStats = ExtResource("11_5fw1c")
+DefaultWeaponStats = ExtResource("7_gxgc5")
+BouncingWeaponStats = ExtResource("8_cq2j7")
+GrenadeWeaponStats = ExtResource("9_2tvuv")
+RocketWeaponStats = ExtResource("10_dlyfa")
+LaserWeaponStats = ExtResource("11_r6fbh")
+MachineGunWeaponStats = ExtResource("12_ey0dj")

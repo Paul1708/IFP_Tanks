@@ -1,6 +1,10 @@
 using System;
+using Code.Scripts.Audio;
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers.Level;
+
+namespace Code.Scripts.UI;
 
 public partial class VictoryScreen : Control
 {

@@ -1,7 +1,10 @@
-﻿using System;
+﻿
+using Code.Scripts.Audio;
+using Code.Scripts.Enemies;
+using Code.Scripts.Managers;
 using Godot;
 
-namespace Weapons;
+namespace Code.Scripts.Weapons;
 
 public partial class HomingBullet : Bullet
 {
@@ -27,7 +30,7 @@ public partial class HomingBullet : Bullet
     public override void Destroy()
     {
         MusicController.Play(Sound.RocketExplosion);
-        particles.EmitParticles(this, Scene.Explosion);
+        Particles.EmitParticles(this, Scene.Explosion);
         QueueFree();
     }
     
@@ -88,7 +91,7 @@ public partial class HomingBullet : Bullet
         if (_targetEnemy)
         {
             //player fired it, so init targetDirection with the muzzle rotation
-            float rot = player.GetNode<GunController>("Gun").GlobalRotation;
+            float rot = Player.GetNode<GunController>("Gun").GlobalRotation;
             TargetDirection = new Vector2(1, 0).Rotated(rot).Normalized();
         }
         else

@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Managers.Level;
+namespace Code.Scripts.Managers.Level;
 
 public partial class WorldData : Resource
 {

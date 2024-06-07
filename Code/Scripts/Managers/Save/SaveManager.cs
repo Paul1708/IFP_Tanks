@@ -1,9 +1,9 @@
 using System.ComponentModel.DataAnnotations;
+using Code.Scripts.Movement;
+using Code.Scripts.UI.Shop;
 using Godot;
-using Player;
-using Shop;
 
-namespace Managers.Save;
+namespace Code.Scripts.Managers.Save;
 
 public partial class SaveManager : Node
 {
@@ -11,7 +11,7 @@ public partial class SaveManager : Node
     public PlayerStats InitialPlayerStats { get; set; }
     public static SaveManager Instance { get; private set; }
     public SaveData SaveData { get; private set; }
-    public LoadingType LoadingType { get; set; } = LoadingType.NONE;
+    public LoadingType LoadingType { get; set; } = LoadingType.None;
 
     [Signal]
     public delegate void OnSaveDataLoadedEventHandler(SaveData saveData);
@@ -34,7 +34,7 @@ public partial class SaveManager : Node
 
     public void SaveGame()
     {
-        SaveData.PlayerCurrentHP = PlayerManager.Instance.PlayerHealthComponent.currentHP;
+        SaveData.PlayerCurrentHp = PlayerManager.Instance.PlayerHealthComponent.CurrentHp;
         SaveData.CoinCount = CoinManager.Instance.Coins;
         SaveData.PlayerStats = PlayerManager.Instance.PlayerStats;
         SaveShopState();
@@ -52,13 +52,13 @@ public partial class SaveManager : Node
     public void LoadGame()
     {
 
-        if (LoadingType == LoadingType.NEW_GAME)
+        if (LoadingType == LoadingType.NewGame)
         {
             SaveData = new SaveData();
             ResourceSaver.Save(SaveData, "user://savegame.tres");
             GD.Print("New Game loaded");
         }
-        else if (LoadingType == LoadingType.LOAD_GAME)
+        else if (LoadingType == LoadingType.LoadGame)
         {
             SaveData = ResourceLoader.Load<SaveData>("user://savegame.tres");
             GD.Print("Game loaded from save file");
@@ -68,7 +68,7 @@ public partial class SaveManager : Node
             throw new ValidationException("LoadingType is not set. Please set the LoadingType before calling LoadGame()");
         }
         EmitSignal(SignalName.OnSaveDataLoaded, SaveData);
-        LoadingType = LoadingType.NONE;
+        LoadingType = LoadingType.None;
     }
 
     public bool IsSaveFileAvailable()
@@ -79,24 +79,24 @@ public partial class SaveManager : Node
     public void SaveShopState()
     {
         //saves shop state by iterating through the statsList and saving the price and quantity of each stat
-        for (int i = 0; i < ShopManager.Instance.statsList.Count; i++)
+        for (int i = 0; i < ShopManager.Instance.StatsList.Count; i++)
         {
-            Stat stat = ShopManager.Instance.statsList[i];
-            SaveData.Stats[i][0] = stat.price;
-            SaveData.Stats[i][1] = stat.quantity;
+            Stat stat = ShopManager.Instance.StatsList[i];
+            SaveData.Stats[i][0] = stat.Price;
+            SaveData.Stats[i][1] = stat.Quantity;
         }
-        for (int i = 0; i < ShopManager.Instance.weaponsList.Count; i++)
+        for (int i = 0; i < ShopManager.Instance.WeaponsList.Count; i++)
         {
-            Weapon weapon = ShopManager.Instance.weaponsList[i];
-            SaveData.Weapons[i][0] = weapon.unlocked;
-            SaveData.Weapons[i][1] = weapon.equipped;
+            Weapon weapon = ShopManager.Instance.WeaponsList[i];
+            SaveData.Weapons[i][0] = weapon.Unlocked;
+            SaveData.Weapons[i][1] = weapon.Equipped;
         }
     }
 }
 
 public enum LoadingType
 {
-    NEW_GAME,
-    LOAD_GAME,
-    NONE
+    NewGame,
+    LoadGame,
+    None
 }

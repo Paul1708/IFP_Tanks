@@ -1,9 +1,11 @@
 using System;
 using Godot;
-using Managers.Level;
-using Weapons;
+using Code.Scripts.Managers.Level;
+using Code.Scripts.Audio;
+using Code.Scripts.Managers;
+using Code.Scripts.Weapons;
 
-namespace Enemies;
+namespace Code.Scripts.Enemies;
 
 public abstract partial class Behaviour : Node2D
 {
@@ -23,8 +25,8 @@ public abstract partial class Behaviour : Node2D
 
     protected Vector2 TargetLocation { get; set; }
 
-    protected bool _inRandomMove;
-    protected ParticleController particles;
+    protected bool InRandomMove;
+    protected ParticleController Particles;
     protected MusicController MusicController;
 
     public override void _Ready()
@@ -35,7 +37,7 @@ public abstract partial class Behaviour : Node2D
         Navigation = GetParent().GetNode<NavigationController>("NavigationAgent2D");
         Enemy = GetParent() as Enemy;
         LevelManager = Enemy.GetParent().GetParent().GetParent() as LevelManager;
-        particles = GetNode<ParticleController>("/root/ParticleController");
+        Particles = GetNode<ParticleController>("/root/ParticleController");
         MusicController = GetNode<MusicController>("/root/MusicController");
         Setup();
     }

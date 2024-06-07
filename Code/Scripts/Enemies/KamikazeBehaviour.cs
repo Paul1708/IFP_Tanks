@@ -1,9 +1,9 @@
-using System;
-using Components;
+using Code.Scripts.Audio;
+using Code.Scripts.Components;
 using Godot;
-using Managers;
+using Code.Scripts.Managers;
 
-namespace Enemies;
+namespace Code.Scripts.Enemies;
 
 public partial class KamikazeBehaviour : Behaviour
 {
@@ -14,10 +14,7 @@ public partial class KamikazeBehaviour : Behaviour
     [Export] public float TargetReachedDistance;
 
     private bool _exploded;
-
-
-    //TODO: Bullets from enemies cannot hit other enemies
-    //TODO: When two bullets of same group i.e. shot by enemy collide, destroy the weaker one, if they are the same type delete a random one
+    
 
     public override void Setup()
     {
@@ -42,7 +39,7 @@ public partial class KamikazeBehaviour : Behaviour
     private void _explode()
     {
         HealthComponent hc = Enemy.GetNode<HealthComponent>("HealthComponent");
-        hc.TakeDamage(hc.maxHP);
+        hc.TakeDamage(hc.MaxHp);
 
 
         //Damage all close enemies
@@ -57,7 +54,7 @@ public partial class KamikazeBehaviour : Behaviour
                 _takeDamage(node, (int)finalDamage);
             }
         }
-        particles.EmitParticles(this, Scene.KamikazeExplosion);
+        Particles.EmitParticles(this, Scene.KamikazeExplosion);
         MusicController.Play(Sound.RocketExplosion);
     }
 

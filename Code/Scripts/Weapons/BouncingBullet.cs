@@ -1,8 +1,10 @@
-using Components;
-using Godot;
-using Player;
 
-namespace Weapons;
+using Code.Scripts.Components;
+using Code.Scripts.Managers;
+using Code.Scripts.Movement;
+using Godot;
+
+namespace Code.Scripts.Weapons;
 
 public partial class BouncingBullet : Bullet
 {
@@ -21,7 +23,7 @@ public partial class BouncingBullet : Bullet
 
 	public override void Destroy()
 	{
-		particles.EmitParticles(this, Scene.BulletCrack);
+		Particles.EmitParticles(this, Scene.BulletCrack);
 		QueueFree();
 	}
 
@@ -74,7 +76,7 @@ public partial class BouncingBullet : Bullet
 			return;
 		} 
 		
-		node.GetNode<HealthComponent>("HealthComponent").TakeDamage(damage);
+		node.GetNode<HealthComponent>("HealthComponent").TakeDamage(Damage);
 		Destroy();
 	}
 	protected override void OnOtherHit()

@@ -1,6 +1,9 @@
-using System.Threading.Tasks;
+
+using Code.Scripts.Audio;
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers.Level;
+
+namespace Code.Scripts.UI;
 
 public partial class LevelFailed : Control
 {

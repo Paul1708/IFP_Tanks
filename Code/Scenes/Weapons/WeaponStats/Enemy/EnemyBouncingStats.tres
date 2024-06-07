@@ -5,7 +5,7 @@
 
 [resource]
 script = ExtResource("1_s8dwa")
-bulletScene = ExtResource("2_circq")
-damage = 10
-bulletsPerSecond = 1.5
-bulletSpeed = 100.0
+BulletScene = ExtResource("2_circq")
+Damage = 10.0
+BulletsPerSecond = 1.0
+BulletSpeed = 10.0

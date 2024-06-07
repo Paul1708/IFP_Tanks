@@ -1,23 +1,24 @@
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
+using Code.Scripts.Weapons;
 using Godot;
-using Managers.Level;
-using Managers;
 
-namespace Shop;
+namespace Code.Scripts.UI.Shop;
 
 public struct Weapon
 {
-	public string name;
-	public int listIndex;
-	public Label priceTag;
-	public bool unlocked = false;
-	public bool equipped = false;
-	public WeaponStats weaponStats;
+	public string Name;
+	public int ListIndex;
+	public Label PriceTag;
+	public bool Unlocked = false;
+	public bool Equipped = false;
+	public WeaponStats WeaponStats;
 	public Weapon() { }
 	public Weapon(string name, int listIndex, WeaponStats weaponStats)
 	{
-		this.name = name;
-		this.listIndex = listIndex;
-		this.weaponStats = weaponStats;
+		this.Name = name;
+		this.ListIndex = listIndex;
+		this.WeaponStats = weaponStats;
 	}
 }
 
@@ -57,45 +58,45 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 	private void OnBuy1Pressed()
 	{
-		Weapon defaultWeapon = ShopManager.Instance.weaponsList[0];
-		if (defaultWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(defaultWeapon);
+		Weapon defaultWeapon = ShopManager.Instance.WeaponsList[0];
+		if (defaultWeapon.Unlocked) ShopManager.Instance.EquipWeapon(defaultWeapon);
 		else ShopManager.Instance.BuyWeapon(defaultWeapon);
 
 	}
 
 	private void OnBuy2Pressed()
 	{
-		Weapon bouncingWeapon = ShopManager.Instance.weaponsList[1];
-		if (bouncingWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(bouncingWeapon);
+		Weapon bouncingWeapon = ShopManager.Instance.WeaponsList[1];
+		if (bouncingWeapon.Unlocked) ShopManager.Instance.EquipWeapon(bouncingWeapon);
 		else ShopManager.Instance.BuyWeapon(bouncingWeapon);
 
 	}
 
 	private void OnBuy3Pressed()
 	{
-		Weapon grenadeWeapon = ShopManager.Instance.weaponsList[2];
-		if (grenadeWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(grenadeWeapon);
+		Weapon grenadeWeapon = ShopManager.Instance.WeaponsList[2];
+		if (grenadeWeapon.Unlocked) ShopManager.Instance.EquipWeapon(grenadeWeapon);
 		else ShopManager.Instance.BuyWeapon(grenadeWeapon);
 
 	}
 
 	private void OnBuy4Pressed()
 	{
-		Weapon rocketWeapon = ShopManager.Instance.weaponsList[3];
-		if (rocketWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(rocketWeapon);
+		Weapon rocketWeapon = ShopManager.Instance.WeaponsList[3];
+		if (rocketWeapon.Unlocked) ShopManager.Instance.EquipWeapon(rocketWeapon);
 		else ShopManager.Instance.BuyWeapon(rocketWeapon);
 	}
 
 	private void OnBuy5Pressed()
 	{
-		Weapon laserWeapon = ShopManager.Instance.weaponsList[4];
-		if (laserWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(laserWeapon);
+		Weapon laserWeapon = ShopManager.Instance.WeaponsList[4];
+		if (laserWeapon.Unlocked) ShopManager.Instance.EquipWeapon(laserWeapon);
 		else ShopManager.Instance.BuyWeapon(laserWeapon);
 	}
 	private void OnBuy6Pressed()
 	{
-		Weapon machineGunWeapon = ShopManager.Instance.weaponsList[5];
-		if (machineGunWeapon.unlocked == true) ShopManager.Instance.EquipWeapon(machineGunWeapon);
+		Weapon machineGunWeapon = ShopManager.Instance.WeaponsList[5];
+		if (machineGunWeapon.Unlocked) ShopManager.Instance.EquipWeapon(machineGunWeapon);
 		else ShopManager.Instance.BuyWeapon(machineGunWeapon);
 	}
 }

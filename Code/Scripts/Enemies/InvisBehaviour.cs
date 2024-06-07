@@ -1,20 +1,20 @@
 using Godot;
 using Godot.Collections;
 
-namespace Enemies;
+namespace Code.Scripts.Enemies;
 
 public partial class InvisBehaviour : Behaviour
 {
 
-	private Sprite2D tankSprite;
-	private AnimatedSprite2D gunSprite;
+	private Sprite2D _tankSprite;
+	private AnimatedSprite2D _gunSprite;
 
-	private InvisEnemyState state = InvisEnemyState.FALLBACK;
+	private InvisEnemyState _state = InvisEnemyState.Fallback;
 
 	public override void Setup()
 	{
-		tankSprite = GetNode<Sprite2D>("../TankBaseSprite");
-		gunSprite = GetNode<AnimatedSprite2D>("../Gun/GunSprite");
+		_tankSprite = GetNode<Sprite2D>("../TankBaseSprite");
+		_gunSprite = GetNode<AnimatedSprite2D>("../Gun/GunSprite");
 		StartFallback();
 	}
 
@@ -34,13 +34,13 @@ public partial class InvisBehaviour : Behaviour
 
 		// State machine would be better here, but this will do it for now
 
-		if (state.Equals(InvisEnemyState.SHOOTING))
+		if (_state.Equals(InvisEnemyState.Shooting))
 		{
 			Gun.Shoot();
 			return;
 		}
 
-		if (state.Equals(InvisEnemyState.FALLBACK))
+		if (_state.Equals(InvisEnemyState.Fallback))
 		{
 
 			if ((Enemy.GlobalPosition - TargetLocation).Length() <= PathGoalHitRadius)
@@ -83,7 +83,7 @@ public partial class InvisBehaviour : Behaviour
 	//Ignore bullets, coins and the casting enemy itself
 	private Array<Rid> _getExcludedObjects()
 	{
-		Array<Rid> a = new Array<Rid>(new Rid[] { Enemy.GetRid() });
+		Array<Rid> a = new Array<Rid>(new [] { Enemy.GetRid() });
 		_addFromList(a, GetTree().GetNodesInGroup("Enemy"));
 		_addFromList(a, GetTree().GetNodesInGroup("Coins"));
 		_addFromList(a, GetTree().GetNodesInGroup("Bullets"));
@@ -102,13 +102,13 @@ public partial class InvisBehaviour : Behaviour
 
 	private void StartShooting()
 	{
-		state = InvisEnemyState.SHOOTING;
+		_state = InvisEnemyState.Shooting;
 		Navigation.IsMooving = false;
 		GetTree().CreateTimer(2).Timeout += StartFallback;
 	}
 	private void StartFallback()
 	{
-		state = InvisEnemyState.FALLBACK;
+		_state = InvisEnemyState.Fallback;
 		HideSprites();
 		TargetLocation = GetRandomTarget();
 
@@ -119,28 +119,26 @@ public partial class InvisBehaviour : Behaviour
 	private void StopFallback()
 	{
 		TargetLocation = Player.GlobalPosition;
-		state = InvisEnemyState.SEARCHINGFORPLAYER;
+		_state = InvisEnemyState.SearchingForPlayer;
 	}
 
 
 	private void HideSprites()
 	{
-		tankSprite.Visible = false;
-		gunSprite.Visible = false;
-		//Enemy.AnimationHandler.Active = false;
+		_tankSprite.Visible = false;
+		_gunSprite.Visible = false;
 	}
 
 	private void ShowSprites()
 	{
-		tankSprite.Visible = true;
-		gunSprite.Visible = true;
-		//Enemy.AnimationHandler.Active = true;
+		_tankSprite.Visible = true;
+		_gunSprite.Visible = true;
 	}
 }
 
 enum InvisEnemyState
 {
-	SEARCHINGFORPLAYER,
-	SHOOTING,
-	FALLBACK
+	SearchingForPlayer,
+	Shooting,
+	Fallback
 }

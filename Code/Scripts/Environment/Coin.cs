@@ -1,30 +1,31 @@
 using Godot;
-using Player;
-using Managers;
+using Code.Scripts.Movement;
+using Code.Scripts.Managers;
+using Code.Scripts.Audio;
 
-namespace Items;
+namespace Code.Scripts.Environment;
 
 public partial class Coin : Area2D
 {
 	[Export] public int CoinValue { get; set; } = 1;
 	[Export] public float Speed = 1500f;
 	[Signal] public delegate void OnCoinCollectedEventHandler();
-	public bool shouldMove = false;
+	public bool ShouldMove = false;
 	private PlayerMovement _player;
-	protected MusicController musicController;
+	protected MusicController MusicController;
 
 	public override void _Ready()
 	{
 		GetNode<AnimatedSprite2D>("CoinSprite").Play();
 		_player = (PlayerMovement)GetTree().GetFirstNodeInGroup("Player");
-		musicController = GetNode<MusicController>("/root/MusicController");
+		MusicController = GetNode<MusicController>("/root/MusicController");
 
 		OnCoinCollected += CollectCoin;
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (shouldMove)
+		if (ShouldMove)
 		{
 			Vector2 direction = (_player.GlobalPosition - GlobalPosition).Normalized();
 			Position += direction * Speed * (float)delta;
@@ -49,6 +50,6 @@ public partial class Coin : Area2D
 	public void CollectCoin()
 	{
 		CoinManager.Instance.AddCoins(CoinValue);
-		musicController.Play(Sound.CoinPickup);
+		MusicController.Play(Sound.CoinPickup);
 	}
 }

@@ -1,17 +1,18 @@
-using System.Collections.Generic;
 using System.Threading.Tasks;
+using Code.Scripts.Audio;
 using Godot;
-using Managers.Save;
-using Shop;
+using Code.Scripts.Managers.Save;
+using Code.Scripts.UI;
+using Code.Scripts.UI.Shop;
 
-namespace Managers.Level;
+namespace Code.Scripts.Managers.Level;
 
 public partial class LevelManager : Node2D
 {
     [Export]
     public WorldData[] Worlds { get; private set; }
-    public int currentWorldID = 0;
-    public int currentLevelID = 0;
+    public int CurrentWorldId;
+    public int CurrentLevelId;
     public Level CurrentLevelInstance { get; private set; }
     public LevelData CurrentLevelData { get; private set; }
     private LevelDisplay _levelDisplay;
@@ -47,7 +48,7 @@ public partial class LevelManager : Node2D
 
         SaveManager.Instance.LoadGame();
 
-        _musicController.PlayWorldMusic(currentWorldID);
+        _musicController.PlayWorldMusic(CurrentWorldId);
     }
     public override void _ExitTree()
     {
@@ -62,9 +63,9 @@ public partial class LevelManager : Node2D
 
 
         // If there are levels left in the current world, load the next level
-        if (currentLevelID + 1 < Worlds[currentWorldID].LevelCount)
+        if (CurrentLevelId + 1 < Worlds[CurrentWorldId].LevelCount)
         {
-            await LoadLevelByID(currentWorldID, currentLevelID + 1);
+            await LoadLevelById(CurrentWorldId, CurrentLevelId + 1);
 
             // Save the game if the level was a checkpoint
             if (saveGameAfterLoading)
@@ -78,12 +79,12 @@ public partial class LevelManager : Node2D
         }
 
         // If there are no levels left in the current world, load the next world
-        if (currentWorldID + 1 < Worlds.Length)
+        if (CurrentWorldId + 1 < Worlds.Length)
         {
-            await LoadLevelByID(currentWorldID + 1, 0);
+            await LoadLevelById(CurrentWorldId + 1, 0);
            
             _musicController.StopCurrentMusic();
-            _musicController.PlayWorldMusic(currentWorldID);
+            _musicController.PlayWorldMusic(CurrentWorldId);
 
             // Save the game if the level was a checkpoint
             if (saveGameAfterLoading)
@@ -110,7 +111,7 @@ public partial class LevelManager : Node2D
         await ToSignal(_levelFailed, "OnRetryPressed");
 
         // Reload the last save
-        SaveManager.Instance.LoadGame(LoadingType.LOAD_GAME);
+        SaveManager.Instance.LoadGame(LoadingType.LoadGame);
         EmitSignal(SignalName.OnLevelReset);
         EmitSignal(SignalName.OnLevelChangedShowShop);
     }
@@ -118,26 +119,26 @@ public partial class LevelManager : Node2D
     private void SaveGame()
     {
         // Set the Level and World IDs as the last checkpoint and save the game
-        SaveManager.Instance.SaveData.LastCheckpointLevelID = currentLevelID;
-        SaveManager.Instance.SaveData.LastCheckpointWorldID = currentWorldID;
+        SaveManager.Instance.SaveData.LastCheckpointLevelId = CurrentLevelId;
+        SaveManager.Instance.SaveData.LastCheckpointWorldId = CurrentWorldId;
         SaveManager.Instance.SaveGame();
     }
 
     private async void OnSaveDataLoaded(SaveData saveData)
     {
         // Set the current level to saved data
-        currentLevelID = saveData.LastCheckpointLevelID;
-        currentWorldID = saveData.LastCheckpointWorldID;
+        CurrentLevelId = saveData.LastCheckpointLevelId;
+        CurrentWorldId = saveData.LastCheckpointWorldId;
 
         // Load the level and restore the level states
-        await LoadLevelByID(currentWorldID, currentLevelID);
+        await LoadLevelById(CurrentWorldId, CurrentLevelId);
 
-        if (currentLevelID > 0 || currentWorldID > 0) // If the game is not at the start, show the shop
+        if (CurrentLevelId > 0 || CurrentWorldId > 0) // If the game is not at the start, show the shop
         {
             await ToSignal(_shopMenu, "ready");
             EmitSignal(SignalName.OnLevelChangedShowShop);
         }
-        else if (currentLevelID == 0 && currentWorldID == 0) // If the game is at the start, start the countdown without showing the shop
+        else if (CurrentLevelId == 0 && CurrentWorldId == 0) // If the game is at the start, start the countdown without showing the shop
         {
             await ToSignal(_levelCountdown, "ready");
             EmitSignal(SignalName.OnFirstLevelLoaded);
@@ -154,28 +155,28 @@ public partial class LevelManager : Node2D
         {
             for (int j = 0; j < Worlds[i].Levels.Length; j++)
             {
-                if (i < currentWorldID || (i == currentWorldID && j <= currentLevelID))
+                if (i < CurrentWorldId || (i == CurrentWorldId && j <= CurrentLevelId))
                 {
-                    Worlds[i].Levels[j].LevelState = LevelState.COMPLETED;
+                    Worlds[i].Levels[j].LevelState = LevelState.Completed;
                 }
                 else
                 {
-                    Worlds[i].Levels[j].LevelState = LevelState.LOCKED;
+                    Worlds[i].Levels[j].LevelState = LevelState.Locked;
                 }
             }
         }
 
         // Set the current level to CURRENT
-        Worlds[currentWorldID].Levels[currentLevelID].LevelState = LevelState.CURRENT;
-        _levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
+        Worlds[CurrentWorldId].Levels[CurrentLevelId].LevelState = LevelState.Current;
+        _levelDisplay.RenderLevelDisplay(Worlds[CurrentWorldId].Levels);
     }
 
 
-    private async Task LoadLevelByID(int NewWorldID, int NewLevelID)
+    private async Task LoadLevelById(int newWorldId, int newLevelId)
     {
         if (CurrentLevelInstance != null)
         {
-            CurrentLevelData.LevelState = LevelState.COMPLETED;
+            CurrentLevelData.LevelState = LevelState.Completed;
 
             // Disconnect signals of old Level
             CurrentLevelInstance.OnLevelComplete -= OnLevelComplete;
@@ -187,21 +188,21 @@ public partial class LevelManager : Node2D
         }
 
         // Load new level
-        CurrentLevelData = Worlds[NewWorldID].Levels[NewLevelID];
+        CurrentLevelData = Worlds[newWorldId].Levels[newLevelId];
         CurrentLevelInstance = CurrentLevelData.LevelScene.Instantiate<Level>();
         AddChild(CurrentLevelInstance);
 
         // Set the level IDs as the current level
-        currentLevelID = NewLevelID;
-        currentWorldID = NewWorldID;
+        CurrentLevelId = newLevelId;
+        CurrentWorldId = newWorldId;
 
         // Connect signals
         CurrentLevelInstance.OnLevelComplete += OnLevelComplete;
         CurrentLevelInstance.OnLevelFailed += OnLevelFailed;
 
         // Set the level state and add it to the list of played levels since the last checkpoint
-        CurrentLevelData.LevelState = LevelState.CURRENT;
+        CurrentLevelData.LevelState = LevelState.Current;
 
-        _levelDisplay.RenderLevelDisplay(Worlds[currentWorldID].Levels);
+        _levelDisplay.RenderLevelDisplay(Worlds[CurrentWorldId].Levels);
     }
 }

@@ -1,21 +1,21 @@
+using Code.Scripts.Managers;
+using Code.Scripts.Managers.Level;
 using Godot;
-using Managers.Level;
-using Managers;
 
-namespace Shop;
+namespace Code.Scripts.UI.Shop;
 
 public struct Stat
 {
-	public string name;
-	public int listIndex;
-	public int price;
-	public Label priceTag;
-	public int quantity;
+	public string Name;
+	public int ListIndex;
+	public int Price;
+	public Label PriceTag;
+	public int Quantity;
 	public Stat() { }
 	public Stat(string name, int listIndex)
 	{
-		this.name = name;
-		this.listIndex = listIndex;
+		this.Name = name;
+		this.ListIndex = listIndex;
 	}
 }
 
@@ -58,21 +58,21 @@ public partial class ShopStatsTab : ShopBaseTab
 
 	private void OnBuy1Pressed()
 	{
-		if (PlayerManager.Instance.PlayerHealthComponent.currentHP == PlayerManager.Instance.PlayerHealthComponent.maxHP)
+		if (PlayerManager.Instance.PlayerHealthComponent.CurrentHp == PlayerManager.Instance.PlayerHealthComponent.MaxHp)
 		{
 			_shopMenu.DisplayAlreadyMaxHealthError();
 		}
 		else
 		{
-			Stat healStat = ShopManager.Instance.statsList[0];
+			Stat healStat = ShopManager.Instance.StatsList[0];
 			if (ShopManager.Instance.BuyStat(healStat)) PlayerManager.Instance.PlayerHealthComponent.HealPercentage(0.25f);
 		}
 	}
 
 	private void OnBuy2Pressed()
 	{
-		Stat maxHPStat = ShopManager.Instance.statsList[1];
-		if (ShopManager.Instance.BuyStat(maxHPStat))
+		Stat maxHpStat = ShopManager.Instance.StatsList[1];
+		if (ShopManager.Instance.BuyStat(maxHpStat))
 		{
 			PlayerManager.Instance.AddMaxHealth(10);
 		}
@@ -81,8 +81,8 @@ public partial class ShopStatsTab : ShopBaseTab
 
 	private void OnBuy3Pressed()
 	{
-		Stat DMGStat = ShopManager.Instance.statsList[2];
-		if (ShopManager.Instance.BuyStat(DMGStat))
+		Stat dmgStat = ShopManager.Instance.StatsList[2];
+		if (ShopManager.Instance.BuyStat(dmgStat))
 		{
 			PlayerManager.Instance.AddDamageModifier(0.1f);
 		}
@@ -90,20 +90,16 @@ public partial class ShopStatsTab : ShopBaseTab
 
 	private void OnBuy4Pressed()
 	{
-		Stat speedStat = ShopManager.Instance.statsList[3];
-		ShopManager.Instance.BuyStat(speedStat);
-		{
+		Stat speedStat = ShopManager.Instance.StatsList[3];
+		if(ShopManager.Instance.BuyStat(speedStat))
 			PlayerManager.Instance.AddMovementSpeed(10f);
-		}
 	}
 
 	private void OnBuy5Pressed()
 	{
-		Stat speedStat = ShopManager.Instance.statsList[3];
-		ShopManager.Instance.BuyStat(speedStat);
-		{
+		Stat speedStat = ShopManager.Instance.StatsList[3];
+		if(ShopManager.Instance.BuyStat(speedStat))
 			PlayerManager.Instance.AddRotationSpeed(0.25f);
-		}
 	}
 }
 

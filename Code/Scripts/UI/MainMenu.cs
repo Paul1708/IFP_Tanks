@@ -1,14 +1,15 @@
+using Code.Scripts.Audio;
+using Code.Scripts.Managers.Save;
 using Godot;
-using Managers.Save;
 
-namespace UI;
+namespace Code.Scripts.UI;
 public partial class MainMenu : Control
 {
 	[Export]
-	public Vector2 mainMenuCameraPosition = new Vector2(960, 540);
+	public Vector2 MainMenuCameraPosition = new (960, 540);
 	[Export]
-	public Vector2 settingsMenuCameraPosition = new Vector2(2880, 540);
-	public Camera2D camera;
+	public Vector2 SettingsMenuCameraPosition = new (2880, 540);
+	public Camera2D Camera;
 	private MusicController _musicController;
 	private AudioStreamPlayer _menuMusic;
 	private SettingsMenu _settingsMenu;
@@ -17,7 +18,7 @@ public partial class MainMenu : Control
 	public override void _Ready()
 	{
 		_musicController = GetNode<MusicController>("/root/MusicController");
-		camera = GetNode<Camera2D>("Camera2D");
+		Camera = GetNode<Camera2D>("Camera2D");
 		_menuMusic = GetNode<AudioStreamPlayer>("MenuMusic");
 		//Get the settings menu node to make sure its loaded to apply userSettings before playing any music
 		_settingsMenu = GetNode<SettingsMenu>("SettingsMenu"); 
@@ -30,21 +31,21 @@ public partial class MainMenu : Control
 	private void OnNewGamePressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
-		SaveManager.Instance.LoadingType = LoadingType.NEW_GAME;
+		SaveManager.Instance.LoadingType = LoadingType.NewGame;
 		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 	}
 
 	private void OnContinueGamePressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
-		SaveManager.Instance.LoadingType = LoadingType.LOAD_GAME;
+		SaveManager.Instance.LoadingType = LoadingType.LoadGame;
 		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 	}
 
 	private void OnSettingsPressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
-		camera.Position = settingsMenuCameraPosition;
+		Camera.Position = SettingsMenuCameraPosition;
 	}
 
 	private void OnQuitPressed()

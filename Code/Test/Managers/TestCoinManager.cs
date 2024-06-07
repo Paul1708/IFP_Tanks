@@ -1,34 +1,36 @@
+using Code.Scripts.Managers;
 using GdUnit4;
-using Managers;
+
+namespace Code.Test.Managers;
 
 [TestSuite]
 public class CoinManagerTests
 {
-    private CoinManager coinManager;
+    private CoinManager _coinManager;
 
     [BeforeTest]
     public void SetUp()
     {
-        coinManager = new CoinManager { Coins = 5 };
-        coinManager._Ready();
+        _coinManager = new CoinManager { Coins = 5 };
+        _coinManager._Ready();
     }
 
     [TestCase]
     public void TestSetAndGetCoins()
     {
-        Assertions.AssertThat(coinManager.Coins).IsEqual(5);
+        Assertions.AssertThat(_coinManager.Coins).IsEqual(5);
     }
 
     [TestCase]
     public void TestSetCoinsNegativeValue()
     {
-        coinManager.SetCoins(-5);
-        Assertions.AssertThat(coinManager.Coins).IsEqual(0);
+        _coinManager.SetCoins(-5);
+        Assertions.AssertThat(_coinManager.Coins).IsEqual(0);
     }
 
     [AfterTest]
     public void TearDown()
     {
-        coinManager.Free();
+        _coinManager.Free();
     }
 }

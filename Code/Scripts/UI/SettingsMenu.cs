@@ -1,12 +1,12 @@
-using System;
+using Code.Scripts.Audio;
+using Code.Scripts.Managers.Save;
 using Godot;
-using Managers.Save;
 
+namespace Code.Scripts.UI;
 
-namespace UI;
 public partial class SettingsMenu : Control
 {
-	protected MusicController musicController;
+	protected MusicController MusicController;
 
 	private string _masterBusName = "Master";
 	private string _musicBusName = "Music";
@@ -25,7 +25,7 @@ public partial class SettingsMenu : Control
 
 	public override void _Ready()
 	{
-		musicController = GetNode<MusicController>("/root/MusicController");
+		MusicController = GetNode<MusicController>("/root/MusicController");
 
 		_masterSlider = GetNode<Slider>("%MasterSlider");
 		_musicSlider = GetNode<Slider>("%MusicSlider");
@@ -49,7 +49,7 @@ public partial class SettingsMenu : Control
 
 	private void OnBackPressed()
 	{
-		musicController.Play(Sound.ButtonClick);
+		MusicController.Play(Sound.ButtonClick);
 		if (GetTree().CurrentScene.IsInGroup("MainGame")) 
 		{
 			Hide();
@@ -57,16 +57,16 @@ public partial class SettingsMenu : Control
 		else 
 		{
 			MainMenu mainMenu = GetTree().GetFirstNodeInGroup("MainMenu") as MainMenu;
-			mainMenu.camera.Position = mainMenu.mainMenuCameraPosition;
+			mainMenu.Camera.Position = mainMenu.MainMenuCameraPosition;
 		}
 	}
 
 	//toggles fullscreen and windowed mode
-	private void OnFullscreenToggled(bool ToggledOn)
+	private void OnFullscreenToggled(bool toggledOn)
 	{
-		musicController.Play(Sound.ButtonClick);
-		DisplayServer.WindowSetMode(ToggledOn ? DisplayServer.WindowMode.Fullscreen : DisplayServer.WindowMode.Windowed);
-		_userPreferences.IsFullscreen = ToggledOn;
+		MusicController.Play(Sound.ButtonClick);
+		DisplayServer.WindowSetMode(toggledOn ? DisplayServer.WindowMode.Fullscreen : DisplayServer.WindowMode.Windowed);
+		_userPreferences.IsFullscreen = toggledOn;
 		_userPreferences.Save();
 	}
 
@@ -90,7 +90,7 @@ public partial class SettingsMenu : Control
 	private void OnSFXSliderValueChanged(float value)
 	{
 		SetVolume(_sfxBusIndex, value);
-		_userPreferences.SFXVolume = value;
+		_userPreferences.SfxVolume = value;
 		_userPreferences.Save();
 	}
 
@@ -103,7 +103,7 @@ public partial class SettingsMenu : Control
 	{
 		_masterSlider.Value = _userPreferences.MasterVolume;
 		_musicSlider.Value = _userPreferences.MusicVolume;
-		_sfxSlider.Value = _userPreferences.SFXVolume;
+		_sfxSlider.Value = _userPreferences.SfxVolume;
 		_fullscreenButton.SetPressedNoSignal(_userPreferences.IsFullscreen);
 	}
 

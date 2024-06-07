@@ -1,6 +1,6 @@
 using Godot;
 
-namespace Managers.Level;
+namespace Code.Scripts.Managers.Level;
 
 [GlobalClass]
 public partial class LevelData : Resource
@@ -16,13 +16,13 @@ public partial class LevelData : Resource
     {
         LevelScene = null;
         IsCheckpoint = false;
-        LevelState = LevelState.LOCKED;
+        LevelState = LevelState.Locked;
     }
 }
 
 public enum LevelState
 {
-    CURRENT,
-    COMPLETED,
-    LOCKED
+    Current,
+    Completed,
+    Locked
 }

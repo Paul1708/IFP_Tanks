@@ -1,7 +1,8 @@
+using Code.Scripts.Weapons;
 using GdUnit4;
 using Godot;
-using Weapons;
 
+namespace Code.Test.Weapons;
 [TestSuite]
 public class TestHomingBullet
 {

@@ -459,7 +459,6 @@ metadata/_aseprite_wizard_config_ = {
 z_index = 1
 position = Vector2(-2.86102e-06, -5.84722e-05)
 rotation = 3.14159
-timeBetweenTrails = 0.25
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background/DummyTank"]
 libraries = {
