@@ -44,6 +44,10 @@ public partial class LevelCountdown : Control
 		_cooldownLabel.Text = timeLeft.ToString();
 	}
 
+	/// <summary>
+	/// Start the level Countdown. Shows the countdown label, pauses the game and plays the countdown animation with Countdown sound.
+	/// The countdown timer is started.
+	/// </summary>
 	public void StartLevelCooldown()
 	{
 		_blur.Color = new Color(1, 1, 1);
@@ -54,6 +58,9 @@ public partial class LevelCountdown : Control
 		GetTree().Paused = true;
 	}
 
+	/// <summary>
+	/// Called when the countdown timer has finished. Unpauses the game and hides the countdown label.
+	/// </summary>
 	public void OnCooldownTimeout ()
 	{
 		GetTree().Paused = false;

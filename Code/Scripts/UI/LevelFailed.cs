@@ -34,6 +34,9 @@ public partial class LevelFailed : Control
 		_levelManager.OnLevelFailedShowDeathScreen -= ShowDeathScreen;
 	}
 
+	/// <summary>
+	/// Show the death screen and pause the game. Plays the Death sound.
+	/// </summary>
 	public void ShowDeathScreen()
 	{
 		_blurAnimation.Play("LevelCooldown");
@@ -43,6 +46,9 @@ public partial class LevelFailed : Control
 
 	}
 
+	/// <summary>
+	/// Hide the death screen, unpause the game and tell the level to retry by emitting the OnRetryPressed signal
+	/// </summary>
 	private void OnRetryButtonPressed()
 	{	
 		_musicController.Play(Sound.ButtonClick);

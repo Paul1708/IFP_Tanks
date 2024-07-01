@@ -80,6 +80,7 @@ public partial class ShopPrices : Label
 	/// Increase the price of the item by the price multiplier to the power of the quantity of the item. 
 	/// Set the price of the item in the list to the new value and set the price tag text to the new value.
 	/// </summary>
+	/// <param name="stat"></param>
 	public void IncreasePrice(Stat stat)
 	{
 		int value = (int)(BasePrice * Mathf.Pow(PriceMultiplier, stat.Quantity));
@@ -88,6 +89,10 @@ public partial class ShopPrices : Label
 		stat.PriceTag.Text = "Price: " + value.ToString();
 	}
 
+	/// <summary>
+	/// Sets the price tag text to "Unlocked"
+	/// </summary>
+	/// <param name="label"></param>
 	public static void WeaponUnlocked(Label label)
 	{
 		label.Text = "Unlocked";

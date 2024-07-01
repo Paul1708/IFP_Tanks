@@ -62,10 +62,11 @@ public partial class PauseMenu : Control
 		GetTree().Paused = false;
 		Hide();
 	}
-	/*
-	Check if the shop menu is open and if the next step should be to show the shop and hide the pauseMenu (toShop true), 
-	or to just pause the game (toShop false) and show the pauseMenu. Else just unpause the game.
-	*/
+
+	/// <summary>
+	/// Check if the shop menu is open and if the next step should be to show the shop and hide the pauseMenu (toShop true), 
+	/// or to just pause the game (toShop false) and show the pauseMenu. Else just unpause the game.
+	/// </summary>
 	private void CheckBeforeUnpause()
 	{
 		switch (ShopMenu.Visible || LevelCountdown.Visible || _levelFailed.Visible || _victoryScreen.Visible) //another menu open?
@@ -95,13 +96,18 @@ public partial class PauseMenu : Control
 		}
 	}
 
-	//button functions for the pause menu
+	/// <summary>
+	/// Continue the game. Calls the CheckBeforeUnpause method to check if the game should be unpaused or not.
+	/// </summary>
 	private void OnResumePressed()
 	{
 		MusicController.Play(Sound.ButtonClick);
 		CheckBeforeUnpause();
 	}
 
+	/// <summary>
+	/// Show the settings menu scene.
+	/// </summary>
 	private void OnSettingsPressed()
 	{
 		MusicController.Play(Sound.ButtonClick);
@@ -110,7 +116,9 @@ public partial class PauseMenu : Control
 		SettingsMenu.Show();
 	}
 
-	//Return to the main menu
+	/// <summary>
+	/// Return to the main menu
+	/// </summary>
 	private void OnMainMenuPressed()
 	{
 		MusicController.Play(Sound.ButtonClick);

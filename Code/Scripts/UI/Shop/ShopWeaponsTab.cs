@@ -56,6 +56,9 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		_control.Position = position;
 	}
 
+	/// <summary>
+	/// Buy the defaultweapon and equip it if it is unlocked
+	/// </summary>
 	private void OnBuy1Pressed()
 	{
 		Weapon defaultWeapon = ShopManager.Instance.WeaponsList[0];
@@ -64,6 +67,9 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 	}
 
+	/// <summary>
+	/// Buy the bouncingWeapon and equip it if it is unlocked
+	/// </summary>
 	private void OnBuy2Pressed()
 	{
 		Weapon bouncingWeapon = ShopManager.Instance.WeaponsList[1];
@@ -72,6 +78,9 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 	}
 
+	/// <summary>
+	/// Buy the grenadeWeapon and equip it if it is unlocked
+	/// </summary>
 	private void OnBuy3Pressed()
 	{
 		Weapon grenadeWeapon = ShopManager.Instance.WeaponsList[2];
@@ -80,6 +89,9 @@ public partial class ShopWeaponsTab : ShopBaseTab
 
 	}
 
+	/// <summary>
+	/// Buy the rocketWeapon and equip it if it is unlocked
+	/// </summary>
 	private void OnBuy4Pressed()
 	{
 		Weapon rocketWeapon = ShopManager.Instance.WeaponsList[3];
@@ -87,12 +99,19 @@ public partial class ShopWeaponsTab : ShopBaseTab
 		else ShopManager.Instance.BuyWeapon(rocketWeapon);
 	}
 
+	/// <summary>
+	/// Buy the laserWeapon and equip it if it is unlocked
+	/// </summary>
 	private void OnBuy5Pressed()
 	{
 		Weapon laserWeapon = ShopManager.Instance.WeaponsList[4];
 		if (laserWeapon.Unlocked) ShopManager.Instance.EquipWeapon(laserWeapon);
 		else ShopManager.Instance.BuyWeapon(laserWeapon);
 	}
+	
+	/// <summary>
+	/// Buy the machineGunWeapon and equip it if it is unlocked
+	/// </summary>
 	private void OnBuy6Pressed()
 	{
 		Weapon machineGunWeapon = ShopManager.Instance.WeaponsList[5];

@@ -40,6 +40,9 @@ public partial class VictoryScreen : Control
 		_levelManager.OnGameWonShowVictoryScreen -= ShowVictoryScreen;
 	}
 
+	/// <summary>
+	/// Show the victory screen and pause the game. Plays the Victory sound and shows fireworks.
+	/// </summary>
 	public async void ShowVictoryScreen()
 	{
 		_blurAnimation.Play("LevelCooldown");
@@ -55,6 +58,9 @@ public partial class VictoryScreen : Control
 		}
 	}
 
+	/// <summary>
+	/// Hide the victory screen, unpause the game and return to the main menu by emitting the OnBacktoMainMenuPressed signal
+	/// </summary>
 	private void OnReturnPressed()
 	{
 		GetTree().Paused = false;
@@ -63,6 +69,9 @@ public partial class VictoryScreen : Control
 		Hide();
 	}
 
+	/// <summary>
+	/// Generate fireworks at a random position within the window.
+	/// </summary>
 	private void GenerateFireworks()
 	{
 		// Get the size of the window

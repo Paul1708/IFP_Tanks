@@ -34,7 +34,9 @@ public partial class ShopMenu : Control
 		_levelManager.OnLevelChangedShowShop -= ShowShopMenu;
 	}
 
-	//Show the shop menu and pause the game
+	/// <summary>
+	/// Show the shop menu and pause the game. Plays OpenShop sound.
+	/// </summary>
 	public void ShowShopMenu()
 	{
 		GetTree().Paused = true;
@@ -43,7 +45,9 @@ public partial class ShopMenu : Control
 		_musicController.Play(Sound.OpenShop);
 	}
 
-	//Hide the shop menu, unpause the game and tell the level to continue by emitting the OnLevelComplete signal
+	/// <summary>
+	/// Hide the shop menu, unpause the game and tell the level to continue by emitting the OnLevelComplete signal
+	/// </summary>
 	public void OnContinueButtonPressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
@@ -52,7 +56,9 @@ public partial class ShopMenu : Control
 		EmitSignal(SignalName.OnShopMenuClosed);
 	}
 
-	//Return to the main menu
+	/// <summary>
+	/// Return to the main menu
+	/// </summary>
 	private void OnMainMenuPressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
@@ -61,12 +67,19 @@ public partial class ShopMenu : Control
 		GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
 	}
 
+	/// <summary>
+	/// Hide the error panel
+	/// </summary>
 	private void OnErrorAcknowledgedPressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
 		_errorPanel.Hide();
 	}
 
+	/// <summary>
+	/// Display an error message when the player tries to buy an item with insufficient coins
+	/// </summary>
+	/// <param name="price"></param>
 	public void DisplayInsufficientCoinsError(int price)
 	{
 		var neededCoins = price - CoinManager.Instance.Coins;
@@ -74,6 +87,9 @@ public partial class ShopMenu : Control
 		_errorPanel.Show();
 	}
 
+	/// <summary>
+	/// Display an error message when the player tries to buy "heal" when they already have max health
+	/// </summary>
 	public void DisplayAlreadyMaxHealthError()
 	{
 		_errorLabel.Text = "You already have the maximum health!";
