@@ -31,12 +31,19 @@ public partial class CoinManager : Node2D
         SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
+    /// <summary>
+    /// Method that will be called when the SaveData is loaded. It will set the Coins to the value of the SaveData
+    /// </summary>
+    /// <param name="saveData"></param>
     public void OnSaveDataLoaded(SaveData saveData)
     {
         SetCoins(saveData.CoinCount);
     }
 
-    //Method to add coins to the player. If the value is less than 0, the method will return without doing anything.
+    /// <summary>
+    /// Method to add coins to the player. If the value is less than 0, the method will return without doing anything.
+    /// </summary>
+    /// <param name="value"></param>
     public void AddCoins(int value)
     {
         if (value < 0)
@@ -47,7 +54,10 @@ public partial class CoinManager : Node2D
         SetCoins(Coins + value);
 
     }
-    // Method to remove coins from the player If the value is less than 0, the method will return without doing anything.
+    /// <summary>
+    /// Method to remove coins from the player If the value is less than 0, the method will return without doing anything.
+    /// </summary>
+    /// <param name="value"></param>
     public void RemoveCoins(int value)
     {
         if (value < 0)
@@ -58,7 +68,10 @@ public partial class CoinManager : Node2D
         SetCoins(Coins - value);
     }
 
-    // Method to set the Coins to a specific value and emit the OnCoinChanged signal. If the value is less than 0, the Coins will be set to 0.
+    /// <summary>
+    /// Method to set the Coins to a specific value and emit the OnCoinChanged signal. If the value is less than 0, the Coins will be set to 0.
+    /// </summary>
+    /// <param name="value"></param>
     public void SetCoins(int value)
     {
         if (value < 0)
@@ -71,13 +84,19 @@ public partial class CoinManager : Node2D
         EmitSignal(SignalName.OnCoinChanged, Coins);
     }
 
-    // Method to reset the Coins to default values (0)
+    /// <summary>
+    /// Method to reset the Coins to default values (0)
+    /// </summary>
     public void ResetCoins()
     {
         Coins = 0;
     }
 
-    // Method to check if the player has more or equal coins to the value
+    /// <summary>
+    /// Method to check if the player has more or equal coins to the value
+    /// </summary>
+    /// <param name="value"></param>
+    /// <returns></returns>
     public bool CheckIfEnoughCoins(int value)
     {
         return Coins >= value;

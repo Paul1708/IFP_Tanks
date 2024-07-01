@@ -84,7 +84,12 @@ public partial class Level : Node2D
         EmitSignal(SignalName.OnLevelFailed);
     }
 
-    // Drop an item at a position
+    /// <summary>
+    /// Drops/Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin.
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
+    /// <param name="position"></param>
+    /// <param name="scene"></param>
     public void DropItem<T>(Node2D position, PackedScene scene) where T : Node2D
     {
         var item = scene.Instantiate() as T;
@@ -99,12 +104,19 @@ public partial class Level : Node2D
         GetTree().GetFirstNodeInGroup("Level").CallDeferred("add_child", item);
     }
 
+    /// <summary>
+    /// Sets the position of the item to the position of the given node
+    /// </summary>
+    /// <param name="item"></param>
+    /// <param name="position"></param>
     private static void SetPostion(Node2D item, Node2D position)
     {
         item.GlobalPosition = position.GlobalPosition;
     }
 
-    // Move all coins to the player by setting the shouldMove property to true
+    /// <summary>
+    /// Move all coins to the player by setting the shouldMove property to true
+    /// </summary>
     public void MoveAllCoinsToPlayer()
     {
         _coinTimer.Stop();

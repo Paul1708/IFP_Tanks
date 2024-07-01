@@ -32,7 +32,10 @@ public partial class Coin : Area2D
 		}
 	}
 
-
+	/// <summary>
+	/// Called when a body enters the coin area, checks if the body is the player if so it emits the OnCoinCollected signal
+	/// </summary>
+	/// <param name="body"></param>
 	private void OnCoinBodyEntered(Node2D body)
 	{
 		if (body.IsInGroup("Player"))
@@ -42,11 +45,18 @@ public partial class Coin : Area2D
 		}
 	}
 
+	/// <summary>
+	/// Sets the coin value to the given value
+	/// </summary>
+	/// <param name="value"></param>
 	public void SetCoinValue(int value)
 	{
 		CoinValue = value;
 	}
 
+	/// <summary>
+	/// Collects the coin, adds the coin value to the CoinManager and plays the coin pickup sound
+	/// </summary>
 	public void CollectCoin()
 	{
 		CoinManager.Instance.AddCoins(CoinValue);

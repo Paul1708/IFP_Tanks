@@ -26,6 +26,11 @@ public partial class LoadUserPreferences : Node
         SetVolume(_sfxBusIndex, _userPreferences.SfxVolume);
     }
 
+    /// <summary>
+    /// Sets the volume of the bus with the given index to the given value
+    /// </summary>
+    /// <param name="busIndex"></param>
+    /// <param name="value"></param>
     public void SetVolume(int busIndex, float value)
 	{
 		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(value));

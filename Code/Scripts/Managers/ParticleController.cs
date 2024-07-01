@@ -3,7 +3,9 @@ using System;
 
 namespace Code.Scripts.Managers;
 
-//Particle scenes
+/// <summary>
+/// Particle scenes that can be used to emit particles
+/// </summary>
 struct Scene
 {
 	public static readonly PackedScene BulletCrack = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/BulletCrack.tscn");
@@ -16,12 +18,20 @@ struct Scene
 
 public partial class ParticleController : Node2D
 {
-	//Sets the position of the particle system to the position of the given opject
+	/// <summary>
+	/// Sets the position of the particle system to the position of the given opject
+	/// </summary>
+	/// <param name="particles"></param>
+	/// <param name="position"></param>
 	private static void SetPostion(GpuParticles2D particles, Node2D position)
 	{
 		particles.GlobalPosition = position.GlobalPosition;
 	}
-	//Checks if the given particle scene is set to OneShot
+	/// <summary>
+	/// Checks if the given particle scene is set to OneShot
+	/// </summary>
+	/// <param name="particles"></param>
+	/// <exception cref="Exception"></exception>
 	private static void CheckForOneShot(GpuParticles2D particles)
 	{
 		if (!particles.OneShot)
@@ -29,6 +39,11 @@ public partial class ParticleController : Node2D
 			throw new Exception("The given particle scene is not set to OneShot: " + particles.Name);
 		}
 	}
+	/// <summary>
+	/// Sets the rotation of the particle system to the rotation of the given object
+	/// </summary>
+	/// <param name="particles"></param>
+	/// <param name="rotationSource"></param>
 	private static void SetRotation(GpuParticles2D particles, Node2D rotationSource)
 	{
 		var material = particles.ProcessMaterial;
@@ -36,8 +51,11 @@ public partial class ParticleController : Node2D
 		material.Set("angle_max", rotationSource.GlobalRotationDegrees);
 	}
 
-	//Emitts the chosen particle scene at the given nodes locataion
-	//The particle scene needs to have OneShot enabled
+	/// <summary>
+	/// Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneShot enabled.
+	/// </summary>
+	/// <param name="position"></param>
+	/// <param name="scene"></param>
 	public async void EmitParticles(Node2D position, PackedScene scene)
 	{
 		//create a new instance of the given particle scene
@@ -57,6 +75,11 @@ public partial class ParticleController : Node2D
 		particles.QueueFree();
 	}
 
+	/// <summary>
+	/// Emitts the chosen particle scene at the given vector2 locataion. The particle scene needs to have OneShot enabled.
+	/// </summary>
+	/// <param name="position"></param>
+	/// <param name="scene"></param>
 	public async void EmitParticles(Vector2 position, PackedScene scene)
 	{
 		//create a new instance of the given particle scene
