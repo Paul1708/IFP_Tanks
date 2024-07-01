@@ -5,6 +5,10 @@ namespace Code.Scripts.Components;
 
 public partial class AnimationHandler : AnimationPlayer
 {
+    /// <summary>
+    /// Plays the animation of the input.
+    /// </summary>
+    /// <param name="input"></param>
     public void PlayAnimationOfInput(Vector2 input)
     {
 
@@ -25,6 +29,9 @@ public partial class AnimationHandler : AnimationPlayer
 
     }
 
+    /// <summary>
+    /// Plays the RESET animation
+    /// </summary>
     public void PlayReset()
     {
         Play("RESET");

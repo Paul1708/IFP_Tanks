@@ -26,12 +26,20 @@ public partial class HealthComponent : Node2D
         SetCurrentHp(MaxHp);
     }
 
+    /// <summary>
+    /// Heals the entity by the input value
+    /// </summary>
+    /// <param name="value"></param>
     public void Heal(float value)
     {
         if (value < 0) return;
         SetCurrentHp(CurrentHp + value);
     }
 
+    /// <summary>
+    /// Deals damage to the entity by the input value
+    /// </summary>
+    /// <param name="value"></param>
     public void TakeDamage(float value)
     {
         if (value < 0) return;
@@ -39,16 +47,27 @@ public partial class HealthComponent : Node2D
         SetCurrentHp(CurrentHp - value);
     }
 
+    /// <summary>
+    /// Heals the entity to the max health
+    /// </summary>
     public void HealToMax()
     {
         SetCurrentHp(MaxHp);
     }
 
+    /// <summary>
+    /// Heals the entity by the input percentage
+    /// </summary>
+    /// <param name="percentage"></param>
     public void HealPercentage(float percentage)
     {
         Heal(MaxHp * percentage);
     }
 
+    /// <summary>
+    /// Increases the max health of the entity by the input value
+    /// </summary>
+    /// <param name="value"></param>
     public void IncreaseMaxHealth(float value)
     {
         if (value < 0) return;
@@ -58,6 +77,10 @@ public partial class HealthComponent : Node2D
         EmitSignal(SignalName.OnMaxHealthChanged, MaxHp);
     }
 
+    /// <summary>
+    /// Sets the current health of the entity to the input value
+    /// </summary>
+    /// <param name="value"></param>
     public void SetCurrentHp(float value)
     {
         //clamp the value to the max health
@@ -67,6 +90,10 @@ public partial class HealthComponent : Node2D
         CheckIfDead();
     }
 
+    /// <summary>
+    /// Sets the max health of the entity to the input value
+    /// </summary>
+    /// <param name="value"></param>
     public void SetMaxHp(float value)
     {
         if (value <= 0) return;
@@ -77,6 +104,9 @@ public partial class HealthComponent : Node2D
         EmitSignal(SignalName.OnMaxHealthChanged, MaxHp);
     }
 
+    /// <summary>
+    /// Checks if the entity is dead (<= 0 health) and emits the OnDeath signal
+    /// </summary>
     private void CheckIfDead()
     {
         if (CurrentHp <= 0)

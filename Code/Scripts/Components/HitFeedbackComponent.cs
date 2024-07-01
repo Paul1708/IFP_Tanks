@@ -43,6 +43,10 @@ public partial class HitFeedbackComponent : Node2D
         _healthComponent.OnTakeDamage -= StartTween;
     }
 
+    /// <summary>
+    /// Starts the tween for the hit feedback. It controls the flash and scale of the sprite.
+    /// </summary>
+    /// <param name="damage"></param>
     private void StartTween(float damage)
     {
         if (DoFlashSprite)
@@ -62,12 +66,21 @@ public partial class HitFeedbackComponent : Node2D
              .SetEase(Tween.EaseType.Out);
         }
     }
+    
+    /// <summary>
+    /// Sets the shader parameters for the hit feedback to the input value.
+    /// </summary>
+    /// <param name="value"></param>
     private void SetShaderParams(float value)
     {
         _gunMaterial.SetShaderParameter("Weight", value);
         _tankMaterial.SetShaderParameter("Weight", value);
     }
 
+    /// <summary>
+    /// Sets the scale of the sprite to the input value.
+    /// </summary>
+    /// <param name="value"></param>
     private void SetScaleParams(float value)
     {
         _characterBody.Scale = new Vector2(value, value);

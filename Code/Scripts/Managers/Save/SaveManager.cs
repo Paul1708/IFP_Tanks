@@ -31,7 +31,9 @@ public partial class SaveManager : Node
         SaveData = new SaveData();
     }
 
-
+    /// <summary>
+    /// Saves the game. Saves the player's current health, coin count, player stats, and shop state in the SaveData object.
+    /// </summary>
     public void SaveGame()
     {
         SaveData.PlayerCurrentHp = PlayerManager.Instance.PlayerHealthComponent.CurrentHp;
@@ -42,13 +44,17 @@ public partial class SaveManager : Node
         ResourceSaver.Save(SaveData, "user://savegame.tres");
         GD.Print("Game Saved");
     }
-
+    
     public void LoadGame(LoadingType loadingType)
     {
         LoadingType = loadingType;
         LoadGame();
     }
 
+    /// <summary>
+    /// Loads the game. If LoadingType is set to NewGame, a new SaveData object is created and saved. If LoadingType is set to LoadGame, the SaveData object is loaded from the save file.
+    /// </summary>
+    /// <exception cref="ValidationException"></exception>
     public void LoadGame()
     {
 
@@ -71,11 +77,18 @@ public partial class SaveManager : Node
         LoadingType = LoadingType.None;
     }
 
+    /// <summary>
+    /// Checks if the save file is available.
+    /// </summary>
+    /// <returns></returns>
     public bool IsSaveFileAvailable()
     {
         return ResourceLoader.Exists("user://savegame.tres");
     }
 
+    /// <summary>
+    /// Saves the shop state of Stats and Weapons in the SaveData object.
+    /// </summary>
     public void SaveShopState()
     {
         //saves shop state by iterating through the statsList and saving the price and quantity of each stat

@@ -59,6 +59,10 @@ public partial class Level : Node2D
         }
     }
 
+    /// <summary>
+    /// Called when an enemy dies. Drops an item and removes the enemy from the list.
+    /// </summary>
+    /// <param name="enemy"></param>
     public void OnEnemyDeath(Node2D enemy)
     {
         PackedScene itemScene = ((Enemy)enemy).DropItemScene;
@@ -74,11 +78,17 @@ public partial class Level : Node2D
         }
     }
 
+    /// <summary>
+    /// Emits the OnLevelComplete signal
+    /// </summary>
     public void SendOnLevelComplete()
     {
         EmitSignal(SignalName.OnLevelComplete);
     }
 
+    /// <summary>
+    /// Emits the OnLevelFailed signal
+    /// </summary>
     public void OnPlayerDeath()
     {
         EmitSignal(SignalName.OnLevelFailed);

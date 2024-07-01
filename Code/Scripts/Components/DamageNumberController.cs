@@ -18,6 +18,10 @@ public partial class DamageNumberController : Node2D
         GetParent<HealthComponent>().OnTakeDamage -= SpawnDamageNumber;
     }
 
+    /// <summary>
+    /// Spawns a new DamageNumber scene with the damage value
+    /// </summary>
+    /// <param name="damage"></param>
     public void SpawnDamageNumber(float damage)
     {
         // Instantiate a new DamageNumber scene and set the text to the damage value
