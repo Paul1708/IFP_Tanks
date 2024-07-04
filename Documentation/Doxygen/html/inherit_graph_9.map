@@ -1,0 +1,21 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,208,68,235"/>
+<area shape="rect" id="Node000001" href="$class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar.html" title="Shows the health of an enemy." alt="" coords="116,5,330,32"/>
+<area shape="poly" id="edge7_Node000000_Node000001" title=" " alt="" coords="40,192,48,158,62,117,84,76,114,42,133,30,135,35,117,46,88,79,67,119,53,159,45,194"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.html" title="Custom control class for the level countdown, which handles the countdown before the level starts." alt="" coords="118,56,328,83"/>
+<area shape="poly" id="edge8_Node000000_Node000002" title=" " alt="" coords="45,192,71,141,90,115,114,93,135,81,138,86,117,97,94,118,75,144,50,195"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_u_i_1_1_level_failed.html" title="Shows the death screen when the player dies." alt="" coords="133,107,313,133"/>
+<area shape="poly" id="edge9_Node000000_Node000003" title=" " alt="" coords="56,194,82,167,114,143,141,131,143,136,117,148,85,171,59,198"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_u_i_1_1_main_menu.html" title="Controls the main menu." alt="" coords="135,157,311,184"/>
+<area shape="poly" id="edge10_Node000000_Node000004" title=" " alt="" coords="81,204,115,193,159,182,160,187,116,199,83,209"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_u_i_1_1_pause_menu.html" title="Controls the pause menu." alt="" coords="130,208,316,235"/>
+<area shape="poly" id="edge11_Node000000_Node000005" title=" " alt="" coords="83,219,130,219,130,224,83,224"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_u_i_1_1_settings_menu.html" title="Controls the settings menu." alt="" coords="125,259,321,285"/>
+<area shape="poly" id="edge12_Node000000_Node000006" title=" " alt="" coords="83,234,116,244,160,256,159,261,115,249,81,239"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display.html" title="Displays the player stats in the shop." alt="" coords="129,309,316,352"/>
+<area shape="poly" id="edge13_Node000000_Node000007" title=" " alt="" coords="60,245,86,271,117,295,140,306,137,311,114,300,82,275,56,249"/>
+<area shape="rect" id="Node000008" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu.html" title="Custom control class for the shop menu, which handles opening and closing the shop menu." alt="" coords="117,376,329,403"/>
+<area shape="poly" id="edge14_Node000000_Node000008" title=" " alt="" coords="48,249,73,307,92,337,117,362,137,373,134,378,114,366,88,340,68,310,43,251"/>
+<area shape="rect" id="Node000009" href="$class_code_1_1_scripts_1_1_u_i_1_1_victory_screen.html" title="Shows the victory screen when the player wins the game." alt="" coords="124,427,322,453"/>
+<area shape="poly" id="edge15_Node000000_Node000009" title=" " alt="" coords="44,249,51,287,65,331,86,375,117,413,135,424,132,428,114,417,82,378,60,333,46,288,38,250"/>
+</map>

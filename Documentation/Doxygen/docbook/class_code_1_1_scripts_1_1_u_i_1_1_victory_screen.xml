@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen" xml:lang="en-US">
+<title>Code.Scripts.UI.VictoryScreen Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.VictoryScreen</primary></indexterm>
+<para>
+
+<para>Shows the victory screen when the player wins the game. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.VictoryScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_victory_screen__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.VictoryScreen:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_victory_screen__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen_1a52436e3cb0df430fffe670f9ae4cab31"/>delegate void <emphasis role="strong">OnBacktoMainMenuPressedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen_1ac1f9b448dba1838fdc532c2cb1adda64"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen_1a4ca30e5794796e29dd8bb63331d734f4"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen_1a0d56b9234ce4651fdc18a6a296f5ad5f"/>async void <emphasis role="strong">ShowVictoryScreen</emphasis> ()</para>
+
+<para>Show the victory screen and pause the game. Plays the Victory sound and shows fireworks. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen_1afc11782f43e844912cb2b7c868aca97b"/>float <emphasis role="strong">FireworkCooldown</emphasis> = 0.2f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Shows the victory screen when the player wins the game. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/VictoryScreen.cs</section>
+</section>

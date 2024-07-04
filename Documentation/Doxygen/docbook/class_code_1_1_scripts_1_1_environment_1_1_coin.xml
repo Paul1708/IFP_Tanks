@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin" xml:lang="en-US">
+<title>Code.Scripts.Environment.Coin Class Reference</title>
+<indexterm><primary>Code.Scripts.Environment.Coin</primary></indexterm>
+<para>
+
+<para><link linkend="_class_code_1_1_scripts_1_1_environment_1_1_coin">Coin</link> class which handles the coin collection and movement. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Environment.Coin:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_environment_1_1_coin__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Environment.Coin:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_environment_1_1_coin__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1aeba1755de460434e86091dda67eddd76"/>delegate void <emphasis role="strong">OnCoinCollectedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1a66889581b0334b47789695fc9cc78a4f"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1a1d517a9d42ca50ed69d4f88fe46ea09c"/>override void <emphasis role="strong">_PhysicsProcess</emphasis> (double delta)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_environment_1_1_coin_1a891131dc3d4b724994958b7def05ff12">SetCoinValue</link> (int value)</para>
+
+<para>Sets the coin value to the given value. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1ae30be3f7a164236da5c7879e81d79890"/>void <emphasis role="strong">CollectCoin</emphasis> ()</para>
+
+<para>Collects the coin, adds the coin value to the CoinManager and plays the coin pickup sound. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1a0d35e3cd75e0dad54c8a46d284e35a77"/>float <emphasis role="strong">Speed</emphasis> = 1500f</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1a9fbb175dd540c8cfbb81e779fac162af"/>bool <emphasis role="strong">ShouldMove</emphasis> = false</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1ada7972f5b6bfa585dc357e37e3dbf130"/><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1ae1482e2c41a4cee67207c2f6ea15fa17"/>int <emphasis role="strong">CoinValue</emphasis> = 1<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_class_code_1_1_scripts_1_1_environment_1_1_coin">Coin</link> class which handles the coin collection and movement. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_coin_1a891131dc3d4b724994958b7def05ff12"/><section>
+    <title>SetCoinValue()</title>
+<indexterm><primary>SetCoinValue</primary><secondary>Code.Scripts.Environment.Coin</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Environment.Coin</primary><secondary>SetCoinValue</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Environment.Coin.SetCoinValue (int value)</computeroutput></para><para>
+
+<para>Sets the coin value to the given value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Environment/Coin.cs</section>
+</section>

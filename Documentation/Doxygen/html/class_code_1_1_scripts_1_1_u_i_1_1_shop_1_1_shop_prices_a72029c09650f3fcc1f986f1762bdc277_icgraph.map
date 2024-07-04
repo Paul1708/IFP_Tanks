@@ -1,0 +1,5 @@
+<map id="Code.Scripts.UI.Shop.ShopPrices.IncreasePrice" name="Code.Scripts.UI.Shop.ShopPrices.IncreasePrice">
+<area shape="rect" id="Node000001" title="Increase the price of the item by the price multiplier to the power of the quantity of the item...." alt="" coords="245,5,425,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html#a78d1f138c54189b7208889cb20cfdd91" title="Tries to upgrade/buy the stat and returns true if the stat was bought, false if not...." alt="" coords="5,5,197,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,29,197,29,197,24,229,24"/>
+</map>

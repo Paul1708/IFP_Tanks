@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.PlayerStatsDisplay Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.PlayerStatsDisplay</primary></indexterm>
+<para>
+
+<para>Displays the player stats in the shop. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.Shop.PlayerStatsDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.PlayerStatsDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1a4cd6e3eefb6fdcd833f8554f4c12ae4e"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1adf8fbf3abd482c312e0121f65fe0a325"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1ac690dd2c296d915ea525b9c98a160e7d">UpdateStatLabel</link> (<link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">PlayerStats</link> stats)</para>
+
+<para>Updates the damage and movement speed labels. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1a646e9775c84ad9de4317b680ab1367d6">UpdateHealthLabel</link> (float maxHealth)</para>
+
+<para>Updates the health label. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1a2b5fd73f15fba7c3cff0ed631aa4232f">UpdateCoinLabel</link> (int coinCount)</para>
+
+<para>Updates the coin label. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Displays the player stats in the shop. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1a2b5fd73f15fba7c3cff0ed631aa4232f"/><section>
+    <title>UpdateCoinLabel()</title>
+<indexterm><primary>UpdateCoinLabel</primary><secondary>Code.Scripts.UI.Shop.PlayerStatsDisplay</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.PlayerStatsDisplay</primary><secondary>UpdateCoinLabel</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.Shop.PlayerStatsDisplay.UpdateCoinLabel (int coinCount)</computeroutput></para><para>
+
+<para>Updates the coin label. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>coinCount</entry><entry>
+<para>New coin value.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1a646e9775c84ad9de4317b680ab1367d6"/><section>
+    <title>UpdateHealthLabel()</title>
+<indexterm><primary>UpdateHealthLabel</primary><secondary>Code.Scripts.UI.Shop.PlayerStatsDisplay</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.PlayerStatsDisplay</primary><secondary>UpdateHealthLabel</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.Shop.PlayerStatsDisplay.UpdateHealthLabel (float maxHealth)</computeroutput></para><para>
+
+<para>Updates the health label. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>maxHealth</entry><entry>
+<para>Is ignored, only needed beacuse of Event.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display_1ac690dd2c296d915ea525b9c98a160e7d"/><section>
+    <title>UpdateStatLabel()</title>
+<indexterm><primary>UpdateStatLabel</primary><secondary>Code.Scripts.UI.Shop.PlayerStatsDisplay</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.PlayerStatsDisplay</primary><secondary>UpdateStatLabel</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.Shop.PlayerStatsDisplay.UpdateStatLabel (<link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">PlayerStats</link> stats)</computeroutput></para><para>
+
+<para>Updates the damage and movement speed labels. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stats</entry><entry>
+<para>New stat values.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/Shop/PlayerStatsDisplay.cs</section>
+</section>

@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_environment" xml:lang="en-US">
+<title>Code.Scripts.Environment Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Environment</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_environment_1_1_coin">Coin</link></para>
+
+<para><link linkend="_class_code_1_1_scripts_1_1_environment_1_1_coin">Coin</link> class which handles the coin collection and movement. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_environment_1_1_damage_number">DamageNumber</link></para>
+
+<para>Controls the damage number that appears when an entity takes damage. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank">MainMenuDummyTank</link></para>
+
+<para>Controls the dummy tank in the main menu. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,9 @@
+<map id="Code.Scripts.UI.Shop.ShopBaseTab" name="Code.Scripts.UI.Shop.ShopBaseTab">
+<area shape="rect" id="Node000001" title="Base class for all shop tabs. Contains methods to get price tags and parse prices from them." alt="" coords="107,80,287,123"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab.html" title="Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought sta..." alt="" coords="5,171,186,213"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="164,135,121,172,117,168,160,131"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab.html" title="Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons." alt="" coords="209,171,390,213"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="234,131,277,168,274,172,230,135"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="166,5,228,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,48,200,80,194,80,194,48"/>
+</map>

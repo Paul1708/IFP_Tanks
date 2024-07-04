@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Components.HealthComponent.Heal" name="Code.Scripts.Components.HealthComponent.Heal">
+<area shape="rect" id="Node000001" title="Heals the entity by the input value." alt="" coords="5,5,183,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#ad81839e1248f29e1c6756376847146a6" title="Sets the current health of the entity to the input value." alt="" coords="231,5,437,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="183,24,215,24,215,29,183,29"/>
+</map>

@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level" xml:lang="en-US">
+<title>Code.Scripts.Managers.Level.Level Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Level.Level</primary></indexterm>
+<para>
+
+<para>Manages the level, enemies and coins. Emits signals when the level is completed or failed. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.Level.Level:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.Level.Level:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1aab282de59b03ce923bff54590683f915"/>delegate void <emphasis role="strong">OnLevelCompleteEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a6a336de75085edd57b9f09f7e91b3fad"/>delegate void <emphasis role="strong">OnLevelFailedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a7dabb2230f792826045868867b05290b"/>delegate void <emphasis role="strong">OnCoinsMovedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1acfb061880d121e7984b9d6006e5b4d5d"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a191210bc22607279d24f60de49fbd9d0"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a03760a6e53570ddb0596f7a50ba267e7">_Process</link> (double delta)</para>
+
+<para>Called every frame. Checks if all coins are collected and emits the OnCoinsMoved signal if so. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1afd0c7a6dbe7f2cb10875deab71d379bb">OnEnemyDeath</link> (Node2D enemy)</para>
+
+<para>Called when an enemy dies. Drops an item and removes the enemy from the list. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a68fb542a2782ca6b4f8ceb4ca311ef8d"/>void <emphasis role="strong">SendOnLevelComplete</emphasis> ()</para>
+
+<para>Emits the OnLevelComplete signal. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1afa60185f3eb60e3d3ef125048cf326e6"/>void <emphasis role="strong">OnPlayerDeath</emphasis> ()</para>
+
+<para>Emits the OnLevelFailed signal. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a6532f8c303e95852df4e232921afc070">DropItem&lt; T &gt;</link> (Node2D position, PackedScene scene)</para>
+
+<para>Drops/Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1aec72e66e491e1649a454a32845d6c7f9"/>void <emphasis role="strong">MoveAllCoinsToPlayer</emphasis> ()</para>
+
+<para>Move all coins to the player by setting the shouldMove property to true. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a003a4711eab4099abd71cdf42626338e"/><link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu">ShopMenu</link> <emphasis role="strong">ShopMenu</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a8653d041eb421cfe555cec025f4af3c3"/>List&lt; Node &gt; <emphasis role="strong">Enemies</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the level, enemies and coins. Emits signals when the level is completed or failed. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a03760a6e53570ddb0596f7a50ba267e7"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>Code.Scripts.Managers.Level.Level</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.Level.Level</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Managers.Level.Level._Process (double delta)</computeroutput></para><para>
+
+<para>Called every frame. Checks if all coins are collected and emits the OnCoinsMoved signal if so. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1a6532f8c303e95852df4e232921afc070"/><section>
+    <title>DropItem&lt; T &gt;()</title>
+<indexterm><primary>DropItem&lt; T &gt;</primary><secondary>Code.Scripts.Managers.Level.Level</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.Level.Level</primary><secondary>DropItem&lt; T &gt;</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.Level.Level.DropItem&lt; T &gt; (Node2D position, PackedScene scene)</computeroutput></para><para>
+
+<para>Drops/Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Template Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>T</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>position</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>scene</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<simplesect><title>Type Constraints</title>
+<para><emphasis role="strong">T:Node2D</emphasis></para>
+</simplesect>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_1afd0c7a6dbe7f2cb10875deab71d379bb"/><section>
+    <title>OnEnemyDeath()</title>
+<indexterm><primary>OnEnemyDeath</primary><secondary>Code.Scripts.Managers.Level.Level</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.Level.Level</primary><secondary>OnEnemyDeath</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.Level.Level.OnEnemyDeath (Node2D enemy)</computeroutput></para><para>
+
+<para>Called when an enemy dies. Drops an item and removes the enemy from the list. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>enemy</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/Level/Level.cs</section>
+</section>

@@ -1,0 +1,14 @@
+<map id="Code.Scripts.Enemies.DummyBehaviour" name="Code.Scripts.Enemies.DummyBehaviour">
+<area shape="rect" id="Node000001" title="Dummy behaviour, which only rotates towards the player and does nothing else." alt="" coords="35,264,235,307"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_enemies_1_1_behaviour.html" title="Abstract class that defines the behaivour of an enemy. Provides utility methods for pathfinding and t..." alt="" coords="96,188,174,215"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,230,138,264,132,264,132,230"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,5,73,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="28,47,17,84,17,104,23,123,38,144,58,161,101,185,99,190,55,165,34,147,18,125,12,105,12,84,23,45"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_managers_1_1_particle_controller.html" title="Controller for emitting particles." alt="" coords="32,81,238,124"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="67,40,113,79,109,83,63,44"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="138,140,138,188,132,188,132,140"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html" title=" " alt="" coords="262,81,434,124"/>
+<area shape="poly" id="edge5_Node000002_Node000005" title=" " alt="" coords="290,133,164,190,162,185,287,128"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="323,5,374,32"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="351,48,351,81,346,81,346,48"/>
+</map>

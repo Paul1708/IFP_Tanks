@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Components.HealthComponent.SetMaxHp" name="Code.Scripts.Components.HealthComponent.SetMaxHp">
+<area shape="rect" id="Node000001" title="Sets the max health of the entity to the input value." alt="" coords="252,39,441,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_player_manager.html#a20930a943468cbe49c330ce88231033a" title="Loads the player&#39;s stats from the save data." alt="" coords="5,5,204,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,47,204,43,204,38,237,42"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_managers_1_1_player_manager.html#a8e126513ed33d95c7b84c2513e0691c7" title="Resets the player&#39;s max health to the base max health." alt="" coords="5,72,204,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="237,78,204,82,204,77,236,73"/>
+</map>

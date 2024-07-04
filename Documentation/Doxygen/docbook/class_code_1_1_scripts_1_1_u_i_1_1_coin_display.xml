@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_coin_display" xml:lang="en-US">
+<title>Code.Scripts.UI.CoinDisplay Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.CoinDisplay</primary></indexterm>
+<para>
+
+<para>Updates the coin display label when the coin count changes. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.CoinDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_coin_display__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.CoinDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_coin_display__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_coin_display_1a1f8055181d00a26f88c78bd8bc4bb1ba"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_coin_display_1ac4864a84b2cc96eab794015507d774de"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_coin_display_1af7d2fff478ee79eff4dbbec49c60a156">ChangeLabel</link> (int coins)</para>
+
+<para>Changes the label to the new coin count. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Updates the coin display label when the coin count changes. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_coin_display_1af7d2fff478ee79eff4dbbec49c60a156"/><section>
+    <title>ChangeLabel()</title>
+<indexterm><primary>ChangeLabel</primary><secondary>Code.Scripts.UI.CoinDisplay</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.CoinDisplay</primary><secondary>ChangeLabel</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.CoinDisplay.ChangeLabel (int coins)</computeroutput></para><para>
+
+<para>Changes the label to the new coin count. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>coins</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/CoinDisplay.cs</section>
+</section>

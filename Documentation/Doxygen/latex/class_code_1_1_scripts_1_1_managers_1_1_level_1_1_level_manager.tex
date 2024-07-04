@@ -1,0 +1,87 @@
+\doxysection{Code.\+Scripts.\+Managers.\+Level.\+Level\+Manager Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager}{}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager}\index{Code.Scripts.Managers.Level.LevelManager@{Code.Scripts.Managers.Level.LevelManager}}
+
+
+Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Managers.\+Level.\+Level\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Managers.\+Level.\+Level\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ab26f7bf20c091bf608c2d76c831a3bfb}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ab26f7bf20c091bf608c2d76c831a3bfb} 
+delegate void {\bfseries On\+Level\+Changed\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a575c506fe456b900116f92f390b8a59c}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a575c506fe456b900116f92f390b8a59c} 
+delegate void {\bfseries On\+Level\+Changed\+Show\+Shop\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ad44c6eab463697fc3a2113e9cb0be2b2}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ad44c6eab463697fc3a2113e9cb0be2b2} 
+delegate void {\bfseries On\+First\+Level\+Loaded\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ad6db0c5d46035a3701597b211b3aa187}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ad6db0c5d46035a3701597b211b3aa187} 
+delegate void {\bfseries On\+Level\+Reset\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ad331c011e7573b7c50d1e5dac083e503}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ad331c011e7573b7c50d1e5dac083e503} 
+delegate void {\bfseries On\+Level\+Failed\+Show\+Death\+Screen\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_aa99600ffe2b0cd0661b6d698af6249f6}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_aa99600ffe2b0cd0661b6d698af6249f6} 
+delegate void {\bfseries On\+Game\+Won\+Show\+Victory\+Screen\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ae48cea77befec2b3cf52b0adf26f0e62}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ae48cea77befec2b3cf52b0adf26f0e62} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a2e6e20bc03160c619eb22106c69a0c30}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a2e6e20bc03160c619eb22106c69a0c30} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_aa199edfd1e9939aa2e2bbf1ba7064815}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_aa199edfd1e9939aa2e2bbf1ba7064815} 
+async void {\bfseries On\+Level\+Complete} ()
+\begin{DoxyCompactList}\small\item\em Called when the level is completed. Loads the next level or world. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a71eccce9d7a5c8cdde342fd3aaffefbe}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a71eccce9d7a5c8cdde342fd3aaffefbe} 
+async void {\bfseries On\+Level\+Failed} ()
+\begin{DoxyCompactList}\small\item\em Called when the level is failed. Shows the death screen and reloads the last save. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ac767059d258178ca14021e85555cd9c2}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_ac767059d258178ca14021e85555cd9c2} 
+int {\bfseries Current\+World\+Id}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a5ee33ebcf1419aeba1a3386e16afe07d}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a5ee33ebcf1419aeba1a3386e16afe07d} 
+int {\bfseries Current\+Level\+Id}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a1ee3c3c367e0d648e8e3b09c89b8bc3e}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a1ee3c3c367e0d648e8e3b09c89b8bc3e} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data}{World\+Data}}\mbox{[}$\,$\mbox{]} {\bfseries Worlds}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a03d94749d68ca51108d165dc63bdb31e}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a03d94749d68ca51108d165dc63bdb31e} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level}{Level}} {\bfseries Current\+Level\+Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a2d61ceaec3b02cb0849bf5d6030f9c29}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_a2d61ceaec3b02cb0849bf5d6030f9c29} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data}{Level\+Data}} {\bfseries Current\+Level\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Managers/\+Level/Level\+Manager.\+cs\end{DoxyCompactItemize}

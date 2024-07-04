@@ -1,0 +1,405 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager" xml:lang="en-US">
+<title>Code.Scripts.Managers.ShopManager Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary></indexterm>
+<para>
+
+<para>Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.ShopManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.ShopManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a73cf47c4206b254b283dee8f1fa88cc4"/>delegate void <emphasis role="strong">OnWeaponUnlockedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a97d9bef42f98095dd57e78295815ce4f"/>delegate void <emphasis role="strong">OnWeaponEquippedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a75c8463912690b0f40b4804299bd8ad7"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a55c031bf5a771a8592432945439cf57c"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a77a1ccfb536d2f81b51d7cf2b311045e">OnSaveDataLoaded</link> (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> saveData)</para>
+
+<para>Method that will be called when the SaveData is loaded. It will set the Stats and <link linkend="_namespace_code_1_1_scripts_1_1_weapons">Weapons</link> to the values of the SaveData. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a78d1f138c54189b7208889cb20cfdd91">BuyStat</link> (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link> stat)</para>
+
+<para>Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. It increases the price and quantity of the stat and removes the coins if the stat was bought. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a7d2d59cd68c55ef4dc64bb48618935fc">IncreaseStatQuantity</link> (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link> stat)</para>
+
+<para>Increase the quantity of the stat in the list at the listIndex by 1. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a9f37feef3b1e2c61ef951f07b338d5cd">BuyWeapon</link> (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> weapon)</para>
+
+<para>Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.unlocked to true, return true. <?linebreak?> If the player has not enough coins, show an error message and return false. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a14d7469f6dba0df754845d30150e4de6">UnlockWeapon</link> (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> weapon)</para>
+
+<para>Unlock the weapon by setting the unlocked state to true. Emit the OnWeaponUnlocked signal. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1af5e67e9444b9e194376d7b5739bd6ae2">EquipWeapon</link> (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> weapon)</para>
+
+<para>Equip the weapon by setting the equipped state to true and unequip all other weapons. Emit the OnWeaponEquipped signal. </para>
+</listitem>
+            <listitem><para><link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1abbc6fe29061fc5050b9ff54575b97896">GetEquippedWeapon</link> ()</para>
+
+<para>Returns the equipped weapon. If no weapon is equipped, the default weapon is returned. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1ad8cfbf576e32c81b78d68628745fd6dc">TryGetPanelIndex</link> (Node node, out int index)</para>
+
+<para>Tries to get the index of the panel from the node and returns true if successful, false if not. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a432a9d94253e6a44f2d927db75a90fc4"/>List&lt; <link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link> &gt; <emphasis role="strong">StatsList</emphasis> = new()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a581e5ab21702c9f97ac6c5119d83bf0f"/>List&lt; <link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> &gt; <emphasis role="strong">WeaponsList</emphasis> = new()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1aa6903a183e659def3a855dc265ef4144"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">DefaultWeaponStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a38f5d90b419ee1e23141a738b973a1c0"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">BouncingWeaponStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a116b84535f37cdb7f025a02ea5ffa38d"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">GrenadeWeaponStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1aef2c85fef62421f251063625429f5772"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">RocketWeaponStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a940e8c2ead52ce62f8b9aba25d7d4ee4"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">LaserWeaponStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1af998b2a07fcd5371ac864082daa593b0"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">MachineGunWeaponStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1ad84ffbd8f5000338cc69cee8912b8ca3"/>static <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager">ShopManager</link> <emphasis role="strong">Instance</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a78d1f138c54189b7208889cb20cfdd91"/><section>
+    <title>BuyStat()</title>
+<indexterm><primary>BuyStat</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>BuyStat</secondary></indexterm>
+<para><computeroutput>bool Code.Scripts.Managers.ShopManager.BuyStat (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link> stat)</computeroutput></para><para>
+
+<para>Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. It increases the price and quantity of the stat and removes the coins if the stat was bought. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stat</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a78d1f138c54189b7208889cb20cfdd91_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a9f37feef3b1e2c61ef951f07b338d5cd"/><section>
+    <title>BuyWeapon()</title>
+<indexterm><primary>BuyWeapon</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>BuyWeapon</secondary></indexterm>
+<para><computeroutput>bool Code.Scripts.Managers.ShopManager.BuyWeapon (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> weapon)</computeroutput></para><para>
+
+<para>Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.unlocked to true, return true. <?linebreak?> If the player has not enough coins, show an error message and return false. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>weapon</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a9f37feef3b1e2c61ef951f07b338d5cd_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1af5e67e9444b9e194376d7b5739bd6ae2"/><section>
+    <title>EquipWeapon()</title>
+<indexterm><primary>EquipWeapon</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>EquipWeapon</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.ShopManager.EquipWeapon (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> weapon)</computeroutput></para><para>
+
+<para>Equip the weapon by setting the equipped state to true and unequip all other weapons. Emit the OnWeaponEquipped signal. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>weapon</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1abbc6fe29061fc5050b9ff54575b97896"/><section>
+    <title>GetEquippedWeapon()</title>
+<indexterm><primary>GetEquippedWeapon</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>GetEquippedWeapon</secondary></indexterm>
+<para><computeroutput><link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> Code.Scripts.Managers.ShopManager.GetEquippedWeapon ( )</computeroutput></para><para>
+
+<para>Returns the equipped weapon. If no weapon is equipped, the default weapon is returned. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager_abbc6fe29061fc5050b9ff54575b97896_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a7d2d59cd68c55ef4dc64bb48618935fc"/><section>
+    <title>IncreaseStatQuantity()</title>
+<indexterm><primary>IncreaseStatQuantity</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>IncreaseStatQuantity</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.ShopManager.IncreaseStatQuantity (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link> stat)</computeroutput></para><para>
+
+<para>Increase the quantity of the stat in the list at the listIndex by 1. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stat</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a7d2d59cd68c55ef4dc64bb48618935fc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a77a1ccfb536d2f81b51d7cf2b311045e"/><section>
+    <title>OnSaveDataLoaded()</title>
+<indexterm><primary>OnSaveDataLoaded</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>OnSaveDataLoaded</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.ShopManager.OnSaveDataLoaded (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> saveData)</computeroutput></para><para>
+
+<para>Method that will be called when the SaveData is loaded. It will set the Stats and <link linkend="_namespace_code_1_1_scripts_1_1_weapons">Weapons</link> to the values of the SaveData. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>saveData</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1ad8cfbf576e32c81b78d68628745fd6dc"/><section>
+    <title>TryGetPanelIndex()</title>
+<indexterm><primary>TryGetPanelIndex</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>TryGetPanelIndex</secondary></indexterm>
+<para><computeroutput>bool Code.Scripts.Managers.ShopManager.TryGetPanelIndex (Node node, out int index)</computeroutput></para><para>
+
+<para>Tries to get the index of the panel from the node and returns true if successful, false if not. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>node</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>index</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad8cfbf576e32c81b78d68628745fd6dc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager_1a14d7469f6dba0df754845d30150e4de6"/><section>
+    <title>UnlockWeapon()</title>
+<indexterm><primary>UnlockWeapon</primary><secondary>Code.Scripts.Managers.ShopManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ShopManager</primary><secondary>UnlockWeapon</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.ShopManager.UnlockWeapon (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link> weapon)</computeroutput></para><para>
+
+<para>Unlock the weapon by setting the unlocked state to true. Emit the OnWeaponUnlocked signal. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>weapon</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a14d7469f6dba0df754845d30150e4de6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/ShopManager.cs</section>
+</section>

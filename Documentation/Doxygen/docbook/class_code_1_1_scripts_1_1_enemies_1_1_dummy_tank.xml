@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank" xml:lang="en-US">
+<title>Code.Scripts.Enemies.DummyTank Class Reference</title>
+<indexterm><primary>Code.Scripts.Enemies.DummyTank</primary></indexterm>
+Inheritance diagram for Code.Scripts.Enemies.DummyTank:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Enemies.DummyTank:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank_1abd8633f403c207f58d463028c187ec1a"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank_1a2e2b8bd8c011602088a1e5f8b0a3cce6"/>override void <emphasis role="strong">_PhysicsProcess</emphasis> (double delta)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank_1ae05e65e39ee9c98a75e860f9bf343884"/><link linkend="_class_code_1_1_scripts_1_1_components_1_1_animation_handler">AnimationHandler</link> <emphasis role="strong">AnimationHandler</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Enemies/DummyTank.cs</section>

@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.ShopButtons Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopButtons</primary></indexterm>
+<para>
+
+<para>Custom button class for the shop buttons, which sets the text of the button based on the buy status of the weapon/item. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.Shop.ShopButtons:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.ShopButtons:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons_1af8aa0c77e935c8ec8ad7ae2ee77724c3"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons_1ae0c4440167d3f8f8ec7bed9e9fa64bf5"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons_1ae422d2a04985b8d3ead64df22b2739c2"/>void <emphasis role="strong">SetStatButtonStates</emphasis> ()</para>
+
+<para>Sets the text of the button to &quot;Buy&quot; if the button is in the Stats group. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons_1a5a85b17d9b414a53fcb45ab7ad6cf93a"/>void <emphasis role="strong">SetWeaponButtonStates</emphasis> ()</para>
+
+<para>Sets the text of the button to &quot;Equip&quot; if the weapon is unlocked and not equipped, to &quot;Equipped&quot; if the weapon is equipped else to &quot;Buy&quot;. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Custom button class for the shop buttons, which sets the text of the button based on the buy status of the weapon/item. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopButtons.cs</section>
+</section>

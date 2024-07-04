@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Managers.CoinManager.RemoveCoins" name="Code.Scripts.Managers.CoinManager.RemoveCoins">
+<area shape="rect" id="Node000001" title="Method to remove coins from the player If the value is less than 0, the method will return without do..." alt="" coords="245,39,432,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html#a78d1f138c54189b7208889cb20cfdd91" title="Tries to upgrade/buy the stat and returns true if the stat was bought, false if not...." alt="" coords="5,5,197,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,47,197,43,197,37,230,42"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html#a9f37feef3b1e2c61ef951f07b338d5cd" title="Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag la..." alt="" coords="5,72,197,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,78,197,83,197,77,229,73"/>
+</map>

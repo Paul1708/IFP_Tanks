@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_main_menu" xml:lang="en-US">
+<title>Code.Scripts.UI.MainMenu Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.MainMenu</primary></indexterm>
+<para>
+
+<para>Controls the main menu. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.MainMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_main_menu__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.MainMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_main_menu__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_main_menu_1ad7876bcef3e7651d7a966657e0d425d9"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_main_menu_1a69b7d02971b7f40c26e7c2c609c1894f"/>Vector2 <emphasis role="strong">MainMenuCameraPosition</emphasis> = new (960, 540)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_main_menu_1a1a42ac3eeaa2eaddedf583d06d0613d3"/>Vector2 <emphasis role="strong">SettingsMenuCameraPosition</emphasis> = new (2880, 540)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_main_menu_1abee9ade6183d8b7d2dee9ac79b489006"/>Camera2D <emphasis role="strong">Camera</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the main menu. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/MainMenu.cs</section>
+</section>

@@ -1,0 +1,106 @@
+\doxysection{Code.\+Scripts.\+UI.\+Health\+Bar Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar}{}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar}\index{Code.Scripts.UI.HealthBar@{Code.Scripts.UI.HealthBar}}
+
+
+Displays the players health bar.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+UI.\+Health\+Bar\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_code_1_1_scripts_1_1_u_i_1_1_health_bar__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+UI.\+Health\+Bar\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{class_code_1_1_scripts_1_1_u_i_1_1_health_bar__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a131ef0168dd171b3d4b3300ad914e959}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a131ef0168dd171b3d4b3300ad914e959} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_aa5dcf7a9491da8e83016b148e72a1806}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_aa5dcf7a9491da8e83016b148e72a1806} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_ad67a6930c2573e9fa96b4b18e25b9a69}{On\+Health\+Changed}} (float new\+Hp)
+\begin{DoxyCompactList}\small\item\em Tweems the green health bar when the player\textquotesingle{}s health changes. Starts the timer on which the red health bar will update. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a796d3fa170a8c221e3e1c02846a354b0}{On\+Max\+Health\+Changed}} (float new\+Max\+Hp)
+\begin{DoxyCompactList}\small\item\em Updates the healthbars if the max health of the player changes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a2a6e4c48145f6647ddd728e19b9163c6}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a2a6e4c48145f6647ddd728e19b9163c6} 
+Texture\+Progress\+Bar {\bfseries Green\+Bar}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_ae55bb0dee32ef1ae8ed9cf2016fa95b3}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_ae55bb0dee32ef1ae8ed9cf2016fa95b3} 
+Texture\+Progress\+Bar {\bfseries Red\+Bar}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a06cf9e47fa4684a40c68d31237eb9504}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a06cf9e47fa4684a40c68d31237eb9504} 
+Timer {\bfseries Red\+Health\+Timer}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a90181c1b59d6000ed5315b8f34349509}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a90181c1b59d6000ed5315b8f34349509} 
+Label {\bfseries Label}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_aaa1f7052be3e1b0e19d900c5ca6bf845}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_aaa1f7052be3e1b0e19d900c5ca6bf845} 
+float {\bfseries Current\+Hp}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a1593b3b6222abc414d159ab4612c5704}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a1593b3b6222abc414d159ab4612c5704} 
+float {\bfseries Max\+Hp}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a4a141007aaf6474d144ab0f4016dcd00}\label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a4a141007aaf6474d144ab0f4016dcd00} 
+float {\bfseries Red\+Bar\+Delay} = 1f\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Displays the players health bar. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_ad67a6930c2573e9fa96b4b18e25b9a69}\index{Code.Scripts.UI.HealthBar@{Code.Scripts.UI.HealthBar}!OnHealthChanged@{OnHealthChanged}}
+\index{OnHealthChanged@{OnHealthChanged}!Code.Scripts.UI.HealthBar@{Code.Scripts.UI.HealthBar}}
+\doxysubsubsection{\texorpdfstring{OnHealthChanged()}{OnHealthChanged()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_ad67a6930c2573e9fa96b4b18e25b9a69} 
+void Code.\+Scripts.\+UI.\+Health\+Bar.\+On\+Health\+Changed (\begin{DoxyParamCaption}\item[{float}]{new\+Hp}{}\end{DoxyParamCaption})}
+
+
+
+Tweems the green health bar when the player\textquotesingle{}s health changes. Starts the timer on which the red health bar will update. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Hp} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a796d3fa170a8c221e3e1c02846a354b0}\index{Code.Scripts.UI.HealthBar@{Code.Scripts.UI.HealthBar}!OnMaxHealthChanged@{OnMaxHealthChanged}}
+\index{OnMaxHealthChanged@{OnMaxHealthChanged}!Code.Scripts.UI.HealthBar@{Code.Scripts.UI.HealthBar}}
+\doxysubsubsection{\texorpdfstring{OnMaxHealthChanged()}{OnMaxHealthChanged()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_health_bar_a796d3fa170a8c221e3e1c02846a354b0} 
+void Code.\+Scripts.\+UI.\+Health\+Bar.\+On\+Max\+Health\+Changed (\begin{DoxyParamCaption}\item[{float}]{new\+Max\+Hp}{}\end{DoxyParamCaption})}
+
+
+
+Updates the healthbars if the max health of the player changes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Max\+Hp} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+UI/Health\+Bar.\+cs\end{DoxyCompactItemize}

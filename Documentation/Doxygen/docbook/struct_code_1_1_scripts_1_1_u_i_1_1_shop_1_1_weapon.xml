@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.Weapon Struct Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.Weapon</primary></indexterm>
+<para>
+
+<para>Data class which holds the weapon stats. </para>
+ 
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.Weapon:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon_1a76937387ead0db9b11eca1f84c6628a6"/><emphasis role="strong">Weapon</emphasis> (string name, int listIndex, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> weaponStats)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon_1a1448a1ff04afc8b1ab9090118e7f597b"/>string <emphasis role="strong">Name</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon_1ad1440a4e2dbac3b5f2b63e0f4dc7b7ec"/>int <emphasis role="strong">ListIndex</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon_1a12a7c404fce5420531ce4734eccadbed"/>Label <emphasis role="strong">PriceTag</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon_1a226455ddcd835ca6066ff3d62df24c20"/>bool <emphasis role="strong">Unlocked</emphasis> = false</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon_1aada6f2a2017026341f2fcd63d7a2bbb9"/>bool <emphasis role="strong">Equipped</emphasis> = false</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon_1ab4149757c85d00c11c3a1e7e2243b14b"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">WeaponStats</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Data class which holds the weapon stats. </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopWeaponsTab.cs</section>
+</section>

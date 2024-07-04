@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.ShopMenu Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopMenu</primary></indexterm>
+<para>
+
+<para>Custom control class for the shop menu, which handles opening and closing the shop menu. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.Shop.ShopMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.ShopMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a255364a00305ad2c313eccfe3a330f94"/>delegate void <emphasis role="strong">OnShopMenuClosedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a2a2feee074440d390462c1ddd1226eab"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a25627a1a4d17b2d3bd6d6f75508095c1"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a1b9acd9683c0690e791699560892ddc8"/>void <emphasis role="strong">ShowShopMenu</emphasis> ()</para>
+
+<para>Show the shop menu and pause the game. Plays OpenShop sound. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a237fb83e4d037653a38dc18a76eb32c5"/>void <emphasis role="strong">OnContinueButtonPressed</emphasis> ()</para>
+
+<para>Hide the shop menu, unpause the game and tell the level to continue by emitting the OnLevelComplete signal. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a6583b22cc6504ee085ac03862c0d0ebf">DisplayInsufficientCoinsError</link> (int price)</para>
+
+<para>Display an error message when the player tries to buy an item with insufficient coins. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a51b5b0190652b7b68f90781d936e8210"/>void <emphasis role="strong">DisplayAlreadyMaxHealthError</emphasis> ()</para>
+
+<para>Display an error message when the player tries to buy &quot;heal&quot; when they already have max health. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Custom control class for the shop menu, which handles opening and closing the shop menu. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_1a6583b22cc6504ee085ac03862c0d0ebf"/><section>
+    <title>DisplayInsufficientCoinsError()</title>
+<indexterm><primary>DisplayInsufficientCoinsError</primary><secondary>Code.Scripts.UI.Shop.ShopMenu</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopMenu</primary><secondary>DisplayInsufficientCoinsError</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.Shop.ShopMenu.DisplayInsufficientCoinsError (int price)</computeroutput></para><para>
+
+<para>Display an error message when the player tries to buy an item with insufficient coins. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>price</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a6583b22cc6504ee085ac03862c0d0ebf_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopMenu.cs</section>
+</section>

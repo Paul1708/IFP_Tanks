@@ -1,0 +1,89 @@
+\doxysection{Code.\+Scripts.\+Environment.\+Coin Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin}{}\label{class_code_1_1_scripts_1_1_environment_1_1_coin}\index{Code.Scripts.Environment.Coin@{Code.Scripts.Environment.Coin}}
+
+
+\doxylink{class_code_1_1_scripts_1_1_environment_1_1_coin}{Coin} class which handles the coin collection and movement.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Environment.\+Coin\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=231pt]{class_code_1_1_scripts_1_1_environment_1_1_coin__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Environment.\+Coin\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=311pt]{class_code_1_1_scripts_1_1_environment_1_1_coin__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_aeba1755de460434e86091dda67eddd76}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_aeba1755de460434e86091dda67eddd76} 
+delegate void {\bfseries On\+Coin\+Collected\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_a66889581b0334b47789695fc9cc78a4f}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_a66889581b0334b47789695fc9cc78a4f} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_a1d517a9d42ca50ed69d4f88fe46ea09c}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_a1d517a9d42ca50ed69d4f88fe46ea09c} 
+override void {\bfseries \+\_\+\+Physics\+Process} (double delta)
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_environment_1_1_coin_a891131dc3d4b724994958b7def05ff12}{Set\+Coin\+Value}} (int value)
+\begin{DoxyCompactList}\small\item\em Sets the coin value to the given value. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_ae30be3f7a164236da5c7879e81d79890}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_ae30be3f7a164236da5c7879e81d79890} 
+void {\bfseries Collect\+Coin} ()
+\begin{DoxyCompactList}\small\item\em Collects the coin, adds the coin value to the Coin\+Manager and plays the coin pickup sound. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_a0d35e3cd75e0dad54c8a46d284e35a77}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_a0d35e3cd75e0dad54c8a46d284e35a77} 
+float {\bfseries Speed} = 1500f
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_a9fbb175dd540c8cfbb81e779fac162af}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_a9fbb175dd540c8cfbb81e779fac162af} 
+bool {\bfseries Should\+Move} = false
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_ada7972f5b6bfa585dc357e37e3dbf130}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_ada7972f5b6bfa585dc357e37e3dbf130} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_ae1482e2c41a4cee67207c2f6ea15fa17}\label{class_code_1_1_scripts_1_1_environment_1_1_coin_ae1482e2c41a4cee67207c2f6ea15fa17} 
+int {\bfseries Coin\+Value} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{class_code_1_1_scripts_1_1_environment_1_1_coin}{Coin} class which handles the coin collection and movement. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_environment_1_1_coin_a891131dc3d4b724994958b7def05ff12}\index{Code.Scripts.Environment.Coin@{Code.Scripts.Environment.Coin}!SetCoinValue@{SetCoinValue}}
+\index{SetCoinValue@{SetCoinValue}!Code.Scripts.Environment.Coin@{Code.Scripts.Environment.Coin}}
+\doxysubsubsection{\texorpdfstring{SetCoinValue()}{SetCoinValue()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_environment_1_1_coin_a891131dc3d4b724994958b7def05ff12} 
+void Code.\+Scripts.\+Environment.\+Coin.\+Set\+Coin\+Value (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the coin value to the given value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Environment/Coin.\+cs\end{DoxyCompactItemize}

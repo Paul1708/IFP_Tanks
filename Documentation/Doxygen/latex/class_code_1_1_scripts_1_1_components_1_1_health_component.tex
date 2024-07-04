@@ -1,0 +1,231 @@
+\doxysection{Code.\+Scripts.\+Components.\+Health\+Component Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component}{}\label{class_code_1_1_scripts_1_1_components_1_1_health_component}\index{Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}}
+
+
+Component that handles the health of an entity.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Components.\+Health\+Component\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_code_1_1_scripts_1_1_components_1_1_health_component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Components.\+Health\+Component\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_code_1_1_scripts_1_1_components_1_1_health_component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_afc4e4d5b2ad3a31fac77fb91f96b9c5a}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_afc4e4d5b2ad3a31fac77fb91f96b9c5a} 
+delegate void {\bfseries On\+Death\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_aa39e3996b240e9a00fe80dca8eb978c8}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_aa39e3996b240e9a00fe80dca8eb978c8} 
+delegate void {\bfseries On\+Health\+Changed\+Event\+Handler} (float current\+Hp)
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a93e267d1378d511d869045080582d754}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_a93e267d1378d511d869045080582d754} 
+delegate void {\bfseries On\+Max\+Health\+Changed\+Event\+Handler} (float max\+Hp)
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a3b68a5b57f44e2110140270dab54ccb6}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_a3b68a5b57f44e2110140270dab54ccb6} 
+delegate void {\bfseries On\+Take\+Damage\+Event\+Handler} (float damage)
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a7af1c0def95b7ac180c5bb282f3013d2}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_a7af1c0def95b7ac180c5bb282f3013d2} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component_ab42d464f024bf20fa49579f3f958697c}{Heal}} (float value)
+\begin{DoxyCompactList}\small\item\em Heals the entity by the input value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component_a1adc132ff3035e2a5633705a112a3d22}{Take\+Damage}} (float value)
+\begin{DoxyCompactList}\small\item\em Deals damage to the entity by the input value. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a0f0525864d7f5bd6ceac93bf0d5ab3b2}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_a0f0525864d7f5bd6ceac93bf0d5ab3b2} 
+void {\bfseries Heal\+To\+Max} ()
+\begin{DoxyCompactList}\small\item\em Heals the entity to the max health. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component_a9f65668b897fabfb0ff4ca7e13113f2d}{Heal\+Percentage}} (float percentage)
+\begin{DoxyCompactList}\small\item\em Heals the entity by the input percentage. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component_a944be0bffc60507eb98bef0ea5a275e1}{Increase\+Max\+Health}} (float value)
+\begin{DoxyCompactList}\small\item\em Increases the max health of the entity by the input value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component_ad81839e1248f29e1c6756376847146a6}{Set\+Current\+Hp}} (float value)
+\begin{DoxyCompactList}\small\item\em Sets the current health of the entity to the input value. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component_a39f89e4c6f763061a62bdd5c94ec9fa8}{Set\+Max\+Hp}} (float value)
+\begin{DoxyCompactList}\small\item\em Sets the max health of the entity to the input value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a7787e6154b95ff079bac6ead06b3322c}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_a7787e6154b95ff079bac6ead06b3322c} 
+float {\bfseries Max\+Hp} = 100\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a6e84325b511821c352104683717681f7}\label{class_code_1_1_scripts_1_1_components_1_1_health_component_a6e84325b511821c352104683717681f7} 
+float {\bfseries Current\+Hp}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Component that handles the health of an entity. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_ab42d464f024bf20fa49579f3f958697c}\index{Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}!Heal@{Heal}}
+\index{Heal@{Heal}!Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}}
+\doxysubsubsection{\texorpdfstring{Heal()}{Heal()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_components_1_1_health_component_ab42d464f024bf20fa49579f3f958697c} 
+void Code.\+Scripts.\+Components.\+Health\+Component.\+Heal (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Heals the entity by the input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_ab42d464f024bf20fa49579f3f958697c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_ab42d464f024bf20fa49579f3f958697c_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a9f65668b897fabfb0ff4ca7e13113f2d}\index{Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}!HealPercentage@{HealPercentage}}
+\index{HealPercentage@{HealPercentage}!Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}}
+\doxysubsubsection{\texorpdfstring{HealPercentage()}{HealPercentage()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_components_1_1_health_component_a9f65668b897fabfb0ff4ca7e13113f2d} 
+void Code.\+Scripts.\+Components.\+Health\+Component.\+Heal\+Percentage (\begin{DoxyParamCaption}\item[{float}]{percentage}{}\end{DoxyParamCaption})}
+
+
+
+Heals the entity by the input percentage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em percentage} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_a9f65668b897fabfb0ff4ca7e13113f2d_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a944be0bffc60507eb98bef0ea5a275e1}\index{Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}!IncreaseMaxHealth@{IncreaseMaxHealth}}
+\index{IncreaseMaxHealth@{IncreaseMaxHealth}!Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}}
+\doxysubsubsection{\texorpdfstring{IncreaseMaxHealth()}{IncreaseMaxHealth()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_components_1_1_health_component_a944be0bffc60507eb98bef0ea5a275e1} 
+void Code.\+Scripts.\+Components.\+Health\+Component.\+Increase\+Max\+Health (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Increases the max health of the entity by the input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_a944be0bffc60507eb98bef0ea5a275e1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_a944be0bffc60507eb98bef0ea5a275e1_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_ad81839e1248f29e1c6756376847146a6}\index{Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}!SetCurrentHp@{SetCurrentHp}}
+\index{SetCurrentHp@{SetCurrentHp}!Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}}
+\doxysubsubsection{\texorpdfstring{SetCurrentHp()}{SetCurrentHp()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_components_1_1_health_component_ad81839e1248f29e1c6756376847146a6} 
+void Code.\+Scripts.\+Components.\+Health\+Component.\+Set\+Current\+Hp (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the current health of the entity to the input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_ad81839e1248f29e1c6756376847146a6_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a39f89e4c6f763061a62bdd5c94ec9fa8}\index{Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}!SetMaxHp@{SetMaxHp}}
+\index{SetMaxHp@{SetMaxHp}!Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}}
+\doxysubsubsection{\texorpdfstring{SetMaxHp()}{SetMaxHp()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_components_1_1_health_component_a39f89e4c6f763061a62bdd5c94ec9fa8} 
+void Code.\+Scripts.\+Components.\+Health\+Component.\+Set\+Max\+Hp (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Sets the max health of the entity to the input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_a39f89e4c6f763061a62bdd5c94ec9fa8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_components_1_1_health_component_a1adc132ff3035e2a5633705a112a3d22}\index{Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}!TakeDamage@{TakeDamage}}
+\index{TakeDamage@{TakeDamage}!Code.Scripts.Components.HealthComponent@{Code.Scripts.Components.HealthComponent}}
+\doxysubsubsection{\texorpdfstring{TakeDamage()}{TakeDamage()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_components_1_1_health_component_a1adc132ff3035e2a5633705a112a3d22} 
+void Code.\+Scripts.\+Components.\+Health\+Component.\+Take\+Damage (\begin{DoxyParamCaption}\item[{float}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Deals damage to the entity by the input value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_a1adc132ff3035e2a5633705a112a3d22_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_components_1_1_health_component_a1adc132ff3035e2a5633705a112a3d22_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Components/Health\+Component.\+cs\end{DoxyCompactItemize}

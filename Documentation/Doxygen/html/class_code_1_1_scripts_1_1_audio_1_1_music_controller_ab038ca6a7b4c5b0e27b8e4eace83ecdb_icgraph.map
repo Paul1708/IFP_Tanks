@@ -1,0 +1,9 @@
+<map id="Code.Scripts.Audio.MusicController.PlayMusic" name="Code.Scripts.Audio.MusicController.PlayMusic">
+<area shape="rect" id="Node000001" title="Plays a sound that is used as music from the the child nodes of the MusicController and adds it to th..." alt="" coords="520,39,692,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html#af15bab72577461af085477820de65a2a" title="Plays the music by using &quot;PlayMusic&quot; for the current world by using the world id." alt="" coords="278,5,453,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="504,49,453,41,454,36,505,43"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.html#a1894d4021b3ef84c61a4ea5a12792984" title="Start the level Countdown. Shows the countdown label, pauses the game and plays the countdown animati..." alt="" coords="259,72,472,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="505,77,473,81,472,76,504,71"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager.html#aa199edfd1e9939aa2e2bbf1ba7064815" title="Called when the level is completed. Loads the next level or world." alt="" coords="5,5,211,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,29,211,29,211,24,262,24"/>
+</map>

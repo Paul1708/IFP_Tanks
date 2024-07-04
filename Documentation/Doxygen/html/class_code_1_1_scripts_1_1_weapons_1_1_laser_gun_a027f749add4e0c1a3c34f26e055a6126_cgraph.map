@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Weapons.LaserGun.Destroy" name="Code.Scripts.Weapons.LaserGun.Destroy">
+<area shape="rect" id="Node000001" title="Destroys the laser beam." alt="" coords="5,5,197,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_laser.html#ac906db3ae71b1e341a9b65dea5f73a58" title="Activates or deactivates the laser beam." alt="" coords="245,5,440,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,24,229,24,229,29,197,29"/>
+</map>

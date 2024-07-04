@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Managers.Save.UserPreferences.LoadOrCreate" name="Code.Scripts.Managers.Save.UserPreferences.LoadOrCreate">
+<area shape="rect" id="Node000001" title="Loads the UserPreferences from the user://UserPreferences.tres file or creates a new one if it does n..." alt="" coords="5,5,207,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences.html#a1b611ec71a2753d9e7b00938b71cd3ea" title="Saves the UserPreferences to the user://UserPreferences.tres file." alt="" coords="255,5,448,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="207,24,239,24,239,29,207,29"/>
+</map>

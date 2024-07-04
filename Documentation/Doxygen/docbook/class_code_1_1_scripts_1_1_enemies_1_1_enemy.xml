@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_enemy" xml:lang="en-US">
+<title>Code.Scripts.Enemies.Enemy Class Reference</title>
+<indexterm><primary>Code.Scripts.Enemies.Enemy</primary></indexterm>
+<para>
+
+<para>Coordinates health, animation and trail components of an enemy. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Enemies.Enemy:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_enemies_1_1_enemy__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Enemies.Enemy:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_enemies_1_1_enemy__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_enemy_1ab56febeb53925233e4a53a0744eb1e78"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_enemy_1ab2ceb554e15d6eb1e9c3ce5b04c94954"/>override void <emphasis role="strong">_PhysicsProcess</emphasis> (double delta)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_enemy_1aaa2000d4c9a141c2cfbe9023be451fb2"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_enemy_1a7a508542515897a1351a6021e419f34c"/>void <emphasis role="strong">OnDeath</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_enemy_1ace1229837d4ad1a9231fedd1c2cf0d2b"/><link linkend="_class_code_1_1_scripts_1_1_components_1_1_animation_handler">AnimationHandler</link> <emphasis role="strong">AnimationHandler</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_enemy_1ae8f960e7d803e875904ace95f613354d"/>PackedScene <emphasis role="strong">DropItemScene</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Coordinates health, animation and trail components of an enemy. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Enemies/Enemy.cs</section>
+</section>

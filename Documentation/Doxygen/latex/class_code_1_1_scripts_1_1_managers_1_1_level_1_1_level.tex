@@ -1,0 +1,137 @@
+\doxysection{Code.\+Scripts.\+Managers.\+Level.\+Level Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level}{}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level}\index{Code.Scripts.Managers.Level.Level@{Code.Scripts.Managers.Level.Level}}
+
+
+Manages the level, enemies and coins. Emits signals when the level is completed or failed.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Managers.\+Level.\+Level\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Managers.\+Level.\+Level\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=340pt]{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_aab282de59b03ce923bff54590683f915}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_aab282de59b03ce923bff54590683f915} 
+delegate void {\bfseries On\+Level\+Complete\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a6a336de75085edd57b9f09f7e91b3fad}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a6a336de75085edd57b9f09f7e91b3fad} 
+delegate void {\bfseries On\+Level\+Failed\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a7dabb2230f792826045868867b05290b}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a7dabb2230f792826045868867b05290b} 
+delegate void {\bfseries On\+Coins\+Moved\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_acfb061880d121e7984b9d6006e5b4d5d}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_acfb061880d121e7984b9d6006e5b4d5d} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a191210bc22607279d24f60de49fbd9d0}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a191210bc22607279d24f60de49fbd9d0} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a03760a6e53570ddb0596f7a50ba267e7}{\+\_\+\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Called every frame. Checks if all coins are collected and emits the On\+Coins\+Moved signal if so. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_afd0c7a6dbe7f2cb10875deab71d379bb}{On\+Enemy\+Death}} (Node2D enemy)
+\begin{DoxyCompactList}\small\item\em Called when an enemy dies. Drops an item and removes the enemy from the list. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a68fb542a2782ca6b4f8ceb4ca311ef8d}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a68fb542a2782ca6b4f8ceb4ca311ef8d} 
+void {\bfseries Send\+On\+Level\+Complete} ()
+\begin{DoxyCompactList}\small\item\em Emits the On\+Level\+Complete signal. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_afa60185f3eb60e3d3ef125048cf326e6}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_afa60185f3eb60e3d3ef125048cf326e6} 
+void {\bfseries On\+Player\+Death} ()
+\begin{DoxyCompactList}\small\item\em Emits the On\+Level\+Failed signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a6532f8c303e95852df4e232921afc070}{Drop\+Item$<$ T $>$}} (Node2D position, Packed\+Scene scene)
+\begin{DoxyCompactList}\small\item\em Drops/\+Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_aec72e66e491e1649a454a32845d6c7f9}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_aec72e66e491e1649a454a32845d6c7f9} 
+void {\bfseries Move\+All\+Coins\+To\+Player} ()
+\begin{DoxyCompactList}\small\item\em Move all coins to the player by setting the should\+Move property to true. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a003a4711eab4099abd71cdf42626338e}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a003a4711eab4099abd71cdf42626338e} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu}{Shop\+Menu}} {\bfseries Shop\+Menu}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a8653d041eb421cfe555cec025f4af3c3}\label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a8653d041eb421cfe555cec025f4af3c3} 
+List$<$ Node $>$ {\bfseries Enemies}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the level, enemies and coins. Emits signals when the level is completed or failed. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a03760a6e53570ddb0596f7a50ba267e7}\index{Code.Scripts.Managers.Level.Level@{Code.Scripts.Managers.Level.Level}!\_Process@{\_Process}}
+\index{\_Process@{\_Process}!Code.Scripts.Managers.Level.Level@{Code.Scripts.Managers.Level.Level}}
+\doxysubsubsection{\texorpdfstring{\_Process()}{\_Process()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a03760a6e53570ddb0596f7a50ba267e7} 
+override void Code.\+Scripts.\+Managers.\+Level.\+Level.\+\_\+\+Process (\begin{DoxyParamCaption}\item[{double}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+Called every frame. Checks if all coins are collected and emits the On\+Coins\+Moved signal if so. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a6532f8c303e95852df4e232921afc070}\index{Code.Scripts.Managers.Level.Level@{Code.Scripts.Managers.Level.Level}!DropItem$<$ T $>$@{DropItem$<$ T $>$}}
+\index{DropItem$<$ T $>$@{DropItem$<$ T $>$}!Code.Scripts.Managers.Level.Level@{Code.Scripts.Managers.Level.Level}}
+\doxysubsubsection{\texorpdfstring{DropItem$<$ T $>$()}{DropItem< T >()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_a6532f8c303e95852df4e232921afc070} 
+void Code.\+Scripts.\+Managers.\+Level.\+Level.\+Drop\+Item$<$ T $>$ (\begin{DoxyParamCaption}\item[{Node2D}]{position}{, }\item[{Packed\+Scene}]{scene}{}\end{DoxyParamCaption})}
+
+
+
+Drops/\+Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em position} & \\
+\hline
+{\em scene} & \\
+\hline
+\end{DoxyParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em Node2D}]\end{description}
+\end{Desc}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_afd0c7a6dbe7f2cb10875deab71d379bb}\index{Code.Scripts.Managers.Level.Level@{Code.Scripts.Managers.Level.Level}!OnEnemyDeath@{OnEnemyDeath}}
+\index{OnEnemyDeath@{OnEnemyDeath}!Code.Scripts.Managers.Level.Level@{Code.Scripts.Managers.Level.Level}}
+\doxysubsubsection{\texorpdfstring{OnEnemyDeath()}{OnEnemyDeath()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_afd0c7a6dbe7f2cb10875deab71d379bb} 
+void Code.\+Scripts.\+Managers.\+Level.\+Level.\+On\+Enemy\+Death (\begin{DoxyParamCaption}\item[{Node2D}]{enemy}{}\end{DoxyParamCaption})}
+
+
+
+Called when an enemy dies. Drops an item and removes the enemy from the list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em enemy} & \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Managers/\+Level/Level.\+cs\end{DoxyCompactItemize}

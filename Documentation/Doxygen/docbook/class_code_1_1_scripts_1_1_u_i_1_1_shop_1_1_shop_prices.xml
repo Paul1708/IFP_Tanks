@@ -1,0 +1,145 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.ShopPrices Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopPrices</primary></indexterm>
+<para>
+
+<para>Manages the text of the price tags in the shop and calculates the price of the items. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.Shop.ShopPrices:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.ShopPrices:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1a90645ac805e33d6fd4a42a47e60c1b48"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1a338cad0de5c90617997512b139ecc8ac"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1a72029c09650f3fcc1f986f1762bdc277">IncreasePrice</link> (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link> stat)</para>
+
+<para>Increase the price of the item by the price multiplier to the power of the quantity of the item. Set the price of the item in the list to the new value and set the price tag text to the new value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1ae1b235ba2921e45b0b9c38f65d64b877">WeaponUnlocked</link> (Label label)</para>
+
+<para>Sets the price tag text to &quot;Unlocked&quot;. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1a99f5690bc17596c6e0e8b115e164b6b0"/>int <emphasis role="strong">BasePrice</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1ac8c12e5f279ad31183fed407fdfb5335"/>float <emphasis role="strong">PriceMultiplier</emphasis> = 1.1f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the text of the price tags in the shop and calculates the price of the items. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1a72029c09650f3fcc1f986f1762bdc277"/><section>
+    <title>IncreasePrice()</title>
+<indexterm><primary>IncreasePrice</primary><secondary>Code.Scripts.UI.Shop.ShopPrices</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopPrices</primary><secondary>IncreasePrice</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.Shop.ShopPrices.IncreasePrice (<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link> stat)</computeroutput></para><para>
+
+<para>Increase the price of the item by the price multiplier to the power of the quantity of the item. Set the price of the item in the list to the new value and set the price tag text to the new value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>stat</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a72029c09650f3fcc1f986f1762bdc277_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_1ae1b235ba2921e45b0b9c38f65d64b877"/><section>
+    <title>WeaponUnlocked()</title>
+<indexterm><primary>WeaponUnlocked</primary><secondary>Code.Scripts.UI.Shop.ShopPrices</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopPrices</primary><secondary>WeaponUnlocked</secondary></indexterm>
+<para><computeroutput>static void Code.Scripts.UI.Shop.ShopPrices.WeaponUnlocked (Label label)<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Sets the price tag text to &quot;Unlocked&quot;. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>label</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_ae1b235ba2921e45b0b9c38f65d64b877_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopPrices.cs</section>
+</section>

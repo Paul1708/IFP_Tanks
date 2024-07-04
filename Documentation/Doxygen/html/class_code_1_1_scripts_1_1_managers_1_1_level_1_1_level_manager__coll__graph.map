@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Managers.Level.LevelManager" name="Code.Scripts.Managers.Level.LevelManager">
+<area shape="rect" id="Node000001" title="Manages the levels and worlds of the game, loading and saving the game, and handling level completion..." alt="" coords="5,80,200,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="69,5,136,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="105,48,105,80,100,80,100,48"/>
+</map>

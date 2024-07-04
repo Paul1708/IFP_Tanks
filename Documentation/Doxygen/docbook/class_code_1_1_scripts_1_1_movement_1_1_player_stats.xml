@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats" xml:lang="en-US">
+<title>Code.Scripts.Movement.PlayerStats Class Reference</title>
+<indexterm><primary>Code.Scripts.Movement.PlayerStats</primary></indexterm>
+<para>
+
+<para>Data class which holds the base and current player stats. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Movement.PlayerStats:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_movement_1_1_player_stats__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Movement.PlayerStats:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_movement_1_1_player_stats__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1a1ba3b54d8a4fa63db81c55a9ba3196d7"/>float <emphasis role="strong">BaseMovementSpeed</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1afc1e246872e8ea6ebd5305194ce1a04a"/>float <emphasis role="strong">CurrentMovementSpeed</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1a191ff36cd5a48533b173bcf4592e4206"/>float <emphasis role="strong">BaseRotationSpeed</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1a0a2e686458700b1b25e9f00025256246"/>float <emphasis role="strong">CurrentRotationSpeed</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1ad3bca5a3d8fbcb69d96e6b877b5369e9"/>float <emphasis role="strong">BaseDamageModifier</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1aa147fac3aee4e6efc51dfdc9f830f795"/>float <emphasis role="strong">CurrentDamageModifier</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1a4fd189841f7134d7d94a82efa800e04d"/>float <emphasis role="strong">BaseMaxHealth</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_stats_1a769d755cbc56c1a0e90d5bb63b468ab3"/>float <emphasis role="strong">CurrentMaxHealth</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Data class which holds the base and current player stats. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Movement/PlayerStats.cs</section>
+</section>

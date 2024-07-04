@@ -1,0 +1,250 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager" xml:lang="en-US">
+<title>Code.Scripts.Managers.PlayerManager Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.PlayerManager</primary></indexterm>
+<para>
+
+<para>Manages the player&apos;s stats and health. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.PlayerManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_player_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.PlayerManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_player_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a2a53a6e1716cee9eb6713836b3777033"/>delegate void <emphasis role="strong">OnPlayerStatsChangedEventHandler</emphasis> (<link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">PlayerStats</link> stats)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a875f16fb70e5f9b74273200175523906"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a99831cc42b9343fca9de3933b2653196"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1ac3795d8467e6de798a747470f1082071">AddDamageModifier</link> (float amount)</para>
+
+<para>Adds the input amount to the player&apos;s damage modifier. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a2ff93fe4c5f958041b682bd5da9ccf14">AddMovementSpeed</link> (float amount)</para>
+
+<para>Adds the input amount to the player&apos;s movement speed. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a2e4f0368506e1bfb80a4539f505c48cc">AddRotationSpeed</link> (float amount)</para>
+
+<para>Adds the input amount to the player&apos;s rotation speed. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1aced99c4774105ffc282ff501733160ce">AddMaxHealth</link> (float amount)</para>
+
+<para>Adds the input amount to the player&apos;s max health. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a8e126513ed33d95c7b84c2513e0691c7"/>void <emphasis role="strong">ResetMaxHealth</emphasis> ()</para>
+
+<para>Resets the player&apos;s max health to the base max health. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a20930a943468cbe49c330ce88231033a">OnSaveDataLoaded</link> (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> saveData)</para>
+
+<para>Loads the player&apos;s stats from the save data. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1af759a7a3aeaa672a9aa8332fad85b199"/>static <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager">PlayerManager</link> <emphasis role="strong">Instance</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1adff6128c4c7078f9cc886acc20cc92c3"/><link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component">HealthComponent</link> <emphasis role="strong">PlayerHealthComponent</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1ab81041bb9b0c489c7594b01719d24218"/><link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">PlayerStats</link> <emphasis role="strong">PlayerStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the player&apos;s stats and health. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1ac3795d8467e6de798a747470f1082071"/><section>
+    <title>AddDamageModifier()</title>
+<indexterm><primary>AddDamageModifier</primary><secondary>Code.Scripts.Managers.PlayerManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.PlayerManager</primary><secondary>AddDamageModifier</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.PlayerManager.AddDamageModifier (float amount)</computeroutput></para><para>
+
+<para>Adds the input amount to the player&apos;s damage modifier. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1aced99c4774105ffc282ff501733160ce"/><section>
+    <title>AddMaxHealth()</title>
+<indexterm><primary>AddMaxHealth</primary><secondary>Code.Scripts.Managers.PlayerManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.PlayerManager</primary><secondary>AddMaxHealth</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.PlayerManager.AddMaxHealth (float amount)</computeroutput></para><para>
+
+<para>Adds the input amount to the player&apos;s max health. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_player_manager_aced99c4774105ffc282ff501733160ce_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a2ff93fe4c5f958041b682bd5da9ccf14"/><section>
+    <title>AddMovementSpeed()</title>
+<indexterm><primary>AddMovementSpeed</primary><secondary>Code.Scripts.Managers.PlayerManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.PlayerManager</primary><secondary>AddMovementSpeed</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.PlayerManager.AddMovementSpeed (float amount)</computeroutput></para><para>
+
+<para>Adds the input amount to the player&apos;s movement speed. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a2e4f0368506e1bfb80a4539f505c48cc"/><section>
+    <title>AddRotationSpeed()</title>
+<indexterm><primary>AddRotationSpeed</primary><secondary>Code.Scripts.Managers.PlayerManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.PlayerManager</primary><secondary>AddRotationSpeed</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.PlayerManager.AddRotationSpeed (float amount)</computeroutput></para><para>
+
+<para>Adds the input amount to the player&apos;s rotation speed. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_player_manager_1a20930a943468cbe49c330ce88231033a"/><section>
+    <title>OnSaveDataLoaded()</title>
+<indexterm><primary>OnSaveDataLoaded</primary><secondary>Code.Scripts.Managers.PlayerManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.PlayerManager</primary><secondary>OnSaveDataLoaded</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.PlayerManager.OnSaveDataLoaded (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> saveData)</computeroutput></para><para>
+
+<para>Loads the player&apos;s stats from the save data. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>saveData</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_player_manager_a20930a943468cbe49c330ce88231033a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/PlayerManager.cs</section>
+</section>

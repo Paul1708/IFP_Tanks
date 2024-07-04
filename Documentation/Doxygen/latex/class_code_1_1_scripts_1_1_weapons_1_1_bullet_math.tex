@@ -1,0 +1,24 @@
+\doxysection{Code.\+Scripts.\+Weapons.\+Bullet\+Math Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_math}{}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_math}\index{Code.Scripts.Weapons.BulletMath@{Code.Scripts.Weapons.BulletMath}}
+
+
+Utility class for bullet math operations.  
+
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_math_a87ce7d1998abcc443e362ed7943fbde1}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_math_a87ce7d1998abcc443e362ed7943fbde1} 
+static float {\bfseries Normalize\+Angle} (float angle)
+\begin{DoxyCompactList}\small\item\em Convert an angle from the interval J = \mbox{[}0,2\texorpdfstring{$\ast$}{*}\+Pi\mbox{]} to an angle in I = \mbox{[}-\/Pi,Pi\mbox{]} where 0 in J is mapped to 0 in I. This is needed since the godot angle function uses angles in I. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_math_a07c1b6cc56caea44d3ede3df2a1fae49}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_math_a07c1b6cc56caea44d3ede3df2a1fae49} 
+static float {\bfseries Restrict\+Homing\+Angle} (float angle, float max\+Angle\+Radians)
+\begin{DoxyCompactList}\small\item\em Ensure that the angle does not exceed the interval \mbox{[}-\/max\+Angle\+Radians, max\+Angle\+Radians\mbox{]}. If it is not inside this interval, the closed interval border will be returned. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility class for bullet math operations. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Weapons/Bullet\+Math.\+cs\end{DoxyCompactItemize}

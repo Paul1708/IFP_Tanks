@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller" xml:lang="en-US">
+<title>Code.Scripts.Weapons.GunController Class Reference</title>
+<indexterm><primary>Code.Scripts.Weapons.GunController</primary></indexterm>
+<para>
+
+<para>Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon stats. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Weapons.GunController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_gun_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Weapons.GunController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_gun_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a17992e74e18d6d22b5e10f645654ced3"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a3068c23a48f86ec2c067d181b02cad5b"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a33ef24551f86812ea630766d91b25efd"/>void <emphasis role="strong">SetWeapon</emphasis> ()</para>
+
+<para>Sets the weapon stats of the gun controller to the currently equipped weapon. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a2934b42322d8862887c4b99111ac941a">RotateTowards</link> (Vector2 target)</para>
+
+<para>Rotates the gun towards the target. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a06ad4bd4f68e30e7ef3e4329a5e08853"/>void <emphasis role="strong">Shoot</emphasis> ()</para>
+
+<para>Shoots a bullet from the gun, if the gun is ready to shoot. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a4d87c656bf09b7ca8f241a7360bf02c0"/><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1abe71f35816ec6c6e346ca97262816f98"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">WeaponStats</link> <emphasis role="strong">WeaponStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a24ef2765a3c49721a35f042e006dc733"/>float <emphasis role="strong">TimeBetweenShots</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon stats. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_1a2934b42322d8862887c4b99111ac941a"/><section>
+    <title>RotateTowards()</title>
+<indexterm><primary>RotateTowards</primary><secondary>Code.Scripts.Weapons.GunController</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.GunController</primary><secondary>RotateTowards</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Weapons.GunController.RotateTowards (Vector2 target)</computeroutput></para><para>
+
+<para>Rotates the gun towards the target. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>target</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a2934b42322d8862887c4b99111ac941a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Weapons/GunController.cs</section>
+</section>

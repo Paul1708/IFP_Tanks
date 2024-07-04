@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data" xml:lang="en-US">
+<title>Code.Scripts.Managers.Save.SaveData Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Save.SaveData</primary></indexterm>
+<para>
+
+<para>Data class which holds the data, which can be saved. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.Save.SaveData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.Save.SaveData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data_1af4cc38a5722723c6e35dbdcc35e9f3ee"/>int <emphasis role="strong">LastCheckpointLevelId</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data_1a32641531a9d8b80d4f9cd51b558e227e"/>int <emphasis role="strong">LastCheckpointWorldId</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data_1afcad241c615dc92e5ddfda7b06375541"/>int <emphasis role="strong">CoinCount</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data_1a2d441585baceae8a6f1f03217e197608"/>float <emphasis role="strong">PlayerCurrentHp</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data_1aaa67d3b902ec4795672c1adad7984bd1"/><link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">PlayerStats</link> <emphasis role="strong">PlayerStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data_1afad9dff42d4ccd78bf89617aeae8ebd6"/>Godot.Collections.Array&lt; Godot.Collections.Array &gt; <emphasis role="strong">Stats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data_1ad835066d34ba0f1eebd52358178a8f81"/>Godot.Collections.Array&lt; Godot.Collections.Array &gt; <emphasis role="strong">Weapons</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+
+<para>The first index is the weapon index and the second index is the unlocked or equiped. E.g. [0][0] to adress the unlocked and [0][1] to adress the equiped of the first weapon. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Data class which holds the data, which can be saved. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/Save/SaveData.cs</section>
+</section>

@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun" xml:lang="en-US">
+<title>Code.Scripts.Weapons.LaserGun Class Reference</title>
+<indexterm><primary>Code.Scripts.Weapons.LaserGun</primary></indexterm>
+<para>
+
+<para>Controls the laser gun which emits a laser beam. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Weapons.LaserGun:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser_gun__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Weapons.LaserGun:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser_gun__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1a027f749add4e0c1a3c34f26e055a6126">Destroy</link> ()</para>
+
+<para>Destroys the laser beam. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a014dc96a8f25d183b0bec481c92d0548">OnCollision</link> (Node node)</para>
+
+<para>Called when the bullet collides with another node. Calls the appropriate method for the collision type. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1ab04ac5ac34559667a56cf8493fa1bf20">OnDamageableHit</link> (Node node)</para>
+
+<para>Called when the bullet hits a damageable node. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a9da0755c4cc39e78855b602573727182">_PhysicsProcess</link> (double delta)</para>
+
+<para>Call move method on every physics process tick and check for collisions. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1ad6ad8f4c9f999ca4953cadd40a356eb9">Setup</link> ()</para>
+
+<para>Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. </para>
+</listitem>
+            <listitem><para>override Node <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1a8b6f710b47f222162fb3ff23060ffc6b">Move</link> ()</para>
+
+<para>Moves the laser beam along with the player. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1aa9847b5ab3119a56a3cb3dca04002f30">OnAnythingHit</link> ()</para>
+
+<para>Called when the bullet hits anything. </para>
+</listitem>
+            <listitem><para>virtual void <emphasis role="strong">OnWallHit</emphasis> ()</para>
+
+<para>Called when the bullet hits a wall. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a043d2947f7b73466055604b2333e0287">OnOtherHit</link> ()</para>
+
+<para>Called when the bullet hits anything other than a damageable node or a wall. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Protected Attributes inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>Node2D <emphasis role="strong">Player</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component">HealthComponent</link> <emphasis role="strong">PlayerHealthComponent</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller">ParticleController</link> <emphasis role="strong">Particles</emphasis></para>
+</listitem>
+            <listitem><para>Vector2 <emphasis role="strong">NormalCollisionVector</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Properties inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>float <emphasis role="strong">Damage</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>Node2D <emphasis role="strong">Shooter</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <emphasis role="strong">Speed</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the laser gun which emits a laser beam. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1a027f749add4e0c1a3c34f26e055a6126"/><section>
+    <title>Destroy()</title>
+<indexterm><primary>Destroy</primary><secondary>Code.Scripts.Weapons.LaserGun</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.LaserGun</primary><secondary>Destroy</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Weapons.LaserGun.Destroy ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destroys the laser beam. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a0b2373f199dddfeb33f82cacbf7f5adc">Code.Scripts.Weapons.Bullet</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a027f749add4e0c1a3c34f26e055a6126_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1a8b6f710b47f222162fb3ff23060ffc6b"/><section>
+    <title>Move()</title>
+<indexterm><primary>Move</primary><secondary>Code.Scripts.Weapons.LaserGun</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.LaserGun</primary><secondary>Move</secondary></indexterm>
+<para><computeroutput>override Node Code.Scripts.Weapons.LaserGun.Move ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Moves the laser beam along with the player. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a994aeab2acbe859b2930047811099d57">Code.Scripts.Weapons.Bullet</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a8b6f710b47f222162fb3ff23060ffc6b_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1ad6ad8f4c9f999ca4953cadd40a356eb9"/><section>
+    <title>Setup()</title>
+<indexterm><primary>Setup</primary><secondary>Code.Scripts.Weapons.LaserGun</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.LaserGun</primary><secondary>Setup</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Weapons.LaserGun.Setup ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a6918edb299b9f904812786a56c280ea4">Code.Scripts.Weapons.Bullet</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Weapons/LaserGun.cs</section>
+</section>

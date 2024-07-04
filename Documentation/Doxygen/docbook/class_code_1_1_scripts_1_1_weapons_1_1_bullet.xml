@@ -1,0 +1,349 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet" xml:lang="en-US">
+<title>Code.Scripts.Weapons.Bullet Class Reference</title>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary></indexterm>
+<para>
+
+<para>Base class for all bullets in the game. Provides basic functionality for all bullets. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Weapons.Bullet:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Weapons.Bullet:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1aa54d4c2ae229aaab3da053f443df8509"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a014dc96a8f25d183b0bec481c92d0548">OnCollision</link> (Node node)</para>
+
+<para>Called when the bullet collides with another node. Calls the appropriate method for the collision type. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1ab04ac5ac34559667a56cf8493fa1bf20">OnDamageableHit</link> (Node node)</para>
+
+<para>Called when the bullet hits a damageable node. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a0b2373f199dddfeb33f82cacbf7f5adc">Destroy</link> ()</para>
+
+<para>Destroys the bullet. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a9da0755c4cc39e78855b602573727182">_PhysicsProcess</link> (double delta)</para>
+
+<para>Call move method on every physics process tick and check for collisions. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a6918edb299b9f904812786a56c280ea4">Setup</link> ()</para>
+
+<para>Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1aa9847b5ab3119a56a3cb3dca04002f30">OnAnythingHit</link> ()</para>
+
+<para>Called when the bullet hits anything. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a5444f60bf1cbbf4175b223119cc59dd7"/>virtual void <emphasis role="strong">OnWallHit</emphasis> ()</para>
+
+<para>Called when the bullet hits a wall. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a043d2947f7b73466055604b2333e0287">OnOtherHit</link> ()</para>
+
+<para>Called when the bullet hits anything other than a damageable node or a wall. </para>
+</listitem>
+            <listitem><para>virtual Node <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a994aeab2acbe859b2930047811099d57">Move</link> ()</para>
+
+<para>Describe the move behavior of all bullet types. This method is called on every physic process tick. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a50afa222f34505475befd83e1ba1c42a"/>Node2D <emphasis role="strong">Player</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1add3688bc68c2f77acf895ed3c4247070"/><link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component">HealthComponent</link> <emphasis role="strong">PlayerHealthComponent</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a9728f9ec995966ee3dbdc5583ac3b2fc"/><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller">ParticleController</link> <emphasis role="strong">Particles</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a8c9ce424cd8276852008d7ba853b4f62"/>Vector2 <emphasis role="strong">NormalCollisionVector</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1abfff10952c8c6f014e2dfe738f982f5b"/><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a624f0998cf70b97e30be313f4bdcf49b"/>float <emphasis role="strong">Damage</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1ac08e996a9a6eb4553ff6f433c6f77440"/>Node2D <emphasis role="strong">Shooter</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1afad5164dc8144d0dfb12cf46f5767fab"/>float <emphasis role="strong">Speed</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Base class for all bullets in the game. Provides basic functionality for all bullets. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a9da0755c4cc39e78855b602573727182"/><section>
+    <title>_PhysicsProcess()</title>
+<indexterm><primary>_PhysicsProcess</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>_PhysicsProcess</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Weapons.Bullet._PhysicsProcess (double delta)</computeroutput></para><para>
+
+<para>Call move method on every physics process tick and check for collisions. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a0b2373f199dddfeb33f82cacbf7f5adc"/><section>
+    <title>Destroy()</title>
+<indexterm><primary>Destroy</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>Destroy</secondary></indexterm>
+<para><computeroutput>virtual void Code.Scripts.Weapons.Bullet.Destroy ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destroys the bullet. </para>
+</para>
+<para>
+Reimplemented in <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_1ac8cd8aeaef50891001c1341aec949ff3">Code.Scripts.Weapons.BasicBullet</link>, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_1ae9486d761b6955464b60322a57d642c8">Code.Scripts.Weapons.BouncingBullet</link>, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a13e116c0c1f2b67bd082a0ee8b8ffa74">Code.Scripts.Weapons.HomingBullet</link>, and <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1a027f749add4e0c1a3c34f26e055a6126">Code.Scripts.Weapons.LaserGun</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a994aeab2acbe859b2930047811099d57"/><section>
+    <title>Move()</title>
+<indexterm><primary>Move</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>Move</secondary></indexterm>
+<para><computeroutput>virtual Node Code.Scripts.Weapons.Bullet.Move ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Describe the move behavior of all bullet types. This method is called on every physic process tick. </para>
+</para>
+<para>
+Reimplemented in <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_1a3e07511d311970d311433ec3c7a9ca75">Code.Scripts.Weapons.BasicBullet</link>, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_1a5a87e72b21cb934c219a33db598a2779">Code.Scripts.Weapons.BouncingBullet</link>, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet_1aa5effa806e05627d297f6fe512151338">Code.Scripts.Weapons.GrenadeBullet</link>, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a47637cacf8cc612d646c9a7229b48a69">Code.Scripts.Weapons.HomingBullet</link>, and <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1a8b6f710b47f222162fb3ff23060ffc6b">Code.Scripts.Weapons.LaserGun</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1aa9847b5ab3119a56a3cb3dca04002f30"/><section>
+    <title>OnAnythingHit()</title>
+<indexterm><primary>OnAnythingHit</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>OnAnythingHit</secondary></indexterm>
+<para><computeroutput>virtual void Code.Scripts.Weapons.Bullet.OnAnythingHit ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Called when the bullet hits anything. </para>
+</para>
+<para>
+Reimplemented in <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_1a7bdcf30e5cf6256e2d1226a30eaf940c">Code.Scripts.Weapons.BouncingBullet</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a014dc96a8f25d183b0bec481c92d0548"/><section>
+    <title>OnCollision()</title>
+<indexterm><primary>OnCollision</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>OnCollision</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Weapons.Bullet.OnCollision (Node node)</computeroutput></para><para>
+
+<para>Called when the bullet collides with another node. Calls the appropriate method for the collision type. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>node</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1ab04ac5ac34559667a56cf8493fa1bf20"/><section>
+    <title>OnDamageableHit()</title>
+<indexterm><primary>OnDamageableHit</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>OnDamageableHit</secondary></indexterm>
+<para><computeroutput>virtual void Code.Scripts.Weapons.Bullet.OnDamageableHit (Node node)<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Called when the bullet hits a damageable node. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>node</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+<para>
+Reimplemented in <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_1aca8209ba069905c476fca8b56c25d8a7">Code.Scripts.Weapons.BouncingBullet</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a043d2947f7b73466055604b2333e0287"/><section>
+    <title>OnOtherHit()</title>
+<indexterm><primary>OnOtherHit</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>OnOtherHit</secondary></indexterm>
+<para><computeroutput>virtual void Code.Scripts.Weapons.Bullet.OnOtherHit ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Called when the bullet hits anything other than a damageable node or a wall. </para>
+</para>
+<para>
+Reimplemented in <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_1ad3d49f776a006421512b8180a3be1121">Code.Scripts.Weapons.BasicBullet</link>, and <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_1a246250f0908199b9c80291a2de0d0443">Code.Scripts.Weapons.BouncingBullet</link>.</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a6918edb299b9f904812786a56c280ea4"/><section>
+    <title>Setup()</title>
+<indexterm><primary>Setup</primary><secondary>Code.Scripts.Weapons.Bullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Bullet</primary><secondary>Setup</secondary></indexterm>
+<para><computeroutput>virtual void Code.Scripts.Weapons.Bullet.Setup ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. </para>
+</para>
+<para>
+Reimplemented in <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_1a247342e3ee4c88f4b2baf88fcf72ff31">Code.Scripts.Weapons.BouncingBullet</link>, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet_1a8dd32b0f6e7daa8a53edaf27e2a330f0">Code.Scripts.Weapons.GrenadeBullet</link>, <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a20e1d6afab2f2f97b4fe0705e9322919">Code.Scripts.Weapons.HomingBullet</link>, and <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_1ad6ad8f4c9f999ca4953cadd40a356eb9">Code.Scripts.Weapons.LaserGun</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Weapons/Bullet.cs</section>
+</section>

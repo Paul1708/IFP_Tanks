@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager" xml:lang="en-US">
+<title>Code.Scripts.Managers.Level.LevelManager Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Level.LevelManager</primary></indexterm>
+<para>
+
+<para>Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.Level.LevelManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.Level.LevelManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1ab26f7bf20c091bf608c2d76c831a3bfb"/>delegate void <emphasis role="strong">OnLevelChangedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1a575c506fe456b900116f92f390b8a59c"/>delegate void <emphasis role="strong">OnLevelChangedShowShopEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1ad44c6eab463697fc3a2113e9cb0be2b2"/>delegate void <emphasis role="strong">OnFirstLevelLoadedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1ad6db0c5d46035a3701597b211b3aa187"/>delegate void <emphasis role="strong">OnLevelResetEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1ad331c011e7573b7c50d1e5dac083e503"/>delegate void <emphasis role="strong">OnLevelFailedShowDeathScreenEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1aa99600ffe2b0cd0661b6d698af6249f6"/>delegate void <emphasis role="strong">OnGameWonShowVictoryScreenEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1ae48cea77befec2b3cf52b0adf26f0e62"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1a2e6e20bc03160c619eb22106c69a0c30"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1aa199edfd1e9939aa2e2bbf1ba7064815"/>async void <emphasis role="strong">OnLevelComplete</emphasis> ()</para>
+
+<para>Called when the level is completed. Loads the next level or world. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1a71eccce9d7a5c8cdde342fd3aaffefbe"/>async void <emphasis role="strong">OnLevelFailed</emphasis> ()</para>
+
+<para>Called when the level is failed. Shows the death screen and reloads the last save. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1ac767059d258178ca14021e85555cd9c2"/>int <emphasis role="strong">CurrentWorldId</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1a5ee33ebcf1419aeba1a3386e16afe07d"/>int <emphasis role="strong">CurrentLevelId</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1a1ee3c3c367e0d648e8e3b09c89b8bc3e"/><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data">WorldData</link>[] <emphasis role="strong">Worlds</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1a03d94749d68ca51108d165dc63bdb31e"/><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level">Level</link> <emphasis role="strong">CurrentLevelInstance</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager_1a2d61ceaec3b02cb0849bf5d6030f9c29"/><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data">LevelData</link> <emphasis role="strong">CurrentLevelData</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/Level/LevelManager.cs</section>
+</section>

@@ -1,0 +1,17 @@
+<map id="Code.Scripts.Weapons.Bullet.OnCollision" name="Code.Scripts.Weapons.Bullet.OnCollision">
+<area shape="rect" id="Node000001" title="Called when the bullet collides with another node. Calls the appropriate method for the collision typ..." alt="" coords="5,105,202,148"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#aa9847b5ab3119a56a3cb3dca04002f30" title="Called when the bullet hits anything." alt="" coords="250,5,446,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="148,102,249,58,265,51,267,56,251,62,150,107"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#ab04ac5ac34559667a56cf8493fa1bf20" title="Called when the bullet hits a damageable node." alt="" coords="250,72,446,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,111,234,106,234,111,202,116"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a043d2947f7b73466055604b2333e0287" title="Called when the bullet hits anything other than a damageable node or a wall." alt="" coords="250,139,446,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="202,137,234,142,234,147,202,143"/>
+<area shape="rect" id="Node000008" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a5444f60bf1cbbf4175b223119cc59dd7" title="Called when the bullet hits a wall." alt="" coords="250,205,446,248"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="150,146,251,191,267,197,265,202,249,196,148,151"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a0b2373f199dddfeb33f82cacbf7f5adc" title="Destroys the bullet." alt="" coords="498,5,694,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="447,24,482,24,482,29,447,29"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#a1adc132ff3035e2a5633705a112a3d22" title="Deals damage to the entity by the input value." alt="" coords="494,72,698,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="447,91,478,91,478,96,447,96"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#ad81839e1248f29e1c6756376847146a6" title="Sets the current health of the entity to the input value." alt="" coords="746,72,953,115"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="699,91,731,91,731,96,699,96"/>
+</map>

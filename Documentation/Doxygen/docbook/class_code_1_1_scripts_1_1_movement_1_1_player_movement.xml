@@ -1,0 +1,185 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement" xml:lang="en-US">
+<title>Code.Scripts.Movement.PlayerMovement Class Reference</title>
+<indexterm><primary>Code.Scripts.Movement.PlayerMovement</primary></indexterm>
+<para>
+
+<para>The player movement script. Handles the movement of the player and the gun. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Movement.PlayerMovement:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_movement_1_1_player_movement__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Movement.PlayerMovement:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_movement_1_1_player_movement__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1ac7f0eacf35fc718ef18a64b0bf5fd64e"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a8b0fd95f656a3ea098eceb86f594aec7">_PhysicsProcess</link> (double delta)</para>
+
+<para>Get the input from the player and set the velocity accordingly and rotate the gun. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a73eae6d02d005b69440447fa3a09220d"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a93a6a1fe078f5ac3f9452cb70a0cadf7"/>void <emphasis role="strong">GetInput</emphasis> ()</para>
+
+<para>Get the input from the player and set the velocity accordingly. </para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a747465a82c0f5efa95b6e470bcd49e59">CalculateVelocity</link> (Vector2 moveInput)</para>
+
+<para>Calculate the velocity of the player based on the input. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a5c1788e27750efd122069679d5de9331">IsMoving</link> ()</para>
+
+<para>Check if the player is moving. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1ac45f08145001a7703e5d47c30dac6861"/><link linkend="_class_code_1_1_scripts_1_1_components_1_1_trail_component">TrailComponent</link> <emphasis role="strong">TrailComponent</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a00b523bae3c8a342004e051be1f9fc29"/><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller">GunController</link> <emphasis role="strong">Gun</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a50ec457cbd207f60137de77c5889f125"/><link linkend="_class_code_1_1_scripts_1_1_components_1_1_animation_handler">AnimationHandler</link> <emphasis role="strong">AnimationHandler</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>The player movement script. Handles the movement of the player and the gun. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a8b0fd95f656a3ea098eceb86f594aec7"/><section>
+    <title>_PhysicsProcess()</title>
+<indexterm><primary>_PhysicsProcess</primary><secondary>Code.Scripts.Movement.PlayerMovement</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Movement.PlayerMovement</primary><secondary>_PhysicsProcess</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Movement.PlayerMovement._PhysicsProcess (double delta)</computeroutput></para><para>
+
+<para>Get the input from the player and set the velocity accordingly and rotate the gun. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_movement_1_1_player_movement_a8b0fd95f656a3ea098eceb86f594aec7_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a747465a82c0f5efa95b6e470bcd49e59"/><section>
+    <title>CalculateVelocity()</title>
+<indexterm><primary>CalculateVelocity</primary><secondary>Code.Scripts.Movement.PlayerMovement</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Movement.PlayerMovement</primary><secondary>CalculateVelocity</secondary></indexterm>
+<para><computeroutput>Vector2 Code.Scripts.Movement.PlayerMovement.CalculateVelocity (Vector2 moveInput)</computeroutput></para><para>
+
+<para>Calculate the velocity of the player based on the input. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>moveInput</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_movement_1_1_player_movement_a747465a82c0f5efa95b6e470bcd49e59_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_movement_1_1_player_movement_1a5c1788e27750efd122069679d5de9331"/><section>
+    <title>IsMoving()</title>
+<indexterm><primary>IsMoving</primary><secondary>Code.Scripts.Movement.PlayerMovement</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Movement.PlayerMovement</primary><secondary>IsMoving</secondary></indexterm>
+<para><computeroutput>bool Code.Scripts.Movement.PlayerMovement.IsMoving ( )</computeroutput></para><para>
+
+<para>Check if the player is moving. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_movement_1_1_player_movement_a5c1788e27750efd122069679d5de9331_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Movement/PlayerMovement.cs</section>
+</section>

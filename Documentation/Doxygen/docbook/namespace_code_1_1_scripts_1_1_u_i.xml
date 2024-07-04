@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_u_i" xml:lang="en-US">
+<title>Code.Scripts.UI Namespace Reference</title>
+<indexterm><primary>Code.Scripts.UI</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_coin_display">CoinDisplay</link></para>
+
+<para>Updates the coin display label when the coin count changes. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar">EnemyHealthBar</link></para>
+
+<para>Shows the health of an enemy. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar">HealthBar</link></para>
+
+<para>Displays the players health bar. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown">LevelCountdown</link></para>
+
+<para>Custom control class for the level countdown, which handles the countdown before the level starts. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_display">LevelDisplay</link></para>
+
+<para>Dynamically shows the levels of the current world anr their states. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_failed">LevelFailed</link></para>
+
+<para>Shows the death screen when the player dies. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_main_menu">MainMenu</link></para>
+
+<para>Controls the main menu. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu">PauseMenu</link></para>
+
+<para>Controls the pause menu. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu">SettingsMenu</link></para>
+
+<para>Controls the settings menu. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen">VictoryScreen</link></para>
+
+<para>Shows the victory screen when the player wins the game. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

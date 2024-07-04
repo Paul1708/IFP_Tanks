@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data" xml:lang="en-US">
+<title>Code.Scripts.Managers.Level.WorldData Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Level.WorldData</primary></indexterm>
+<para>
+
+<para>Data class which holds the data of a world. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.Level.WorldData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.Level.WorldData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data_1ac74656c69694f067b6dcdbb98b2980e5"/><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data">LevelData</link>[] <emphasis role="strong">Levels</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data_1a45988465d307689e1932a26f98782493"/>int <emphasis role="strong">LevelCount</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Data class which holds the data of a world. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/Level/WorldData.cs</section>
+</section>

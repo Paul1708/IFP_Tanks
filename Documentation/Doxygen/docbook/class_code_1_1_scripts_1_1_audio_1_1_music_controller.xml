@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_audio_1_1_music_controller" xml:lang="en-US">
+<title>Code.Scripts.Audio.MusicController Class Reference</title>
+<indexterm><primary>Code.Scripts.Audio.MusicController</primary></indexterm>
+Inheritance diagram for Code.Scripts.Audio.MusicController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_audio_1_1_music_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Audio.MusicController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_audio_1_1_music_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller_1a26d7a27d30cafa3df67996221c185fec">Play</link> (string soundName)</para>
+
+<para>Plays a sound from the the child nodes of the <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link>. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller_1ab038ca6a7b4c5b0e27b8e4eace83ecdb">PlayMusic</link> (string musicName)</para>
+
+<para>Plays a sound that is used as music from the the child nodes of the <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> and adds it to the PlayingMusic group. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller_1af15bab72577461af085477820de65a2a">PlayWorldMusic</link> (int currentWorldId)</para>
+
+<para>Plays the music by using &quot;PlayMusic&quot; for the current world by using the world id. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_audio_1_1_music_controller_1a01341b0c30662063cd66afcd9be476ae"/>void <emphasis role="strong">StopCurrentMusic</emphasis> ()</para>
+
+<para>Stops the music that is currently playing by checking the PlayingMusic group and removing the music from the group. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_audio_1_1_music_controller_1a26d7a27d30cafa3df67996221c185fec"/><section>
+    <title>Play()</title>
+<indexterm><primary>Play</primary><secondary>Code.Scripts.Audio.MusicController</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Audio.MusicController</primary><secondary>Play</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Audio.MusicController.Play (string soundName)</computeroutput></para><para>
+
+<para>Plays a sound from the the child nodes of the <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link>. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>soundName</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_audio_1_1_music_controller_a26d7a27d30cafa3df67996221c185fec_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_audio_1_1_music_controller_1ab038ca6a7b4c5b0e27b8e4eace83ecdb"/><section>
+    <title>PlayMusic()</title>
+<indexterm><primary>PlayMusic</primary><secondary>Code.Scripts.Audio.MusicController</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Audio.MusicController</primary><secondary>PlayMusic</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Audio.MusicController.PlayMusic (string musicName)</computeroutput></para><para>
+
+<para>Plays a sound that is used as music from the the child nodes of the <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> and adds it to the PlayingMusic group. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>musicName</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_audio_1_1_music_controller_ab038ca6a7b4c5b0e27b8e4eace83ecdb_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_audio_1_1_music_controller_1af15bab72577461af085477820de65a2a"/><section>
+    <title>PlayWorldMusic()</title>
+<indexterm><primary>PlayWorldMusic</primary><secondary>Code.Scripts.Audio.MusicController</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Audio.MusicController</primary><secondary>PlayWorldMusic</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Audio.MusicController.PlayWorldMusic (int currentWorldId)</computeroutput></para><para>
+
+<para>Plays the music by using &quot;PlayMusic&quot; for the current world by using the world id. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>currentWorldId</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_audio_1_1_music_controller_af15bab72577461af085477820de65a2a_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_audio_1_1_music_controller_af15bab72577461af085477820de65a2a_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Audio/MusicController.cs</section>
+</section>

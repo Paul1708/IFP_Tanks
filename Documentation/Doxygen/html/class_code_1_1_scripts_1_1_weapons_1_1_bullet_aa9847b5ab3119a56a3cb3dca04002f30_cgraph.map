@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Weapons.Bullet.OnAnythingHit" name="Code.Scripts.Weapons.Bullet.OnAnythingHit">
+<area shape="rect" id="Node000001" title="Called when the bullet hits anything." alt="" coords="5,5,202,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a0b2373f199dddfeb33f82cacbf7f5adc" title="Destroys the bullet." alt="" coords="250,5,446,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="202,24,234,24,234,29,202,29"/>
+</map>

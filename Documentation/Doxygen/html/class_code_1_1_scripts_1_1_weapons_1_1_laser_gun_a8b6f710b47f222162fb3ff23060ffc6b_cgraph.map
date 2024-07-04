@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Weapons.LaserGun.Move" name="Code.Scripts.Weapons.LaserGun.Move">
+<area shape="rect" id="Node000001" title="Moves the laser beam along with the player." alt="" coords="5,39,197,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_laser.html#a1966217ac0029603557fca922f511d92" title="Rotates the laser beam along the given angle." alt="" coords="245,5,440,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,44,229,40,229,45,197,49"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_laser.html#ac906db3ae71b1e341a9b65dea5f73a58" title="Activates or deactivates the laser beam." alt="" coords="245,72,440,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="197,71,229,75,229,80,197,76"/>
+</map>

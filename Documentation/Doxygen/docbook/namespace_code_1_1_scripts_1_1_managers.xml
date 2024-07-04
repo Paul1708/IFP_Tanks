@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_managers" xml:lang="en-US">
+<title>Code.Scripts.Managers Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Managers</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager">CoinManager</link></para>
+
+<para>Manager class that handles the coins of the player. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences">LoadUserPreferences</link></para>
+
+<para>Loads the user preferences and sets the window mode and volume accordingly. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller">ParticleController</link></para>
+
+<para>Controller for emitting particles. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager">PlayerManager</link></para>
+
+<para>Manages the player&apos;s stats and health. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_code_1_1_scripts_1_1_managers_1_1_scene">Scene</link></para>
+
+<para>Particle scenes that can be used to emit particles. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager">ShopManager</link></para>
+
+<para>Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

@@ -1,0 +1,39 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,397,73,424"/>
+<area shape="rect" id="Node000001" href="$class_code_1_1_scripts_1_1_components_1_1_damage_number_controller.html" title="Controls the spawning of the DamageNumber scene." alt="" coords="138,5,315,48"/>
+<area shape="poly" id="edge23_Node000000_Node000001" title=" " alt="" coords="41,381,50,306,66,210,89,119,103,83,119,58,135,45,139,49,123,62,108,86,94,121,71,211,55,307,46,382"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html" title="Component that handles the health of an entity." alt="" coords="138,72,315,115"/>
+<area shape="poly" id="edge24_Node000000_Node000002" title=" " alt="" coords="37,382,41,328,52,259,62,223,77,188,95,154,119,125,136,112,139,116,123,129,100,157,81,190,67,225,57,261,46,329,43,382"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component.html" title="Component that handles the flash and size change of the tank when it takes damage." alt="" coords="138,139,315,181"/>
+<area shape="poly" id="edge25_Node000000_Node000003" title=" " alt="" coords="40,381,47,340,61,289,84,237,100,213,119,191,136,179,139,183,122,195,104,216,89,239,66,290,53,341,46,382"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_components_1_1_trail_component.html" title="Component that emits a trail for the tank." alt="" coords="138,205,315,248"/>
+<area shape="poly" id="edge26_Node000000_Node000004" title=" " alt="" coords="46,381,72,319,92,286,119,258,136,246,139,251,122,262,97,290,76,322,51,383"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_enemies_1_1_behaviour.html" title="Abstract class that defines the behaivour of an enemy. Provides utility methods for pathfinding and t..." alt="" coords="121,272,332,299"/>
+<area shape="poly" id="edge27_Node000000_Node000005" title=" " alt="" coords="53,383,80,344,98,325,119,308,143,297,145,302,122,313,102,329,84,347,57,386"/>
+<area shape="rect" id="Node000011" href="$class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank.html" title="Controls the dummy tank in the main menu." alt="" coords="139,323,314,365"/>
+<area shape="poly" id="edge33_Node000000_Node000011" title=" " alt="" coords="85,388,120,375,153,363,154,368,122,380,87,393"/>
+<area shape="rect" id="Node000012" href="$class_code_1_1_scripts_1_1_managers_1_1_coin_manager.html" title="Manager class that handles the coins of the player." alt="" coords="133,389,320,432"/>
+<area shape="poly" id="edge34_Node000000_Node000012" title=" " alt="" coords="88,408,132,408,132,413,88,413"/>
+<area shape="rect" id="Node000013" href="$class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level.html" title="Manages the level, enemies and coins. Emits signals when the level is completed or failed." alt="" coords="129,456,324,499"/>
+<area shape="poly" id="edge35_Node000000_Node000013" title=" " alt="" coords="87,428,122,441,154,453,153,458,120,447,85,433"/>
+<area shape="rect" id="Node000014" href="$class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager.html" title="Manages the levels and worlds of the game, loading and saving the game, and handling level completion..." alt="" coords="129,523,324,565"/>
+<area shape="poly" id="edge36_Node000000_Node000014" title=" " alt="" coords="58,436,85,473,122,509,142,520,140,524,119,513,81,477,53,439"/>
+<area shape="rect" id="Node000015" href="$class_code_1_1_scripts_1_1_managers_1_1_particle_controller.html" title="Controller for emitting particles." alt="" coords="124,589,329,632"/>
+<area shape="poly" id="edge37_Node000000_Node000015" title=" " alt="" coords="49,438,59,470,74,507,95,544,122,575,139,587,136,591,119,579,90,547,69,509,54,472,44,440"/>
+<area shape="rect" id="Node000016" href="$class_code_1_1_scripts_1_1_managers_1_1_player_manager.html" title="Manages the player&#39;s stats and health." alt="" coords="127,656,326,699"/>
+<area shape="poly" id="edge38_Node000000_Node000016" title=" " alt="" coords="45,439,51,484,64,538,87,594,103,619,123,642,137,653,134,658,119,646,99,623,82,596,59,540,46,485,40,440"/>
+<area shape="rect" id="Node000017" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html" title="Manages the shop, including the stats and weapons. It handles the buying, upgrading,..." alt="" coords="131,723,322,765"/>
+<area shape="poly" id="edge39_Node000000_Node000017" title=" " alt="" coords="42,440,45,496,55,568,65,606,80,643,98,678,123,709,136,720,133,724,119,713,94,681,75,645,60,608,50,569,39,496,37,440"/>
+<area shape="rect" id="Node000018" href="$class_code_1_1_scripts_1_1_weapons_1_1_gun_controller.html" title="Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon sta..." alt="" coords="135,789,318,832"/>
+<area shape="poly" id="edge40_Node000000_Node000018" title=" " alt="" coords="46,439,55,518,70,618,93,714,107,750,123,776,136,787,132,791,119,779,102,753,88,715,65,619,49,518,40,440"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour.html" title="Basic behaivour of the basic (red) enemy." alt="" coords="392,164,581,207"/>
+<area shape="poly" id="edge28_Node000005_Node000006" title=" " alt="" coords="316,264,331,258,345,248,354,238,364,227,379,216,403,205,406,210,381,221,367,231,358,241,348,252,333,262,319,269"/>
+<area shape="rect" id="Node000008" href="$class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour.html" title="Dummy behaviour, which only rotates towards the player and does nothing else." alt="" coords="386,231,587,273"/>
+<area shape="poly" id="edge30_Node000005_Node000008" title=" " alt="" coords="347,267,386,262,386,267,348,272"/>
+<area shape="rect" id="Node000009" href="$class_code_1_1_scripts_1_1_enemies_1_1_invis_behaviour.html" title="Invis behaivour of the invis (purple) enemy." alt="" coords="396,297,577,340"/>
+<area shape="poly" id="edge31_Node000005_Node000009" title=" " alt="" coords="348,298,396,304,396,310,347,303"/>
+<area shape="rect" id="Node000010" href="$class_code_1_1_scripts_1_1_enemies_1_1_kamikaze_behaviour.html" title="Invis behaivour of the kamikaze (yellow) enemy." alt="" coords="380,364,593,407"/>
+<area shape="poly" id="edge32_Node000005_Node000010" title=" " alt="" coords="319,302,333,308,348,319,358,329,367,340,381,350,406,361,403,366,379,354,364,344,354,333,345,323,331,313,316,307"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour.html" title="Behaivour of the rocket (blue) enemy." alt="" coords="641,164,838,207"/>
+<area shape="poly" id="edge29_Node000006_Node000007" title=" " alt="" coords="596,183,641,183,641,188,596,188"/>
+</map>

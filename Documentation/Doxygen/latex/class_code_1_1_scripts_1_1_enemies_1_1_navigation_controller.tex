@@ -1,0 +1,132 @@
+\doxysection{Code.\+Scripts.\+Enemies.\+Navigation\+Controller Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller}{}\label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller}\index{Code.Scripts.Enemies.NavigationController@{Code.Scripts.Enemies.NavigationController}}
+
+
+Utility which provides navigation functionality to a 2D character.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Enemies.\+Navigation\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Enemies.\+Navigation\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=241pt]{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_af45eea26158c54cc2f3d6a0fcae8eca6}\label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_af45eea26158c54cc2f3d6a0fcae8eca6} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aca4fe3728c030b44886cffff20e5f1f4}{\+\_\+\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Process function that moves the character towards the target position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_abec8534847f776beb45992ee45866dbe}{Move\+Towards\+Vector}} (Vector2 target)
+\begin{DoxyCompactList}\small\item\em Moves the character towards a target position, lerping the rotation to create a smooth movement. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aac1ca7a4b1ae9c394727fbbd0d696464}{Navigate\+Towards}} (Vector2 target)
+\begin{DoxyCompactList}\small\item\em Sets the target position for the character to move towards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_a04b140881f4c7ca75a86309748d8ae86}\label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_a04b140881f4c7ca75a86309748d8ae86} 
+Character\+Body2D {\bfseries Character\+Body}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_ab64f621ab55f115cd26618af8ca6ad9e}\label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_ab64f621ab55f115cd26618af8ca6ad9e} 
+float {\bfseries Movement\+Speed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_a56829cbff13653a6318b855fc42f4a76}\label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_a56829cbff13653a6318b855fc42f4a76} 
+float {\bfseries Rotation\+Speed} = 0.\+01f\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_a7372ceda46c4c3bfb872ca8861075e83}\label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_a7372ceda46c4c3bfb872ca8861075e83} 
+bool {\bfseries Is\+Mooving} = true\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Utility which provides navigation functionality to a 2D character. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aca4fe3728c030b44886cffff20e5f1f4}\index{Code.Scripts.Enemies.NavigationController@{Code.Scripts.Enemies.NavigationController}!\_Process@{\_Process}}
+\index{\_Process@{\_Process}!Code.Scripts.Enemies.NavigationController@{Code.Scripts.Enemies.NavigationController}}
+\doxysubsubsection{\texorpdfstring{\_Process()}{\_Process()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aca4fe3728c030b44886cffff20e5f1f4} 
+override void Code.\+Scripts.\+Enemies.\+Navigation\+Controller.\+\_\+\+Process (\begin{DoxyParamCaption}\item[{double}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+Process function that moves the character towards the target position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aca4fe3728c030b44886cffff20e5f1f4_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_abec8534847f776beb45992ee45866dbe}\index{Code.Scripts.Enemies.NavigationController@{Code.Scripts.Enemies.NavigationController}!MoveTowardsVector@{MoveTowardsVector}}
+\index{MoveTowardsVector@{MoveTowardsVector}!Code.Scripts.Enemies.NavigationController@{Code.Scripts.Enemies.NavigationController}}
+\doxysubsubsection{\texorpdfstring{MoveTowardsVector()}{MoveTowardsVector()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_abec8534847f776beb45992ee45866dbe} 
+void Code.\+Scripts.\+Enemies.\+Navigation\+Controller.\+Move\+Towards\+Vector (\begin{DoxyParamCaption}\item[{Vector2}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Moves the character towards a target position, lerping the rotation to create a smooth movement. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_abec8534847f776beb45992ee45866dbe_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aac1ca7a4b1ae9c394727fbbd0d696464}\index{Code.Scripts.Enemies.NavigationController@{Code.Scripts.Enemies.NavigationController}!NavigateTowards@{NavigateTowards}}
+\index{NavigateTowards@{NavigateTowards}!Code.Scripts.Enemies.NavigationController@{Code.Scripts.Enemies.NavigationController}}
+\doxysubsubsection{\texorpdfstring{NavigateTowards()}{NavigateTowards()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aac1ca7a4b1ae9c394727fbbd0d696464} 
+void Code.\+Scripts.\+Enemies.\+Navigation\+Controller.\+Navigate\+Towards (\begin{DoxyParamCaption}\item[{Vector2}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Sets the target position for the character to move towards. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller_aac1ca7a4b1ae9c394727fbbd0d696464_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Enemies/Navigation\+Controller.\+cs\end{DoxyCompactItemize}

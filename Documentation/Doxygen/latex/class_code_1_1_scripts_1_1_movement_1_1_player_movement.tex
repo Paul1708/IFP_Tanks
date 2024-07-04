@@ -1,0 +1,136 @@
+\doxysection{Code.\+Scripts.\+Movement.\+Player\+Movement Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement}{}\label{class_code_1_1_scripts_1_1_movement_1_1_player_movement}\index{Code.Scripts.Movement.PlayerMovement@{Code.Scripts.Movement.PlayerMovement}}
+
+
+The player movement script. Handles the movement of the player and the gun.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Movement.\+Player\+Movement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_code_1_1_scripts_1_1_movement_1_1_player_movement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Movement.\+Player\+Movement\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{class_code_1_1_scripts_1_1_movement_1_1_player_movement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_ac7f0eacf35fc718ef18a64b0bf5fd64e}\label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_ac7f0eacf35fc718ef18a64b0bf5fd64e} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a8b0fd95f656a3ea098eceb86f594aec7}{\+\_\+\+Physics\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Get the input from the player and set the velocity accordingly and rotate the gun. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a73eae6d02d005b69440447fa3a09220d}\label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a73eae6d02d005b69440447fa3a09220d} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a93a6a1fe078f5ac3f9452cb70a0cadf7}\label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a93a6a1fe078f5ac3f9452cb70a0cadf7} 
+void {\bfseries Get\+Input} ()
+\begin{DoxyCompactList}\small\item\em Get the input from the player and set the velocity accordingly. \end{DoxyCompactList}\item 
+Vector2 \mbox{\hyperlink{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a747465a82c0f5efa95b6e470bcd49e59}{Calculate\+Velocity}} (Vector2 move\+Input)
+\begin{DoxyCompactList}\small\item\em Calculate the velocity of the player based on the input. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a5c1788e27750efd122069679d5de9331}{Is\+Moving}} ()
+\begin{DoxyCompactList}\small\item\em Check if the player is moving. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_ac45f08145001a7703e5d47c30dac6861}\label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_ac45f08145001a7703e5d47c30dac6861} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_trail_component}{Trail\+Component}} {\bfseries Trail\+Component}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a00b523bae3c8a342004e051be1f9fc29}\label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a00b523bae3c8a342004e051be1f9fc29} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller}{Gun\+Controller}} {\bfseries Gun}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a50ec457cbd207f60137de77c5889f125}\label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a50ec457cbd207f60137de77c5889f125} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_animation_handler}{Animation\+Handler}} {\bfseries Animation\+Handler}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The player movement script. Handles the movement of the player and the gun. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a8b0fd95f656a3ea098eceb86f594aec7}\index{Code.Scripts.Movement.PlayerMovement@{Code.Scripts.Movement.PlayerMovement}!\_PhysicsProcess@{\_PhysicsProcess}}
+\index{\_PhysicsProcess@{\_PhysicsProcess}!Code.Scripts.Movement.PlayerMovement@{Code.Scripts.Movement.PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{\_PhysicsProcess()}{\_PhysicsProcess()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a8b0fd95f656a3ea098eceb86f594aec7} 
+override void Code.\+Scripts.\+Movement.\+Player\+Movement.\+\_\+\+Physics\+Process (\begin{DoxyParamCaption}\item[{double}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+Get the input from the player and set the velocity accordingly and rotate the gun. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & \\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a8b0fd95f656a3ea098eceb86f594aec7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a747465a82c0f5efa95b6e470bcd49e59}\index{Code.Scripts.Movement.PlayerMovement@{Code.Scripts.Movement.PlayerMovement}!CalculateVelocity@{CalculateVelocity}}
+\index{CalculateVelocity@{CalculateVelocity}!Code.Scripts.Movement.PlayerMovement@{Code.Scripts.Movement.PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{CalculateVelocity()}{CalculateVelocity()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a747465a82c0f5efa95b6e470bcd49e59} 
+Vector2 Code.\+Scripts.\+Movement.\+Player\+Movement.\+Calculate\+Velocity (\begin{DoxyParamCaption}\item[{Vector2}]{move\+Input}{}\end{DoxyParamCaption})}
+
+
+
+Calculate the velocity of the player based on the input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+Input} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a747465a82c0f5efa95b6e470bcd49e59_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a5c1788e27750efd122069679d5de9331}\index{Code.Scripts.Movement.PlayerMovement@{Code.Scripts.Movement.PlayerMovement}!IsMoving@{IsMoving}}
+\index{IsMoving@{IsMoving}!Code.Scripts.Movement.PlayerMovement@{Code.Scripts.Movement.PlayerMovement}}
+\doxysubsubsection{\texorpdfstring{IsMoving()}{IsMoving()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a5c1788e27750efd122069679d5de9331} 
+bool Code.\+Scripts.\+Movement.\+Player\+Movement.\+Is\+Moving (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Check if the player is moving. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_movement_1_1_player_movement_a5c1788e27750efd122069679d5de9331_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Movement/Player\+Movement.\+cs\end{DoxyCompactItemize}

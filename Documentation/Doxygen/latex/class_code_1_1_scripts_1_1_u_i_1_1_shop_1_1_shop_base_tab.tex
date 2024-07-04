@@ -1,0 +1,117 @@
+\doxysection{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab}{}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab}\index{Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}}
+
+
+Base class for all shop tabs. Contains methods to get price tags and parse prices from them.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Label \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a8c1da1b8e94bc122d4dec7d782d344ed}{Get\+Price\+Tag\+By\+Panel}} (int panel\+Number)
+\begin{DoxyCompactList}\small\item\em get all price tags from the scene by their path that only differs in the Panel number \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a7f6a1833399472bad539beb5c0a45c7c}{Parse\+Price}} (int panel\+Number)
+\begin{DoxyCompactList}\small\item\em Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a9e174b5263f9084c615fe5eb83ac8c77}{Reset\+Scroll\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em sets the Scollbar to default by stetting the value to 0 \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_af2fda5d070f9be782a3621531b273fca}{Scroll}} ()
+\begin{DoxyCompactList}\small\item\em Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a1c3d0b0815b186bef9f43570b2cec923}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a1c3d0b0815b186bef9f43570b2cec923} 
+const string {\bfseries Price\+Tag\+Path\+Format} = "{}Rich\+Text\+Label/Control/Panel\{0\}/Price\+Tag"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all shop tabs. Contains methods to get price tags and parse prices from them. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a8c1da1b8e94bc122d4dec7d782d344ed}\index{Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}!GetPriceTagByPanel@{GetPriceTagByPanel}}
+\index{GetPriceTagByPanel@{GetPriceTagByPanel}!Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}}
+\doxysubsubsection{\texorpdfstring{GetPriceTagByPanel()}{GetPriceTagByPanel()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a8c1da1b8e94bc122d4dec7d782d344ed} 
+Label Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab.\+Get\+Price\+Tag\+By\+Panel (\begin{DoxyParamCaption}\item[{int}]{panel\+Number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+get all price tags from the scene by their path that only differs in the Panel number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel\+Number} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a7f6a1833399472bad539beb5c0a45c7c}\index{Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}!ParsePrice@{ParsePrice}}
+\index{ParsePrice@{ParsePrice}!Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}}
+\doxysubsubsection{\texorpdfstring{ParsePrice()}{ParsePrice()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a7f6a1833399472bad539beb5c0a45c7c} 
+int Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab.\+Parse\+Price (\begin{DoxyParamCaption}\item[{int}]{panel\+Number}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em panel\+Number} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a9e174b5263f9084c615fe5eb83ac8c77}\index{Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}!ResetScrollBar@{ResetScrollBar}}
+\index{ResetScrollBar@{ResetScrollBar}!Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}}
+\doxysubsubsection{\texorpdfstring{ResetScrollBar()}{ResetScrollBar()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a9e174b5263f9084c615fe5eb83ac8c77} 
+virtual void Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab.\+Reset\+Scroll\+Bar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+sets the Scollbar to default by stetting the value to 0 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_ae69e731a2c7cd9d0eac4b9d6ec55543b}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Stats\+Tab}}, and \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a4d2499de69dd432ccd387c47e003075e}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Weapons\+Tab}}.
+
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_af2fda5d070f9be782a3621531b273fca}\index{Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}!Scroll@{Scroll}}
+\index{Scroll@{Scroll}!Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}}
+\doxysubsubsection{\texorpdfstring{Scroll()}{Scroll()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_af2fda5d070f9be782a3621531b273fca} 
+virtual void Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab.\+Scroll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_a0f119579ef8e9f1d07b7b0c35f8f2303}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Stats\+Tab}}, and \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a0c547e50a4aa2761b8cd643f7ccec2f3}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Weapons\+Tab}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+UI/\+Shop/Shop\+Base\+Tab.\+cs\end{DoxyCompactItemize}

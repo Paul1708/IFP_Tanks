@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank" xml:lang="en-US">
+<title>Code.Scripts.Environment.MainMenuDummyTank Class Reference</title>
+<indexterm><primary>Code.Scripts.Environment.MainMenuDummyTank</primary></indexterm>
+<para>
+
+<para>Controls the dummy tank in the main menu. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Environment.MainMenuDummyTank:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Environment.MainMenuDummyTank:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank_1afefcde8b1778cc8ddecdeab3665e12af"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank_1ac621d4a1f385672ed6b20d86d15a8d08">_Process</link> (double delta)</para>
+
+<para>Rotates the tank towards the mouse position and navigates towards it. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank_1a8177739b049985987e1c62c549fd1748"/><link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller">NavigationController</link> <emphasis role="strong">NavigationController</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the dummy tank in the main menu. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank_1ac621d4a1f385672ed6b20d86d15a8d08"/><section>
+    <title>_Process()</title>
+<indexterm><primary>_Process</primary><secondary>Code.Scripts.Environment.MainMenuDummyTank</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Environment.MainMenuDummyTank</primary><secondary>_Process</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Environment.MainMenuDummyTank._Process (double delta)</computeroutput></para><para>
+
+<para>Rotates the tank towards the mouse position and navigates towards it. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank_ac621d4a1f385672ed6b20d86d15a8d08_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Environment/MainMenuDummyTank.cs</section>
+</section>

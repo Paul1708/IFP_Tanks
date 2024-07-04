@@ -1,0 +1,217 @@
+\doxysection{Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet}{}\label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet}\index{Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}}
+
+
+Controls the bouncing bullet.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_ae9486d761b6955464b60322a57d642c8}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the bullet and emits particles. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_aca8209ba069905c476fca8b56c25d8a7}{On\+Damageable\+Hit}} (Node node)
+\begin{DoxyCompactList}\small\item\em Collides with a damageable node and deals damage to it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548}{On\+Collision}} (Node node)
+\begin{DoxyCompactList}\small\item\em Called when the bullet collides with another node. Calls the appropriate method for the collision type. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182}{\+\_\+\+Physics\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Call move method on every physics process tick and check for collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a247342e3ee4c88f4b2baf88fcf72ff31}{Setup}} ()
+\begin{DoxyCompactList}\small\item\em Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. \end{DoxyCompactList}\item 
+override Node \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a5a87e72b21cb934c219a33db598a2779}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Moves the bullet forward. When it hits a wall, calls Bounce\+Of\+Wall. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a7bdcf30e5cf6256e2d1226a30eaf940c}{On\+Anything\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits anything. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a246250f0908199b9c80291a2de0d0443}{On\+Other\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the bullet when it hits anything other than a damageable node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries On\+Wall\+Hit} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits a wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a2b907781a9bb16daf816a0cc5fb324cc}\label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a2b907781a9bb16daf816a0cc5fb324cc} 
+int {\bfseries Max\+Bounces}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries Damage}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Node2D {\bfseries Shooter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float {\bfseries Speed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+Node2D {\bfseries Player}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component}{Health\+Component}} {\bfseries Player\+Health\+Component}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_particle_controller}{Particle\+Controller}} {\bfseries Particles}
+\item 
+Vector2 {\bfseries Normal\+Collision\+Vector}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the bouncing bullet. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_ae9486d761b6955464b60322a57d642c8}\index{Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_ae9486d761b6955464b60322a57d642c8} 
+override void Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet.\+Destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroys the bullet and emits particles. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_ae9486d761b6955464b60322a57d642c8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_ae9486d761b6955464b60322a57d642c8_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a5a87e72b21cb934c219a33db598a2779}\index{Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}!Move@{Move}}
+\index{Move@{Move}!Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a5a87e72b21cb934c219a33db598a2779} 
+override Node Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet.\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Moves the bullet forward. When it hits a wall, calls Bounce\+Of\+Wall. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a7bdcf30e5cf6256e2d1226a30eaf940c}\index{Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}!OnAnythingHit@{OnAnythingHit}}
+\index{OnAnythingHit@{OnAnythingHit}!Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}}
+\doxysubsubsection{\texorpdfstring{OnAnythingHit()}{OnAnythingHit()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a7bdcf30e5cf6256e2d1226a30eaf940c} 
+override void Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet.\+On\+Anything\+Hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called when the bullet hits anything. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_aca8209ba069905c476fca8b56c25d8a7}\index{Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}!OnDamageableHit@{OnDamageableHit}}
+\index{OnDamageableHit@{OnDamageableHit}!Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}}
+\doxysubsubsection{\texorpdfstring{OnDamageableHit()}{OnDamageableHit()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_aca8209ba069905c476fca8b56c25d8a7} 
+override void Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet.\+On\+Damageable\+Hit (\begin{DoxyParamCaption}\item[{Node}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Collides with a damageable node and deals damage to it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_aca8209ba069905c476fca8b56c25d8a7_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a246250f0908199b9c80291a2de0d0443}\index{Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}!OnOtherHit@{OnOtherHit}}
+\index{OnOtherHit@{OnOtherHit}!Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}}
+\doxysubsubsection{\texorpdfstring{OnOtherHit()}{OnOtherHit()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a246250f0908199b9c80291a2de0d0443} 
+override void Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet.\+On\+Other\+Hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Destroys the bullet when it hits anything other than a damageable node. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a246250f0908199b9c80291a2de0d0443_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a247342e3ee4c88f4b2baf88fcf72ff31}\index{Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}!Setup@{Setup}}
+\index{Setup@{Setup}!Code.Scripts.Weapons.BouncingBullet@{Code.Scripts.Weapons.BouncingBullet}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a247342e3ee4c88f4b2baf88fcf72ff31} 
+override void Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet.\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a6918edb299b9f904812786a56c280ea4}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Weapons/Bouncing\+Bullet.\+cs\end{DoxyCompactItemize}

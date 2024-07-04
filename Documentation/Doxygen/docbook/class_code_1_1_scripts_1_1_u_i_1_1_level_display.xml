@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display" xml:lang="en-US">
+<title>Code.Scripts.UI.LevelDisplay Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.LevelDisplay</primary></indexterm>
+<para>
+
+<para>Dynamically shows the levels of the current world anr their states. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.LevelDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_level_display__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.LevelDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_level_display__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1a1b6430dc9c15ddcadbb9bf083c3ecb8d">RenderLevelDisplay</link> (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data">LevelData</link>[] levels)</para>
+
+<para>Renders the level display based on the levels and their states. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1af17e785f5cb390139cf8915678ef5723"/>Texture2D <emphasis role="strong">BasicCompleted</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/LevelIndicators/BasicCompleted.png&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1a28fe06e7edd011b09c0c7c1cc88b30ca"/>Texture2D <emphasis role="strong">BasicCurrent</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/LevelIndicators/BasicCurrent.png&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1a4e952a882a3303ad4878472849a86f3a"/>Texture2D <emphasis role="strong">BasicLocked</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/LevelIndicators/BasicLocked.png&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1aeac9ab9a575d4b2b8ffd77f538bff276"/>Texture2D <emphasis role="strong">CheckpointCompleted</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/LevelIndicators/CheckpointCompleted.png&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1aaa3918cd39ffb08869f90eee5703a5f0"/>Texture2D <emphasis role="strong">CheckpointCurrent</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/LevelIndicators/CheckpointCurrent.png&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1a0f3b73fe57ceb079111512ef9d2a8e88"/>Texture2D <emphasis role="strong">CheckpointLocked</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/LevelIndicators/CheckpointLocked.png&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Dynamically shows the levels of the current world anr their states. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_display_1a1b6430dc9c15ddcadbb9bf083c3ecb8d"/><section>
+    <title>RenderLevelDisplay()</title>
+<indexterm><primary>RenderLevelDisplay</primary><secondary>Code.Scripts.UI.LevelDisplay</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.LevelDisplay</primary><secondary>RenderLevelDisplay</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.LevelDisplay.RenderLevelDisplay (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data">LevelData</link>[] levels)</computeroutput></para><para>
+
+<para>Renders the level display based on the levels and their states. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>levels</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/LevelDisplay.cs</section>
+</section>

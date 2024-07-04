@@ -1,0 +1,296 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager" xml:lang="en-US">
+<title>Code.Scripts.Managers.CoinManager Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.CoinManager</primary></indexterm>
+<para>
+
+<para>Manager class that handles the coins of the player. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.CoinManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.CoinManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1ac20b377022573a18929850cc512a900a"/>delegate void <emphasis role="strong">OnCoinChangedEventHandler</emphasis> (int coins)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a47a56ba88edc0b994547728b040dcf22"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a545972b39046ba8a7f5f1359087e5c40"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a032f6f49e57ef558c96c56b29f620ffb">OnSaveDataLoaded</link> (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> saveData)</para>
+
+<para>Method that will be called when the SaveData is loaded. It will set the Coins to the value of the SaveData. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1adfd3987d34cc72928b39a04db1646f67">AddCoins</link> (int value)</para>
+
+<para>Method to add coins to the player. If the value is less than 0, the method will return without doing anything. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a7b86e9844913d83159f6fb46c45dca53">RemoveCoins</link> (int value)</para>
+
+<para>Method to remove coins from the player If the value is less than 0, the method will return without doing anything. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a02ccff53c7fb1dddedabef28e723b70d">SetCoins</link> (int value)</para>
+
+<para>Method to set the Coins to a specific value and emit the OnCoinChanged signal. If the value is less than 0, the Coins will be set to 0. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a7c63c5ca166097ac4eccb97663d0bca6"/>void <emphasis role="strong">ResetCoins</emphasis> ()</para>
+
+<para>Method to reset the Coins to default values (0) </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a7ad7120af0c005339eed5c30c072879b">CheckIfEnoughCoins</link> (int value)</para>
+
+<para>Method to check if the player has more or equal coins to the value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1ae0a6212cdcd71a1829563a671878fc8d"/>static <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager">CoinManager</link> <emphasis role="strong">Instance</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a0c260009367e481fd00aa7bdf84994cb"/>int <emphasis role="strong">Coins</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manager class that handles the coins of the player. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1adfd3987d34cc72928b39a04db1646f67"/><section>
+    <title>AddCoins()</title>
+<indexterm><primary>AddCoins</primary><secondary>Code.Scripts.Managers.CoinManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.CoinManager</primary><secondary>AddCoins</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.CoinManager.AddCoins (int value)</computeroutput></para><para>
+
+<para>Method to add coins to the player. If the value is less than 0, the method will return without doing anything. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager_adfd3987d34cc72928b39a04db1646f67_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager_adfd3987d34cc72928b39a04db1646f67_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a7ad7120af0c005339eed5c30c072879b"/><section>
+    <title>CheckIfEnoughCoins()</title>
+<indexterm><primary>CheckIfEnoughCoins</primary><secondary>Code.Scripts.Managers.CoinManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.CoinManager</primary><secondary>CheckIfEnoughCoins</secondary></indexterm>
+<para><computeroutput>bool Code.Scripts.Managers.CoinManager.CheckIfEnoughCoins (int value)</computeroutput></para><para>
+
+<para>Method to check if the player has more or equal coins to the value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7ad7120af0c005339eed5c30c072879b_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a032f6f49e57ef558c96c56b29f620ffb"/><section>
+    <title>OnSaveDataLoaded()</title>
+<indexterm><primary>OnSaveDataLoaded</primary><secondary>Code.Scripts.Managers.CoinManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.CoinManager</primary><secondary>OnSaveDataLoaded</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.CoinManager.OnSaveDataLoaded (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> saveData)</computeroutput></para><para>
+
+<para>Method that will be called when the SaveData is loaded. It will set the Coins to the value of the SaveData. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>saveData</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a032f6f49e57ef558c96c56b29f620ffb_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a7b86e9844913d83159f6fb46c45dca53"/><section>
+    <title>RemoveCoins()</title>
+<indexterm><primary>RemoveCoins</primary><secondary>Code.Scripts.Managers.CoinManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.CoinManager</primary><secondary>RemoveCoins</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.CoinManager.RemoveCoins (int value)</computeroutput></para><para>
+
+<para>Method to remove coins from the player If the value is less than 0, the method will return without doing anything. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7b86e9844913d83159f6fb46c45dca53_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7b86e9844913d83159f6fb46c45dca53_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager_1a02ccff53c7fb1dddedabef28e723b70d"/><section>
+    <title>SetCoins()</title>
+<indexterm><primary>SetCoins</primary><secondary>Code.Scripts.Managers.CoinManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.CoinManager</primary><secondary>SetCoins</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.CoinManager.SetCoins (int value)</computeroutput></para><para>
+
+<para>Method to set the Coins to a specific value and emit the OnCoinChanged signal. If the value is less than 0, the Coins will be set to 0. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a02ccff53c7fb1dddedabef28e723b70d_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/CoinManager.cs</section>
+</section>
