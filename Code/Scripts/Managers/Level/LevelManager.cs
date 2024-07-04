@@ -139,7 +139,7 @@ public partial class LevelManager : Node2D
     /// <summary>
     /// Called when the save data is loaded. Loads the level and restores the level states.
     /// </summary>
-    /// <param name="saveData"></param>
+    /// <param name="saveData">The save data that is loaded</param>
     private async void OnSaveDataLoaded(SaveData saveData)
     {
         // Set the current level to saved data
@@ -193,9 +193,9 @@ public partial class LevelManager : Node2D
     /// <summary>
     /// Loads the level by the input world and level IDs.
     /// </summary>
-    /// <param name="newWorldId"></param>
-    /// <param name="newLevelId"></param>
-    /// <returns></returns>
+    /// <param name="newWorldId">The world ID of the level to load</param>
+    /// <param name="newLevelId">The level ID of the level to load</param>
+    /// <returns name="Task">The task that loads the level</returns>
     private async Task LoadLevelById(int newWorldId, int newLevelId)
     {
         if (CurrentLevelInstance != null)

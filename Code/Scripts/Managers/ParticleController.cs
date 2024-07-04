@@ -24,8 +24,8 @@ public partial class ParticleController : Node2D
 	/// <summary>
 	/// Sets the position of the particle system to the position of the given opject
 	/// </summary>
-	/// <param name="particles"></param>
-	/// <param name="position"></param>
+	/// <param name="particles">The particle scene</param>
+	/// <param name="position">The position to set the particle scene to</param>
 	private static void SetPostion(GpuParticles2D particles, Node2D position)
 	{
 		particles.GlobalPosition = position.GlobalPosition;
@@ -33,8 +33,8 @@ public partial class ParticleController : Node2D
 	/// <summary>
 	/// Checks if the given particle scene is set to OneShot
 	/// </summary>
-	/// <param name="particles"></param>
-	/// <exception cref="Exception"></exception>
+	/// <param name="particles">The particle scene to check</param>
+	/// <exception cref="Exception">Thrown when the given particle scene is not set to OneShot</exception>
 	private static void CheckForOneShot(GpuParticles2D particles)
 	{
 		if (!particles.OneShot)
@@ -45,8 +45,8 @@ public partial class ParticleController : Node2D
 	/// <summary>
 	/// Sets the rotation of the particle system to the rotation of the given object
 	/// </summary>
-	/// <param name="particles"></param>
-	/// <param name="rotationSource"></param>
+	/// <param name="particles">The particle scene</param>
+	/// <param name="rotationSource">The object to get the rotation from</param>
 	private static void SetRotation(GpuParticles2D particles, Node2D rotationSource)
 	{
 		var material = particles.ProcessMaterial;
@@ -57,8 +57,8 @@ public partial class ParticleController : Node2D
 	/// <summary>
 	/// Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneShot enabled.
 	/// </summary>
-	/// <param name="position"></param>
-	/// <param name="scene"></param>
+	/// <param name="position">The node to get the position from</param>
+	/// <param name="scene">The particle scene to emitt</param>
 	public async void EmitParticles(Node2D position, PackedScene scene)
 	{
 		//create a new instance of the given particle scene
@@ -81,8 +81,8 @@ public partial class ParticleController : Node2D
 	/// <summary>
 	/// Emitts the chosen particle scene at the given vector2 locataion. The particle scene needs to have OneShot enabled.
 	/// </summary>
-	/// <param name="position"></param>
-	/// <param name="scene"></param>
+	/// <param name="position">The position to emitt the particles at</param>
+	/// <param name="scene">The particle scene to emitt</param>
 	public async void EmitParticles(Vector2 position, PackedScene scene)
 	{
 		//create a new instance of the given particle scene

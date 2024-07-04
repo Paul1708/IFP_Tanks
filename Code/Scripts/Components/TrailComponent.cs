@@ -49,7 +49,7 @@ public partial class TrailComponent : Node2D
     /// <summary>
     /// Returns the scene that should be used for the current world
     /// </summary>
-    /// <returns></returns>
+    /// <returns name="PackedScene">The trail scene that should be used for the current world</returns>
     private PackedScene GetSceneForWorld()
     {
         int worldId = _levelManager.CurrentWorldId;
@@ -75,7 +75,7 @@ public partial class TrailComponent : Node2D
     /// <summary>
     /// Emits particles for all the chains
     /// </summary>
-    /// <param name="scene"></param>
+    /// <param name="scene">The scene that should be emitted</param>
     private void EmitParticlesForAllChains(PackedScene scene)
     {
         _particles.EmitParticles(_leftChain1, scene);

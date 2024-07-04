@@ -70,7 +70,7 @@ public partial class InvisBehaviour : Behaviour
 	/// <summary>
 	/// Checks if the player is in the line of sight of the enemy by casting a ray from the enemy to the player.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns name="bool">True if the player is in sight, false otherwise</returns>
 	protected bool _checkIfPlayerInSight()
 	{
 		var spaceState = GetWorld2D().DirectSpaceState;
@@ -93,7 +93,7 @@ public partial class InvisBehaviour : Behaviour
 	/// Get all RIDs of objects that should be excluded from the raycast.
 	/// This includes the player, enemies, coins and bullets.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns name="Array<Rid>">An array of Rids of the objects to exclude from the raycast</returns>
 	private Array<Rid> _getExcludedObjects()
 	{
 		Array<Rid> a = new Array<Rid>(new [] { Enemy.GetRid() });

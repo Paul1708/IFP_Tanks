@@ -25,7 +25,7 @@ public partial class DamageNumberController : Node2D
     /// <summary>
     /// Spawns a new DamageNumber scene with the damage value
     /// </summary>
-    /// <param name="damage"></param>
+    /// <param name="damage">The damage value</param>
     public void SpawnDamageNumber(float damage)
     {
         // Instantiate a new DamageNumber scene and set the text to the damage value

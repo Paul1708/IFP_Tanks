@@ -11,7 +11,7 @@ public partial class AnimationHandler : AnimationPlayer
     /// <summary>
     /// Plays the correct moving animation based on the Vector2 input
     /// </summary>
-    /// <param name="input"></param>
+    /// <param name="input">Player movement input</param>
     public void PlayAnimationOfInput(Vector2 input)
     {
 

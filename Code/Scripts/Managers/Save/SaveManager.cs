@@ -57,7 +57,7 @@ public partial class SaveManager : Node
     /// <summary>
     /// Loads the game. If LoadingType is set to NewGame, a new SaveData object is created and saved. If LoadingType is set to LoadGame, the SaveData object is loaded from the save file.
     /// </summary>
-    /// <exception cref="ValidationException"></exception>
+    /// <exception cref="ValidationException">Thrown when LoadingType is not set.</exception>
     public void LoadGame()
     {
 
@@ -83,7 +83,7 @@ public partial class SaveManager : Node
     /// <summary>
     /// Checks if the save file is available.
     /// </summary>
-    /// <returns></returns>
+    /// <returns name="bool">True if the save file is available, false if not.</returns>
     public bool IsSaveFileAvailable()
     {
         return ResourceLoader.Exists("user://savegame.tres");

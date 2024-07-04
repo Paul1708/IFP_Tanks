@@ -22,7 +22,7 @@ public partial class NavigationController : NavigationAgent2D
 	/// <summary>
 	/// Process function that moves the character towards the target position.
 	/// </summary>
-	/// <param name="delta"></param>
+	/// <param name="delta">The delta time</param>
 	public override void _Process(double delta)
 	{
 		if (IsMooving)
@@ -38,7 +38,7 @@ public partial class NavigationController : NavigationAgent2D
 	/// <summary>
 	/// Moves the character towards a target position, lerping the rotation to create a smooth movement.
 	/// </summary>
-	/// <param name="target"></param>
+	/// <param name="target">The target position</param>
 	public void MoveTowardsVector(Vector2 target)
 	{
 		// Rotate towards the target position
@@ -55,7 +55,7 @@ public partial class NavigationController : NavigationAgent2D
 	/// <summary>
 	/// Sets the target position for the character to move towards.
 	/// </summary>
-	/// <param name="target"></param>
+	/// <param name="target">The target position</param>
 	public void NavigateTowards(Vector2 target)
 	{
 		TargetPosition = target;

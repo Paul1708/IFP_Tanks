@@ -59,7 +59,7 @@ public abstract partial class Behaviour : Node2D
     /// <summary>
     /// Returns a random, reachable target for the enemy to move towards.
     /// </summary>
-    /// <returns></returns>
+    /// <returns name="Vector2">The random target</returns>
     public Vector2 GetRandomTarget()
     {
         Vector2 vector = _createRandomVector();
@@ -76,7 +76,7 @@ public abstract partial class Behaviour : Node2D
     /// <summary>
     /// Creates a random vector.
     /// </summary>
-    /// <returns></returns>
+    /// <returns name="Vector2">The random vector</returns>
     private Vector2 _createRandomVector() //weighted towards players direction
     {
         Random rdm = new Random();
@@ -89,8 +89,8 @@ public abstract partial class Behaviour : Node2D
     /// <summary>
     /// Checks if the target is reachable by the enemy.
     /// </summary>
-    /// <param name="candidate"></param>
-    /// <returns></returns>
+    /// <param name="candidate">The target to check</param>
+    /// <returns name="bool">True if the target is reachable, false otherwise</returns>
     private bool _isValidTarget(Vector2 candidate)
     {
         Vector2 backup = Navigation.TargetPosition;

@@ -33,8 +33,8 @@ public partial class LoadUserPreferences : Node
     /// <summary>
     /// Sets the volume of the bus with the given index to the given value
     /// </summary>
-    /// <param name="busIndex"></param>
-    /// <param name="value"></param>
+    /// <param name="busIndex">The index of the bus to set the volume of</param>
+    /// <param name="value">The value to set the volume to</param>
     public void SetVolume(int busIndex, float value)
 	{
 		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(value));

@@ -28,7 +28,7 @@ public partial class UserPreferences : Resource
     /// <summary>
     /// Loads the UserPreferences from the user://UserPreferences.tres file or creates a new one if it does not exist
     /// </summary>
-    /// <returns></returns>
+    /// <returns name="UserPreferences">The UserPreferences object</returns>
     public static UserPreferences LoadOrCreate()
     {
         UserPreferences userPreferences;

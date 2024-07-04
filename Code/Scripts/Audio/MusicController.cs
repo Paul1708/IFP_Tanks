@@ -11,7 +11,7 @@ namespace Code.Scripts.Audio
 		/// <summary>
 		/// Plays a sound from the the child nodes of the MusicController
 		/// </summary>
-		/// <param name="soundName"></param>
+		/// <param name="soundName">Sound name to be played</param>
 		public void Play(string soundName)
 		{
 			GetNode<AudioStreamPlayer>(soundName).Play();
@@ -20,7 +20,7 @@ namespace Code.Scripts.Audio
 		/// <summary>
 		/// Plays a sound that is used as music from the the child nodes of the MusicController and adds it to the PlayingMusic group
 		/// </summary>
-		/// <param name="musicName"></param>
+		/// <param name="musicName">Music name to be played</param>
 		public void PlayMusic(string musicName)
 		{
 			AudioStreamPlayer music = GetNode<AudioStreamPlayer>(musicName);
@@ -31,7 +31,7 @@ namespace Code.Scripts.Audio
 		/// <summary>
 		/// Plays the music by using "PlayMusic" for the current world by using the world id
 		/// </summary>
-		/// <param name="currentWorldId"></param>
+		/// <param name="currentWorldId">Id of the current world</param>
 		public void PlayWorldMusic(int currentWorldId)
 		{
 			string currentWorld = currentWorldId.ToString();
@@ -57,7 +57,7 @@ namespace Code.Scripts.Audio
 	}
 
 	/// <summary>
-	/// Struct that contains all the music names
+	/// Struct that contains all the sound and music names
 	/// </summary>
 	struct Sound
 	{
