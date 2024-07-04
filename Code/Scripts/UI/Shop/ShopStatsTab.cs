@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Data struct which holds the name, list index, price, price tag, and quantity of a stat
+/// </summary>
 public struct Stat
 {
 	public string Name;
@@ -19,6 +22,9 @@ public struct Stat
 	}
 }
 
+/// <summary>
+/// Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought stats.
+/// </summary>
 public partial class ShopStatsTab : ShopBaseTab
 {
 	private HScrollBar _hScrollBar;

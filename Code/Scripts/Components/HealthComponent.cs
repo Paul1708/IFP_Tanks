@@ -3,6 +3,9 @@ using Godot;
 
 namespace Code.Scripts.Components;
 
+/// <summary>
+/// Component that handles the health of an entity
+/// </summary>
 public partial class HealthComponent : Node2D
 {
 

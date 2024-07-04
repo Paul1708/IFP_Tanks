@@ -5,6 +5,9 @@ using Code.Scripts.Audio;
 
 namespace Code.Scripts.Environment;
 
+/// <summary>
+/// Coin class which handles the coin collection and movement
+/// </summary>
 public partial class Coin : Area2D
 {
 	[Export] public int CoinValue { get; set; } = 1;

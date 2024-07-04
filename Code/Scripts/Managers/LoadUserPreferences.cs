@@ -2,6 +2,10 @@ using Godot;
 using Code.Scripts.Managers.Save;
 
 namespace Code.Scripts.Managers;
+
+/// <summary>
+/// Loads the user preferences and sets the window mode and volume accordingly
+/// </summary>
 public partial class LoadUserPreferences : Node
 {
 

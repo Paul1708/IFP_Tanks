@@ -5,6 +5,9 @@ using Code.Scripts.UI.Shop;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Custom control class for the level countdown, which handles the countdown before the level starts
+/// </summary>
 public partial class LevelCountdown : Control
 {
 	public Timer CountdownTimer;

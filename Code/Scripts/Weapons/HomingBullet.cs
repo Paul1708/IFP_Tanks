@@ -6,6 +6,9 @@ using Godot;
 
 namespace Code.Scripts.Weapons;
 
+/// <summary>
+/// Controls the homing bullet
+/// </summary>
 public partial class HomingBullet : Bullet
 {
 
@@ -27,13 +30,20 @@ public partial class HomingBullet : Bullet
         _targetEnemy = TargetNode is Enemy;
     }
 
+    /// <summary>
+    /// Destroys the bullet and emits particles
+    /// </summary>
     public override void Destroy()
     {
         MusicController.Play(Sound.RocketExplosion);
         Particles.EmitParticles(this, Scene.Explosion);
         QueueFree();
     }
-    
+
+    /// <summary>
+    /// Calculates the new direction of the bullet
+    /// </summary>
+    /// <returns></returns>
     protected override Node Move()
     {
         //If the target is null, then abort launching bullet
@@ -43,7 +53,7 @@ public partial class HomingBullet : Bullet
             QueueFree();
             return null;
         }
-        
+
         _target = TargetNode.GlobalPosition;
         if (_ticksPassed == Uninitialised)
         {
@@ -70,6 +80,9 @@ public partial class HomingBullet : Bullet
         return null;
     }
 
+    /// <summary>
+    /// Moves the bullet in the calculated direction
+    /// </summary>
     private void MoveProjectile()
     {
         Rotation = TargetDirection.Angle();
@@ -86,6 +99,9 @@ public partial class HomingBullet : Bullet
         }
     }
 
+    /// <summary>
+    /// Initialises the target direction of the bullet
+    /// </summary>
     private void _initTargetDirection()
     {
         if (_targetEnemy)

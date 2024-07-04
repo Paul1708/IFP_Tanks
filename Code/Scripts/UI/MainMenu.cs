@@ -3,6 +3,10 @@ using Code.Scripts.Managers.Save;
 using Godot;
 
 namespace Code.Scripts.UI;
+
+/// <summary>
+/// Controls the main menu
+/// </summary>
 public partial class MainMenu : Control
 {
 	[Export]

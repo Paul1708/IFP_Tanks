@@ -2,6 +2,9 @@ using Godot;
 
 namespace Code.Scripts.Managers.Save;
 
+/// <summary>
+/// Manages saveing and loading of user preferences/settings
+/// </summary>
 [GlobalClass]
 public partial class UserPreferences : Resource
 {

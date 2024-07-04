@@ -16,6 +16,9 @@ struct Scene
 	public static readonly PackedScene Fireworks = ResourceLoader.Load<PackedScene>("res://Scenes/Enviroment/Particles/Fireworks.tscn");
 }
 
+/// <summary>
+/// Controller for emitting particles
+/// </summary>
 public partial class ParticleController : Node2D
 {
 	/// <summary>

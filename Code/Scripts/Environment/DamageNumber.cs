@@ -1,6 +1,10 @@
 using Godot;
 
 namespace Code.Scripts.Environment;
+
+/// <summary>
+/// Controls the damage number that appears when an entity takes damage.
+/// </summary>
 public partial class DamageNumber : RigidBody2D
 {
     public string Text { get; set; }
@@ -33,7 +37,10 @@ public partial class DamageNumber : RigidBody2D
             .SetTrans(Tween.TransitionType.Back);
     }
 
-
+    /// <summary>
+    /// Rotates the damage number by a certain amount every frame.
+    /// </summary>
+    /// <param name="delta"></param>
     public override void _PhysicsProcess(double delta)
     {
         // Rotate the damage number

@@ -1,6 +1,9 @@
 using System.Linq;
 using Godot;
 
+/// <summary>
+/// MusicController that plays music and sounds
+/// </summary>
 namespace Code.Scripts.Audio
 {
 	public partial class MusicController : Node

@@ -2,6 +2,9 @@ using Godot;
 
 namespace Code.Scripts.Weapons;
 
+/// <summary>
+/// Controls the laser gun which emits a laser beam
+/// </summary>
 public partial class LaserGun : Bullet
 {
 
@@ -15,12 +18,19 @@ public partial class LaserGun : Bullet
 		_laser.Setup(this);
 	}
 
+	/// <summary>
+	/// Destroys the laser beam
+	/// </summary>
 	public override void Destroy()
 	{
 		_laser.SetActive(false);
 		QueueFree();
 	}
 
+	/// <summary>
+	/// Moves the laser beam along with the player
+	/// </summary>
+	/// <returns></returns>
 	protected override Node Move()
 	{
 		_laser.SetActive(true);

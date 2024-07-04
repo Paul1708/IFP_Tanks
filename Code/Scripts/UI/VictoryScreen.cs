@@ -6,6 +6,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Shows the victory screen when the player wins the game.
+/// </summary>
 public partial class VictoryScreen : Control
 {
 	private LevelManager _levelManager;

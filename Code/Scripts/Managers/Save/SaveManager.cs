@@ -5,6 +5,9 @@ using Godot;
 
 namespace Code.Scripts.Managers.Save;
 
+/// <summary>
+/// Manages the saving and loading of the games progress, player stats, and shop state.
+/// </summary>
 public partial class SaveManager : Node
 {
     [Export]

@@ -6,6 +6,9 @@ using Godot;
 
 namespace Code.Scripts.Weapons;
 
+/// <summary>
+/// Controls the bouncing bullet
+/// </summary>
 public partial class BouncingBullet : Bullet
 {
 	[Export]
@@ -21,12 +24,19 @@ public partial class BouncingBullet : Bullet
 		_bounceTimer.Timeout += () => _canBounce = true;
 	}
 
+	/// <summary>
+	/// Destroys the bullet and emits particles
+	/// </summary>
 	public override void Destroy()
 	{
 		Particles.EmitParticles(this, Scene.BulletCrack);
 		QueueFree();
 	}
 
+	/// <summary>
+	/// Moves the bullet forward. When it hits a wall, calls BounceOfWall
+	/// </summary>
+	/// <returns></returns>
 	protected override Node Move()
 	{
 		var result = MoveAndCollide(LinearVelocity);
@@ -38,7 +48,7 @@ public partial class BouncingBullet : Bullet
 			{
 				if (collider is TileMap && _canBounce)
 					BounceOfWall();
-				
+
 				return collider as Node;
 			}
 		}
@@ -46,6 +56,9 @@ public partial class BouncingBullet : Bullet
 		return null;
 	}
 
+	/// <summary>
+	/// Bounces the bullet off the wall by calculating the new velocity and rotation
+	/// </summary>
 	private void BounceOfWall()
 	{
 		LinearVelocity = LinearVelocity.Bounce(NormalCollisionVector);
@@ -68,17 +81,25 @@ public partial class BouncingBullet : Bullet
 		//Do nothing, so the bullet does not get destroyed
 	}
 
+	/// <summary>
+	/// Collides with a damageable node and deals damage to it
+	/// </summary>
+	/// <param name="node"></param>
 	public override void OnDamageableHit(Node node)
 	{
 		if (node is PlayerMovement)//ignore if the player hit himself
 		{
 			Destroy();
 			return;
-		} 
-		
+		}
+
 		node.GetNode<HealthComponent>("HealthComponent").TakeDamage(Damage);
 		Destroy();
 	}
+
+	/// <summary>
+	/// Destroys the bullet when it hits anything other than a damageable node
+	/// </summary>
 	protected override void OnOtherHit()
 	{
 		Destroy();

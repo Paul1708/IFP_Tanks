@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Shows the health of an enemy
+/// </summary>
 public partial class EnemyHealthBar : Control
 {
     private HealthComponent _hc;
@@ -17,12 +20,19 @@ public partial class EnemyHealthBar : Control
         SetHealth(_hc.CurrentHp);
     }
 
-
+    /// <summary>
+    /// Updates the health label.
+    /// </summary>
+    /// <param name="health"></param>
     public void SetHealth(float health)
     {
         GetNode<Label>("Label").Text = $"{Math.Round(health, 1)}/{_hc.MaxHp}";
     }
 
+    /// <summary>
+    /// Updates the max health label.
+    /// </summary>
+    /// <param name="maxHealth"></param>
     public void SetMaxHealth(float maxHealth)
     {
         GetNode<Label>("Label").Text = $"{Math.Round(_hc.CurrentHp, 1)}/{maxHealth}";

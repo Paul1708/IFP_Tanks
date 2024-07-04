@@ -2,6 +2,9 @@ using Godot;
 
 namespace Code.Scripts.Managers.Level;
 
+/// <summary>
+/// Data class which holds the data of a level
+/// </summary>
 [GlobalClass]
 public partial class LevelData : Resource
 {

@@ -9,6 +9,9 @@ using Godot.Collections;
 
 namespace Code.Scripts.Weapons;
 
+/// <summary>
+/// Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon stats.
+/// </summary>
 public partial class GunController : Node2D
 {
     [Export] public WeaponStats WeaponStats { get; set; }
@@ -46,6 +49,9 @@ public partial class GunController : Node2D
         ShopManager.Instance.OnWeaponEquipped -= SetWeapon;
     }
 
+    /// <summary>
+    /// Sets the weapon stats of the gun controller to the currently equipped weapon.
+    /// </summary>
     public void SetWeapon()
     {
         if (GetParent().IsInGroup("Player"))
@@ -56,11 +62,18 @@ public partial class GunController : Node2D
         }
     }
 
+    /// <summary>
+    /// Rotates the gun towards the target.
+    /// </summary>
+    /// <param name="target"></param>
     public void RotateTowards(Vector2 target)
     {
         LookAt(target);
     }
 
+    /// <summary>
+    /// Shoots a bullet from the gun, if the gun is ready to shoot.
+    /// </summary>
     public void Shoot()
     {
         if (_canShoot)
@@ -81,6 +94,9 @@ public partial class GunController : Node2D
 
     }
 
+    /// <summary>
+    /// Spawns the bullet at the muzzle of the gun, setting its damage, speed and target.
+    /// </summary>
     private void SpawnBullet()
     {
         //create a bullet and set its damage and speed
@@ -110,6 +126,11 @@ public partial class GunController : Node2D
         GetTree().GetFirstNodeInGroup("Level").AddChild(bullet);
     }
 
+    /// <summary>
+    /// Sets the target of the homing bullet to the player, if the owner is an enemy, or to the closest enemy of the mouse, if the owner is the player.
+    /// </summary>
+    /// <param name="bullet"></param>
+    /// <exception cref="ArgumentException"></exception>
     private void _setHomingBulletTarget(HomingBullet bullet)
     {
         Node parent = GetParent();
@@ -132,6 +153,12 @@ public partial class GunController : Node2D
         }
     }
 
+
+    /// <summary>
+    /// Returns the closest enemy to the mouse position.
+    /// </summary>
+    /// <param name="enemies"></param>
+    /// <returns></returns>
     private Node2D _getClosestEnemy(Array<Node> enemies)
     {
         // select enemy which is closest to mouse position

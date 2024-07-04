@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Controls the settings menu
+/// </summary>
 public partial class SettingsMenu : Control
 {
 	protected MusicController MusicController;

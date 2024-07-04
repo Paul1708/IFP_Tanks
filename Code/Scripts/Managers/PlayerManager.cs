@@ -5,6 +5,9 @@ using Code.Scripts.Managers.Save;
 
 namespace Code.Scripts.Managers;
 
+/// <summary>
+/// Manages the player's stats and health
+/// </summary>
 public partial class PlayerManager : Node2D
 {
     public static PlayerManager Instance { get; private set; }

@@ -3,6 +3,9 @@ using Code.Scripts.Managers.Save;
 
 namespace Code.Scripts.Managers;
 
+/// <summary>
+/// Manager class that handles the coins of the player
+/// </summary>
 public partial class CoinManager : Node2D
 {
     public static CoinManager Instance { get; private set; }

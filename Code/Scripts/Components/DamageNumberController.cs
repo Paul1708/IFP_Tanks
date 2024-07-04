@@ -3,6 +3,10 @@ using Code.Scripts.Environment;
 using Godot;
 
 namespace Code.Scripts.Components;
+
+/// <summary>
+/// Controls the spawning of the DamageNumber scene
+/// </summary>
 public partial class DamageNumberController : Node2D
 {
     public PackedScene DamageNumberScene { get; set; }

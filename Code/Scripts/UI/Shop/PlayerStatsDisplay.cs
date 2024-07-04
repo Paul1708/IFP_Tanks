@@ -5,6 +5,10 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+
+/// <summary>
+/// Displays the player stats in the shop.
+/// </summary>
 public partial class PlayerStatsDisplay : Control
 {
     private Label _coinsLabel;

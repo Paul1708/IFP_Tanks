@@ -4,6 +4,9 @@ using Code.Scripts.Movement;
 
 namespace Code.Scripts.Managers.Save;
 
+/// <summary>
+/// Data class which holds the data, which can be saved
+/// </summary>
 [GlobalClass]
 public partial class SaveData : Resource
 {

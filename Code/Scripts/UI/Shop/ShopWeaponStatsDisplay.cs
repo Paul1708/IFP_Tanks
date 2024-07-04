@@ -4,6 +4,9 @@ using Code.Scripts.Managers;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Displays the weapon stats in the shop.
+/// </summary>
 public partial class ShopWeaponStatsDisplay : HBoxContainer
 {
 

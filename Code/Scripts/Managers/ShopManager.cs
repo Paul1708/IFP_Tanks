@@ -7,6 +7,9 @@ using Code.Scripts.Weapons;
 
 namespace Code.Scripts.Managers;
 
+/// <summary>
+/// Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons.
+/// </summary>
 public partial class ShopManager : Node2D
 {
 	[ExportGroup("Weapons")]

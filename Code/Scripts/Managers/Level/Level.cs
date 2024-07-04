@@ -9,10 +9,13 @@ using Code.Scripts.UI.Shop;
 
 namespace Code.Scripts.Managers.Level;
 
+/// <summary>
+/// Manages the level, enemies and coins. Emits signals when the level is completed or failed.
+/// </summary>
 public partial class Level : Node2D
 {
     private bool _startedCoinMovement;
-    private Timer _coinTimer = new ();
+    private Timer _coinTimer = new();
     public ShopMenu ShopMenu;
     public List<Node> Enemies { get; set; }
     [Signal]
@@ -48,6 +51,11 @@ public partial class Level : Node2D
         PlayerManager.Instance.PlayerHealthComponent.OnDeath -= OnPlayerDeath;
     }
 
+
+    /// <summary>
+    /// Called every frame. Checks if all coins are collected and emits the OnCoinsMoved signal if so.
+    /// </summary>
+    /// <param name="delta"></param>
     public override void _Process(double delta)
     {
         // Check if all coins are collected
@@ -140,18 +148,9 @@ public partial class Level : Node2D
 
         foreach (Node coin in coins)
         {
-            if(coin is Coin c)
+            if (coin is Coin c)
                 c.ShouldMove = true;
         }
         _startedCoinMovement = true;
-    }
-
-    public override void _Input(InputEvent @event)
-    {
-        if (Input.IsActionJustPressed("Debug"))
-        {
-            EmitSignal(SignalName.OnCoinsMoved);
-            CoinManager.Instance.AddCoins(10);
-        }
     }
 }

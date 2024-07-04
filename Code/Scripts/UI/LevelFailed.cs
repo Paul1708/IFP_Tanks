@@ -5,6 +5,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Shows the death screen when the player dies.
+/// </summary>
 public partial class LevelFailed : Control
 {
 	private LevelManager _levelManager;

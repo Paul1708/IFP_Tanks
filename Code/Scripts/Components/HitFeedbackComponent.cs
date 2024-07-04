@@ -3,6 +3,9 @@ using Godot;
 
 namespace Code.Scripts.Components;
 
+/// <summary>
+/// Component that handles the flash and size change of the tank when it takes damage.
+/// </summary>
 public partial class HitFeedbackComponent : Node2D
 {
     [Export]

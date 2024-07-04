@@ -7,6 +7,9 @@ using Code.Scripts.UI.Shop;
 
 namespace Code.Scripts.Managers.Level;
 
+/// <summary>
+/// Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure.
+/// </summary>
 public partial class LevelManager : Node2D
 {
     [Export]

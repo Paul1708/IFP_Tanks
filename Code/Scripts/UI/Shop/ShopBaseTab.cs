@@ -2,6 +2,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Base class for all shop tabs. Contains methods to get price tags and parse prices from them.
+/// </summary>
 public abstract partial class ShopBaseTab : TabBar
 {
 	protected const string PriceTagPathFormat = "RichTextLabel/Control/Panel{0}/PriceTag";

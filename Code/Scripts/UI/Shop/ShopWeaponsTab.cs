@@ -5,6 +5,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Data class which holds the weapon stats
+/// </summary>
 public struct Weapon
 {
 	public string Name;
@@ -22,6 +25,9 @@ public struct Weapon
 	}
 }
 
+/// <summary>
+/// Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons.
+/// </summary>
 public partial class ShopWeaponsTab : ShopBaseTab
 {
 	private HScrollBar _hScrollBar;

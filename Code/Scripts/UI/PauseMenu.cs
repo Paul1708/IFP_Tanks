@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Controls the pause menu
+/// </summary>
 public partial class PauseMenu : Control
 {
 	protected MusicController MusicController;
@@ -27,7 +30,10 @@ public partial class PauseMenu : Control
 		Hide(); // Hide the pause menu when the game starts
 	}
 
-	//check if the pause button is pressed and pause or unpause the game
+	/// <summary>
+	/// Fires when the pause button is pressed and shows/hides the pause menu
+	/// </summary>
+	/// <param name="event"></param>
 	public override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("pause") && GetTree().Paused)
@@ -41,7 +47,9 @@ public partial class PauseMenu : Control
 		}
 	}
 
-	//pause the game
+	/// <summary>
+	/// Pause the game and show the pause menu
+	/// </summary>
 	private void Pause()
 	{
 		GetTree().Paused = true;
@@ -56,7 +64,9 @@ public partial class PauseMenu : Control
 		GetNode<AnimationPlayer>("BlurAnimation").Play("StartPause");
 	}
 
-	//unpause the game
+	/// <summary>
+	/// Unpause the game and hide the pause menu
+	/// </summary>
 	private void Unpause()
 	{
 		GetTree().Paused = false;

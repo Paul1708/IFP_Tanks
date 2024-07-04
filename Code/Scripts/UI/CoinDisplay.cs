@@ -3,6 +3,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Updates the coin display label when the coin count changes
+/// </summary>
 public partial class CoinDisplay : TextureRect
 {
 	private Label _coinLabel;
@@ -19,6 +22,10 @@ public partial class CoinDisplay : TextureRect
 		CoinManager.Instance.OnCoinChanged -= ChangeLabel;
 	}
 
+	/// <summary>
+	/// Changes the label to the new coin count
+	/// </summary>
+	/// <param name="coins"></param>
 	public void ChangeLabel(int coins)
 	{
 		_coinLabel.Text = coins.ToString();

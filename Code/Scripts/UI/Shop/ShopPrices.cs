@@ -4,7 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
-//manages the text of the price tags in the shop and calculates the price of the items
+/// <summary>
+/// Manages the text of the price tags in the shop and calculates the price of the items.
+/// </summary>
 public partial class ShopPrices : Label
 {
 	//price is the default price of the item 

@@ -2,6 +2,9 @@
 
 namespace Code.Scripts.Weapons;
 
+/// <summary>
+/// Controls the laser beam, checks for collisions and updates the laser beam particles
+/// </summary>
 public partial class Laser : RayCast2D
 {
 
@@ -25,6 +28,10 @@ public partial class Laser : RayCast2D
         SetActive(false);
     }
 
+    /// <summary>
+    /// Updates the laser beam and particles
+    /// </summary>
+    /// <param name="delta"></param>
     public override void _PhysicsProcess(double delta)
     {
         ForceRaycastUpdate();
@@ -51,6 +58,10 @@ public partial class Laser : RayCast2D
     }
     
 
+    /// <summary>
+    /// Activates or deactivates the laser beam
+    /// </summary>
+    /// <param name="active"></param>
     public void SetActive(bool active)
     {
         _isActive = active;
@@ -60,15 +71,19 @@ public partial class Laser : RayCast2D
         SetPhysicsProcess(_isActive);
     }
 
-    /**
-     * Rotate the drawn laser line along the given angle in radians.
-     */
+     /// <summary>
+     /// Rotates the laser beam along the given angle
+     /// </summary>
     public void MoveLaserRay(float globalRotationAngle)
     {
         GlobalRotation = globalRotationAngle;
         _updateLaserHit();
     }
 
+
+    /// <summary>
+    /// Updates the laser hit point
+    /// </summary>
     private void _updateLaserHit()
     {
         if (IsColliding())

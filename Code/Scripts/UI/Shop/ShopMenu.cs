@@ -5,6 +5,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Custom control class for the shop menu, which handles opening and closing the shop menu
+/// </summary>
 public partial class ShopMenu : Control
 {
 	private AnimationPlayer _animationPlayer;

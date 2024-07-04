@@ -3,6 +3,9 @@ using Godot;
 
 namespace Code.Scripts.Enemies;
 
+/// <summary>
+/// Coordinates health, animation and trail components of an enemy.
+/// </summary>
 public partial class Enemy : CharacterBody2D
 {
 	private TrailComponent _trailComponent;

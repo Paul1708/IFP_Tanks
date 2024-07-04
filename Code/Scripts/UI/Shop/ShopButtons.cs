@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Custom button class for the shop buttons, which sets the text of the button based on the buy status of the weapon/item.
+/// </summary>
 public partial class ShopButtons : Button
 {
 	private LevelManager _levelManager;

@@ -3,6 +3,10 @@ using Godot.Collections;
 
 namespace Code.Scripts.Enemies;
 
+
+/// <summary>
+/// Basic behaivour of the basic (red) enemy.
+/// </summary>
 public partial class BasicBehaviour : Behaviour
 {
 
@@ -11,6 +15,11 @@ public partial class BasicBehaviour : Behaviour
 		TargetLocation = GetRandomTarget();
 	}
 
+	/// <summary>
+	/// Executes the behaivour of the enemy.
+	/// The enemy will move towards the player until the player is in sight.
+	/// When the player is in sight, the enemy will shoot at the player and move towards a random target.
+	/// </summary>
 	public override void ExecuteBehaivour()
 	{
 		Gun.RotateTowards(Player.GlobalPosition);
@@ -39,6 +48,9 @@ public partial class BasicBehaviour : Behaviour
 		}
 	}
 
+	/// <summary>
+	/// Checks if the player is in the line of sight of the enemy by casting a ray from the enemy to the player.
+	/// </summary>
 	protected bool _checkIfPlayerInSight()
 	{
 		var spaceState = GetWorld2D().DirectSpaceState;
@@ -59,7 +71,11 @@ public partial class BasicBehaviour : Behaviour
 		return false;
 	}
 
-	//Ignore bullets, coins and the casting enemy itself
+	/// <summary>
+	/// Get all RIDs of objects that should be excluded from the raycast.
+	/// This includes the player, enemies, coins and bullets.
+	/// </summary>
+	/// <returns></returns>
 	private Array<Rid> _getExcludedObjects()
 	{
 		Array<Rid> a = new Array<Rid>(new []{ Enemy.GetRid() });
@@ -70,6 +86,11 @@ public partial class BasicBehaviour : Behaviour
 		return a;
 	}
 
+	/// <summary>
+	/// Adds all the Rids of the nodes in the list to the array.
+	/// </summary>
+	/// <param name="array"></param>
+	/// <param name="list"></param>
 	private void _addFromList(Array<Rid> array, Array<Node> list)
 	{
 		for (int i = 0; i < list.Count; i++)

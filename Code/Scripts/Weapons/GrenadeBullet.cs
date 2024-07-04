@@ -6,6 +6,9 @@ using Godot;
 
 namespace Code.Scripts.Weapons;
 
+/// <summary>
+/// Controls the grenade bullet
+/// </summary>
 public partial class GrenadeBullet : Bullet
 {
 
@@ -49,6 +52,10 @@ public partial class GrenadeBullet : Bullet
         _targetSprite.GlobalPosition = _hitLocation;
     }
 
+    /// <summary>
+    /// Moves the grenade forward. When it hits the ground, calls OnExplode
+    /// </summary>
+    /// <returns></returns>
     protected override Node Move()
     {
         _shadow.GlobalPosition = _shadowTrajectory(_shootDirection, _time);
@@ -65,6 +72,9 @@ public partial class GrenadeBullet : Bullet
         return null;
     }
 
+    /// <summary>
+    /// Destroys the grenade, damages all damageable objects in the explosion radius and emits particles
+    /// </summary>
     public void OnExplode()
     {
         Vector2 hitPosition = GlobalPosition;   //position bullet
@@ -85,9 +95,9 @@ public partial class GrenadeBullet : Bullet
         Destroy();
     }
 
-    /**
-     * Return the position of the grenade trajectory at time t with respect to the x-Axis (base case)
-     */
+    /// <summary>
+    /// Return the position of the grenade trajectory at time t with respect to the x-Axis (base case)
+    /// </summary>
     private Vector2 _normalizedTrajectory(float t)
     {
         //x(t) = ||s|| * t * cos(b) from "Schiefer Wurf"
@@ -98,25 +108,28 @@ public partial class GrenadeBullet : Bullet
         return new Vector2(x, y);
     }
 
-    /**
-     * Call by value since the original shoot direction has to be preserved.
-     * Return the position of the 3d trajectory projected on the 2d grid of the grenade at the given time t.
-     */
+    /// <summary>
+    /// Call by value since the original shoot direction has to be preserved.
+    /// Return the position of the 3d trajectory projected on the 2d grid of the grenade at the given time t.
+    /// </summary>
     private Vector2 _trajectory(Vector2 shootDirection, float t)
     {
         Vector2 normalizedTrajectoryPoint = _normalizedTrajectory(t);
         return (t * shootDirection + _shootDirectionNormal * normalizedTrajectoryPoint[1]) + _shootPosition;
     }
 
-    /**
-     * Call by value since the original shoot direction has to be preserved.
-     * Return the position of the grenade shadow after the given time t.
-     */
+     /// <summary>
+     /// Call by value since the original shoot direction has to be preserved.
+     /// Return the position of the grenade shadow after the given time t.
+     /// </summary>
     private Vector2 _shadowTrajectory(Vector2 shootDirection, float t)
     {
         return (t * shootDirection) + _shootPosition;
     }
 
+    /// <summary>
+    /// Calculate the distance between a node and a given position
+    /// </summary>
     private float _calcDistance(Node node, Vector2 pos)
     {
         return (((Node2D)node).Position - pos).Length();

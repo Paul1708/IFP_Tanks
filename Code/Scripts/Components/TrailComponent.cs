@@ -4,6 +4,10 @@ using Godot;
 using Godot.Collections;
 
 namespace Code.Scripts.Components;
+
+/// <summary>
+/// Component that emits a trail for the tank
+/// </summary>
 public partial class TrailComponent : Node2D
 {
     [Export]

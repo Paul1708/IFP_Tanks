@@ -3,9 +3,12 @@ using Godot;
 using Code.Scripts.Managers;
 using Code.Scripts.Weapons;
 
-/* This folder and namespace is temporary. I wanted to call it Player, 
-but that would conflict with the Player class name. */
+
 namespace Code.Scripts.Movement;
+
+/// <summary>
+/// The player movement script. Handles the movement of the player and the gun.
+/// </summary>
 public partial class PlayerMovement : CharacterBody2D
 {
 	public GunController Gun { get; set; }
@@ -23,6 +26,10 @@ public partial class PlayerMovement : CharacterBody2D
 		PlayerManager.Instance.PlayerHealthComponent.OnDeath += OnDeath;
 	}
 
+	/// <summary>
+	/// Get the input from the player and set the velocity accordingly and rotate the gun.
+	/// </summary>
+	/// <param name="delta"></param>
 	public override void _PhysicsProcess(double delta)
 	{
 		//Movement

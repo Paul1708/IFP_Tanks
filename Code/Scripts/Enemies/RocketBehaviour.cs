@@ -2,6 +2,9 @@
 
 namespace Code.Scripts.Enemies;
 
+/// <summary>
+/// Behaivour of the rocket (blue) enemy.
+/// </summary>
 public partial class RocketBehaviour : BasicBehaviour
 {
     private NavigationAgent2D NavAgent2Player { get; set; }
@@ -12,6 +15,11 @@ public partial class RocketBehaviour : BasicBehaviour
         NavAgent2Player = GetNode<NavigationAgent2D>("../NavAgent2Player");
         TargetLocation = GetRandomTarget();
     }
+
+    /// <summary>
+    /// Executes the behaivour of the enemy.
+    /// Moves towards a random target and shoots at the path direction to the player.
+    /// </summary>
     public override void ExecuteBehaivour()
     {
 
