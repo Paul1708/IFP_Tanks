@@ -11,7 +11,7 @@ namespace Code.Scripts.Audio
 		/// <summary>
 		/// Plays a sound from the the child nodes of the MusicController
 		/// </summary>
-		/// <param name="soundName"></param>
+		/// <param name="soundName">The name of the sound to play</param>
 		public void Play(string soundName)
 		{
 			GetNode<AudioStreamPlayer>(soundName).Play();
@@ -31,7 +31,7 @@ namespace Code.Scripts.Audio
 		/// <summary>
 		/// Plays the music by using "PlayMusic" for the current world by using the world id
 		/// </summary>
-		/// <param name="currentWorldId"></param>
+		/// <param name="currentWorldId">The id of the current world</param>
 		public void PlayWorldMusic(int currentWorldId)
 		{
 			string currentWorld = currentWorldId.ToString();

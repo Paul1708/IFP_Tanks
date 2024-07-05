@@ -114,6 +114,7 @@ public partial class HealthComponent : Node2D
     {
         if (CurrentHp <= 0)
         {
+            CurrentHp = 0;
             EmitSignal(SignalName.OnDeath);
         }
     }
