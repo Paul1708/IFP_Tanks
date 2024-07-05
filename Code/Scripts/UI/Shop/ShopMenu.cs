@@ -82,7 +82,7 @@ public partial class ShopMenu : Control
 	/// <summary>
 	/// Display an error message when the player tries to buy an item with insufficient coins
 	/// </summary>
-	/// <param name="price"></param>
+	/// <param name="price">The price of the item</param>
 	public void DisplayInsufficientCoinsError(int price)
 	{
 		var neededCoins = price - CoinManager.Instance.Coins;

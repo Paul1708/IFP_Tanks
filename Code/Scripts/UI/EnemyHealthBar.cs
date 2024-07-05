@@ -23,7 +23,7 @@ public partial class EnemyHealthBar : Control
     /// <summary>
     /// Updates the health label.
     /// </summary>
-    /// <param name="health"></param>
+    /// <param name="health">The current health to set the label to</param>
     public void SetHealth(float health)
     {
         GetNode<Label>("Label").Text = $"{Math.Round(health, 1)}/{_hc.MaxHp}";
@@ -32,7 +32,7 @@ public partial class EnemyHealthBar : Control
     /// <summary>
     /// Updates the max health label.
     /// </summary>
-    /// <param name="maxHealth"></param>
+    /// <param name="maxHealth">The max health to set the label to</param>
     public void SetMaxHealth(float maxHealth)
     {
         GetNode<Label>("Label").Text = $"{Math.Round(_hc.CurrentHp, 1)}/{maxHealth}";

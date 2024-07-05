@@ -105,4 +105,4 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[connection signal="timeout" from="Countdown" to="." method="OnCooldownTimeout"]
+[connection signal="timeout" from="Countdown" to="." method="OnCountdownTimeout"]

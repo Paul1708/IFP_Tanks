@@ -75,7 +75,7 @@ public partial class BasicBehaviour : Behaviour
 	/// Get all RIDs of objects that should be excluded from the raycast.
 	/// This includes the player, enemies, coins and bullets.
 	/// </summary>
-	/// <returns name="Array<Rid>">An array of Rids of the objects to exclude from the raycast</returns>
+	/// <returns>An array of Rids of the objects to exclude from the raycast</returns>
 	private Array<Rid> _getExcludedObjects()
 	{
 		Array<Rid> a = new Array<Rid>(new []{ Enemy.GetRid() });

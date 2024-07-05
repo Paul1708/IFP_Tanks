@@ -25,7 +25,7 @@ public partial class CoinDisplay : TextureRect
 	/// <summary>
 	/// Changes the label to the new coin count
 	/// </summary>
-	/// <param name="coins"></param>
+	/// <param name="coins">The new coin count</param>
 	public void ChangeLabel(int coins)
 	{
 		_coinLabel.Text = coins.ToString();

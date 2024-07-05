@@ -12,7 +12,7 @@ namespace Code.Scripts.Weapons
         /// <summary>
         /// Moves the bullet forward and returns the collided node, if any
         /// </summary>
-        /// <returns></returns>
+        /// <returns>The node that the bullet collided with</returns>
         protected override Node Move()
         {
             KinematicCollision2D collided = MoveAndCollide(LinearVelocity);

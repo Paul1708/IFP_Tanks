@@ -83,7 +83,7 @@ public partial class SaveManager : Node
     /// <summary>
     /// Checks if the save file is available.
     /// </summary>
-    /// <returns name="bool">True if the save file is available, false if not.</returns>
+    /// <returns>True if the save file is available, false if not.</returns>
     public bool IsSaveFileAvailable()
     {
         return ResourceLoader.Exists("user://savegame.tres");

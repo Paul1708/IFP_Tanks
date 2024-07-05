@@ -73,7 +73,7 @@ public partial class SettingsMenu : Control
 	/// <summary>
 	/// Toggles fullscreen and windowed mode
 	/// </summary>
-	/// <param name="toggledOn"></param>
+	/// <param name="toggledOn">The state of the button</param>
 	private void OnFullscreenToggled(bool toggledOn)
 	{
 		MusicController.Play(Sound.ButtonClick);
@@ -85,7 +85,7 @@ public partial class SettingsMenu : Control
 	/// <summary>
 	/// Changes MasterBus volume when slider is moved
 	/// </summary>
-	/// <param name="value"></param>
+	/// <param name="value">The value of the slider</param>
 	private void OnMasterSliderValueChanged(float value)
 	{
 		SetVolume(_masterBusIndex, value);
@@ -96,7 +96,7 @@ public partial class SettingsMenu : Control
 	/// <summary>
 	/// Changes MusicBus volume when slider is moved
 	/// </summary>
-	/// <param name="value"></param>
+	/// <param name="value">The value of the slider</param>
 	private void OnMusicSliderValueChanged(float value)
 	{
 		SetVolume(_musicBusIndex, value);
@@ -107,7 +107,7 @@ public partial class SettingsMenu : Control
 	/// <summary>
 	/// Changes SFXBus volume when slider is moved
 	/// </summary>
-	/// <param name="value"></param>
+	/// <param name="value">The value of the slider</param>
 	private void OnSFXSliderValueChanged(float value)
 	{
 		SetVolume(_sfxBusIndex, value);
@@ -118,8 +118,8 @@ public partial class SettingsMenu : Control
 	/// <summary>
 	/// Sets the volume of the bus to the given value
 	/// </summary>
-	/// <param name="busIndex"></param>
-	/// <param name="value"></param>
+	/// <param name="busIndex">The index of the bus</param>
+	/// <param name="value">The value to set the volume to</param>
 	public void SetVolume(int busIndex, float value)
 	{
 		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(value));

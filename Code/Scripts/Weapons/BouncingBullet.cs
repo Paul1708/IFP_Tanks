@@ -36,7 +36,7 @@ public partial class BouncingBullet : Bullet
 	/// <summary>
 	/// Moves the bullet forward. When it hits a wall, calls BounceOfWall
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>The node that the bullet collided with</returns>
 	protected override Node Move()
 	{
 		var result = MoveAndCollide(LinearVelocity);
@@ -84,7 +84,7 @@ public partial class BouncingBullet : Bullet
 	/// <summary>
 	/// Collides with a damageable node and deals damage to it
 	/// </summary>
-	/// <param name="node"></param>
+	/// <param name="node">The node that the bullet collided with</param>
 	public override void OnDamageableHit(Node node)
 	{
 		if (node is PlayerMovement)//ignore if the player hit himself

@@ -73,7 +73,7 @@ public partial class PlayerMovement : CharacterBody2D
 	/// Calculate the velocity of the player based on the input.
 	/// </summary>
 	/// <param name="moveInput">The input from the player</param>
-	/// <returns name="Vector2">The velocity of the player</returns>
+	/// <returns>The velocity of the player</returns>
 	public Vector2 CalculateVelocity(Vector2 moveInput)
 	{
 		Vector2 velocity = moveInput * PlayerManager.Instance.PlayerStats.CurrentMovementSpeed; //set the velocity to the input times the speed.
@@ -83,7 +83,7 @@ public partial class PlayerMovement : CharacterBody2D
 	/// <summary>
 	/// Check if the player is moving.
 	/// </summary>
-	/// <returns name="bool">True if the player is moving, false otherwise</returns>
+	/// <returns>True if the player is moving, false otherwise</returns>
 	public bool IsMoving()
 	{
 		return Velocity != Vector2.Zero;

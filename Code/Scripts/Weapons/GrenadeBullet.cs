@@ -55,7 +55,7 @@ public partial class GrenadeBullet : Bullet
     /// <summary>
     /// Moves the grenade forward. When it hits the ground, calls OnExplode
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Node as null</returns>
     protected override Node Move()
     {
         _shadow.GlobalPosition = _shadowTrajectory(_shootDirection, _time);

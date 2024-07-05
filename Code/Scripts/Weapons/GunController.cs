@@ -65,7 +65,7 @@ public partial class GunController : Node2D
     /// <summary>
     /// Rotates the gun towards the target.
     /// </summary>
-    /// <param name="target"></param>
+    /// <param name="target">The target to rotate towards</param>
     public void RotateTowards(Vector2 target)
     {
         LookAt(target);
@@ -129,8 +129,8 @@ public partial class GunController : Node2D
     /// <summary>
     /// Sets the target of the homing bullet to the player, if the owner is an enemy, or to the closest enemy of the mouse, if the owner is the player.
     /// </summary>
-    /// <param name="bullet"></param>
-    /// <exception cref="ArgumentException"></exception>
+    /// <param name="bullet">The homing bullet to set the target for</param>
+    /// <exception cref="ArgumentException">Thrown when the owner of the bullet is not a player or enemy</exception>
     private void _setHomingBulletTarget(HomingBullet bullet)
     {
         Node parent = GetParent();
@@ -157,8 +157,8 @@ public partial class GunController : Node2D
     /// <summary>
     /// Returns the closest enemy to the mouse position.
     /// </summary>
-    /// <param name="enemies"></param>
-    /// <returns></returns>
+    /// <param name="enemies">The list of enemies to search for the closest one</param>
+    /// <returns>The closest enemy to the mouse position</returns>
     private Node2D _getClosestEnemy(Array<Node> enemies)
     {
         // select enemy which is closest to mouse position

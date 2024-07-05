@@ -60,7 +60,7 @@ public partial class HealthBar : TextureProgressBar
     /// Tweems the green health bar when the player's health changes.
     /// Starts the timer on which the red health bar will update.
     /// </summary>
-    /// <param name="newHp"></param>
+    /// <param name="newHp">The new health of the player</param>
     public void OnHealthChanged(float newHp)
     {
         //set the health bar's value to the current health
@@ -79,7 +79,7 @@ public partial class HealthBar : TextureProgressBar
     /// <summary>
     /// Updates the healthbars if the max health of the player changes.
     /// </summary>
-    /// <param name="newMaxHp"></param>
+    /// <param name="newMaxHp">The new max health of the player</param>
     public void OnMaxHealthChanged(float newMaxHp)
     {
         MaxHp = newMaxHp;

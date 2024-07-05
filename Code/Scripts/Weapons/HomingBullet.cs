@@ -43,7 +43,7 @@ public partial class HomingBullet : Bullet
     /// <summary>
     /// Calculates the new direction of the bullet
     /// </summary>
-    /// <returns></returns>
+    /// <returns>null</returns>
     protected override Node Move()
     {
         //If the target is null, then abort launching bullet

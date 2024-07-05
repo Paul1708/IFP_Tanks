@@ -20,8 +20,10 @@ public partial class SaveData : Resource
     public float PlayerCurrentHp { get; set; }
     [Export]
     public PlayerStats PlayerStats { get; set; }
-
-
+    /// <summary>
+    /// The first index is the stat index and the second index is quantity and price of the stat.
+    /// E.g. [0][0] to adress the quantity and [0][1] to adress the price of the first stat.
+    /// </summary>
     [Export]
     public Godot.Collections.Array<Godot.Collections.Array> Stats { get; set; }
     /// <summary>

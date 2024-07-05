@@ -19,7 +19,7 @@ public partial class LevelDisplay : HBoxContainer
     /// <summary>
     /// Renders the level display based on the levels and their states.
     /// </summary>
-    /// <param name="levels"></param>
+    /// <param name="levels">The levels to render</param>
     public void RenderLevelDisplay(LevelData[] levels)
     {
         // Clear the current level display

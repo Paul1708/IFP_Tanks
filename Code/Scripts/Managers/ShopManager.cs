@@ -84,7 +84,7 @@ public partial class ShopManager : Node2D
 	/// It increases the price and quantity of the stat and removes the coins if the stat was bought.
 	/// </summary>
 	/// <param name="stat">The stat to buy</param>
-	/// <returns name="bool">True if the stat was bought, false if not</returns>
+	/// <returns>True if the stat was bought, false if not</returns>
 	public bool BuyStat(Stat stat)
 	{
 		ShopPrices shopPrices = stat.PriceTag as ShopPrices;
@@ -125,7 +125,7 @@ public partial class ShopManager : Node2D
 	/// If the player has not enough coins, show an error message and return false.
 	/// </summary>
 	/// <param name="weapon">The weapon to buy</param>
-	/// <returns name="bool">True if the weapon was bought, false if not</returns>
+	/// <returns>True if the weapon was bought, false if not</returns>
 	public bool BuyWeapon(Weapon weapon)
 	{
 		ShopPrices shopPrices = weapon.PriceTag as ShopPrices;
@@ -180,7 +180,7 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Returns the equipped weapon. If no weapon is equipped, the default weapon is returned.
 	/// </summary>
-	/// <returns name="Weapon">The equipped weapon</returns>
+	/// <returns>The equipped weapon</returns>
 	public Weapon GetEquippedWeapon()
 	{
 		foreach (var weapon in WeaponsList)
@@ -213,7 +213,7 @@ public partial class ShopManager : Node2D
 	/// </summary>
 	/// <param name="node">The node to get the panel index from</param>
 	/// <param name="index">The index of the panel</param>
-	/// <returns name="bool">True if the index was successfully retrieved, false if not</returns>
+	/// <returns>True if the index was successfully retrieved, false if not</returns>
 	public bool TryGetPanelIndex(Node node, out int index)
 	{
 		string parentName = node.GetParent().Name;

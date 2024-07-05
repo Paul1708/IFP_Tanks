@@ -195,7 +195,7 @@ public partial class LevelManager : Node2D
     /// </summary>
     /// <param name="newWorldId">The world ID of the level to load</param>
     /// <param name="newLevelId">The level ID of the level to load</param>
-    /// <returns name="Task">The task that loads the level</returns>
+    /// <returns>The task that loads the level</returns>
     private async Task LoadLevelById(int newWorldId, int newLevelId)
     {
         if (CurrentLevelInstance != null)
