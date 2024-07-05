@@ -7,20 +7,20 @@ var _report_enabled := false
 var _entries: Array[ErrorLogEntry] = []
 
 
-func _init():
+func _init() -> void:
 	super("GodotGdErrorMonitor")
 	_godot_log_file = GdUnitSettings.get_log_path()
 	_report_enabled = _is_reporting_enabled()
 
 
-func start():
-	var file = FileAccess.open(_godot_log_file, FileAccess.READ)
+func start() -> void:
+	var file := FileAccess.open(_godot_log_file, FileAccess.READ)
 	if file:
 		file.seek_end(0)
 		_eof = file.get_length()
 
 
-func stop():
+func stop() -> void:
 	pass
 
 
@@ -28,6 +28,7 @@ func to_reports() -> Array[GdUnitReport]:
 	var reports_ :Array[GdUnitReport] = []
 	if _report_enabled:
 		reports_.assign(_entries.map(_to_report))
+	_entries.clear()
 	return reports_
 
 
@@ -36,7 +37,7 @@ static func _to_report(errorLog :ErrorLogEntry) -> GdUnitReport:
 		GdAssertMessages._error("Godot Runtime Error !"),
 		GdAssertMessages._colored_value(errorLog._details),
 		GdAssertMessages._error("Error:"),
-		GdAssertMessages._colored_value(errorLog._message)] 
+		GdAssertMessages._colored_value(errorLog._message)]
 	return GdUnitReport.new().create(GdUnitReport.ABORT, errorLog._line, failure)
 
 
@@ -52,7 +53,7 @@ func erase_log_entry(entry :ErrorLogEntry) -> void:
 
 
 func _collect_log_entries(force_collect_reports :bool) -> Array[ErrorLogEntry]:
-	var file = FileAccess.open(_godot_log_file, FileAccess.READ)
+	var file := FileAccess.open(_godot_log_file, FileAccess.READ)
 	file.seek(_eof)
 	var records := PackedStringArray()
 	while not file.eof_reached():
@@ -69,7 +70,7 @@ func _collect_log_entries(force_collect_reports :bool) -> Array[ErrorLogEntry]:
 			log_entries.append(ErrorLogEntry.extract_push_error(records, index))
 		if is_report_script_errors:
 			log_entries.append(ErrorLogEntry.extract_error(records, index))
-	return log_entries.filter(func(value): return value != null )
+	return log_entries.filter(func(value :ErrorLogEntry) -> bool: return value != null )
 
 
 func _is_reporting_enabled() -> bool:
