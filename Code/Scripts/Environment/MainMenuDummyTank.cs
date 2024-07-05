@@ -17,7 +17,7 @@ public partial class MainMenuDummyTank : Node2D
     /// <summary>
     /// Rotates the tank towards the mouse position and navigates towards it.
     /// </summary>
-    /// <param name="delta"></param>
+    /// <param name="delta">The delta time</param>
     public override void _Process(double delta)
     {
         LookAt(GetGlobalMousePosition());

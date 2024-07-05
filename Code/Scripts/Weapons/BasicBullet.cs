@@ -4,26 +4,26 @@ using Godot;
 
 namespace Code.Scripts.Weapons
 {
-	/// <summary>
-	/// Controls the basic (50cal) bullet
-	/// </summary>
-	public partial class BasicBullet : Bullet
-	{
-		/// <summary>
-		/// Moves the bullet forward and returns the collided node, if any
-		/// </summary>
-		/// <returns></returns>
-		protected override Node Move()
-		{
-			KinematicCollision2D collided = MoveAndCollide(LinearVelocity);
-			if (collided != null)
-			{
-				var collider = collided.GetCollider();
-				if (collider is Node)
-				{
-					return collider as Node;
-				}
-			}
+    /// <summary>
+    /// Controls the basic (50cal) bullet
+    /// </summary>
+    public partial class BasicBullet : Bullet
+    {
+        /// <summary>
+        /// Moves the bullet forward and returns the collided node, if any
+        /// </summary>
+        /// <returns>The node that the bullet collided with</returns>
+        protected override Node Move()
+        {
+            KinematicCollision2D collided = MoveAndCollide(LinearVelocity);
+            if (collided != null)
+            {
+                var collider = collided.GetCollider();
+                if (collider is Node)
+                {
+                    return collider as Node;
+                }
+            }
 
 			return null;
 		}

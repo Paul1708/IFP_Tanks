@@ -55,7 +55,7 @@ namespace Code.Scripts.Weapons
         /// Called when the bullet collides with another node.
         /// Calls the appropriate method for the collision type.
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">The node that the bullet collided with</param>
         public void OnCollision(Node node)
         {
             CameraShaker.Instance.Shake(0.25f, 0.05f);
@@ -90,7 +90,7 @@ namespace Code.Scripts.Weapons
         /// <summary>
         /// Called when the bullet hits a damageable node.
         /// </summary>
-        /// <param name="node"></param>
+        /// <param name="node">The node that the bullet collided with</param>
         public virtual void OnDamageableHit(Node node)
         {
             if (node == Player)
@@ -132,7 +132,7 @@ namespace Code.Scripts.Weapons
         /// <summary>
         /// Call move method on every physics process tick and check for collisions.
         /// </summary>
-        /// <param name="delta"></param>
+        /// <param name="delta">The time since the last physics process tick</param>
         public override void _PhysicsProcess(double delta)
         {
             Node collided = Move();

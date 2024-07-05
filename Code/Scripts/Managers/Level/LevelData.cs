@@ -15,6 +15,9 @@ public partial class LevelData : Resource
     [Export]
     public LevelState LevelState { get; set; }
 
+    /// <summary>
+    /// Default constructor
+    /// </summary>
     public LevelData()
     {
         LevelScene = null;

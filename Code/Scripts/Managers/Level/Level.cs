@@ -55,7 +55,7 @@ public partial class Level : Node2D
     /// <summary>
     /// Called every frame. Checks if all coins are collected and emits the OnCoinsMoved signal if so.
     /// </summary>
-    /// <param name="delta"></param>
+    /// <param name="delta">The time since the last frame</param> 
     public override void _Process(double delta)
     {
         // Check if all coins are collected
@@ -70,7 +70,7 @@ public partial class Level : Node2D
     /// <summary>
     /// Called when an enemy dies. Drops an item and removes the enemy from the list.
     /// </summary>
-    /// <param name="enemy"></param>
+    /// <param name="enemy">The enemy that died</param>
     public void OnEnemyDeath(Node2D enemy)
     {
         PackedScene itemScene = ((Enemy)enemy).DropItemScene;
@@ -105,9 +105,9 @@ public partial class Level : Node2D
     /// <summary>
     /// Drops/Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin.
     /// </summary>
-    /// <typeparam name="T"></typeparam>
-    /// <param name="position"></param>
-    /// <param name="scene"></param>
+    /// <typeparam name="T">The type of the item to drop</typeparam>
+    /// <param name="position">The position to drop the item at</param>
+    /// <param name="scene">The scene to instantiate</param>
     public void DropItem<T>(Node2D position, PackedScene scene) where T : Node2D
     {
         var item = scene.Instantiate() as T;
@@ -125,8 +125,8 @@ public partial class Level : Node2D
     /// <summary>
     /// Sets the position of the item to the position of the given node
     /// </summary>
-    /// <param name="item"></param>
-    /// <param name="position"></param>
+    /// <param name="item">The item to set the position of</param>
+    /// <param name="position">The position to set the item to</param>
     private static void SetPostion(Node2D item, Node2D position)
     {
         item.GlobalPosition = position.GlobalPosition;

@@ -20,7 +20,7 @@ namespace Code.Scripts.Audio
 		/// <summary>
 		/// Plays a sound that is used as music from the the child nodes of the MusicController and adds it to the PlayingMusic group
 		/// </summary>
-		/// <param name="musicName"></param>
+		/// <param name="musicName">Music name to be played</param>
 		public void PlayMusic(string musicName)
 		{
 			AudioStreamPlayer music = GetNode<AudioStreamPlayer>(musicName);
@@ -57,7 +57,7 @@ namespace Code.Scripts.Audio
 	}
 
 	/// <summary>
-	/// Struct that contains all the music names
+	/// Struct that contains all the sound and music names
 	/// </summary>
 	struct Sound
 	{

@@ -30,14 +30,14 @@ public partial class LevelCountdown : Control
 		_levelManager = GetTree().GetFirstNodeInGroup("LevelManager") as LevelManager;
 		_musicController = GetNode<MusicController>("/root/MusicController");
 		
-		_shopMenu.OnShopMenuClosed += StartLevelCooldown;
-		_levelManager.OnFirstLevelLoaded += StartLevelCooldown;
+		_shopMenu.OnShopMenuClosed += StartLevelCountdown;
+		_levelManager.OnFirstLevelLoaded += StartLevelCountdown;
 	}
 
 	public override void _ExitTree()
 	{
-		_shopMenu.OnShopMenuClosed -= StartLevelCooldown;
-		_levelManager.OnFirstLevelLoaded -= StartLevelCooldown;
+		_shopMenu.OnShopMenuClosed -= StartLevelCountdown;
+		_levelManager.OnFirstLevelLoaded -= StartLevelCountdown;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -51,7 +51,7 @@ public partial class LevelCountdown : Control
 	/// Start the level Countdown. Shows the countdown label, pauses the game and plays the countdown animation with Countdown sound.
 	/// The countdown timer is started.
 	/// </summary>
-	public void StartLevelCooldown()
+	public void StartLevelCountdown()
 	{
 		_blur.Color = new Color(1, 1, 1);
 		Show();
@@ -64,7 +64,7 @@ public partial class LevelCountdown : Control
 	/// <summary>
 	/// Called when the countdown timer has finished. Unpauses the game and hides the countdown label.
 	/// </summary>
-	public void OnCooldownTimeout ()
+	public void OnCountdownTimeout ()
 	{
 		GetTree().Paused = false;
 		Hide();

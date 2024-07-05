@@ -37,7 +37,7 @@ public partial class CoinManager : Node2D
     /// <summary>
     /// Method that will be called when the SaveData is loaded. It will set the Coins to the value of the SaveData
     /// </summary>
-    /// <param name="saveData"></param>
+    /// <param name="saveData">The SaveData that was loaded</param>
     public void OnSaveDataLoaded(SaveData saveData)
     {
         SetCoins(saveData.CoinCount);
@@ -46,7 +46,7 @@ public partial class CoinManager : Node2D
     /// <summary>
     /// Method to add coins to the player. If the value is less than 0, the method will return without doing anything.
     /// </summary>
-    /// <param name="value"></param>
+    /// <param name="value">The value to add to the coins</param>
     public void AddCoins(int value)
     {
         if (value < 0)
@@ -60,7 +60,7 @@ public partial class CoinManager : Node2D
     /// <summary>
     /// Method to remove coins from the player If the value is less than 0, the method will return without doing anything.
     /// </summary>
-    /// <param name="value"></param>
+    /// <param name="value">The value to remove from the coins</param>
     public void RemoveCoins(int value)
     {
         if (value < 0)
@@ -74,7 +74,7 @@ public partial class CoinManager : Node2D
     /// <summary>
     /// Method to set the Coins to a specific value and emit the OnCoinChanged signal. If the value is less than 0, the Coins will be set to 0.
     /// </summary>
-    /// <param name="value"></param>
+    /// <param name="value">The value to set the Coins to</param>
     public void SetCoins(int value)
     {
         if (value < 0)
@@ -98,8 +98,8 @@ public partial class CoinManager : Node2D
     /// <summary>
     /// Method to check if the player has more or equal coins to the value
     /// </summary>
-    /// <param name="value"></param>
-    /// <returns></returns>
+    /// <param name="value">The value to check if the player has enough coins</param>
+    /// <returns>True if the player has enough coins, false otherwise</returns>
     public bool CheckIfEnoughCoins(int value)
     {
         return Coins >= value;

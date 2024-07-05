@@ -40,7 +40,7 @@ public partial class DamageNumber : RigidBody2D
     /// <summary>
     /// Rotates the damage number by a certain amount every frame.
     /// </summary>
-    /// <param name="delta"></param>
+    /// <param name="delta">The time passed since the last frame</param>
     public override void _PhysicsProcess(double delta)
     {
         // Rotate the damage number

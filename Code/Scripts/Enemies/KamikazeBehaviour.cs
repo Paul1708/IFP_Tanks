@@ -73,8 +73,8 @@ public partial class KamikazeBehaviour : Behaviour
     /// <summary>
     /// Add damge to the node, which can be the player or another enemy.
     /// </summary>
-    /// <param name="node"></param>
-    /// <param name="damage"></param>
+    /// <param name="node">The node to take damage</param>
+    /// <param name="damage">The damage to take</param>
     private void _takeDamage(Node node, int damage)
     {
         if (node == Player)

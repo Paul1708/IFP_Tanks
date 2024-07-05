@@ -31,7 +31,7 @@ public partial class Laser : RayCast2D
     /// <summary>
     /// Updates the laser beam and particles
     /// </summary>
-    /// <param name="delta"></param>
+    /// <param name="delta">The time since the last frame</param>
     public override void _PhysicsProcess(double delta)
     {
         ForceRaycastUpdate();
@@ -61,7 +61,7 @@ public partial class Laser : RayCast2D
     /// <summary>
     /// Activates or deactivates the laser beam
     /// </summary>
-    /// <param name="active"></param>
+    /// <param name="active">The new state of the laser beam</param>
     public void SetActive(bool active)
     {
         _isActive = active;

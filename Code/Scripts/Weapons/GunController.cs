@@ -62,14 +62,14 @@ public partial class GunController : Node2D
 		}
 	}
 
-	/// <summary>
-	/// Rotates the gun towards the target.
-	/// </summary>
-	/// <param name="target"></param>
-	public void RotateTowards(Vector2 target)
-	{
-		LookAt(target);
-	}
+    /// <summary>
+    /// Rotates the gun towards the target.
+    /// </summary>
+    /// <param name="target">The target to rotate towards</param>
+    public void RotateTowards(Vector2 target)
+    {
+        LookAt(target);
+    }
 
 	/// <summary>
 	/// Shoots a bullet from the gun, if the gun is ready to shoot.
@@ -126,56 +126,56 @@ public partial class GunController : Node2D
 		GetTree().GetFirstNodeInGroup("Level").AddChild(bullet);
 	}
 
-	/// <summary>
-	/// Sets the target of the homing bullet to the player, if the owner is an enemy, or to the closest enemy of the mouse, if the owner is the player.
-	/// </summary>
-	/// <param name="bullet"></param>
-	/// <exception cref="ArgumentException"></exception>
-	private void _setHomingBulletTarget(HomingBullet bullet)
-	{
-		Node parent = GetParent();
-		if (parent is PlayerMovement)
-		{
-			var enemies = GetTree().GetNodesInGroup("Enemy");
-			if (enemies.Count > 0)
-			{
-				// select enemy which is closest to mouse position
-				bullet.TargetNode = _getClosestEnemy(enemies);
-			}
-		}
-		else if (parent is Enemy)
-		{
-			bullet.TargetNode = GetTree().GetFirstNodeInGroup("Player") as Node2D;
-		}
-		else
-		{
-			throw new ArgumentException("Invalid bullet owner");
-		}
-	}
+    /// <summary>
+    /// Sets the target of the homing bullet to the player, if the owner is an enemy, or to the closest enemy of the mouse, if the owner is the player.
+    /// </summary>
+    /// <param name="bullet">The homing bullet to set the target for</param>
+    /// <exception cref="ArgumentException">Thrown when the owner of the bullet is not a player or enemy</exception>
+    private void _setHomingBulletTarget(HomingBullet bullet)
+    {
+        Node parent = GetParent();
+        if (parent is PlayerMovement)
+        {
+            var enemies = GetTree().GetNodesInGroup("Enemy");
+            if (enemies.Count > 0)
+            {
+                // select enemy which is closest to mouse position
+                bullet.TargetNode = _getClosestEnemy(enemies);
+            }
+        }
+        else if (parent is Enemy)
+        {
+            bullet.TargetNode = GetTree().GetFirstNodeInGroup("Player") as Node2D;
+        }
+        else
+        {
+            throw new ArgumentException("Invalid bullet owner");
+        }
+    }
 
 
-	/// <summary>
-	/// Returns the closest enemy to the mouse position.
-	/// </summary>
-	/// <param name="enemies"></param>
-	/// <returns></returns>
-	private Node2D _getClosestEnemy(Array<Node> enemies)
-	{
-		// select enemy which is closest to mouse position
-		Node2D closestEnemy = null;
-		float minDistance = float.MaxValue;
-		foreach (Node enemy in enemies)
-		{
-			if (enemy is Node2D enemy2d)
-			{
-				float distance = enemy2d.GlobalPosition.DistanceTo(GetGlobalMousePosition());
-				if (distance < minDistance)
-				{
-					minDistance = distance;
-					closestEnemy = enemy2d;
-				}
-			}
-		}
+    /// <summary>
+    /// Returns the closest enemy to the mouse position.
+    /// </summary>
+    /// <param name="enemies">The list of enemies to search for the closest one</param>
+    /// <returns>The closest enemy to the mouse position</returns>
+    private Node2D _getClosestEnemy(Array<Node> enemies)
+    {
+        // select enemy which is closest to mouse position
+        Node2D closestEnemy = null;
+        float minDistance = float.MaxValue;
+        foreach (Node enemy in enemies)
+        {
+            if (enemy is Node2D enemy2d)
+            {
+                float distance = enemy2d.GlobalPosition.DistanceTo(GetGlobalMousePosition());
+                if (distance < minDistance)
+                {
+                    minDistance = distance;
+                    closestEnemy = enemy2d;
+                }
+            }
+        }
 
 		return closestEnemy;
 	}

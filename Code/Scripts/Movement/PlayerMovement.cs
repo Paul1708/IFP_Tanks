@@ -29,7 +29,7 @@ public partial class PlayerMovement : CharacterBody2D
 	/// <summary>
 	/// Get the input from the player and set the velocity accordingly and rotate the gun.
 	/// </summary>
-	/// <param name="delta"></param>
+	/// <param name="delta"> The time since the last frame</param>
 	public override void _PhysicsProcess(double delta)
 	{
 		//Movement
@@ -72,8 +72,8 @@ public partial class PlayerMovement : CharacterBody2D
 	/// <summary>
 	/// Calculate the velocity of the player based on the input.
 	/// </summary>
-	/// <param name="moveInput"></param>
-	/// <returns></returns>
+	/// <param name="moveInput">The input from the player</param>
+	/// <returns>The velocity of the player</returns>
 	public Vector2 CalculateVelocity(Vector2 moveInput)
 	{
 		Vector2 velocity = moveInput * PlayerManager.Instance.PlayerStats.CurrentMovementSpeed; //set the velocity to the input times the speed.
@@ -83,7 +83,7 @@ public partial class PlayerMovement : CharacterBody2D
 	/// <summary>
 	/// Check if the player is moving.
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>True if the player is moving, false otherwise</returns>
 	public bool IsMoving()
 	{
 		return Velocity != Vector2.Zero;

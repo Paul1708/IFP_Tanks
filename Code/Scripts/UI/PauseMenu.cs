@@ -33,7 +33,7 @@ public partial class PauseMenu : Control
 	/// <summary>
 	/// Fires when the pause button is pressed and shows/hides the pause menu
 	/// </summary>
-	/// <param name="event"></param>
+	/// <param name="event">The input event</param>
 	public override void _Input(InputEvent @event)
 	{
 		if (Input.IsActionJustPressed("pause") && GetTree().Paused)

@@ -30,7 +30,7 @@ public partial class LaserGun : Bullet
 	/// <summary>
 	/// Moves the laser beam along with the player
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>null</returns>
 	protected override Node Move()
 	{
 		_laser.SetActive(true);

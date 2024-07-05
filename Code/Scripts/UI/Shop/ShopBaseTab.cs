@@ -10,10 +10,10 @@ public abstract partial class ShopBaseTab : TabBar
 	protected const string PriceTagPathFormat = "RichTextLabel/Control/Panel{0}/PriceTag";
 
 	/// <summary>
-	/// get all price tags from the scene by their path that only differs in the Panel number 
+	/// Get price tags from the scene by their path that only differs in the Panel number 
 	/// </summary>
-	/// <param name="panelNumber"></param>
-	/// <returns></returns>
+	/// <param name="panelNumber">The number of the panel that includes the price tag</param>
+	/// <returns>The price tag label</returns>
 	protected Label GetPriceTagByPanel(int panelNumber)
 	{
 		return GetNode<Label>(string.Format(PriceTagPathFormat, panelNumber)); 
@@ -22,8 +22,8 @@ public abstract partial class ShopBaseTab : TabBar
 	/// <summary>
 	/// Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab
 	/// </summary>
-	/// <param name="panelNumber"></param>
-	/// <returns></returns>
+	/// <param name="panelNumber">The number of the panel that includes the price tag</param>
+	/// <returns>The price of the item that is managed in the specific panel</returns>
 	protected int ParsePrice(int panelNumber)
 	{
 		string stringToBeReplaced = "Price: ";
