@@ -35,7 +35,8 @@ var searchData=
   ['showvictoryscreen_32',['ShowVictoryScreen',['../class_code_1_1_scripts_1_1_u_i_1_1_victory_screen.html#a0d56b9234ce4651fdc18a6a296f5ad5f',1,'Code::Scripts::UI::VictoryScreen']]],
   ['sound_33',['Sound',['../struct_code_1_1_scripts_1_1_audio_1_1_sound.html',1,'Code::Scripts::Audio']]],
   ['spawndamagenumber_34',['SpawnDamageNumber',['../class_code_1_1_scripts_1_1_components_1_1_damage_number_controller.html#a70dc247847fa1c84037cc78f91d002b0',1,'Code::Scripts::Components::DamageNumberController']]],
-  ['startlevelcooldown_35',['StartLevelCooldown',['../class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.html#a1894d4021b3ef84c61a4ea5a12792984',1,'Code::Scripts::UI::LevelCountdown']]],
+  ['startlevelcountdown_35',['StartLevelCountdown',['../class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.html#ac724220ac112fd14c4898668f4b12776',1,'Code::Scripts::UI::LevelCountdown']]],
   ['stat_36',['Stat',['../struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat.html',1,'Code::Scripts::UI::Shop']]],
-  ['stopcurrentmusic_37',['StopCurrentMusic',['../class_code_1_1_scripts_1_1_audio_1_1_music_controller.html#a01341b0c30662063cd66afcd9be476ae',1,'Code::Scripts::Audio::MusicController']]]
+  ['stats_37',['Stats',['../class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data.html#afad9dff42d4ccd78bf89617aeae8ebd6',1,'Code::Scripts::Managers::Save::SaveData']]],
+  ['stopcurrentmusic_38',['StopCurrentMusic',['../class_code_1_1_scripts_1_1_audio_1_1_music_controller.html#a01341b0c30662063cd66afcd9be476ae',1,'Code::Scripts::Audio::MusicController']]]
 ];

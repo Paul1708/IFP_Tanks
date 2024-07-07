@@ -22,6 +22,6 @@ var searchData=
   ['showshopmenu_19',['ShowShopMenu',['../class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu.html#a1b9acd9683c0690e791699560892ddc8',1,'Code::Scripts::UI::Shop::ShopMenu']]],
   ['showvictoryscreen_20',['ShowVictoryScreen',['../class_code_1_1_scripts_1_1_u_i_1_1_victory_screen.html#a0d56b9234ce4651fdc18a6a296f5ad5f',1,'Code::Scripts::UI::VictoryScreen']]],
   ['spawndamagenumber_21',['SpawnDamageNumber',['../class_code_1_1_scripts_1_1_components_1_1_damage_number_controller.html#a70dc247847fa1c84037cc78f91d002b0',1,'Code::Scripts::Components::DamageNumberController']]],
-  ['startlevelcooldown_22',['StartLevelCooldown',['../class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.html#a1894d4021b3ef84c61a4ea5a12792984',1,'Code::Scripts::UI::LevelCountdown']]],
+  ['startlevelcountdown_22',['StartLevelCountdown',['../class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.html#ac724220ac112fd14c4898668f4b12776',1,'Code::Scripts::UI::LevelCountdown']]],
   ['stopcurrentmusic_23',['StopCurrentMusic',['../class_code_1_1_scripts_1_1_audio_1_1_music_controller.html#a01341b0c30662063cd66afcd9be476ae',1,'Code::Scripts::Audio::MusicController']]]
 ];

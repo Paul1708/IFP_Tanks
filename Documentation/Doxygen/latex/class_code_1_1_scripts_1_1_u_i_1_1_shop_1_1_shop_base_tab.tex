@@ -27,7 +27,7 @@ Collaboration diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab\+:\nopage
 \begin{DoxyCompactItemize}
 \item 
 Label \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a8c1da1b8e94bc122d4dec7d782d344ed}{Get\+Price\+Tag\+By\+Panel}} (int panel\+Number)
-\begin{DoxyCompactList}\small\item\em get all price tags from the scene by their path that only differs in the Panel number \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Get price tags from the scene by their path that only differs in the Panel number. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a7f6a1833399472bad539beb5c0a45c7c}{Parse\+Price}} (int panel\+Number)
 \begin{DoxyCompactList}\small\item\em Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab. \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a9e174b5263f9084c615fe5eb83ac8c77}{Reset\+Scroll\+Bar}} ()
@@ -54,15 +54,15 @@ Label Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab.\+Get\+Price\+Tag\+By\+Panel 
 
 
 
-get all price tags from the scene by their path that only differs in the Panel number 
+Get price tags from the scene by their path that only differs in the Panel number. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em panel\+Number} & \\
+{\em panel\+Number} & The number of the panel that includes the price tag\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+The price tag label
 \end{DoxyReturn}
 \Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a7f6a1833399472bad539beb5c0a45c7c}\index{Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}!ParsePrice@{ParsePrice}}
 \index{ParsePrice@{ParsePrice}!Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}}
@@ -76,11 +76,11 @@ Parses the price from the price tag label and returns it as an int. It needs the
 
 
 \begin{DoxyParams}{Parameters}
-{\em panel\+Number} & \\
+{\em panel\+Number} & The number of the panel that includes the price tag\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+The price of the item that is managed in the specific panel
 \end{DoxyReturn}
 \Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a9e174b5263f9084c615fe5eb83ac8c77}\index{Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}!ResetScrollBar@{ResetScrollBar}}
 \index{ResetScrollBar@{ResetScrollBar}!Code.Scripts.UI.Shop.ShopBaseTab@{Code.Scripts.UI.Shop.ShopBaseTab}}

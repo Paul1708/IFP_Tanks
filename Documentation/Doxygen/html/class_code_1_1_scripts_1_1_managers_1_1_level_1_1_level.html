@@ -5,14 +5,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.11.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>IFP Tanks: Code.Scripts.Managers.Level.Level Class Reference</title>
+<title>IFP-Tanks: Code.Scripts.Managers.Level.Level Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <script type="text/javascript" src="clipboard.js"></script>
 <link href="navtree.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="navtreedata.js"></script>
-<script type="text/javascript" src="navtree.js"></script>
 <script type="text/javascript" src="resize.js"></script>
 <script type="text/javascript" src="cookie.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
@@ -27,8 +25,9 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="title.png"/></td>
   <td id="projectalign">
-   <div id="projectname">IFP Tanks<span id="projectnumber">&#160;1.0</span>
+   <div id="projectname">IFP-Tanks<span id="projectnumber">&#160;1.0</span>
    </div>
   </td>
  </tr>
@@ -52,29 +51,17 @@ $(function() { codefold.init(0); });
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
 $(function() {
-  initMenu('',true,false,'search.php','Search',true);
+  initMenu('',true,false,'search.php','Search',false);
   $(function() { init_search(); });
 });
 /* @license-end */
 </script>
 <div id="main-nav"></div>
-</div><!-- top -->
-<div id="side-nav" class="ui-resizable side-nav-resizable">
-  <div id="nav-tree">
-    <div id="nav-tree-contents">
-      <div id="nav-sync" class="sync"></div>
-    </div>
-  </div>
-  <div id="splitbar" style="-moz-user-select:none;" 
-       class="ui-resizable-handle">
-  </div>
-</div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level.html',''); initResizable(true); });
+$(function(){ initResizable(false); });
 /* @license-end */
 </script>
-<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -96,6 +83,12 @@ $(function(){initNavTree('class_code_1_1_scripts_1_1_managers_1_1_level_1_1_leve
 </div>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="namespace_code.html">Code</a></li><li class="navelem"><a class="el" href="namespace_code_1_1_scripts.html">Scripts</a></li><li class="navelem"><a class="el" href="namespace_code_1_1_scripts_1_1_managers.html">Managers</a></li><li class="navelem"><a class="el" href="namespace_code_1_1_scripts_1_1_managers_1_1_level.html">Level</a></li><li class="navelem"><a class="el" href="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level.html">Level</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div id="doc-content">
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
@@ -117,7 +110,7 @@ Inheritance diagram for Code.Scripts.Managers.Level.Level:</div>
 <area shape="rect" title=" " alt="" coords="69,5,136,32"/>
 <area shape="poly" title=" " alt="" coords="105,48,105,80,100,80,100,48"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for Code.Scripts.Managers.Level.Level:</div>
 <div class="dyncontent">
@@ -131,7 +124,7 @@ Collaboration diagram for Code.Scripts.Managers.Level.Level:</div>
 <area shape="rect" title=" " alt="" coords="214,5,276,32"/>
 <area shape="poly" title=" " alt="" coords="248,47,248,81,242,81,242,47"/>
 </map>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -205,10 +198,12 @@ List&lt; Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Enemies
 <p>Called every frame. Checks if all coins are collected and emits the OnCoinsMoved signal if so. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">delta</td><td></td></tr>
+    <tr><td class="paramname">delta</td><td>The time since the last frame</td></tr>
   </table>
   </dd>
 </dl>
+<p><br  />
+ </p>
 
 </div>
 </div>
@@ -234,14 +229,14 @@ List&lt; Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Enemies
 <p>Drops/Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td></td></tr>
+    <tr><td class="paramname">T</td><td>The type of the item to drop</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">position</td><td></td></tr>
-    <tr><td class="paramname">scene</td><td></td></tr>
+    <tr><td class="paramname">position</td><td>The position to drop the item at</td></tr>
+    <tr><td class="paramname">scene</td><td>The scene to instantiate</td></tr>
   </table>
   </dd>
 </dl>
@@ -274,7 +269,7 @@ List&lt; Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Enemies
 <p>Called when an enemy dies. Drops an item and removes the enemy from the list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">enemy</td><td></td></tr>
+    <tr><td class="paramname">enemy</td><td>The enemy that died</td></tr>
   </table>
   </dd>
 </dl>
@@ -285,13 +280,10 @@ List&lt; Node &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>Enemies
 <li>Code/Scripts/Managers/Level/<b>Level.cs</b></li>
 </ul>
 </div><!-- contents -->
-</div><!-- doc-content -->
 <!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="namespace_code.html">Code</a></li><li class="navelem"><a class="el" href="namespace_code_1_1_scripts.html">Scripts</a></li><li class="navelem"><a class="el" href="namespace_code_1_1_scripts_1_1_managers.html">Managers</a></li><li class="navelem"><a class="el" href="namespace_code_1_1_scripts_1_1_managers_1_1_level.html">Level</a></li><li class="navelem"><a class="el" href="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level.html">Level</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0 </li>
-  </ul>
-</div>
+<hr class="footer"/><address class="footer"><small>
+Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.11.0
+</small></address>
+</div><!-- doc-content -->
 </body>
 </html>

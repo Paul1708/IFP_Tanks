@@ -106,11 +106,11 @@ Tries to upgrade/buy the stat and returns true if the stat was bought, false if 
 
 
 \begin{DoxyParams}{Parameters}
-{\em stat} & \\
+{\em stat} & The stat to buy\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+True if the stat was bought, false if not
 \end{DoxyReturn}
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -132,11 +132,11 @@ Buy the weapon if the player has enough coins and the weapon is not unlocked yet
 
 
 \begin{DoxyParams}{Parameters}
-{\em weapon} & \\
+{\em weapon} & The weapon to buy\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+True if the weapon was bought, false if not
 \end{DoxyReturn}
 Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -157,7 +157,7 @@ Equip the weapon by setting the equipped state to true and unequip all other wea
 
 
 \begin{DoxyParams}{Parameters}
-{\em weapon} & \\
+{\em weapon} & The weapon to equip\\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_abbc6fe29061fc5050b9ff54575b97896}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!GetEquippedWeapon@{GetEquippedWeapon}}
@@ -171,7 +171,7 @@ Equip the weapon by setting the equipped state to true and unequip all other wea
 Returns the equipped weapon. If no weapon is equipped, the default weapon is returned. 
 
 \begin{DoxyReturn}{Returns}
-
+The equipped weapon
 \end{DoxyReturn}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -192,7 +192,7 @@ Increase the quantity of the stat in the list at the list\+Index by 1.
 
 
 \begin{DoxyParams}{Parameters}
-{\em stat} & \\
+{\em stat} & The stat to increase the quantity of\\
 \hline
 \end{DoxyParams}
 Here is the caller graph for this function\+:\nopagebreak
@@ -214,7 +214,7 @@ Method that will be called when the Save\+Data is loaded. It will set the Stats 
 
 
 \begin{DoxyParams}{Parameters}
-{\em save\+Data} & \\
+{\em save\+Data} & The Save\+Data that was loaded\\
 \hline
 \end{DoxyParams}
 \Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad8cfbf576e32c81b78d68628745fd6dc}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!TryGetPanelIndex@{TryGetPanelIndex}}
@@ -229,13 +229,13 @@ Tries to get the index of the panel from the node and returns true if successful
 
 
 \begin{DoxyParams}{Parameters}
-{\em node} & \\
+{\em node} & The node to get the panel index from\\
 \hline
-{\em index} & \\
+{\em index} & The index of the panel\\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+True if the index was successfully retrieved, false if not
 \end{DoxyReturn}
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
@@ -256,7 +256,7 @@ Unlock the weapon by setting the unlocked state to true. Emit the On\+Weapon\+Un
 
 
 \begin{DoxyParams}{Parameters}
-{\em weapon} & \\
+{\em weapon} & The weapon to unlock\\
 \hline
 \end{DoxyParams}
 Here is the caller graph for this function\+:\nopagebreak
