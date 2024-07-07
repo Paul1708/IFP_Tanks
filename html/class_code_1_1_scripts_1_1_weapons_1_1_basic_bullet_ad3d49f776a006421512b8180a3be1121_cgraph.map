@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Weapons.BasicBullet.OnOtherHit" name="Code.Scripts.Weapons.BasicBullet.OnOtherHit">
+<area shape="rect" id="Node000001" title="Fires when the bullet collides with other nodes." alt="" coords="5,5,198,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet.html#ac8cd8aeaef50891001c1341aec949ff3" title="Destroys the bullet and emits particles." alt="" coords="246,5,438,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="198,24,230,24,230,29,198,29"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_managers_1_1_particle_controller.html#ad2af73c8e3d633e12bd40026e8dd3377" title="Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneSh..." alt="" coords="486,5,691,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="439,24,470,24,470,29,439,29"/>
+</map>

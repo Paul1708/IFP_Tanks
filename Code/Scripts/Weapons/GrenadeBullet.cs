@@ -52,15 +52,15 @@ public partial class GrenadeBullet : Bullet
 		_targetSprite.GlobalPosition = _hitLocation;
 	}
 
-    /// <summary>
-    /// Moves the grenade forward. When it hits the ground, calls OnExplode
-    /// </summary>
-    /// <returns>Node as null</returns>
-    protected override Node Move()
-    {
-        _shadow.GlobalPosition = _shadowTrajectory(_shootDirection, _time);
-        GlobalPosition = _trajectory(_shootDirection, _time);
-        _targetSprite.GlobalPosition = _hitLocation;
+	/// <summary>
+	/// Moves the grenade forward. When it hits the ground, calls OnExplode
+	/// </summary>
+	/// <returns>Node as null</returns>
+	protected override Node Move()
+	{
+		_shadow.GlobalPosition = _shadowTrajectory(_shootDirection, _time);
+		GlobalPosition = _trajectory(_shootDirection, _time);
+		_targetSprite.GlobalPosition = _hitLocation;
 
 		if (_time >= _grenadeGroundHitTime)
 		{

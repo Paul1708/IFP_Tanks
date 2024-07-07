@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Managers.CoinManager" name="Code.Scripts.Managers.CoinManager">
+<area shape="rect" id="Node000001" title="Manager class that handles the coins of the player." alt="" coords="5,80,193,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="65,5,133,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="102,48,102,80,96,80,96,48"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Weapons.HomingBullet.Move" name="Code.Scripts.Weapons.HomingBullet.Move">
+<area shape="rect" id="Node000001" title="Calculates the new direction of the bullet." alt="" coords="5,39,209,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet_math.html#a87ce7d1998abcc443e362ed7943fbde1" title="Convert an angle from the interval J = [0,2*Pi] to an angle in I = [&#45;Pi,Pi] where 0 in J is mapped to..." alt="" coords="257,5,449,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,44,241,39,242,44,209,49"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet_math.html#a07c1b6cc56caea44d3ede3df2a1fae49" title="Ensure that the angle does not exceed the interval [&#45;maxAngleRadians, maxAngleRadians]...." alt="" coords="257,72,449,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,71,242,76,241,81,209,76"/>
+</map>

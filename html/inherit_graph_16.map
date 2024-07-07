@@ -1,0 +1,15 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,180,82,207"/>
+<area shape="rect" id="Node000001" href="$class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data.html" title="Data class which holds the data of a level." alt="" coords="136,5,330,48"/>
+<area shape="poly" id="edge42_Node000000_Node000001" title=" " alt="" coords="53,164,82,110,103,82,128,58,147,46,149,51,131,62,107,86,86,113,58,167"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data.html" title="Data class which holds the data of a world." alt="" coords="136,72,330,115"/>
+<area shape="poly" id="edge43_Node000000_Node000002" title=" " alt="" coords="68,168,96,145,128,124,154,113,156,118,131,129,99,150,71,172"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data.html" title="Data class which holds the data, which can be saved." alt="" coords="137,139,330,181"/>
+<area shape="poly" id="edge44_Node000000_Node000003" title=" " alt="" coords="97,181,136,174,137,180,97,187"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences.html" title="Manages saveing and loading of user preferences/settings." alt="" coords="137,205,330,248"/>
+<area shape="poly" id="edge45_Node000000_Node000004" title=" " alt="" coords="97,200,137,207,136,212,97,205"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_movement_1_1_player_stats.html" title="Data class which holds the base and current player stats." alt="" coords="133,272,334,315"/>
+<area shape="poly" id="edge46_Node000000_Node000005" title=" " alt="" coords="71,215,99,237,131,258,156,269,154,274,128,262,96,241,68,219"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats.html" title="Data class which holds the stats of a weapon." alt="" coords="130,339,337,381"/>
+<area shape="poly" id="edge47_Node000000_Node000006" title=" " alt="" coords="58,220,86,273,107,301,131,325,149,336,147,340,128,329,103,304,82,276,53,223"/>
+</map>

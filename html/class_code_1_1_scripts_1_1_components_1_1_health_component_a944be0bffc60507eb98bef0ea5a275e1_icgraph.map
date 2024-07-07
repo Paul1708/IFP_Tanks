@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Components.HealthComponent.IncreaseMaxHealth" name="Code.Scripts.Components.HealthComponent.IncreaseMaxHealth">
+<area shape="rect" id="Node000001" title="Increases the max health of the entity by the input value." alt="" coords="252,5,491,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_player_manager.html#aced99c4774105ffc282ff501733160ce" title="Adds the input amount to the player&#39;s max health." alt="" coords="5,5,204,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="236,29,204,29,204,24,236,24"/>
+</map>

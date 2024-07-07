@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Managers.CoinManager.AddCoins" name="Code.Scripts.Managers.CoinManager.AddCoins">
+<area shape="rect" id="Node000001" title="Method to add coins to the player. If the value is less than 0, the method will return without doing ..." alt="" coords="229,5,416,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_environment_1_1_coin.html#ae30be3f7a164236da5c7879e81d79890" title="Collects the coin, adds the coin value to the CoinManager and plays the coin pickup sound." alt="" coords="5,5,181,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,29,181,29,181,24,213,24"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Weapons.BasicBullet.Destroy" name="Code.Scripts.Weapons.BasicBullet.Destroy">
+<area shape="rect" id="Node000001" title="Destroys the bullet and emits particles." alt="" coords="246,5,438,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet.html#ad3d49f776a006421512b8180a3be1121" title="Fires when the bullet collides with other nodes." alt="" coords="5,5,198,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="230,29,198,29,198,24,230,24"/>
+</map>

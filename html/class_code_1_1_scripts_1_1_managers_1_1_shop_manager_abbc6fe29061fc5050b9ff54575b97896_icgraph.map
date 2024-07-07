@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Managers.ShopManager.GetEquippedWeapon" name="Code.Scripts.Managers.ShopManager.GetEquippedWeapon">
+<area shape="rect" id="Node000001" title="Returns the equipped weapon. If no weapon is equipped, the default weapon is returned." alt="" coords="237,5,435,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_gun_controller.html#a33ef24551f86812ea630766d91b25efd" title="Sets the weapon stats of the gun controller to the currently equipped weapon." alt="" coords="5,5,189,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="221,29,189,29,189,24,221,24"/>
+</map>

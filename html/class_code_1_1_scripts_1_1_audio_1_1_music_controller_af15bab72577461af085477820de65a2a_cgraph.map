@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Audio.MusicController.PlayWorldMusic" name="Code.Scripts.Audio.MusicController.PlayWorldMusic">
+<area shape="rect" id="Node000001" title="Plays the music by using &quot;PlayMusic&quot; for the current world by using the world id." alt="" coords="5,5,181,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html#ab038ca6a7b4c5b0e27b8e4eace83ecdb" title="Plays a sound that is used as music from the the child nodes of the MusicController and adds it to th..." alt="" coords="229,5,401,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,24,213,24,213,29,181,29"/>
+</map>

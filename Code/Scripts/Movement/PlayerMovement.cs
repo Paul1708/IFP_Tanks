@@ -67,7 +67,7 @@ public partial class PlayerMovement : CharacterBody2D
 
 		_rotationDirection = input.X;
 		Velocity = CalculateVelocity(Transform.X * input.Y);
-	}	
+	}
 
 	/// <summary>
 	/// Calculate the velocity of the player based on the input.

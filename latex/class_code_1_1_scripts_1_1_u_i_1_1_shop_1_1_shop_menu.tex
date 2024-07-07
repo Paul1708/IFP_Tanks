@@ -1,0 +1,84 @@
+\doxysection{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Menu Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu}{}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu}\index{Code.Scripts.UI.Shop.ShopMenu@{Code.Scripts.UI.Shop.ShopMenu}}
+
+
+Custom control class for the shop menu, which handles opening and closing the shop menu.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Menu\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a255364a00305ad2c313eccfe3a330f94}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a255364a00305ad2c313eccfe3a330f94} 
+delegate void {\bfseries On\+Shop\+Menu\+Closed\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a2a2feee074440d390462c1ddd1226eab}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a2a2feee074440d390462c1ddd1226eab} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a25627a1a4d17b2d3bd6d6f75508095c1}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a25627a1a4d17b2d3bd6d6f75508095c1} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a1b9acd9683c0690e791699560892ddc8}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a1b9acd9683c0690e791699560892ddc8} 
+void {\bfseries Show\+Shop\+Menu} ()
+\begin{DoxyCompactList}\small\item\em Show the shop menu and pause the game. Plays Open\+Shop sound. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a237fb83e4d037653a38dc18a76eb32c5}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a237fb83e4d037653a38dc18a76eb32c5} 
+void {\bfseries On\+Continue\+Button\+Pressed} ()
+\begin{DoxyCompactList}\small\item\em Hide the shop menu, unpause the game and tell the level to continue by emitting the On\+Level\+Complete signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a6583b22cc6504ee085ac03862c0d0ebf}{Display\+Insufficient\+Coins\+Error}} (int price)
+\begin{DoxyCompactList}\small\item\em Display an error message when the player tries to buy an item with insufficient coins. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a51b5b0190652b7b68f90781d936e8210}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a51b5b0190652b7b68f90781d936e8210} 
+void {\bfseries Display\+Already\+Max\+Health\+Error} ()
+\begin{DoxyCompactList}\small\item\em Display an error message when the player tries to buy "{}heal"{} when they already have max health. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Custom control class for the shop menu, which handles opening and closing the shop menu. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a6583b22cc6504ee085ac03862c0d0ebf}\index{Code.Scripts.UI.Shop.ShopMenu@{Code.Scripts.UI.Shop.ShopMenu}!DisplayInsufficientCoinsError@{DisplayInsufficientCoinsError}}
+\index{DisplayInsufficientCoinsError@{DisplayInsufficientCoinsError}!Code.Scripts.UI.Shop.ShopMenu@{Code.Scripts.UI.Shop.ShopMenu}}
+\doxysubsubsection{\texorpdfstring{DisplayInsufficientCoinsError()}{DisplayInsufficientCoinsError()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a6583b22cc6504ee085ac03862c0d0ebf} 
+void Code.\+Scripts.\+UI.\+Shop.\+Shop\+Menu.\+Display\+Insufficient\+Coins\+Error (\begin{DoxyParamCaption}\item[{int}]{price}{}\end{DoxyParamCaption})}
+
+
+
+Display an error message when the player tries to buy an item with insufficient coins. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em price} & The price of the item\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu_a6583b22cc6504ee085ac03862c0d0ebf_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+UI/\+Shop/Shop\+Menu.\+cs\end{DoxyCompactItemize}

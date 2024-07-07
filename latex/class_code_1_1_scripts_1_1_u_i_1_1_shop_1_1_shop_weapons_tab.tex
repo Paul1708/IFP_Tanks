@@ -1,0 +1,95 @@
+\doxysection{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Weapons\+Tab Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab}{}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab}\index{Code.Scripts.UI.Shop.ShopWeaponsTab@{Code.Scripts.UI.Shop.ShopWeaponsTab}}
+
+
+Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Weapons\+Tab\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Weapons\+Tab\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_aaf9b653e5c68fad470d9fe547994f677}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_aaf9b653e5c68fad470d9fe547994f677} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_ae3cebb9430c931288a660e1f8a7e544f}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_ae3cebb9430c931288a660e1f8a7e544f} 
+override void {\bfseries \+\_\+\+Process} (double delta)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a4d2499de69dd432ccd387c47e003075e}{Reset\+Scroll\+Bar}} ()
+\begin{DoxyCompactList}\small\item\em sets the Scollbar to default by stetting the value to 0 \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a0c547e50a4aa2761b8cd643f7ccec2f3}{Scroll}} ()
+\begin{DoxyCompactList}\small\item\em Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab}}}
+\begin{DoxyCompactItemize}
+\item 
+Label \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a8c1da1b8e94bc122d4dec7d782d344ed}{Get\+Price\+Tag\+By\+Panel}} (int panel\+Number)
+\begin{DoxyCompactList}\small\item\em Get price tags from the scene by their path that only differs in the Panel number. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a7f6a1833399472bad539beb5c0a45c7c}{Parse\+Price}} (int panel\+Number)
+\begin{DoxyCompactList}\small\item\em Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Protected Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab}}}
+\begin{DoxyCompactItemize}
+\item 
+const string {\bfseries Price\+Tag\+Path\+Format} = "{}Rich\+Text\+Label/Control/Panel\{0\}/Price\+Tag"{}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a4d2499de69dd432ccd387c47e003075e}\index{Code.Scripts.UI.Shop.ShopWeaponsTab@{Code.Scripts.UI.Shop.ShopWeaponsTab}!ResetScrollBar@{ResetScrollBar}}
+\index{ResetScrollBar@{ResetScrollBar}!Code.Scripts.UI.Shop.ShopWeaponsTab@{Code.Scripts.UI.Shop.ShopWeaponsTab}}
+\doxysubsubsection{\texorpdfstring{ResetScrollBar()}{ResetScrollBar()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a4d2499de69dd432ccd387c47e003075e} 
+override void Code.\+Scripts.\+UI.\+Shop.\+Shop\+Weapons\+Tab.\+Reset\+Scroll\+Bar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+sets the Scollbar to default by stetting the value to 0 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_a9e174b5263f9084c615fe5eb83ac8c77}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab}}.
+
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a0c547e50a4aa2761b8cd643f7ccec2f3}\index{Code.Scripts.UI.Shop.ShopWeaponsTab@{Code.Scripts.UI.Shop.ShopWeaponsTab}!Scroll@{Scroll}}
+\index{Scroll@{Scroll}!Code.Scripts.UI.Shop.ShopWeaponsTab@{Code.Scripts.UI.Shop.ShopWeaponsTab}}
+\doxysubsubsection{\texorpdfstring{Scroll()}{Scroll()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_a0c547e50a4aa2761b8cd643f7ccec2f3} 
+override void Code.\+Scripts.\+UI.\+Shop.\+Shop\+Weapons\+Tab.\+Scroll (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_af2fda5d070f9be782a3621531b273fca}{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Base\+Tab}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+UI/\+Shop/Shop\+Weapons\+Tab.\+cs\end{DoxyCompactItemize}

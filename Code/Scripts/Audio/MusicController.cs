@@ -1,11 +1,12 @@
 using System.Linq;
 using Godot;
 
-/// <summary>
-/// MusicController that plays music and sounds
-/// </summary>
+
 namespace Code.Scripts.Audio
 {
+	/// <summary>
+	/// MusicController that plays music and sounds
+	/// </summary>
 	public partial class MusicController : Node
 	{
 		/// <summary>
@@ -37,7 +38,7 @@ namespace Code.Scripts.Audio
 			string currentWorld = currentWorldId.ToString();
 			PlayMusic("MusicWorld" + currentWorld);
 		}
-	
+
 		/// <summary>
 		/// Stops the music that is currently playing by checking the PlayingMusic group and removing the music from the group
 		/// </summary>
@@ -46,7 +47,7 @@ namespace Code.Scripts.Audio
 			// Check if there is any music playing if not return
 			if (GetTree().GetNodesInGroup("PlayingMusic").Count == 0)
 				return;
-		
+
 			foreach (AudioStreamPlayer music in GetTree().GetNodesInGroup("PlayingMusic").Cast<AudioStreamPlayer>())
 			{
 				music.Stop();

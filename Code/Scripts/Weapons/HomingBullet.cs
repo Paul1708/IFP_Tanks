@@ -40,19 +40,19 @@ public partial class HomingBullet : Bullet
 		QueueFree();
 	}
 
-    /// <summary>
-    /// Calculates the new direction of the bullet
-    /// </summary>
-    /// <returns>null</returns>
-    protected override Node Move()
-    {
-        //If the target is null, then abort launching bullet
-        if (TargetNode == null || TargetNode.IsQueuedForDeletion())
-        {
-            GD.Print("WARNING: Homing Bullet target is not set, destroy bullet.");
-            QueueFree();
-            return null;
-        }
+	/// <summary>
+	/// Calculates the new direction of the bullet
+	/// </summary>
+	/// <returns>null</returns>
+	protected override Node Move()
+	{
+		//If the target is null, then abort launching bullet
+		if (TargetNode == null || TargetNode.IsQueuedForDeletion())
+		{
+			GD.Print("WARNING: Homing Bullet target is not set, destroy bullet.");
+			QueueFree();
+			return null;
+		}
 
 		_target = TargetNode.GlobalPosition;
 		if (_ticksPassed == Uninitialised)

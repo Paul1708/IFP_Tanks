@@ -1,0 +1,99 @@
+\doxysection{Code.\+Scripts.\+Enemies.\+Basic\+Behaviour Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour}{}\label{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour}\index{Code.Scripts.Enemies.BasicBehaviour@{Code.Scripts.Enemies.BasicBehaviour}}
+
+
+Basic behaivour of the basic (red) enemy.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Enemies.\+Basic\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Enemies.\+Basic\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour_a73f2769b3918160833a701f2973ef202}\label{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour_a73f2769b3918160833a701f2973ef202} 
+override void {\bfseries Setup} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour_af836a73bee44ced4d91ca0716467e936}\label{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour_af836a73bee44ced4d91ca0716467e936} 
+override void {\bfseries Execute\+Behaivour} ()
+\begin{DoxyCompactList}\small\item\em Executes the behaivour of the enemy. The enemy will move towards the player until the player is in sight. When the player is in sight, the enemy will shoot at the player and move towards a random target. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+void {\bfseries Execute\+Behaivour} ()
+\item 
+void {\bfseries Setup} ()
+\item 
+override void {\bfseries \+\_\+\+Process} (double delta)
+\item 
+Vector2 \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour_a22558494b2748262d1f08553ae998f74}{Get\+Random\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Returns a random, reachable target for the enemy to move towards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour_a6deaf65a8bb07766673b051fa1b4e398}\label{class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour_a6deaf65a8bb07766673b051fa1b4e398} 
+bool {\bfseries \+\_\+check\+If\+Player\+In\+Sight} ()
+\begin{DoxyCompactList}\small\item\em Checks if the player is in the line of sight of the enemy by casting a ray from the enemy to the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Min\+Path\+Length}
+\item 
+int {\bfseries Max\+Path\+Length}
+\item 
+float {\bfseries Path\+Goal\+Hit\+Radius}
+\item 
+uint {\bfseries Max\+Random\+Target\+Search\+Tries}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries In\+Random\+Move}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_particle_controller}{Particle\+Controller}} {\bfseries Particles}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller}{Gun\+Controller}} {\bfseries Gun}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Node2D {\bfseries Player}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller}{Navigation\+Controller}} {\bfseries Navigation}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_enemy}{Enemy}} {\bfseries Enemy}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager}{Level\+Manager}} {\bfseries Level\+Manager}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Vector2 {\bfseries Target\+Location}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Basic behaivour of the basic (red) enemy. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Enemies/Basic\+Behaviour.\+cs\end{DoxyCompactItemize}

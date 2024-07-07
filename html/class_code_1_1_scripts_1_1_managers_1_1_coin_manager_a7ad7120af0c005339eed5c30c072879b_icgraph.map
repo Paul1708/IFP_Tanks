@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Managers.CoinManager.CheckIfEnoughCoins" name="Code.Scripts.Managers.CoinManager.CheckIfEnoughCoins">
+<area shape="rect" id="Node000001" title="Method to check if the player has more or equal coins to the value." alt="" coords="245,39,440,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html#a78d1f138c54189b7208889cb20cfdd91" title="Tries to upgrade/buy the stat and returns true if the stat was bought, false if not...." alt="" coords="5,5,197,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,47,197,43,198,37,230,42"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html#a9f37feef3b1e2c61ef951f07b338d5cd" title="Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag la..." alt="" coords="5,72,197,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="230,78,198,83,197,77,229,73"/>
+</map>

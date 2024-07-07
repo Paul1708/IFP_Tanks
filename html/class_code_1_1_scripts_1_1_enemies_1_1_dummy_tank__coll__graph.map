@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Enemies.DummyTank" name="Code.Scripts.Enemies.DummyTank">
+<area shape="rect" id="Node000001" title="Provides trail and animation handling for the Tank on the main menu." alt="" coords="5,80,234,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="58,5,181,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="122,48,122,80,117,80,117,48"/>
+</map>

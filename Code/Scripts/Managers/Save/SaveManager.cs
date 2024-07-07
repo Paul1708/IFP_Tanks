@@ -54,12 +54,12 @@ public partial class SaveManager : Node
 		LoadGame();
 	}
 
-    /// <summary>
-    /// Loads the game. If LoadingType is set to NewGame, a new SaveData object is created and saved. If LoadingType is set to LoadGame, the SaveData object is loaded from the save file.
-    /// </summary>
-    /// <exception cref="ValidationException">Thrown when LoadingType is not set.</exception>
-    public void LoadGame()
-    {
+	/// <summary>
+	/// Loads the game. If LoadingType is set to NewGame, a new SaveData object is created and saved. If LoadingType is set to LoadGame, the SaveData object is loaded from the save file.
+	/// </summary>
+	/// <exception cref="ValidationException">Thrown when LoadingType is not set.</exception>
+	public void LoadGame()
+	{
 
 		if (LoadingType == LoadingType.NewGame)
 		{
@@ -80,14 +80,14 @@ public partial class SaveManager : Node
 		LoadingType = LoadingType.None;
 	}
 
-    /// <summary>
-    /// Checks if the save file is available.
-    /// </summary>
-    /// <returns>True if the save file is available, false if not.</returns>
-    public bool IsSaveFileAvailable()
-    {
-        return ResourceLoader.Exists("user://savegame.tres");
-    }
+	/// <summary>
+	/// Checks if the save file is available.
+	/// </summary>
+	/// <returns>True if the save file is available, false if not.</returns>
+	public bool IsSaveFileAvailable()
+	{
+		return ResourceLoader.Exists("user://savegame.tres");
+	}
 
 	/// <summary>
 	/// Saves the shop state of Stats and Weapons in the SaveData object.

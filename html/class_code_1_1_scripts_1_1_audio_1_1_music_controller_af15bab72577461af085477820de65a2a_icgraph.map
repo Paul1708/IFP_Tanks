@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Audio.MusicController.PlayWorldMusic" name="Code.Scripts.Audio.MusicController.PlayWorldMusic">
+<area shape="rect" id="Node000001" title="Plays the music by using &quot;PlayMusic&quot; for the current world by using the world id." alt="" coords="259,5,434,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager.html#aa199edfd1e9939aa2e2bbf1ba7064815" title="Called when the level is completed. Loads the next level or world." alt="" coords="5,5,211,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,29,211,29,211,24,243,24"/>
+</map>

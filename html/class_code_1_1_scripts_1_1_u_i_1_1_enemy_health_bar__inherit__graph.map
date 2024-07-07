@@ -1,0 +1,5 @@
+<map id="Code.Scripts.UI.EnemyHealthBar" name="Code.Scripts.UI.EnemyHealthBar">
+<area shape="rect" id="Node000001" title="Shows the health of an enemy." alt="" coords="5,80,220,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="81,5,144,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="115,48,115,80,110,80,110,48"/>
+</map>

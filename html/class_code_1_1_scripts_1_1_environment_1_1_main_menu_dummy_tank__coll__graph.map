@@ -1,0 +1,9 @@
+<map id="Code.Scripts.Environment.MainMenuDummyTank" name="Code.Scripts.Environment.MainMenuDummyTank">
+<area shape="rect" id="Node000001" title="Controls the dummy tank in the main menu." alt="" coords="5,188,181,231"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="38,89,105,116"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="80,131,91,187,86,188,75,132"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller.html" title="Utility which provides navigation functionality to a 2D character." alt="" coords="130,81,344,124"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="198,135,123,190,120,185,195,131"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="172,5,302,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="240,48,240,81,234,81,234,48"/>
+</map>

@@ -1,0 +1,162 @@
+\doxysection{Code.\+Scripts.\+Weapons.\+Basic\+Bullet Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet}{}\label{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet}\index{Code.Scripts.Weapons.BasicBullet@{Code.Scripts.Weapons.BasicBullet}}
+
+
+Controls the basic (50cal) bullet.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Weapons.\+Basic\+Bullet\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Weapons.\+Basic\+Bullet\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ac8cd8aeaef50891001c1341aec949ff3}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the bullet and emits particles. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548}{On\+Collision}} (Node node)
+\begin{DoxyCompactList}\small\item\em Called when the bullet collides with another node. Calls the appropriate method for the collision type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20}{On\+Damageable\+Hit}} (Node node)
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits a damageable node. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182}{\+\_\+\+Physics\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Call move method on every physics process tick and check for collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override Node \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_a3e07511d311970d311433ec3c7a9ca75}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Moves the bullet forward and returns the collided node, if any. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ad3d49f776a006421512b8180a3be1121}{On\+Other\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Fires when the bullet collides with other nodes. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a6918edb299b9f904812786a56c280ea4}{Setup}} ()
+\begin{DoxyCompactList}\small\item\em Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30}{On\+Anything\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits anything. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Wall\+Hit} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits a wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+Node2D {\bfseries Player}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component}{Health\+Component}} {\bfseries Player\+Health\+Component}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_particle_controller}{Particle\+Controller}} {\bfseries Particles}
+\item 
+Vector2 {\bfseries Normal\+Collision\+Vector}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries Damage}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Node2D {\bfseries Shooter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float {\bfseries Speed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the basic (50cal) bullet. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ac8cd8aeaef50891001c1341aec949ff3}\index{Code.Scripts.Weapons.BasicBullet@{Code.Scripts.Weapons.BasicBullet}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Code.Scripts.Weapons.BasicBullet@{Code.Scripts.Weapons.BasicBullet}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ac8cd8aeaef50891001c1341aec949ff3} 
+override void Code.\+Scripts.\+Weapons.\+Basic\+Bullet.\+Destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroys the bullet and emits particles. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ac8cd8aeaef50891001c1341aec949ff3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ac8cd8aeaef50891001c1341aec949ff3_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_a3e07511d311970d311433ec3c7a9ca75}\index{Code.Scripts.Weapons.BasicBullet@{Code.Scripts.Weapons.BasicBullet}!Move@{Move}}
+\index{Move@{Move}!Code.Scripts.Weapons.BasicBullet@{Code.Scripts.Weapons.BasicBullet}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_a3e07511d311970d311433ec3c7a9ca75} 
+override Node Code.\+Scripts.\+Weapons.\+Basic\+Bullet.\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Moves the bullet forward and returns the collided node, if any. 
+
+\begin{DoxyReturn}{Returns}
+The node that the bullet collided with
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ad3d49f776a006421512b8180a3be1121}\index{Code.Scripts.Weapons.BasicBullet@{Code.Scripts.Weapons.BasicBullet}!OnOtherHit@{OnOtherHit}}
+\index{OnOtherHit@{OnOtherHit}!Code.Scripts.Weapons.BasicBullet@{Code.Scripts.Weapons.BasicBullet}}
+\doxysubsubsection{\texorpdfstring{OnOtherHit()}{OnOtherHit()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ad3d49f776a006421512b8180a3be1121} 
+override void Code.\+Scripts.\+Weapons.\+Basic\+Bullet.\+On\+Other\+Hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Fires when the bullet collides with other nodes. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ad3d49f776a006421512b8180a3be1121_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Weapons/Basic\+Bullet.\+cs\end{DoxyCompactItemize}

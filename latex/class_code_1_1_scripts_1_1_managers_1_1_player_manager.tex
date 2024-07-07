@@ -1,0 +1,166 @@
+\doxysection{Code.\+Scripts.\+Managers.\+Player\+Manager Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager}{}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager}\index{Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}}
+
+
+Manages the player\textquotesingle{}s stats and health.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Managers.\+Player\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_code_1_1_scripts_1_1_managers_1_1_player_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Managers.\+Player\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=229pt]{class_code_1_1_scripts_1_1_managers_1_1_player_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2a53a6e1716cee9eb6713836b3777033}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2a53a6e1716cee9eb6713836b3777033} 
+delegate void {\bfseries On\+Player\+Stats\+Changed\+Event\+Handler} (\mbox{\hyperlink{class_code_1_1_scripts_1_1_movement_1_1_player_stats}{Player\+Stats}} stats)
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a875f16fb70e5f9b74273200175523906}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a875f16fb70e5f9b74273200175523906} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a99831cc42b9343fca9de3933b2653196}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a99831cc42b9343fca9de3933b2653196} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_player_manager_ac3795d8467e6de798a747470f1082071}{Add\+Damage\+Modifier}} (float amount)
+\begin{DoxyCompactList}\small\item\em Adds the input amount to the player\textquotesingle{}s damage modifier. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2ff93fe4c5f958041b682bd5da9ccf14}{Add\+Movement\+Speed}} (float amount)
+\begin{DoxyCompactList}\small\item\em Adds the input amount to the player\textquotesingle{}s movement speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2e4f0368506e1bfb80a4539f505c48cc}{Add\+Rotation\+Speed}} (float amount)
+\begin{DoxyCompactList}\small\item\em Adds the input amount to the player\textquotesingle{}s rotation speed. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_player_manager_aced99c4774105ffc282ff501733160ce}{Add\+Max\+Health}} (float amount)
+\begin{DoxyCompactList}\small\item\em Adds the input amount to the player\textquotesingle{}s max health. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a8e126513ed33d95c7b84c2513e0691c7}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a8e126513ed33d95c7b84c2513e0691c7} 
+void {\bfseries Reset\+Max\+Health} ()
+\begin{DoxyCompactList}\small\item\em Resets the player\textquotesingle{}s max health to the base max health. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a20930a943468cbe49c330ce88231033a}{On\+Save\+Data\+Loaded}} (\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}} save\+Data)
+\begin{DoxyCompactList}\small\item\em Loads the player\textquotesingle{}s stats from the save data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_af759a7a3aeaa672a9aa8332fad85b199}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_af759a7a3aeaa672a9aa8332fad85b199} 
+static \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_player_manager}{Player\+Manager}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_adff6128c4c7078f9cc886acc20cc92c3}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_adff6128c4c7078f9cc886acc20cc92c3} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component}{Health\+Component}} {\bfseries Player\+Health\+Component}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_ab81041bb9b0c489c7594b01719d24218}\label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_ab81041bb9b0c489c7594b01719d24218} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_movement_1_1_player_stats}{Player\+Stats}} {\bfseries Player\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the player\textquotesingle{}s stats and health. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_ac3795d8467e6de798a747470f1082071}\index{Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}!AddDamageModifier@{AddDamageModifier}}
+\index{AddDamageModifier@{AddDamageModifier}!Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}}
+\doxysubsubsection{\texorpdfstring{AddDamageModifier()}{AddDamageModifier()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_ac3795d8467e6de798a747470f1082071} 
+void Code.\+Scripts.\+Managers.\+Player\+Manager.\+Add\+Damage\+Modifier (\begin{DoxyParamCaption}\item[{float}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Adds the input amount to the player\textquotesingle{}s damage modifier. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to add\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_aced99c4774105ffc282ff501733160ce}\index{Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}!AddMaxHealth@{AddMaxHealth}}
+\index{AddMaxHealth@{AddMaxHealth}!Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}}
+\doxysubsubsection{\texorpdfstring{AddMaxHealth()}{AddMaxHealth()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_aced99c4774105ffc282ff501733160ce} 
+void Code.\+Scripts.\+Managers.\+Player\+Manager.\+Add\+Max\+Health (\begin{DoxyParamCaption}\item[{float}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Adds the input amount to the player\textquotesingle{}s max health. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to add\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_player_manager_aced99c4774105ffc282ff501733160ce_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2ff93fe4c5f958041b682bd5da9ccf14}\index{Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}!AddMovementSpeed@{AddMovementSpeed}}
+\index{AddMovementSpeed@{AddMovementSpeed}!Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}}
+\doxysubsubsection{\texorpdfstring{AddMovementSpeed()}{AddMovementSpeed()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2ff93fe4c5f958041b682bd5da9ccf14} 
+void Code.\+Scripts.\+Managers.\+Player\+Manager.\+Add\+Movement\+Speed (\begin{DoxyParamCaption}\item[{float}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Adds the input amount to the player\textquotesingle{}s movement speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to add\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2e4f0368506e1bfb80a4539f505c48cc}\index{Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}!AddRotationSpeed@{AddRotationSpeed}}
+\index{AddRotationSpeed@{AddRotationSpeed}!Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}}
+\doxysubsubsection{\texorpdfstring{AddRotationSpeed()}{AddRotationSpeed()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a2e4f0368506e1bfb80a4539f505c48cc} 
+void Code.\+Scripts.\+Managers.\+Player\+Manager.\+Add\+Rotation\+Speed (\begin{DoxyParamCaption}\item[{float}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Adds the input amount to the player\textquotesingle{}s rotation speed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & The amount to add\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a20930a943468cbe49c330ce88231033a}\index{Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}!OnSaveDataLoaded@{OnSaveDataLoaded}}
+\index{OnSaveDataLoaded@{OnSaveDataLoaded}!Code.Scripts.Managers.PlayerManager@{Code.Scripts.Managers.PlayerManager}}
+\doxysubsubsection{\texorpdfstring{OnSaveDataLoaded()}{OnSaveDataLoaded()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a20930a943468cbe49c330ce88231033a} 
+void Code.\+Scripts.\+Managers.\+Player\+Manager.\+On\+Save\+Data\+Loaded (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}}}]{save\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Loads the player\textquotesingle{}s stats from the save data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em save\+Data} & The save data that is loaded\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_player_manager_a20930a943468cbe49c330ce88231033a_cgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Managers/Player\+Manager.\+cs\end{DoxyCompactItemize}

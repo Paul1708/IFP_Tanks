@@ -1,0 +1,11 @@
+<map id="Code.Scripts.Components.HealthComponent.TakeDamage" name="Code.Scripts.Components.HealthComponent.TakeDamage">
+<area shape="rect" id="Node000001" title="Deals damage to the entity by the input value." alt="" coords="738,39,943,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#ab04ac5ac34559667a56cf8493fa1bf20" title="Called when the bullet hits a damageable node." alt="" coords="494,39,690,81"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="723,63,691,63,691,57,723,57"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_laser.html#a16b8c12cff7f999dbf9ae2f4abb33175" title="Updates the laser beam and particles." alt="" coords="250,5,446,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="478,47,445,43,446,37,479,42"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a014dc96a8f25d183b0bec481c92d0548" title="Called when the bullet collides with another node. Calls the appropriate method for the collision typ..." alt="" coords="250,72,446,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="479,78,447,83,446,77,478,73"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a9da0755c4cc39e78855b602573727182" title="Call move method on every physics process tick and check for collisions." alt="" coords="5,72,202,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="234,96,202,96,202,91,234,91"/>
+</map>

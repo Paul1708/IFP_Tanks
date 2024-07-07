@@ -8,7 +8,10 @@ public partial class DummyBehaviour : Behaviour
     public override void Setup()
     {
     }
-    
+
+    /// <summary>
+    /// Rotate the gun towards the player.
+    /// </summary>
     public override void ExecuteBehaivour()
     {
         Gun.RotateTowards(Player.GlobalPosition);
