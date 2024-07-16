@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Weapons.Laser" name="Code.Scripts.Weapons.Laser">
+<area shape="rect" id="Node000001" title="Controls the laser beam, checks for collisions and updates the laser beam particles." alt="" coords="5,80,197,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="57,5,145,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="104,48,104,80,98,80,98,48"/>
+</map>

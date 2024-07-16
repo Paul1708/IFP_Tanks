@@ -6,6 +6,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Displays the players health bar.
+/// </summary>
 public partial class HealthBar : TextureProgressBar
 {
     [Export]
@@ -53,6 +56,11 @@ public partial class HealthBar : TextureProgressBar
         RedHealthTimer.Timeout -= UpdateRedHealthBar;
     }
 
+    /// <summary>
+    /// Tweems the green health bar when the player's health changes.
+    /// Starts the timer on which the red health bar will update.
+    /// </summary>
+    /// <param name="newHp">The new health of the player</param>
     public void OnHealthChanged(float newHp)
     {
         //set the health bar's value to the current health
@@ -68,6 +76,10 @@ public partial class HealthBar : TextureProgressBar
         RedHealthTimer.Start(RedBarDelay);
     }
 
+    /// <summary>
+    /// Updates the healthbars if the max health of the player changes.
+    /// </summary>
+    /// <param name="newMaxHp">The new max health of the player</param>
     public void OnMaxHealthChanged(float newMaxHp)
     {
         MaxHp = newMaxHp;
@@ -83,6 +95,9 @@ public partial class HealthBar : TextureProgressBar
         GreenBar.Value = CurrentHp;
     }
 
+    /// <summary>
+    /// Tweens the red health bar to the current health.
+    /// </summary>
     private void UpdateRedHealthBar()
     {
         //set the red health bar's value to the current health
@@ -90,6 +105,9 @@ public partial class HealthBar : TextureProgressBar
         tween.TweenProperty(this, "value", CurrentHp, 1).SetTrans(Tween.TransitionType.Expo).SetEase(Tween.EaseType.Out);
     }
 
+    /// <summary>
+    /// Updates the text of the health bar.
+    /// </summary>
     private void UpdateLabelText()
     {
         Label.Text = $"{Math.Round(CurrentHp)} / {Math.Round(MaxHp)}";

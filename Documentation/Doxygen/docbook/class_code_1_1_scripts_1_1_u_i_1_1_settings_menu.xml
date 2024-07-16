@@ -1,0 +1,92 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu" xml:lang="en-US">
+<title>Code.Scripts.UI.SettingsMenu Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.SettingsMenu</primary></indexterm>
+<para>
+
+<para>Controls the settings menu. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.SettingsMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_settings_menu__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.SettingsMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_settings_menu__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu_1ac2dcb14e9397a6f84f3d94a27df8203d"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu_1a9cf675814eb0da928aca1910f242c744">SetVolume</link> (int busIndex, float value)</para>
+
+<para>Sets the volume of the bus to the given value. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu_1a99808933c9330fd777dd09df145dbaba"/>void <emphasis role="strong">LoadUserSettings</emphasis> ()</para>
+
+<para>Loads the user settings from the UserPreferences file. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu_1a199a13044b112d3032488a4b538c2360"/><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the settings menu. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu_1a9cf675814eb0da928aca1910f242c744"/><section>
+    <title>SetVolume()</title>
+<indexterm><primary>SetVolume</primary><secondary>Code.Scripts.UI.SettingsMenu</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.SettingsMenu</primary><secondary>SetVolume</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.SettingsMenu.SetVolume (int busIndex, float value)</computeroutput></para><para>
+
+<para>Sets the volume of the bus to the given value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>busIndex</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/SettingsMenu.cs</section>
+</section>

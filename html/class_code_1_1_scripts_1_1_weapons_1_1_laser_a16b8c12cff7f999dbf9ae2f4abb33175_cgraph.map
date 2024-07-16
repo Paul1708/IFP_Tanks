@@ -1,0 +1,9 @@
+<map id="Code.Scripts.Weapons.Laser._PhysicsProcess" name="Code.Scripts.Weapons.Laser._PhysicsProcess">
+<area shape="rect" id="Node000001" title="Updates the laser beam and particles." alt="" coords="5,5,201,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#ab04ac5ac34559667a56cf8493fa1bf20" title="Called when the bullet hits a damageable node." alt="" coords="249,5,445,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="201,24,233,24,233,29,201,29"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#a1adc132ff3035e2a5633705a112a3d22" title="Deals damage to the entity by the input value." alt="" coords="493,5,697,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="446,24,477,24,477,29,446,29"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#ad81839e1248f29e1c6756376847146a6" title="Sets the current health of the entity to the input value." alt="" coords="745,5,952,48"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="698,24,730,24,730,29,698,29"/>
+</map>

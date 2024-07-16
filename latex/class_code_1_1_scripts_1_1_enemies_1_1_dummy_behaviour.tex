@@ -1,0 +1,93 @@
+\doxysection{Code.\+Scripts.\+Enemies.\+Dummy\+Behaviour Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour}{}\label{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour}\index{Code.Scripts.Enemies.DummyBehaviour@{Code.Scripts.Enemies.DummyBehaviour}}
+
+
+Dummy behaviour, which only rotates towards the player and does nothing else.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Enemies.\+Dummy\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Enemies.\+Dummy\+Behaviour\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour_a3c0334c3fbbe6ec7b1d7d1957722660f}\label{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour_a3c0334c3fbbe6ec7b1d7d1957722660f} 
+override void {\bfseries Setup} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour_ae6d519cf43e9a9b7df079994888ef014}\label{class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour_ae6d519cf43e9a9b7df079994888ef014} 
+override void {\bfseries Execute\+Behaivour} ()
+\begin{DoxyCompactList}\small\item\em Rotate the gun towards the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+void {\bfseries Execute\+Behaivour} ()
+\item 
+void {\bfseries Setup} ()
+\item 
+override void {\bfseries \+\_\+\+Process} (double delta)
+\item 
+Vector2 \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour_a22558494b2748262d1f08553ae998f74}{Get\+Random\+Target}} ()
+\begin{DoxyCompactList}\small\item\em Returns a random, reachable target for the enemy to move towards. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Public Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries Min\+Path\+Length}
+\item 
+int {\bfseries Max\+Path\+Length}
+\item 
+float {\bfseries Path\+Goal\+Hit\+Radius}
+\item 
+uint {\bfseries Max\+Random\+Target\+Search\+Tries}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries In\+Random\+Move}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_particle_controller}{Particle\+Controller}} {\bfseries Particles}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_behaviour}{Code.\+Scripts.\+Enemies.\+Behaviour}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller}{Gun\+Controller}} {\bfseries Gun}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Node2D {\bfseries Player}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller}{Navigation\+Controller}} {\bfseries Navigation}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_enemies_1_1_enemy}{Enemy}} {\bfseries Enemy}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager}{Level\+Manager}} {\bfseries Level\+Manager}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+Vector2 {\bfseries Target\+Location}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Dummy behaviour, which only rotates towards the player and does nothing else. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Enemies/Dummy\+Behaviour.\+cs\end{DoxyCompactItemize}

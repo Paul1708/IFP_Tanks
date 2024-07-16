@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Enemies.Enemy" name="Code.Scripts.Enemies.Enemy">
+<area shape="rect" id="Node000001" title="Coordinates health, animation and trail components of an enemy." alt="" coords="5,80,202,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="42,5,165,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,48,106,80,101,80,101,48"/>
+</map>

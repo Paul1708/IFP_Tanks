@@ -1,0 +1,16 @@
+<map id="Code.Scripts.Weapons.Bullet" name="Code.Scripts.Weapons.Bullet">
+<area shape="rect" id="Node000001" title="Base class for all bullets in the game. Provides basic functionality for all bullets." alt="" coords="519,103,712,129"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="176,5,273,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="289,24,387,41,496,67,584,100,583,105,495,72,386,46,288,30"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html" title="Component that handles the health of an entity." alt="" coords="136,56,313,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="329,85,519,104,518,109,328,90"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,99,73,125"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="88,100,135,91,136,97,89,106"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_managers_1_1_particle_controller.html" title="Controller for emitting particles." alt="" coords="122,123,327,165"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="88,118,122,124,121,129,88,123"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="343,138,495,129,519,127,519,132,496,135,343,144"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html" title="MusicController that plays music and sounds." alt="" coords="138,189,311,232"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="326,195,409,180,495,160,583,127,584,132,496,165,410,186,327,200"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="13,197,65,224"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="80,208,138,208,138,213,80,213"/>
+</map>

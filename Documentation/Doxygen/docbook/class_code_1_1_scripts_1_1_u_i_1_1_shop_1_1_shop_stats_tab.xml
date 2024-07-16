@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.ShopStatsTab Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopStatsTab</primary></indexterm>
+<para>
+
+<para>Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought stats. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.Shop.ShopStatsTab:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.ShopStatsTab:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_1a13261b52ed1c5c22fa0df80f9554a4ee"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_1ae6c06ff6858d647455e20ef346525875"/>override void <emphasis role="strong">_Process</emphasis> (double delta)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_1ae69e731a2c7cd9d0eac4b9d6ec55543b">ResetScrollBar</link> ()</para>
+
+<para>sets the Scollbar to default by stetting the value to 0 </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_1a0f119579ef8e9f1d07b7b0c35f8f2303">Scroll</link> ()</para>
+
+<para>Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab">Code.Scripts.UI.Shop.ShopBaseTab</link>        <itemizedlist>
+            <listitem><para>Label <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1a8c1da1b8e94bc122d4dec7d782d344ed">GetPriceTagByPanel</link> (int panelNumber)</para>
+
+<para>get all price tags from the scene by their path that only differs in the Panel number </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1a7f6a1833399472bad539beb5c0a45c7c">ParsePrice</link> (int panelNumber)</para>
+
+<para>Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Protected Attributes inherited from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab">Code.Scripts.UI.Shop.ShopBaseTab</link>        <itemizedlist>
+            <listitem><para>const string <emphasis role="strong">PriceTagPathFormat</emphasis> = &quot;RichTextLabel/Control/Panel{0}/PriceTag&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought stats. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_1ae69e731a2c7cd9d0eac4b9d6ec55543b"/><section>
+    <title>ResetScrollBar()</title>
+<indexterm><primary>ResetScrollBar</primary><secondary>Code.Scripts.UI.Shop.ShopStatsTab</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopStatsTab</primary><secondary>ResetScrollBar</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.UI.Shop.ShopStatsTab.ResetScrollBar ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>sets the Scollbar to default by stetting the value to 0 </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1a9e174b5263f9084c615fe5eb83ac8c77">Code.Scripts.UI.Shop.ShopBaseTab</link>.</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab_1a0f119579ef8e9f1d07b7b0c35f8f2303"/><section>
+    <title>Scroll()</title>
+<indexterm><primary>Scroll</primary><secondary>Code.Scripts.UI.Shop.ShopStatsTab</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopStatsTab</primary><secondary>Scroll</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.UI.Shop.ShopStatsTab.Scroll ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1af2fda5d070f9be782a3621531b273fca">Code.Scripts.UI.Shop.ShopBaseTab</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopStatsTab.cs</section>
+</section>

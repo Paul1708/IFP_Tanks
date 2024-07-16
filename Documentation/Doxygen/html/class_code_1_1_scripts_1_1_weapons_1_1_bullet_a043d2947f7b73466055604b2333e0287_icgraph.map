@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Weapons.Bullet.OnOtherHit" name="Code.Scripts.Weapons.Bullet.OnOtherHit">
+<area shape="rect" id="Node000001" title="Called when the bullet hits anything other than a damageable node or a wall." alt="" coords="494,5,690,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a014dc96a8f25d183b0bec481c92d0548" title="Called when the bullet collides with another node. Calls the appropriate method for the collision typ..." alt="" coords="250,5,446,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="479,29,447,29,447,24,479,24"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a9da0755c4cc39e78855b602573727182" title="Call move method on every physics process tick and check for collisions." alt="" coords="5,5,202,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,29,202,29,202,24,234,24"/>
+</map>

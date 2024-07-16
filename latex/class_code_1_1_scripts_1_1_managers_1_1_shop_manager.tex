@@ -1,0 +1,281 @@
+\doxysection{Code.\+Scripts.\+Managers.\+Shop\+Manager Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager}{}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+
+
+Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Managers.\+Shop\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Managers.\+Shop\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=224pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a73cf47c4206b254b283dee8f1fa88cc4}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a73cf47c4206b254b283dee8f1fa88cc4} 
+delegate void {\bfseries On\+Weapon\+Unlocked\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a97d9bef42f98095dd57e78295815ce4f}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a97d9bef42f98095dd57e78295815ce4f} 
+delegate void {\bfseries On\+Weapon\+Equipped\+Event\+Handler} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a75c8463912690b0f40b4804299bd8ad7}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a75c8463912690b0f40b4804299bd8ad7} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a55c031bf5a771a8592432945439cf57c}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a55c031bf5a771a8592432945439cf57c} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a77a1ccfb536d2f81b51d7cf2b311045e}{On\+Save\+Data\+Loaded}} (\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}} save\+Data)
+\begin{DoxyCompactList}\small\item\em Method that will be called when the Save\+Data is loaded. It will set the Stats and \doxylink{namespace_code_1_1_scripts_1_1_weapons}{Weapons} to the values of the Save\+Data. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a78d1f138c54189b7208889cb20cfdd91}{Buy\+Stat}} (\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat}{Stat}} stat)
+\begin{DoxyCompactList}\small\item\em Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. It increases the price and quantity of the stat and removes the coins if the stat was bought. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a7d2d59cd68c55ef4dc64bb48618935fc}{Increase\+Stat\+Quantity}} (\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat}{Stat}} stat)
+\begin{DoxyCompactList}\small\item\em Increase the quantity of the stat in the list at the list\+Index by 1. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a9f37feef3b1e2c61ef951f07b338d5cd}{Buy\+Weapon}} (\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}} weapon)
+\begin{DoxyCompactList}\small\item\em Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.\+unlocked to true, return true. ~\newline
+ If the player has not enough coins, show an error message and return false. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a14d7469f6dba0df754845d30150e4de6}{Unlock\+Weapon}} (\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}} weapon)
+\begin{DoxyCompactList}\small\item\em Unlock the weapon by setting the unlocked state to true. Emit the On\+Weapon\+Unlocked signal. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_af5e67e9444b9e194376d7b5739bd6ae2}{Equip\+Weapon}} (\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}} weapon)
+\begin{DoxyCompactList}\small\item\em Equip the weapon by setting the equipped state to true and unequip all other weapons. Emit the On\+Weapon\+Equipped signal. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}} \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_abbc6fe29061fc5050b9ff54575b97896}{Get\+Equipped\+Weapon}} ()
+\begin{DoxyCompactList}\small\item\em Returns the equipped weapon. If no weapon is equipped, the default weapon is returned. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad8cfbf576e32c81b78d68628745fd6dc}{Try\+Get\+Panel\+Index}} (Node node, out int index)
+\begin{DoxyCompactList}\small\item\em Tries to get the index of the panel from the node and returns true if successful, false if not. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a432a9d94253e6a44f2d927db75a90fc4}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a432a9d94253e6a44f2d927db75a90fc4} 
+List$<$ \mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat}{Stat}} $>$ {\bfseries Stats\+List} = new()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a581e5ab21702c9f97ac6c5119d83bf0f}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a581e5ab21702c9f97ac6c5119d83bf0f} 
+List$<$ \mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}} $>$ {\bfseries Weapons\+List} = new()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_aa6903a183e659def3a855dc265ef4144}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_aa6903a183e659def3a855dc265ef4144} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats}{Weapon\+Stats}} {\bfseries Default\+Weapon\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a38f5d90b419ee1e23141a738b973a1c0}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a38f5d90b419ee1e23141a738b973a1c0} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats}{Weapon\+Stats}} {\bfseries Bouncing\+Weapon\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a116b84535f37cdb7f025a02ea5ffa38d}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a116b84535f37cdb7f025a02ea5ffa38d} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats}{Weapon\+Stats}} {\bfseries Grenade\+Weapon\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_aef2c85fef62421f251063625429f5772}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_aef2c85fef62421f251063625429f5772} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats}{Weapon\+Stats}} {\bfseries Rocket\+Weapon\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a940e8c2ead52ce62f8b9aba25d7d4ee4}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a940e8c2ead52ce62f8b9aba25d7d4ee4} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats}{Weapon\+Stats}} {\bfseries Laser\+Weapon\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_af998b2a07fcd5371ac864082daa593b0}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_af998b2a07fcd5371ac864082daa593b0} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats}{Weapon\+Stats}} {\bfseries Machine\+Gun\+Weapon\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad84ffbd8f5000338cc69cee8912b8ca3}\label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad84ffbd8f5000338cc69cee8912b8ca3} 
+static \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_shop_manager}{Shop\+Manager}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a78d1f138c54189b7208889cb20cfdd91}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!BuyStat@{BuyStat}}
+\index{BuyStat@{BuyStat}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{BuyStat()}{BuyStat()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a78d1f138c54189b7208889cb20cfdd91} 
+bool Code.\+Scripts.\+Managers.\+Shop\+Manager.\+Buy\+Stat (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat}{Stat}}}]{stat}{}\end{DoxyParamCaption})}
+
+
+
+Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. It increases the price and quantity of the stat and removes the coins if the stat was bought. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stat} & The stat to buy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the stat was bought, false if not
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a78d1f138c54189b7208889cb20cfdd91_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a9f37feef3b1e2c61ef951f07b338d5cd}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!BuyWeapon@{BuyWeapon}}
+\index{BuyWeapon@{BuyWeapon}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{BuyWeapon()}{BuyWeapon()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a9f37feef3b1e2c61ef951f07b338d5cd} 
+bool Code.\+Scripts.\+Managers.\+Shop\+Manager.\+Buy\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}}}]{weapon}{}\end{DoxyParamCaption})}
+
+
+
+Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.\+unlocked to true, return true. ~\newline
+ If the player has not enough coins, show an error message and return false. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weapon} & The weapon to buy\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the weapon was bought, false if not
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a9f37feef3b1e2c61ef951f07b338d5cd_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_af5e67e9444b9e194376d7b5739bd6ae2}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!EquipWeapon@{EquipWeapon}}
+\index{EquipWeapon@{EquipWeapon}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{EquipWeapon()}{EquipWeapon()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_af5e67e9444b9e194376d7b5739bd6ae2} 
+void Code.\+Scripts.\+Managers.\+Shop\+Manager.\+Equip\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}}}]{weapon}{}\end{DoxyParamCaption})}
+
+
+
+Equip the weapon by setting the equipped state to true and unequip all other weapons. Emit the On\+Weapon\+Equipped signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weapon} & The weapon to equip\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_abbc6fe29061fc5050b9ff54575b97896}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!GetEquippedWeapon@{GetEquippedWeapon}}
+\index{GetEquippedWeapon@{GetEquippedWeapon}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{GetEquippedWeapon()}{GetEquippedWeapon()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_abbc6fe29061fc5050b9ff54575b97896} 
+\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}} Code.\+Scripts.\+Managers.\+Shop\+Manager.\+Get\+Equipped\+Weapon (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Returns the equipped weapon. If no weapon is equipped, the default weapon is returned. 
+
+\begin{DoxyReturn}{Returns}
+The equipped weapon
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_abbc6fe29061fc5050b9ff54575b97896_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a7d2d59cd68c55ef4dc64bb48618935fc}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!IncreaseStatQuantity@{IncreaseStatQuantity}}
+\index{IncreaseStatQuantity@{IncreaseStatQuantity}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{IncreaseStatQuantity()}{IncreaseStatQuantity()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a7d2d59cd68c55ef4dc64bb48618935fc} 
+void Code.\+Scripts.\+Managers.\+Shop\+Manager.\+Increase\+Stat\+Quantity (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat}{Stat}}}]{stat}{}\end{DoxyParamCaption})}
+
+
+
+Increase the quantity of the stat in the list at the list\+Index by 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stat} & The stat to increase the quantity of\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a7d2d59cd68c55ef4dc64bb48618935fc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a77a1ccfb536d2f81b51d7cf2b311045e}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!OnSaveDataLoaded@{OnSaveDataLoaded}}
+\index{OnSaveDataLoaded@{OnSaveDataLoaded}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{OnSaveDataLoaded()}{OnSaveDataLoaded()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a77a1ccfb536d2f81b51d7cf2b311045e} 
+void Code.\+Scripts.\+Managers.\+Shop\+Manager.\+On\+Save\+Data\+Loaded (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}}}]{save\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Method that will be called when the Save\+Data is loaded. It will set the Stats and \doxylink{namespace_code_1_1_scripts_1_1_weapons}{Weapons} to the values of the Save\+Data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em save\+Data} & The Save\+Data that was loaded\\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad8cfbf576e32c81b78d68628745fd6dc}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!TryGetPanelIndex@{TryGetPanelIndex}}
+\index{TryGetPanelIndex@{TryGetPanelIndex}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{TryGetPanelIndex()}{TryGetPanelIndex()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad8cfbf576e32c81b78d68628745fd6dc} 
+bool Code.\+Scripts.\+Managers.\+Shop\+Manager.\+Try\+Get\+Panel\+Index (\begin{DoxyParamCaption}\item[{Node}]{node}{, }\item[{out int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Tries to get the index of the panel from the node and returns true if successful, false if not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to get the panel index from\\
+\hline
+{\em index} & The index of the panel\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the index was successfully retrieved, false if not
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_ad8cfbf576e32c81b78d68628745fd6dc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a14d7469f6dba0df754845d30150e4de6}\index{Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}!UnlockWeapon@{UnlockWeapon}}
+\index{UnlockWeapon@{UnlockWeapon}!Code.Scripts.Managers.ShopManager@{Code.Scripts.Managers.ShopManager}}
+\doxysubsubsection{\texorpdfstring{UnlockWeapon()}{UnlockWeapon()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a14d7469f6dba0df754845d30150e4de6} 
+void Code.\+Scripts.\+Managers.\+Shop\+Manager.\+Unlock\+Weapon (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon}{Weapon}}}]{weapon}{}\end{DoxyParamCaption})}
+
+
+
+Unlock the weapon by setting the unlocked state to true. Emit the On\+Weapon\+Unlocked signal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em weapon} & The weapon to unlock\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_shop_manager_a14d7469f6dba0df754845d30150e4de6_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Managers/Shop\+Manager.\+cs\end{DoxyCompactItemize}

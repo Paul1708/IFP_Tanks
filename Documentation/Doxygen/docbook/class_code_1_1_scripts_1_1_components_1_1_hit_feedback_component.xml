@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component" xml:lang="en-US">
+<title>Code.Scripts.Components.HitFeedbackComponent Class Reference</title>
+<indexterm><primary>Code.Scripts.Components.HitFeedbackComponent</primary></indexterm>
+<para>
+
+<para>Component that handles the flash and size change of the tank when it takes damage. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Components.HitFeedbackComponent:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Components.HitFeedbackComponent:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component_1aefbcd7fc54b2920a0a0b3cf0d09b2fad"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component_1a550fd2e52f822cd33ed640da73ae44fd"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component_1a18548853d34f0374fb08c62fe69db70c"/>bool <emphasis role="strong">DoFlashSprite</emphasis> = true</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component_1a5c1dff229da65eae6d29686066b81b5e"/>float <emphasis role="strong">MaxFlashStrength</emphasis> = 1f</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component_1afa5bc3c9177bf85397047b968a76c37d"/>bool <emphasis role="strong">DoScaleSprite</emphasis> = true</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component_1a55860f74b077c091a43ec5a1148c3f00"/>float <emphasis role="strong">MaxScale</emphasis> = 1.2f</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component_1a86ab3e6dfe9953f2b385b835d380be69"/>float <emphasis role="strong">FeedbackDuration</emphasis> = 0.8f</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Component that handles the flash and size change of the tank when it takes damage. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Components/HitFeedbackComponent.cs</section>
+</section>

@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Weapons.BouncingBullet.OnDamageableHit" name="Code.Scripts.Weapons.BouncingBullet.OnDamageableHit">
+<area shape="rect" id="Node000001" title="Collides with a damageable node and deals damage to it." alt="" coords="5,5,219,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet.html#ae9486d761b6955464b60322a57d642c8" title="Destroys the bullet and emits particles." alt="" coords="267,5,480,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,24,251,24,251,29,219,29"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_managers_1_1_particle_controller.html#ad2af73c8e3d633e12bd40026e8dd3377" title="Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneSh..." alt="" coords="528,5,733,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="480,24,513,24,513,29,480,29"/>
+</map>

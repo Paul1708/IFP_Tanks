@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_environment_1_1_damage_number" xml:lang="en-US">
+<title>Code.Scripts.Environment.DamageNumber Class Reference</title>
+<indexterm><primary>Code.Scripts.Environment.DamageNumber</primary></indexterm>
+<para>
+
+<para>Controls the damage number that appears when an entity takes damage. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Environment.DamageNumber:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_environment_1_1_damage_number__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Environment.DamageNumber:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_environment_1_1_damage_number__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_damage_number_1aa04a2653ce72597ee6878d7666867ee2"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_environment_1_1_damage_number_1aeb19da693b837a0cd7f610cfe0a884e8">_PhysicsProcess</link> (double delta)</para>
+
+<para>Rotates the damage number by a certain amount every frame. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_damage_number_1a944abd907ffa32a31602470baa3f16ad"/>string <emphasis role="strong">Text</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_damage_number_1ad1852ffff539c569baa34b8ab71fbb41"/>Label <emphasis role="strong">Label</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the damage number that appears when an entity takes damage. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_environment_1_1_damage_number_1aeb19da693b837a0cd7f610cfe0a884e8"/><section>
+    <title>_PhysicsProcess()</title>
+<indexterm><primary>_PhysicsProcess</primary><secondary>Code.Scripts.Environment.DamageNumber</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Environment.DamageNumber</primary><secondary>_PhysicsProcess</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Environment.DamageNumber._PhysicsProcess (double delta)</computeroutput></para><para>
+
+<para>Rotates the damage number by a certain amount every frame. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Environment/DamageNumber.cs</section>
+</section>

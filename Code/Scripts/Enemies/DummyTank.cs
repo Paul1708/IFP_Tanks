@@ -3,6 +3,9 @@ using Godot;
 
 namespace Code.Scripts.Enemies;
 
+/// <summary>
+/// Provides trail and animation handling for the Tank on the main menu
+/// </summary>
 public partial class DummyTank : CharacterBody2D
 {
 	private TrailComponent _trailComponent;

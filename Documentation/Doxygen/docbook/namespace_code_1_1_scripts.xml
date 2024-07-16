@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts" xml:lang="en-US">
+<title>Code.Scripts Namespace Reference</title>
+<indexterm><primary>Code.Scripts</primary></indexterm>
+<simplesect>
+    <title>Namespaces    </title>
+        <itemizedlist>
+            <listitem><para>namespace <link linkend="_namespace_code_1_1_scripts_1_1_audio">Audio</link></para>
+
+<para><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> that plays music and sounds. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

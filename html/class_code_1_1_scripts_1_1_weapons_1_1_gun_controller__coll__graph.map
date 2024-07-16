@@ -1,0 +1,9 @@
+<map id="Code.Scripts.Weapons.GunController" name="Code.Scripts.Weapons.GunController">
+<area shape="rect" id="Node000001" title="Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon sta..." alt="" coords="5,188,189,231"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="42,89,109,116"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="84,131,95,187,90,188,79,132"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html" title="MusicController that plays music and sounds." alt="" coords="134,81,306,124"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="186,136,123,190,119,185,182,132"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="194,5,245,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="222,48,222,81,217,81,217,48"/>
+</map>

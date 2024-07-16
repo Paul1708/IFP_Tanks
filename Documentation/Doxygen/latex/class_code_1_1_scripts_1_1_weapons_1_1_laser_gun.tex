@@ -1,0 +1,150 @@
+\doxysection{Code.\+Scripts.\+Weapons.\+Laser\+Gun Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun}{}\label{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun}\index{Code.Scripts.Weapons.LaserGun@{Code.Scripts.Weapons.LaserGun}}
+
+
+Controls the laser gun which emits a laser beam.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Weapons.\+Laser\+Gun\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Weapons.\+Laser\+Gun\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a027f749add4e0c1a3c34f26e055a6126}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the laser beam. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548}{On\+Collision}} (Node node)
+\begin{DoxyCompactList}\small\item\em Called when the bullet collides with another node. Calls the appropriate method for the collision type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20}{On\+Damageable\+Hit}} (Node node)
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits a damageable node. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182}{\+\_\+\+Physics\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Call move method on every physics process tick and check for collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_ad6ad8f4c9f999ca4953cadd40a356eb9}{Setup}} ()
+\begin{DoxyCompactList}\small\item\em Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. \end{DoxyCompactList}\item 
+override Node \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a8b6f710b47f222162fb3ff23060ffc6b}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Moves the laser beam along with the player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30}{On\+Anything\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits anything. \end{DoxyCompactList}\item 
+virtual void {\bfseries On\+Wall\+Hit} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits a wall. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287}{On\+Other\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits anything other than a damageable node or a wall. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+Node2D {\bfseries Player}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component}{Health\+Component}} {\bfseries Player\+Health\+Component}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_particle_controller}{Particle\+Controller}} {\bfseries Particles}
+\item 
+Vector2 {\bfseries Normal\+Collision\+Vector}
+\item 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties inherited from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{Code.\+Scripts.\+Weapons.\+Bullet}}}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries Damage}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+Node2D {\bfseries Shooter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+float {\bfseries Speed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the laser gun which emits a laser beam. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a027f749add4e0c1a3c34f26e055a6126}\index{Code.Scripts.Weapons.LaserGun@{Code.Scripts.Weapons.LaserGun}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Code.Scripts.Weapons.LaserGun@{Code.Scripts.Weapons.LaserGun}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a027f749add4e0c1a3c34f26e055a6126} 
+override void Code.\+Scripts.\+Weapons.\+Laser\+Gun.\+Destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroys the laser beam. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a027f749add4e0c1a3c34f26e055a6126_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a8b6f710b47f222162fb3ff23060ffc6b}\index{Code.Scripts.Weapons.LaserGun@{Code.Scripts.Weapons.LaserGun}!Move@{Move}}
+\index{Move@{Move}!Code.Scripts.Weapons.LaserGun@{Code.Scripts.Weapons.LaserGun}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a8b6f710b47f222162fb3ff23060ffc6b} 
+override Node Code.\+Scripts.\+Weapons.\+Laser\+Gun.\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Moves the laser beam along with the player. 
+
+\begin{DoxyReturn}{Returns}
+null
+\end{DoxyReturn}
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a8b6f710b47f222162fb3ff23060ffc6b_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_ad6ad8f4c9f999ca4953cadd40a356eb9}\index{Code.Scripts.Weapons.LaserGun@{Code.Scripts.Weapons.LaserGun}!Setup@{Setup}}
+\index{Setup@{Setup}!Code.Scripts.Weapons.LaserGun@{Code.Scripts.Weapons.LaserGun}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_ad6ad8f4c9f999ca4953cadd40a356eb9} 
+override void Code.\+Scripts.\+Weapons.\+Laser\+Gun.\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. 
+
+
+
+Reimplemented from \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a6918edb299b9f904812786a56c280ea4}{Code.\+Scripts.\+Weapons.\+Bullet}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Weapons/Laser\+Gun.\+cs\end{DoxyCompactItemize}

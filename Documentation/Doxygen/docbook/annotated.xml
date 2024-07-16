@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_class_code_1_1_scripts_1_1_components_1_1_animation_handler">Code.Scripts.Components.AnimationHandler</link>
+<para>Handles the animations of the tanks </para>
+<link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour">Code.Scripts.Enemies.BasicBehaviour</link>
+<para>Basic behaivour of the basic (red) enemy </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet">Code.Scripts.Weapons.BasicBullet</link>
+<para>Controls the basic (50cal) bullet </para>
+<link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_behaviour">Code.Scripts.Enemies.Behaviour</link>
+<para>Abstract class that defines the behaivour of an enemy. Provides utility methods for pathfinding and target selection </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet">Code.Scripts.Weapons.BouncingBullet</link>
+<para>Controls the bouncing bullet </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>
+<para>Base class for all bullets in the game. Provides basic functionality for all bullets </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_math">Code.Scripts.Weapons.BulletMath</link>
+<para>Utility class for bullet math operations </para>
+<link linkend="_class_code_1_1_scripts_1_1_environment_1_1_coin">Code.Scripts.Environment.Coin</link>
+<para><link linkend="_class_code_1_1_scripts_1_1_environment_1_1_coin">Coin</link> class which handles the coin collection and movement </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_coin_display">Code.Scripts.UI.CoinDisplay</link>
+<para>Updates the coin display label when the coin count changes </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_coin_manager">Code.Scripts.Managers.CoinManager</link>
+<para>Manager class that handles the coins of the player </para>
+<link linkend="_class_code_1_1_scripts_1_1_environment_1_1_damage_number">Code.Scripts.Environment.DamageNumber</link>
+<para>Controls the damage number that appears when an entity takes damage </para>
+<link linkend="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller">Code.Scripts.Components.DamageNumberController</link>
+<para>Controls the spawning of the DamageNumber scene </para>
+<link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour">Code.Scripts.Enemies.DummyBehaviour</link>
+<para>Dummy behaviour, which only rotates towards the player and does nothing else </para>
+<link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank">Code.Scripts.Enemies.DummyTank</link><link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_enemy">Code.Scripts.Enemies.Enemy</link>
+<para>Coordinates health, animation and trail components of an enemy </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar">Code.Scripts.UI.EnemyHealthBar</link>
+<para>Shows the health of an enemy </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet">Code.Scripts.Weapons.GrenadeBullet</link>
+<para>Controls the grenade bullet </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller">Code.Scripts.Weapons.GunController</link>
+<para>Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon stats </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar">Code.Scripts.UI.HealthBar</link>
+<para>Displays the players health bar </para>
+<link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component">Code.Scripts.Components.HealthComponent</link>
+<para>Component that handles the health of an entity </para>
+<link linkend="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component">Code.Scripts.Components.HitFeedbackComponent</link>
+<para>Component that handles the flash and size change of the tank when it takes damage </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet">Code.Scripts.Weapons.HomingBullet</link>
+<para>Controls the homing bullet </para>
+<link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_invis_behaviour">Code.Scripts.Enemies.InvisBehaviour</link>
+<para>Invis behaivour of the invis (purple) enemy </para>
+<link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_kamikaze_behaviour">Code.Scripts.Enemies.KamikazeBehaviour</link>
+<para>Invis behaivour of the kamikaze (yellow) enemy </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser">Code.Scripts.Weapons.Laser</link>
+<para>Controls the laser beam, checks for collisions and updates the laser beam particles </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun">Code.Scripts.Weapons.LaserGun</link>
+<para>Controls the laser gun which emits a laser beam </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level">Code.Scripts.Managers.Level.Level</link>
+<para>Manages the level, enemies and coins. Emits signals when the level is completed or failed </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown">Code.Scripts.UI.LevelCountdown</link>
+<para>Custom control class for the level countdown, which handles the countdown before the level starts </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data">Code.Scripts.Managers.Level.LevelData</link>
+<para>Data class which holds the data of a level </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_display">Code.Scripts.UI.LevelDisplay</link>
+<para>Dynamically shows the levels of the current world anr their states </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_failed">Code.Scripts.UI.LevelFailed</link>
+<para>Shows the death screen when the player dies </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager">Code.Scripts.Managers.Level.LevelManager</link>
+<para>Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences">Code.Scripts.Managers.LoadUserPreferences</link>
+<para>Loads the user preferences and sets the window mode and volume accordingly </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_main_menu">Code.Scripts.UI.MainMenu</link>
+<para>Controls the main menu </para>
+<link linkend="_class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank">Code.Scripts.Environment.MainMenuDummyTank</link>
+<para>Controls the dummy tank in the main menu </para>
+<link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">Code.Scripts.Audio.MusicController</link><link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller">Code.Scripts.Enemies.NavigationController</link>
+<para>Utility which provides navigation functionality to a 2D character </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller">Code.Scripts.Managers.ParticleController</link>
+<para>Controller for emitting particles </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu">Code.Scripts.UI.PauseMenu</link>
+<para>Controls the pause menu </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_player_manager">Code.Scripts.Managers.PlayerManager</link>
+<para>Manages the player&apos;s stats and health </para>
+<link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_movement">Code.Scripts.Movement.PlayerMovement</link>
+<para>The player movement script. Handles the movement of the player and the gun </para>
+<link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">Code.Scripts.Movement.PlayerStats</link>
+<para>Data class which holds the base and current player stats </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display">Code.Scripts.UI.Shop.PlayerStatsDisplay</link>
+<para>Displays the player stats in the shop </para>
+<link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour">Code.Scripts.Enemies.RocketBehaviour</link>
+<para>Behaivour of the rocket (blue) enemy </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">Code.Scripts.Managers.Save.SaveData</link>
+<para>Data class which holds the data, which can be saved </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager">Code.Scripts.Managers.Save.SaveManager</link>
+<para>Manages the saving and loading of the games progress, player stats, and shop state </para>
+<link linkend="_struct_code_1_1_scripts_1_1_managers_1_1_scene">Code.Scripts.Managers.Scene</link>
+<para>Particle scenes that can be used to emit particles </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu">Code.Scripts.UI.SettingsMenu</link>
+<para>Controls the settings menu </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab">Code.Scripts.UI.Shop.ShopBaseTab</link>
+<para>Base class for all shop tabs. Contains methods to get price tags and parse prices from them </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons">Code.Scripts.UI.Shop.ShopButtons</link>
+<para>Custom button class for the shop buttons, which sets the text of the button based on the buy status of the weapon/item </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_shop_manager">Code.Scripts.Managers.ShopManager</link>
+<para>Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu">Code.Scripts.UI.Shop.ShopMenu</link>
+<para>Custom control class for the shop menu, which handles opening and closing the shop menu </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices">Code.Scripts.UI.Shop.ShopPrices</link>
+<para>Manages the text of the price tags in the shop and calculates the price of the items </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab">Code.Scripts.UI.Shop.ShopStatsTab</link>
+<para>Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought stats </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab">Code.Scripts.UI.Shop.ShopWeaponsTab</link>
+<para>Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display">Code.Scripts.UI.Shop.ShopWeaponStatsDisplay</link>
+<para>Displays the weapon stats in the shop </para>
+<link linkend="_struct_code_1_1_scripts_1_1_audio_1_1_sound">Code.Scripts.Audio.Sound</link>
+<para>Struct that contains all the music names </para>
+<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Code.Scripts.UI.Shop.Stat</link>
+<para>Data struct which holds the name, list index, price, price tag, and quantity of a stat </para>
+<link linkend="_class_code_1_1_scripts_1_1_components_1_1_trail_component">Code.Scripts.Components.TrailComponent</link>
+<para>Component that emits a trail for the tank </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences">Code.Scripts.Managers.Save.UserPreferences</link>
+<para>Manages saveing and loading of user preferences/settings </para>
+<link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_victory_screen">Code.Scripts.UI.VictoryScreen</link>
+<para>Shows the victory screen when the player wins the game </para>
+<link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Code.Scripts.UI.Shop.Weapon</link>
+<para>Data class which holds the weapon stats </para>
+<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats">Code.Scripts.Weapons.WeaponStats</link>
+<para>Data class which holds the stats of a weapon </para>
+<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data">Code.Scripts.Managers.Level.WorldData</link>
+<para>Data class which holds the data of a world </para>
+</section>

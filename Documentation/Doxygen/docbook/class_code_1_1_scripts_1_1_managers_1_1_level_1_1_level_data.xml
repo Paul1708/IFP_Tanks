@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data" xml:lang="en-US">
+<title>Code.Scripts.Managers.Level.LevelData Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Level.LevelData</primary></indexterm>
+<para>
+
+<para>Data class which holds the data of a level. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.Level.LevelData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.Level.LevelData:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data_1a51b08cfca657dc09bb50c738088a6bc0"/>PackedScene <emphasis role="strong">LevelScene</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data_1af6bae3b4d503b3f6edcd853f3cbd31ce"/>bool <emphasis role="strong">IsCheckpoint</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data_1a99fd6a3c54b114b013a59bd42f6f3ce0"/>LevelState <emphasis role="strong">LevelState</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Data class which holds the data of a level. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/Level/LevelData.cs</section>
+</section>

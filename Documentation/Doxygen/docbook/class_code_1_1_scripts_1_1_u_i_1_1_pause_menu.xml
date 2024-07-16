@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu" xml:lang="en-US">
+<title>Code.Scripts.UI.PauseMenu Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.PauseMenu</primary></indexterm>
+<para>
+
+<para>Controls the pause menu. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.PauseMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_pause_menu__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.PauseMenu:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_pause_menu__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu_1a9a805e394555b4a072f99d032d217b90"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu_1a639a210572e568a7b90dbf846a652861">_Input</link> (InputEvent @event)</para>
+
+<para>Fires when the pause button is pressed and shows/hides the pause menu. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu_1abc066dc3b29808a4bf9bb7fc8945ff2d"/><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu_1a09a5394292d045bdce6698a8c8eb5c30"/><link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_settings_menu">SettingsMenu</link> <emphasis role="strong">SettingsMenu</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu_1a16eca8fc3e21aab9cddba5e2842ef356"/><link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu">ShopMenu</link> <emphasis role="strong">ShopMenu</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu_1a1e900b3dc005ca4bbceb34b8103a0f6c"/><link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown">LevelCountdown</link> <emphasis role="strong">LevelCountdown</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the pause menu. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_pause_menu_1a639a210572e568a7b90dbf846a652861"/><section>
+    <title>_Input()</title>
+<indexterm><primary>_Input</primary><secondary>Code.Scripts.UI.PauseMenu</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.PauseMenu</primary><secondary>_Input</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.UI.PauseMenu._Input (InputEvent @ event)</computeroutput></para><para>
+
+<para>Fires when the pause button is pressed and shows/hides the pause menu. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>event</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/PauseMenu.cs</section>
+</section>

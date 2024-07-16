@@ -1,0 +1,15 @@
+<map id="Code.Scripts.Managers.ShopManager.BuyStat" name="Code.Scripts.Managers.ShopManager.BuyStat">
+<area shape="rect" id="Node000001" title="Tries to upgrade/buy the stat and returns true if the stat was bought, false if not...." alt="" coords="5,139,197,181"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_coin_manager.html#a7ad7120af0c005339eed5c30c072879b" title="Method to check if the player has more or equal coins to the value." alt="" coords="258,5,454,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="126,136,179,97,243,58,256,52,259,57,246,62,182,101,130,140"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu.html#a6583b22cc6504ee085ac03862c0d0ebf" title="Display an error message when the player tries to buy an item with insufficient coins." alt="" coords="245,72,467,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="185,136,256,117,258,122,186,141"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices.html#a72029c09650f3fcc1f986f1762bdc277" title="Increase the price of the item by the price multiplier to the power of the quantity of the item...." alt="" coords="266,139,446,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="197,157,250,157,250,163,197,163"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html#a7d2d59cd68c55ef4dc64bb48618935fc" title="Increase the quantity of the stat in the list at the listIndex by 1." alt="" coords="257,205,454,248"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="186,179,258,198,256,203,185,184"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_managers_1_1_coin_manager.html#a7b86e9844913d83159f6fb46c45dca53" title="Method to remove coins from the player If the value is less than 0, the method will return without do..." alt="" coords="262,272,450,315"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="130,180,182,219,246,258,259,263,256,268,243,262,179,223,126,184"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_managers_1_1_coin_manager.html#a02ccff53c7fb1dddedabef28e723b70d" title="Method to set the Coins to a specific value and emit the OnCoinChanged signal. If the value is less t..." alt="" coords="515,272,702,315"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="450,291,500,291,500,296,450,296"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Managers.CoinManager.RemoveCoins" name="Code.Scripts.Managers.CoinManager.RemoveCoins">
+<area shape="rect" id="Node000001" title="Method to remove coins from the player If the value is less than 0, the method will return without do..." alt="" coords="5,5,193,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_coin_manager.html#a02ccff53c7fb1dddedabef28e723b70d" title="Method to set the Coins to a specific value and emit the OnCoinChanged signal. If the value is less t..." alt="" coords="241,5,428,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,24,225,24,225,29,193,29"/>
+</map>

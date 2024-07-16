@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Enemies.NavigationController.MoveTowardsVector" name="Code.Scripts.Enemies.NavigationController.MoveTowardsVector">
+<area shape="rect" id="Node000001" title="Moves the character towards a target position, lerping the rotation to create a smooth movement." alt="" coords="268,5,482,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller.html#aca4fe3728c030b44886cffff20e5f1f4" title="Process function that moves the character towards the target position." alt="" coords="5,5,220,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,29,220,29,220,24,252,24"/>
+</map>

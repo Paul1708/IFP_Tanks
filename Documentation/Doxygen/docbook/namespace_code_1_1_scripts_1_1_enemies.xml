@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_enemies" xml:lang="en-US">
+<title>Code.Scripts.Enemies Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Enemies</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour">BasicBehaviour</link></para>
+
+<para>Basic behaivour of the basic (red) enemy. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_behaviour">Behaviour</link></para>
+
+<para>Abstract class that defines the behaivour of an enemy. Provides utility methods for pathfinding and target selection. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour">DummyBehaviour</link></para>
+
+<para>Dummy behaviour, which only rotates towards the player and does nothing else. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank">DummyTank</link></para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_enemy">Enemy</link></para>
+
+<para>Coordinates health, animation and trail components of an enemy. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_invis_behaviour">InvisBehaviour</link></para>
+
+<para>Invis behaivour of the invis (purple) enemy. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_kamikaze_behaviour">KamikazeBehaviour</link></para>
+
+<para>Invis behaivour of the kamikaze (yellow) enemy. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller">NavigationController</link></para>
+
+<para>Utility which provides navigation functionality to a 2D character. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour">RocketBehaviour</link></para>
+
+<para>Behaivour of the rocket (blue) enemy. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_namespace_code_1_1_scripts_1_1_enemies_1a740257d5769f7777daa01abc2c39ee93"/>enum <emphasis role="strong">InvisEnemyState</emphasis> { <emphasis role="strong">SearchingForPlayer</emphasis>
+, <emphasis role="strong">Shooting</emphasis>
+, <emphasis role="strong">Fallback</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

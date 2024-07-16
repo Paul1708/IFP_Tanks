@@ -7,6 +7,9 @@ using Code.Scripts.UI.Shop;
 
 namespace Code.Scripts.Managers.Level;
 
+/// <summary>
+/// Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure.
+/// </summary>
 public partial class LevelManager : Node2D
 {
     [Export]
@@ -55,6 +58,9 @@ public partial class LevelManager : Node2D
         SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
     }
 
+    /// <summary>
+    /// Called when the level is completed. Loads the next level or world.
+    /// </summary>
     public async void OnLevelComplete()
     {
 
@@ -105,6 +111,9 @@ public partial class LevelManager : Node2D
         GetTree().ChangeSceneToFile("res://Scenes/UI/MainMenu.tscn");
     }
 
+    /// <summary>
+    /// Called when the level is failed. Shows the death screen and reloads the last save.
+    /// </summary>
     public async void OnLevelFailed()
     {
         EmitSignal(SignalName.OnLevelFailedShowDeathScreen);
@@ -116,6 +125,9 @@ public partial class LevelManager : Node2D
         EmitSignal(SignalName.OnLevelChangedShowShop);
     }
 
+    /// <summary>
+    /// Saves the game at the current level and world
+    /// </summary>
     private void SaveGame()
     {
         // Set the Level and World IDs as the last checkpoint and save the game
@@ -124,6 +136,10 @@ public partial class LevelManager : Node2D
         SaveManager.Instance.SaveGame();
     }
 
+    /// <summary>
+    /// Called when the save data is loaded. Loads the level and restores the level states.
+    /// </summary>
+    /// <param name="saveData">The save data that is loaded</param>
     private async void OnSaveDataLoaded(SaveData saveData)
     {
         // Set the current level to saved data
@@ -148,6 +164,9 @@ public partial class LevelManager : Node2D
         RestoreLevelStatesAfterSave();
     }
 
+    /// <summary>
+    /// Restores the level states after the save data is loaded.
+    /// </summary>
     private void RestoreLevelStatesAfterSave()
     {
         // Set all levels before current level to COMPLETED and all levels after the current level to LOCKED
@@ -171,7 +190,12 @@ public partial class LevelManager : Node2D
         _levelDisplay.RenderLevelDisplay(Worlds[CurrentWorldId].Levels);
     }
 
-
+    /// <summary>
+    /// Loads the level by the input world and level IDs.
+    /// </summary>
+    /// <param name="newWorldId">The world ID of the level to load</param>
+    /// <param name="newLevelId">The level ID of the level to load</param>
+    /// <returns>The task that loads the level</returns>
     private async Task LoadLevelById(int newWorldId, int newLevelId)
     {
         if (CurrentLevelInstance != null)

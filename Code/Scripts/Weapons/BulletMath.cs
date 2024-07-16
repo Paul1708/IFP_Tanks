@@ -3,16 +3,19 @@ using Godot;
 
 namespace Code.Scripts.Weapons;
 
+/// <summary>
+/// Utility class for bullet math operations
+/// </summary>
 public class BulletMath
 {
-    private BulletMath(){/*Hide default constructor*/}
-    
-     /**
-      * Convert an angle from the interval J = [0,2*Pi] to an angle in I = [-Pi,Pi] where 0 in J is mapped to 0 in I.
-      * This is needed since the godot angle function uses angles in I.
-      */
-     public static float NormalizeAngle(float angle)
-     {
+    private BulletMath() {/*Hide default constructor*/}
+
+    /// <summary>
+    /// Convert an angle from the interval J = [0,2*Pi] to an angle in I = [-Pi,Pi] where 0 in J is mapped to 0 in I.
+    /// This is needed since the godot angle function uses angles in I.
+    /// </summary>
+    public static float NormalizeAngle(float angle)
+    {
         if (angle > Mathf.Pi)
         {
             return angle - 2 * Mathf.Pi;
@@ -25,13 +28,11 @@ public class BulletMath
 
         return angle;
     }
-     
-    
 
-    /**
-     * Ensure that the angle does not exceed the interval [-maxAngleRadians, maxAngleRadians]. If it is not inside
-     * this interval, the closed interval border will be returned.
-     */
+    /// <summary>
+    /// Ensure that the angle does not exceed the interval [-maxAngleRadians, maxAngleRadians]. If it is not inside
+    /// this interval, the closed interval border will be returned.
+    /// </summary>
     public static float RestrictHomingAngle(float angle, float maxAngleRadians)
     {
         if (Mathf.Sign(angle) < 0)
@@ -43,5 +44,5 @@ public class BulletMath
             return Mathf.Min(angle, maxAngleRadians);
         }
     }
-    
+
 }

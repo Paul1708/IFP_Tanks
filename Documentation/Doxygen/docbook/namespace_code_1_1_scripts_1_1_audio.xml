@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_audio" xml:lang="en-US">
+<title>Code.Scripts.Audio Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Audio</primary></indexterm>
+<para>
+
+<para><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> that plays music and sounds. </para>
+ 
+</para>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link></para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_code_1_1_scripts_1_1_audio_1_1_sound">Sound</link></para>
+
+<para>Struct that contains all the music names. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> that plays music and sounds. </para>
+</section>
+</section>

@@ -1,0 +1,101 @@
+\doxysection{Code.\+Scripts.\+Managers.\+Save.\+Save\+Manager Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager}{}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager}\index{Code.Scripts.Managers.Save.SaveManager@{Code.Scripts.Managers.Save.SaveManager}}
+
+
+Manages the saving and loading of the games progress, player stats, and shop state.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Managers.\+Save.\+Save\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Managers.\+Save.\+Save\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a5dbf08e36358b255bf9004eddad7dca1}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a5dbf08e36358b255bf9004eddad7dca1} 
+delegate void {\bfseries On\+Save\+Data\+Loaded\+Event\+Handler} (\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}} save\+Data)
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_ab940d7538d2c861bdac954c1e7855068}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_ab940d7538d2c861bdac954c1e7855068} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a3b56a073393a454df38769d3f1962316}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a3b56a073393a454df38769d3f1962316} 
+void {\bfseries Save\+Game} ()
+\begin{DoxyCompactList}\small\item\em Saves the game. Saves the player\textquotesingle{}s current health, coin count, player stats, and shop state in the \doxylink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data} object. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_affb76ec393f2d1b98850d5640b0e77f1}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_affb76ec393f2d1b98850d5640b0e77f1} 
+void {\bfseries Load\+Game} (Loading\+Type loading\+Type)
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a95616956068d6230db4fa9529f443a0d}{Load\+Game}} ()
+\begin{DoxyCompactList}\small\item\em Loads the game. If Loading\+Type is set to New\+Game, a new \doxylink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data} object is created and saved. If Loading\+Type is set to Load\+Game, the \doxylink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data} object is loaded from the save file. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a2ac19239f4e00fb1bdc0d4fae14062a3}{Is\+Save\+File\+Available}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the save file is available. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_ae464d472881cf8a949739eb024667985}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_ae464d472881cf8a949739eb024667985} 
+void {\bfseries Save\+Shop\+State} ()
+\begin{DoxyCompactList}\small\item\em Saves the shop state of Stats and \doxylink{namespace_code_1_1_scripts_1_1_weapons}{Weapons} in the \doxylink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_ab735092fe4f1e5afd95f10ee5f0a47ec}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_ab735092fe4f1e5afd95f10ee5f0a47ec} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_movement_1_1_player_stats}{Player\+Stats}} {\bfseries Initial\+Player\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a2b7d1c15eec91416c17801c9de5f3bb8}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a2b7d1c15eec91416c17801c9de5f3bb8} 
+static \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager}{Save\+Manager}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a8ce09c2576ebbf9764c69f11f172fd66}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a8ce09c2576ebbf9764c69f11f172fd66} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}} {\bfseries Save\+Data}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a202451f2e1227239be8aa5ca800e6b99}\label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a202451f2e1227239be8aa5ca800e6b99} 
+Loading\+Type {\bfseries Loading\+Type} = Loading\+Type.\+None\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the saving and loading of the games progress, player stats, and shop state. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a2ac19239f4e00fb1bdc0d4fae14062a3}\index{Code.Scripts.Managers.Save.SaveManager@{Code.Scripts.Managers.Save.SaveManager}!IsSaveFileAvailable@{IsSaveFileAvailable}}
+\index{IsSaveFileAvailable@{IsSaveFileAvailable}!Code.Scripts.Managers.Save.SaveManager@{Code.Scripts.Managers.Save.SaveManager}}
+\doxysubsubsection{\texorpdfstring{IsSaveFileAvailable()}{IsSaveFileAvailable()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a2ac19239f4e00fb1bdc0d4fae14062a3} 
+bool Code.\+Scripts.\+Managers.\+Save.\+Save\+Manager.\+Is\+Save\+File\+Available (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Checks if the save file is available. 
+
+\begin{DoxyReturn}{Returns}
+True if the save file is available, false if not.
+\end{DoxyReturn}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a95616956068d6230db4fa9529f443a0d}\index{Code.Scripts.Managers.Save.SaveManager@{Code.Scripts.Managers.Save.SaveManager}!LoadGame@{LoadGame}}
+\index{LoadGame@{LoadGame}!Code.Scripts.Managers.Save.SaveManager@{Code.Scripts.Managers.Save.SaveManager}}
+\doxysubsubsection{\texorpdfstring{LoadGame()}{LoadGame()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_a95616956068d6230db4fa9529f443a0d} 
+void Code.\+Scripts.\+Managers.\+Save.\+Save\+Manager.\+Load\+Game (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Loads the game. If Loading\+Type is set to New\+Game, a new \doxylink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data} object is created and saved. If Loading\+Type is set to Load\+Game, the \doxylink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data} object is loaded from the save file. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Validation\+Exception} & Thrown when Loading\+Type is not set.\\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Managers/\+Save/Save\+Manager.\+cs\end{DoxyCompactItemize}

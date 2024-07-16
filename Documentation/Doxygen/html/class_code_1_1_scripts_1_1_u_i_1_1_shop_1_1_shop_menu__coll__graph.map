@@ -1,0 +1,5 @@
+<map id="Code.Scripts.UI.Shop.ShopMenu" name="Code.Scripts.UI.Shop.ShopMenu">
+<area shape="rect" id="Node000001" title="Custom control class for the shop menu, which handles opening and closing the shop menu." alt="" coords="5,80,218,107"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="80,5,143,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="114,48,114,80,109,80,109,48"/>
+</map>

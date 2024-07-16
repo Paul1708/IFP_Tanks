@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences" xml:lang="en-US">
+<title>Code.Scripts.Managers.Save.UserPreferences Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Save.UserPreferences</primary></indexterm>
+<para>
+
+<para>Manages saveing and loading of user preferences/settings. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.Save.UserPreferences:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.Save.UserPreferences:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_1a1b611ec71a2753d9e7b00938b71cd3ea"/>void <emphasis role="strong">Save</emphasis> ()</para>
+
+<para>Saves the <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences">UserPreferences</link> to the user://UserPreferences.tres file. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences">UserPreferences</link> <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_1aa996b2a81ab87a26a7902107c8c319ef">LoadOrCreate</link> ()</para>
+
+<para>Loads the <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences">UserPreferences</link> from the user://UserPreferences.tres file or creates a new one if it does not exist. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_1a1b4ec197f224023950fc5a9ea58ca75d"/>float <emphasis role="strong">MasterVolume</emphasis> = 1.0f<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_1a118b0f693abb150d8e2918983d1e1e56"/>float <emphasis role="strong">MusicVolume</emphasis> = 1.0f<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_1a6f6b0d257fe3ecf8100a5e5decf17f01"/>float <emphasis role="strong">SfxVolume</emphasis> = 1.0f<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_1a468688519d03929b1d12c6655a4dbc4a"/>bool <emphasis role="strong">IsFullscreen</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages saveing and loading of user preferences/settings. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_1aa996b2a81ab87a26a7902107c8c319ef"/><section>
+    <title>LoadOrCreate()</title>
+<indexterm><primary>LoadOrCreate</primary><secondary>Code.Scripts.Managers.Save.UserPreferences</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.Save.UserPreferences</primary><secondary>LoadOrCreate</secondary></indexterm>
+<para><computeroutput>static <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences">UserPreferences</link> Code.Scripts.Managers.Save.UserPreferences.LoadOrCreate ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Loads the <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences">UserPreferences</link> from the user://UserPreferences.tres file or creates a new one if it does not exist. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences_aa996b2a81ab87a26a7902107c8c319ef_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/Save/UserPreferences.cs</section>
+</section>

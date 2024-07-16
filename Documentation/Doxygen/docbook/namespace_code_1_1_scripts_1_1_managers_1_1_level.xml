@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_managers_1_1_level" xml:lang="en-US">
+<title>Code.Scripts.Managers.Level Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Level</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level">Level</link></para>
+
+<para>Manages the level, enemies and coins. Emits signals when the level is completed or failed. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data">LevelData</link></para>
+
+<para>Data class which holds the data of a level. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager">LevelManager</link></para>
+
+<para>Manages the levels and worlds of the game, loading and saving the game, and handling level completion and failure. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data">WorldData</link></para>
+
+<para>Data class which holds the data of a world. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_namespace_code_1_1_scripts_1_1_managers_1_1_level_1a3a9f9ed50b94747bce8a81d9b2b7b8b3"/>enum <emphasis role="strong">LevelState</emphasis> { <emphasis role="strong">Current</emphasis>
+, <emphasis role="strong">Completed</emphasis>
+, <emphasis role="strong">Locked</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

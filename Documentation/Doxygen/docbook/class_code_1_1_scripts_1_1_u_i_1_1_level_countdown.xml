@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown" xml:lang="en-US">
+<title>Code.Scripts.UI.LevelCountdown Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.LevelCountdown</primary></indexterm>
+<para>
+
+<para>Custom control class for the level countdown, which handles the countdown before the level starts. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.LevelCountdown:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_level_countdown__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.LevelCountdown:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_level_countdown__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown_1a80c14f3641bb9b87e49abcaad1572bb7"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown_1a7ccdf3d04f42e4630c06c08dee89a86e"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown_1aabf036210cec9113195b6b43e82dea26"/>override void <emphasis role="strong">_Process</emphasis> (double delta)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown_1a1894d4021b3ef84c61a4ea5a12792984"/>void <emphasis role="strong">StartLevelCooldown</emphasis> ()</para>
+
+<para>Start the level Countdown. Shows the countdown label, pauses the game and plays the countdown animation with Countdown sound. The countdown timer is started. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown_1a1dbeb65b5f74f5167e7264e02497edac"/>void <emphasis role="strong">OnCooldownTimeout</emphasis> ()</para>
+
+<para>Called when the countdown timer has finished. Unpauses the game and hides the countdown label. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown_1af73066bc9bb055a249233c9bfd2aeca8"/>Timer <emphasis role="strong">CountdownTimer</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_countdown_1abe529bdb22914a857a12688e5a204d42"/>AnimationPlayer <emphasis role="strong">BlurAnimation</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Custom control class for the level countdown, which handles the countdown before the level starts. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/LevelCountdown.cs</section>
+</section>

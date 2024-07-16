@@ -4,6 +4,10 @@ using Godot;
 using Godot.Collections;
 
 namespace Code.Scripts.Components;
+
+/// <summary>
+/// Component that emits a trail for the tank
+/// </summary>
 public partial class TrailComponent : Node2D
 {
     [Export]
@@ -17,7 +21,9 @@ public partial class TrailComponent : Node2D
     private bool _canEmittTrail = true;
     private LevelManager _levelManager;
 
-
+    /// <summary>
+    /// Dictionary that contains the world id and the trail scene that should be used for that world
+    /// </summary>
     private Dictionary<int, PackedScene> _worldIdToTrailScene = new Dictionary<int, PackedScene>()
     {
         {0, Scene.DrivingMud},
@@ -40,12 +46,19 @@ public partial class TrailComponent : Node2D
 
     }
 
+    /// <summary>
+    /// Returns the scene that should be used for the current world
+    /// </summary>
+    /// <returns name="PackedScene">The trail scene that should be used for the current world</returns>
     private PackedScene GetSceneForWorld()
     {
         int worldId = _levelManager.CurrentWorldId;
         return _worldIdToTrailScene[worldId];
     }
 
+    /// <summary>
+    /// Emits the trail for the tank with a certain time between trails adjusted by the TimeBetweenTrails variable
+    /// </summary>
     public void EmitTrail()
     {
         if (_canEmittTrail)
@@ -59,6 +72,10 @@ public partial class TrailComponent : Node2D
         }
     }
 
+    /// <summary>
+    /// Emits particles for all the chains
+    /// </summary>
+    /// <param name="scene">The scene that should be emitted</param>
     private void EmitParticlesForAllChains(PackedScene scene)
     {
         _particles.EmitParticles(_leftChain1, scene);

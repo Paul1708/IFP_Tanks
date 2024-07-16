@@ -1,0 +1,90 @@
+\doxysection{Code.\+Scripts.\+Weapons.\+Gun\+Controller Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller}{}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller}\index{Code.Scripts.Weapons.GunController@{Code.Scripts.Weapons.GunController}}
+
+
+Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon stats.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Weapons.\+Gun\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Weapons.\+Gun\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a17992e74e18d6d22b5e10f645654ced3}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a17992e74e18d6d22b5e10f645654ced3} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a3068c23a48f86ec2c067d181b02cad5b}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a3068c23a48f86ec2c067d181b02cad5b} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a33ef24551f86812ea630766d91b25efd}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a33ef24551f86812ea630766d91b25efd} 
+void {\bfseries Set\+Weapon} ()
+\begin{DoxyCompactList}\small\item\em Sets the weapon stats of the gun controller to the currently equipped weapon. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a2934b42322d8862887c4b99111ac941a}{Rotate\+Towards}} (Vector2 target)
+\begin{DoxyCompactList}\small\item\em Rotates the gun towards the target. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a06ad4bd4f68e30e7ef3e4329a5e08853}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a06ad4bd4f68e30e7ef3e4329a5e08853} 
+void {\bfseries Shoot} ()
+\begin{DoxyCompactList}\small\item\em Shoots a bullet from the gun, if the gun is ready to shoot. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a4d87c656bf09b7ca8f241a7360bf02c0}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a4d87c656bf09b7ca8f241a7360bf02c0} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_abe71f35816ec6c6e346ca97262816f98}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_abe71f35816ec6c6e346ca97262816f98} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats}{Weapon\+Stats}} {\bfseries Weapon\+Stats}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a24ef2765a3c49721a35f042e006dc733}\label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a24ef2765a3c49721a35f042e006dc733} 
+float {\bfseries Time\+Between\+Shots}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controls the gun of the player and enemies, handling the shooting of bullets, rotation and weapon stats. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a2934b42322d8862887c4b99111ac941a}\index{Code.Scripts.Weapons.GunController@{Code.Scripts.Weapons.GunController}!RotateTowards@{RotateTowards}}
+\index{RotateTowards@{RotateTowards}!Code.Scripts.Weapons.GunController@{Code.Scripts.Weapons.GunController}}
+\doxysubsubsection{\texorpdfstring{RotateTowards()}{RotateTowards()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a2934b42322d8862887c4b99111ac941a} 
+void Code.\+Scripts.\+Weapons.\+Gun\+Controller.\+Rotate\+Towards (\begin{DoxyParamCaption}\item[{Vector2}]{target}{}\end{DoxyParamCaption})}
+
+
+
+Rotates the gun towards the target. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target to rotate towards\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_gun_controller_a2934b42322d8862887c4b99111ac941a_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Weapons/Gun\+Controller.\+cs\end{DoxyCompactItemize}

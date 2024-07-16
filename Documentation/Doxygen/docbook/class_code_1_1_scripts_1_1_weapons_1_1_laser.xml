@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser" xml:lang="en-US">
+<title>Code.Scripts.Weapons.Laser Class Reference</title>
+<indexterm><primary>Code.Scripts.Weapons.Laser</primary></indexterm>
+<para>
+
+<para>Controls the laser beam, checks for collisions and updates the laser beam particles. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Weapons.Laser:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Weapons.Laser:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_1abd9d83e31965723550c915b08c893abb"/>void <emphasis role="strong">Setup</emphasis> (<link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_gun">LaserGun</link> gun)</para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_1a16b8c12cff7f999dbf9ae2f4abb33175">_PhysicsProcess</link> (double delta)</para>
+
+<para>Updates the laser beam and particles. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_laser_1ac906db3ae71b1e341a9b65dea5f73a58">SetActive</link> (bool active)</para>
+
+<para>Activates or deactivates the laser beam. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_1a1966217ac0029603557fca922f511d92"/>void <emphasis role="strong">MoveLaserRay</emphasis> (float globalRotationAngle)</para>
+
+<para>Rotates the laser beam along the given angle. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the laser beam, checks for collisions and updates the laser beam particles. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_1a16b8c12cff7f999dbf9ae2f4abb33175"/><section>
+    <title>_PhysicsProcess()</title>
+<indexterm><primary>_PhysicsProcess</primary><secondary>Code.Scripts.Weapons.Laser</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Laser</primary><secondary>_PhysicsProcess</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Weapons.Laser._PhysicsProcess (double delta)</computeroutput></para><para>
+
+<para>Updates the laser beam and particles. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>delta</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser_a16b8c12cff7f999dbf9ae2f4abb33175_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_laser_1ac906db3ae71b1e341a9b65dea5f73a58"/><section>
+    <title>SetActive()</title>
+<indexterm><primary>SetActive</primary><secondary>Code.Scripts.Weapons.Laser</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.Laser</primary><secondary>SetActive</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Weapons.Laser.SetActive (bool active)</computeroutput></para><para>
+
+<para>Activates or deactivates the laser beam. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>active</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_laser_ac906db3ae71b1e341a9b65dea5f73a58_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Weapons/Laser.cs</section>
+</section>

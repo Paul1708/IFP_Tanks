@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Enemies.InvisBehaviour" name="Code.Scripts.Enemies.InvisBehaviour">
+<area shape="rect" id="Node000001" title="Invis behaivour of the invis (purple) enemy." alt="" coords="5,155,186,197"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_enemies_1_1_behaviour.html" title="Abstract class that defines the behaivour of an enemy. Provides utility methods for pathfinding and t..." alt="" coords="57,80,134,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,122,98,154,93,154,93,122"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="62,5,129,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="98,48,98,80,93,80,93,48"/>
+</map>

@@ -3,6 +3,10 @@ using Code.Scripts.Managers.Save;
 using Godot;
 
 namespace Code.Scripts.UI;
+
+/// <summary>
+/// Controls the main menu
+/// </summary>
 public partial class MainMenu : Control
 {
 	[Export]
@@ -28,6 +32,9 @@ public partial class MainMenu : Control
 		_menuMusic.Play();
 	}
 
+	/// <summary>
+	/// Start a new game. Set the LoadingType to NewGame and change the scene to MainGame
+	/// </summary>
 	private void OnNewGamePressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
@@ -35,6 +42,9 @@ public partial class MainMenu : Control
 		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 	}
 
+	/// <summary>
+	/// Continue the game. Set the LoadingType to LoadGame and change the scene to MainGame
+	/// </summary>
 	private void OnContinueGamePressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
@@ -42,12 +52,18 @@ public partial class MainMenu : Control
 		GetTree().ChangeSceneToFile("res://Scenes/Misc/MainGame.tscn");
 	}
 
+	/// <summary>
+	/// Show the settings menu by changing the camera position
+	/// </summary>
 	private void OnSettingsPressed()
 	{
 		_musicController.Play(Sound.ButtonClick);
 		Camera.Position = SettingsMenuCameraPosition;
 	}
 
+	/// <summary>
+	/// Closes the game.
+	/// </summary>
 	private void OnQuitPressed()
 	{
 		_musicController.Play(Sound.ButtonClick);

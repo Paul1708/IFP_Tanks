@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences" xml:lang="en-US">
+<title>Code.Scripts.Managers.LoadUserPreferences Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.LoadUserPreferences</primary></indexterm>
+<para>
+
+<para>Loads the user preferences and sets the window mode and volume accordingly. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.LoadUserPreferences:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.LoadUserPreferences:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences_1af438f9d9f9d50af3cd97e538d6fba6b9"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences_1ab122e7673955b9327e6c09e16e4f59a0">SetVolume</link> (int busIndex, float value)</para>
+
+<para>Sets the volume of the bus with the given index to the given value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Loads the user preferences and sets the window mode and volume accordingly. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences_1ab122e7673955b9327e6c09e16e4f59a0"/><section>
+    <title>SetVolume()</title>
+<indexterm><primary>SetVolume</primary><secondary>Code.Scripts.Managers.LoadUserPreferences</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.LoadUserPreferences</primary><secondary>SetVolume</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.LoadUserPreferences.SetVolume (int busIndex, float value)</computeroutput></para><para>
+
+<para>Sets the volume of the bus with the given index to the given value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>busIndex</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/LoadUserPreferences.cs</section>
+</section>

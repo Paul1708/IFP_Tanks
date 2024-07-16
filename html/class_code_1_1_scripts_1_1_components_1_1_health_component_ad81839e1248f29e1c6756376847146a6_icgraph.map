@@ -1,0 +1,25 @@
+<map id="Code.Scripts.Components.HealthComponent.SetCurrentHp" name="Code.Scripts.Components.HealthComponent.SetCurrentHp">
+<area shape="rect" id="Node000001" title="Sets the current health of the entity to the input value." alt="" coords="1050,139,1256,181"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#ab42d464f024bf20fa49579f3f958697c" title="Heals the entity by the input value." alt="" coords="793,5,971,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="1111,131,1060,95,1001,62,970,50,972,46,1003,58,1063,91,1114,127"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#a0f0525864d7f5bd6ceac93bf0d5ab3b2" title="Heals the entity to the max health." alt="" coords="785,72,979,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="1048,137,971,118,972,113,1049,132"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#a944be0bffc60507eb98bef0ea5a275e1" title="Increases the max health of the entity by the input value." alt="" coords="762,139,1002,181"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="1034,163,1002,163,1002,157,1034,157"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_managers_1_1_player_manager.html#a20930a943468cbe49c330ce88231033a" title="Loads the player&#39;s stats from the save data." alt="" coords="783,205,981,248"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="1049,188,972,207,971,202,1048,183"/>
+<area shape="rect" id="Node000008" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#a1adc132ff3035e2a5633705a112a3d22" title="Deals damage to the entity by the input value." alt="" coords="780,272,984,315"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="1114,193,1063,229,1003,262,974,274,972,269,1001,258,1060,225,1111,189"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html#a9f65668b897fabfb0ff4ca7e13113f2d" title="Heals the entity by the input percentage." alt="" coords="494,5,714,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="778,29,715,29,715,24,778,24"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_managers_1_1_player_manager.html#aced99c4774105ffc282ff501733160ce" title="Adds the input amount to the player&#39;s max health." alt="" coords="505,139,703,181"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="747,163,704,163,704,157,747,157"/>
+<area shape="rect" id="Node000009" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#ab04ac5ac34559667a56cf8493fa1bf20" title="Called when the bullet hits a damageable node." alt="" coords="506,272,702,315"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="765,296,703,296,703,291,765,291"/>
+<area shape="rect" id="Node000010" href="$class_code_1_1_scripts_1_1_weapons_1_1_laser.html#a16b8c12cff7f999dbf9ae2f4abb33175" title="Updates the laser beam and particles." alt="" coords="250,239,446,281"/>
+<area shape="poly" id="edge9_Node000009_Node000010" title=" " alt="" coords="490,281,445,275,446,270,491,276"/>
+<area shape="rect" id="Node000011" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a014dc96a8f25d183b0bec481c92d0548" title="Called when the bullet collides with another node. Calls the appropriate method for the collision typ..." alt="" coords="250,305,446,348"/>
+<area shape="poly" id="edge10_Node000009_Node000011" title=" " alt="" coords="491,311,447,317,446,311,490,305"/>
+<area shape="rect" id="Node000012" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a9da0755c4cc39e78855b602573727182" title="Call move method on every physics process tick and check for collisions." alt="" coords="5,305,202,348"/>
+<area shape="poly" id="edge11_Node000011_Node000012" title=" " alt="" coords="234,329,202,329,202,324,234,324"/>
+</map>

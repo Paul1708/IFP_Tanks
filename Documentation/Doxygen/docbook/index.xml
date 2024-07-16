@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<book xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_index" xml:lang="en-US">
+    <info>
+    <title>IFP Tanks</title>
+    </info>
+<chapter>
+    <title>Namespace Documentation</title>
+<xi:include href="namespace_code.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_audio.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_components.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_enemies.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_environment.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_managers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_managers_1_1_level.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_managers_1_1_save.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_movement.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_u_i.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_u_i_1_1_shop.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+<xi:include href="namespace_code_1_1_scripts_1_1_weapons.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<chapter>
+    <title>Class Documentation</title>
+    <xi:include href="class_code_1_1_scripts_1_1_components_1_1_animation_handler.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_behaviour.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_bullet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_bullet_math.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_environment_1_1_coin.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_coin_display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_coin_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_environment_1_1_damage_number.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_components_1_1_damage_number_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_dummy_behaviour.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_dummy_tank.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_enemy.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_gun_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_health_bar.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_components_1_1_health_component.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_invis_behaviour.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_kamikaze_behaviour.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_laser.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_laser_gun.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_level_display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_level_failed.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_load_user_preferences.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_main_menu.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_environment_1_1_main_menu_dummy_tank.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_audio_1_1_music_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_particle_controller.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_pause_menu.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_player_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_movement_1_1_player_movement.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_movement_1_1_player_stats.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_code_1_1_scripts_1_1_managers_1_1_scene.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_settings_menu.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_shop_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_code_1_1_scripts_1_1_audio_1_1_sound.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_components_1_1_trail_component.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_u_i_1_1_victory_screen.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="class_code_1_1_scripts_1_1_managers_1_1_level_1_1_world_data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+</chapter>
+<index/>
+</book>

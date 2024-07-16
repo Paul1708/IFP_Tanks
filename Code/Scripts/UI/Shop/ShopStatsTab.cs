@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Data struct which holds the name, list index, price, price tag, and quantity of a stat
+/// </summary>
 public struct Stat
 {
 	public string Name;
@@ -19,6 +22,9 @@ public struct Stat
 	}
 }
 
+/// <summary>
+/// Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought stats.
+/// </summary>
 public partial class ShopStatsTab : ShopBaseTab
 {
 	private HScrollBar _hScrollBar;
@@ -48,7 +54,7 @@ public partial class ShopStatsTab : ShopBaseTab
 	{
 		_hScrollBar.Value = 0;
 	}
-
+	
 	protected override void Scroll()
 	{
 		Vector2 position = _control.Position;
@@ -56,6 +62,9 @@ public partial class ShopStatsTab : ShopBaseTab
 		_control.Position = position;
 	}
 
+	/// <summary>
+	/// Buy the healStat and heal the player by 25% of his max health
+	/// </summary>
 	private void OnBuy1Pressed()
 	{
 		if (PlayerManager.Instance.PlayerHealthComponent.CurrentHp == PlayerManager.Instance.PlayerHealthComponent.MaxHp)
@@ -69,6 +78,9 @@ public partial class ShopStatsTab : ShopBaseTab
 		}
 	}
 
+	/// <summary>
+	/// Buy the maxHpStat and increase the max health of the player by 10
+	/// </summary>
 	private void OnBuy2Pressed()
 	{
 		Stat maxHpStat = ShopManager.Instance.StatsList[1];
@@ -79,6 +91,9 @@ public partial class ShopStatsTab : ShopBaseTab
 
 	}
 
+	/// <summary>
+	/// Buy the dmgStat and increase the damage of the player by 0.1f
+	/// </summary>
 	private void OnBuy3Pressed()
 	{
 		Stat dmgStat = ShopManager.Instance.StatsList[2];
@@ -88,6 +103,9 @@ public partial class ShopStatsTab : ShopBaseTab
 		}
 	}
 
+	/// <summary>
+	/// Buy the speedStat and increase the movement speed of the player by 10f
+	/// </summary>
 	private void OnBuy4Pressed()
 	{
 		Stat speedStat = ShopManager.Instance.StatsList[3];
@@ -95,6 +113,9 @@ public partial class ShopStatsTab : ShopBaseTab
 			PlayerManager.Instance.AddMovementSpeed(10f);
 	}
 
+	/// <summary>
+	/// Buy the rotationSpeedStat and increase the rotation speed of the player by 0.25f
+	/// </summary>
 	private void OnBuy5Pressed()
 	{
 		Stat speedStat = ShopManager.Instance.StatsList[3];

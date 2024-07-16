@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound" xml:lang="en-US">
+<title>Code.Scripts.Audio.Sound Struct Reference</title>
+<indexterm><primary>Code.Scripts.Audio.Sound</primary></indexterm>
+<para>
+
+<para>Struct that contains all the music names. </para>
+ 
+</para>
+<simplesect>
+    <title>Static Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1afec3a5d84e1bafe5086a476cc9389a14"/>const string <emphasis role="strong">ButtonClick</emphasis> = &quot;ButtonClick&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1ac1eb2ac3c02c0fa7729058aa5e41da65"/>const string <emphasis role="strong">RocketExplosion</emphasis> = &quot;RocketExplosion&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1a63109544b63cf0ea4df1b25712b602c5"/>const string <emphasis role="strong">TankShooting</emphasis> = &quot;TankShooting&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1a124ef3e2bd31addd3f2552b600152faa"/>const string <emphasis role="strong">CoinPickup</emphasis> = &quot;CoinPickup&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1abe9c0791035294e00ef1d2dc3ccdd99a"/>const string <emphasis role="strong">CountDown</emphasis> = &quot;CountDown&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1ad6bc19a8615228ec1a28ec14a9b5ca18"/>const string <emphasis role="strong">OpenShop</emphasis> = &quot;OpenShop&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1a97c5847c85d67bded0e16c99f912a29d"/>const string <emphasis role="strong">Death</emphasis> = &quot;Death&quot;</para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_audio_1_1_sound_1a2b68af9e283dcadcb33135d5c8ef1fde"/>const string <emphasis role="strong">Victory</emphasis> = &quot;Victory&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Struct that contains all the music names. </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Code/Scripts/Audio/MusicController.cs</section>
+</section>

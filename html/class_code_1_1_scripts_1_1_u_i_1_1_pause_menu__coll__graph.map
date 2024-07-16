@@ -1,0 +1,19 @@
+<map id="Code.Scripts.UI.PauseMenu" name="Code.Scripts.UI.PauseMenu">
+<area shape="rect" id="Node000001" title="Controls the pause menu." alt="" coords="778,107,963,133"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="161,91,223,117"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,102,777,115,777,120,239,108"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_u_i_1_1_settings_menu.html" title="Controls the settings menu." alt="" coords="428,157,625,184"/>
+<area shape="poly" id="edge5_Node000005_Node000002" title=" " alt="" coords="239,115,303,132,429,155,428,160,302,137,237,120"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu.html" title="Custom control class for the shop menu, which handles opening and closing the shop menu." alt="" coords="420,5,633,32"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="237,86,302,67,456,30,458,35,303,72,239,91"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_u_i_1_1_level_countdown.html" title="Custom control class for the level countdown, which handles the countdown before the level starts." alt="" coords="422,56,631,83"/>
+<area shape="poly" id="edge10_Node000007_Node000002" title=" " alt="" coords="238,97,421,78,422,83,239,102"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html" title="MusicController that plays music and sounds." alt="" coords="106,189,278,232"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="294,218,454,223,544,220,632,209,693,195,752,174,843,131,845,136,754,179,695,200,633,215,544,225,454,228,294,223"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="294,197,396,185,427,181,428,187,397,191,294,203"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,197,57,224"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="72,208,105,208,105,213,72,213"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="640,165,753,152,830,131,831,136,754,157,641,170"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="627,33,690,47,755,65,802,84,844,104,841,109,800,89,753,71,689,52,626,38"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="638,83,754,100,777,104,777,109,753,105,637,88"/>
+</map>

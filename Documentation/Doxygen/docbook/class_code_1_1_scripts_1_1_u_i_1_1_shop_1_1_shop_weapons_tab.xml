@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.ShopWeaponsTab Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopWeaponsTab</primary></indexterm>
+<para>
+
+<para>Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.Shop.ShopWeaponsTab:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.ShopWeaponsTab:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_1aaf9b653e5c68fad470d9fe547994f677"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_1ae3cebb9430c931288a660e1f8a7e544f"/>override void <emphasis role="strong">_Process</emphasis> (double delta)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_1a4d2499de69dd432ccd387c47e003075e">ResetScrollBar</link> ()</para>
+
+<para>sets the Scollbar to default by stetting the value to 0 </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_1a0c547e50a4aa2761b8cd643f7ccec2f3">Scroll</link> ()</para>
+
+<para>Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab">Code.Scripts.UI.Shop.ShopBaseTab</link>        <itemizedlist>
+            <listitem><para>Label <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1a8c1da1b8e94bc122d4dec7d782d344ed">GetPriceTagByPanel</link> (int panelNumber)</para>
+
+<para>get all price tags from the scene by their path that only differs in the Panel number </para>
+</listitem>
+            <listitem><para>int <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1a7f6a1833399472bad539beb5c0a45c7c">ParsePrice</link> (int panelNumber)</para>
+
+<para>Parses the price from the price tag label and returns it as an int. It needs the panelnumber of the item in the tab. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Static Protected Attributes inherited from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab">Code.Scripts.UI.Shop.ShopBaseTab</link>        <itemizedlist>
+            <listitem><para>const string <emphasis role="strong">PriceTagPathFormat</emphasis> = &quot;RichTextLabel/Control/Panel{0}/PriceTag&quot;</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_1a4d2499de69dd432ccd387c47e003075e"/><section>
+    <title>ResetScrollBar()</title>
+<indexterm><primary>ResetScrollBar</primary><secondary>Code.Scripts.UI.Shop.ShopWeaponsTab</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopWeaponsTab</primary><secondary>ResetScrollBar</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.UI.Shop.ShopWeaponsTab.ResetScrollBar ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>sets the Scollbar to default by stetting the value to 0 </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1a9e174b5263f9084c615fe5eb83ac8c77">Code.Scripts.UI.Shop.ShopBaseTab</link>.</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab_1a0c547e50a4aa2761b8cd643f7ccec2f3"/><section>
+    <title>Scroll()</title>
+<indexterm><primary>Scroll</primary><secondary>Code.Scripts.UI.Shop.ShopWeaponsTab</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopWeaponsTab</primary><secondary>Scroll</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.UI.Shop.ShopWeaponsTab.Scroll ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Sets the X value of the positin of the control node, that is used to scroll, to the position of the hscrollbar position. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab_1af2fda5d070f9be782a3621531b273fca">Code.Scripts.UI.Shop.ShopBaseTab</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopWeaponsTab.cs</section>
+</section>

@@ -1,0 +1,9 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,47,68,73"/>
+<area shape="rect" id="Node000001" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab.html" title="Base class for all shop tabs. Contains methods to get price tags and parse prices from them." alt="" coords="116,39,296,81"/>
+<area shape="poly" id="edge55_Node000000_Node000001" title=" " alt="" coords="83,57,115,57,115,63,83,63"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab.html" title="Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought sta..." alt="" coords="344,5,524,48"/>
+<area shape="poly" id="edge56_Node000001_Node000002" title=" " alt="" coords="311,42,343,37,344,42,312,47"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab.html" title="Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons." alt="" coords="344,72,524,115"/>
+<area shape="poly" id="edge57_Node000001_Node000003" title=" " alt="" coords="312,73,344,78,343,83,311,78"/>
+</map>

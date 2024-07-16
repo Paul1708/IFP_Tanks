@@ -1,0 +1,9 @@
+<map id="Code.Scripts.Managers.Level.Level" name="Code.Scripts.Managers.Level.Level">
+<area shape="rect" id="Node000001" title="Manages the level, enemies and coins. Emits signals when the level is completed or failed." alt="" coords="5,172,200,215"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="48,81,115,108"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,123,101,171,95,172,85,124"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu.html" title="Custom control class for the shop menu, which handles opening and closing the shop menu." alt="" coords="139,81,351,108"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="215,119,135,174,132,169,212,115"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="214,5,276,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="248,47,248,81,242,81,242,47"/>
+</map>

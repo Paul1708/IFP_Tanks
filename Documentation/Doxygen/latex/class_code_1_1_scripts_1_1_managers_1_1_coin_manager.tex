@@ -1,0 +1,197 @@
+\doxysection{Code.\+Scripts.\+Managers.\+Coin\+Manager Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager}{}\label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager}\index{Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}}
+
+
+Manager class that handles the coins of the player.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Managers.\+Coin\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Managers.\+Coin\+Manager\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_ac20b377022573a18929850cc512a900a}\label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_ac20b377022573a18929850cc512a900a} 
+delegate void {\bfseries On\+Coin\+Changed\+Event\+Handler} (int coins)
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a47a56ba88edc0b994547728b040dcf22}\label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a47a56ba88edc0b994547728b040dcf22} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a545972b39046ba8a7f5f1359087e5c40}\label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a545972b39046ba8a7f5f1359087e5c40} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a032f6f49e57ef558c96c56b29f620ffb}{On\+Save\+Data\+Loaded}} (\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}} save\+Data)
+\begin{DoxyCompactList}\small\item\em Method that will be called when the Save\+Data is loaded. It will set the Coins to the value of the Save\+Data. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_adfd3987d34cc72928b39a04db1646f67}{Add\+Coins}} (int value)
+\begin{DoxyCompactList}\small\item\em Method to add coins to the player. If the value is less than 0, the method will return without doing anything. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7b86e9844913d83159f6fb46c45dca53}{Remove\+Coins}} (int value)
+\begin{DoxyCompactList}\small\item\em Method to remove coins from the player If the value is less than 0, the method will return without doing anything. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a02ccff53c7fb1dddedabef28e723b70d}{Set\+Coins}} (int value)
+\begin{DoxyCompactList}\small\item\em Method to set the Coins to a specific value and emit the On\+Coin\+Changed signal. If the value is less than 0, the Coins will be set to 0. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7c63c5ca166097ac4eccb97663d0bca6}\label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7c63c5ca166097ac4eccb97663d0bca6} 
+void {\bfseries Reset\+Coins} ()
+\begin{DoxyCompactList}\small\item\em Method to reset the Coins to default values (0) \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7ad7120af0c005339eed5c30c072879b}{Check\+If\+Enough\+Coins}} (int value)
+\begin{DoxyCompactList}\small\item\em Method to check if the player has more or equal coins to the value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_ae0a6212cdcd71a1829563a671878fc8d}\label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_ae0a6212cdcd71a1829563a671878fc8d} 
+static \mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_coin_manager}{Coin\+Manager}} {\bfseries Instance}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a0c260009367e481fd00aa7bdf84994cb}\label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a0c260009367e481fd00aa7bdf84994cb} 
+int {\bfseries Coins}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manager class that handles the coins of the player. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_adfd3987d34cc72928b39a04db1646f67}\index{Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}!AddCoins@{AddCoins}}
+\index{AddCoins@{AddCoins}!Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}}
+\doxysubsubsection{\texorpdfstring{AddCoins()}{AddCoins()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_adfd3987d34cc72928b39a04db1646f67} 
+void Code.\+Scripts.\+Managers.\+Coin\+Manager.\+Add\+Coins (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Method to add coins to the player. If the value is less than 0, the method will return without doing anything. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to add to the coins\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_adfd3987d34cc72928b39a04db1646f67_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_adfd3987d34cc72928b39a04db1646f67_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7ad7120af0c005339eed5c30c072879b}\index{Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}!CheckIfEnoughCoins@{CheckIfEnoughCoins}}
+\index{CheckIfEnoughCoins@{CheckIfEnoughCoins}!Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}}
+\doxysubsubsection{\texorpdfstring{CheckIfEnoughCoins()}{CheckIfEnoughCoins()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7ad7120af0c005339eed5c30c072879b} 
+bool Code.\+Scripts.\+Managers.\+Coin\+Manager.\+Check\+If\+Enough\+Coins (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Method to check if the player has more or equal coins to the value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to check if the player has enough coins\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the player has enough coins, false otherwise
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7ad7120af0c005339eed5c30c072879b_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a032f6f49e57ef558c96c56b29f620ffb}\index{Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}!OnSaveDataLoaded@{OnSaveDataLoaded}}
+\index{OnSaveDataLoaded@{OnSaveDataLoaded}!Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}}
+\doxysubsubsection{\texorpdfstring{OnSaveDataLoaded()}{OnSaveDataLoaded()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a032f6f49e57ef558c96c56b29f620ffb} 
+void Code.\+Scripts.\+Managers.\+Coin\+Manager.\+On\+Save\+Data\+Loaded (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data}{Save\+Data}}}]{save\+Data}{}\end{DoxyParamCaption})}
+
+
+
+Method that will be called when the Save\+Data is loaded. It will set the Coins to the value of the Save\+Data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em save\+Data} & The Save\+Data that was loaded\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a032f6f49e57ef558c96c56b29f620ffb_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7b86e9844913d83159f6fb46c45dca53}\index{Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}!RemoveCoins@{RemoveCoins}}
+\index{RemoveCoins@{RemoveCoins}!Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}}
+\doxysubsubsection{\texorpdfstring{RemoveCoins()}{RemoveCoins()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7b86e9844913d83159f6fb46c45dca53} 
+void Code.\+Scripts.\+Managers.\+Coin\+Manager.\+Remove\+Coins (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Method to remove coins from the player If the value is less than 0, the method will return without doing anything. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to remove from the coins\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7b86e9844913d83159f6fb46c45dca53_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a7b86e9844913d83159f6fb46c45dca53_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a02ccff53c7fb1dddedabef28e723b70d}\index{Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}!SetCoins@{SetCoins}}
+\index{SetCoins@{SetCoins}!Code.Scripts.Managers.CoinManager@{Code.Scripts.Managers.CoinManager}}
+\doxysubsubsection{\texorpdfstring{SetCoins()}{SetCoins()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a02ccff53c7fb1dddedabef28e723b70d} 
+void Code.\+Scripts.\+Managers.\+Coin\+Manager.\+Set\+Coins (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Method to set the Coins to a specific value and emit the On\+Coin\+Changed signal. If the value is less than 0, the Coins will be set to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to set the Coins to\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_managers_1_1_coin_manager_a02ccff53c7fb1dddedabef28e723b70d_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Managers/Coin\+Manager.\+cs\end{DoxyCompactItemize}

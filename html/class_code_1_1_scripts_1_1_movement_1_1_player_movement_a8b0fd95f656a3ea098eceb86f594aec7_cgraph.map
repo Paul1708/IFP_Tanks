@@ -1,0 +1,19 @@
+<map id="Code.Scripts.Movement.PlayerMovement._PhysicsProcess" name="Code.Scripts.Movement.PlayerMovement._PhysicsProcess">
+<area shape="rect" id="Node000001" title="Get the input from the player and set the velocity accordingly and rotate the gun." alt="" coords="5,139,206,181"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_components_1_1_trail_component.html#a78720ef417415ddf9b3ddfcaf4869930" title="Emits the trail for the tank with a certain time between trails adjusted by the TimeBetweenTrails var..." alt="" coords="265,5,442,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,136,186,97,252,58,265,52,267,57,255,62,189,101,136,140"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_movement_1_1_player_movement.html#a93a6a1fe078f5ac3f9452cb70a0cadf7" title="Get the input from the player and set the velocity accordingly." alt="" coords="254,72,454,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,136,256,117,258,122,188,141"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_movement_1_1_player_movement.html#a5c1788e27750efd122069679d5de9331" title="Check if the player is moving." alt="" coords="254,139,454,181"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="206,157,238,157,238,163,206,163"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_weapons_1_1_gun_controller.html#a2934b42322d8862887c4b99111ac941a" title="Rotates the gun towards the target." alt="" coords="262,205,446,248"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="188,179,258,198,256,203,187,184"/>
+<area shape="rect" id="Node000008" href="$class_code_1_1_scripts_1_1_weapons_1_1_gun_controller.html#a06ad4bd4f68e30e7ef3e4329a5e08853" title="Shoots a bullet from the gun, if the gun is ready to shoot." alt="" coords="262,272,446,315"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="136,180,189,219,255,258,267,263,265,268,252,262,186,223,133,184"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_movement_1_1_player_movement.html#a747465a82c0f5efa95b6e470bcd49e59" title="Calculate the velocity of the player based on the input." alt="" coords="508,35,708,77"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="454,76,491,70,492,76,455,81"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_components_1_1_animation_handler.html#ae52be595ada50f368ccac008743546a6" title="Plays the correct moving animation based on the Vector2 input." alt="" coords="502,101,713,160"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="455,105,487,110,486,115,454,111"/>
+<area shape="rect" id="Node000009" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html#a26d7a27d30cafa3df67996221c185fec" title="Plays a sound from the the child nodes of the MusicController." alt="" coords="522,272,694,315"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="446,291,506,291,506,296,446,296"/>
+</map>

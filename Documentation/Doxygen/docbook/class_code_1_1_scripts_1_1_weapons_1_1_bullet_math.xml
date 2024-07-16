@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_math" xml:lang="en-US">
+<title>Code.Scripts.Weapons.BulletMath Class Reference</title>
+<indexterm><primary>Code.Scripts.Weapons.BulletMath</primary></indexterm>
+<para>
+
+<para>Utility class for bullet math operations. </para>
+ 
+</para>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_math_1a87ce7d1998abcc443e362ed7943fbde1"/>static float <emphasis role="strong">NormalizeAngle</emphasis> (float angle)</para>
+
+<para>Convert an angle from the interval J = [0,2*Pi] to an angle in I = [-Pi,Pi] where 0 in J is mapped to 0 in I. This is needed since the godot angle function uses angles in I. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_math_1a07c1b6cc56caea44d3ede3df2a1fae49"/>static float <emphasis role="strong">RestrictHomingAngle</emphasis> (float angle, float maxAngleRadians)</para>
+
+<para>Ensure that the angle does not exceed the interval [-maxAngleRadians, maxAngleRadians]. If it is not inside this interval, the closed interval border will be returned. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Utility class for bullet math operations. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Weapons/BulletMath.cs</section>
+</section>

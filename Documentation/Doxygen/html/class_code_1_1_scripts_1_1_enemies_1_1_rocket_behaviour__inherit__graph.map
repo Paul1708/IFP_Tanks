@@ -1,0 +1,9 @@
+<map id="Code.Scripts.Enemies.RocketBehaviour" name="Code.Scripts.Enemies.RocketBehaviour">
+<area shape="rect" id="Node000001" title="Behaivour of the rocket (blue) enemy." alt="" coords="5,229,202,272"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour.html" title="Basic behaivour of the basic (red) enemy." alt="" coords="48,155,159,181"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="106,197,106,229,101,229,101,197"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_enemies_1_1_behaviour.html" title="Abstract class that defines the behaivour of an enemy. Provides utility methods for pathfinding and t..." alt="" coords="65,80,142,107"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="106,122,106,154,101,154,101,122"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="70,5,137,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="106,48,106,80,101,80,101,48"/>
+</map>

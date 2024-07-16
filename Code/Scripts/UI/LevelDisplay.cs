@@ -3,6 +3,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Dynamically shows the levels of the current world anr their states.
+/// </summary>
 public partial class LevelDisplay : HBoxContainer
 {
     // Textures for the different level states
@@ -13,6 +16,10 @@ public partial class LevelDisplay : HBoxContainer
     public Texture2D CheckpointCurrent = GD.Load<Texture2D>("res://Sprites/UI/LevelIndicators/CheckpointCurrent.png");
     public Texture2D CheckpointLocked = GD.Load<Texture2D>("res://Sprites/UI/LevelIndicators/CheckpointLocked.png");
 
+    /// <summary>
+    /// Renders the level display based on the levels and their states.
+    /// </summary>
+    /// <param name="levels">The levels to render</param>
     public void RenderLevelDisplay(LevelData[] levels)
     {
         // Clear the current level display

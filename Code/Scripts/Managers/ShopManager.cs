@@ -7,6 +7,9 @@ using Code.Scripts.Weapons;
 
 namespace Code.Scripts.Managers;
 
+/// <summary>
+/// Manages the shop, including the stats and weapons. It handles the buying, upgrading, unlocking and equipping of stats and weapons.
+/// </summary>
 public partial class ShopManager : Node2D
 {
 	[ExportGroup("Weapons")]
@@ -67,15 +70,21 @@ public partial class ShopManager : Node2D
 		SaveManager.Instance.OnSaveDataLoaded -= OnSaveDataLoaded;
 	}
 
+	/// <summary>
+	/// Method that will be called when the SaveData is loaded. It will set the Stats and Weapons to the values of the SaveData
+	/// </summary>
+	/// <param name="saveData">The SaveData that was loaded</param>
 	public void OnSaveDataLoaded(SaveData saveData)
 	{
 		LoadShopStateBySaveData(saveData);
 	}
 
-	///<summary>
-	///Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. 
-	///It increases the price and quantity of the stat and removes the coins if the stat was bought.
-	///</summary>
+	/// <summary>
+	/// Tries to upgrade/buy the stat and returns true if the stat was bought, false if not. 
+	/// It increases the price and quantity of the stat and removes the coins if the stat was bought.
+	/// </summary>
+	/// <param name="stat">The stat to buy</param>
+	/// <returns>True if the stat was bought, false if not</returns>
 	public bool BuyStat(Stat stat)
 	{
 		ShopPrices shopPrices = stat.PriceTag as ShopPrices;
@@ -101,9 +110,10 @@ public partial class ShopManager : Node2D
 		return false;
 	}
 
-	///<summary>
-	///Increase the quantity of the stat in the list at the listIndex by 1.
-	///</summary>
+	/// <summary>
+	/// Increase the quantity of the stat in the list at the listIndex by 1.
+	/// </summary>
+	/// <param name="stat">The stat to increase the quantity of</param>
 	public void IncreaseStatQuantity(Stat stat)
 	{
 		stat.Quantity++;
@@ -114,6 +124,8 @@ public partial class ShopManager : Node2D
 	/// Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag label and weapon.unlocked to true, return true.  
 	/// If the player has not enough coins, show an error message and return false.
 	/// </summary>
+	/// <param name="weapon">The weapon to buy</param>
+	/// <returns>True if the weapon was bought, false if not</returns>
 	public bool BuyWeapon(Weapon weapon)
 	{
 		ShopPrices shopPrices = weapon.PriceTag as ShopPrices;
@@ -145,6 +157,7 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Unlock the weapon by setting the unlocked state to true. Emit the OnWeaponUnlocked signal.
 	/// </summary>
+	/// <param name="weapon">The weapon to unlock</param>
 	public void UnlockWeapon(Weapon weapon)
 	{
 		weapon.Unlocked = true;
@@ -155,6 +168,7 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Equip the weapon by setting the equipped state to true and unequip all other weapons. Emit the OnWeaponEquipped signal.
 	/// </summary>
+	/// <param name="weapon">The weapon to equip</param>
 	public void EquipWeapon(Weapon weapon)
 	{
 		UnequipAllWeapon(); //make sure only one weapon is equipped
@@ -166,6 +180,7 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Returns the equipped weapon. If no weapon is equipped, the default weapon is returned.
 	/// </summary>
+	/// <returns>The equipped weapon</returns>
 	public Weapon GetEquippedWeapon()
 	{
 		foreach (var weapon in WeaponsList)
@@ -196,6 +211,9 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Tries to get the index of the panel from the node and returns true if successful, false if not.
 	/// </summary>
+	/// <param name="node">The node to get the panel index from</param>
+	/// <param name="index">The index of the panel</param>
+	/// <returns>True if the index was successfully retrieved, false if not</returns>
 	public bool TryGetPanelIndex(Node node, out int index)
 	{
 		string parentName = node.GetParent().Name;
@@ -213,6 +231,8 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Adds the stats to the list and checks for duplicate indices. When adding a new stat, add it to the list here.
 	/// </summary>
+	/// <param name="stats">The stats to add to the list</param>
+	/// <exception cref="ArgumentException">Thrown when a duplicate index is found</exception>
 	private void AddStatsToList(params Stat[] stats)
 	{
 		HashSet<int> indices = new HashSet<int>();
@@ -236,6 +256,8 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Adds the weapons to the list and checks for duplicate indices. When adding a new weapon, add it to the list here.
 	/// </summary>
+	/// <param name="weapons">The weapons to add to the list</param>
+	/// <exception cref="ArgumentException">Thrown when a duplicate index is found</exception>
 	private void AddWeaponsToList(params Weapon[] weapons)
 	{
 		HashSet<int> indices = new HashSet<int>();
@@ -259,6 +281,7 @@ public partial class ShopManager : Node2D
 	/// <summary>
 	/// Load the shop state by the save data. This includes the prices and quantities of the stats and the unlocked and equipped state of the weapons.
 	/// </summary>
+	/// <param name="saveData">The save data to load the shop state from</param>
 	private void LoadShopStateBySaveData(SaveData saveData)
 	{
 		for (int i = 0; i < saveData.Stats.Count; i++)

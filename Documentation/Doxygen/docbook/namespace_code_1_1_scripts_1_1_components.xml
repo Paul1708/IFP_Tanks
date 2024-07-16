@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_components" xml:lang="en-US">
+<title>Code.Scripts.Components Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Components</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_components_1_1_animation_handler">AnimationHandler</link></para>
+
+<para>Handles the animations of the tanks. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller">DamageNumberController</link></para>
+
+<para>Controls the spawning of the DamageNumber scene. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component">HealthComponent</link></para>
+
+<para>Component that handles the health of an entity. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_components_1_1_hit_feedback_component">HitFeedbackComponent</link></para>
+
+<para>Component that handles the flash and size change of the tank when it takes damage. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_components_1_1_trail_component">TrailComponent</link></para>
+
+<para>Component that emits a trail for the tank. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

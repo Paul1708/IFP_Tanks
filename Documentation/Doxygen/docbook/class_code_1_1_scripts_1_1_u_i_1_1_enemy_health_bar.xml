@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar" xml:lang="en-US">
+<title>Code.Scripts.UI.EnemyHealthBar Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.EnemyHealthBar</primary></indexterm>
+<para>
+
+<para>Shows the health of an enemy. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.EnemyHealthBar:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.EnemyHealthBar:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar_1a56b7133fda3f3cc52af930c6cc7d27bb"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar_1a698f07df6fbb5ec257c1a6b5e915a803">SetHealth</link> (float health)</para>
+
+<para>Updates the health label. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar_1aa8c181ac22aa1ac6c30703646a29a52e">SetMaxHealth</link> (float maxHealth)</para>
+
+<para>Updates the max health label. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Shows the health of an enemy. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar_1a698f07df6fbb5ec257c1a6b5e915a803"/><section>
+    <title>SetHealth()</title>
+<indexterm><primary>SetHealth</primary><secondary>Code.Scripts.UI.EnemyHealthBar</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.EnemyHealthBar</primary><secondary>SetHealth</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.EnemyHealthBar.SetHealth (float health)</computeroutput></para><para>
+
+<para>Updates the health label. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>health</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_enemy_health_bar_1aa8c181ac22aa1ac6c30703646a29a52e"/><section>
+    <title>SetMaxHealth()</title>
+<indexterm><primary>SetMaxHealth</primary><secondary>Code.Scripts.UI.EnemyHealthBar</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.EnemyHealthBar</primary><secondary>SetMaxHealth</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.EnemyHealthBar.SetMaxHealth (float maxHealth)</computeroutput></para><para>
+
+<para>Updates the max health label. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>maxHealth</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/EnemyHealthBar.cs</section>
+</section>

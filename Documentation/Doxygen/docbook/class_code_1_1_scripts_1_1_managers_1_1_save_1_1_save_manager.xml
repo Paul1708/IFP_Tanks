@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager" xml:lang="en-US">
+<title>Code.Scripts.Managers.Save.SaveManager Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Save.SaveManager</primary></indexterm>
+<para>
+
+<para>Manages the saving and loading of the games progress, player stats, and shop state. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.Save.SaveManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.Save.SaveManager:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a5dbf08e36358b255bf9004eddad7dca1"/>delegate void <emphasis role="strong">OnSaveDataLoadedEventHandler</emphasis> (<link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> saveData)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1ab940d7538d2c861bdac954c1e7855068"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a3b56a073393a454df38769d3f1962316"/>void <emphasis role="strong">SaveGame</emphasis> ()</para>
+
+<para>Saves the game. Saves the player&apos;s current health, coin count, player stats, and shop state in the <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> object. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1affb76ec393f2d1b98850d5640b0e77f1"/>void <emphasis role="strong">LoadGame</emphasis> (LoadingType loadingType)</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a95616956068d6230db4fa9529f443a0d">LoadGame</link> ()</para>
+
+<para>Loads the game. If LoadingType is set to NewGame, a new <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> object is created and saved. If LoadingType is set to LoadGame, the <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> object is loaded from the save file. </para>
+</listitem>
+            <listitem><para>bool <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a2ac19239f4e00fb1bdc0d4fae14062a3">IsSaveFileAvailable</link> ()</para>
+
+<para>Checks if the save file is available. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1ae464d472881cf8a949739eb024667985"/>void <emphasis role="strong">SaveShopState</emphasis> ()</para>
+
+<para>Saves the shop state of Stats and <link linkend="_namespace_code_1_1_scripts_1_1_weapons">Weapons</link> in the <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> object. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1ab735092fe4f1e5afd95f10ee5f0a47ec"/><link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">PlayerStats</link> <emphasis role="strong">InitialPlayerStats</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a2b7d1c15eec91416c17801c9de5f3bb8"/>static <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager">SaveManager</link> <emphasis role="strong">Instance</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a8ce09c2576ebbf9764c69f11f172fd66"/><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> <emphasis role="strong">SaveData</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a202451f2e1227239be8aa5ca800e6b99"/>LoadingType <emphasis role="strong">LoadingType</emphasis> = LoadingType.None<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Manages the saving and loading of the games progress, player stats, and shop state. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a2ac19239f4e00fb1bdc0d4fae14062a3"/><section>
+    <title>IsSaveFileAvailable()</title>
+<indexterm><primary>IsSaveFileAvailable</primary><secondary>Code.Scripts.Managers.Save.SaveManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.Save.SaveManager</primary><secondary>IsSaveFileAvailable</secondary></indexterm>
+<para><computeroutput>bool Code.Scripts.Managers.Save.SaveManager.IsSaveFileAvailable ( )</computeroutput></para><para>
+
+<para>Checks if the save file is available. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager_1a95616956068d6230db4fa9529f443a0d"/><section>
+    <title>LoadGame()</title>
+<indexterm><primary>LoadGame</primary><secondary>Code.Scripts.Managers.Save.SaveManager</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.Save.SaveManager</primary><secondary>LoadGame</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Managers.Save.SaveManager.LoadGame ( )</computeroutput></para><para>
+
+<para>Loads the game. If LoadingType is set to NewGame, a new <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> object is created and saved. If LoadingType is set to LoadGame, the <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link> object is loaded from the save file. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ValidationException</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/Save/SaveManager.cs</section>
+</section>

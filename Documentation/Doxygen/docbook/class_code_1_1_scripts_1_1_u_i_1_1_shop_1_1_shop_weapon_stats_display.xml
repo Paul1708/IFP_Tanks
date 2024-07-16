@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.ShopWeaponStatsDisplay Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.ShopWeaponStatsDisplay</primary></indexterm>
+<para>
+
+<para>Displays the weapon stats in the shop. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.Shop.ShopWeaponStatsDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.Shop.ShopWeaponStatsDisplay:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display_1a39aaef812834d8e63b8fe326c182ef41"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display_1ac48c491e4233716bf07946a652b54dc0"/>void <emphasis role="strong">RenderWeaponStatsDisplay</emphasis> ()</para>
+
+<para>Renders the weapon stats display based on the weapon stats of the weapon in the shop. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display_1aeaeae8f2a5be830d40b654785cb1553e"/>Texture2D <emphasis role="strong">DamageTexture</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/Shop/Weapons/Stats/DMG.png&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display_1aaf015625d4014099ee02816cad91ded1"/>Texture2D <emphasis role="strong">BpsTextrue</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/Shop/Weapons/Stats/BPS.png&quot;)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display_1afcf5d8a576b6c0150233e50bcd0f1f23"/>Texture2D <emphasis role="strong">SpeedTexture</emphasis> = GD.Load&lt;Texture2D&gt;(&quot;res://Sprites/UI/Shop/Weapons/Stats/SPEED.png&quot;)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Displays the weapon stats in the shop. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopWeaponStatsDisplay.cs</section>
+</section>

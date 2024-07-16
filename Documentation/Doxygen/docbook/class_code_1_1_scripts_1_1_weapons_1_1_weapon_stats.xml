@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats" xml:lang="en-US">
+<title>Code.Scripts.Weapons.WeaponStats Class Reference</title>
+<indexterm><primary>Code.Scripts.Weapons.WeaponStats</primary></indexterm>
+<para>
+
+<para>Data class which holds the stats of a weapon. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Weapons.WeaponStats:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Weapons.WeaponStats:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats_1a514a6c82c4f6d94730c2f13d9b636721"/>PackedScene <emphasis role="strong">BulletScene</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats_1aabc89143c030bf5492066410bb28553d"/>float <emphasis role="strong">Damage</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats_1a6740911347c63aa2ecfeeb2dca7eca8e"/>float <emphasis role="strong">BulletsPerSecond</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_weapon_stats_1a64e899c44f341007986e088a6586b7e1"/>float <emphasis role="strong">BulletSpeed</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Data class which holds the stats of a weapon. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Weapons/WeaponStats.cs</section>
+</section>

@@ -7,6 +7,11 @@ using Code.Scripts.Weapons;
 
 namespace Code.Scripts.Enemies;
 
+
+/// <summary>
+/// Abstract class that defines the behaivour of an enemy.
+/// Provides utility methods for pathfinding and target selection.
+/// </summary>
 public abstract partial class Behaviour : Node2D
 {
 
@@ -50,6 +55,11 @@ public abstract partial class Behaviour : Node2D
         ExecuteBehaivour();
     }
 
+
+    /// <summary>
+    /// Returns a random, reachable target for the enemy to move towards.
+    /// </summary>
+    /// <returns>The random target</returns>
     public Vector2 GetRandomTarget()
     {
         Vector2 vector = _createRandomVector();
@@ -63,6 +73,10 @@ public abstract partial class Behaviour : Node2D
         return vector;
     }
 
+    /// <summary>
+    /// Creates a random vector.
+    /// </summary>
+    /// <returns>The random vector</returns>
     private Vector2 _createRandomVector() //weighted towards players direction
     {
         Random rdm = new Random();
@@ -72,6 +86,11 @@ public abstract partial class Behaviour : Node2D
         return Enemy.GlobalPosition + (new Vector2(xPositive * rdm.NextSingle(), yPositive * rdm.NextSingle()) * pathLength);
     }
 
+    /// <summary>
+    /// Checks if the target is reachable by the enemy.
+    /// </summary>
+    /// <param name="candidate">The target to check</param>
+    /// <returns>True if the target is reachable, false otherwise</returns>
     private bool _isValidTarget(Vector2 candidate)
     {
         Vector2 backup = Navigation.TargetPosition;

@@ -1,0 +1,5 @@
+<map id="Code.Scripts.UI.Shop.ShopPrices" name="Code.Scripts.UI.Shop.ShopPrices">
+<area shape="rect" id="Node000001" title="Manages the text of the price tags in the shop and calculates the price of the items." alt="" coords="5,80,186,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="69,5,122,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="98,48,98,80,93,80,93,48"/>
+</map>

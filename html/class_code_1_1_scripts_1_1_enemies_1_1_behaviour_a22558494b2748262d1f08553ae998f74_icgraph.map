@@ -1,0 +1,9 @@
+<map id="Code.Scripts.Enemies.Behaviour.GetRandomTarget" name="Code.Scripts.Enemies.Behaviour.GetRandomTarget">
+<area shape="rect" id="Node000001" title="Returns a random, reachable target for the enemy to move towards." alt="" coords="250,72,465,115"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour.html#af836a73bee44ced4d91ca0716467e936" title="Executes the behaivour of the enemy. The enemy will move towards the player until the player is in si..." alt="" coords="9,5,198,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="258,70,187,51,188,46,259,65"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_enemies_1_1_invis_behaviour.html#aff62bfcbcefccdd6e9c0833edd3be14b" title="Executes the behaivour of the enemy. The enemy will move towards the player until the player is in si..." alt="" coords="11,72,196,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="234,96,197,96,197,91,234,91"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour.html#a763666a95f5cfe9293c4fe3ee2a61ff2" title="Executes the behaivour of the enemy. Moves towards a random target and shoots at the path direction t..." alt="" coords="5,139,202,181"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="259,122,188,141,187,135,258,117"/>
+</map>

@@ -2,6 +2,10 @@ using Godot;
 using Code.Scripts.Managers.Save;
 
 namespace Code.Scripts.Managers;
+
+/// <summary>
+/// Loads the user preferences and sets the window mode and volume accordingly
+/// </summary>
 public partial class LoadUserPreferences : Node
 {
 
@@ -26,6 +30,11 @@ public partial class LoadUserPreferences : Node
         SetVolume(_sfxBusIndex, _userPreferences.SfxVolume);
     }
 
+    /// <summary>
+    /// Sets the volume of the bus with the given index to the given value
+    /// </summary>
+    /// <param name="busIndex">The index of the bus to set the volume of</param>
+    /// <param name="value">The value to set the volume to</param>
     public void SetVolume(int busIndex, float value)
 	{
 		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(value));

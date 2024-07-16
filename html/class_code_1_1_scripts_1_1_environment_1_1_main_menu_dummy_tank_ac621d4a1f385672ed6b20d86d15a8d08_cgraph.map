@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Environment.MainMenuDummyTank._Process" name="Code.Scripts.Environment.MainMenuDummyTank._Process">
+<area shape="rect" id="Node000001" title="Rotates the tank towards the mouse position and navigates towards it." alt="" coords="5,5,219,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller.html#aac1ca7a4b1ae9c394727fbbd0d696464" title="Sets the target position for the character to move towards." alt="" coords="267,5,481,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="219,24,251,24,251,29,219,29"/>
+</map>

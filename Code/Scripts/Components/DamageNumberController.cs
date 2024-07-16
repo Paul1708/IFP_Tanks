@@ -3,6 +3,10 @@ using Code.Scripts.Environment;
 using Godot;
 
 namespace Code.Scripts.Components;
+
+/// <summary>
+/// Controls the spawning of the DamageNumber scene
+/// </summary>
 public partial class DamageNumberController : Node2D
 {
     public PackedScene DamageNumberScene { get; set; }
@@ -18,6 +22,10 @@ public partial class DamageNumberController : Node2D
         GetParent<HealthComponent>().OnTakeDamage -= SpawnDamageNumber;
     }
 
+    /// <summary>
+    /// Spawns a new DamageNumber scene with the damage value
+    /// </summary>
+    /// <param name="damage">The damage value which will be displayed</param>
     public void SpawnDamageNumber(float damage)
     {
         // Instantiate a new DamageNumber scene and set the text to the damage value

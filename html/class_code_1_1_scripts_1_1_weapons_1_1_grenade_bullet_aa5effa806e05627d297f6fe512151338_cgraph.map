@@ -1,0 +1,11 @@
+<map id="Code.Scripts.Weapons.GrenadeBullet.Move" name="Code.Scripts.Weapons.GrenadeBullet.Move">
+<area shape="rect" id="Node000001" title="Moves the grenade forward. When it hits the ground, calls OnExplode." alt="" coords="5,72,214,115"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet.html#a0950329c017d786c2cd0dbf8df9602c3" title="Destroys the grenade, damages all damageable objects in the explosion radius and emits particles." alt="" coords="262,72,470,115"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="214,91,246,91,246,96,214,96"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html#a0b2373f199dddfeb33f82cacbf7f5adc" title="Destroys the bullet." alt="" coords="522,5,719,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,69,521,50,523,55,451,74"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_managers_1_1_particle_controller.html#ad2af73c8e3d633e12bd40026e8dd3377" title="Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneSh..." alt="" coords="518,72,723,115"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="470,91,502,91,502,96,470,96"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html#a26d7a27d30cafa3df67996221c185fec" title="Plays a sound from the the child nodes of the MusicController." alt="" coords="534,139,707,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="451,113,523,132,521,137,449,118"/>
+</map>

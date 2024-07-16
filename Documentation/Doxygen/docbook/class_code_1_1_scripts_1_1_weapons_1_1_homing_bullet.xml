@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet" xml:lang="en-US">
+<title>Code.Scripts.Weapons.HomingBullet Class Reference</title>
+<indexterm><primary>Code.Scripts.Weapons.HomingBullet</primary></indexterm>
+<para>
+
+<para>Controls the homing bullet. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Weapons.HomingBullet:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Weapons.HomingBullet:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a13e116c0c1f2b67bd082a0ee8b8ffa74">Destroy</link> ()</para>
+
+<para>Destroys the bullet and emits particles. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1aaa49b65d34128e91803f666aa0ddc144"/>void <emphasis role="strong">MoveTest</emphasis> ()</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a014dc96a8f25d183b0bec481c92d0548">OnCollision</link> (Node node)</para>
+
+<para>Called when the bullet collides with another node. Calls the appropriate method for the collision type. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1ab04ac5ac34559667a56cf8493fa1bf20">OnDamageableHit</link> (Node node)</para>
+
+<para>Called when the bullet hits a damageable node. </para>
+</listitem>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a9da0755c4cc39e78855b602573727182">_PhysicsProcess</link> (double delta)</para>
+
+<para>Call move method on every physics process tick and check for collisions. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Protected Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>override void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a20e1d6afab2f2f97b4fe0705e9322919">Setup</link> ()</para>
+
+<para>Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. </para>
+</listitem>
+            <listitem><para>override Node <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a47637cacf8cc612d646c9a7229b48a69">Move</link> ()</para>
+
+<para>Calculates the new direction of the bullet. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1aa9847b5ab3119a56a3cb3dca04002f30">OnAnythingHit</link> ()</para>
+
+<para>Called when the bullet hits anything. </para>
+</listitem>
+            <listitem><para>virtual void <emphasis role="strong">OnWallHit</emphasis> ()</para>
+
+<para>Called when the bullet hits a wall. </para>
+</listitem>
+            <listitem><para>virtual void <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a043d2947f7b73466055604b2333e0287">OnOtherHit</link> ()</para>
+
+<para>Called when the bullet hits anything other than a damageable node or a wall. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a0ed775a0a4209b61239cf46ad2a429a3"/>int <emphasis role="strong">HomingTicks</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a70e494299269e6a151858f5b64c0b07c"/>float <emphasis role="strong">MaxRotationDeg</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a078e8a2c2a8681fd70da102956f29f77"/>Node2D <emphasis role="strong">TargetNode</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a7c337187320959252ab06dbd67e53c0d"/>Vector2 <emphasis role="strong">TargetDirection</emphasis> = Vector2.Zero<computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Properties inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>float <emphasis role="strong">Damage</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>Node2D <emphasis role="strong">Shooter</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>float <emphasis role="strong">Speed</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Protected Attributes inherited from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet">Code.Scripts.Weapons.Bullet</link>        <itemizedlist>
+            <listitem><para>Node2D <emphasis role="strong">Player</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component">HealthComponent</link> <emphasis role="strong">PlayerHealthComponent</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller">ParticleController</link> <emphasis role="strong">Particles</emphasis></para>
+</listitem>
+            <listitem><para>Vector2 <emphasis role="strong">NormalCollisionVector</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the homing bullet. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a13e116c0c1f2b67bd082a0ee8b8ffa74"/><section>
+    <title>Destroy()</title>
+<indexterm><primary>Destroy</primary><secondary>Code.Scripts.Weapons.HomingBullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.HomingBullet</primary><secondary>Destroy</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Weapons.HomingBullet.Destroy ( )<computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Destroys the bullet and emits particles. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a0b2373f199dddfeb33f82cacbf7f5adc">Code.Scripts.Weapons.Bullet</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_a13e116c0c1f2b67bd082a0ee8b8ffa74_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a47637cacf8cc612d646c9a7229b48a69"/><section>
+    <title>Move()</title>
+<indexterm><primary>Move</primary><secondary>Code.Scripts.Weapons.HomingBullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.HomingBullet</primary><secondary>Move</secondary></indexterm>
+<para><computeroutput>override Node Code.Scripts.Weapons.HomingBullet.Move ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Calculates the new direction of the bullet. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para></para>
+</formalpara>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a994aeab2acbe859b2930047811099d57">Code.Scripts.Weapons.Bullet</link>.</para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_a47637cacf8cc612d646c9a7229b48a69_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_1a20e1d6afab2f2f97b4fe0705e9322919"/><section>
+    <title>Setup()</title>
+<indexterm><primary>Setup</primary><secondary>Code.Scripts.Weapons.HomingBullet</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Weapons.HomingBullet</primary><secondary>Setup</secondary></indexterm>
+<para><computeroutput>override void Code.Scripts.Weapons.HomingBullet.Setup ( )<computeroutput>[protected]</computeroutput>, <computeroutput>[virtual]</computeroutput></computeroutput></para><para>
+
+<para>Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. </para>
+</para>
+<para>
+Reimplemented from <link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_bullet_1a6918edb299b9f904812786a56c280ea4">Code.Scripts.Weapons.Bullet</link>.</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Weapons/HomingBullet.cs</section>
+</section>

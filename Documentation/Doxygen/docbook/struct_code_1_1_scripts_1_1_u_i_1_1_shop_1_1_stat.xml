@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop.Stat Struct Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop.Stat</primary></indexterm>
+<para>
+
+<para>Data struct which holds the name, list index, price, price tag, and quantity of a stat. </para>
+ 
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat_1a8475f7ac9e57155130366d930ce864cf"/><emphasis role="strong">Stat</emphasis> (string name, int listIndex)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat_1a6f707b882879e47ad551638ddb7bed7a"/>string <emphasis role="strong">Name</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat_1a529477b0b4a79fa96a5cc2d967d1da79"/>int <emphasis role="strong">ListIndex</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat_1a4c2be4f05a26febbb4d406b999187376"/>int <emphasis role="strong">Price</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat_1a01fd5719f6c60a56e7109d6891b4871e"/>Label <emphasis role="strong">PriceTag</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat_1a5ef3647b5c434300b01efbc2641c38dc"/>int <emphasis role="strong">Quantity</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Data struct which holds the name, list index, price, price tag, and quantity of a stat. </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Code/Scripts/UI/Shop/ShopStatsTab.cs</section>
+</section>

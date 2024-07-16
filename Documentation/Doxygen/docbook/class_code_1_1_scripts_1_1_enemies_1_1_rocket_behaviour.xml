@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour" xml:lang="en-US">
+<title>Code.Scripts.Enemies.RocketBehaviour Class Reference</title>
+<indexterm><primary>Code.Scripts.Enemies.RocketBehaviour</primary></indexterm>
+<para>
+
+<para>Behaivour of the rocket (blue) enemy. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Enemies.RocketBehaviour:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Enemies.RocketBehaviour:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour_1abeeb0ba19f1fdc2e771cd600a557f64d"/>override void <emphasis role="strong">Setup</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_enemies_1_1_rocket_behaviour_1a763666a95f5cfe9293c4fe3ee2a61ff2"/>override void <emphasis role="strong">ExecuteBehaivour</emphasis> ()</para>
+
+<para>Executes the behaivour of the enemy. Moves towards a random target and shoots at the path direction to the player. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Public Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour">Code.Scripts.Enemies.BasicBehaviour</link>        <itemizedlist>
+            <listitem><para>override void <emphasis role="strong">Setup</emphasis> ()</para>
+</listitem>
+            <listitem><para>override void <emphasis role="strong">ExecuteBehaivour</emphasis> ()</para>
+
+<para>Executes the behaivour of the enemy. The enemy will move towards the player until the player is in sight. When the player is in sight, the enemy will shoot at the player and move towards a random target. </para>
+</listitem>
+        </itemizedlist>
+Public Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_behaviour">Code.Scripts.Enemies.Behaviour</link>        <itemizedlist>
+            <listitem><para>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">ExecuteBehaivour</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <emphasis role="strong">Setup</emphasis> ()</para>
+</listitem>
+            <listitem><para>override void <emphasis role="strong">_Process</emphasis> (double delta)</para>
+</listitem>
+            <listitem><para>Vector2 <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_behaviour_1a22558494b2748262d1f08553ae998f74">GetRandomTarget</link> ()</para>
+
+<para>Returns a random, reachable target for the enemy to move towards. </para>
+</listitem>
+        </itemizedlist>
+<simplesect>
+    <title>Additional Inherited Members    </title>
+Public Attributes inherited from <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_behaviour">Code.Scripts.Enemies.Behaviour</link>        <itemizedlist>
+            <listitem><para>int <emphasis role="strong">MinPathLength</emphasis></para>
+</listitem>
+            <listitem><para>int <emphasis role="strong">MaxPathLength</emphasis></para>
+</listitem>
+            <listitem><para>float <emphasis role="strong">PathGoalHitRadius</emphasis></para>
+</listitem>
+            <listitem><para>uint <emphasis role="strong">MaxRandomTargetSearchTries</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+Protected Member Functions inherited from <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_basic_behaviour">Code.Scripts.Enemies.BasicBehaviour</link>        <itemizedlist>
+            <listitem><para>bool <emphasis role="strong">_checkIfPlayerInSight</emphasis> ()</para>
+
+<para>Checks if the player is in the line of sight of the enemy by casting a ray from the enemy to the player. </para>
+</listitem>
+        </itemizedlist>
+Protected Attributes inherited from <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_behaviour">Code.Scripts.Enemies.Behaviour</link>        <itemizedlist>
+            <listitem><para>bool <emphasis role="strong">InRandomMove</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller">ParticleController</link> <emphasis role="strong">Particles</emphasis></para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_audio_1_1_music_controller">MusicController</link> <emphasis role="strong">MusicController</emphasis></para>
+</listitem>
+        </itemizedlist>
+Properties inherited from <link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_behaviour">Code.Scripts.Enemies.Behaviour</link>        <itemizedlist>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_weapons_1_1_gun_controller">GunController</link> <emphasis role="strong">Gun</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>Node2D <emphasis role="strong">Player</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_navigation_controller">NavigationController</link> <emphasis role="strong">Navigation</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_enemies_1_1_enemy">Enemy</link> <emphasis role="strong">Enemy</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><link linkend="_class_code_1_1_scripts_1_1_managers_1_1_level_1_1_level_manager">LevelManager</link> <emphasis role="strong">LevelManager</emphasis><computeroutput> [get]</computeroutput>
+</para>
+</listitem>
+            <listitem><para>Vector2 <emphasis role="strong">TargetLocation</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+<section>
+<title>Detailed Description</title>
+
+<para>Behaivour of the rocket (blue) enemy. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Enemies/RocketBehaviour.cs</section>
+</section>

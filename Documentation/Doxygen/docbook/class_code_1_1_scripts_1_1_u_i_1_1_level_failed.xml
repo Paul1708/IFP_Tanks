@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_failed" xml:lang="en-US">
+<title>Code.Scripts.UI.LevelFailed Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.LevelFailed</primary></indexterm>
+<para>
+
+<para>Shows the death screen when the player dies. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.LevelFailed:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_level_failed__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.LevelFailed:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_level_failed__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_failed_1a1ef33c79a5a982efe36964ff877a6f01"/>delegate void <emphasis role="strong">OnRetryPressedEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_failed_1ad7f740f23057949d27aad986c9753013"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_failed_1a0ea254282f0cf6a65f8628a865150e94"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_level_failed_1a40b649702935ec2c72be39ade00ab7bd"/>void <emphasis role="strong">ShowDeathScreen</emphasis> ()</para>
+
+<para>Show the death screen and pause the game. Plays the Death sound. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Shows the death screen when the player dies. </para>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/LevelFailed.cs</section>
+</section>

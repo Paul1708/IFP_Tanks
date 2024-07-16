@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_managers_1_1_save" xml:lang="en-US">
+<title>Code.Scripts.Managers.Save Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Managers.Save</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_data">SaveData</link></para>
+
+<para>Data class which holds the data, which can be saved. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_save_manager">SaveManager</link></para>
+
+<para>Manages the saving and loading of the games progress, player stats, and shop state. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_save_1_1_user_preferences">UserPreferences</link></para>
+
+<para>Manages saveing and loading of user preferences/settings. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Enumerations    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_namespace_code_1_1_scripts_1_1_managers_1_1_save_1accdf3cc38ceaca17b1a14685d45a1d81"/>enum <emphasis role="strong">LoadingType</emphasis> { <emphasis role="strong">NewGame</emphasis>
+, <emphasis role="strong">LoadGame</emphasis>
+, <emphasis role="strong">None</emphasis>
+ }</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

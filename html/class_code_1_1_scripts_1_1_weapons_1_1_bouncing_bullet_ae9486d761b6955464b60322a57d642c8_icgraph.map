@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Weapons.BouncingBullet.Destroy" name="Code.Scripts.Weapons.BouncingBullet.Destroy">
+<area shape="rect" id="Node000001" title="Destroys the bullet and emits particles." alt="" coords="267,39,480,81"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet.html#aca8209ba069905c476fca8b56c25d8a7" title="Collides with a damageable node and deals damage to it." alt="" coords="5,5,219,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="251,47,219,43,219,38,251,42"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet.html#a246250f0908199b9c80291a2de0d0443" title="Destroys the bullet when it hits anything other than a damageable node." alt="" coords="5,72,219,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="251,78,219,82,219,77,251,73"/>
+</map>

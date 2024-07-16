@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Movement.PlayerStats" name="Code.Scripts.Movement.PlayerStats">
+<area shape="rect" id="Node000001" title="Data class which holds the base and current player stats." alt="" coords="5,80,206,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="67,5,144,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="108,48,108,80,103,80,103,48"/>
+</map>

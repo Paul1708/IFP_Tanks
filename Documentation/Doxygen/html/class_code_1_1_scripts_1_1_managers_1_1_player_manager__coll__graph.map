@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Managers.PlayerManager" name="Code.Scripts.Managers.PlayerManager">
+<area shape="rect" id="Node000001" title="Manages the player&#39;s stats and health." alt="" coords="5,80,204,123"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="71,5,138,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,48,107,80,102,80,102,48"/>
+</map>

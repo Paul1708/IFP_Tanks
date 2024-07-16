@@ -1,0 +1,7 @@
+<map id="Code.Scripts.Managers.ShopManager.TryGetPanelIndex" name="Code.Scripts.Managers.ShopManager.TryGetPanelIndex">
+<area shape="rect" id="Node000001" title="Tries to get the index of the panel from the node and returns true if successful, false if not." alt="" coords="290,51,481,93"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display.html#ac48c491e4233716bf07946a652b54dc0" title="Renders the weapon stats display based on the weapon stats of the weapon in the shop." alt="" coords="5,5,242,64"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="274,59,242,54,243,49,275,54"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons.html#a5a85b17d9b414a53fcb45ab7ad6cf93a" title="Sets the text of the button to &quot;Equip&quot; if the weapon is unlocked and not equipped,..." alt="" coords="16,88,231,131"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="275,90,231,97,231,91,274,85"/>
+</map>

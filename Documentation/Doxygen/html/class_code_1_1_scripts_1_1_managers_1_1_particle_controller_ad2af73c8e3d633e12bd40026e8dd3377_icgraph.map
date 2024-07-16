@@ -1,0 +1,19 @@
+<map id="Code.Scripts.Managers.ParticleController.EmitParticles" name="Code.Scripts.Managers.ParticleController.EmitParticles">
+<area shape="rect" id="Node000001" title="Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneSh..." alt="" coords="528,105,733,148"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet.html#ac8cd8aeaef50891001c1341aec949ff3" title="Destroys the bullet and emits particles." alt="" coords="277,5,470,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="569,101,479,62,447,51,448,46,481,58,572,96"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet.html#ae9486d761b6955464b60322a57d642c8" title="Destroys the bullet and emits particles." alt="" coords="267,72,480,115"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="512,114,480,110,481,105,513,109"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet.html#a13e116c0c1f2b67bd082a0ee8b8ffa74" title="Destroys the bullet and emits particles." alt="" coords="272,139,475,181"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="513,145,476,149,475,144,512,139"/>
+<area shape="rect" id="Node000008" href="$class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet.html#a0950329c017d786c2cd0dbf8df9602c3" title="Destroys the grenade, damages all damageable objects in the explosion radius and emits particles." alt="" coords="269,205,478,248"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="572,157,481,196,448,207,447,202,479,191,569,152"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet.html#ad3d49f776a006421512b8180a3be1121" title="Fires when the bullet collides with other nodes." alt="" coords="16,5,208,48"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="262,29,209,29,209,24,262,24"/>
+<area shape="rect" id="Node000005" href="$class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet.html#aca8209ba069905c476fca8b56c25d8a7" title="Collides with a damageable node and deals damage to it." alt="" coords="5,72,219,115"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="251,96,219,96,219,91,251,91"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet.html#a246250f0908199b9c80291a2de0d0443" title="Destroys the bullet when it hits anything other than a damageable node." alt="" coords="5,139,219,181"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="273,122,199,141,198,135,272,116"/>
+<area shape="rect" id="Node000009" href="$class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet.html#aa5effa806e05627d297f6fe512151338" title="Moves the grenade forward. When it hits the ground, calls OnExplode." alt="" coords="8,205,216,248"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="254,229,217,229,217,224,254,224"/>
+</map>

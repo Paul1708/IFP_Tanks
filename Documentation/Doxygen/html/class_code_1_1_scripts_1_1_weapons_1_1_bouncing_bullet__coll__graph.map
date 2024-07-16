@@ -1,0 +1,18 @@
+<map id="Code.Scripts.Weapons.BouncingBullet" name="Code.Scripts.Weapons.BouncingBullet">
+<area shape="rect" id="Node000001" title="Controls the bouncing bullet." alt="" coords="623,95,836,137"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_weapons_1_1_bullet.html" title="Base class for all bullets in the game. Provides basic functionality for all bullets." alt="" coords="519,103,574,129"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="589,113,622,113,622,119,589,119"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="176,5,273,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="289,19,389,34,444,49,497,70,518,84,535,100,532,104,515,88,494,74,442,54,388,39,288,24"/>
+<area shape="rect" id="Node000004" href="$class_code_1_1_scripts_1_1_components_1_1_health_component.html" title="Component that handles the health of an entity." alt="" coords="136,56,313,99"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="329,87,519,110,518,115,328,92"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="5,99,73,125"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="88,100,135,91,136,97,89,106"/>
+<area shape="rect" id="Node000006" href="$class_code_1_1_scripts_1_1_managers_1_1_particle_controller.html" title="Controller for emitting particles." alt="" coords="122,123,327,165"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="88,118,122,124,121,129,88,123"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="343,143,418,139,495,129,518,123,520,128,496,135,419,144,343,148"/>
+<area shape="rect" id="Node000007" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html" title=" " alt="" coords="138,189,311,232"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="326,206,411,194,454,182,494,164,517,147,534,128,538,131,520,151,497,169,455,187,412,199,327,212"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="13,197,65,224"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="80,208,138,208,138,213,80,213"/>
+</map>

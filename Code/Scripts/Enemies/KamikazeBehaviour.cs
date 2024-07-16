@@ -5,6 +5,10 @@ using Code.Scripts.Managers;
 
 namespace Code.Scripts.Enemies;
 
+
+/// <summary>
+/// Invis behaivour of the kamikaze (yellow) enemy.
+/// </summary>
 public partial class KamikazeBehaviour : Behaviour
 {
 
@@ -21,6 +25,10 @@ public partial class KamikazeBehaviour : Behaviour
         Navigation.NavigateTowards(Player.GlobalPosition);
     }
 
+    /// <summary>
+    /// Executes the behaivour of the enemy.
+    /// The enemy will move towards the player and explode when it touches the player.
+    /// </summary>
     public override void ExecuteBehaivour()
     {
         if ((Enemy.GlobalPosition - Player.GlobalPosition).Length() <= TargetReachedDistance)
@@ -36,6 +44,10 @@ public partial class KamikazeBehaviour : Behaviour
         Navigation.NavigateTowards(Player.GlobalPosition);
     }
 
+
+    /// <summary>
+    /// Explodes the kamikaze enemy, dealing damage to all close enemies and killing itself.
+    /// </summary>
     private void _explode()
     {
         HealthComponent hc = Enemy.GetNode<HealthComponent>("HealthComponent");
@@ -58,6 +70,11 @@ public partial class KamikazeBehaviour : Behaviour
         MusicController.Play(Sound.RocketExplosion);
     }
 
+    /// <summary>
+    /// Add damge to the node, which can be the player or another enemy.
+    /// </summary>
+    /// <param name="node">The node to take damage</param>
+    /// <param name="damage">The damage to take</param>
     private void _takeDamage(Node node, int damage)
     {
         if (node == Player)

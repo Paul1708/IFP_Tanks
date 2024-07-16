@@ -9,10 +9,13 @@ using Code.Scripts.UI.Shop;
 
 namespace Code.Scripts.Managers.Level;
 
+/// <summary>
+/// Manages the level, enemies and coins. Emits signals when the level is completed or failed.
+/// </summary>
 public partial class Level : Node2D
 {
     private bool _startedCoinMovement;
-    private Timer _coinTimer = new ();
+    private Timer _coinTimer = new();
     public ShopMenu ShopMenu;
     public List<Node> Enemies { get; set; }
     [Signal]
@@ -48,6 +51,11 @@ public partial class Level : Node2D
         PlayerManager.Instance.PlayerHealthComponent.OnDeath -= OnPlayerDeath;
     }
 
+
+    /// <summary>
+    /// Called every frame. Checks if all coins are collected and emits the OnCoinsMoved signal if so.
+    /// </summary>
+    /// <param name="delta">The time since the last frame</param> 
     public override void _Process(double delta)
     {
         // Check if all coins are collected
@@ -59,6 +67,10 @@ public partial class Level : Node2D
         }
     }
 
+    /// <summary>
+    /// Called when an enemy dies. Drops an item and removes the enemy from the list.
+    /// </summary>
+    /// <param name="enemy">The enemy that died</param>
     public void OnEnemyDeath(Node2D enemy)
     {
         PackedScene itemScene = ((Enemy)enemy).DropItemScene;
@@ -74,17 +86,28 @@ public partial class Level : Node2D
         }
     }
 
+    /// <summary>
+    /// Emits the OnLevelComplete signal
+    /// </summary>
     public void SendOnLevelComplete()
     {
         EmitSignal(SignalName.OnLevelComplete);
     }
 
+    /// <summary>
+    /// Emits the OnLevelFailed signal
+    /// </summary>
     public void OnPlayerDeath()
     {
         EmitSignal(SignalName.OnLevelFailed);
     }
 
-    // Drop an item at a position
+    /// <summary>
+    /// Drops/Instantiates an item scene at the given nodes position in the scene. The coin value is set randomly if the item is a coin.
+    /// </summary>
+    /// <typeparam name="T">The type of the item to drop</typeparam>
+    /// <param name="position">The position to drop the item at</param>
+    /// <param name="scene">The scene to instantiate</param>
     public void DropItem<T>(Node2D position, PackedScene scene) where T : Node2D
     {
         var item = scene.Instantiate() as T;
@@ -99,12 +122,19 @@ public partial class Level : Node2D
         GetTree().GetFirstNodeInGroup("Level").CallDeferred("add_child", item);
     }
 
+    /// <summary>
+    /// Sets the position of the item to the position of the given node
+    /// </summary>
+    /// <param name="item">The item to set the position of</param>
+    /// <param name="position">The position to set the item to</param>
     private static void SetPostion(Node2D item, Node2D position)
     {
         item.GlobalPosition = position.GlobalPosition;
     }
 
-    // Move all coins to the player by setting the shouldMove property to true
+    /// <summary>
+    /// Move all coins to the player by setting the shouldMove property to true
+    /// </summary>
     public void MoveAllCoinsToPlayer()
     {
         _coinTimer.Stop();
@@ -118,18 +148,9 @@ public partial class Level : Node2D
 
         foreach (Node coin in coins)
         {
-            if(coin is Coin c)
+            if (coin is Coin c)
                 c.ShouldMove = true;
         }
         _startedCoinMovement = true;
-    }
-
-    public override void _Input(InputEvent @event)
-    {
-        if (Input.IsActionJustPressed("Debug"))
-        {
-            EmitSignal(SignalName.OnCoinsMoved);
-            CoinManager.Instance.AddCoins(10);
-        }
     }
 }

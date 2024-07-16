@@ -1,0 +1,5 @@
+<map id="Code.Scripts.UI.Shop.ShopPrices.WeaponUnlocked" name="Code.Scripts.UI.Shop.ShopPrices.WeaponUnlocked">
+<area shape="rect" id="Node000001" title="Sets the price tag text to &quot;Unlocked&quot;." alt="" coords="245,5,425,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_managers_1_1_shop_manager.html#a9f37feef3b1e2c61ef951f07b338d5cd" title="Buy the weapon if the player has enough coins and the weapon is not unlocked yet. Set the pricetag la..." alt="" coords="5,5,197,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="229,29,197,29,197,24,229,24"/>
+</map>

@@ -1,0 +1,347 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component" xml:lang="en-US">
+<title>Code.Scripts.Components.HealthComponent Class Reference</title>
+<indexterm><primary>Code.Scripts.Components.HealthComponent</primary></indexterm>
+<para>
+
+<para>Component that handles the health of an entity. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Components.HealthComponent:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Components.HealthComponent:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1afc4e4d5b2ad3a31fac77fb91f96b9c5a"/>delegate void <emphasis role="strong">OnDeathEventHandler</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1aa39e3996b240e9a00fe80dca8eb978c8"/>delegate void <emphasis role="strong">OnHealthChangedEventHandler</emphasis> (float currentHp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a93e267d1378d511d869045080582d754"/>delegate void <emphasis role="strong">OnMaxHealthChangedEventHandler</emphasis> (float maxHp)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a3b68a5b57f44e2110140270dab54ccb6"/>delegate void <emphasis role="strong">OnTakeDamageEventHandler</emphasis> (float damage)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a7af1c0def95b7ac180c5bb282f3013d2"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component_1ab42d464f024bf20fa49579f3f958697c">Heal</link> (float value)</para>
+
+<para>Heals the entity by the input value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a1adc132ff3035e2a5633705a112a3d22">TakeDamage</link> (float value)</para>
+
+<para>Deals damage to the entity by the input value. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a0f0525864d7f5bd6ceac93bf0d5ab3b2"/>void <emphasis role="strong">HealToMax</emphasis> ()</para>
+
+<para>Heals the entity to the max health. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a9f65668b897fabfb0ff4ca7e13113f2d">HealPercentage</link> (float percentage)</para>
+
+<para>Heals the entity by the input percentage. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a944be0bffc60507eb98bef0ea5a275e1">IncreaseMaxHealth</link> (float value)</para>
+
+<para>Increases the max health of the entity by the input value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component_1ad81839e1248f29e1c6756376847146a6">SetCurrentHp</link> (float value)</para>
+
+<para>Sets the current health of the entity to the input value. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a39f89e4c6f763061a62bdd5c94ec9fa8">SetMaxHp</link> (float value)</para>
+
+<para>Sets the max health of the entity to the input value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a7787e6154b95ff079bac6ead06b3322c"/>float <emphasis role="strong">MaxHp</emphasis> = 100<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a6e84325b511821c352104683717681f7"/>float <emphasis role="strong">CurrentHp</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Component that handles the health of an entity. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1ab42d464f024bf20fa49579f3f958697c"/><section>
+    <title>Heal()</title>
+<indexterm><primary>Heal</primary><secondary>Code.Scripts.Components.HealthComponent</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Components.HealthComponent</primary><secondary>Heal</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Components.HealthComponent.Heal (float value)</computeroutput></para><para>
+
+<para>Heals the entity by the input value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_ab42d464f024bf20fa49579f3f958697c_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_ab42d464f024bf20fa49579f3f958697c_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a9f65668b897fabfb0ff4ca7e13113f2d"/><section>
+    <title>HealPercentage()</title>
+<indexterm><primary>HealPercentage</primary><secondary>Code.Scripts.Components.HealthComponent</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Components.HealthComponent</primary><secondary>HealPercentage</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Components.HealthComponent.HealPercentage (float percentage)</computeroutput></para><para>
+
+<para>Heals the entity by the input percentage. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>percentage</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_a9f65668b897fabfb0ff4ca7e13113f2d_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a944be0bffc60507eb98bef0ea5a275e1"/><section>
+    <title>IncreaseMaxHealth()</title>
+<indexterm><primary>IncreaseMaxHealth</primary><secondary>Code.Scripts.Components.HealthComponent</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Components.HealthComponent</primary><secondary>IncreaseMaxHealth</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Components.HealthComponent.IncreaseMaxHealth (float value)</computeroutput></para><para>
+
+<para>Increases the max health of the entity by the input value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_a944be0bffc60507eb98bef0ea5a275e1_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_a944be0bffc60507eb98bef0ea5a275e1_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1ad81839e1248f29e1c6756376847146a6"/><section>
+    <title>SetCurrentHp()</title>
+<indexterm><primary>SetCurrentHp</primary><secondary>Code.Scripts.Components.HealthComponent</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Components.HealthComponent</primary><secondary>SetCurrentHp</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Components.HealthComponent.SetCurrentHp (float value)</computeroutput></para><para>
+
+<para>Sets the current health of the entity to the input value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_ad81839e1248f29e1c6756376847146a6_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a39f89e4c6f763061a62bdd5c94ec9fa8"/><section>
+    <title>SetMaxHp()</title>
+<indexterm><primary>SetMaxHp</primary><secondary>Code.Scripts.Components.HealthComponent</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Components.HealthComponent</primary><secondary>SetMaxHp</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Components.HealthComponent.SetMaxHp (float value)</computeroutput></para><para>
+
+<para>Sets the max health of the entity to the input value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_a39f89e4c6f763061a62bdd5c94ec9fa8_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_health_component_1a1adc132ff3035e2a5633705a112a3d22"/><section>
+    <title>TakeDamage()</title>
+<indexterm><primary>TakeDamage</primary><secondary>Code.Scripts.Components.HealthComponent</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Components.HealthComponent</primary><secondary>TakeDamage</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Components.HealthComponent.TakeDamage (float value)</computeroutput></para><para>
+
+<para>Deals damage to the entity by the input value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>value</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the call graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_a1adc132ff3035e2a5633705a112a3d22_cgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_health_component_a1adc132ff3035e2a5633705a112a3d22_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Components/HealthComponent.cs</section>
+</section>

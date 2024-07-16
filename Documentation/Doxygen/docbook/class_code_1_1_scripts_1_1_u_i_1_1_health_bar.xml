@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar" xml:lang="en-US">
+<title>Code.Scripts.UI.HealthBar Class Reference</title>
+<indexterm><primary>Code.Scripts.UI.HealthBar</primary></indexterm>
+<para>
+
+<para>Displays the players health bar. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.UI.HealthBar:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_health_bar__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.UI.HealthBar:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_u_i_1_1_health_bar__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a131ef0168dd171b3d4b3300ad914e959"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1aa5dcf7a9491da8e83016b148e72a1806"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1ad67a6930c2573e9fa96b4b18e25b9a69">OnHealthChanged</link> (float newHp)</para>
+
+<para>Tweems the green health bar when the player&apos;s health changes. Starts the timer on which the red health bar will update. </para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a796d3fa170a8c221e3e1c02846a354b0">OnMaxHealthChanged</link> (float newMaxHp)</para>
+
+<para>Updates the healthbars if the max health of the player changes. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a2a6e4c48145f6647ddd728e19b9163c6"/>TextureProgressBar <emphasis role="strong">GreenBar</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1ae55bb0dee32ef1ae8ed9cf2016fa95b3"/>TextureProgressBar <emphasis role="strong">RedBar</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a06cf9e47fa4684a40c68d31237eb9504"/>Timer <emphasis role="strong">RedHealthTimer</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a90181c1b59d6000ed5315b8f34349509"/>Label <emphasis role="strong">Label</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1aaa1f7052be3e1b0e19d900c5ca6bf845"/>float <emphasis role="strong">CurrentHp</emphasis></para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a1593b3b6222abc414d159ab4612c5704"/>float <emphasis role="strong">MaxHp</emphasis></para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a4a141007aaf6474d144ab0f4016dcd00"/>float <emphasis role="strong">RedBarDelay</emphasis> = 1f<computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Displays the players health bar. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1ad67a6930c2573e9fa96b4b18e25b9a69"/><section>
+    <title>OnHealthChanged()</title>
+<indexterm><primary>OnHealthChanged</primary><secondary>Code.Scripts.UI.HealthBar</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.HealthBar</primary><secondary>OnHealthChanged</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.HealthBar.OnHealthChanged (float newHp)</computeroutput></para><para>
+
+<para>Tweems the green health bar when the player&apos;s health changes. Starts the timer on which the red health bar will update. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newHp</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_u_i_1_1_health_bar_1a796d3fa170a8c221e3e1c02846a354b0"/><section>
+    <title>OnMaxHealthChanged()</title>
+<indexterm><primary>OnMaxHealthChanged</primary><secondary>Code.Scripts.UI.HealthBar</secondary></indexterm>
+<indexterm><primary>Code.Scripts.UI.HealthBar</primary><secondary>OnMaxHealthChanged</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.UI.HealthBar.OnMaxHealthChanged (float newMaxHp)</computeroutput></para><para>
+
+<para>Updates the healthbars if the max health of the player changes. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>newMaxHp</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/UI/HealthBar.cs</section>
+</section>

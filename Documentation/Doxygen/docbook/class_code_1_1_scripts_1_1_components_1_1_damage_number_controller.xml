@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller" xml:lang="en-US">
+<title>Code.Scripts.Components.DamageNumberController Class Reference</title>
+<indexterm><primary>Code.Scripts.Components.DamageNumberController</primary></indexterm>
+<para>
+
+<para>Controls the spawning of the DamageNumber scene. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Components.DamageNumberController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_damage_number_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Components.DamageNumberController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_components_1_1_damage_number_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller_1a1e60aaf0d5881f20ea51f111fa599740"/>override void <emphasis role="strong">_Ready</emphasis> ()</para>
+</listitem>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller_1a1733b3ec7c575aed671b60023f9b21b6"/>override void <emphasis role="strong">_ExitTree</emphasis> ()</para>
+</listitem>
+            <listitem><para>void <link linkend="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller_1a70dc247847fa1c84037cc78f91d002b0">SpawnDamageNumber</link> (float damage)</para>
+
+<para>Spawns a new DamageNumber scene with the damage value. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Properties    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller_1a369c1f73b4ff0416b5a7de0c20ef38f7"/>PackedScene <emphasis role="strong">DamageNumberScene</emphasis><computeroutput> [get, set]</computeroutput>
+</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controls the spawning of the DamageNumber scene. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_components_1_1_damage_number_controller_1a70dc247847fa1c84037cc78f91d002b0"/><section>
+    <title>SpawnDamageNumber()</title>
+<indexterm><primary>SpawnDamageNumber</primary><secondary>Code.Scripts.Components.DamageNumberController</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Components.DamageNumberController</primary><secondary>SpawnDamageNumber</secondary></indexterm>
+<para><computeroutput>void Code.Scripts.Components.DamageNumberController.SpawnDamageNumber (float damage)</computeroutput></para><para>
+
+<para>Spawns a new DamageNumber scene with the damage value. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>damage</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Components/DamageNumberController.cs</section>
+</section>

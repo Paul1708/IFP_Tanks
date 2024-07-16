@@ -1,0 +1,9 @@
+<map id="Code.Scripts.UI.SettingsMenu" name="Code.Scripts.UI.SettingsMenu">
+<area shape="rect" id="Node000001" title="Controls the settings menu." alt="" coords="5,188,202,215"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="27,89,89,116"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="73,129,100,187,95,189,68,131"/>
+<area shape="rect" id="Node000003" href="$class_code_1_1_scripts_1_1_audio_1_1_music_controller.html" title="MusicController that plays music and sounds." alt="" coords="113,81,286,124"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,137,118,189,114,186,167,133"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="174,5,225,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="202,48,202,81,197,81,197,48"/>
+</map>

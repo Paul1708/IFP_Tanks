@@ -2,6 +2,9 @@ using Godot;
 
 namespace Code.Scripts.Movement;
 
+/// <summary>
+/// Data class which holds the base and current player stats
+/// </summary>
 [GlobalClass]
 public partial class PlayerStats : Resource
 {

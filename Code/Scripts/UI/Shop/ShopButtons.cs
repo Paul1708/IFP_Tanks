@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI.Shop;
 
+/// <summary>
+/// Custom button class for the shop buttons, which sets the text of the button based on the buy status of the weapon/item.
+/// </summary>
 public partial class ShopButtons : Button
 {
 	private LevelManager _levelManager;
@@ -30,6 +33,9 @@ public partial class ShopButtons : Button
 		_levelManager.OnLevelReset -= SetWeaponButtonStates;
 	}
 
+	/// <summary>
+	/// Sets the text of the button to "Buy" if the button is in the Stats group
+	/// </summary>
 	public void SetStatButtonStates()
 	{
 		var greatGreatGrandParent = GetParent().GetParent().GetParent().GetParent();
@@ -40,6 +46,9 @@ public partial class ShopButtons : Button
 		}
 	}
 
+	/// <summary>
+	/// Sets the text of the button to "Equip" if the weapon is unlocked and not equipped, to "Equipped" if the weapon is equipped else to "Buy"
+	/// </summary>
 	public void SetWeaponButtonStates()
 	{
 		var greatGreatGrandParent = GetParent().GetParent().GetParent().GetParent();

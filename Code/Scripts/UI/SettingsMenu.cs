@@ -4,6 +4,9 @@ using Godot;
 
 namespace Code.Scripts.UI;
 
+/// <summary>
+/// Controls the settings menu
+/// </summary>
 public partial class SettingsMenu : Control
 {
 	protected MusicController MusicController;
@@ -42,11 +45,17 @@ public partial class SettingsMenu : Control
 		LoadUserSettings();
 	}
 
+	/// <summary>
+	/// Sets the blur to visible
+	/// </summary>
 	private void EnableBlur()
 	{
 		_blur.Visible = true;
 	}
 
+	/// <summary>
+	/// Returns to the main menu camera position if current scene is the main menu, otherwise hides the settings menu
+	/// </summary>
 	private void OnBackPressed()
 	{
 		MusicController.Play(Sound.ButtonClick);
@@ -61,7 +70,10 @@ public partial class SettingsMenu : Control
 		}
 	}
 
-	//toggles fullscreen and windowed mode
+	/// <summary>
+	/// Toggles fullscreen and windowed mode
+	/// </summary>
+	/// <param name="toggledOn">The state of the button</param>
 	private void OnFullscreenToggled(bool toggledOn)
 	{
 		MusicController.Play(Sound.ButtonClick);
@@ -70,7 +82,10 @@ public partial class SettingsMenu : Control
 		_userPreferences.Save();
 	}
 
-	//changes MasterBus volume when slider is moved
+	/// <summary>
+	/// Changes MasterBus volume when slider is moved
+	/// </summary>
+	/// <param name="value">The value of the slider</param>
 	private void OnMasterSliderValueChanged(float value)
 	{
 		SetVolume(_masterBusIndex, value);
@@ -78,7 +93,10 @@ public partial class SettingsMenu : Control
 		_userPreferences.Save();
 	}
 
-	//changes MusicBus volume when slider is moved
+	/// <summary>
+	/// Changes MusicBus volume when slider is moved
+	/// </summary>
+	/// <param name="value">The value of the slider</param>
 	private void OnMusicSliderValueChanged(float value)
 	{
 		SetVolume(_musicBusIndex, value);
@@ -86,7 +104,10 @@ public partial class SettingsMenu : Control
 		_userPreferences.Save();
 	}
 
-	//changes SFXBus volume when slider is moved
+	/// <summary>
+	/// Changes SFXBus volume when slider is moved
+	/// </summary>
+	/// <param name="value">The value of the slider</param>
 	private void OnSFXSliderValueChanged(float value)
 	{
 		SetVolume(_sfxBusIndex, value);
@@ -94,11 +115,19 @@ public partial class SettingsMenu : Control
 		_userPreferences.Save();
 	}
 
+	/// <summary>
+	/// Sets the volume of the bus to the given value
+	/// </summary>
+	/// <param name="busIndex">The index of the bus</param>
+	/// <param name="value">The value to set the volume to</param>
 	public void SetVolume(int busIndex, float value)
 	{
 		AudioServer.SetBusVolumeDb(busIndex, Mathf.LinearToDb(value));
 	}
 
+	/// <summary>
+	/// Loads the user settings from the UserPreferences file
+	/// </summary>
 	public void LoadUserSettings()
 	{
 		_masterSlider.Value = _userPreferences.MasterVolume;

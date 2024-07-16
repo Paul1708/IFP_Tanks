@@ -1,0 +1,109 @@
+\doxysection{Code.\+Scripts.\+UI.\+Shop.\+Shop\+Prices Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices}{}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices}\index{Code.Scripts.UI.Shop.ShopPrices@{Code.Scripts.UI.Shop.ShopPrices}}
+
+
+Manages the text of the price tags in the shop and calculates the price of the items.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Prices\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+UI.\+Shop.\+Shop\+Prices\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=215pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a90645ac805e33d6fd4a42a47e60c1b48}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a90645ac805e33d6fd4a42a47e60c1b48} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a338cad0de5c90617997512b139ecc8ac}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a338cad0de5c90617997512b139ecc8ac} 
+override void {\bfseries \+\_\+\+Exit\+Tree} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a72029c09650f3fcc1f986f1762bdc277}{Increase\+Price}} (\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat}{Stat}} stat)
+\begin{DoxyCompactList}\small\item\em Increase the price of the item by the price multiplier to the power of the quantity of the item. Set the price of the item in the list to the new value and set the price tag text to the new value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_ae1b235ba2921e45b0b9c38f65d64b877}{Weapon\+Unlocked}} (Label label)
+\begin{DoxyCompactList}\small\item\em Sets the price tag text to "{}\+Unlocked"{}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a99f5690bc17596c6e0e8b115e164b6b0}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a99f5690bc17596c6e0e8b115e164b6b0} 
+int {\bfseries Base\+Price}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_ac8c12e5f279ad31183fed407fdfb5335}\label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_ac8c12e5f279ad31183fed407fdfb5335} 
+float {\bfseries Price\+Multiplier} = 1.\+1f
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Manages the text of the price tags in the shop and calculates the price of the items. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a72029c09650f3fcc1f986f1762bdc277}\index{Code.Scripts.UI.Shop.ShopPrices@{Code.Scripts.UI.Shop.ShopPrices}!IncreasePrice@{IncreasePrice}}
+\index{IncreasePrice@{IncreasePrice}!Code.Scripts.UI.Shop.ShopPrices@{Code.Scripts.UI.Shop.ShopPrices}}
+\doxysubsubsection{\texorpdfstring{IncreasePrice()}{IncreasePrice()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a72029c09650f3fcc1f986f1762bdc277} 
+void Code.\+Scripts.\+UI.\+Shop.\+Shop\+Prices.\+Increase\+Price (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat}{Stat}}}]{stat}{}\end{DoxyParamCaption})}
+
+
+
+Increase the price of the item by the price multiplier to the power of the quantity of the item. Set the price of the item in the list to the new value and set the price tag text to the new value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em stat} & The stat to increase the price of\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_a72029c09650f3fcc1f986f1762bdc277_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_ae1b235ba2921e45b0b9c38f65d64b877}\index{Code.Scripts.UI.Shop.ShopPrices@{Code.Scripts.UI.Shop.ShopPrices}!WeaponUnlocked@{WeaponUnlocked}}
+\index{WeaponUnlocked@{WeaponUnlocked}!Code.Scripts.UI.Shop.ShopPrices@{Code.Scripts.UI.Shop.ShopPrices}}
+\doxysubsubsection{\texorpdfstring{WeaponUnlocked()}{WeaponUnlocked()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_ae1b235ba2921e45b0b9c38f65d64b877} 
+static void Code.\+Scripts.\+UI.\+Shop.\+Shop\+Prices.\+Weapon\+Unlocked (\begin{DoxyParamCaption}\item[{Label}]{label}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sets the price tag text to "{}\+Unlocked"{}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label to set the text to\\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices_ae1b235ba2921e45b0b9c38f65d64b877_icgraph}
+\end{center}
+\end{figure}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+UI/\+Shop/Shop\+Prices.\+cs\end{DoxyCompactItemize}

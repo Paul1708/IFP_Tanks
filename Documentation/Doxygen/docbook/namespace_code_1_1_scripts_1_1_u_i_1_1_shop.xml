@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_u_i_1_1_shop" xml:lang="en-US">
+<title>Code.Scripts.UI.Shop Namespace Reference</title>
+<indexterm><primary>Code.Scripts.UI.Shop</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_player_stats_display">PlayerStatsDisplay</link></para>
+
+<para>Displays the player stats in the shop. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_base_tab">ShopBaseTab</link></para>
+
+<para>Base class for all shop tabs. Contains methods to get price tags and parse prices from them. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_buttons">ShopButtons</link></para>
+
+<para>Custom button class for the shop buttons, which sets the text of the button based on the buy status of the weapon/item. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_menu">ShopMenu</link></para>
+
+<para>Custom control class for the shop menu, which handles opening and closing the shop menu. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_prices">ShopPrices</link></para>
+
+<para>Manages the text of the price tags in the shop and calculates the price of the items. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_stats_tab">ShopStatsTab</link></para>
+
+<para>Manages the stats tab of thje shop. Buys stats and increases the player stats based on the bought stats. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapons_tab">ShopWeaponsTab</link></para>
+
+<para>Manages the weapons tab of the shop. Buys weapons and equips them based on the bought weapons. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_shop_weapon_stats_display">ShopWeaponStatsDisplay</link></para>
+
+<para>Displays the weapon stats in the shop. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_stat">Stat</link></para>
+
+<para>Data struct which holds the name, list index, price, price tag, and quantity of a stat. </para>
+</listitem>
+            <listitem><para>struct <link linkend="_struct_code_1_1_scripts_1_1_u_i_1_1_shop_1_1_weapon">Weapon</link></para>
+
+<para>Data class which holds the weapon stats. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

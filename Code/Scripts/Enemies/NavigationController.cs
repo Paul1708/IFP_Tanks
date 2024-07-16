@@ -2,6 +2,10 @@ using Godot;
 
 namespace Code.Scripts.Enemies;
 
+
+/// <summary>
+/// Utility which provides navigation functionality to a 2D character.
+/// </summary>
 public partial class NavigationController : NavigationAgent2D
 {
 	[Export]
@@ -15,6 +19,10 @@ public partial class NavigationController : NavigationAgent2D
 		CharacterBody = GetParent<CharacterBody2D>();
 	}
 
+	/// <summary>
+	/// Process function that moves the character towards the target position.
+	/// </summary>
+	/// <param name="delta">The delta time</param>
 	public override void _Process(double delta)
 	{
 		if (IsMooving)
@@ -27,6 +35,10 @@ public partial class NavigationController : NavigationAgent2D
 		CharacterBody.Velocity = Vector2.Zero;
 	}
 
+	/// <summary>
+	/// Moves the character towards a target position, lerping the rotation to create a smooth movement.
+	/// </summary>
+	/// <param name="target">The target position</param>
 	public void MoveTowardsVector(Vector2 target)
 	{
 		// Rotate towards the target position
@@ -40,7 +52,10 @@ public partial class NavigationController : NavigationAgent2D
 	}
 
 
-	// Sets the target position to navigate towards
+	/// <summary>
+	/// Sets the target position for the character to move towards.
+	/// </summary>
+	/// <param name="target">The target position</param>
 	public void NavigateTowards(Vector2 target)
 	{
 		TargetPosition = target;

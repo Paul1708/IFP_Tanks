@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://Scripts/Enemies/RocketBehaviour.cs" id="5_yegiv"]
 [ext_resource type="Texture2D" uid="uid://dylbxstfcgudy" path="res://Sprites/Tanks/GunBlue.png" id="6_nojed"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="7_igvkk"]
-[ext_resource type="Resource" uid="uid://drnmldknrkx1k" path="res://Scenes/Weapons/WeaponStats/Enemy/EnemyHomingStats.tres" id="7_qn3dl"]
+[ext_resource type="Resource" uid="uid://drnmldknrkx1k" path="res://Scenes/Weapons/WeaponStats/Enemy/EnemyHomingStats.tres" id="7_w0imr"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="8_cqfsr"]
 [ext_resource type="PackedScene" uid="uid://dayfthis7wse7" path="res://Scenes/UI/DebugEnemyHealthBar.tscn" id="11_jbxwx"]
 [ext_resource type="Script" path="res://Scripts/Components/HitFeedbackComponent.cs" id="11_rvtfd"]
@@ -392,7 +392,7 @@ MaxRandomTargetSearchTries = 100
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("4_egmny")
-WeaponStats = ExtResource("7_qn3dl")
+WeaponStats = ExtResource("7_w0imr")
 
 [node name="muzzle" type="Marker2D" parent="Gun"]
 position = Vector2(69, 0)
@@ -426,6 +426,7 @@ RotationSpeed = 0.02
 
 [node name="HealthComponent" type="Node2D" parent="."]
 script = ExtResource("8_cqfsr")
+MaxHp = 125.0
 
 [node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_jbxwx")]
 visible = false

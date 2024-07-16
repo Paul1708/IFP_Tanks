@@ -3,6 +3,10 @@ using Godot.Collections;
 
 namespace Code.Scripts.Enemies;
 
+
+/// <summary>
+/// Invis behaivour of the invis (purple) enemy.
+/// </summary>
 public partial class InvisBehaviour : Behaviour
 {
 
@@ -18,19 +22,19 @@ public partial class InvisBehaviour : Behaviour
 		StartFallback();
 	}
 
+	/// <summary>
+	/// Executes the behaivour of the enemy.
+	/// The enemy will move towards the player until the player is in sight.
+	///	Once in sight of the player, reveal the tank 
+	///	Then, after 1.5 seconds, stop moving and start shooting for 2 seconds
+	///	After shooting, fallback to a random location. 
+	///	This lasts for 5 seconds or until the enemy reaches the target location
+	///	Repeat
+	/// </summary>
 	public override void ExecuteBehaivour()
 	{
 		Gun.RotateTowards(Player.GlobalPosition);
 		Navigation.NavigateTowards(TargetLocation);
-		/*
-		Behviour:
-		- Move towards the player
-		- Once in sight of the player, reveal the tank 
-		- Then, after 1.5 seconds, stop moving and start shooting for 2 seconds
-		- After shooting, fallback to a random location. 
-			- This lasts for 5 seconds or until the enemy reaches the target location
-		- Repeat
-		*/
 
 		// State machine would be better here, but this will do it for now
 
@@ -62,6 +66,11 @@ public partial class InvisBehaviour : Behaviour
 		TargetLocation = Player.GlobalPosition;
 	}
 
+
+	/// <summary>
+	/// Checks if the player is in the line of sight of the enemy by casting a ray from the enemy to the player.
+	/// </summary>
+	/// <returns name="bool">True if the player is in sight, false otherwise</returns>
 	protected bool _checkIfPlayerInSight()
 	{
 		var spaceState = GetWorld2D().DirectSpaceState;
@@ -80,7 +89,11 @@ public partial class InvisBehaviour : Behaviour
 		return false;
 	}
 
-	//Ignore bullets, coins and the casting enemy itself
+	/// <summary>
+	/// Get all RIDs of objects that should be excluded from the raycast.
+	/// This includes the player, enemies, coins and bullets.
+	/// </summary>
+	/// <returns>An array of Rids of the objects to exclude from the raycast</returns>
 	private Array<Rid> _getExcludedObjects()
 	{
 		Array<Rid> a = new Array<Rid>(new [] { Enemy.GetRid() });

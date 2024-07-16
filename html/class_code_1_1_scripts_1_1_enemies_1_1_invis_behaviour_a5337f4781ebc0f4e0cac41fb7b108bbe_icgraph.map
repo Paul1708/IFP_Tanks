@@ -1,0 +1,5 @@
+<map id="Code.Scripts.Enemies.InvisBehaviour._checkIfPlayerInSight" name="Code.Scripts.Enemies.InvisBehaviour._checkIfPlayerInSight">
+<area shape="rect" id="Node000001" title="Checks if the player is in the line of sight of the enemy by casting a ray from the enemy to the play..." alt="" coords="239,5,445,48"/>
+<area shape="rect" id="Node000002" href="$class_code_1_1_scripts_1_1_enemies_1_1_invis_behaviour.html#aff62bfcbcefccdd6e9c0833edd3be14b" title="Executes the behaivour of the enemy. The enemy will move towards the player until the player is in si..." alt="" coords="5,5,191,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="223,29,191,29,191,24,223,24"/>
+</map>

@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller" xml:lang="en-US">
+<title>Code.Scripts.Managers.ParticleController Class Reference</title>
+<indexterm><primary>Code.Scripts.Managers.ParticleController</primary></indexterm>
+<para>
+
+<para>Controller for emitting particles. </para>
+ 
+</para>
+Inheritance diagram for Code.Scripts.Managers.ParticleController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_particle_controller__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+Collaboration diagram for Code.Scripts.Managers.ParticleController:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_particle_controller__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>async void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller_1ad2af73c8e3d633e12bd40026e8dd3377">EmitParticles</link> (Node2D position, PackedScene scene)</para>
+
+<para>Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneShot enabled. </para>
+</listitem>
+            <listitem><para>async void <link linkend="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller_1aa60db71bd294289c1508ca960ee79e27">EmitParticles</link> (Vector2 position, PackedScene scene)</para>
+
+<para>Emitts the chosen particle scene at the given vector2 locataion. The particle scene needs to have OneShot enabled. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Controller for emitting particles. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller_1ad2af73c8e3d633e12bd40026e8dd3377"/><section>
+    <title>EmitParticles()<computeroutput>[1/2]</computeroutput></title>
+<indexterm><primary>EmitParticles</primary><secondary>Code.Scripts.Managers.ParticleController</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ParticleController</primary><secondary>EmitParticles</secondary></indexterm>
+<para><computeroutput>async void Code.Scripts.Managers.ParticleController.EmitParticles (Node2D position, PackedScene scene)</computeroutput></para><para>
+
+<para>Emitts the chosen particle scene at the given nodes locataion. The particle scene needs to have OneShot enabled. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>position</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>scene</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+Here is the caller graph for this function:<para>
+    <informalfigure>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="0" fileref="class_code_1_1_scripts_1_1_managers_1_1_particle_controller_ad2af73c8e3d633e12bd40026e8dd3377_icgraph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </informalfigure>
+</para>
+</section>
+<anchor xml:id="_class_code_1_1_scripts_1_1_managers_1_1_particle_controller_1aa60db71bd294289c1508ca960ee79e27"/><section>
+    <title>EmitParticles()<computeroutput>[2/2]</computeroutput></title>
+<indexterm><primary>EmitParticles</primary><secondary>Code.Scripts.Managers.ParticleController</secondary></indexterm>
+<indexterm><primary>Code.Scripts.Managers.ParticleController</primary><secondary>EmitParticles</secondary></indexterm>
+<para><computeroutput>async void Code.Scripts.Managers.ParticleController.EmitParticles (Vector2 position, PackedScene scene)</computeroutput></para><para>
+
+<para>Emitts the chosen particle scene at the given vector2 locataion. The particle scene needs to have OneShot enabled. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>position</entry><entry></entry>
+                            </row>
+                            <row>
+<entry>scene</entry><entry></entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following file:</para>
+Code/Scripts/Managers/ParticleController.cs</section>
+</section>

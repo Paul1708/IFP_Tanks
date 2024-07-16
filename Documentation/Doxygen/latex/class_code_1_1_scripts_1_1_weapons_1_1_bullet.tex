@@ -1,0 +1,283 @@
+\doxysection{Code.\+Scripts.\+Weapons.\+Bullet Class Reference}
+\hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet}{}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+
+
+Base class for all bullets in the game. Provides basic functionality for all bullets.  
+
+
+
+
+Inheritance diagram for Code.\+Scripts.\+Weapons.\+Bullet\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Code.\+Scripts.\+Weapons.\+Bullet\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa54d4c2ae229aaab3da053f443df8509}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa54d4c2ae229aaab3da053f443df8509} 
+override void {\bfseries \+\_\+\+Ready} ()
+\item 
+void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548}{On\+Collision}} (Node node)
+\begin{DoxyCompactList}\small\item\em Called when the bullet collides with another node. Calls the appropriate method for the collision type. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20}{On\+Damageable\+Hit}} (Node node)
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits a damageable node. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc}{Destroy}} ()
+\begin{DoxyCompactList}\small\item\em Destroys the bullet. \end{DoxyCompactList}\item 
+override void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182}{\+\_\+\+Physics\+Process}} (double delta)
+\begin{DoxyCompactList}\small\item\em Call move method on every physics process tick and check for collisions. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a6918edb299b9f904812786a56c280ea4}{Setup}} ()
+\begin{DoxyCompactList}\small\item\em Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30}{On\+Anything\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits anything. \end{DoxyCompactList}\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a5444f60bf1cbbf4175b223119cc59dd7}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a5444f60bf1cbbf4175b223119cc59dd7} 
+virtual void {\bfseries On\+Wall\+Hit} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits a wall. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287}{On\+Other\+Hit}} ()
+\begin{DoxyCompactList}\small\item\em Called when the bullet hits anything other than a damageable node or a wall. \end{DoxyCompactList}\item 
+virtual Node \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57}{Move}} ()
+\begin{DoxyCompactList}\small\item\em Describe the move behavior of all bullet types. This method is called on every physic process tick. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a50afa222f34505475befd83e1ba1c42a}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a50afa222f34505475befd83e1ba1c42a} 
+Node2D {\bfseries Player}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_add3688bc68c2f77acf895ed3c4247070}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_add3688bc68c2f77acf895ed3c4247070} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_components_1_1_health_component}{Health\+Component}} {\bfseries Player\+Health\+Component}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9728f9ec995966ee3dbdc5583ac3b2fc}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9728f9ec995966ee3dbdc5583ac3b2fc} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_managers_1_1_particle_controller}{Particle\+Controller}} {\bfseries Particles}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a8c9ce424cd8276852008d7ba853b4f62}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a8c9ce424cd8276852008d7ba853b4f62} 
+Vector2 {\bfseries Normal\+Collision\+Vector}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_abfff10952c8c6f014e2dfe738f982f5b}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_abfff10952c8c6f014e2dfe738f982f5b} 
+\mbox{\hyperlink{class_code_1_1_scripts_1_1_audio_1_1_music_controller}{Music\+Controller}} {\bfseries Music\+Controller}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a624f0998cf70b97e30be313f4bdcf49b}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a624f0998cf70b97e30be313f4bdcf49b} 
+float {\bfseries Damage}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ac08e996a9a6eb4553ff6f433c6f77440}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ac08e996a9a6eb4553ff6f433c6f77440} 
+Node2D {\bfseries Shooter}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\item 
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_afad5164dc8144d0dfb12cf46f5767fab}\label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_afad5164dc8144d0dfb12cf46f5767fab} 
+float {\bfseries Speed}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Base class for all bullets in the game. Provides basic functionality for all bullets. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!\_PhysicsProcess@{\_PhysicsProcess}}
+\index{\_PhysicsProcess@{\_PhysicsProcess}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{\_PhysicsProcess()}{\_PhysicsProcess()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182} 
+override void Code.\+Scripts.\+Weapons.\+Bullet.\+\_\+\+Physics\+Process (\begin{DoxyParamCaption}\item[{double}]{delta}{}\end{DoxyParamCaption})}
+
+
+
+Call move method on every physics process tick and check for collisions. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta} & The time since the last physics process tick\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a9da0755c4cc39e78855b602573727182_cgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{Destroy()}{Destroy()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc} 
+virtual void Code.\+Scripts.\+Weapons.\+Bullet.\+Destroy (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroys the bullet. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ac8cd8aeaef50891001c1341aec949ff3}{Code.\+Scripts.\+Weapons.\+Basic\+Bullet}}, \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_ae9486d761b6955464b60322a57d642c8}{Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet}}, \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_a13e116c0c1f2b67bd082a0ee8b8ffa74}{Code.\+Scripts.\+Weapons.\+Homing\+Bullet}}, and \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a027f749add4e0c1a3c34f26e055a6126}{Code.\+Scripts.\+Weapons.\+Laser\+Gun}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a0b2373f199dddfeb33f82cacbf7f5adc_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!Move@{Move}}
+\index{Move@{Move}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{Move()}{Move()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57} 
+virtual Node Code.\+Scripts.\+Weapons.\+Bullet.\+Move (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Describe the move behavior of all bullet types. This method is called on every physic process tick. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_a3e07511d311970d311433ec3c7a9ca75}{Code.\+Scripts.\+Weapons.\+Basic\+Bullet}}, \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a5a87e72b21cb934c219a33db598a2779}{Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet}}, \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet_aa5effa806e05627d297f6fe512151338}{Code.\+Scripts.\+Weapons.\+Grenade\+Bullet}}, \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_a47637cacf8cc612d646c9a7229b48a69}{Code.\+Scripts.\+Weapons.\+Homing\+Bullet}}, and \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_a8b6f710b47f222162fb3ff23060ffc6b}{Code.\+Scripts.\+Weapons.\+Laser\+Gun}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a994aeab2acbe859b2930047811099d57_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!OnAnythingHit@{OnAnythingHit}}
+\index{OnAnythingHit@{OnAnythingHit}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{OnAnythingHit()}{OnAnythingHit()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30} 
+virtual void Code.\+Scripts.\+Weapons.\+Bullet.\+On\+Anything\+Hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called when the bullet hits anything. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a7bdcf30e5cf6256e2d1226a30eaf940c}{Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_aa9847b5ab3119a56a3cb3dca04002f30_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!OnCollision@{OnCollision}}
+\index{OnCollision@{OnCollision}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{OnCollision()}{OnCollision()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548} 
+void Code.\+Scripts.\+Weapons.\+Bullet.\+On\+Collision (\begin{DoxyParamCaption}\item[{Node}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Called when the bullet collides with another node. Calls the appropriate method for the collision type. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node that the bullet collided with\\
+\hline
+\end{DoxyParams}
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a014dc96a8f25d183b0bec481c92d0548_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!OnDamageableHit@{OnDamageableHit}}
+\index{OnDamageableHit@{OnDamageableHit}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{OnDamageableHit()}{OnDamageableHit()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20} 
+virtual void Code.\+Scripts.\+Weapons.\+Bullet.\+On\+Damageable\+Hit (\begin{DoxyParamCaption}\item[{Node}]{node}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Called when the bullet hits a damageable node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node that the bullet collided with\\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_aca8209ba069905c476fca8b56c25d8a7}{Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet}}.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_ab04ac5ac34559667a56cf8493fa1bf20_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!OnOtherHit@{OnOtherHit}}
+\index{OnOtherHit@{OnOtherHit}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{OnOtherHit()}{OnOtherHit()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287} 
+virtual void Code.\+Scripts.\+Weapons.\+Bullet.\+On\+Other\+Hit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Called when the bullet hits anything other than a damageable node or a wall. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_basic_bullet_ad3d49f776a006421512b8180a3be1121}{Code.\+Scripts.\+Weapons.\+Basic\+Bullet}}, and \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a246250f0908199b9c80291a2de0d0443}{Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet}}.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a043d2947f7b73466055604b2333e0287_icgraph}
+\end{center}
+\end{figure}
+\Hypertarget{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a6918edb299b9f904812786a56c280ea4}\index{Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}!Setup@{Setup}}
+\index{Setup@{Setup}!Code.Scripts.Weapons.Bullet@{Code.Scripts.Weapons.Bullet}}
+\doxysubsubsection{\texorpdfstring{Setup()}{Setup()}}
+{\footnotesize\ttfamily \label{class_code_1_1_scripts_1_1_weapons_1_1_bullet_a6918edb299b9f904812786a56c280ea4} 
+virtual void Code.\+Scripts.\+Weapons.\+Bullet.\+Setup (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Method called for the init bullet loading. Used in subclasses to instantiate bullet type specific parameters. 
+
+
+
+Reimplemented in \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_bouncing_bullet_a247342e3ee4c88f4b2baf88fcf72ff31}{Code.\+Scripts.\+Weapons.\+Bouncing\+Bullet}}, \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_grenade_bullet_a8dd32b0f6e7daa8a53edaf27e2a330f0}{Code.\+Scripts.\+Weapons.\+Grenade\+Bullet}}, \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_homing_bullet_a20e1d6afab2f2f97b4fe0705e9322919}{Code.\+Scripts.\+Weapons.\+Homing\+Bullet}}, and \mbox{\hyperlink{class_code_1_1_scripts_1_1_weapons_1_1_laser_gun_ad6ad8f4c9f999ca4953cadd40a356eb9}{Code.\+Scripts.\+Weapons.\+Laser\+Gun}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Code/\+Scripts/\+Weapons/Bullet.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_namespace_code_1_1_scripts_1_1_movement" xml:lang="en-US">
+<title>Code.Scripts.Movement Namespace Reference</title>
+<indexterm><primary>Code.Scripts.Movement</primary></indexterm>
+<simplesect>
+    <title>Classes    </title>
+        <itemizedlist>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_movement">PlayerMovement</link></para>
+
+<para>The player movement script. Handles the movement of the player and the gun. </para>
+</listitem>
+            <listitem><para>class <link linkend="_class_code_1_1_scripts_1_1_movement_1_1_player_stats">PlayerStats</link></para>
+
+<para>Data class which holds the base and current player stats. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+</section>

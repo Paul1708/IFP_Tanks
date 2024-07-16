@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://ck4qfrctxcyal"]
+[gd_scene load_steps=25 format=3 uid="uid://ck4qfrctxcyal"]
 
 [ext_resource type="Script" path="res://Scripts/Enemies/Enemy.cs" id="1_m5ifg"]
 [ext_resource type="PackedScene" uid="uid://d4kh831knbso0" path="res://Scenes/Enviroment/Items/Coin.tscn" id="2_cr5fy"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://dyvtnwvkj8ds8" path="res://Sprites/Tanks/TankYellow.png" id="4_g6kjl"]
 [ext_resource type="Script" path="res://Scripts/Enemies/KamikazeBehaviour.cs" id="5_18fpa"]
 [ext_resource type="Script" path="res://Scripts/Weapons/GunController.cs" id="6_sqyqw"]
-[ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="7_5g3ol"]
 [ext_resource type="Texture2D" uid="uid://bfd4pyhmq4i2" path="res://Sprites/Tanks/GunYellow.png" id="8_cb5ya"]
 [ext_resource type="Script" path="res://Scripts/Enemies/NavigationController.cs" id="9_ia71e"]
 [ext_resource type="Script" path="res://Scripts/Components/HealthComponent.cs" id="10_i2uvn"]
@@ -350,7 +349,6 @@ TargetReachedDistance = 100.0
 
 [node name="Gun" type="Node2D" parent="."]
 script = ExtResource("6_sqyqw")
-WeaponStats = ExtResource("7_5g3ol")
 
 [node name="ShootTimer" type="Timer" parent="Gun"]
 
@@ -383,6 +381,7 @@ RotationSpeed = 0.05
 [node name="HealthComponent" type="Node2D" parent="."]
 position = Vector2(5, -2)
 script = ExtResource("10_i2uvn")
+MaxHp = 25.0
 
 [node name="DebugEnemyHealthBar" parent="HealthComponent" instance=ExtResource("11_ddw7m")]
 visible = false
