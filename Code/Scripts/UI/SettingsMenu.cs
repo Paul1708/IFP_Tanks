@@ -1,3 +1,4 @@
+using Castle.Components.DictionaryAdapter;
 using Code.Scripts.Audio;
 using Code.Scripts.Managers.Save;
 using Godot;
@@ -25,6 +26,7 @@ public partial class SettingsMenu : Control
 	private CheckButton _fullscreenButton;
 	private UserPreferences _userPreferences;
 	private ColorRect _blur;
+	private BaseButton _adminButton;
 
 	public override void _Ready()
 	{
@@ -34,11 +36,13 @@ public partial class SettingsMenu : Control
 		_musicSlider = GetNode<Slider>("%MusicSlider");
 		_sfxSlider = GetNode<Slider>("%SFXSlider");
 		_fullscreenButton = GetNode<CheckButton>("%Fullscreen");
+		_adminButton = GetNode<BaseButton>("AdminButton");
 
 		_blur = GetNode<ColorRect>("Blur");
 		if (GetParent().Name == "PauseMenu")
 		{
 			EnableBlur();
+			_adminButton.Visible = false;
 		}
 
 		_userPreferences = UserPreferences.LoadOrCreate();
@@ -68,6 +72,13 @@ public partial class SettingsMenu : Control
 			MainMenu mainMenu = GetTree().GetFirstNodeInGroup("MainMenu") as MainMenu;
 			mainMenu.Camera.Position = mainMenu.MainMenuCameraPosition;
 		}
+	}
+
+	private void OnAdminButtonPressed()
+	{
+		MusicController.Play(Sound.ButtonClick);
+		MainMenu mainMenu = GetTree().GetFirstNodeInGroup("MainMenu") as MainMenu;
+		mainMenu.Camera.Position = mainMenu.AdminsMenuCameraPosition;
 	}
 
 	/// <summary>

@@ -465,3 +465,4 @@ position = Vector2(4, -1)
 script = ExtResource("13_mrrxq")
 
 [node name="TrailComponent" parent="." instance=ExtResource("16_v1keo")]
+TimeBetweenTrails = 0.3

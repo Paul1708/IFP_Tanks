@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=3 uid="uid://bk1y1ucuxvypa"]
+
+[ext_resource type="Script" path="res://Scripts/UI/AdminMenu.cs" id="1_gi65x"]
+[ext_resource type="Resource" uid="uid://cle1r5gyebdqt" path="res://Scenes/Weapons/WeaponStats/Enemy/Enemy50calStats.tres" id="2_5wmgk"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI_Theme.tres" id="2_qc8qe"]
+[ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="3_gxjem"]
+
+[node name="AdminMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gi65x")
+BasicEnemy = ExtResource("2_5wmgk")
+
+[node name="BasicEnemyContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 467.0
+offset_top = -71.0
+offset_right = 595.0
+offset_bottom = 87.0
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BasicEnemyContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BasicEnemyContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qc8qe")
+text = "BasicEnemy"
+fit_content = true
+scroll_active = false
+tab_size = 6
+
+[node name="HSplitContainer" type="HSplitContainer" parent="BasicEnemyContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="BasicEnemyContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="BasicEnemyContainer/VBoxContainer/HSplitContainer"]
+layout_mode = 2
+text = "DMG"
+
+[node name="HSplitContainer2" type="HSplitContainer" parent="BasicEnemyContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="BasicEnemyContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="BasicEnemyContainer/VBoxContainer/HSplitContainer2"]
+layout_mode = 2
+text = "BPS"
+
+[node name="HSplitContainer3" type="HSplitContainer" parent="BasicEnemyContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="BasicEnemyContainer/VBoxContainer/HSplitContainer3"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="BasicEnemyContainer/VBoxContainer/HSplitContainer3"]
+layout_mode = 2
+text = "BSpeed"
+
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 145.0
+offset_top = -71.0
+offset_right = 273.0
+offset_bottom = 87.0
+grow_vertical = 2
+scale = Vector2(2, 2)
+size_flags_horizontal = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MarginContainer2/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_qc8qe")
+theme_override_fonts/font = ExtResource("3_gxjem")
+theme_override_font_sizes/font_size = 24
+text = "Back"
+
+[connection signal="text_changed" from="BasicEnemyContainer/VBoxContainer/HSplitContainer/LineEdit" to="." method="OnBasicDMGChanged"]
+[connection signal="text_changed" from="BasicEnemyContainer/VBoxContainer/HSplitContainer2/LineEdit" to="." method="OnBasicBPSChanged"]
+[connection signal="text_changed" from="BasicEnemyContainer/VBoxContainer/HSplitContainer3/LineEdit" to="." method="OnBasicBSpeedChanged"]
+[connection signal="pressed" from="MarginContainer2/VBoxContainer/Back" to="." method="OnBackPressed"]

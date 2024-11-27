@@ -400,3 +400,4 @@ script = ExtResource("13_yrxel")
 script = ExtResource("14_y3wj6")
 
 [node name="TrailComponent" parent="." instance=ExtResource("15_sqgcd")]
+TimeBetweenTrails = 0.3

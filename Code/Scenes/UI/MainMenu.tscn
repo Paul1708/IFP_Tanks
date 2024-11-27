@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://g3vuhr6e8a3m"]
+[gd_scene load_steps=32 format=3 uid="uid://g3vuhr6e8a3m"]
 
 [ext_resource type="Script" path="res://Scripts/UI/MainMenu.cs" id="1_ahplq"]
 [ext_resource type="Texture2D" uid="uid://dohaikbmd7yu1" path="res://Sprites/UI/title.png" id="2_u7cxo"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://cft13mj3w5mwd" path="res://Scenes/Enviroment/Particles/TrailComponent.tscn" id="10_bjkwk"]
 [ext_resource type="PackedScene" uid="uid://qsohy1s4v1by" path="res://Scenes/UI/SettingsMenu.tscn" id="10_w8blg"]
 [ext_resource type="AudioStream" uid="uid://c2ph8b8chq6ag" path="res://Audio/Music/MainMenu.ogg" id="14_3pdck"]
+[ext_resource type="PackedScene" uid="uid://bk1y1ucuxvypa" path="res://Scenes/UI/AdminMenu.tscn" id="14_gnvoj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6804y"]
 resource_local_to_scene = true
@@ -359,6 +360,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("3_ifl8e")
 script = ExtResource("1_ahplq")
+AdminsMenuCameraPosition = Vector2(5252, 540)
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
@@ -459,6 +461,7 @@ metadata/_aseprite_wizard_config_ = {
 z_index = 1
 position = Vector2(-2.86102e-06, -5.84722e-05)
 rotation = 3.14159
+TimeBetweenTrails = 0.3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Background/DummyTank"]
 libraries = {
@@ -509,6 +512,11 @@ position_smoothing_enabled = true
 layout_mode = 1
 offset_left = 1920.0
 offset_right = 1920.0
+
+[node name="AdminMenu" parent="." instance=ExtResource("14_gnvoj")]
+layout_mode = 1
+offset_left = 4288.0
+offset_right = 4288.0
 
 [node name="MenuMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_3pdck")

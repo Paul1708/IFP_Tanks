@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://qsohy1s4v1by"]
 
 [ext_resource type="Script" path="res://Scripts/UI/SettingsMenu.cs" id="1_in3df"]
-[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI/UI_Theme.tres" id="1_ufxt4"]
+[ext_resource type="Theme" uid="uid://biu1v8mgr423w" path="res://Scenes/UI_Theme.tres" id="1_ufxt4"]
 [ext_resource type="Material" uid="uid://bkakfxntqvgov" path="res://Sprites/Materials/blur.tres" id="2_xetbp"]
 [ext_resource type="FontFile" uid="uid://bxxxe4poy0im1" path="res://Sprites/Fonts/Minecraftia-Regular.ttf" id="3_lc8pp"]
 
@@ -30,6 +30,17 @@ offset_right = 1993.0
 offset_bottom = 2088.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="AdminButton" type="Button" parent="."]
+layout_mode = 2
+offset_left = 852.0
+offset_top = 619.0
+offset_right = 1008.0
+offset_bottom = 694.0
+theme = ExtResource("1_ufxt4")
+theme_override_fonts/font = ExtResource("3_lc8pp")
+theme_override_font_sizes/font_size = 24
+text = "Admin"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -149,6 +160,8 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Fullscreen"
 
+[connection signal="pressed" from="AdminButton" to="." method="OnChangeStatsPressed"]
+[connection signal="pressed" from="AdminButton" to="." method="OnAdminButtonPressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="OnBackPressed"]
 [connection signal="mouse_exited" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="release_focus"]
 [connection signal="value_changed" from="SliderContainer/VBoxContainer/MasterSlider" to="." method="OnMasterSliderValueChanged"]

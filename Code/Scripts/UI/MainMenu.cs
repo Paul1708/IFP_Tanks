@@ -13,6 +13,8 @@ public partial class MainMenu : Control
 	public Vector2 MainMenuCameraPosition = new (960, 540);
 	[Export]
 	public Vector2 SettingsMenuCameraPosition = new (2880, 540);
+	[Export]
+	public Vector2 AdminsMenuCameraPosition = new (4288, 540);
 	public Camera2D Camera;
 	private MusicController _musicController;
 	private AudioStreamPlayer _menuMusic;
